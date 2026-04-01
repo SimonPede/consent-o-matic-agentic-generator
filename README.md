@@ -61,6 +61,7 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 ## Usage
    ```bash
    python main.py --url https://www.example.com
+   ```
 
 ## Acknowledgements
 This project is developed in cooperation with the Consent-O-Matic team at Aarhus University 
