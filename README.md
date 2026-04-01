@@ -59,7 +59,8 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
     OPENAI_API_KEY=your_key_here
 
 ## Usage
-python main.py --url https://www.example.com
+   ```bash
+   python main.py --url https://www.example.com
 
 ## Acknowledgements
 This project is developed in cooperation with the Consent-O-Matic team at Aarhus University 
