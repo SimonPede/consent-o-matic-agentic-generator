@@ -9,8 +9,7 @@ const fs = require('fs');
     await new Promise(res => setTimeout(res, 2000));
     
     const html = await page.content();
-    
-    fs.writeFileSync('example-full.html', html);
+
     
     console.log('HTML stored: example-full.html');
     console.log(`Size: ${html.length} `);
