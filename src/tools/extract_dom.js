@@ -1,4 +1,12 @@
 const puppeteer = require("puppeteer");
+const CMP_SELECTORS = require('../utils/cmp_selectors');
+//Plan:
+// Stufe 1: CMP-Selektoren (Regex-Patterns) → Banner-Container gefunden
+//               ↓ nicht gefunden
+// Stufe 2: Negativfilterung → entferne nav, header, footer, script, 
+//          style, img → gib gefiltertes HTML ans LLM
+//               ↓
+// Stufe 3: LLM findet Banner im gefilterten HTML selbst
 
 async function extractStructuredDOM(url) {
     try {
@@ -22,41 +30,40 @@ async function extractStructuredDOM(url) {
 
         const cmpFrame = await findCorrectFrame(page);
 
-        
-
         //LLM needs to no the extracted DOM is in an IFrame because this information is critical for the JSON-Rule
 
         let FrameData = 0;
         if (cmpFrame) {
-            FrameData = await cmpFrame.evaluate(() => {
+            FrameData = await cmpFrame.evaluate((selectors) => {
 
-                let buttons = Array.from(document.querySelectorAll('button, a'));
-                
-                const details = buttons.map(el => {
-                    const style = window.getComputedStyle(el);
-                    return {
-                        text: el.innerText.trim(),
-                        tag: el.tagName,
-                        opacity: parseFloat(style.opacity),
-                        display: style.display,
-                        visibility: style.visibility,
-                        width: el.offsetWidth,
-                        height: el.offsetHeight
-                        //this is not complete!
-                    };
-                }).filter(item => 
-                    item.text.length > 0 && 
-                    item.width > 0 && 
-                    item.display !== 'none' && 
-                    item.opacity > 0.1
-                );
+                //Step 1: trying to find banner container
+                for (const selector of selectors) {
+                    const el = document.querySelector(selector);
+                    if (el) {
+                        return { found: true, selector, html: el.outerHTML.slice(0, 500) };
+                    }
+                }
 
-                return {
-                    buttonCount: details.length,
-                    allElements: details
+                const NEGATIVE_SELECTORS = ['nav', 'header', 'footer', 
+                    'script', 'style', 'img', 'svg', 'noscript'];
+
+                const body = document.body.cloneNode(true);
+
+                NEGATIVE_SELECTORS.forEach(sel => {
+                    body.querySelectorAll(sel).forEach(el => el.remove());
+                });
+
+                return { 
+                    found: false, 
+                    cmp: null,
+                    fallback_html: body.innerHTML.slice(0, 3000)
                 };
-            });
+
+
+            }, CMP_SELECTORS);
         }
+
+        console.log(FrameData);
 
         await browser.close();
         console.log("browser closed!");
@@ -90,7 +97,7 @@ function findCorrectFrame(page) {
     let cmpFrame = frames.find(frame => cmpRegex.test(frame.url()));
 
     if(!cmpFrame) {
-        cmpFrame = frames.find(frame => DOMAINS.some(domain => frame.url().includes(domain)));
+        // cmpFrame = frames.find(frame => DOMAINS.some(domain => frame.url().includes(domain)));
 
         if (!cmpFrame) {
             return page.mainFrame();
@@ -100,25 +107,13 @@ function findCorrectFrame(page) {
 }
 
 
-function classifyButton(buttonData) {
-    const text = buttonData.text.toLowerCase();
+(async () => {
+    const foundData = await extractStructuredDOM("https://www.heise.de");
 
-    //ACCEPT Patterns
-    if (text.includes('agree') || text.includes('accept') || 
-        text.includes('akzeptieren') ||
-        text.includes('zustimmen')) {
-        return {
-            action: 'ACCEPT_ALL'
-        };
+    if (foundData) {
+        console.log(JSON.stringify(foundData, null, 2));
     }
-
-    //vllt lieber REGEX nutzen
-
-    //Reject Patterns
-    //SAve Patterns
-    //unknown Patterns
-}
-
+})();
 
 //Erweiterungen, die nötig sind:
 // - Shadow-DOM traversen
@@ -145,13 +140,3 @@ function classifyButton(buttonData) {
     // //1. Test für Vision-Modell später
     // console.log('Mache Screenshot...');
     // await page.screenshot({ path: 'heise_view.png' });
-
-(async () => {
-    const foundData = await extractStructuredDOM("https://www.heise.de");
-
-    if (foundData) {
-        console.log('--- Ergebnisse der Seite ---');
-        console.log('Anzahl Buttons gefunden:', foundData.buttonCount);
-        console.log('Beispiel-Texte:', foundData.allElements);
-    }
-})();
