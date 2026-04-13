@@ -8,6 +8,129 @@ const CMP_SELECTORS = require('../utils/cmp_selectors');
 //               ↓
 // Stufe 3: LLM findet Banner im gefilterten HTML selbst
 
+async function extractFromFrame(frame, selectors) {
+    return await frame.evaluate((selectors) => {
+        //with this function i try to find every relevant element even if it is in the shadow DOM
+        function querySelectorAllDeep(selector, root = document) {
+            let nodes = Array.from(root.querySelectorAll(selector));
+            const children = Array.from(root.querySelectorAll('*'));
+            for (let child of children) {
+                if (child.shadowRoot) {
+                    nodes = nodes.concat(querySelectorAllDeep(selector, child.shadowRoot));
+                }
+            }
+            return nodes;
+        }
+
+        function extractAllAttributes(el) {
+            attributes = {};
+            for(const attr of el.attributes) {
+                attributes[attr.name] = attr.value;
+            }
+            return attributes;
+        }
+
+        function findLabelForInput(input) {
+            if (input.id) {
+                const label = document.querySelector(`label[for="${input.id}"]`);
+                if (label) {
+                    return label.innerText.trim();
+                }
+            }
+            const closestLabel = input.closest("label");
+            return closestLabel ? closestLabel.innerText.trim() : "";
+        }
+
+        function extractParentInfo(el) {
+            return {
+                tag: el.parentElement ? el.parentElement.tagName : null,
+                id: el.parentElement ? el.parentElement.id : null,
+                className: el.parentElement ? el.parentElement.className : null
+            };
+        }
+
+        function isVisible(el) {
+            const style = window.getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.width > 0 &&
+                rect.height > 0 &&
+                el.innerText.length > 0 && 
+                style.display !== "none" &&
+                style.visibility !== "hidden" &&
+                parseFloat(style.opacity) > 0.05
+            );
+        }
+
+        //Step 1: trying to find banner container
+        //here i have to implement: give LLM the Name of CMP Type! Also important for Pseudo-RAG
+        for (const selector of selectors) {
+            const el = document.querySelector(selector);
+            if (el) {
+                return { Cmpfound: true, Cmpselector: selector, html: el.outerHTML.slice(0, 500) };
+            }
+        }
+
+        //Step 2 is used if Step 1 fales
+        //extract structured and filtered DOM
+        //as everything in this code: this is incomplete :)
+        const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
+            "script", "style", "img", "svg", "noscript"];
+
+        const body = document.body.cloneNode(true); //clone with subtrees
+
+        NEGATIVE_SELECTORS.forEach(sel => {
+            body.querySelectorAll(sel).forEach(el => el.remove());
+        });
+
+        const buttons = querySelectorAllDeep("button, a, [role='button']")
+            .filter(isVisible)
+            .map(el => ({
+                type: "button",
+                text: el.innerText.trim(),
+                tag: el.tagName,
+                attributes: extractAllAttributes(el),
+                parentInfo: extractParentInfo(el),
+                outerHTML: el.outerHTML
+            }));
+
+        const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']")
+            .filter(isVisible)
+            .map(el => ({
+                type: "toggle",
+                text: el.innerText.trim(),
+                tag: el.tagName,
+                attributes: extractAllAttributes(el),
+                parentInfo: extractParentInfo(el),
+                ariaChecked: el.getAttribute("aria-checked"),
+                outerHTML: el.outerHTML
+            }));
+        const checkboxes = querySelectorAllDeep("input[type='checkbox']")
+            .filter(isVisible)
+            .map(el => ({
+                type: "checkbox",
+                text: el.innerText.trim(),
+                tag: el.tagName,
+                attributes: extractAllAttributes(el),
+                parentInfo: extractParentInfo(el),
+                checked: el.checked,
+                disabled: el.disabled,
+                labelText: findLabelForInput(el),
+                outerHTML: el.outerHTML
+            }));
+
+        return {
+            buttons,
+            checkboxes,
+            toggles,
+            cmpType: null,
+            url: window.location.href,
+            filteredHtml: body.innerHTML.slice(0, 5000)
+            //not complete!
+        };
+    }, selectors);
+}
+
 async function extractStructuredDOM(url) {
     try {
         console.log("puppeteer-browser is getting started...");
@@ -31,43 +154,24 @@ async function extractStructuredDOM(url) {
         const cmpFrame = await findCorrectFrame(page);
 
         //LLM needs to no the extracted DOM is in an IFrame because this information is critical for the JSON-Rule
-
-        let FrameData = 0;
+        let results = [];
+        let frameData = 0;
         if (cmpFrame) {
-            FrameData = await cmpFrame.evaluate((selectors) => {
-
-                //Step 1: trying to find banner container
-                for (const selector of selectors) {
-                    const el = document.querySelector(selector);
-                    if (el) {
-                        return { found: true, selector, html: el.outerHTML.slice(0, 500) };
-                    }
-                }
-
-                const NEGATIVE_SELECTORS = ['nav', 'header', 'footer', 
-                    'script', 'style', 'img', 'svg', 'noscript'];
-
-                const body = document.body.cloneNode(true);
-
-                NEGATIVE_SELECTORS.forEach(sel => {
-                    body.querySelectorAll(sel).forEach(el => el.remove());
-                });
-
-                return { 
-                    found: false, 
-                    cmp: null,
-                    fallback_html: body.innerHTML.slice(0, 3000)
-                };
-
-
-            }, CMP_SELECTORS);
+            frameData = await extractFromFrame(cmpFrame, CMP_SELECTORS);
+            results.push(frameData);
+        } else {
+            for (const frame of page.frames()) {
+                if (!frame.url() || frame.url() === 'about:blank') continue;
+                const data = await extractFromFrame(frame, CMP_SELECTORS);
+                results.push({ frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), data });
+            }   
         }
 
-        console.log(FrameData);
+        console.log(results);
 
         await browser.close();
         console.log("browser closed!");
-        return FrameData;
+        return results;
     } catch (error) {
         console.error("extractStructuredDOM failed:", error.message);
         return null;
@@ -78,7 +182,7 @@ async function extractStructuredDOM(url) {
 };
 
 function findCorrectFrame(page) {
-    const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes/i;
+    const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|osano|complianz|termsfeed|cookienotice|cookiinformation|cookiescript|moove|consentmanager|consent/i;
     //DOMAINS ARRAY could be filled with iFrame-URLS used by common CMPs.
     const DOMAINS = [];
     const frames = page.frames(); //frames[0] should be main page
@@ -96,14 +200,17 @@ function findCorrectFrame(page) {
         
     let cmpFrame = frames.find(frame => cmpRegex.test(frame.url()));
 
-    if(!cmpFrame) {
-        // cmpFrame = frames.find(frame => DOMAINS.some(domain => frame.url().includes(domain)));
+    // if(!cmpFrame) {
+    //     // cmpFrame = frames.find(frame => DOMAINS.some(domain => frame.url().includes(domain)));
 
-        if (!cmpFrame) {
-            return page.mainFrame();
-        }
+    //     if (!cmpFrame) {
+    //         return page.mainFrame();
+    //     }
+    // }
+    if(cmpFrame) {
+        return cmpFrame;
     }
-    return cmpFrame;
+    return null;
 }
 
 
