@@ -1,15 +1,36 @@
 const puppeteer = require("puppeteer");
 const CMP_SELECTORS = require('../utils/cmp_selectors');
-//Plan:
-// Stufe 1: CMP-Selektoren (Regex-Patterns) → Banner-Container gefunden
-//               ↓ nicht gefunden
-// Stufe 2: Negativfilterung → entferne nav, header, footer, script, 
-//          style, img → gib gefiltertes HTML ans LLM
-//               ↓
-// Stufe 3: LLM findet Banner im gefilterten HTML selbst
+
+/**
+ * ARCHITECTURE NOTE: Two-Pass DOM Extraction Strategy
+ * 
+ * Cookie banners often consist of two layers:
+ * 1. The initial banner (accept/reject/settings buttons)
+ * 2. A settings/preferences page (granular toggles and checkboxes per category)
+ * 
+ * A single DOM extraction pass is insufficient to generate a complete CoM ruleset,
+ * because the selectors for granular consent options are only present in the DOM
+ * AFTER the user clicks the settings button.
+ * 
+ * Solution: After the initial extraction, we search the extracted buttons for a
+ * settings button using a multilingual regex pattern (based on Nouwens et al. 2025,
+ * Appendix B). If found, Puppeteer clicks it, waits for the settings page to load,
+ * and extractFromFrame() runs a second time on the now-visible settings DOM.
+ * 
+ * Both extraction results are returned together:
+ * { initial: {...}, settings: {...} | null }
+ * 
+ * This gives the LLM all selectors it needs to generate a complete ruleset in one pass,
+ * without requiring a second agent loop iteration or relying solely on analyse_screenshot.
+ * 
+ * i have to consider this new idea: Store browserWSEndpoint in LangGraph agent state so that test_ruleset and
+ * subsequent extract_dom calls can reconnect to the same browser instance via
+ * puppeteer.connect() instead of launching a new browser.
+ */
 
 async function extractFromFrame(frame, selectors) {
     return await frame.evaluate((selectors) => {
+
         //with this function i try to find every relevant element even if it is in the shadow DOM
         function querySelectorAllDeep(selector, root = document) {
             let nodes = Array.from(root.querySelectorAll(selector));
@@ -62,6 +83,18 @@ async function extractFromFrame(frame, selectors) {
             );
         }
 
+        function isVisibleInput(el) {
+            const style = window.getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.width > 0 &&
+                rect.height > 0 &&
+                style.display !== "none" &&
+                style.visibility !== "hidden" &&
+                parseFloat(style.opacity) > 0.05
+            );
+        }
+
         //Step 1: trying to find banner container
         //here i have to implement: give LLM the Name of CMP Type! Also important for Pseudo-RAG
         for (const selector of selectors) {
@@ -77,7 +110,7 @@ async function extractFromFrame(frame, selectors) {
         const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
             "script", "style", "img", "svg", "noscript"];
 
-        const body = document.body.cloneNode(true); //clone with subtrees
+        const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
 
         NEGATIVE_SELECTORS.forEach(sel => {
             body.querySelectorAll(sel).forEach(el => el.remove());
@@ -91,11 +124,15 @@ async function extractFromFrame(frame, selectors) {
                 tag: el.tagName,
                 attributes: extractAllAttributes(el),
                 parentInfo: extractParentInfo(el),
+                selector: el.id ? `#${el.id}`                                  //best case
+                    : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`  //often concrete
+                        : el.className ? `.${el.className.trim().split(' ')[0]}`  //fallback
+                            : el.tagName.toLowerCase(),
                 outerHTML: el.outerHTML
             }));
 
         const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']")
-            .filter(isVisible)
+            .filter(isVisibleInput)
             .map(el => ({
                 type: "toggle",
                 text: el.innerText.trim(),
@@ -105,8 +142,9 @@ async function extractFromFrame(frame, selectors) {
                 ariaChecked: el.getAttribute("aria-checked"),
                 outerHTML: el.outerHTML
             }));
+
         const checkboxes = querySelectorAllDeep("input[type='checkbox']")
-            .filter(isVisible)
+            .filter(isVisibleInput)
             .map(el => ({
                 type: "checkbox",
                 text: el.innerText.trim(),
@@ -136,7 +174,7 @@ async function extractStructuredDOM(url) {
         console.log("puppeteer-browser is getting started...");
         const browser = await puppeteer.launch({
             headless: "shell", //true should also work
-            args: ['--no-sandbox', '--disable-setuid-sandbox'] //these flags are important for Linux/WSL
+            args: ["--no-sandbox", "--disable-setuid-sandbox"] //these flags are important for Linux/WSL
         });
 
         const page = await browser.newPage();
@@ -155,16 +193,118 @@ async function extractStructuredDOM(url) {
 
         //LLM needs to no the extracted DOM is in an IFrame because this information is critical for the JSON-Rule
         let results = [];
-        let frameData = 0;
         if (cmpFrame) {
-            frameData = await extractFromFrame(cmpFrame, CMP_SELECTORS);
-            results.push(frameData);
+            const data = await extractFromFrame(cmpFrame, CMP_SELECTORS);
+            results.push({frame: cmpFrame, isCmpFrame: true, data})
         } else {
             for (const frame of page.frames()) {
-                if (!frame.url() || frame.url() === 'about:blank') continue;
+                if (!frame.url() || frame.url() === "about:blank") continue;
                 const data = await extractFromFrame(frame, CMP_SELECTORS);
-                results.push({ frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), data });
+                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCmpFrame: false, data });
             }   
+        }
+
+        //originally based on A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them.pdf, Appendix B,
+        //but used Gemini for additional keywords. Have to check their reliability
+        const SETTINGS_TERMS = [
+            // --- English / International ---
+            "settings", "preferences", "manage", "customize", "options", 
+            "manage options", "manage preferences", "manage settings",
+
+            // --- Deutsch (DACH) ---
+            "einstellungen", "optionen", "mehr optionen", "weitere optionen", 
+            "datenschutzeinstellungen", "einstellungen verwalten", "zwecke anzeigen",
+
+            // --- Northern Europe (Denmark, Sweden, Norway, Finland, Estonia) ---
+            "asetukset","inställningar", "seaded", "kohanda",
+            "küpsiste seaded", "küpsiste sätted", "halda",
+            "seadistusi", "muudan küpsiste seadistusi",
+
+            // --- Western Europe (France, Belgium, Netherlands, Luxembourg) ---
+            "paramètres", "gérer les cookies", "instellen", "instellingen",
+            "voorkeuren", "privacy-instellingen", "gérer",
+
+            // --- Southern Europe (Italy, Spain, Portugal, Greece, Malta) ---
+            "impostazioni", "preferenze", "configuración", "ajustes", "preferencias",
+            "personalizar", "opciones", "ρυθμίσεις", "περισσοτερες επιλογες", 
+            "ρυθμίσεις ςοοκιες", "προτιμησεις", "aktar dwar il cookies",
+
+            // --- Central & Eastern Europe (Poland, Czech, Slovak, Hungary, Slovenia, Croatia) ---
+            "ustawienia", "opcje", "nastavení", "podrobné nastavení", "další volby", 
+            "upravit mé předvolby", "nastavenia", "nastavenie cookies", "ďalšie informácie", 
+            "bližšie informácie", "nastavitve", "več možnosti", "nastavitve piškotov", 
+            "prilagodi", "po meri", "beállítások", "további opciók", "beállítások kezelése", 
+            "lehetőségek", "részletek",
+
+            // --- Baltic & Balkans (Latvia, Lithuania, Bulgaria, Romania) ---
+            "iestatījumi", "pielagot", "papildu opcijas", "parvaldības iespejas",
+            "nustatymai", "tvarkyti parinktis", "slapukų nustatymai", "rodyti informaciją", 
+            "rinktis", "tinkinti", "nuostatos", "настройки", "подробни настройки", 
+            "опции за управление", "други възможности",
+            "setări", "modific setările", "mai multe opțiuni", "gestionati opțiunile", "setari cookie-uri"
+        ];
+
+        const SETTINGS_PATTERN = new RegExp(SETTINGS_TERMS.join('|'), 'i');
+
+        for (let result of results) {
+            //i prioritize buttons
+            const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
+                result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === 'A');
+            
+            if (settingsButton) {
+                console.log(`Settings button found: "${settingsButton.text}"`);
+                //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iframe pops up
+                //two options: extract from all frames again
+                //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
+                //otherwise look for new iframes that got loaded
+                const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
+                const htmlBefore = await result.frame.evaluate(() => document.body.innerHTML.length);
+
+                await result.frame.click(settingsButton.selector);
+                // await new Promise(resolve => setTimeout(resolve, 5000));
+
+                // const newFrame = page.frames().find(f => !framesBefore.includes(f.url())); //which frame is new?
+                const newFramePromise = new Promise(resolve => {
+                    const check = setInterval(() => {
+                        const newFrame = page.frames().find(f => !framesBefore.includes(f.url()));
+                        if (newFrame) {
+                            clearInterval(check);
+                            resolve(newFrame);
+                        }
+                    }, 200);
+                    setTimeout(() => { clearInterval(check); resolve(null); }, 5000); // max 5s
+                });
+
+            const newFrame = await newFramePromise;
+                
+                //debugging
+                const framesAfterClick = page.frames();
+                console.log("Frames nach Klick:");
+                framesAfterClick.forEach((f, i) => console.log(`Frame ${i}: ${f.url()}`));
+                await page.screenshot({ path: 'after_click.png' });
+                ///////////
+
+                if (newFrame) {
+                    result.settings = await extractFromFrame(newFrame, CMP_SELECTORS);
+                    console.log(JSON.stringify(result.settings.buttons, null, 2));
+                } else {
+                    const htmlAfter = await result.frame.evaluate(() => document.body.innerHTML.length);
+                    const contentChanged = Math.abs(htmlAfter - htmlBefore) > 500; // signifikante Änderung
+
+                    if (contentChanged) {
+                        result.settings = await extractFromFrame(result.frame, CMP_SELECTORS);
+                        console.log(JSON.stringify(result.settings.buttons, null, 2));
+                    } else {
+                        result.settings = null;
+                        console.log("Settings click had no effect");
+                    }
+                }
+
+            } else {
+                result.settings = null;
+            }
+            
+            delete result.frame; //Frame-Objekt nicht zurückgeben, nicht serialisierbar
         }
 
         console.log(results);
@@ -182,6 +322,7 @@ async function extractStructuredDOM(url) {
 };
 
 function findCorrectFrame(page) {
+    //these regex-Patterns are just educated guesses at this moment, not based on actaul data/facts
     const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|osano|complianz|termsfeed|cookienotice|cookiinformation|cookiescript|moove|consentmanager|consent/i;
     //DOMAINS ARRAY could be filled with iFrame-URLS used by common CMPs.
     const DOMAINS = [];
@@ -215,10 +356,10 @@ function findCorrectFrame(page) {
 
 
 (async () => {
-    const foundData = await extractStructuredDOM("https://www.heise.de");
+    const foundData = await extractStructuredDOM("https://spiegel.de");
 
     if (foundData) {
-        console.log(JSON.stringify(foundData, null, 2));
+        console.log("huuh");
     }
 })();
 
