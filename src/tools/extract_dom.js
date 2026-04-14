@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const CMP_SELECTORS = require('../utils/cmp_selectors');
 
 /**
- * ARCHITECTURE NOTE: Two-Pass DOM Extraction Strategy
+ * Two-Pass DOM Extraction Strategy
  * 
  * Cookie banners often consist of two layers:
  * 1. The initial banner (accept/reject/settings buttons)
@@ -29,7 +29,7 @@ const CMP_SELECTORS = require('../utils/cmp_selectors');
  */
 
 async function extractFromFrame(frame, selectors) {
-    return await frame.evaluate((selectors) => {
+    const result = await frame.evaluate((selectors) => {
 
         //with this function i try to find every relevant element even if it is in the shadow DOM
         function querySelectorAllDeep(selector, root = document) {
@@ -104,7 +104,6 @@ async function extractFromFrame(frame, selectors) {
             }
         }
 
-        //Step 2 is used if Step 1 fales
         //extract structured and filtered DOM
         //as everything in this code: this is incomplete :)
         const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
@@ -163,11 +162,53 @@ async function extractFromFrame(frame, selectors) {
             toggles,
             cmpType: null,
             url: window.location.href,
-            filteredHtml: body.innerHTML.slice(0, 5000)
+            rawHtml: body.innerHTML,
+            // htmlLength: body.innerHTML.length,
             //not complete!
         };
     }, selectors);
+
+    const cleaned = cleanHtml(result.rawHtml);
+    // console.log(cleaned.length);
+    result.filteredHtml = cleaned.slice(0, 15000);
+    // result.htmlLength = result.rawHtml.length;
+    delete result.rawHtml;
+    
+    return result;
 }
+
+
+function cleanHtml(html) {
+    return html
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/\s*style="[^"]*"/gi, '') //no inline-style
+        .replace(/\s*on\w+="[^"]*"/gi, '')  //no event handler
+        .replace(/\s+/g, ' ')               //
+        .trim();
+}
+//clean HTML tested using heise.de banner
+//version used: 
+// function cleanHtml(html) {
+//     return html
+//     .replace(/\s*style="[^"]*"/gi, '') //no inline-style
+//     .replace(/\s*on\w+="[^"]*"/gi, '')  //no event handler
+//     .replace(/\s+/g, ' ')               //
+//     .trim();
+// }
+//before: settings-subpage "21483",first banner page "15760"
+//after:  settings-subpage "9845",first banner page "7937"
+//--> reduction of around 50%
+
+//using:
+// function cleanHtml(html) {
+//     return html
+//         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+//         .replace(/\s*style="[^"]*"/gi, '') //no inline-style
+//         .replace(/\s*on\w+="[^"]*"/gi, '')  //no event handler
+//         .replace(/\s+/g, ' ')               //
+//         .trim();
+// }
+//changes nothing :)
 
 async function extractStructuredDOM(url) {
     try {
@@ -195,7 +236,7 @@ async function extractStructuredDOM(url) {
         let results = [];
         if (cmpFrame) {
             const data = await extractFromFrame(cmpFrame, CMP_SELECTORS);
-            results.push({frame: cmpFrame, isCmpFrame: true, data})
+            results.push({frame: cmpFrame, frameUrl: cmpFrame.url(), isMainFrame: cmpFrame === page.mainFrame(), isCmpFrame: true, data})
         } else {
             for (const frame of page.frames()) {
                 if (!frame.url() || frame.url() === "about:blank") continue;
@@ -278,22 +319,25 @@ async function extractStructuredDOM(url) {
             const newFrame = await newFramePromise;
                 
                 //debugging
-                const framesAfterClick = page.frames();
-                console.log("Frames nach Klick:");
-                framesAfterClick.forEach((f, i) => console.log(`Frame ${i}: ${f.url()}`));
-                await page.screenshot({ path: 'after_click.png' });
+                // const framesAfterClick = page.frames();
+                // console.log("Frames nach Klick:");
+                // framesAfterClick.forEach((f, i) => console.log(`Frame ${i}: ${f.url()}`));
+                // await page.screenshot({ path: 'after_click.png' });
                 ///////////
 
                 if (newFrame) {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
                     result.settings = await extractFromFrame(newFrame, CMP_SELECTORS);
-                    console.log(JSON.stringify(result.settings.buttons, null, 2));
+                    result.settings.isIframe = newFrame !== page.mainFrame(); //important for Rule later. Is element in iframe? Important for every element!
+                    // console.log(JSON.stringify(result.settings.buttons, null, 2));
                 } else {
                     const htmlAfter = await result.frame.evaluate(() => document.body.innerHTML.length);
                     const contentChanged = Math.abs(htmlAfter - htmlBefore) > 500; // signifikante Änderung
 
                     if (contentChanged) {
                         result.settings = await extractFromFrame(result.frame, CMP_SELECTORS);
-                        console.log(JSON.stringify(result.settings.buttons, null, 2));
+                        result.settings.isIframe = result.frame !== page.mainFrame();
+                        // console.log(JSON.stringify(result.settings.buttons, null, 2));
                     } else {
                         result.settings = null;
                         console.log("Settings click had no effect");
@@ -355,8 +399,10 @@ function findCorrectFrame(page) {
 }
 
 
+
+
 (async () => {
-    const foundData = await extractStructuredDOM("https://spiegel.de");
+    const foundData = await extractStructuredDOM("https://heise.de");
 
     if (foundData) {
         console.log("huuh");
@@ -388,3 +434,8 @@ function findCorrectFrame(page) {
     // //1. Test für Vision-Modell später
     // console.log('Mache Screenshot...');
     // await page.screenshot({ path: 'heise_view.png' });
+
+
+//heise.de is an interesting example because of the structure of the settings-subpage. there are 3 buttons directyl in one row that correspond to each other
+//LLM needs to be able to identify which button is relevant for which other button/setting!
+//needs enough parent/sibling info --> maybe i can jsut solve it by giving enough of the body DOM additionally to the structured information (filtered but not structured)
