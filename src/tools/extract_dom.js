@@ -185,6 +185,8 @@ async function extractFromFrame(frame, selectors) {
         for (const selector of selectors) {
             const el = document.querySelector(selector);
             if (el) {
+                // const cmpKey = Object.keys(CMP_SELECTOR_MAP).find(key => selector.includes(key));
+                // const cmpType = cmpKey ? CMP_SELECTOR_MAP[cmpKey] : null;
                 return {
                     buttons: [], //empty but consistent
                     checkboxes: [],
@@ -288,7 +290,7 @@ async function extractFromFrame(frame, selectors) {
     }, selectors);
 
     const cleaned = cleanHtml(result.html);
-    // console.log(cleaned.length);
+    // console.error(cleaned.length);
     result.filteredHtml = cleaned.slice(0, 15000);
     // result.htmlLength = result.rawHtml.length;
     delete result.html;
@@ -320,11 +322,11 @@ function findCorrectFrame(page) {
     //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
     const DOMAINS = [];
     const frames = page.frames();
-    console.log(`I found ${frames.length} frames.`);
+    console.error(`I found ${frames.length} frames.`);
 
     if (frames.length) {
         frames.forEach((frame, index) => {
-            console.log(`Frame ${index} has the URL: ${frame.url()}`);
+            console.error(`Frame ${index} has the URL: ${frame.url()}`);
         });
     }
 
@@ -391,7 +393,7 @@ function findCorrectFrame(page) {
  */
 async function extractStructuredDom(url) {
     try {
-        console.log("puppeteer-browser is getting started...");
+        console.error("puppeteer-browser is getting started...");
         const browser = await puppeteer.launch({
             headless: "shell", //true should also work
             args: ["--no-sandbox", "--disable-setuid-sandbox"] //these flags are important for Linux/WSL
@@ -399,7 +401,7 @@ async function extractStructuredDom(url) {
 
         const page = await browser.newPage();
 
-        console.log("Navigating to the page...");
+        console.error("Navigating to the page...");
         await page.goto(url, {
             waitUntil: "networkidle2",
             timeout: 30000
@@ -407,7 +409,7 @@ async function extractStructuredDom(url) {
 
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        console.log("page is loaded!");
+        console.error("page is loaded!");
 
         const cmpFrame = await findCorrectFrame(page);
 
@@ -429,7 +431,7 @@ async function extractStructuredDom(url) {
                 result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
             
             if (settingsButton) {
-                console.log(`Settings button found: "${settingsButton.text}"`);
+                console.error(`Settings button found: "${settingsButton.text}"`);
                 //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
                 //two options: extract from all frames again
                 //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
@@ -456,8 +458,8 @@ async function extractStructuredDom(url) {
                 
                 //debugging
                 // const framesAfterClick = page.frames();
-                // console.log("Frames nach Klick:");
-                // framesAfterClick.forEach((f, i) => console.log(`Frame ${i}: ${f.url()}`));
+                // console.error("Frames nach Klick:");
+                // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
                 // await page.screenshot({ path: 'after_click.png' });
                 ///////////
 
@@ -465,7 +467,7 @@ async function extractStructuredDom(url) {
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     result.settings = await extractFromFrame(newFrame, CMP_SELECTORS);
                     result.settings.isIframe = newFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
-                    // console.log(JSON.stringify(result.settings.buttons, null, 2));
+                    console.error(JSON.stringify(result.settings.buttons, null, 2));
                 } else {
                     const htmlAfter = await result.frame.evaluate(() => document.body.innerHTML.length);
                     //contentChanged threshold: 200 chars is intentionally sensitive to catch subtle DOM updates.
@@ -476,10 +478,10 @@ async function extractStructuredDom(url) {
                     if (contentChanged) {
                         result.settings = await extractFromFrame(result.frame, CMP_SELECTORS);
                         result.settings.isIframe = result.frame !== page.mainFrame();
-                        // console.log(JSON.stringify(result.settings.buttons, null, 2));
+                        console.error(JSON.stringify(result.settings.buttons, null, 2));
                     } else {
                         result.settings = null;
-                        console.log("Settings click seems to have had no effect");
+                        console.error("Settings click seems to have had no effect");
                     }
                 }
 
@@ -491,25 +493,34 @@ async function extractStructuredDom(url) {
         }
 
         //TODO: remove before production
-        console.log(results);
+        console.error(results);
+        console.log(JSON.stringify(results));
 
         await browser.close();
-        console.log("browser closed!");
+        console.error("browser closed!");
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
         return null;
     } finally {
-        console.log("extractStructuredDom finished");
+        console.error("extractStructuredDom finished");
     }
     
 };
 
+//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://heise.de");
+    const url = process.argv[2];
+    
+    if (!url) {
+        console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
+        process.exit(1);
+    }
+    
+    const foundData = await extractStructuredDom(url);
 
     if (foundData) {
-        console.log("foundData was filled with a value");
+        console.error("foundData was filled with a value");
     }
 })();
 
