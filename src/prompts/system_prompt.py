@@ -24,19 +24,27 @@ The system consists of two components: a hardcoded engine and interchangeable ru
 and individual cookie banners. The engine reads the JSON and translates it into concrete DOM interactions.
 The JSON defines not how to click, but where and when.
 
-You will receive the extracted DOM of the website. Analyse it
-carefully and complete the following steps in order:
-1. Analyse it carefully and identify the banner structure and the banner elements
-2. Find the CSS selectors needed to detect the banner and its elements
-3. Map each UI element (checkbox, toggle, button, anker) to a consent
+You will receive the extracted DOM of the website in two complementary formats:
+
+1. **Structured elements** (buttons, checkboxes, toggles): 
+    Your primary source for CSS selectors. Pre-extracted and ready to use.
+    Always prefer these over selectors you derive yourself from the HTML.
+
+2. **filteredHtml**: 
+    Context only – use it to understand element hierarchy and sibling 
+    relationships (e.g. which "Agree" button belongs to which consent category).
+    Only derive selectors from the HTML if no structured selector is available.
+
+Analyse the provided data carefully and complete the following steps in order:
+1. Identify the banner structure and its elements
+2. Determine the CSS selectors needed – prioritising the structured elements
+3. Map each UI element (checkbox, toggle, button, anchor) to a consent
     category (A, B, D, E, F, X) and determine the required actions
 4. Before generating the JSON, briefly describe:
-    - Which banner elements you identified in the DOM
-    - Which CSS selectors you will use for detection
-    - How you mapped each UI element to a consent category (A, B, D, E, F, X)
-        and why
+    - Which banner elements you identified
+    - Which CSS selectors you will use and from which source (structured/HTML)
+    - How you mapped each UI element to a consent category and why
 5. Produce the JSON ruleset.
-
 
 A ruleset is successful when the cookie banner disappears after
 execution and all consent categories are correctly mapped.

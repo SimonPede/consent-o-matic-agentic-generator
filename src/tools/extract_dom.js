@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
-const CMP_SELECTORS = require("../utils/cmp_selectors");
+const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
+const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
 
 /**
@@ -43,8 +44,8 @@ function cleanHtml(html) {
 // }
 //changes nothing :)
 
-async function extractFromFrame(frame, selectors) {
-    const result = await frame.evaluate((selectors) => {
+async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) {
+    const result = await frame.evaluate((selectors, selectorsMap) => {
 
         //with this function i try to find every relevant element even if it is in the shadow DOM
         /**
@@ -62,6 +63,8 @@ async function extractFromFrame(frame, selectors) {
          * @param {Document|ShadowRoot} root - Starting point for the search (default: document)
          * @returns {Array} - All matching elements across the entire DOM including Shadow DOMs
          */
+
+        //TO DO: i need to test it
         function querySelectorAllDeep(selector, root = document) {
             let nodes = Array.from(root.querySelectorAll(selector));
             const elements = Array.from(root.querySelectorAll("*"));
@@ -178,24 +181,22 @@ async function extractFromFrame(frame, selectors) {
             );
         }
 
-        //Step 1: Check if a known CMP is present using CSS selectors from Nouwens et al. (2025), Appendix C.
-        //If a known CMP container is found, return it directly (this is the most reliable extraction path)
-        //The CMP name can later be derived from the matched selector (important for Pseudo-RAG example selection).
-        //TODO: derive cmpType from matched selector and return it (e.g. "OneTrust", "Cookiebot")
+        //Step 1: Check if a known CMP banner container is directly accessible in this frame.
+        //cmpType is already determined in findCorrectFrame() via main frame scan.
+        //cmpFound: true signals high-confidence extraction (direct selector match).
+        //cmpFound: false (Step 2) signals generic extraction – LLM gets more raw HTML context.
         for (const selector of selectors) {
             const el = document.querySelector(selector);
             if (el) {
-                // const cmpKey = Object.keys(CMP_SELECTOR_MAP).find(key => selector.includes(key));
-                // const cmpType = cmpKey ? CMP_SELECTOR_MAP[cmpKey] : null;
                 return {
                     buttons: [], //empty but consistent
                     checkboxes: [],
                     toggles: [],
                     cmpFound: true,
-                    cmpType: null, //TODO: derive from selector
+                    // cmpType: selectorsMap[selector] || null, //TODO: derive from selector
                     cmpSelector: selector,
                     url: window.location.href,
-                    html: el.outerHTML.slice(0, 1500), //outerHTML = full HTML of element including children
+                    html: el.outerHTML.slice(0, 15000), //HTML of the detected CMP container including its own tag and all children
                 };
             }
         }
@@ -230,9 +231,9 @@ async function extractFromFrame(frame, selectors) {
                     : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
                         : el.className ? `.${el.className.trim().split(' ')[0]}`
                             : el.tagName.toLowerCase(),
+                            //zählen die wievielte klasse das ist!
                 role: el.getAttribute("role") || null,
                 isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                outerHTML: el.outerHTML
                 //is this enough?
             }));
 
@@ -251,7 +252,6 @@ async function extractFromFrame(frame, selectors) {
                 parentInfo: extractParentInfo(el),
                 ariaChecked: el.getAttribute("aria-checked"),
                 isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                outerHTML: el.outerHTML
             }));
 
         //Extracts native HTML checkboxes via input[type='checkbox'].
@@ -271,7 +271,6 @@ async function extractFromFrame(frame, selectors) {
                 parentInfo: extractParentInfo(el),
                 isChecked: el.checked,
                 isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                outerHTML: el.outerHTML
             }));
 
         return {
@@ -280,62 +279,87 @@ async function extractFromFrame(frame, selectors) {
             toggles,
             cmpFound: false,
             cmpType: null,
+            cmpSelector: null,
             url: window.location.href,
             html: body.innerHTML,
-            // htmlLength: body.innerHTML.length,
-            //TODO: cmpType detection not yet implemented – currently always null.
-            //Should be derived from matched CMP selector in Step 1 (e.g. "[id*='onetrust']" → "OneTrust")
-            //Important for Pseudo-RAG: cmpType determines which few-shot examples are loaded.
         };
-    }, selectors);
+    }, selectors, selectorsMap);
 
-    const cleaned = cleanHtml(result.html);
-    // console.error(cleaned.length);
-    result.filteredHtml = cleaned.slice(0, 15000);
-    // result.htmlLength = result.rawHtml.length;
-    delete result.html;
+    if (result.html) {
+        const cleaned = cleanHtml(result.html);
+        result.filteredHtml = cleaned.slice(0, 15000);
+        delete result.html;
+    }
+
+    result.cmpType = cmpType;
+    if (!result.cmpFound) {
+        result.cmpFound = cmpType !== null;
+    }
     
     return result;
 }
 
 /**
- * Attempts to identify the iFrame that hosts the CMP cookie banner.
+ * Identifies the CMP type and the iframe that hosts the cookie banner.
  * 
- * Many CMPs load their banner in a dedicated iFrame with a CMP-related URL
- * (e.g. "cmp.heise.de"). If such a frame is found,
- * only that frame is extracted (avoiding unnecessary extraction from all frames)
+ * Step 1: Scans the main frame for known CMP containers using CSS selectors
+ * from CMP_SELECTORS_MAP (Nouwens et al. 2025, Appendix C). Returns the CMP
+ * name (e.g. "Sourcepoint", "OneTrust") if found, null otherwise.
  * 
- * If no CMP frame is identified via URL regex, null is returned as a signal to
- * extractStructuredDOM() to fall back to iterating over all available frames.
+ * Step 2: Searches all frames for a CMP-related URL via regex. If found,
+ * returns that frame directly. If not, returns null as signal to
+ * extractStructuredDOM() to fall back to iterating over all frames.
  * 
- * Note: The regex patterns are educated guesses based on known CMP naming conventions,
- * not derived from systematic data. May produce false positives or miss unknown CMPs.
+ * Note: URL regex patterns are educated guesses based on known CMP naming
+ * conventions, not derived from systematic data.
  * 
- * TODO: The DOMAINS array could be populated with known CMP iframe domains
+ * TODO: DOMAINS array could be populated with known CMP iframe domains
  * as an additional detection layer.
  * 
- * @param {Page} page - Puppeteer page instance of the loaded website
- * @returns {Frame|null} - CMP iframe if found, null if no CMP frame detected
+ * @param {Page} page - Puppeteer page instance
+ * @param {Object} selectorMap - CSS selector → CMP name map (CMP_SELECTORS_MAP)
+ * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
-function findCorrectFrame(page) {
-    const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|osano|complianz|termsfeed|cookienotice|cookiinformation|cookiescript|moove|consentmanager|consent/i;
+
+//TODO: description needs to be updated!
+async function findCorrectFrame(page, selectorMap) {
+    const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager/i;
     //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
     const DOMAINS = [];
     const frames = page.frames();
+
+    //just for debugging:
     console.error(`I found ${frames.length} frames.`);
 
-    if (frames.length) {
-        frames.forEach((frame, index) => {
-            console.error(`Frame ${index} has the URL: ${frame.url()}`);
-        });
-    }
+    // if (frames.length) {
+    //     frames.forEach((frame, index) => {
+    //         console.error(`Frame ${index} has the URL: ${frame.url()}`);
+    //     });
+    // }
+    /////////
+
+
+    //CMP type detection runs on the main frame only.
+    //Although the banner itself loads in a CMP iframe, the CMP provider seems t
+    //place a container element (e.g. div#sp_message_container) in the main frame
+    //to bootstrap the iframe. This container carries the CMP-specific selector
+    //and is therefore the reliable detection point.
+    //TODO: test it
+    const mainFrame = page.mainFrame();
+    const cmpType = await mainFrame.evaluate((selectorMap) => {
+        for (const [selector, cmpName] of Object.entries(selectorMap)) {
+            if (document.querySelector(selector)) {
+                return cmpName;
+            }
+        }
+        return null;
+    }, selectorMap);
+
+    console.error(`CMP Type detected: ${cmpType}`);
 
     let cmpFrame = frames.find(frame => cmpRegex.test(frame.url()));
 
-    if (cmpFrame) {
-        return cmpFrame;
-    }
-    return null;
+    return { frame: cmpFrame || null, cmpType };
 }
 
 /**
@@ -411,16 +435,16 @@ async function extractStructuredDom(url) {
 
         console.error("page is loaded!");
 
-        const cmpFrame = await findCorrectFrame(page);
+        const { frame: cmpFrame, cmpType } = await findCorrectFrame(page, CMP_SELECTORS_MAP);
 
         let results = [];
         if (cmpFrame) {
-            const data = await extractFromFrame(cmpFrame, CMP_SELECTORS);
-            results.push({frame: cmpFrame, frameUrl: cmpFrame.url(), isMainFrame: cmpFrame === page.mainFrame(), isCmpFrame: true, data})
+            const data = await extractFromFrame(cmpFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
+            results.push({frame: cmpFrame, frameUrl: cmpFrame.url(), isMainFrame: cmpFrame === page.mainFrame(), isCmpFrame: true, cmpType, data})
         } else {
             for (const frame of page.frames()) {
                 if (!frame.url() || frame.url() === "about:blank") continue;
-                const data = await extractFromFrame(frame, CMP_SELECTORS);
+                const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
                 results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCmpFrame: false, data });
             }   
         }
@@ -436,6 +460,7 @@ async function extractStructuredDom(url) {
                 //two options: extract from all frames again
                 //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
                 //otherwise look for new iframes that got loaded
+                //TODO: more advanced solution for detecting if DOM changed, maybe use a sort of diff-funtion of a library to determine what changed
                 const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
                 const htmlBefore = await result.frame.evaluate(() => document.body.innerHTML.length);
 
@@ -465,9 +490,9 @@ async function extractStructuredDom(url) {
 
                 if (newFrame) {
                     await new Promise(resolve => setTimeout(resolve, 2000));
-                    result.settings = await extractFromFrame(newFrame, CMP_SELECTORS);
+                    result.settings = await extractFromFrame(newFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
                     result.settings.isIframe = newFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
-                    console.error(JSON.stringify(result.settings.buttons, null, 2));
+                    // console.error(JSON.stringify(result.settings.buttons, null, 2));
                 } else {
                     const htmlAfter = await result.frame.evaluate(() => document.body.innerHTML.length);
                     //contentChanged threshold: 200 chars is intentionally sensitive to catch subtle DOM updates.
@@ -476,9 +501,9 @@ async function extractStructuredDom(url) {
                     const contentChanged = Math.abs(htmlAfter - htmlBefore) > 200;
 
                     if (contentChanged) {
-                        result.settings = await extractFromFrame(result.frame, CMP_SELECTORS);
+                        result.settings = await extractFromFrame(result.frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
                         result.settings.isIframe = result.frame !== page.mainFrame();
-                        console.error(JSON.stringify(result.settings.buttons, null, 2));
+                        // console.error(JSON.stringify(result.settings.buttons, null, 2));
                     } else {
                         result.settings = null;
                         console.error("Settings click seems to have had no effect");
@@ -494,6 +519,44 @@ async function extractStructuredDom(url) {
 
         //TODO: remove before production
         console.error(results);
+        console.error("\n========== EXTRACTION RESULTS ==========");
+        for (const result of results) {
+            console.error(`\nFrame: ${result.frameUrl}`);
+            console.error(`   isMainFrame: ${result.isMainFrame} | isCmpFrame: ${result.isCmpFrame}`);
+            
+            if (result.data.cmpFound) {
+                console.error(`  Known CMP detected: ${result.data.cmpType || "unknown"} via selector "${result.data.cmpSelector}"`);
+            } else {
+                console.error(`  No known CMP – generic extraction`);
+            }
+
+            console.error(`\n  Buttons found (${result.data.buttons.length}):`);
+            for (const btn of result.data.buttons) {
+                console.error(`      [${btn.tag}] "${btn.text}" → selector: ${btn.selector}`);
+            }
+
+            console.error(`\n   Checkboxes found (${result.data.checkboxes.length}):`);
+            for (const cb of result.data.checkboxes) {
+                console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled}`);
+            }
+
+            console.error(`\n  Toggles found (${result.data.toggles.length}):`);
+            for (const tgl of result.data.toggles) {
+                console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked}`);
+            }
+
+            if (result.settings) {
+                console.error(`\n   Settings page extracted (isIframe: ${result.settings.isIframe}):`);
+                console.error(`      Buttons: ${result.settings.buttons.length} | Checkboxes: ${result.settings.checkboxes.length} | Toggles: ${result.settings.toggles.length}`);
+                for (const btn of result.settings.buttons) {
+                    console.error(`      [${btn.tag}] "${btn.text}" → selector: ${btn.selector}`);
+                }
+            } else {
+                console.error(`\n   No settings page found`);
+            }
+        }
+        console.error("========================================\n");
+        // ============================================================
         console.log(JSON.stringify(results));
 
         await browser.close();
@@ -509,43 +572,26 @@ async function extractStructuredDom(url) {
 };
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
-(async () => {
-    const url = process.argv[2];
+// (async () => {
+//     const url = process.argv[2];
     
-    if (!url) {
-        console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
-        process.exit(1);
-    }
+//     if (!url) {
+//         console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
+//         process.exit(1);
+//     }
     
-    const foundData = await extractStructuredDom(url);
+//     const foundData = await extractStructuredDom(url);
 
+//     if (foundData) {
+//         console.error("foundData was filled with a value");
+//     }
+// })();
+
+
+//for seperate testing:
+(async () => {
+    const foundData = await extractStructuredDom("https://heise.de");
     if (foundData) {
-        console.error("foundData was filled with a value");
+        console.log("foundData was filled with a value");
     }
 })();
-
-// Note on Heise.de & Complex Layouts:
-// Sites like Heise.de present a specific challenge where multiple buttons (e.g., "Accept", "Settings", "Reject") are laid out in a single row or grid.
-// The LLM must understand which descriptions or labels correspond to which specific buttons.
-
-// Solution Strategy:
-// To solve this, we must provide sufficient parent and sibling information. If the structured JSON is too abstract, we should augment it
-// by providing a "cleaned" version of the parent container's DOM. This allows the LLM to "see" the spatial proximity of elements,
-// ensuring it identifies which toggle belongs to which privacy setting.
-
-//Goals and Advancements
-// Shadow-DOM Support: Implement recursive traversal to access elements encapsulated within Shadow Roots, as many modern CMPs use Shadow DOM for style isolation.
-// Optimized Frame Filtering: Refine the frame selection logic. While the system currently scans multiple frames, we should prioritize identifying and traversing the single most relevant CMP frame to minimize noise and processing time.
-//      - for every type i collect essential element information such as: type, text, attributes, tags, id, class, checked, disabled, labelText, ariaChecked, parent-Struktur und immer outer-HTML!
-//      - Only process elements that are physically rendered and visible to the user (e.g., check for offsetParent !== null or computed visibility/display styles)
-//      - Heuristic Action Mapping: Implement a classification layer to assign a likely_action based on element text or labels.
-            //Example: A button containing "Accept all" or "Alle akzeptieren" is mapped to likely_action: ACCEPT_ALL.
-//      - The FrameData Object: Consolidate all extracted elements into a single structured object per frame.
-        // results.push({
-        //     frameUrl: frame.url(),
-        //     isMainFrame: frame === page.mainFrame(),
-        //     isCMPFrame: true, // Based on heuristic detection
-        //     data: frameData    // Contains the structured element lists
-        // });
-// HTML Sanitization: Strictly strip non-relevant code from the collected outerHTML snippets, including <script>, <img>, <iframe>, and all inline CSS (style="...").
-// Noise Reduction: Minimize the DOM depth provided to the LLM to focus strictly on the interactive "branches" of the tree.
