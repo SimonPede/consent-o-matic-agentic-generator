@@ -13,6 +13,9 @@ function cleanHtml(html) {
         //removes all <script> tags and their internal logic
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
         //strip inline CSS styles (style="...") as layout info is irrelevant for rule generation
+        //NOTE: inline styles are stripped to reduce token count.
+        //This means the LLM cannot use CoM's styleFilter based on the filteredHtml.
+        //TODO: check if style-filtering is often used in CoM and ask Clemens etc.
         .replace(/\s*style="[^"]*"/gi, "")
         //removes inline JS event handlers (e.g., onclick, onload)
         .replace(/\s*on\w+="[^"]*"/gi, "")
@@ -201,7 +204,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             }
         }
         
-        //Step 2: No known CMP detected → extract structured DOM via negative filtering.
+        //Step 2: No known CMP detected --> extract structured DOM via negative filtering.
         //Strategy: clone the body, remove elements that are definitely NOT the banner
         // (nav, header, footer etc.), then extract all interactive elements.
 
@@ -218,24 +221,44 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
         const buttons = querySelectorAllDeep("button, a, [role='button']")
             .filter(isVisible)
-            .map(el => ({
-                type: "button or anker",
-                text: el.innerText.trim(),
-                tag: el.tagName,
-                attributes: extractAllAttributes(el),
-                parentInfo: extractParentInfo(el),
-                //Selector priority: id (unique) > aria-label (often unique) > first class (fallback) > tag (last resort)
-                //TODO: improve selector uniqueness – first class alone may match multiple elements
-                //i could try to extract the sibling context, but maybe the LLM gets enough info with the filteredHTML of the body
-                selector: el.id ? `#${el.id}`
-                    : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                        : el.className ? `.${el.className.trim().split(' ')[0]}`
-                            : el.tagName.toLowerCase(),
-                            //zählen die wievielte klasse das ist!
-                role: el.getAttribute("role") || null,
-                isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                //is this enough?
-            }));
+            .map(el => {
+                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                return {
+                    type: "button or anker",
+                    text: el.innerText.trim(),
+                    tag: el.tagName,
+                    attributes: extractAllAttributes(el),
+                    parentInfo: extractParentInfo(el),
+                    //Selector priority: id (unique) > aria-label (often unique) > first class found (fallback) > tag (last resort)
+                    //TODO: improve selector uniqueness
+                    //my solution:
+                    // Selector generation strategy (priority order):
+                    //1. id --> globally unique, most reliable
+                    //2. aria-label --> often unique, accessibility-friendly
+                    //3. first CSS class, if unique in document (classCount === 1) --> medium confidence
+                    //4. first CSS class, if rare (classCount <= 5) --> low confidence, may need textFilter in CoM
+                    //5. tag name only --> last resort, very low confidence
+                    //
+                    //selectorConfidence signals to the LLM how reliable the selector is.
+                    //For low/very_low confidence: consider using CoM's textFilter or parentInfo
+                    //to make the selector more specific in the generated ruleset.
+                    //
+                    //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
+                    selector: el.id ? `#${el.id}`
+                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                    : el.tagName.toLowerCase(),
+                    selectorConfidence: el.id ? "very high"
+                        : el.getAttribute("aria-label") ? "high"
+                            : firstClass && classCount === 1 ? "medium"
+                                : firstClass ? "low" : "very low",
+                    role: el.getAttribute("role") || null,
+                    isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                    //is this enough?
+                }
+            });
 
         //TODO: Toggle detection via class names (.toggle, .switch) may produce false positives.
         //Consider adding a text-based filter using cookie-related keywords to reduce noise.
@@ -244,15 +267,28 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //native <input type="checkbox"> – hence the role="switch" selector.
         const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']")
             .filter(isVisibleInput)
-            .map(el => ({
-                type: "toggle",
-                text: el.innerText.trim(),
-                tag: el.tagName,
-                attributes: extractAllAttributes(el),
-                parentInfo: extractParentInfo(el),
-                ariaChecked: el.getAttribute("aria-checked"),
-                isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-            }));
+            .map(el => {
+                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                return {
+                    type: "toggle",
+                    text: el.innerText.trim(),
+                    tag: el.tagName,
+                    attributes: extractAllAttributes(el),
+                    parentInfo: extractParentInfo(el),
+                    selector: el.id ? `#${el.id}`
+                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                    : el.tagName.toLowerCase(),
+                    selectorConfidence: el.id ? "very high"
+                        : el.getAttribute("aria-label") ? "high"
+                            : firstClass && classCount === 1 ? "medium"
+                                : firstClass ? "low" : "very low",
+                    ariaChecked: el.getAttribute("aria-checked"),
+                    isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                }
+            });
 
         //Extracts native HTML checkboxes via input[type='checkbox'].
         //Native checkboxes are more reliably detected than custom styled elements
@@ -263,15 +299,28 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //labelText is critical here since input elements have no innerText of their own.
         const checkboxes = querySelectorAllDeep("input[type='checkbox']")
             .filter(isVisibleInput)
-            .map(el => ({
-                type: "checkbox",
-                labelText: findLabelForInput(el),
-                tag: el.tagName,
-                attributes: extractAllAttributes(el),
-                parentInfo: extractParentInfo(el),
-                isChecked: el.checked,
-                isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-            }));
+            .map(el => {
+                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                return {
+                    type: "checkbox",
+                    labelText: findLabelForInput(el),
+                    tag: el.tagName,
+                    attributes: extractAllAttributes(el),
+                    parentInfo: extractParentInfo(el),
+                    selector: el.id ? `#${el.id}`
+                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                    : el.tagName.toLowerCase(),
+                    selectorConfidence: el.id ? "very high"
+                        : el.getAttribute("aria-label") ? "high"
+                            : firstClass && classCount === 1 ? "medium"
+                                : firstClass ? "low" : "very low",
+                    isChecked: el.checked,
+                    isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                }
+            });
 
         return {
             buttons,
@@ -317,7 +366,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
  * as an additional detection layer.
  * 
  * @param {Page} page - Puppeteer page instance
- * @param {Object} selectorMap - CSS selector → CMP name map (CMP_SELECTORS_MAP)
+ * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
  * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
 
@@ -532,7 +581,7 @@ async function extractStructuredDom(url) {
 
             console.error(`\n  Buttons found (${result.data.buttons.length}):`);
             for (const btn of result.data.buttons) {
-                console.error(`      [${btn.tag}] "${btn.text}" → selector: ${btn.selector}`);
+                console.error(`      [${btn.tag}] "${btn.text}" --> selector: ${btn.selector}`);
             }
 
             console.error(`\n   Checkboxes found (${result.data.checkboxes.length}):`);
@@ -549,7 +598,7 @@ async function extractStructuredDom(url) {
                 console.error(`\n   Settings page extracted (isIframe: ${result.settings.isIframe}):`);
                 console.error(`      Buttons: ${result.settings.buttons.length} | Checkboxes: ${result.settings.checkboxes.length} | Toggles: ${result.settings.toggles.length}`);
                 for (const btn of result.settings.buttons) {
-                    console.error(`      [${btn.tag}] "${btn.text}" → selector: ${btn.selector}`);
+                    console.error(`      [${btn.tag}] "${btn.text}" --> selector: ${btn.selector}`);
                 }
             } else {
                 console.error(`\n   No settings page found`);

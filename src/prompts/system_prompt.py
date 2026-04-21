@@ -29,6 +29,17 @@ You will receive the extracted DOM of the website in two complementary formats:
 1. **Structured elements** (buttons, checkboxes, toggles): 
     Your primary source for CSS selectors. Pre-extracted and ready to use.
     Always prefer these over selectors you derive yourself from the HTML.
+    
+    Each structured element includes amongst other fields a **selectorConfidence** field:
+        - **very high** / **high**: Use the selector directly in the ruleset.
+        - **medium**: Selector is likely unique – use it, but verify against filteredHtml.
+        - **low** / **very low**: Selector may match multiple elements. 
+        Use CoM's `textFilter` or `parentInfo` to make it more specific.
+        Example: instead of `{ "selector": ".message-button" }`, use:
+        `{ "selector": ".message-button", "textFilter": "Agree" }`
+        or use the parent context:
+        `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
+        "target": { "selector": "button" }`
 
 2. **filteredHtml**: 
     Context only – use it to understand element hierarchy and sibling 
