@@ -47,6 +47,64 @@ function cleanHtml(html) {
 // }
 //changes nothing :)
 
+
+/**
+ * LLM-based fallback for settings button detection.
+ * Called when SETTINGS_PATTERN regex fails to identify a settings button.
+ * Sends filteredHtml to Ollama and expects a single CSS selector in return.
+ * 
+ * @param {string} html - filteredHtml from extractFromFrame()
+ * @returns {string|null} - CSS selector or null
+ */
+async function findSettingsButtonViaLLM(html) {
+    const OLLAMA_URL = process.env.OLLAMA_URL || "http://localhost:11434";
+    const OLLAMA_TOKEN = process.env.OLLAMA_TOKEN || "";
+    try {
+        const response = await fetch(`${OLLAMA_URL}/api/generate`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${OLLAMA_TOKEN}`
+            },
+            body: JSON.stringify({
+                model: "gemma4",
+                prompt: `You are analysing a cookie banner HTML.
+                        Find the button or link that opens the settings or preferences page.
+                        Return ONLY a valid CSS selector string, nothing else.
+                        No explanation, no JSON, no markdown: just the raw selector.
+
+                        Examples of valid responses:
+                        [aria-label="Settings"]
+                        .settings-button
+                        #cookie-preferences-btn
+
+                        HTML:
+                        ${html.slice(0, 10000)}`,
+                stream: false
+            })
+        });
+
+        if (!response.ok) {
+            console.error(`LLM call failed: ${response.status}`);
+            return null;
+        }
+
+        const data = await response.json();
+        const selector = String(data.response?.trim());
+        
+        if (!selector) {
+            return null;
+        }
+        
+        console.log(`LLM suggested settings selector: "${selector}"`);
+        return selector;
+
+    } catch (error) {
+        console.error("findSettingsButtonViaLLM failed:", error.message);
+        return null;
+    }
+}
+
 async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) {
     const result = await frame.evaluate((selectors, selectorsMap) => {
 
@@ -412,6 +470,87 @@ async function findCorrectFrame(page, selectorMap) {
 }
 
 /**
+ * Handles the click on a settings/preferences button and extracts the resulting DOM.
+ * Extracted as a separate function to avoid code duplication between the regex-based
+ * and LLM-based settings button detection paths.
+ * 
+ * After clicking, two scenarios are handled:
+ * 1. A new iframe appears --> extract from the new frame
+ * 2. The existing frame DOM changes significantly --> extract from the same frame
+ * 
+ * @param {Frame} frame - Puppeteer frame containing the settings button
+ * @param {string} selector - CSS selector of the settings button to click
+ * @param {Page} page - Puppeteer page instance (needed to detect new frames)
+ * @param {string|null} cmpType - detected CMP name, propagated to extraction result
+ * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
+ */
+async function clickAndExtractSettings(frame, selector, page, cmpType) {
+    //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
+    //two options: extract from all frames again
+    //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
+    //otherwise look for new iframes that got loaded
+    //TODO: currently using character count difference as a proxy for DOM change.
+    //More robust alternative: use "diff" library (npm install diff) with Diff.diffChars()
+    //to count actually added/removed characters rather than total length delta.
+    //Even better: dom-compare library for structural DOM diffing.
+    const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
+    const htmlBefore = await frame.evaluate(() => document.body.innerHTML.length);
+
+    try {
+        await frame.click(selector);
+    } catch (err) {
+        console.error("Click failed:", e.message);
+        return null;
+    }
+    // await new Promise(resolve => setTimeout(resolve, 5000));
+
+    // const newFrame = page.frames().find(f => !framesBefore.includes(f.url())); //which frame is new?
+    const newFramePromise = new Promise(resolve => {
+        const check = setInterval(() => {
+            const newFrame = page.frames().find(f => !framesBefore.includes(f.url()));
+            if (newFrame) {
+                clearInterval(check);
+                resolve(newFrame);
+            }
+        }, 200);
+        setTimeout(() => { clearInterval(check); resolve(null) }, 5000); //max 5s
+    });
+
+    const newFrame = await newFramePromise;
+    
+    //debugging
+    // const framesAfterClick = page.frames();
+    // console.error("Frames nach Klick:");
+    // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
+    // await page.screenshot({ path: 'after_click.png' });
+    ///////////
+
+    if (newFrame) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const settings = await extractFromFrame(newFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
+        settings.isIframe = newFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
+        return settings;
+        // console.error(JSON.stringify(result.settings.buttons, null, 2));
+    } else {
+        const htmlAfter = await frame.evaluate(() => document.body.innerHTML.length);
+        //contentChanged threshold: 200 chars is intentionally sensitive to catch subtle DOM updates.
+        //Risk: may produce false positives on pages with dynamic content unrelated to the banner.
+        //TODO: evaluate optimal threshold empirically across test dataset.
+        const contentChanged = Math.abs(htmlAfter - htmlBefore) > 200;
+
+        if (contentChanged) {
+            const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
+            settings.isIframe = frame !== page.mainFrame();
+            return settings;
+            // console.error(JSON.stringify(result.settings.buttons, null, 2));
+        } else {
+            return null;
+            console.error("Settings click seems to have had no effect");
+        }
+    }
+}
+
+/**
  * Two-Pass DOM Extraction Strategy
  * 
  * Cookie banners often consist of two layers:
@@ -447,10 +586,11 @@ async function findCorrectFrame(page, selectorMap) {
  * 
  * Workflow:
  * 1. Launch browser and navigate to URL
- * 2. Find the correct frame (CMP iframe or all frames as fallback)
+ * 2. Detect CMP type and find the correct frame via findCorrectFrame()
  * 3. Extract initial banner DOM via extractFromFrame()
  * 4. Search for a settings button using a multilingual regex (SETTINGS_PATTERN)
- * 5. If found: click it, detect the resulting frame change, extract settings DOM
+ * 5a. If regex succeeds: click and extract settings DOM via clickAndExtractSettings()
+ * 5b. If regex fails: LLM fallback via findSettingsButtonViaLLM(), then same click logic
  * 
  * waitUntil "networkidle2" waits until at most 2 network requests are active.
  * An additional 2s buffer handles dynamically injected banners that load after
@@ -461,8 +601,9 @@ async function findCorrectFrame(page, selectorMap) {
  *   - frameUrl: URL of the extracted frame
  *   - isMainFrame: whether the frame is the main page frame
  *   - isCmpFrame: whether a CMP iframe was detected via URL regex
+ *   - cmpType: detected CMP name (e.g. "Sourcepoint", "OneTrust") or null
  *   - data: initial banner extraction (buttons, checkboxes, toggles, filteredHtml)
- *   - settings: settings page extraction, or null if no settings button found
+ *   - settings: settings page extraction, or null if no settings button found/clicked
  */
 async function extractStructuredDom(url) {
     try {
@@ -504,63 +645,15 @@ async function extractStructuredDom(url) {
                 result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
             
             if (settingsButton) {
-                console.error(`Settings button found: "${settingsButton.text}"`);
-                //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
-                //two options: extract from all frames again
-                //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
-                //otherwise look for new iframes that got loaded
-                //TODO: more advanced solution for detecting if DOM changed, maybe use a sort of diff-funtion of a library to determine what changed
-                const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
-                const htmlBefore = await result.frame.evaluate(() => document.body.innerHTML.length);
-
-                await result.frame.click(settingsButton.selector);
-                // await new Promise(resolve => setTimeout(resolve, 5000));
-
-                // const newFrame = page.frames().find(f => !framesBefore.includes(f.url())); //which frame is new?
-                const newFramePromise = new Promise(resolve => {
-                    const check = setInterval(() => {
-                        const newFrame = page.frames().find(f => !framesBefore.includes(f.url()));
-                        if (newFrame) {
-                            clearInterval(check);
-                            resolve(newFrame);
-                        }
-                    }, 200);
-                    setTimeout(() => { clearInterval(check); resolve(null) }, 5000); //max 5s
-                });
-
-                const newFrame = await newFramePromise;
-                
-                //debugging
-                // const framesAfterClick = page.frames();
-                // console.error("Frames nach Klick:");
-                // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
-                // await page.screenshot({ path: 'after_click.png' });
-                ///////////
-
-                if (newFrame) {
-                    await new Promise(resolve => setTimeout(resolve, 2000));
-                    result.settings = await extractFromFrame(newFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                    result.settings.isIframe = newFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
-                    // console.error(JSON.stringify(result.settings.buttons, null, 2));
-                } else {
-                    const htmlAfter = await result.frame.evaluate(() => document.body.innerHTML.length);
-                    //contentChanged threshold: 200 chars is intentionally sensitive to catch subtle DOM updates.
-                    //Risk: may produce false positives on pages with dynamic content unrelated to the banner.
-                    //TODO: evaluate optimal threshold empirically across test dataset.
-                    const contentChanged = Math.abs(htmlAfter - htmlBefore) > 200;
-
-                    if (contentChanged) {
-                        result.settings = await extractFromFrame(result.frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                        result.settings.isIframe = result.frame !== page.mainFrame();
-                        // console.error(JSON.stringify(result.settings.buttons, null, 2));
-                    } else {
-                        result.settings = null;
-                        console.error("Settings click seems to have had no effect");
-                    }
-                }
-
+                result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
             } else {
-                result.settings = null;
+                console.log("Regex failed: trying LLM fallback...");
+                const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
+                if (llmSelector) {
+                    result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
+                } else {
+                    result.settings = null;
+                }
             }
             
             delete result.frame; //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
