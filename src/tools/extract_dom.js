@@ -2,7 +2,19 @@ const puppeteer = require("puppeteer");
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
-
+//aus DarkDialogs-pdf, Appendix A.2
+const TABLE_6_CUSTOM_SELECTORS = [
+    'div[class*="gdpr"]', 'div[class*="Cookie"]', 'div[class*="cookie"]',
+    'div[class*="Privacy"]', 'div[class*="privacy"]', 'div[class*="Policy"]',
+    'div[class*="policy"]', 'div[class*="Consent"]', 'div[class*="consent"]',
+    'div[class*="Notice"]', 'div[class*="notice"]', 'div[class*="Dialog"]',
+    'div[class*="dialog"]', 'div[id*="gdpr"]', 'div[id*="Cookie"]',
+    'div[id*="cookie"]', 'div[id*="Privacy"]', 'div[id*="privacy"]',
+    'div[id*="Policy"]', 'div[id*="policy"]', 'div[id*="Consent"]',
+    'div[id*="consent"]', 'div[id*="Notice"]', 'div[id*="notice"]',
+    'div[id*="Dialog"]', 'div[id*="dialog"]', 'div[data-project*="cmp"]',
+    'div[id*="cmp"]'
+];
 /**
  * Minimizes HTML noise to optimize context for the LLM.
  * Removes non-structural data like scripts, inline styles, and event handlers
@@ -405,6 +417,128 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     return result;
 }
 
+async function frameWordCounter(frames, avgWordCount) {
+    const wordCounts = [];
+
+    for (const frame of frames) {
+        try {
+            const count =  await frame.evaluate(() => {
+                const text = document.body ? document.body.innerText.trim() : "";
+                return text.split(/\s+/).filter(w => w.length > 0).length;
+            });
+            wordCounts.push(count);
+        } catch (err) {
+            continue;
+        }
+    }
+
+    if (!wordCounts.length) {
+        return 0;
+    }
+
+    const sum = wordCounts.reduce((acc, curr) => acc + curr, 0);
+    return sum / wordCounts.length;
+}
+
+//this weighting logic is totaly based on "DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs" (paper)
+async function calculateFrameScore(frame, avgWordCount, selectorMap) {
+    //copied from DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs A.3 Appendix
+    //TODO: add other languages!
+    const N_GRAM_DATA = {
+        5: [
+            "access information on a device", "and or access information on",
+            "store and or access information", "use cookies and similar technologies",
+            "ad and content measurement audience", "and content measurement audience insights",
+            "audience insights and product development", "content measurement audience insights and",
+            "improve your experience on our", "informationen auf einem gerät speichern",
+            "measurement audience insights and product",
+            "verwendung von cookies und ähnlichen", "basierend auf browsereinstellungen und gerätekennungen"
+        ],
+        4: [
+            "we use cookies to", "use cookies and similar", "cookies and similar technologies", "information on a device",
+            "at any time by", "and or access information", "access information on a", "you can change your",
+            "you can change your", "wir verwenden cookies um", "or access information on", "store and or access",
+            "cookies und ähnliche technologien", "sie können ihre einstellungen"
+        ],
+        3: [
+            "we use cookies", "at any time", "our cookie policy", "use cookies and", "use cookies to", "cookies and similar",
+            "use of cookies", "learn more about", "and our partners", "and similar technologies", "our cookie policy",
+            "wir verwenden cookies", "jederzeit wieder ändern", "unsere cookie richtlinie"
+        ],
+        2: [
+            "use cookies", "cookies and", "cookies to", "we use", "accept all", "any time", "at any", "you agree",
+            "learn more", "manage preferences",
+            "alle akzeptieren", "mehr erfahren", "einstellungen verwalten"
+        ],
+        1: [
+            "cookies", "cookie", "track", "tracking", "einwilligung", "datenschutz"
+        ]
+    };
+    try {
+        return await frame.evaluate((customS, avg, selectorMap, nGrams) => {
+            const el = document.body;
+            if (!el) {
+                return -100;
+            }
+            //orientates on "Ranking Factor: Candidate could not be screenshotted", page 18 from paper
+            const rect = el.getBoundingClientRect();
+            const style = window.getComputedStyle(el);
+            const isVisible = rect.width > 0 && 
+                            rect.height > 0 && 
+                            style.display !== "none" &&
+                            style.visibility !== "hidden";
+
+            if (!isVisible) {
+                return -100;
+            }
+
+            let score = 0;
+            const text = document.body ? document.body.innerText.trim() : "";
+            const words = text.split(/\s+/).filter(w => w.length > 0);
+            const wordsCounter = words.length;
+
+            if (wordsCounter === 0) {
+                return -100;
+            } else if (wordsCounter < 5) {
+                score -= 20;
+            } else if (wordsCounter > (avg + 100)) {
+                score -= 20;
+            }
+
+            for (const selector of customS) {
+                if (document.querySelector(selector)) {
+                    score += 2;
+                    break;
+                }
+            }
+
+            for (const selector of Object.keys(selectorMap)) {
+                if (document.querySelector(selector)) {
+                    score += 10;
+                    break;
+                }
+            }
+
+            //N-Gram Analyse used by paper would need translation into english
+            //far to slow and costly for my agent system. i try to use a similar but simplified version
+            for (const [n, phrases] of Object.entries(nGrams).reverse()) {
+                const weight = parseInt(n);
+                for (const phrase of phrases) {
+                    const regex = new RegExp(phrase, "i");
+                    if (regex.test(text)) {
+                        score += weight;
+                    }
+                }
+            }
+
+            return score;
+        }, TABLE_6_CUSTOM_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA);
+    } catch (err) {
+        console.error("frame could not be scored!");
+        return -100;
+    }
+}
+
 /**
  * Identifies the CMP type and the iframe that hosts the cookie banner.
  * 
@@ -492,6 +626,25 @@ async function findCorrectFrame(page, selectorMap) {
             return { frame, cmpType };
         }
     }
+
+    const avgWordCount = await frameWordCounter(frames);
+    let bestFrame = null;
+    let maxScore = -101;
+
+    for (const frame of frames) {
+        const score = await calculateFrameScore(frame, avgWordCount, selectorMap);
+
+        if (score > maxScore) {
+            maxScore = score;
+            bestFrame = frame;
+        }
+    }
+
+    if (bestFrame && maxScore > 0) {
+        console.error(`a frame was picked by score: ${bestFrame.url()} with Score: ${maxScore}`);
+        return { frame: bestFrame, cmpType};
+    }
+    //TODO: maybe return a list of frames with at least score > -50 as fallback instead of nothing?
 
     return { frame: null, cmpType };
 }
@@ -627,7 +780,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
  * @returns {Array|null} - Array of result objects, each containing:
  *   - frameUrl: URL of the extracted frame
  *   - isMainFrame: whether the frame is the main page frame
- *   - isCmpFrame: whether a CMP iframe was detected via URL regex
+ *   - isCookieFrame: whether a Cookie-Banner iframe was detected or not
  *   - cmpType: detected CMP name (e.g. "Sourcepoint", "OneTrust") or null
  *   - data: initial banner extraction (buttons, checkboxes, toggles, filteredHtml)
  *   - settings: settings page extraction, or null if no settings button found/clicked
@@ -652,18 +805,23 @@ async function extractStructuredDom(url) {
 
         console.error("page is loaded!");
 
-        const { frame: cmpFrame, cmpType } = await findCorrectFrame(page, CMP_SELECTORS_MAP);
+        const { frame: cookieBannerFrame, cmpType } = await findCorrectFrame(page, CMP_SELECTORS_MAP);
 
         let results = [];
-        if (cmpFrame) {
-            const data = await extractFromFrame(cmpFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-            results.push({frame: cmpFrame, frameUrl: cmpFrame.url(), isMainFrame: cmpFrame === page.mainFrame(), isCmpFrame: true, cmpType, data})
+        if (cookieBannerFrame) {
+            const data = await extractFromFrame(cookieBannerFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
+            results.push({frame: cookieBannerFrame, frameUrl: cookieBannerFrame.url(), isMainFrame: cookieBannerFrame  === page.mainFrame(), isCookieFrame: true, cmpType, data})
         } else {
             for (const frame of page.frames()) {
+                console.error("No banner frame detected with high confidence. Falling back to all-frame scan.");
                 if (!frame.url() || frame.url() === "about:blank") continue;
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCmpFrame: false, data });
+                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCookieFrame: false, cmpType: null, data });
             }   
+        }
+
+        if (results.length === 0) {
+            return null;
         }
 
         for (const result of results) {
@@ -691,7 +849,7 @@ async function extractStructuredDom(url) {
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
             console.error(`\nFrame: ${result.frameUrl}`);
-            console.error(`   isMainFrame: ${result.isMainFrame} | isCmpFrame: ${result.isCmpFrame}`);
+            console.error(`   isMainFrame: ${result.isMainFrame} | isCookieFrame: ${result.isCookieFrame}`);
             
             if (result.data.cmpFound) {
                 console.error(`  Known CMP detected: ${result.data.cmpType || "unknown"} via selector "${result.data.cmpSelector}"`);
