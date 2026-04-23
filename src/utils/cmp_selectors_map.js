@@ -1,3 +1,6 @@
+//source: Nouwens et al. (2025) - A Cross-Country Analysis of GDPR Cookie Banners
+//Appendix C: CMP CSS Selectors
+//and on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
 const CMP_SELECTORS = {
     //8works
     '[id*="eightworks-cookie-consent"]': "8works",
@@ -81,9 +84,17 @@ const CMP_SELECTORS = {
     '[id^="cky"]' : "CookieYes",
     '[class^="cky"]' : "CookieYes",
 
+    //Crownpeak (from Dark Dialogs...pdf)
+    '[id*="_evidon banner"]' : "Crownpeak",
+    '[class*="_evidon banner"]' : "Crownpeak",
+
     //Didomi
     '[id*="didomi"]' : "Didomi",
     '[class*="didomi"]' : "Didomi",
+    //(from Dark Dialogs...pdf)
+    '[id*="didomi-notice"]' : "Didomi",
+    '[class*="didomi-notice"]' : "Didomi",
+
 
     //Digital Control Room (prefix)
     '[id^="CookieReports"]' : "Digital Control Room",
@@ -97,6 +108,10 @@ const CMP_SELECTORS = {
     '[id*="eu-cookie-compliance-categories"]' : "Drupal",
     '[class*="eu-cookie-compliance-categories"]' : "Drupal",
 
+    //Ezoic (based on DarkDialogs....pdf)
+    '[id*="ez-cookie-dialog"]' : "Ezoic",
+    '[class*="ez-cookie-dialog"]' : "Ezoic",
+
     //FireCask
     '[id*="pea_cook_btn"]' : "FireCask",
     '[class*="pea_cook_btn"]' : "FireCask",
@@ -104,6 +119,10 @@ const CMP_SELECTORS = {
     //Gomag
     '[id*="__gomagCookiePolicy"]' : "Gomag",
     '[class*="__gomagCookiePolicy"]' : "Gomag",
+
+    //Google (based on DarkDialogs....pdf)
+    '[id*="fc-dialog-container]' : "Google",
+    '[class*="fc-dialog-container"]' : "Google",
 
     //HubSpot (prefix)
     '[id^="hs-en-cookie-"]' : "HubSpot",
@@ -158,6 +177,9 @@ const CMP_SELECTORS = {
     '[class*="osano"]' : "Osano",
     '[class*="cookieconsent\\:desc"]' : "Osano",
     '[id*="cookieconsent\\:desc"]' : "Osano",
+    //from Dark Dialog....pdf:
+    '[class*="osano-cm-window"]' : "Osano",
+    '[id*="osano-cm-window"]' : "Osano",
 
     //Piwik (prefix)
     '[id^="ppms_cm"]' : "Piwik",
@@ -202,6 +224,9 @@ const CMP_SELECTORS = {
     //Termly
     '[id*="termly"]' : "Termly",
     '[class*="termly"]' : "Termly",
+    //from DarkDialogs....pdf:
+    '[id*="termly-styles"]' : "Termly",
+    '[class*="termly-styles"]' : "Termly",
 
     //TermsFeed
     '[id*="cc_div"]' : "TermsFeed",
@@ -284,6 +309,11 @@ const CMP_SELECTORS = {
     '[id*="tarteaucitron"]' : "tarteaucitron",
     '[class*="tarteaucitron"]' : "tarteaucitron",
 
+    //Quantcast (from Dark Dialogs...pdf)
+    '[id*="qc-cmp2-consent-info"]' : "Quantcast",
+    '[class*="qc-cmp2-consent-info"]' : "Quantcast",
+    '[id*="cmpbox"]' : "Quantcast",
+    '[class*="cmpbox"]' : "Quantcast",
 };
 
 module.exports = CMP_SELECTORS;

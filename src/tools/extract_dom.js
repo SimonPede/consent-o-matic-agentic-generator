@@ -254,7 +254,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     checkboxes: [],
                     toggles: [],
                     cmpFound: true,
-                    // cmpType: selectorsMap[selector] || null, //TODO: derive from selector
                     cmpSelector: selector,
                     url: window.location.href,
                     html: el.outerHTML.slice(0, 15000), //HTML of the detected CMP container including its own tag and all children
@@ -417,22 +416,38 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
  * returns that frame directly. If not, returns null as signal to
  * extractStructuredDOM() to fall back to iterating over all frames.
  * 
- * Note: URL regex patterns are educated guesses based on known CMP naming
- * conventions, not derived from systematic data.
+ * Note: URL/name regex patterns are educated guesses based on known CMP naming
+ * conventions, not derived from systematic data. --> TODO
  * 
- * TODO: DOMAINS array could be populated with known CMP iframe domains
- * as an additional detection layer.
+ * TODO: DOMAINS array could be populated with more known CMP iframe domains
  * 
  * @param {Page} page - Puppeteer page instance
  * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
  * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
-
-//TODO: description needs to be updated!
 async function findCorrectFrame(page, selectorMap) {
-    const cmpRegex = /cmp|consent|cookie|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager/i;
+    const cmpRegex = new RegExp(
+        [
+            //central terms and some providers
+            "cmp|consent|cookie|gdpr|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager",
+            //"Privacy" & "Center" variation
+            "privacy[\\s\\-_]*center", "privacy[\\s\\-_]*manager", "privac", "privatsp", "preferenc",
+            //international
+            "protection", "protec", "données", "dati", "datos", "adat", "privacidad", "polityka", "confiden",
+            //German & eastern europe
+            "verarbeitung", "Datenschutz", "personvern", "integritet", "nastavení", "asetukset", "настройки"
+        ].join('|'), 'i'
+    );
     //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
-    const DOMAINS = [];
+    //based so far on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
+    const DOMAINS = [
+        "quantcast.mgr.consensu.org",
+        "cdn.cookielaw.org", // OneTrust
+        "consent.trustarc.com",
+        "consentcdn.cookiebot.com",
+        "gdpr.privacymanager.io", //LiveRamp
+        "c.evidon.com" //Crownpeak
+    ];
     const frames = page.frames();
 
     //just for debugging:
@@ -464,9 +479,21 @@ async function findCorrectFrame(page, selectorMap) {
 
     console.error(`CMP Type detected: ${cmpType}`);
 
-    let cmpFrame = frames.find(frame => cmpRegex.test(frame.url()));
+    for (const frame of frames) {
+        const url = frame.url();
+        const name = frame.name();
 
-    return { frame: cmpFrame || null, cmpType };
+        if (DOMAINS.some(domain => url.includes(domain))) {
+            console.error(`CMP Frame detected via URL Array: ${url}`);
+            return { frame, cmpType };
+        }
+        if (cmpRegex.test(url) || cmpRegex.test(name)) {
+            console.error(`CMP Frame detected via URL/Name: ${url || name}`);
+            return { frame, cmpType };
+        }
+    }
+
+    return { frame: null, cmpType };
 }
 
 /**
