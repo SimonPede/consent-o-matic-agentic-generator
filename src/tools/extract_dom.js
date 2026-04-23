@@ -417,6 +417,17 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     return result;
 }
 
+/**
+ * Calculates the average word count across all frames on the page.
+ * Used as a baseline by calculateFrameScore() to detect frames that are
+ * exceptionally long compared to other frames (word count > average + 100).
+ * 
+ * Frames that cannot be evaluated (e.g. cross-origin iframes) are silently
+ * skipped via try/catch to avoid crashing the scoring pipeline.
+ * 
+ * @param {Frame[]} frames - array of all Puppeteer frames on the page
+ * @returns {number} - average word count, or 0 if no frames could be evaluated
+ */
 async function frameWordCounter(frames, avgWordCount) {
     const wordCounts = [];
 
@@ -440,7 +451,36 @@ async function frameWordCounter(frames, avgWordCount) {
     return sum / wordCounts.length;
 }
 
-//this weighting logic is totaly based on "DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs" (paper)
+/**
+ * Scores a frame based on how likely it is to contain a cookie consent banner.
+ * Inspired by and partially adapted from the scoring system in:
+ * "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs"
+ * 
+ * Scoring factors (see paper Appendix A.3 for original weights):
+ * 
+ * Positive:
+ *   +2  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
+ *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al. 2025)
+ *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
+ * 
+ * Negative:
+ *   -20  Word count < 5 (likely a clickable element, not a dialog)
+ *   -20  Word count > average + 100 (likely contains non-banner content)
+ *   -100 No text content (very unlikely to be a cookie dialog)
+ *   -100 Element not visible (display:none, visibility:hidden, or zero dimensions)
+ *        Inspired by paper's screenshot-based visibility check (p.18), adapted for Puppeteer
+ * 
+ * Deviations from paper:
+ *   - No screenshot-based visibility check (Selenium-specific, not available in Puppeteer)
+ *     --> replaced with CSS computed style + bounding box check
+ *   - No sub-string / duplicate candidate comparison (out of scope for this prototype)
+ *   - N-grams extended with German phrases; full multilingual support is a TODO
+ * 
+ * @param {Frame} frame - Puppeteer frame to score
+ * @param {number} avgWordCount - average word count across all frames (from frameWordCounter())
+ * @param {Object} selectorMap - CMP_SELECTORS_MAP for domain-specific selector matching
+ * @returns {number} - score (higher = more likely to be a cookie banner frame)
+ */
 async function calculateFrameScore(frame, avgWordCount, selectorMap) {
     //copied from DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs A.3 Appendix
     //TODO: add other languages!
@@ -480,7 +520,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             if (!el) {
                 return -100;
             }
-            //orientates on "Ranking Factor: Candidate could not be screenshotted", page 18 from paper
+
             const rect = el.getBoundingClientRect();
             const style = window.getComputedStyle(el);
             const isVisible = rect.width > 0 && 
@@ -540,23 +580,32 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
 }
 
 /**
- * Identifies the CMP type and the iframe that hosts the cookie banner.
+ * Identifies the CMP type and the most likely frame hosting the cookie banner.
+ * Uses a three-tier detection strategy of increasing generality:
  * 
- * Step 1: Scans the main frame for known CMP containers using CSS selectors
- * from CMP_SELECTORS_MAP (Nouwens et al. 2025, Appendix C). Returns the CMP
- * name (e.g. "Sourcepoint", "OneTrust") if found, null otherwise.
+ * Tier 1: CMP Type Detection (main frame scan):
+ *   Scans the main frame for known CMP container elements using CMP_SELECTORS_MAP
+ *   (Nouwens et al. 2025, Appendix C). Returns the CMP name if found (e.g. "Sourcepoint").
+ *   Runs on main frame only – CMP providers always place a bootstrap container there
+ *   even when the banner itself loads in an iframe.
  * 
- * Step 2: Searches all frames for a CMP-related URL via regex. If found,
- * returns that frame directly. If not, returns null as signal to
- * extractStructuredDOM() to fall back to iterating over all frames.
+ * Tier 2: Deterministic Frame Detection:
+ *   2a. Known CMP domains (DOMAINS array): matches iframe URLs against a list of
+ *       known CMP CDN domains (e.g. "cdn.cookielaw.org" for OneTrust).
+ *   2b. URL/name regex: matches frame URL or frame name against multilingual
+ *       CMP-related keywords (e.g. "consent", "datenschutz", "nastavení").
+ *   If either matches, that frame is returned immediately.
  * 
- * Note: URL/name regex patterns are educated guesses based on known CMP naming
- * conventions, not derived from systematic data. --> TODO
- * 
- * TODO: DOMAINS array could be populated with more known CMP iframe domains
+ * Tier 3: Score-based Fallback (inspired by DarkDialogs paper):
+ *   If no frame is found deterministically, all frames are scored using:
+ *   - N-gram analysis (cookie dialog phrases, weighted by length)
+ *   - CSS selector matching (general selectors +2, CMP-specific selectors +10)
+ *   - Word count penalties (too short: -20, too long: -20, empty: -100)
+ *   The highest-scoring frame is returned if its score exceeds 0.
+ *   Adapted from: DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs
  * 
  * @param {Page} page - Puppeteer page instance
- * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
+ * @param {Object} selectorMap - CSS selector → CMP name map (CMP_SELECTORS_MAP)
  * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
 async function findCorrectFrame(page, selectorMap) {
@@ -679,7 +728,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     try {
         await frame.click(selector);
     } catch (err) {
-        console.error("Click failed:", e.message);
+        console.error("Click failed:", err.message);
         return null;
     }
     // await new Promise(resolve => setTimeout(resolve, 5000));
@@ -724,8 +773,8 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             return settings;
             // console.error(JSON.stringify(result.settings.buttons, null, 2));
         } else {
-            return null;
             console.error("Settings click seems to have had no effect");
+            return null;
         }
     }
 }
@@ -810,13 +859,13 @@ async function extractStructuredDom(url) {
         let results = [];
         if (cookieBannerFrame) {
             const data = await extractFromFrame(cookieBannerFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-            results.push({frame: cookieBannerFrame, frameUrl: cookieBannerFrame.url(), isMainFrame: cookieBannerFrame  === page.mainFrame(), isCookieFrame: true, cmpType, data})
+            results.push({frame: cookieBannerFrame, frameUrl: cookieBannerFrame.url(), isMainFrame: cookieBannerFrame  === page.mainFrame(), isCookieBannerFrame: true, cmpType, data})
         } else {
             for (const frame of page.frames()) {
                 console.error("No banner frame detected with high confidence. Falling back to all-frame scan.");
                 if (!frame.url() || frame.url() === "about:blank") continue;
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCookieFrame: false, cmpType: null, data });
+                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCookieBannerFrame: false, cmpType: null, data });
             }   
         }
 
@@ -849,7 +898,7 @@ async function extractStructuredDom(url) {
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
             console.error(`\nFrame: ${result.frameUrl}`);
-            console.error(`   isMainFrame: ${result.isMainFrame} | isCookieFrame: ${result.isCookieFrame}`);
+            console.error(`   isMainFrame: ${result.isMainFrame} | isCookieFrame: ${result.isCookieBannerFrame}`);
             
             if (result.data.cmpFound) {
                 console.error(`  Known CMP detected: ${result.data.cmpType || "unknown"} via selector "${result.data.cmpSelector}"`);
@@ -883,7 +932,6 @@ async function extractStructuredDom(url) {
             }
         }
         console.error("========================================\n");
-        // ============================================================
         console.log(JSON.stringify(results));
 
         await browser.close();
