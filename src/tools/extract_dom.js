@@ -632,6 +632,10 @@ async function frameWordCounter(frames, avgWordCount) {
  * @param {Object} selectorMap - CMP_SELECTORS_MAP for domain-specific selector matching
  * @returns {number} - score (higher = more likely to be a cookie banner frame)
  */
+
+//IMPORTANT!!!!!!!!!!!!
+//i changed another major thing: i evualte the URL and the iframe name and give points for that!
+/////////
 async function calculateFrameScore(frame, avgWordCount, selectorMap) {
     //copied from DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs A.3 Appendix
     //TODO: add other languages!
@@ -665,8 +669,43 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             "cookies", "cookie", "track", "tracking", "einwilligung", "datenschutz"
         ]
     };
+
+    const cmpRegex = new RegExp(
+        [
+            //central terms and some providers
+            "cmp|consent|cookie|gdpr|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager",
+            //"Privacy" & "Center" variation
+            "privacy[\\s\\-_]*center", "privacy[\\s\\-_]*manager", "privac", "privatsp", "preferenc",
+            //international
+            "protection", "protec", "données", "dati", "datos", "adat", "privacidad", "polityka", "confiden",
+            //German & eastern europe
+            "verarbeitung", "Datenschutz", "personvern", "integritet", "nastavení", "asetukset", "настройки"
+        ].join("|"), "i"
+    );
+    //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
+    //based so far on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
+    const DOMAINS = [
+        "quantcast.mgr.consensu.org",
+        "cdn.cookielaw.org", // OneTrust
+        "consent.trustarc.com",
+        "consentcdn.cookiebot.com",
+        "gdpr.privacymanager.io", //LiveRamp
+        "c.evidon.com" //Crownpeak
+    ];
     try {
-        return await frame.evaluate((customS, avg, selectorMap, nGrams) => {
+
+        const url = frame.url();
+        const name = frame.name();
+        let frameScoreBonus = 0;
+
+        if (DOMAINS.some(domain => url.includes(domain))) {
+            frameScoreBonus += 50; //TODO: evaluate!
+        }
+        if (cmpRegex.test(url) || cmpRegex.test(name)) {
+            frameScoreBonus += 20; //TODO: evaluate!
+        }
+
+        const score = await frame.evaluate((customS, avg, selectorMap, nGrams) => {
             const el = document.body;
             if (!el) {
                 return -100;
@@ -683,7 +722,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
                 return -100;
             }
 
-            let score = 0;
+            let localScore = 0;
             const text = document.body ? document.body.innerText.trim() : "";
             const words = text.split(/\s+/).filter(w => w.length > 0);
             const wordsCounter = words.length;
@@ -691,21 +730,21 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             if (wordsCounter === 0) {
                 return -100;
             } else if (wordsCounter < 5) {
-                score -= 20;
+                localScore -= 20;
             } else if (wordsCounter > (avg + 100)) {
-                score -= 20;
+                localScore -= 20;
             }
 
             for (const selector of customS) {
                 if (document.querySelector(selector)) {
-                    score += 2;
+                    localScore += 2;
                     break;
                 }
             }
 
             for (const selector of Object.keys(selectorMap)) {
                 if (document.querySelector(selector)) {
-                    score += 10;
+                    localScore += 10;
                     break;
                 }
             }
@@ -717,13 +756,19 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
                 for (const phrase of phrases) {
                     const regex = new RegExp(phrase, "i");
                     if (regex.test(text)) {
-                        score += weight;
+                        localScore += weight;
                     }
                 }
             }
 
-            return score;
+            return localScore;
         }, TABLE_6_CUSTOM_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA);
+
+        if (score < -100) {
+            return score;
+        }
+
+        return score + frameScoreBonus;
     } catch (err) {
         console.error("frame could not be scored!");
         return -100;
@@ -760,28 +805,6 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
  * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
 async function findCorrectFrame(page, selectorMap) {
-    const cmpRegex = new RegExp(
-        [
-            //central terms and some providers
-            "cmp|consent|cookie|gdpr|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager",
-            //"Privacy" & "Center" variation
-            "privacy[\\s\\-_]*center", "privacy[\\s\\-_]*manager", "privac", "privatsp", "preferenc",
-            //international
-            "protection", "protec", "données", "dati", "datos", "adat", "privacidad", "polityka", "confiden",
-            //German & eastern europe
-            "verarbeitung", "Datenschutz", "personvern", "integritet", "nastavení", "asetukset", "настройки"
-        ].join("|"), "i"
-    );
-    //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
-    //based so far on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
-    const DOMAINS = [
-        "quantcast.mgr.consensu.org",
-        "cdn.cookielaw.org", // OneTrust
-        "consent.trustarc.com",
-        "consentcdn.cookiebot.com",
-        "gdpr.privacymanager.io", //LiveRamp
-        "c.evidon.com" //Crownpeak
-    ];
     const frames = page.frames();
 
     //just for debugging:
@@ -841,20 +864,6 @@ async function findCorrectFrame(page, selectorMap) {
 
 
     console.error(`CMP Type detected: ${cmpType}`);
-
-    for (const frame of frames) {
-        const url = frame.url();
-        const name = frame.name();
-
-        if (DOMAINS.some(domain => url.includes(domain))) {
-            console.error(`CMP Frame detected via URL Array: ${url}`);
-            return { frame, cmpType };
-        }
-        if (cmpRegex.test(url) || cmpRegex.test(name)) {
-            console.error(`CMP Frame detected via URL/Name: ${url || name}`);
-            return { frame, cmpType };
-        }
-    }
 
     const avgWordCount = await frameWordCounter(frames);
     let bestFrame = null;
