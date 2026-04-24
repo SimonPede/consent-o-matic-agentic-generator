@@ -272,6 +272,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 className: parent ? parent.className : null
             };
         }
+
         function generateDeepSelector(el, searchRoot = document, depth = 0) {
             //Selector priority: id (unique) > aria-label (often unique) > first class found (fallback) > tag (last resort)
             //TODO: improve selector uniqueness
@@ -377,7 +378,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
             const host = querySelectorDeep(selector);
 
-            if (!host || host.tagName === "SCRIPT" || host.tagName === "STYLE") continue;
+            if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) continue;
         
                 const searchRoot = host.shadowRoot || host;
                 const deepHtml = getDeepInnerHTML(host);
@@ -762,7 +763,7 @@ async function findCorrectFrame(page, selectorMap) {
             "protection", "protec", "données", "dati", "datos", "adat", "privacidad", "polityka", "confiden",
             //German & eastern europe
             "verarbeitung", "Datenschutz", "personvern", "integritet", "nastavení", "asetukset", "настройки"
-        ].join('|'), 'i'
+        ].join("|"), "i"
     );
     //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
     //based so far on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
@@ -793,15 +794,44 @@ async function findCorrectFrame(page, selectorMap) {
     //to bootstrap the iframe. This container carries the CMP-specific selector
     //and is therefore the reliable detection point.
     //TODO: test it
-    const mainFrame = page.mainFrame();
+    // const mainFrame = page.mainFrame();
+    // const cmpType = await mainFrame.evaluate((selectorMap) => {
+    //     for (const [selector, cmpName] of Object.entries(selectorMap)) {
+    //         if (document.querySelector(selector)) {
+    //             return cmpName;
+    //         }
+    //     }
+    //     return null;
+    // }, selectorMap);
+
+    //new version also with shadowDOM. TODO: is this necessary?! Same question applies to waitForCmpUI
+    //i really reuse this function to often!
+    function querySelectorAllDeep(selector, root = document) {
+        let nodes = Array.from(root.querySelectorAll(selector));
+        // const elements = Array.from(root.querySelectorAll("*"));
+        //should be much faster:
+        const elements = root.querySelectorAll("*");
+        for (let el of elements) {
+            if (el.shadowRoot) {
+                nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+            }
+        }
+        //to get a feeling how well this works and how necessary it is:
+        // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+        // let nodesStandard = Array.from(root.querySelectorAll(selector));
+        // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+        return nodes;
+    }
+
     const cmpType = await mainFrame.evaluate((selectorMap) => {
         for (const [selector, cmpName] of Object.entries(selectorMap)) {
-            if (document.querySelector(selector)) {
+            if (querySelectorAllDeep(selector)) {
                 return cmpName;
             }
         }
         return null;
     }, selectorMap);
+
 
     console.error(`CMP Type detected: ${cmpType}`);
 
@@ -994,26 +1024,66 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     }
 }
 
-//more for debugging than anything else
-async function waitForSelectorInAnyFrame(page, selectors, timeout = 10000) {
+/**
+ * Waits not only for the presence of the CMP host element but ensures 
+ * that the element (or its Shadow Root) actually contains rendered buttons.
+ */
+async function waitForCmpUI(page, selectors, timeout = 15000) {
+    console.error("waitForCmpUI started...");
     const start = Date.now();
 
     while (Date.now() - start < timeout) {
         for (const frame of page.frames()) {
-            for (const selector of selectors) {
-                try {
-                    const el = await frame.$(selector);
-                    if (el) {
-                        return { frame, selector };
+            try {
+                const foundSelector = await frame.evaluate((sels) => {
+                    //i really reuse this function to often!
+                    function querySelectorAllDeep(selector, root = document) {
+                        let nodes = Array.from(root.querySelectorAll(selector));
+                        // const elements = Array.from(root.querySelectorAll("*"));
+                        //should be much faster:
+                        const elements = root.querySelectorAll("*");
+                        for (let el of elements) {
+                            if (el.shadowRoot) {
+                                nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+                            }
+                        }
+                        //to get a feeling how well this works and how necessary it is:
+                        // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+                        // let nodesStandard = Array.from(root.querySelectorAll(selector));
+                        // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+                        return nodes;
                     }
-                } catch (e) {}
+
+                    for (const sel of sels) {
+                        const host = querySelectorAllDeep(sel);
+                        if (host && !["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
+                            
+                            const searchRoot = host.shadowRoot || host;
+                            const buttons = searchRoot.querySelectorAll("button, a, [role='button']");
+                            
+                            if (buttons.length > 0) {
+                                return sel;
+                            }
+                        }
+                    }
+                    return null;
+                }, selectors);
+
+                if (foundSelector) {
+                    console.error(`CMP UI seems to be rendered via: "${foundSelector}"`);
+                    return { frame, selector: foundSelector };
+                }
+            } catch (e) {
             }
         }
-        await new Promise(r => setTimeout(r, 200));
+        //Wait 500ms before the next polling attempt
+        await new Promise(r => setTimeout(r, 500));
     }
 
+    console.error("Timeout: CMP UI was not fully rendered in time!");
     return null;
 }
+
 
 /**
  * Two-Pass DOM Extraction Strategy
@@ -1074,14 +1144,21 @@ async function extractStructuredDom(url) {
     try {
         console.error("puppeteer-browser is getting started...");
         const browser = await puppeteer.launch({
-            headless: "shell", //true should also work
-            args: ["--no-sandbox", "--disable-setuid-sandbox"] //these flags are important for Linux/WSL
+        headless: true, //users the mor modern headless mode (instead of "shell") --Y harder to detect as a bot
+            args: [
+                "--no-sandbox", //important for WSL/Linux
+                "--disable-setuid-sandbox", //important for WSL/Linux
+                "--disable-blink-features=AutomationControlled", //when chrome is not controlled by an actual user it sets navigator.webdriver = true.
+                //CMPs can detect that and block the banner or nerver render it
+                "--window-size=1920,1080" //unsure if really necessary, but ensures that puppeteer launches desktop version
+            ]
         });
 
         const page = await browser.newPage();
+        await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
 
         //for debugging:
-        page.on('console', msg => console.error('BROWSER:', msg.text()));
+        page.on('console', msg => console.error("BROWSER:", msg.text()));
 
         console.error("Navigating to the page...");
         await page.goto(url, {
@@ -1093,11 +1170,12 @@ async function extractStructuredDom(url) {
 
         console.error("page is loaded!");
 
-        const result = await waitForSelectorInAnyFrame(
-            page, Object.keys(CMP_SELECTORS_MAP));
+        const waitResult = await waitForCmpUI(page, Object.keys(CMP_SELECTORS_MAP));
 
-        if (result) {
-            console.error("Gefunden in Frame:", result.frame.url());
+        if (waitResult) {
+            console.error("found in frame:", waitResult.frame.url());
+            //wait shortly in case of more CSS animation
+            await new Promise(resolve => setTimeout(resolve, 1500)); 
         }
 
         //for debugging: interesting: for https://usercentrics.com/de/ the banner is not visible
@@ -1142,7 +1220,6 @@ async function extractStructuredDom(url) {
             delete result.frame; //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
         }
 
-        //TODO: remove before production
         console.error(results);
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
@@ -1181,7 +1258,6 @@ async function extractStructuredDom(url) {
             }
         }
         console.error("========================================\n");
-        // console.log(JSON.stringify(results));
 
         await browser.close();
         console.error("browser closed!");
@@ -1221,3 +1297,6 @@ async function extractStructuredDom(url) {
 })();
 
 //https://usercentrics.com/de/
+//https://zalando.de --> does not work!
+//https://heise.de
+//https://spiegel.de

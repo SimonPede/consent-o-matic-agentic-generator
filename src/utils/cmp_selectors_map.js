@@ -270,11 +270,16 @@ const CMP_SELECTORS = {
     //changes i made myself
     'aside#usercentrics-cmp-ui': "Usercentrics",
     '[id="usercentrics-cmp-ui"]': "Usercentrics",
+    '#usercentrics-root': "Usercentrics",
     ///
     '[id*="cNkVwm"]' : "Usercentrics",
     '[class*="cNkVwm"]' : "Usercentrics",
     '[id*="CybotCookiebot"]' : "Usercentrics",
     '[class*="CybotCookiebot"]' : "Usercentrics",
+    //changes i made myself
+    '[id^="usercentrics-"]' : "Usercentrics",
+    '[class^="usercentrics-"]' : "Usercentrics",
+    //
     '[id^="usercentrics"]' : "Usercentrics",
     '[class^="usercentrics"]' : "Usercentrics",
     //changes i made myself:
