@@ -132,6 +132,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * 2. Find all child elements and check if any have a shadowRoot attached.
          *    If so, recurse into that shadow tree and append the results.
          * 
+         * Limititation: only works for shadow DOM with "mode: open", not "mode: closed" (not accessible via JS)
+         * 
          * @param {string} selector - CSS selector to search for (e.g. "button")
          * @param {Document|ShadowRoot} root - Starting point for the search (default: document)
          * @returns {Array} - All matching elements across the entire DOM including Shadow DOMs
@@ -146,7 +148,40 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
                 }
             }
+            //for to get a feedling how well this works and how necessary it is:
+            // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+            // let nodesStandard = Array.from(root.querySelectorAll(selector));
+            // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
             return nodes;
+        }
+
+        function querySelectorDeep(selector, root = document) {
+            let found = root.querySelector(selector);
+            if (found) return found;
+
+            const all = root.querySelectorAll("*");
+            for (const el of all) {
+                if (el.shadowRoot) {
+                    found = querySelectorDeep(selector, el.shadowRoot);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+
+        function getDeepInnerHTML(node) {
+            let html = node.innerHTML || "";
+            if (node.shadowRoot) {
+                html += node.shadowRoot.innerHTML;
+            }
+
+            const children = node.querySelectorAll("*");
+            for (const child of children) {
+                if (child.shadowRoot) {
+                    html += getDeepInnerHTML(child.shadowRoot);
+                }
+            }
+            return html;
         }
 
         /**
@@ -176,15 +211,32 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {HTMLInputElement} input - checkbox or toggle input element
          * @returns {string} - label text, or empty string if no label found
          */
+
+        //Problem: document.querySelector never finds a label which is inside the Shadow DOM!
+        //because of that i use: input.getRootNode() --> finds either document or ShadowRoot
+        //have to verify that these ideas really work
         function findLabelForInput(input) {
-            if (input.id) {
-                const label = document.querySelector(`label[for="${input.id}"]`);
+            const root = input.getRootNode();
+
+            if (input.id && root.querySelector) {
+                const label = root.querySelector(`label[for="${input.id}"]`);
                 if (label) {
                     return label.innerText.trim();
                 }
             }
             const closestLabel = input.closest("label");
-            return closestLabel ? closestLabel.innerText.trim() : "";
+            if (closestLabel) {
+                return closestLabel.innerText.trim();
+            }
+
+            const labelledBy = input.getAttribute("aria-labelledby");
+            if (labelledBy && root.querySelector) {
+                const labelEl = root.querySelector(`#${labelledBy}`);
+                if (labelEl) {
+                    return labelEl.innerText.trim();
+                }
+            }
+            return "";
         }
 
         /**
@@ -197,11 +249,24 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {HTMLElement} el - HTML element found by querySelectorAllDeep()
          * @returns {Object} - tag, id, and className of the direct parent element, or null if no parent exists
          */
+
+        //Problem: if el is top child in shadow DOM parentElement just returns null
         function extractParentInfo(el) {
+            const parent = el.parentElement;
+            const root = el.getRootNode();
+
+            if (!parent && root instanceof ShadowRoot) {
+                return {
+                    tag: "SHADOW-HOST", 
+                    id: root.host ? root.host.id : null,
+                    className: root.host ? root.host.className : "shadow-root-boundary"
+                };
+            }
+
             return {
-                tag: el.parentElement ? el.parentElement.tagName : null,
-                id: el.parentElement ? el.parentElement.id : null,
-                className: el.parentElement ? el.parentElement.className : null
+                tag: parent ? parent.tagName : null,
+                id: parent ? parent.id : null,
+                className: parent ? parent.className : null
             };
         }
 
@@ -216,62 +281,147 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          *       this may cause false negatives for some CMPs.
          * 
          * @param {HTMLElement} el - element to check
+         * @param {boolean} checkText - Set to true for buttons/links, false for inputs.
          * @returns {boolean}
          */
-        function isVisible(el) {
+        function isVisible(el, checkText = true) {
             const style = window.getComputedStyle(el);
             const rect = el.getBoundingClientRect();
-            return (
-                rect.width > 0 &&
-                rect.height > 0 &&
-                el.innerText.length > 0 && 
-                style.display !== "none" &&
-                style.visibility !== "hidden" &&
-                parseFloat(style.opacity) > 0.05
-            );
+            
+            const hasSize = rect.width > 0 && rect.height > 0;
+            const isCssVisible = style.display !== "none" && 
+                                style.visibility !== "hidden" &&
+                                parseFloat(style.opacity) > 0.05;
+            
+            const hasText = checkText ? el.innerText.trim().length > 0 : true;
+
+            return hasSize && isCssVisible && hasText;
         }
 
-        /**
-         * Visibility check for input elements (checkboxes, toggles).
-         * Identical to isVisible() but without the innerText check,
-         * since inputs have no text content by nature.
-         * 
-         * TODO: Consider merging isVisible and isVisibleInput into one function
-         * with an optional parameter to avoid code duplication.
-         * 
-         * @param {HTMLElement} el - input element to check
-         * @returns {boolean}
-         */
-        function isVisibleInput(el) {
-            const style = window.getComputedStyle(el);
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.width > 0 &&
-                rect.height > 0 &&
-                style.display !== "none" &&
-                style.visibility !== "hidden" &&
-                parseFloat(style.opacity) > 0.05
-            );
-        }
+        //following part very similiar logic to: no cmpContainer found. Because of this i deletet my comments to save some space for now
+        //i will add them later!
 
-        //Step 1: Check if a known CMP banner container is directly accessible in this frame.
-        //cmpType is already determined in findCorrectFrame() via main frame scan.
-        //cmpFound: true signals high-confidence extraction (direct selector match).
-        //cmpFound: false (Step 2) signals generic extraction – LLM gets more raw HTML context.
+        // Step 1: Check if a known CMP banner container is directly accessible in this frame.
+        // Uses querySelectorDeep() to find the container including Shadow DOM hosts.
+        // cmpType is already determined in findCorrectFrame() via main frame scan.
+        // cmpFound: true signals high-confidence extraction (direct selector match).
+        // cmpFound: false (Step 2) signals generic extraction.
+        //
+        // Shadow DOM handling:
+        // If the matched element hosts a Shadow Root (e.g. Usercentrics uses
+        // <aside id="usercentrics-cmp-ui"> with a Shadow Root), we use the
+        // Shadow Root as the search root for element extraction.
+        // getDeepInnerHTML() recursively collects HTML from both light and shadow DOM.
+        //
+        // Known Limitation: Deeply nested Shadow DOM CMPs (e.g. Usercentrics) may not
+        // be fully supported. The CMP type is detected correctly via main frame scan,
+        // but waitForSelector() cannot pierce Shadow DOM boundaries, meaning the banner
+        // container may not yet be present when extraction runs.
+        // Affected CMPs: unknown!! TODO.
         for (const selector of selectors) {
-            const el = document.querySelector(selector);
-            if (el) {
+
+            const host = querySelectorDeep(selector);
+
+            if (!host || host.tagName === "SCRIPT" || host.tagName === "STYLE") continue;
+        
+                const searchRoot = host.shadowRoot || host;
+                const deepHtml = getDeepInnerHTML(host);
+                
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = deepHtml;
+
+                ["nav", "header", "footer", "script", "style", "img", "svg", "noscript"].forEach(t => {
+                    tempDiv.querySelectorAll(t).forEach(n => n.remove());
+                });
+
+                const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot)
+                    .filter(el => isVisible(el, true))
+                    .map(el => {
+                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        return {
+                            type: "button or anker",
+                            text: el.innerText.trim(),
+                            tag: el.tagName,
+                            attributes: extractAllAttributes(el),
+                            parentInfo: extractParentInfo(el),
+                            selector: el.id ? `#${el.id}`
+                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                            : el.tagName.toLowerCase(),
+                            selectorConfidence: el.id ? "very high"
+                                : el.getAttribute("aria-label") ? "high"
+                                    : firstClass && classCount === 1 ? "medium"
+                                        : firstClass ? "low" : "very low",
+                            role: el.getAttribute("role") || null,
+                            isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                            isShadow: el.getRootNode() instanceof ShadowRoot //for my understanding, LLM doesnt need that i think
+                            //is this enough?
+                        }
+                    });
+
+                const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']", searchRoot)
+                    .filter(el => isVisible(el, false))
+                    .map(el => {
+                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        return {
+                            type: "toggle",
+                            text: el.innerText.trim(),
+                            tag: el.tagName,
+                            attributes: extractAllAttributes(el),
+                            parentInfo: extractParentInfo(el),
+                            selector: el.id ? `#${el.id}`
+                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                            : el.tagName.toLowerCase(),
+                            selectorConfidence: el.id ? "very high"
+                                : el.getAttribute("aria-label") ? "high"
+                                    : firstClass && classCount === 1 ? "medium"
+                                        : firstClass ? "low" : "very low",
+                            ariaChecked: el.getAttribute("aria-checked"),
+                            isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                        }
+                    });
+
+                const checkboxes = querySelectorAllDeep("input[type='checkbox']", searchRoot)
+                    .filter(el => isVisible(el, false))
+                    .map(el => {
+                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
+                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        return {
+                            type: "checkbox",
+                            labelText: findLabelForInput(el),
+                            tag: el.tagName,
+                            attributes: extractAllAttributes(el),
+                            parentInfo: extractParentInfo(el),
+                            selector: el.id ? `#${el.id}`
+                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                                            : el.tagName.toLowerCase(),
+                            selectorConfidence: el.id ? "very high"
+                                : el.getAttribute("aria-label") ? "high"
+                                    : firstClass && classCount === 1 ? "medium"
+                                        : firstClass ? "low" : "very low",
+                            isChecked: el.checked,
+                            isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
+                        }
+                    });
+
                 return {
-                    buttons: [], //empty but consistent
-                    checkboxes: [],
-                    toggles: [],
+                    buttons,
+                    checkboxes,
+                    toggles,
                     cmpFound: true,
                     cmpSelector: selector,
+                    cmpContainerFound: true,
                     url: window.location.href,
-                    html: el.outerHTML.slice(0, 15000), //HTML of the detected CMP container including its own tag and all children
+                    html: tempDiv.innerHTML.slice(0, 20000) //HTML of the detected CMP container including its own tag and all children
                 };
-            }
-        }
+        };
         
         //Step 2: No known CMP detected --> extract structured DOM via negative filtering.
         //Strategy: clone the body, remove elements that are definitely NOT the banner
@@ -289,10 +439,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         });
 
         const buttons = querySelectorAllDeep("button, a, [role='button']")
-            .filter(isVisible)
+            .filter(el => isVisible(el, true))
             .map(el => {
                 const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
                 return {
                     type: "button or anker",
                     text: el.innerText.trim(),
@@ -335,10 +485,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //Note: Modern CMPs often use div/span elements styled as toggles instead of 
         //native <input type="checkbox"> – hence the role="switch" selector.
         const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']")
-            .filter(isVisibleInput)
+            .filter(el => isVisible(el, false))
             .map(el => {
                 const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
                 return {
                     type: "toggle",
                     text: el.innerText.trim(),
@@ -367,10 +517,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //and must be interpreted by the LLM using labelText and surrounding context.
         //labelText is critical here since input elements have no innerText of their own.
         const checkboxes = querySelectorAllDeep("input[type='checkbox']")
-            .filter(isVisibleInput)
+            .filter(el => isVisible(el, false))
             .map(el => {
                 const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? document.querySelectorAll(`.${firstClass}`).length : 0;
+                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
                 return {
                     type: "checkbox",
                     labelText: findLabelForInput(el),
@@ -398,6 +548,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             cmpFound: false,
             cmpType: null,
             cmpSelector: null,
+            cmpContainerFound: false,
             url: window.location.href,
             html: body.innerHTML,
         };
@@ -726,10 +877,28 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     const htmlBefore = await frame.evaluate(() => document.body.innerHTML.length);
 
     try {
-        await frame.click(selector);
+        await frame.click(selector, { scrollIntoView: true });
     } catch (err) {
-        console.error("Click failed:", err.message);
-        return null;
+        // console.error("Click failed:", err.message);
+        // return null;
+        console.error("Puppeteer click failed, trying JS click:", err.message);
+        // Fallback: direct JavaScript click via frame.evaluate()
+        // Puppeteer's click() requires the element to be visible, in the viewport,
+        // and not obscured by other elements. This fails for elements that are
+        // technically present in the DOM but not fully rendered or positioned
+        // outside the visible area (e.g. banners that animate in, or elements
+        // with unusual z-index stacking).
+        // el.click() bypasses these checks and fires the click event directly –
+        // less reliable for real user simulation but sufficient for banner interaction.
+        try {
+            await frame.evaluate((sel) => {
+                const el = document.querySelector(sel);
+                if (el) el.click();
+            }, selector);
+        } catch (err2) {
+            console.error("JS click also failed:", err2.message);
+            return null;
+        }
     }
     // await new Promise(resolve => setTimeout(resolve, 5000));
 
@@ -777,6 +946,27 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             return null;
         }
     }
+}
+
+//more for debugging than anything else
+async function waitForSelectorInAnyFrame(page, selectors, timeout = 10000) {
+    const start = Date.now();
+
+    while (Date.now() - start < timeout) {
+        for (const frame of page.frames()) {
+            for (const selector of selectors) {
+                try {
+                    const el = await frame.$(selector);
+                    if (el) {
+                        return { frame, selector };
+                    }
+                } catch (e) {}
+            }
+        }
+        await new Promise(r => setTimeout(r, 200));
+    }
+
+    return null;
 }
 
 /**
@@ -844,15 +1034,28 @@ async function extractStructuredDom(url) {
 
         const page = await browser.newPage();
 
+        //for debugging:
+        page.on('console', msg => console.error('BROWSER:', msg.text()));
+
         console.error("Navigating to the page...");
         await page.goto(url, {
             waitUntil: "networkidle2",
             timeout: 30000
         });
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 4000)); //increased it to 4s instead of 2s
 
         console.error("page is loaded!");
+
+        const result = await waitForSelectorInAnyFrame(
+            page, Object.keys(CMP_SELECTORS_MAP));
+
+        if (result) {
+            console.error("Gefunden in Frame:", result.frame.url());
+        }
+
+        //for debugging: interesting: for https://usercentrics.com/de/ the banner is not visible
+        await page.screenshot({ path: "debug.png", fullPage: true });
 
         const { frame: cookieBannerFrame, cmpType } = await findCorrectFrame(page, CMP_SELECTORS_MAP);
 
@@ -932,7 +1135,7 @@ async function extractStructuredDom(url) {
             }
         }
         console.error("========================================\n");
-        console.log(JSON.stringify(results));
+        // console.log(JSON.stringify(results));
 
         await browser.close();
         console.error("browser closed!");
@@ -970,3 +1173,5 @@ async function extractStructuredDom(url) {
         console.log("foundData was filled with a value");
     }
 })();
+
+//https://usercentrics.com/de/

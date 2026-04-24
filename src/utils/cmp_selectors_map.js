@@ -216,6 +216,11 @@ const CMP_SELECTORS = {
     //Sourcepoint
     '[id*="sp_message_container"]' : "Sourcepoint",
     '[class*="sp_message_container"]' : "Sourcepoint",
+    //added by myself:
+    '[id*="message-container"]' : "Sourcepoint",
+    '[class*="message-container"]' : "Sourcepoint",
+    '[id*="cmp-banner"]' : "Sourcepoint",
+    '[class*="cmp-banner"]' : "Sourcepoint",
 
     //Squarespace
     '[id*="sqs-cookie-banner-v2-cta"]' : "Squarespace",
@@ -262,14 +267,19 @@ const CMP_SELECTORS = {
     '[class$="popup-text"]' : "Unidentified CMP",
 
     //Usercentrics
+    //changes i made myself
+    'aside#usercentrics-cmp-ui': "Usercentrics",
+    '[id="usercentrics-cmp-ui"]': "Usercentrics",
+    ///
     '[id*="cNkVwm"]' : "Usercentrics",
     '[class*="cNkVwm"]' : "Usercentrics",
     '[id*="CybotCookiebot"]' : "Usercentrics",
     '[class*="CybotCookiebot"]' : "Usercentrics",
     '[id^="usercentrics"]' : "Usercentrics",
     '[class^="usercentrics"]' : "Usercentrics",
-    '[id^="uc-"]' : "Usercentrics",
-    '[class^="uc-"]' : "Usercentrics",
+    //changes i made myself:
+    // '[id^="uc-"]' : "Usercentrics",
+    // '[class^="uc-"]' : "Usercentrics",
 
     //Wix
     '[id*="ccsu-banner-text-container"]' : "Wix",
