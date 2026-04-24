@@ -862,9 +862,9 @@ async function getFrameState(frame) {
         }
 
         return {
-            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle").length,
+            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").length, //same limitation regarding false postives as mentioned above
             buttons: querySelectorAllDeep("button, a, [role='button']").length,
-            html: document.body.innerHTML
+            html: document.body.innerHTML //does not look in the shadowDOM! TODO
         };
     });
 }
@@ -899,7 +899,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     const oldState = await getFrameState(frame);
 
     try {
-        await frame.click(selector, { scrollIntoView: true });
+        await frame.click(selector, { scrollIntoView: true, timeout: 3000 });
     } catch (err) {
         // console.error("Click failed:", err.message);
         // return null;
@@ -914,11 +914,29 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         // less reliable for real user simulation but sufficient for banner interaction.
         try {
             await frame.evaluate((sel) => {
-                const el = document.querySelector(sel);
-                if (el) el.click();
+                const parts = sel.split(" >>> "); //if selector is "normal" (without >>>) this just gives back an array with one entry
+                let currentRoot = document;
+                let target = null;
+
+                for (let i = 0; i < parts.length; i++) {
+                    target = currentRoot.querySelector(parts[i]); ////if selector is "normal" (wothout >>>) this just gives searches in the body and then goes to click that element
+                    if (!target) {
+                        break;
+                    }
+                    currentRoot = target.shadowRoot; //gives access to shadow DOM of this element if it is the host
+                    if (!currentRoot) {
+                        break;
+                    }
+                }
+
+                if (target) {
+                    target.click();
+                    return true;
+                }
+                return false;
             }, selector);
         } catch (err2) {
-            console.error("JS click also failed:", err2.message);
+            console.error("JS deep click also failed:", err2.message);
             return null;
         }
     }
@@ -955,7 +973,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const newState = await getFrameState(frame);
 
-        const changes = Diff.diffChars(htmlBefore, htmlAfter);
+        const changes = Diff.diffChars(oldState.html, newState.html);
         const addedChars = changes
             .filter(c => c.added) //filteres for evrything that is actually new
             .reduce((sum, c) => sum + c.count, 0);
