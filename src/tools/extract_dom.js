@@ -272,6 +272,58 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 className: parent ? parent.className : null
             };
         }
+        function generateDeepSelector(el, searchRoot = document, depth = 0) {
+            //Selector priority: id (unique) > aria-label (often unique) > first class found (fallback) > tag (last resort)
+            //TODO: improve selector uniqueness
+            //my solution:
+            // Selector generation strategy (priority order):
+            //1. id --> globally unique, most reliable
+            //2. aria-label --> often unique, accessibility-friendly
+            //3. first CSS class, if unique in document (classCount === 1) --> medium confidence
+            //4. first CSS class, if rare (classCount <= 5) --> low confidence, may need textFilter in CoM
+            //5. tag name only --> last resort, very low confidence
+            //
+            //selectorConfidence signals to the LLM how reliable the selector is.
+            //For low/very_low confidence: consider using CoM's textFilter or parentInfo
+            //to make the selector more specific in the generated ruleset.
+            //
+            //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
+
+            if (depth > 5) return { selector: el.tagName.toLowerCase(), selectorConfidence: "very low" };
+
+            const firstClass = el.className && typeof el.className === "string" 
+                ? el.className.trim().split(" ")[0] : null;
+            const classCount = firstClass ? searchRoot.querySelectorAll(`.${firstClass}`).length : 0;
+
+            const selector =  el.id ? `#${el.id}`
+                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
+                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
+                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                            : el.tagName.toLowerCase();
+
+            const selectorConfidence =  el.id ? "very high"
+                : el.getAttribute("aria-label") ? "high"
+                    : firstClass && classCount === 1 ? "medium"
+                        : firstClass ? "low" : "very low";
+            
+            const root = el.getRootNode();
+    
+            if (root instanceof ShadowRoot) { //am i currently in a shadow DOM?
+                const host = root.host; //to generate the click, puppeteer needs to know what the host in the light DOM is
+
+                const parentResult = generateDeepSelector(host, host.getRootNode(), depth + 1); //we do that until we get to document as the root node
+                
+                return {
+                    //using special puppeteer syntax: https://pptr.dev/guides/page-interactions#querying-elements-in-shadow-dom
+                    //The LLM must be aware that >>> selectors are for test_ruleset clicks only,
+                    //not for the final CoM JSON. --> i pointed out in the system prompt
+                    selector: `${parentResult.selector} >>> ${selector}`,
+                    selectorConfidence: parentResult.selectorConfidence === "very high" ? selectorConfidence : "medium" 
+                };
+            }
+
+            return { selector, selectorConfidence};
+        }
 
         /**
          * Determines whether a clickable element (button, link) is visible to the user.
@@ -340,23 +392,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot)
                     .filter(el => isVisible(el, true))
                     .map(el => {
-                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        const deepData = generateDeepSelector(el, searchRoot);
                         return {
                             type: "button or anker",
                             text: el.innerText.trim(),
                             tag: el.tagName,
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
-                            selector: el.id ? `#${el.id}`
-                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                            : el.tagName.toLowerCase(),
-                            selectorConfidence: el.id ? "very high"
-                                : el.getAttribute("aria-label") ? "high"
-                                    : firstClass && classCount === 1 ? "medium"
-                                        : firstClass ? "low" : "very low",
+                            selector: deepData.selector,
+                            selectorConfidence: deepData.confidence,
                             role: el.getAttribute("role") || null,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                             isShadow: el.getRootNode() instanceof ShadowRoot //for my understanding, LLM doesnt need that i think
@@ -367,23 +411,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']", searchRoot)
                     .filter(el => isVisible(el, false))
                     .map(el => {
-                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        const deepData = generateDeepSelector(el, searchRoot);
                         return {
                             type: "toggle",
                             text: el.innerText.trim(),
                             tag: el.tagName,
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
-                            selector: el.id ? `#${el.id}`
-                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                            : el.tagName.toLowerCase(),
-                            selectorConfidence: el.id ? "very high"
-                                : el.getAttribute("aria-label") ? "high"
-                                    : firstClass && classCount === 1 ? "medium"
-                                        : firstClass ? "low" : "very low",
+                            selector: deepData.selector,
+                            selectorConfidence: deepData.confidence,
                             ariaChecked: el.getAttribute("aria-checked"),
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                         }
@@ -392,23 +428,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const checkboxes = querySelectorAllDeep("input[type='checkbox']", searchRoot)
                     .filter(el => isVisible(el, false))
                     .map(el => {
-                        const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                        const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`, searchRoot).length : 0;
+                        const deepData = generateDeepSelector(el, searchRoot);
                         return {
                             type: "checkbox",
                             labelText: findLabelForInput(el),
                             tag: el.tagName,
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
-                            selector: el.id ? `#${el.id}`
-                                : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                            : el.tagName.toLowerCase(),
-                            selectorConfidence: el.id ? "very high"
-                                : el.getAttribute("aria-label") ? "high"
-                                    : firstClass && classCount === 1 ? "medium"
-                                        : firstClass ? "low" : "very low",
+                            selector: deepData.selector,
+                            selectorConfidence: deepData.confidence,
                             isChecked: el.checked,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                         }
@@ -444,38 +472,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const buttons = querySelectorAllDeep("button, a, [role='button']")
             .filter(el => isVisible(el, true))
             .map(el => {
-                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
+                const deepData = generateDeepSelector(el);
                 return {
                     type: "button or anker",
                     text: el.innerText.trim(),
                     tag: el.tagName,
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
-                    //Selector priority: id (unique) > aria-label (often unique) > first class found (fallback) > tag (last resort)
-                    //TODO: improve selector uniqueness
-                    //my solution:
-                    // Selector generation strategy (priority order):
-                    //1. id --> globally unique, most reliable
-                    //2. aria-label --> often unique, accessibility-friendly
-                    //3. first CSS class, if unique in document (classCount === 1) --> medium confidence
-                    //4. first CSS class, if rare (classCount <= 5) --> low confidence, may need textFilter in CoM
-                    //5. tag name only --> last resort, very low confidence
-                    //
-                    //selectorConfidence signals to the LLM how reliable the selector is.
-                    //For low/very_low confidence: consider using CoM's textFilter or parentInfo
-                    //to make the selector more specific in the generated ruleset.
-                    //
-                    //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
-                    selector: el.id ? `#${el.id}`
-                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                    : el.tagName.toLowerCase(),
-                    selectorConfidence: el.id ? "very high"
-                        : el.getAttribute("aria-label") ? "high"
-                            : firstClass && classCount === 1 ? "medium"
-                                : firstClass ? "low" : "very low",
+                    selector: deepData.selector,
+                    selectorConfidence: deepData.confidence,
                     role: el.getAttribute("role") || null,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                     //is this enough?
@@ -490,23 +495,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']")
             .filter(el => isVisible(el, false))
             .map(el => {
-                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
+                const deepData = generateDeepSelector(el);
                 return {
                     type: "toggle",
                     text: el.innerText.trim(),
                     tag: el.tagName,
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
-                    selector: el.id ? `#${el.id}`
-                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                    : el.tagName.toLowerCase(),
-                    selectorConfidence: el.id ? "very high"
-                        : el.getAttribute("aria-label") ? "high"
-                            : firstClass && classCount === 1 ? "medium"
-                                : firstClass ? "low" : "very low",
+                    selector: deepData.selector,
+                    selectorConfidence: deepData.confidence,
                     ariaChecked: el.getAttribute("aria-checked"),
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                 }
@@ -522,23 +519,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const checkboxes = querySelectorAllDeep("input[type='checkbox']")
             .filter(el => isVisible(el, false))
             .map(el => {
-                const firstClass = el.className ? el.className.trim().split(" ")[0] : null;
-                const classCount = firstClass ? querySelectorAllDeep(`.${firstClass}`).length : 0;
+                const deepData = generateDeepSelector(el);
                 return {
                     type: "checkbox",
                     labelText: findLabelForInput(el),
                     tag: el.tagName,
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
-                    selector: el.id ? `#${el.id}`
-                        : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
-                            : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                                : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
-                                    : el.tagName.toLowerCase(),
-                    selectorConfidence: el.id ? "very high"
-                        : el.getAttribute("aria-label") ? "high"
-                            : firstClass && classCount === 1 ? "medium"
-                                : firstClass ? "low" : "very low",
+                    selector: deepData.selector,
+                    selectorConfidence: deepData.confidence,
                     isChecked: el.checked,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                 }
