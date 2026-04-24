@@ -92,7 +92,7 @@ async function findSettingsButtonViaLLM(html) {
                         #cookie-preferences-btn
 
                         HTML:
-                        ${html.slice(0, 10000)}`,
+                        ${html.slice(0, 20000)}`,
                 stream: false
             })
         });
@@ -401,7 +401,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
                             selector: deepData.selector,
-                            selectorConfidence: deepData.confidence,
+                            selectorConfidence: deepData.selectorConfidence,
                             role: el.getAttribute("role") || null,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                             isShadow: el.getRootNode() instanceof ShadowRoot //for my understanding, LLM doesnt need that i think
@@ -420,7 +420,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
                             selector: deepData.selector,
-                            selectorConfidence: deepData.confidence,
+                            selectorConfidence: deepData.selectorConfidence,
                             ariaChecked: el.getAttribute("aria-checked"),
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                         }
@@ -437,11 +437,14 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
                             selector: deepData.selector,
-                            selectorConfidence: deepData.confidence,
+                            selectorConfidence: deepData.selectorConfidence,
                             isChecked: el.checked,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                         }
                     });
+
+                    //IMPORTANT LIMITATION:
+                    //querySelectorAllDeep searches the whole live DOM, although the LLM only gets the filtered HTML (without header etc.)
 
                 return {
                     buttons,
@@ -463,11 +466,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
             "script", "style", "img", "svg", "noscript"];
 
-        const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
-        //copy is important because i dont want to manipulate the actual live DOM of the website
+        // const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
+        // //copy is important because i dont want to manipulate the actual live DOM of the website
+
+        const deepBodyHtml = getDeepInnerHTML(document.body);
+        const filterBody = document.createElement("div");
+        filterBody.innerHTML = deepBodyHtml;
 
         NEGATIVE_SELECTORS.forEach(sel => {
-            body.querySelectorAll(sel).forEach(el => el.remove());
+            filterBody.querySelectorAll(sel).forEach(el => el.remove());
         });
 
         const buttons = querySelectorAllDeep("button, a, [role='button']")
@@ -481,7 +488,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
                     selector: deepData.selector,
-                    selectorConfidence: deepData.confidence,
+                    selectorConfidence: deepData.selectorConfidence,
                     role: el.getAttribute("role") || null,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                     //is this enough?
@@ -504,7 +511,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
                     selector: deepData.selector,
-                    selectorConfidence: deepData.confidence,
+                    selectorConfidence: deepData.selectorConfidence,
                     ariaChecked: el.getAttribute("aria-checked"),
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                 }
@@ -528,7 +535,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
                     selector: deepData.selector,
-                    selectorConfidence: deepData.confidence,
+                    selectorConfidence: deepData.selectorConfidence,
                     isChecked: el.checked,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                 }
@@ -543,7 +550,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             cmpSelector: null,
             cmpContainerFound: false,
             url: window.location.href,
-            html: body.innerHTML,
+            html: filterBody.innerHTML,
         };
     }, selectors, selectorsMap);
 
