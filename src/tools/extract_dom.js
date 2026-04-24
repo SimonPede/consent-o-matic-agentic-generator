@@ -834,28 +834,29 @@ async function findCorrectFrame(page, selectorMap) {
     //     return null;
     // }, selectorMap);
 
-    //new version also with shadowDOM. TODO: is this necessary?! Same question applies to waitForCmpUI
-    //i really reuse this function to often!
-    function querySelectorAllDeep(selector, root = document) {
-        let nodes = Array.from(root.querySelectorAll(selector));
-        // const elements = Array.from(root.querySelectorAll("*"));
-        //should be much faster:
-        const elements = root.querySelectorAll("*");
-        for (let el of elements) {
-            if (el.shadowRoot) {
-                nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+    const cmpType = await page.mainFrame().evaluate((selectorMap) => {
+        //new version also with shadowDOM. TODO: is this necessary?! Same question applies to waitForCmpUI
+        //i really reuse this function to often!
+        function querySelectorAllDeep(selector, root = document) {
+            let nodes = Array.from(root.querySelectorAll(selector));
+            // const elements = Array.from(root.querySelectorAll("*"));
+            //should be much faster:
+            const elements = root.querySelectorAll("*");
+            for (let el of elements) {
+                if (el.shadowRoot) {
+                    nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+                }
             }
+            //to get a feeling how well this works and how necessary it is:
+            // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+            // let nodesStandard = Array.from(root.querySelectorAll(selector));
+            // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+            return nodes;
         }
-        //to get a feeling how well this works and how necessary it is:
-        // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
-        // let nodesStandard = Array.from(root.querySelectorAll(selector));
-        // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
-        return nodes;
-    }
 
-    const cmpType = await mainFrame.evaluate((selectorMap) => {
         for (const [selector, cmpName] of Object.entries(selectorMap)) {
-            if (querySelectorAllDeep(selector)) {
+            const foundNodes = querySelectorAllDeep(selector);
+            if (foundNodes.length > 0) {
                 return cmpName;
             }
         }
