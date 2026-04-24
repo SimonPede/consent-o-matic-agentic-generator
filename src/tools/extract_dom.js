@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const Diff = require('diff');
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
@@ -142,13 +143,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //TO DO: i need to test it
         function querySelectorAllDeep(selector, root = document) {
             let nodes = Array.from(root.querySelectorAll(selector));
-            const elements = Array.from(root.querySelectorAll("*"));
+            // const elements = Array.from(root.querySelectorAll("*"));
+            //should be much faster:
+            const elements = root.querySelectorAll("*");
             for (let el of elements) {
                 if (el.shadowRoot) {
                     nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
                 }
             }
-            //for to get a feedling how well this works and how necessary it is:
+            //to get a feeling how well this works and how necessary it is:
             // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
             // let nodesStandard = Array.from(root.querySelectorAll(selector));
             // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
@@ -849,6 +852,35 @@ async function findCorrectFrame(page, selectorMap) {
     return { frame: null, cmpType };
 }
 
+//small helper function for clickAndExtractSettings()
+async function getFrameState(frame) {
+    return await frame.evaluate(() => {
+        function querySelectorAllDeep(selector, root = document) {
+            let nodes = Array.from(root.querySelectorAll(selector));
+            // const elements = Array.from(root.querySelectorAll("*"));
+            //should be much faster:
+            const elements = root.querySelectorAll("*");
+            for (let el of elements) {
+                if (el.shadowRoot) {
+                    nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+                }
+            }
+            //to get a feeling how well this works and how necessary it is:
+            // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+            // let nodesStandard = Array.from(root.querySelectorAll(selector));
+            // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+            return nodes;
+        }
+
+        return {
+            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle").length,
+            buttons: querySelectorAllDeep("button, a, [role='button']").length,
+            html: document.body.innerHTML
+        };
+    });
+}
+
+
 /**
  * Handles the click on a settings/preferences button and extracts the resulting DOM.
  * Extracted as a separate function to avoid code duplication between the regex-based
@@ -874,7 +906,8 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     //to count actually added/removed characters rather than total length delta.
     //Even better: dom-compare library for structural DOM diffing.
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
-    const htmlBefore = await frame.evaluate(() => document.body.innerHTML.length);
+
+    const oldState = await getFrameState(frame);
 
     try {
         await frame.click(selector, { scrollIntoView: true });
@@ -930,13 +963,19 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         return settings;
         // console.error(JSON.stringify(result.settings.buttons, null, 2));
     } else {
-        const htmlAfter = await frame.evaluate(() => document.body.innerHTML.length);
-        //contentChanged threshold: 200 chars is intentionally sensitive to catch subtle DOM updates.
-        //Risk: may produce false positives on pages with dynamic content unrelated to the banner.
-        //TODO: evaluate optimal threshold empirically across test dataset.
-        const contentChanged = Math.abs(htmlAfter - htmlBefore) > 200;
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const newState = await getFrameState(frame);
 
-        if (contentChanged) {
+        const changes = Diff.diffChars(htmlBefore, htmlAfter);
+        const addedChars = changes
+            .filter(c => c.added) //filteres for evrything that is actually new
+            .reduce((sum, c) => sum + c.count, 0);
+        
+        const addedInputs = newState.inputs - oldState.inputs;
+
+        //TODO: evaluate of these are good indicators
+        if (addedChars > 500 || addedInputs >= 2) {
+            console.error(`Settings detected: ${addedChars} chars added, ${addedInputs} inputs added.`);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
             settings.isIframe = frame !== page.mainFrame();
             return settings;
@@ -1168,7 +1207,7 @@ async function extractStructuredDom(url) {
 
 //for seperate testing:
 (async () => {
-    const foundData = await extractStructuredDom("https://heise.de");
+    const foundData = await extractStructuredDom("https://zalando.de");
     if (foundData) {
         console.log("foundData was filled with a value");
     }
