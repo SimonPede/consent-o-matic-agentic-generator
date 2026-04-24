@@ -40,8 +40,29 @@ You will receive the extracted DOM of the website in two complementary formats:
         or use the parent context:
         `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
         "target": { "selector": "button" }`
+        
+2. **Shadow DOM Selectors**
 
-2. **filteredHtml**: 
+Some elements may have a selector using the `>>>` syntax, for example:
+`#usercentrics-cmp-ui >>> [aria-label="Accept all"]`
+
+This is Puppeteer's Shadow-piercing syntax and is provided to help you 
+understand the element's location in the DOM hierarchy.
+
+**Important:** Do NOT use `>>>` selectors in the CoM JSON ruleset.
+CoM's engine handles Shadow DOM differently. Instead:
+- Use the final part after `>>>` as the target selector
+- Use the host element (before `>>>`) as the parent selector if needed
+
+Example:
+```json
+{
+    "parent": { "selector": "#usercentrics-cmp-ui" },
+    "target": { "selector": "[aria-label=\"Accept all\"]" }
+}
+```
+
+3. **filteredHtml**: 
     Context only – use it to understand element hierarchy and sibling 
     relationships (e.g. which "Agree" button belongs to which consent category).
     Only derive selectors from the HTML if no structured selector is available.
