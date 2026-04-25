@@ -172,16 +172,87 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             return null;
         }
 
-        function getDeepInnerHTML(node) {
-            let html = node.innerHTML || "";
-            if (node.shadowRoot) {
-                html += node.shadowRoot.innerHTML;
-            }
+        //first better version but fails to keep the hierarchical structure
+        //and if node (e.g. body) includes a shadow host which has also elements with shadow DOMs, this code will never find these elements
+        //because node.querySelectorAll("*") only searches in Light DOM of the given node
+        // function getDeepInnerHTML(node) {
+        //     //Light DOM:
+        //         // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
+        //         //     #shadow-root (open)            Shadow Root
+        //         //         <dialog>                   Shadow DOM content
+        //         //             <button>Accept</button>
+        //         //         </dialog>
+        //     let html = node.innerHTML || "";
+        //     if (node.shadowRoot) { //is node a host?
+        //         html += getDeepInnerHTML(node.shadowRoot);
+        //     }
 
-            const children = node.querySelectorAll("*");
-            for (const child of children) {
-                if (child.shadowRoot) {
-                    html += getDeepInnerHTML(child.shadowRoot);
+        //     const children = node.querySelectorAll ? node.querySelectorAll("*") : [];
+        //     for (const child of children) {
+        //         if (child.shadowRoot) {
+        //             html += getDeepInnerHTML(child.shadowRoot);
+        //         }
+        //     }
+        //     return html;
+        // }
+        //i noticed that i regularly forgot why i it does not work as intended, here some German Gemini explanation for my future self, will be deleted later!
+        //but really problematic is the loss of the structure! results would look like "<aside id="cmp-host"></aside><button>Accept</button>", although the button is inside the aside-element
+        //Du rufst node.querySelectorAll("*") auf (also document.body.querySelectorAll("*")).
+
+        // Die Methode findet das <my-banner>-Element.
+        // Deine for-Schleife läuft:
+        // Prüft <my-banner>. Es hat einen shadowRoot.
+        // Du rufst rekursiv getDeepInnerHTML für <my-banner>.shadowRoot auf.
+        // Jetzt passiert der Fehler: In diesem rekursiven Aufruf ist node nun <my-banner>.shadowRoot.
+        // node.innerHTML holt den Inhalt: <div class="settings"></div>.
+        // node.shadowRoot ist undefined (ein Shadow Root selbst hat keinen weiteren Shadow Root, nur seine Kinder können welche haben).
+        // Du rufst node.querySelectorAll("*") auf dem Shadow Root auf.
+        // Es findet <div class="settings">.
+        // ABER: <div class="settings"> hat zwar Kinder in seinem eigenen Shadow DOM, aber da dein Code nur flach mit querySelectorAll sucht, sieht er diese nicht.
+        // Er prüft nur, ob <div class="settings"> selbst einen shadowRoot hat. Da das div in diesem Beispiel der Host ist, hat es einen.
+        // Die Rekursion ruft getDeepInnerHTML auf dem Shadow Root des divs auf.
+        // Was aber, wenn das <div class="settings"> keinen Shadow Root hat, sondern ein Kind darin (z.B. <my-toggle>)?
+        // querySelectorAll auf <my-banner>.shadowRoot würde <my-toggle> finden (wenn es im Light DOM des Banners liegt).
+        // Wenn <my-toggle> aber im Shadow DOM von <div class="settings"> liegt, findet querySelectorAll auf <my-banner>.shadowRoot das <my-toggle> niemals.
+        // Das Kernproblem: querySelectorAll durchdringt keine Schattengrenzen. Wenn ein Shadow Host tief im Baum eines anderen Shadow DOMs verschachtelt ist,
+        //übersieht dein Code ihn, weil er sich immer nur den "obersten" sichtbaren Layer (das Light DOM des aktuellen Knotens) ansieht.
+
+        //the old version (before commiting this one really did not work, e.g. for the UserCentrics website the HTML was only the shadowHost)
+        //it was: 
+        // function getDeepInnerHTML(node) {
+        //     let html = node.innerHTML || "";
+        //     if (node.shadowRoot) {
+        //         html += node.shadowRoot.innerHTML;
+        //     }
+
+        //     const children = node.querySelectorAll("*");
+        //     for (const child of children) {
+        //         if (child.shadowRoot) {
+        //             html += getDeepInnerHTML(child.shadowRoot);
+        //         }
+        //     }
+        //     return html;
+        // }
+        function getDeepInnerHTML(node) {
+            //Light DOM:
+                // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
+                //     #shadow-root (open)            Shadow Root
+                //         <dialog>                   Shadow DOM content
+                //             <button>Accept</button>
+                //         </dialog>
+            let html = "";
+            const root = node.shadowRoot || node;
+
+            for (const child of root.childNodes) {
+                if (child.nodeType === Node.ELEMENT_NODE) {
+                    //first clone the shell of the element (e.g: <div class=""...)
+                    let clone = child.cloneNode(false);
+                    clone.innerHTML = getDeepInnerHTML(child);
+
+                    html += clone.outerHTML;
+
+                } else if (child.nodeType === Node.TEXT_NODE) {
+                    html += child.textContent;
                 }
             }
             return html;
@@ -388,7 +459,11 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const tempDiv = document.createElement("div");
                 tempDiv.appendChild(hostClone);
 
-                ["nav", "header", "footer", "script", "style", "img", "svg", "noscript"].forEach(t => {
+                // ["nav", "header", "footer", "script", "style", "img", "svg", "noscript"].forEach(t => {
+                //     tempDiv.querySelectorAll(t).forEach(n => n.remove());
+                // });
+                //UserCentrcis has most if its banner content inside header and footer, il will test:
+                ["nav", "script", "style", "img", "svg", "noscript"].forEach(t => {
                     tempDiv.querySelectorAll(t).forEach(n => n.remove());
                 });
 
@@ -456,7 +531,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     cmpSelector: selector,
                     cmpContainerFound: true,
                     url: window.location.href,
-                    html: tempDiv.innerHTML.slice(0, 20000) //HTML of the detected CMP container including its own tag and all children
+                    html: tempDiv.innerHTML.slice(0, 25000) //HTML of the detected CMP container including its own tag and all children
                 };
         };
         
@@ -465,8 +540,11 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         // (nav, header, footer etc.), then extract all interactive elements.
 
         //as everything in this code: this is incomplete :)
-        const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
-            "script", "style", "img", "svg", "noscript"];
+        // const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
+        //     "script", "style", "img", "svg", "noscript"];
+        //the UserCentrics Banner has most of its content inside the header and footer
+        //i will try:
+        const NEGATIVE_SELECTORS = ["nav", "script", "style", "img", "svg", "noscript"];
 
         // const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
         // //copy is important because i dont want to manipulate the actual live DOM of the website
@@ -559,7 +637,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
     if (result.html) {
         const cleaned = cleanHtml(result.html);
-        result.filteredHtml = cleaned.slice(0, 15000);
+        result.filteredHtml = cleaned.slice(0, 25000);
         delete result.html;
     }
 
