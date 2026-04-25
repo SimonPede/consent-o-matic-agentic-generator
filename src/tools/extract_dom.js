@@ -381,10 +381,12 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) continue;
         
                 const searchRoot = host.shadowRoot || host;
-                const deepHtml = getDeepInnerHTML(host);
+                const hostClone = host.cloneNode(false); //to still get the host element (e.g. <aside id=""...>)
+
+                hostClone.innerHTML = getDeepInnerHTML(host);
                 
                 const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = deepHtml;
+                tempDiv.appendChild(hostClone);
 
                 ["nav", "header", "footer", "script", "style", "img", "svg", "noscript"].forEach(t => {
                     tempDiv.querySelectorAll(t).forEach(n => n.remove());
@@ -469,9 +471,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         // const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
         // //copy is important because i dont want to manipulate the actual live DOM of the website
 
-        const deepBodyHtml = getDeepInnerHTML(document.body);
+        const hostClone = document.body.cloneNode(false);
+        hostClone.innerHTML = getDeepInnerHTML(document.body);
         const filterBody = document.createElement("div");
-        filterBody.innerHTML = deepBodyHtml;
+        filterBody.appendChild(hostClone);
 
         NEGATIVE_SELECTORS.forEach(sel => {
             filterBody.querySelectorAll(sel).forEach(el => el.remove());
@@ -907,11 +910,35 @@ async function getFrameState(frame) {
             // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
             return nodes;
         }
+        function getDeepInnerHTML(node) {
+            //Light DOM:
+                // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
+                //     #shadow-root (open)            Shadow Root
+                //         <dialog>                   Shadow DOM content
+                //             <button>Accept</button>
+                //         </dialog>
+            let html = "";
+            const root = node.shadowRoot || node;
+
+            for (const child of root.childNodes) {
+                if (child.nodeType === Node.ELEMENT_NODE) {
+                    //first clone the shell of the element (e.g: <div class=""...)
+                    let clone = child.cloneNode(false);
+                    clone.innerHTML = getDeepInnerHTML(child);
+
+                    html += clone.outerHTML;
+
+                } else if (child.nodeType === Node.TEXT_NODE) {
+                    html += child.textContent;
+                }
+            }
+            return html;
+        }
 
         return {
             inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").length, //same limitation regarding false postives as mentioned above
             buttons: querySelectorAllDeep("button, a, [role='button']").length,
-            html: document.body.innerHTML //does not look in the shadowDOM! TODO
+            html: getDeepInnerHTML(document.body) //does not look in the shadowDOM! TODO
         };
     });
 }
@@ -1225,7 +1252,7 @@ async function extractStructuredDom(url) {
             if (settingsButton) {
                 result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
             } else {
-                console.log("Regex failed: trying LLM fallback...");
+                console.error(`Regex failed in frame ${frame.url()}, trying LLM fallback...`);
                 const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
                 if (llmSelector) {
                     result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
