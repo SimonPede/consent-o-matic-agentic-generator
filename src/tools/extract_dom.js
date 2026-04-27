@@ -660,6 +660,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
  * @param {Frame[]} frames - array of all Puppeteer frames on the page
  * @returns {number} - average word count, or 0 if no frames could be evaluated
  */
+//Shadow DOM traversal not needed here: document.body.innerText returns
+//rendered text which includes Shadow DOM content automatically.
 async function frameWordCounter(frames, avgWordCount) {
     const wordCounts = [];
 
@@ -802,9 +804,40 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             if (!isVisible) {
                 return -100;
             }
+            function querySelectorAllDeep(selector, root = document) {
+                let nodes = Array.from(root.querySelectorAll(selector));
+                // const elements = Array.from(root.querySelectorAll("*"));
+                //should be much faster:
+                const elements = root.querySelectorAll("*");
+                for (let el of elements) {
+                    if (el.shadowRoot) {
+                        nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+                    }
+                }
+                //to get a feeling how well this works and how necessary it is:
+                // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+                // let nodesStandard = Array.from(root.querySelectorAll(selector));
+                // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+                return nodes;
+            }
+
+            //functionality really similiar to getDeeperInnerHTML()
+            function getDeepText(node) {
+                let text = "";
+                const root = node.shadowRoot || node;
+
+                for (const child of root.childNodes) {
+                    if (child.nodeType === Node.TEXT_NODE) {
+                        text += " " + child.textContent;
+                    } else if(child.nodeType === Node.ELEMENT_NODE) {
+                        text += " " + getDeepText(child);
+                    }
+                }
+                return text.trim();
+            }
 
             let localScore = 0;
-            const text = document.body ? document.body.innerText.trim() : "";
+            const text = getDeepText(document.body).replace(/\s+/g, " ").trim();
             const words = text.split(/\s+/).filter(w => w.length > 0);
             const wordsCounter = words.length;
 
@@ -817,14 +850,16 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             }
 
             for (const selector of customS) {
-                if (document.querySelector(selector)) {
+                const relults = querySelectorAllDeep(selector);
+                if (relults.length > 0) {
                     localScore += 2;
                     break;
                 }
             }
 
             for (const selector of Object.keys(selectorMap)) {
-                if (document.querySelector(selector)) {
+                const relults = querySelectorAllDeep(selector);
+                if (relults.length > 0) {
                     localScore += 10;
                     break;
                 }
