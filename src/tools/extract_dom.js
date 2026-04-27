@@ -123,24 +123,33 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
         //with this function i try to find every relevant element even if it is in the shadow DOM
         /**
-         * Recursively queries the DOM including Shadow DOM trees.
+         * Recursively queries the DOM including all Shadow DOM trees.
          * 
-         * Standard querySelectorAll() cannot pierce Shadow DOM boundaries, which means
-         * elements inside Shadow DOMs (common in some CMPs) would be silently ignored. --> have to find a source for that statement!
+         * Standard querySelectorAll() cannot pierce Shadow DOM boundaries – elements
+         * inside Shadow Roots are completely invisible to it. This function solves this
+         * by first querying the current root (document or ShadowRoot), then finding all
+         * elements that host a Shadow Root and recursing into each one.
          * 
-         * This function works in two steps:
-         * 1. Query the current root (document or shadowRoot) for the selector
-         * 2. Find all child elements and check if any have a shadowRoot attached.
-         *    If so, recurse into that shadow tree and append the results.
+         * Why this works: querySelectorAll() CAN search inside a ShadowRoot if called
+         * directly ON the ShadowRoot object. So instead of trying to pierce the boundary,
+         * we step through the door: find the host via el.shadowRoot, then call
+         * querySelectorAll on the ShadowRoot itself.
          * 
-         * Limititation: only works for shadow DOM with "mode: open", not "mode: closed" (not accessible via JS)
+         * Example for Usercentrics:
+         *   document.querySelectorAll("button")        --> finds 0 buttons (Shadow DOM invisible)
+         *   querySelectorAllDeep("button")             --> finds all buttons inside Shadow Root
          * 
-         * @param {string} selector - CSS selector to search for (e.g. "button")
-         * @param {Document|ShadowRoot} root - Starting point for the search (default: document)
-         * @returns {Array} - All matching elements across the entire DOM including Shadow DOMs
+         * Limitation: only works for open Shadow DOMs (mode: "open").
+         * Closed Shadow DOMs (mode: "closed") are inaccessible via JavaScript by design.
+         * In practice, CMPs use open Shadow DOMs (verified: Usercentrics).
+         * 
+         * Performance note: uses root.querySelectorAll("*") without Array.from() to avoid
+         * unnecessary array allocation on large DOMs.
+         * 
+         * @param {string} selector - CSS selector to search for (e.g. "button", "[role='switch']")
+         * @param {Document|ShadowRoot|HTMLElement} root - Search root (default: document)
+         * @returns {Array<HTMLElement>} - All matching elements across light DOM and all Shadow DOMs
          */
-
-        //TO DO: i need to test it
         function querySelectorAllDeep(selector, root = document) {
             let nodes = Array.from(root.querySelectorAll(selector));
             // const elements = Array.from(root.querySelectorAll("*"));
@@ -233,6 +242,34 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //     }
         //     return html;
         // }
+
+        /**
+         * Recursively collects the full HTML of a node including all Shadow DOM content.
+         * 
+         * Standard innerHTML and outerHTML cannot see inside Shadow Roots.They silently
+         * ignore all Shadow DOM content. This function rebuilds the HTML tree by walking
+         * childNodes level by level (not querySelectorAll which also cannot pierce Shadow DOM)
+         * and recursing into Shadow Roots whenever encountered.
+         * 
+         * Key design decision: uses childNodes (direct children only) instead of
+         * querySelectorAll("*") (all descendants). This preserves the HTML hierarchy –
+         * without it, results would look like "<aside></aside><button>Accept</button>"
+         * instead of "<aside><button>Accept</button></aside>".
+         * 
+         * The trick: cloneNode(false) clones only the element shell without children,
+         * then clone.innerHTML is set to the recursively collected deep content.
+         * This ensures Shadow DOM content appears correctly nested in the output.
+         * 
+         * Entry point logic:
+         *   const root = node.shadowRoot || node;
+         *   --> If node is a Shadow Host: start from its Shadow Root
+         *   --> If node is already a ShadowRoot or regular element: use it directly
+         * 
+         * Tested on: Usercentrics (deeply nested Shadow DOM)
+         * 
+         * @param {HTMLElement|ShadowRoot} node - Element or ShadowRoot to extract HTML from
+         * @returns {string} - Full HTML string including all Shadow DOM content
+         */
         function getDeepInnerHTML(node) {
             //Light DOM:
                 // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
@@ -241,12 +278,17 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 //             <button>Accept</button>
                 //         </dialog>
             let html = "";
+            //if node is shadow host, we want/have to work in the shadow Root
+            //if not, just use the node as root
             const root = node.shadowRoot || node;
 
+            //iterate over all direct children to keep the hierarchical structure in the extracted DOM
             for (const child of root.childNodes) {
                 if (child.nodeType === Node.ELEMENT_NODE) {
                     //first clone the shell of the element (e.g: <div class=""...)
                     let clone = child.cloneNode(false);
+                    //why now not just "child.outerHTML"?
+                    //because if child is itself a shadow host this would find nothing from the shadow dom
                     clone.innerHTML = getDeepInnerHTML(child);
 
                     html += clone.outerHTML;
@@ -278,17 +320,19 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * Finds the human-readable label text associated with a checkbox or toggle input.
          * Labels are critical for the LLM to map UI elements to consent categories (A-F).
          * 
-         * Uses two strategies:
-         * 1. Explicit association via <label for="inputId"> 
-         * 2. Implicit association via closest wrapping <label> element
+         * Shadow DOM aware: standard document.querySelector() cannot find labels that live
+         * inside a Shadow Root. The fix: input.getRootNode() returns either document (normal DOM)
+         * or the ShadowRoot the input lives in. Calling querySelector() on that root searches
+         * within the correct DOM context.
+         * 
+         * Three strategies in priority order:
+         * 1. Explicit association: <label for="inputId"> linked via input.id
+         * 2. Implicit association: input is wrapped inside a <label> element
+         * 3. ARIA association: aria-labelledby attribute points to a labelling element
          * 
          * @param {HTMLInputElement} input - checkbox or toggle input element
          * @returns {string} - label text, or empty string if no label found
          */
-
-        //Problem: document.querySelector never finds a label which is inside the Shadow DOM!
-        //because of that i use: input.getRootNode() --> finds either document or ShadowRoot
-        //have to verify that these ideas really work
         function findLabelForInput(input) {
             const root = input.getRootNode();
 
@@ -314,17 +358,25 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         }
 
         /**
-         * Extracts basic structural information about the parent element of a given HTML element.
-         * This helps the LLM understand the DOM hierarchy and use CoM's parent-target selector pattern.
+         * Extracts structural information about the direct parent of a given element.
+         * Helps the LLM understand DOM hierarchy and use CoM's parent+target selector pattern,
          * 
-         * Note: Only retrieves one level up. For deeply nested structures, the filteredHtml
-         * provides additional context for the LLM to infer the full hierarchy.
+         * Shadow DOM edge case: if el is the top-level child of a Shadow Root, parentElement
+         * returns null because the Shadow Root boundary acts as a wall – there is no parent
+         * in the traditional sense. In this case, the logical parent is the Shadow Host element
+         * in the Light DOM (e.g. aside#usercentrics-cmp-ui).
          * 
-         * @param {HTMLElement} el - HTML element found by querySelectorAllDeep()
-         * @returns {Object} - tag, id, and className of the direct parent element, or null if no parent exists
+         * Detection: !parent && root instanceof ShadowRoot
+         *   --> parent is null (hit the Shadow boundary)
+         *   --> root is a ShadowRoot (confirmed: el lives inside Shadow DOM)
+         *   --> root.host is the Shadow Host element in the Light DOM
+         * 
+         * Note: only retrieves one level up. For deeper hierarchy context,
+         * the LLM should use filteredHtml.
+         * 
+         * @param {HTMLElement} el - element found by querySelectorAllDeep()
+         * @returns {Object} - tag, id, className of parent, or SHADOW-HOST info if at Shadow boundary
          */
-
-        //Problem: if el is top child in shadow DOM parentElement just returns null
         function extractParentInfo(el) {
             const parent = el.parentElement;
             const root = el.getRootNode();
@@ -344,56 +396,77 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             };
         }
 
+        /**
+         * Generates a CSS selector for an element, including full Shadow DOM path if needed.
+         * 
+         * For elements in the normal Light DOM, generates a standard CSS selector using
+         * the priority: id > aria-label > unique class > rare class > tag name.
+         * 
+         * For elements inside a Shadow DOM, uses an "inside-out" approach:
+         * 1. Detect that el lives in a Shadow DOM: el.getRootNode() instanceof ShadowRoot
+         * 2. Find the Shadow Host in the Light DOM: root.host
+         * 3. Recursively generate the selector for the host (which may itself be in a Shadow DOM)
+         * 4. Combine: "hostSelector >>> elementSelector" (Puppeteer Shadow-piercing syntax)
+         * 
+         * Example output for a button inside Usercentrics Shadow DOM:
+         *   "aside#usercentrics-cmp-ui >>> [aria-label='Ablehnen']"
+         * 
+         * IMPORTANT: The >>> syntax is Puppeteer-specific for clicking elements in Shadow DOM.
+         * It must NOT be used in the CoM JSON ruleset – the system prompt instructs the LLM
+         * to use parent+target pattern instead.
+         * 
+         * selectorConfidence signals reliability to the LLM:
+         * - very high / high: use selector directly
+         * - medium: likely unique, verify against filteredHtml
+         * - low / very low: use textFilter or parentInfo in CoM ruleset
+         * 
+         * @param {HTMLElement} el - element to generate selector for
+         * @param {Document|ShadowRoot|HTMLElement} searchRoot - root for class uniqueness check
+         * @param {number} depth - recursion depth guard (max 5, prevents infinite loops in
+         *                         pathological cases of deeply nested Shadow DOM hosts)
+         * @returns {{ selector: string, selectorConfidence: string }}
+         */
         function generateDeepSelector(el, searchRoot = document, depth = 0) {
-            //Selector priority: id (unique) > aria-label (often unique) > first class found (fallback) > tag (last resort)
-            //TODO: improve selector uniqueness
-            //my solution:
-            // Selector generation strategy (priority order):
-            //1. id --> globally unique, most reliable
-            //2. aria-label --> often unique, accessibility-friendly
-            //3. first CSS class, if unique in document (classCount === 1) --> medium confidence
-            //4. first CSS class, if rare (classCount <= 5) --> low confidence, may need textFilter in CoM
-            //5. tag name only --> last resort, very low confidence
-            //
-            //selectorConfidence signals to the LLM how reliable the selector is.
-            //For low/very_low confidence: consider using CoM's textFilter or parentInfo
-            //to make the selector more specific in the generated ruleset.
-            //
             //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
 
-            if (depth > 5) return { selector: el.tagName.toLowerCase(), selectorConfidence: "very low" };
-
+            if (depth > 5) {
+                return { selector: el.tagName.toLowerCase(), selectorConfidence: "very low" };
+            }
             const firstClass = el.className && typeof el.className === "string" 
                 ? el.className.trim().split(" ")[0] : null;
             const classCount = firstClass ? searchRoot.querySelectorAll(`.${firstClass}`).length : 0;
 
-            const selector =  el.id ? `#${el.id}`
+            const selector = el.id ? `#${el.id}`
                 : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute('aria-label')}"]`
                     : firstClass && classCount === 1 ? `.${firstClass}` //unique
                         : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
                             : el.tagName.toLowerCase();
 
-            const selectorConfidence =  el.id ? "very high"
+            const selectorConfidence = el.id ? "very high"
                 : el.getAttribute("aria-label") ? "high"
                     : firstClass && classCount === 1 ? "medium"
                         : firstClass ? "low" : "very low";
             
+
+            /**
+             * Perspective: Inside-Out. 
+             * Checks if the element is encapsulated within a Shadow DOM.
+             * If the root node is a ShadowRoot, we use root.host to "exit" the shadow
+             * and find the owning element (Host) in the Light DOM to build a recursive path.
+             */
             const root = el.getRootNode();
     
             if (root instanceof ShadowRoot) { //am i currently in a shadow DOM?
                 const host = root.host; //to generate the click, puppeteer needs to know what the host in the light DOM is
 
-                const parentResult = generateDeepSelector(host, host.getRootNode(), depth + 1); //we do that until we get to document as the root node
+                const parentResult = generateDeepSelector(host, host.getRootNode(), depth + 1);
                 
                 return {
                     //using special puppeteer syntax: https://pptr.dev/guides/page-interactions#querying-elements-in-shadow-dom
-                    //The LLM must be aware that >>> selectors are for test_ruleset clicks only,
-                    //not for the final CoM JSON. --> i pointed out in the system prompt
                     selector: `${parentResult.selector} >>> ${selector}`,
                     selectorConfidence: parentResult.selectorConfidence === "very high" ? selectorConfidence : "medium" 
                 };
             }
-
             return { selector, selectorConfidence};
         }
 
