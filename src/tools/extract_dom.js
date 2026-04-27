@@ -619,9 +619,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //i will try:
         const NEGATIVE_SELECTORS = ["nav", "script", "style", "img", "svg", "noscript"];
 
-        // const body = document.body.cloneNode(true); //clone with subtrees (but at this point ignoring the shadow DOM)
-        // //copy is important because i dont want to manipulate the actual live DOM of the website
-
         const hostClone = document.body.cloneNode(false);
         hostClone.innerHTML = getDeepInnerHTML(document.body);
         const filterBody = document.createElement("div");
@@ -733,6 +730,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
  * @param {Frame[]} frames - array of all Puppeteer frames on the page
  * @returns {number} - average word count, or 0 if no frames could be evaluated
  */
+
 //Shadow DOM traversal not needed here: document.body.innerText returns
 //rendered text which includes Shadow DOM content automatically.
 async function frameWordCounter(frames, avgWordCount) {
@@ -877,6 +875,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             if (!isVisible) {
                 return -100;
             }
+
             function querySelectorAllDeep(selector, root = document) {
                 let nodes = Array.from(root.querySelectorAll(selector));
                 // const elements = Array.from(root.querySelectorAll("*"));
@@ -1023,6 +1022,8 @@ async function findCorrectFrame(page, selectorMap) {
     //     return null;
     // }, selectorMap);
 
+
+
     const cmpType = await page.mainFrame().evaluate((selectorMap) => {
         //new version also with shadowDOM. TODO: is this necessary?! Same question applies to waitForCmpUI
         //i really reuse this function to often!
@@ -1096,6 +1097,7 @@ async function getFrameState(frame) {
             // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
             return nodes;
         }
+
         function getDeepInnerHTML(node) {
             //Light DOM:
                 // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
@@ -1150,16 +1152,14 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     //two options: extract from all frames again
     //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
     //otherwise look for new iframes that got loaded
-    //TODO: currently using character count difference as a proxy for DOM change.
-    //More robust alternative: use "diff" library (npm install diff) with Diff.diffChars()
-    //to count actually added/removed characters rather than total length delta.
+    //TODO: currently using character count difference
     //Even better: dom-compare library for structural DOM diffing.
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
 
     const oldState = await getFrameState(frame);
 
     try {
-        await frame.click(selector, { scrollIntoView: true, timeout: 3000 });
+        await frame.click(selector);
     } catch (err) {
         // console.error("Click failed:", err.message);
         // return null;
@@ -1190,7 +1190,12 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
                 }
 
                 if (target) {
-                    target.click();
+                    //mousedown + mouseup instead of target.click(): more reliable for CMPs
+                    //that listen to individual mouse events rather than the synthetic click event.
+                    //Recommended by supervisor Thomas Franklin Cory.
+                    target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+                    target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+                    target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
                     return true;
                 }
                 return false;
@@ -1240,7 +1245,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         
         const addedInputs = newState.inputs - oldState.inputs;
 
-        //TODO: evaluate of these are good indicators
+        //TODO: evaluate if these are good indicators
         if (addedChars > 500 || addedInputs >= 2) {
             console.error(`Settings detected: ${addedChars} chars added, ${addedInputs} inputs added.`);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
@@ -1258,7 +1263,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
  * Waits not only for the presence of the CMP host element but ensures 
  * that the element (or its Shadow Root) actually contains rendered buttons.
  */
-async function waitForCmpUI(page, selectors, timeout = 15000) {
+async function waitForCmpUI(page, selectors, timeout = 10000) {
     console.error("waitForCmpUI started...");
     const start = Date.now();
 
@@ -1396,14 +1401,14 @@ async function extractStructuredDom(url) {
             timeout: 30000
         });
 
-        await new Promise(resolve => setTimeout(resolve, 4000)); //increased it to 4s instead of 2s
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
         console.error("page is loaded!");
 
         const waitResult = await waitForCmpUI(page, Object.keys(CMP_SELECTORS_MAP));
 
         if (waitResult) {
-            console.error("found in frame:", waitResult.frame.url());
+            console.error(`waitForCmpUI found ${waitResult.selector} in frame ${waitResult.frame.url()}`);
             //wait shortly in case of more CSS animation
             await new Promise(resolve => setTimeout(resolve, 1500)); 
         }
@@ -1520,7 +1525,7 @@ async function extractStructuredDom(url) {
 
 //for seperate testing:
 (async () => {
-    const foundData = await extractStructuredDom("https://zalando.de");
+    const foundData = await extractStructuredDom("https://spiegel.de");
     if (foundData) {
         console.log("foundData was filled with a value");
     }
