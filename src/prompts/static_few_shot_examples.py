@@ -1,11 +1,6 @@
 import json
 import os
 
-
-#TODO: write in system prompt:
-#Note: The HTML and element lists in the examples below have been heavily minified for brevity.
-#In real tasks, you will receive full, unedited DOM structures, but the extraction and mapping logic remains exactly the same.
-
 def _load(filename):
     path = os.path.join(os.path.dirname(__file__), "examples", filename)
     with open(path, "r", encoding = "utf-8") as f:

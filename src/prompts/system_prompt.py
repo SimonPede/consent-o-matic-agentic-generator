@@ -597,7 +597,7 @@ no explanation - only valid JSON.]
 """
 
 
-def get_system_prompt(few_shot_examples: str = "") -> str:
+def get_system_prompt(few_shot_examples: str = FEW_SHOT_EXAMPLES) -> str:
     """
     Returns the system prompt with few-shot examples inserted.
 
@@ -611,4 +611,4 @@ def get_system_prompt(few_shot_examples: str = "") -> str:
     Returns:
         Complete system prompt as a string.
     """
-    return SYSTEM_PROMPT.format(few_shot_examples = FEW_SHOT_EXAMPLES)
+    return SYSTEM_PROMPT.format(few_shot_examples = few_shot_examples)
