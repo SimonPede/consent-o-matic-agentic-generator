@@ -1,22 +1,16 @@
 const puppeteer = require("puppeteer");
-const Diff = require('diff');
-const fs = require('fs');
+const Diff = require("diff");
+const fs = require("fs");
+//utils imports
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
-//aus DarkDialogs-pdf, Appendix A.2
-const TABLE_6_CUSTOM_SELECTORS = [
-    'div[class*="gdpr"]', 'div[class*="Cookie"]', 'div[class*="cookie"]',
-    'div[class*="Privacy"]', 'div[class*="privacy"]', 'div[class*="Policy"]',
-    'div[class*="policy"]', 'div[class*="Consent"]', 'div[class*="consent"]',
-    'div[class*="Notice"]', 'div[class*="notice"]', 'div[class*="Dialog"]',
-    'div[class*="dialog"]', 'div[id*="gdpr"]', 'div[id*="Cookie"]',
-    'div[id*="cookie"]', 'div[id*="Privacy"]', 'div[id*="privacy"]',
-    'div[id*="Policy"]', 'div[id*="policy"]', 'div[id*="Consent"]',
-    'div[id*="consent"]', 'div[id*="Notice"]', 'div[id*="notice"]',
-    'div[id*="Dialog"]', 'div[id*="dialog"]', 'div[data-project*="cmp"]',
-    'div[id*="cmp"]'
-];
+const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
+const N_GRAM_DATA = require("../utils/ngram_data");
+const CMP_REGEX = require("../utils/cmp_regex");
+const CMP_DOMAINS = require("../utils/cmp_domains");
+
+
 /**
  * Minimizes HTML noise to optimize context for the LLM.
  * Removes non-structural data like scripts, inline styles, and event handlers
@@ -858,71 +852,16 @@ async function frameWordCounter(frames, avgWordCount) {
 //i changed another major thing: i evualte the URL and the iframe name and give points for that!
 /////////
 async function calculateFrameScore(frame, avgWordCount, selectorMap) {
-    //copied from DarkDialogs_Automated detection of 10 dark patterns on cookie dialogs A.3 Appendix
-    //TODO: add other languages!
-    const N_GRAM_DATA = {
-        5: [
-            "access information on a device", "and or access information on",
-            "store and or access information", "use cookies and similar technologies",
-            "ad and content measurement audience", "and content measurement audience insights",
-            "audience insights and product development", "content measurement audience insights and",
-            "improve your experience on our", "informationen auf einem gerät speichern",
-            "measurement audience insights and product",
-            "verwendung von cookies und ähnlichen", "basierend auf browsereinstellungen und gerätekennungen"
-        ],
-        4: [
-            "we use cookies to", "use cookies and similar", "cookies and similar technologies", "information on a device",
-            "at any time by", "and or access information", "access information on a", "you can change your",
-            "you can change your", "wir verwenden cookies um", "or access information on", "store and or access",
-            "cookies und ähnliche technologien", "sie können ihre einstellungen"
-        ],
-        3: [
-            "we use cookies", "at any time", "our cookie policy", "use cookies and", "use cookies to", "cookies and similar",
-            "use of cookies", "learn more about", "and our partners", "and similar technologies", "our cookie policy",
-            "wir verwenden cookies", "jederzeit wieder ändern", "unsere cookie richtlinie"
-        ],
-        2: [
-            "use cookies", "cookies and", "cookies to", "we use", "accept all", "any time", "at any", "you agree",
-            "learn more", "manage preferences",
-            "alle akzeptieren", "mehr erfahren", "einstellungen verwalten"
-        ],
-        1: [
-            "cookies", "cookie", "track", "tracking", "einwilligung", "datenschutz"
-        ]
-    };
-
-    const cmpRegex = new RegExp(
-        [
-            //central terms and some providers
-            "cmp|consent|cookie|gdpr|onetrust|usercentrics|cookiebot|didomi|iubenda|trustarc|quantcast|osano|cookieyes|complianz|termsfeed|cookienotice|cookiescript|moove|consentmanager",
-            //"Privacy" & "Center" variation
-            "privacy[\\s\\-_]*center", "privacy[\\s\\-_]*manager", "privac", "privatsp", "preferenc",
-            //international
-            "protection", "protec", "données", "dati", "datos", "adat", "privacidad", "polityka", "confiden",
-            //German & eastern europe
-            "verarbeitung", "Datenschutz", "personvern", "integritet", "nastavení", "asetukset", "настройки"
-        ].join("|"), "i"
-    );
-    //TODO: The DOMAINS array could be populated with known CMP iframe domains as an additional detection layer
-    //based so far on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
-    const DOMAINS = [
-        "quantcast.mgr.consensu.org",
-        "cdn.cookielaw.org", // OneTrust
-        "consent.trustarc.com",
-        "consentcdn.cookiebot.com",
-        "gdpr.privacymanager.io", //LiveRamp
-        "c.evidon.com" //Crownpeak
-    ];
     try {
-
         const url = frame.url();
         const name = frame.name();
         let frameScoreBonus = 0;
 
-        if (DOMAINS.some(domain => url.includes(domain))) {
+        if (CMP_DOMAINS.some(domain => url.includes(domain))) {
             frameScoreBonus += 50; //TODO: evaluate!
         }
-        if (cmpRegex.test(url) || cmpRegex.test(name)) {
+
+        if (CMP_REGEX.test(url) || CMP_REGEX.test(name)) {
             frameScoreBonus += 20; //TODO: evaluate!
         }
 
@@ -1017,7 +956,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             }
 
             return localScore;
-        }, TABLE_6_CUSTOM_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA);
+        }, DARKDIALOGS_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA);
 
         if (score < -100) {
             return score;
