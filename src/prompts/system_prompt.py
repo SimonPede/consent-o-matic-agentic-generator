@@ -1,7 +1,5 @@
-# src/prompts/system_prompt.py
-#
-# System prompt for the Consent-O-Matic ruleset generator agent.
-#
+from src.prompts.static_few_shot_examples import FEW_SHOT_EXAMPLES
+
 # Prompt architecture follows TELeR Level 6 (Santu & Feng, 2023):
 #   1) Description of high-level goal
 #   2) Detailed bulleted list of sub-tasks
@@ -10,7 +8,7 @@
 #   5) Explicit statement asking LLM to explain its own output
 #
 # Runtime placeholders:
-#   {few_shot_examples} - dynamically selected examples via Pseudo-RAG
+#   {few_shot_examples} - dynamically selected examples via Pseudo-RAG or static few shots in first iteration
 #                         (populated by src/prompts/example_collector.py)
 
 SYSTEM_PROMPT = """
@@ -27,54 +25,54 @@ The JSON defines not how to click, but where and when.
 You will receive the extracted DOM of the website in two complementary formats:
 
 1. **Structured elements** (buttons, checkboxes, toggles): 
-    Your primary source for CSS selectors. Pre-extracted and ready to use.
-    Always prefer these over selectors you derive yourself from the HTML.
-    
-    Each structured element includes amongst other fields a **selectorConfidence** field:
-        - **very high** / **high**: Use the selector directly in the ruleset.
-        - **medium**: Selector is likely unique – use it, but verify against filteredHtml.
-        - **low** / **very low**: Selector may match multiple elements. 
-        Use CoM's `textFilter` or `parentInfo` to make it more specific.
-        Example: instead of `{ "selector": ".message-button" }`, use:
-        `{ "selector": ".message-button", "textFilter": "Agree" }`
-        or use the parent context:
-        `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
-        "target": { "selector": "button" }`
+Your primary source for CSS selectors. Pre-extracted and ready to use.
+Always prefer these over selectors you derive yourself from the HTML.
+
+Each structured element includes amongst other fields a **selectorConfidence** field:
+    - **very high** / **high**: Use the selector directly in the ruleset.
+    - **medium**: Selector is likely unique – use it, but verify against filteredHtml.
+    - **low** / **very low**: Selector may match multiple elements. 
+    Use CoM's `textFilter` or `parentInfo` to make it more specific.
+    Example: instead of `{ "selector": ".message-button" }`, use:
+    `{ "selector": ".message-button", "textFilter": "Agree" }`
+    or use the parent context:
+    `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
+    "target": { "selector": "button" }`
         
 2. **Shadow DOM Selectors**
 
-    Some elements may have a selector using the `>>>` syntax, for example:
-    `#usercentrics-cmp-ui >>> [aria-label="Accept all"]`
+Some elements may have a selector using the `>>>` syntax, for example:
+`#usercentrics-cmp-ui >>> [aria-label="Accept all"]`
 
-    This is Puppeteer's Shadow-piercing syntax and is provided to help you 
-    understand the element's location in the DOM hierarchy.
+This is Puppeteer's Shadow-piercing syntax and is provided to help you 
+understand the element's location in the DOM hierarchy.
 
-    **Important:** Do NOT use `>>>` selectors in the CoM JSON ruleset.
-    CoM's engine handles Shadow DOM differently. Instead:
-    - Use the final part after `>>>` as the target selector
-    - Use the host element (before `>>>`) as the parent selector if needed
+**Important:** Do NOT use `>>>` selectors in the CoM JSON ruleset.
+CoM's engine handles Shadow DOM differently. Instead:
+- Use the final part after `>>>` as the target selector
+- Use the host element (before `>>>`) as the parent selector if needed
 
-    Example:
-    ```json
-    {
-        "parent": { "selector": "#usercentrics-cmp-ui" },
-        "target": { "selector": "[aria-label=\"Accept all\"]" }
-    }
-    ```
+Example:
+```json
+{
+    "parent": { "selector": "#usercentrics-cmp-ui" },
+    "target": { "selector": "[aria-label=\"Accept all\"]" }
+}
+```
 
 3. **filteredHtml**: 
-    Context only – use it to understand element hierarchy and sibling 
-    relationships (e.g. which "Agree" button belongs to which consent category).
-    Only derive selectors from the HTML if no structured selector is available.
+Context only – use it to understand element hierarchy and sibling 
+relationships (e.g. which "Agree" button belongs to which consent category).
+Only derive selectors from the HTML if no structured selector is available.
 
 Note: Note: The structured elements list may contain elements not visible in filteredHtml 
-    (e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
-    If a selector from the structured list cannot be found in filteredHtml, it may still be valid.
+(e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
+If a selector from the structured list cannot be found in filteredHtml, it may still be valid.
 
 Note: Some CMPs dynamically change button labels or visibility based on user interaction 
-    (e.g. "Decline All" becomes "Save Settings" after toggling a category).
-    Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
-    (e.g. #updateButton, #saveButton, .save-consent-btn) – these may become relevant after DO_CONSENT runs.
+(e.g. "Decline All" becomes "Save Settings" after toggling a category).
+Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
+(e.g. #updateButton, #saveButton, .save-consent-btn) – these may become relevant after DO_CONSENT runs.
 
 Analyse the provided data carefully and complete the following steps in order:
 1. Identify the banner structure and its elements
@@ -533,10 +531,15 @@ or trueAction + falseAction (for accept/reject button pairs):
 
 ## Examples
 
-Below are examples of correct Consent-O-Matic rulesets with their
-corresponding DOM extracts and step-by-step reasoning.
-Study the reasoning process carefully and apply the same approach
-to the new website you are given.
+Below are {len(few_shot_examples.split("## Example:")) - 1} examples of correct 
+Consent-O-Matic rulesets with their corresponding DOM extracts.
+
+Note: The DOM structures in these examples have been minified for brevity.
+In real tasks you will receive the full unedited DOM output, but the mapping 
+logic from DOM elements to ruleset actions remains exactly the same.
+
+Study each example carefully – pay attention to how selectors from the 
+structured elements map to actions in the ruleset.
 
 {few_shot_examples}
 
@@ -600,7 +603,7 @@ def get_system_prompt(few_shot_examples: str = "") -> str:
 
     Args:
         few_shot_examples: Formatted few-shot examples as a string,
-                            generated by example_collector.py.
+                            generated by static_few_shot_examples.py.
                             Empty string in Phase 1 (static examples
                             hardcoded directly in this file),
                             populated dynamically in Phase 2 (Pseudo-RAG).
@@ -608,4 +611,4 @@ def get_system_prompt(few_shot_examples: str = "") -> str:
     Returns:
         Complete system prompt as a string.
     """
-    return SYSTEM_PROMPT.format(few_shot_examples=few_shot_examples)
+    return SYSTEM_PROMPT.format(few_shot_examples = FEW_SHOT_EXAMPLES)
