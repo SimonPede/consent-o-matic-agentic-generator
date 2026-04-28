@@ -7,3 +7,4 @@ data/results/*
 .DS_Store
 CLAUDE.md
 debug.png
+extraction_debug.json

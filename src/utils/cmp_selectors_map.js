@@ -165,6 +165,9 @@ const CMP_SELECTORS = {
     '[class*="onetrust"]' : "OneTrust", 
     '[id*="ot-sdk-container"]' : "OneTrust",
     '[class*="ot-sdk-container"]' : "OneTrust",
+    //from myself for robustness, maybe deleting later
+    '[id*="onetrust-consent-sdk"]' : "OneTrust",
+    '[class*="onetrust-consent-sdk"]' : "OneTrust",
     '[class*="optanon"]' : "OneTrust",
     '[id*="optanon"]' : "OneTrust",
     
@@ -329,6 +332,79 @@ const CMP_SELECTORS = {
     '[class*="qc-cmp2-consent-info"]' : "Quantcast",
     '[id*="cmpbox"]' : "Quantcast",
     '[class*="cmpbox"]' : "Quantcast",
+
+    //from myself:
+    "#transavia-consent-banner": "Transavia",
 };
 
 module.exports = CMP_SELECTORS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//     "affinity": {
+//         "detectors": [
+//             {
+//             "presentMatcher": [
+//                 {
+//                     "type": "css",
+//                     "target": {
+//                         "selector": "#onetrust-banner-sdk"
+//                     }
+//                 }
+//             ],
+//             "showingMatcher": [
+//                 {
+//                     "type": "css",
+//                     "target": {
+//                         "selector": "#onetrust-banner-sdk",
+//                         "displayFilter": true
+//                     }
+//                 }
+//             ]
+//         }],
+//         "methods": [
+//             {
+//                 "name": "HIDE_CMP",
+//                 "action": {"type": "hide", "target": {"selector": "#onetrust-consent-sdk"}}
+//             },
+//             {
+//                 "name": "OPEN_OPTIONS",
+//                 "action": {"type": "click", "target": {"selector": "#onetrust-pc-btn-handler"}}
+//             },
+//             {
+//                 "name": "DO_CONSENT",
+//                 "action": {
+//                     "type": "consent",
+//                     "consents": [{
+//                         "type": "B",
+//                         "matcher": {"type": "checkbox", "target": {"selector": "#ot-group-id-C0002"}},
+//                         "toggleAction": {"type": "click", "target": {"selector": "#ot-group-id-C0002"}}
+//                     }]
+//                 }
+//             },
+//             {
+//                 "name": "SAVE_CONSENT",
+//                 "action": {
+//                     "type": "ifcss",
+//                     "target": {"selector": ".save-preference-btn-handler", "displayFilter": true},
+//                     "trueAction": {"type": "click", "target": {"selector": ".save-preference-btn-handler"}},
+//                     "falseAction": {"type": "click", "target": {"selector": ".ot-pc-refuse-all-handler"}}
+//                 }
+//             }
+//         ]
+//     }
+// }

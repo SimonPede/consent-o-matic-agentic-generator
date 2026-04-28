@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
 const Diff = require('diff');
+const fs = require('fs');
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
@@ -92,7 +93,7 @@ async function findSettingsButtonViaLLM(html) {
                         #cookie-preferences-btn
 
                         HTML:
-                        ${html.slice(0, 20000)}`,
+                        ${html.slice(0, 200000)}`,
                 stream: false
             })
         });
@@ -333,27 +334,67 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {HTMLInputElement} input - checkbox or toggle input element
          * @returns {string} - label text, or empty string if no label found
          */
+        // function findLabelForInput(input) {
+        //     const root = input.getRootNode();
+
+        //     if (input.id && root.querySelector) {
+        //         const label = root.querySelector(`label[for="${input.id}"]`);
+        //         if (label) {
+        //             return label.innerText.trim();
+        //         }
+        //     }
+        //     const closestLabel = input.closest("label");
+        //     if (closestLabel) {
+        //         return closestLabel.innerText.trim();
+        //     }
+
+        //     const labelledBy = input.getAttribute("aria-labelledby");
+        //     if (labelledBy && root.querySelector) {
+        //         const labelEl = root.querySelector(`#${labelledBy}`);
+        //         if (labelEl) {
+        //             return labelEl.innerText.trim();
+        //         }
+        //     }
+        //     return "";
+        // }
         function findLabelForInput(input) {
             const root = input.getRootNode();
 
+            const labelledBy = input.getAttribute("aria-labelledby");
+            if (labelledBy && root.querySelector) {
+                const ids = labelledBy.split(/\s+/);
+                let combinedText = [];
+                for (const id of ids) {
+                    const labelEl = root.getElementById ? root.getElementById(id) : root.querySelector(`#${id}`);
+                    if (labelEl && labelEl.innerText.trim()) {
+                        combinedText.push(labelEl.innerText.trim());
+                    }
+                }
+                if (combinedText.length > 0) return combinedText.join(" ");
+            }
+
+            const ariaLabel = input.getAttribute("aria-label");
+            if (ariaLabel && ariaLabel.trim()) {
+                return ariaLabel.trim();
+            }
+
             if (input.id && root.querySelector) {
                 const label = root.querySelector(`label[for="${input.id}"]`);
-                if (label) {
+                if (label && label.innerText.trim()) {
                     return label.innerText.trim();
                 }
             }
+
             const closestLabel = input.closest("label");
-            if (closestLabel) {
+            if (closestLabel && closestLabel.innerText.trim()) {
                 return closestLabel.innerText.trim();
             }
 
-            const labelledBy = input.getAttribute("aria-labelledby");
-            if (labelledBy && root.querySelector) {
-                const labelEl = root.querySelector(`#${labelledBy}`);
-                if (labelEl) {
-                    return labelEl.innerText.trim();
-                }
+            const title = input.getAttribute("title");
+            if (title && title.trim()) {
+                return title.trim();
             }
+
             return "";
         }
 
@@ -484,18 +525,32 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {boolean} checkText - Set to true for buttons/links, false for inputs.
          * @returns {boolean}
          */
-        function isVisible(el, checkText = true) {
+
+
+        //erklären!!!
+        function isVisible(el, isButton = true) {
             const style = window.getComputedStyle(el);
             const rect = el.getBoundingClientRect();
             
-            const hasSize = rect.width > 0 && rect.height > 0;
-            const isCssVisible = style.display !== "none" && 
-                                style.visibility !== "hidden" &&
-                                parseFloat(style.opacity) > 0.05;
-            
-            const hasText = checkText ? el.innerText.trim().length > 0 : true;
+            if (isButton) {
+                const hasSize = rect.width > 0 && rect.height > 0;
+                const isCssVisible = style.display !== "none" && 
+                                    style.visibility !== "hidden" &&
+                                    parseFloat(style.opacity) > 0.05;
 
-            return hasSize && isCssVisible && hasText;
+                return hasSize && isCssVisible && (el.innerText.trim().length > 0);
+            }
+            const isSelfVisible = rect.width > 0 && rect.height > 0 && style.display !== "none";
+        
+            if (!isSelfVisible) {
+                const parent = el.parentElement;
+                if (parent) {
+                    const pRect = parent.getBoundingClientRect();
+                    return pRect.width > 0 && pRect.height > 0;
+                }
+            }
+            return isSelfVisible;
+
         }
 
         //following part very similiar logic to: no cmpContainer found. Because of this i deletet my comments to save some space for now
@@ -518,27 +573,21 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         // but waitForSelector() cannot pierce Shadow DOM boundaries, meaning the banner
         // container may not yet be present when extraction runs.
         // Affected CMPs: unknown!! TODO.
-        for (const selector of selectors) {
 
+        //when testing against "https://www.flightaware.com/" i noticed: the setting page got loaded
+        //inside a div that already existed but was not visble. The old container thta found the correct contaner for the 
+        //banner in general however still existed so my code, withozt the "bestResult"-logic i now use
+        //still picked the already etxracted container becuase it came first
+        //---------------------
+        let bestResult = null;
+        let maxInteractiveElements = -1;
+        for (const selector of selectors) {
+            
             const host = querySelectorDeep(selector);
 
             if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) continue;
         
                 const searchRoot = host.shadowRoot || host;
-                const hostClone = host.cloneNode(false); //to still get the host element (e.g. <aside id=""...>)
-
-                hostClone.innerHTML = getDeepInnerHTML(host);
-                
-                const tempDiv = document.createElement("div");
-                tempDiv.appendChild(hostClone);
-
-                // ["nav", "header", "footer", "script", "style", "img", "svg", "noscript"].forEach(t => {
-                //     tempDiv.querySelectorAll(t).forEach(n => n.remove());
-                // });
-                //UserCentrcis has most if its banner content inside header and footer, il will test:
-                ["nav", "script", "style", "img", "svg", "noscript"].forEach(t => {
-                    tempDiv.querySelectorAll(t).forEach(n => n.remove());
-                });
 
                 const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot)
                     .filter(el => isVisible(el, true))
@@ -546,7 +595,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         const deepData = generateDeepSelector(el, searchRoot);
                         return {
                             type: "button or anker",
-                            text: el.innerText.trim(),
+                            text: el.innerText.trim() || el.getAttribute("aria-label") || el.title || "",
                             tag: el.tagName,
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
@@ -559,13 +608,13 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         }
                     });
 
-                const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle']", searchRoot)
+                const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle'] [class*='switch']", searchRoot)
                     .filter(el => isVisible(el, false))
                     .map(el => {
                         const deepData = generateDeepSelector(el, searchRoot);
                         return {
                             type: "toggle",
-                            text: el.innerText.trim(),
+                            text: el.innerText.trim() || el.getAttribute("aria-label") || findLabelForInput(el) || "",
                             tag: el.tagName,
                             attributes: extractAllAttributes(el),
                             parentInfo: extractParentInfo(el),
@@ -596,17 +645,35 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     //IMPORTANT LIMITATION:
                     //querySelectorAllDeep searches the whole live DOM, although the LLM only gets the filtered HTML (without header etc.)
 
-                return {
-                    buttons,
-                    checkboxes,
-                    toggles,
-                    cmpFound: true,
-                    cmpSelector: selector,
-                    cmpContainerFound: true,
-                    url: window.location.href,
-                    html: tempDiv.innerHTML.slice(0, 25000) //HTML of the detected CMP container including its own tag and all children
-                };
-        };
+                const interactiveCount = buttons.length + checkboxes.length + toggles.length;
+                if (interactiveCount > maxInteractiveElements && interactiveCount > 0) {
+                    maxInteractiveElements = interactiveCount;
+                    
+                    const hostClone = host.cloneNode(false);
+                    hostClone.innerHTML = getDeepInnerHTML(host);
+                    const tempDiv = document.createElement("div");
+                    tempDiv.appendChild(hostClone);
+
+                    ["nav", "script", "style", "img", "svg", "noscript"].forEach(t => {
+                        tempDiv.querySelectorAll(t).forEach(n => n.remove());
+                    });
+
+                    bestResult = {
+                        buttons,
+                        checkboxes,
+                        toggles,
+                        cmpFound: true,
+                        cmpSelector: selector,
+                        cmpContainerFound: true,
+                        url: window.location.href,
+                        html: tempDiv.innerHTML
+                    };
+                }
+            }; //end of for loop
+
+            if (bestResult) {
+                return bestResult;
+            }
         
         //Step 2: No known CMP detected --> extract structured DOM via negative filtering.
         //Strategy: clone the body, remove elements that are definitely NOT the banner
@@ -634,7 +701,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const deepData = generateDeepSelector(el);
                 return {
                     type: "button or anker",
-                    text: el.innerText.trim(),
+                    text: el.innerText.trim() || el.getAttribute("aria-label") || el.title || "",
                     tag: el.tagName,
                     attributes: extractAllAttributes(el),
                     parentInfo: extractParentInfo(el),
@@ -707,7 +774,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
     if (result.html) {
         const cleaned = cleanHtml(result.html);
-        result.filteredHtml = cleaned.slice(0, 25000);
+        result.filteredHtml = cleaned.slice(0, 200000);
         delete result.html;
     }
 
@@ -1123,13 +1190,70 @@ async function getFrameState(frame) {
             return html;
         }
 
+        function isVisible(el) {
+            const style = window.getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+
+            // 1. Der ultimative Render-Tree Check:
+            // Wenn das Element oder sein Container display:none hat, ist offsetParent null.
+            // (Ausnahme: position: fixed hat manchmal auch null, das fangen wir ab).
+            if (el.offsetParent === null && style.position !== 'fixed') {
+                return false;
+            }
+
+            // 2. Großzügige Regel für Inputs (Checkboxen/Toggles):
+            // Da sie im DOM sind (siehe Check 1), lassen wir sie durch, 
+            // auch wenn sie für das Auge unsichtbar gestylt wurden (opacity: 0, 0x0 Pixel).
+            if (el.tagName === 'INPUT') {
+                return style.visibility !== 'hidden';
+            }
+
+            // 3. Strenge Regel für Buttons & Links:
+            return rect.width > 0 && 
+                rect.height > 0 && 
+                style.visibility !== "hidden" &&
+                parseFloat(style.opacity) > 0.05;
+        }
+
         return {
-            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").length, //same limitation regarding false postives as mentioned above
-            buttons: querySelectorAllDeep("button, a, [role='button']").length,
+            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").filter(isVisible).length, //same limitation regarding false postives as mentioned above
+            buttons: querySelectorAllDeep("button, a, [role='button']").filter(isVisible).length,
             html: getDeepInnerHTML(document.body) //does not look in the shadowDOM! TODO
         };
     });
 }
+
+// async function getFrameState(frame) {
+//     return await frame.evaluate(() => {
+//         function querySelectorAllDeep(selector, root = document) {
+//             let nodes = Array.from(root.querySelectorAll(selector));
+//             const elements = root.querySelectorAll("*");
+//             for (let el of elements) {
+//                 if (el.shadowRoot) {
+//                     nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
+//                 }
+//             }
+//             return nodes;
+//         }
+
+//         // Wir holen uns ALLE Elemente im DOM (inkl. Shadow DOM)
+//         const allElements = querySelectorAllDeep("*");
+//         let visibleCount = 0;
+
+//         // Wir zählen, wie viele davon physisch gerendert werden
+//         for (const el of allElements) {
+//             const style = window.getComputedStyle(el);
+//             // display: none und visibility: hidden sind die harten Fakten für "nicht gerendert"
+//             if (style.display !== "none" && style.visibility !== "hidden") {
+//                 visibleCount++;
+//             }
+//         }
+
+//         return {
+//             visibleElements: visibleCount
+//         };
+//     });
+// }
 
 
 /**
@@ -1155,71 +1279,109 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     //TODO: currently using character count difference
     //Even better: dom-compare library for structural DOM diffing.
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
-
+    console.error(`settings selector: ${selector}`);
     const oldState = await getFrameState(frame);
 
-    try {
-        await frame.click(selector);
-    } catch (err) {
-        // console.error("Click failed:", err.message);
-        // return null;
-        console.error("Puppeteer click failed, trying JS click:", err.message);
-        // Fallback: direct JavaScript click via frame.evaluate()
-        // Puppeteer's click() requires the element to be visible, in the viewport,
-        // and not obscured by other elements. This fails for elements that are
-        // technically present in the DOM but not fully rendered or positioned
-        // outside the visible area (e.g. banners that animate in, or elements
-        // with unusual z-index stacking).
-        // el.click() bypasses these checks and fires the click event directly –
-        // less reliable for real user simulation but sufficient for banner interaction.
+    // try {
+    //     await frame.click(selector);
+    // } catch (err) {
+    //     // console.error("Click failed:", err.message);
+    //     // return null;
+    //     console.error("Puppeteer click failed, trying JS click:", err.message);
+    //     // Fallback: direct JavaScript click via frame.evaluate()
+    //     // Puppeteer's click() requires the element to be visible, in the viewport,
+    //     // and not obscured by other elements. This fails for elements that are
+    //     // technically present in the DOM but not fully rendered or positioned
+    //     // outside the visible area (e.g. banners that animate in, or elements
+    //     // with unusual z-index stacking).
+    //     // el.click() bypasses these checks and fires the click event directly –
+    //     // less reliable for real user simulation but sufficient for banner interaction.
+    //     try {
+    //         await frame.evaluate((sel) => {
+    //             const parts = sel.split(" >>> ");
+    //                 let currentRoot = document;
+    //                 let target = null;
+
+    //                 for (let i = 0; i < parts.length; i++) {
+    //                     target = currentRoot.querySelector(parts[i]);
+    //                     if (!target) return false;
+                        
+    //                     // Nur tiefer gehen, wenn es noch mehr Teile im Selektor gibt
+    //                     if (i < parts.length - 1) {
+    //                         currentRoot = target.shadowRoot;
+    //                         if (!currentRoot) {
+    //                             return false
+    //                         };
+    //                     }
+    //                 }
+
+    //             if (target) {
+    //                 //mousedown + mouseup instead of target.click(): more reliable for CMPs
+    //                 //that listen to individual mouse events rather than the synthetic click event.
+    //                 //Recommended by supervisor Thomas Franklin Cory.
+    //                 target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+    //                 target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+    //                 target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    //                 return true;
+    //             }
+    //             return false;
+    //         }, selector);
+    //     } catch (err2) {
+    //         console.error("JS deep click also failed:", err2.message);
+    //         return null;
+    //     }
+    // }
+    const clickSuccess = await frame.evaluate((sel) => {
+        const parts = sel.split(" >>> ");
+        let currentRoot = document;
+        let target = null;
+
+        for (let i = 0; i < parts.length; i++) {
+            target = currentRoot.querySelector(parts[i]);
+            if (!target) return false;
+            
+            if (i < parts.length - 1) {
+                currentRoot = target.shadowRoot;
+                if (!currentRoot) return false;
+            }
+        }
+
+        if (target) {
+            //mousedown + mouseup instead of target.click(): more reliable for CMPs
+            //that listen to individual mouse events rather than the synthetic click event.
+            //Recommended by supervisor Thomas Franklin Cory.
+            target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+            target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+            target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+            return true;
+        }
+        return false;
+    }, selector);
+
+    if (!clickSuccess) {
+        console.error("JS Click failed. Trying Puppeteer fallback...");
         try {
-            await frame.evaluate((sel) => {
-                const parts = sel.split(" >>> "); //if selector is "normal" (without >>>) this just gives back an array with one entry
-                let currentRoot = document;
-                let target = null;
-
-                for (let i = 0; i < parts.length; i++) {
-                    target = currentRoot.querySelector(parts[i]); ////if selector is "normal" (wothout >>>) this just gives searches in the body and then goes to click that element
-                    if (!target) {
-                        break;
-                    }
-                    currentRoot = target.shadowRoot; //gives access to shadow DOM of this element if it is the host
-                    if (!currentRoot) {
-                        break;
-                    }
-                }
-
-                if (target) {
-                    //mousedown + mouseup instead of target.click(): more reliable for CMPs
-                    //that listen to individual mouse events rather than the synthetic click event.
-                    //Recommended by supervisor Thomas Franklin Cory.
-                    target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
-                    target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
-                    target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-                    return true;
-                }
-                return false;
-            }, selector);
-        } catch (err2) {
-            console.error("JS deep click also failed:", err2.message);
+            await frame.click(selector);
+        } catch (err) {
+            console.error("Puppeteer click also failed:", err.message);
             return null;
         }
     }
-    // await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     // const newFrame = page.frames().find(f => !framesBefore.includes(f.url())); //which frame is new?
-    const newFramePromise = new Promise(resolve => {
-        const check = setInterval(() => {
-            const newFrame = page.frames().find(f => !framesBefore.includes(f.url()));
-            if (newFrame) {
-                clearInterval(check);
-                resolve(newFrame);
-            }
-        }, 200);
-        setTimeout(() => { clearInterval(check); resolve(null) }, 5000); //max 5s
-    });
+    // const newFramePromise = new Promise(resolve => {
+    //     const check = setInterval(() => {
+    //         const newFrame = page.frames().find(f => !framesBefore.includes(f.url()));
+    //         if (newFrame) {
+    //             clearInterval(check);
+    //             resolve(newFrame);
+    //         }
+    //     }, 200);
+    //     setTimeout(() => { clearInterval(check); resolve(null) }, 5000); //max 5s
+    // });
 
-    const newFrame = await newFramePromise;
+    // const newFrame = await newFramePromise;
     
     //debugging
     // const framesAfterClick = page.frames();
@@ -1227,8 +1389,30 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
     // await page.screenshot({ path: 'after_click.png' });
     ///////////
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    const newFrames = page.frames().filter(f => !framesBefore.includes(f.url()));
 
-    if (newFrame) {
+    let bestNewFrame = null;
+    let highestScore = 0;
+    
+    if (newFrames.length > 0) {
+        console.error(`${newFrames.length} new frames after the click. Starting scoing...`);
+        
+        
+        const fallbackAvgWordCount = 100; 
+
+        for (const newFrame of newFrames) {
+            const score = await calculateFrameScore(newFrame, fallbackAvgWordCount, CMP_SELECTORS_MAP);
+            console.error(`Frame Score: ${score} for URL: ${newFrame.url()}`);
+            
+            if (score > highestScore) {
+                highestScore = score;
+                bestNewFrame = newFrame;
+            }
+        }
+    }
+
+    if (bestNewFrame) {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const settings = await extractFromFrame(newFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
         settings.isIframe = newFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
@@ -1238,19 +1422,43 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const newState = await getFrameState(frame);
 
+        // const addedElements = newState.visibleElements - oldState.visibleElements;
+
+        // if (addedElements > 10) {
+        //     console.error(`Settings UI detected! ${addedElements} new elements became visible.`);
+        //     const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
+        //     settings.isIframe = frame !== page.mainFrame();
+        //     return settings;
+        // } else {
+        //     console.error(`Settings click had no effect (only ${addedElements} elements changed visibility).`);
+        //     return null;
+        // }
+
         const changes = Diff.diffChars(oldState.html, newState.html);
         const addedChars = changes
             .filter(c => c.added) //filteres for evrything that is actually new
             .reduce((sum, c) => sum + c.count, 0);
         
         const addedInputs = newState.inputs - oldState.inputs;
+        const addedButtons = newState.buttons - oldState.buttons;
+
+        console.error(`DOM diff: ${addedChars} chars added, ${addedInputs} inputs added.`);
+        console.error(`Old state: ${oldState.buttons} buttons, ${oldState.inputs} inputs.`);
+        console.error(`New state: ${newState.buttons} buttons, ${newState.inputs} inputs.`);
 
         //TODO: evaluate if these are good indicators
-        if (addedChars > 500 || addedInputs >= 2) {
-            console.error(`Settings detected: ${addedChars} chars added, ${addedInputs} inputs added.`);
+        if (addedChars > 500 || addedInputs > 0 || addedButtons >= 2) {
+            console.error(`Settings detected: ${addedChars} chars, ${addedInputs} inputs, ${addedButtons} buttons added.`);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-            settings.isIframe = frame !== page.mainFrame();
-            return settings;
+
+            if (settings.checkboxes.length > 0 || settings.toggles.length > 0) {
+                console.error(`✅ Settings UI bestätigt! ${settings.checkboxes.length + settings.toggles.length} funktionale Elemente gefunden.`);
+                settings.isIframe = frame !== page.mainFrame();
+                return settings;
+            } else {
+                console.error("❌ Klick hat zwar DOM verändert, aber es wurden keine funktionalen Elemente (Checkboxen) gefunden. (False Positive)");
+                return null;
+            }
             // console.error(JSON.stringify(result.settings.buttons, null, 2));
         } else {
             console.error("Settings click seems to have had no effect");
@@ -1393,7 +1601,7 @@ async function extractStructuredDom(url) {
         await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
 
         //for debugging:
-        page.on('console', msg => console.error("BROWSER:", msg.text()));
+        // page.on('console', msg => console.error("BROWSER:", msg.text()));
 
         console.error("Navigating to the page...");
         await page.goto(url, {
@@ -1443,7 +1651,7 @@ async function extractStructuredDom(url) {
             if (settingsButton) {
                 result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
             } else {
-                console.error(`Regex failed in frame ${frame.url()}, trying LLM fallback...`);
+                console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
                 const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
                 if (llmSelector) {
                     result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
@@ -1454,7 +1662,6 @@ async function extractStructuredDom(url) {
             
             delete result.frame; //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
         }
-
         console.error(results);
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
@@ -1484,16 +1691,27 @@ async function extractStructuredDom(url) {
 
             if (result.settings) {
                 console.error(`\n   Settings page extracted (isIframe: ${result.settings.isIframe}):`);
-                console.error(`      Buttons: ${result.settings.buttons.length} | Checkboxes: ${result.settings.checkboxes.length} | Toggles: ${result.settings.toggles.length}`);
+                console.error(`\n  Buttons found (${result.settings.buttons.length}):`);
                 for (const btn of result.settings.buttons) {
                     console.error(`      [${btn.tag}] "${btn.text}" --> selector: ${btn.selector}`);
+                }
+
+                console.error(`\n   Checkboxes found (${result.settings.checkboxes.length}):`);
+                for (const cb of result.settings.checkboxes) {
+                    console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled}`);
+                }
+
+                console.error(`\n  Toggles found (${result.settings.toggles.length}):`);
+                for (const tgl of result.settings.toggles) {
+                    console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked}`);
                 }
             } else {
                 console.error(`\n   No settings page found`);
             }
         }
         console.error("========================================\n");
-
+        fs.writeFileSync('extraction_debug.json', JSON.stringify(results, null, 2));
+        console.error("Gesamter Output wurde in extraction_debug.json gespeichert.");
         await browser.close();
         console.error("browser closed!");
         return results;
@@ -1525,13 +1743,126 @@ async function extractStructuredDom(url) {
 
 //for seperate testing:
 (async () => {
-    const foundData = await extractStructuredDom("https://spiegel.de");
+    const foundData = await extractStructuredDom("https://www.cookiebot.com/");
     if (foundData) {
         console.log("foundData was filled with a value");
     }
 })();
 
 //https://usercentrics.com/de/
-//https://zalando.de --> does not work!
+//https://zalando.de
 //https://heise.de
 //https://spiegel.de
+
+//URLS for few shot examples:
+//1: https://www.flightaware.com/ --> doch veraltet
+//2: https://www.affinity.com/ --> veraltet
+//3: https://cookieinformation.com/ --> veraltet
+//4: https://www.cookiebot.com/ --> nur leicht anpassen wegen "inline" in den ids
+//5: https://www.swedbank.com/ --> fits almost perfectly. Current uses not the seemingly random generated ids like id-890693537-1
+//--> system prompt: "**Dynamic IDs:** If a checkbox or toggle has an ID that appears dynamically 
+// generated (e.g., contains long numeric strings like `#id-890693537-1`), 
+// do not use the ID as selector. Instead use the `name` attribute:
+// `input[name='functi']` or combine with a stable parent class:
+// `.cookie-form input[name='functi']`
+// The `name` attribute and class names from `parentInfo` are stable alternatives."
+
+// https://www.skyscanner.de/
+
+// https://www.transavia.com/ --> settings btton führt zum falschen iframe
+// https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
+
+
+
+
+//sehr spannedner outpt:
+//CMP Type detected: null
+// a frame was picked by score: https://www.skyscanner.de/sttc/px/captcha-v2/index.html?url=Lw==&uuid=47bb3710-424e-11f1-be4c-f97fa79ab85f with Score: 2
+// Regex failed in frame https://www.skyscanner.de/sttc/px/captcha-v2/index.html?url=Lw==&uuid=47bb3710-424e-11f1-be4c-f97fa79ab85f, trying LLM fallback...
+// findSettingsButtonViaLLM failed: fetch failed
+// [
+//   {
+//     frameUrl: 'https://www.skyscanner.de/sttc/px/captcha-v2/index.html?url=Lw==&uuid=47bb3710-424e-11f1-be4c-f97fa79ab85f',
+//     isMainFrame: true,
+//     isCookieBannerFrame: true,
+//     cmpType: null,
+//     data: {
+//       buttons: [],
+//       checkboxes: [],
+//       toggles: [],
+//       cmpFound: false,
+//       cmpType: null,
+//       cmpSelector: null,
+//       cmpContainerFound: false,
+//       url: 'https://www.skyscanner.de/sttc/px/captcha-v2/index.html?url=Lw==&uuid=47bb3710-424e-11f1-be4c-f97fa79ab85f',
+//       filteredHtml: '<body><div id="root"><div id="app_main" class="App_App__YzZiO"><section class="App_App__logo__NTM3Y"></section><section class="App_App__image__MzI5Z"><div class="UNKNOWN" data-backpack-ds-comp><div class="BpkImage_bpk-image__NDc4O BpkImage_bpk-image--no-background__MTIzO"></div></div></section><h1 class="App_App__headline__OGFkN">Bist du ein Mensch oder ein Roboter?</h1><section class="App_App__message__YzI1N">Nimm das bitte nicht persönlich – einige Skripts und Bots sind heutzutage bemerkenswert lebensecht!</section><section class="App_App__captcha__NTllM"><div id="px-captcha"></div></section><section class="App_App__resolve__NTJjZ">Du kannst immer noch nicht auf die Seite zugreifen? Bitte überprüfe, ob du JavaScript und Cookies eingeschaltet hast und stelle sicher, dass dein Browser den Ladevorgang nicht unterdrückt.</section><section class="App_App__identifier__M2ZkO">47bb3710-424e-11f1-be4c-f97fa79ab85f</section></div></div><iframe src="https://js.px-cloud.net/?t=d-zgelyj4qu-1777303942797&amp;v=478ee737-424e-11f1-824c-a750f9e5535d" dataframetoken="d-zgelyj4qu-1777303942797" referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1" role="presentation" title=""></iframe></body>'
+//     },
+//     settings: null
+//   }
+// ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 2. Greedy Extraction Logic ("Best-Fit" Strategy)
+// The Change: Shifted from "First-Fit" (returning the first element that matches a CMP selector) to "Best-Fit" (iterating through all matches and selecting the one with the highest interactiveCount).
+
+// Reasoning: CMPs like OneTrust often inject multiple elements matching the same CSS patterns (e.g., empty backdrops or hidden containers). Selecting the first match often results in "empty" extractions.
+
+// Academic Justification: To ensure heuristic robustness, the agent implements a density-based selection algorithm. By quantifying interactive potential (buttons, toggles, checkboxes), the system prioritizes the active UI layer over decorative or structural background elements.
+
+// 3. Render-Tree Aware State Diffing
+// The Change: Integrated an isVisible check into the getFrameState function used for click-success verification.
+
+// Reasoning: Many CMPs "preload" the settings menu in a hidden state (display: none). A standard HTML string-diff detects no change after a click because the code existed beforehand.
+
+// Academic Justification: Interaction verification in Single Page Applications (SPAs) must distinguish between the DOM Tree (presence) and the Render Tree (visibility). By monitoring Computed Styles, the agent validates the success of an action based on actual user-perceivable UI state changes.
+
+// 4. Native DOM Event Dispatching
+// The Change: Implemented a dual-layer click strategy using native target.click() and MouseEvent dispatching (mousedown, mouseup) within the browser context.
+
+// Reasoning: Puppeteer’s synthetic page.click() simulates coordinates and can be intercepted by invisible overlays or z-index filters (Backdrops). Native JS clicks bypass these visual obstructions.
+
+// Academic Justification: Automated interaction with third-party overlays requires bypassing the Synthetic Event System of high-level drivers to ensure reliability against visual occlusion (e.g., modal backdrops).
+
+// 5. Semantic Label Resolution (ARIA-Mapping)
+// The Change: Overhauled findLabelForInput to resolve aria-labelledby (including multi-ID strings), aria-label, and implicit label relationships.
+
+// Reasoning: Modern frameworks rarely use the classic <label for="..."> syntax. Without resolving ARIA relationships, extracted checkboxes/toggles remain "anonymous" and useless for LLM processing.
+
+// Academic Justification: Addressing the Semantic Gap in automated audits. By implementing a Multi-tier Label Resolution Heuristic, the system reconstructs the Accessibility Object Model (AOM) relationships, turning raw technical nodes into semantically meaningful data points for the audit agent.
+
+
+
+
+
+
+
+
+
+
+//Die Evaluation auf komplexen Domänen wie Swedbank zeigte, dass die Implementierung einer Render-Tree-basierten Sichtbarkeitsprüfung (mittels offsetParent) kritisch für den Erfolg der Extraktion ist. Während naive DOM-Scans an visuell verschleierten <input>-Tags scheiterten, konnte die angepasste Heuristik alle Consent-Checkboxen sowie deren Zustände (disabled/checked) fehlerfrei erfassen. Das auftretende 'Hintergrund-Rauschen' (irrelevante Navigationslinks) beeinträchtigt die nachgelagerte LLM-Verarbeitung nicht, da die semantische Eindeutigkeit der Consent-Elemente erhalten bleibt.

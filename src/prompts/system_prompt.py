@@ -67,9 +67,14 @@ You will receive the extracted DOM of the website in two complementary formats:
     relationships (e.g. which "Agree" button belongs to which consent category).
     Only derive selectors from the HTML if no structured selector is available.
 
-Note: The structured elements list may contain elements that are not 
-visible in filteredHtml due to negative filtering (due to "nav", "script", "style", "img", "svg", "noscript" removal).
-Always verify selectors against the filteredHtml before using them.
+Note: Note: The structured elements list may contain elements not visible in filteredHtml 
+    (e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
+    If a selector from the structured list cannot be found in filteredHtml, it may still be valid.
+
+Note: Some CMPs dynamically change button labels or visibility based on user interaction 
+    (e.g. "Decline All" becomes "Save Settings" after toggling a category).
+    Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
+    (e.g. #updateButton, #saveButton, .save-consent-btn) – these may become relevant after DO_CONSENT runs.
 
 Analyse the provided data carefully and complete the following steps in order:
 1. Identify the banner structure and its elements

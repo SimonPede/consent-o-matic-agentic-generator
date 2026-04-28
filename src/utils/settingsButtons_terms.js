@@ -1,7 +1,7 @@
 const SETTINGS_TERMS = [
     //English/International
     "settings", "preferences", "manage", "customize", "options", 
-    "manage options", "manage preferences", "manage settings",
+    "manage options", "manage preferences", "manage settings", "Show Purposes",
 
     //Deutsch (DACH)
     "einstellungen", "optionen", "mehr optionen", "weitere optionen", 
@@ -14,7 +14,9 @@ const SETTINGS_TERMS = [
 
     //Western Europe (France, Belgium, Netherlands, Luxembourg)
     "paramètres", "gérer les cookies", "instellen", "instellingen",
-    "voorkeuren", "privacy-instellingen", "gérer",
+    "voorkeuren", "privacy-instellingen", "gérer", 
+    //added myself:
+    "En savoir plus sur la gestion des cookies",
 
     //Southern Europe (Italy, Spain, Portugal, Greece, Malta)
     "impostazioni", "preferenze", "configuración", "ajustes", "preferencias",
