@@ -24,19 +24,68 @@ The system consists of two components: a hardcoded engine and interchangeable ru
 and individual cookie banners. The engine reads the JSON and translates it into concrete DOM interactions.
 The JSON defines not how to click, but where and when.
 
-You will receive the extracted DOM of the website. Analyse it
-carefully and complete the following steps in order:
-1. Analyse it carefully and identify the banner structure and the banner elements
-2. Find the CSS selectors needed to detect the banner and its elements
-3. Map each UI element (checkbox, toggle, button, anker) to a consent
+You will receive the extracted DOM of the website in two complementary formats:
+
+1. **Structured elements** (buttons, checkboxes, toggles): 
+    Your primary source for CSS selectors. Pre-extracted and ready to use.
+    Always prefer these over selectors you derive yourself from the HTML.
+    
+    Each structured element includes amongst other fields a **selectorConfidence** field:
+        - **very high** / **high**: Use the selector directly in the ruleset.
+        - **medium**: Selector is likely unique – use it, but verify against filteredHtml.
+        - **low** / **very low**: Selector may match multiple elements. 
+        Use CoM's `textFilter` or `parentInfo` to make it more specific.
+        Example: instead of `{ "selector": ".message-button" }`, use:
+        `{ "selector": ".message-button", "textFilter": "Agree" }`
+        or use the parent context:
+        `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
+        "target": { "selector": "button" }`
+        
+2. **Shadow DOM Selectors**
+
+    Some elements may have a selector using the `>>>` syntax, for example:
+    `#usercentrics-cmp-ui >>> [aria-label="Accept all"]`
+
+    This is Puppeteer's Shadow-piercing syntax and is provided to help you 
+    understand the element's location in the DOM hierarchy.
+
+    **Important:** Do NOT use `>>>` selectors in the CoM JSON ruleset.
+    CoM's engine handles Shadow DOM differently. Instead:
+    - Use the final part after `>>>` as the target selector
+    - Use the host element (before `>>>`) as the parent selector if needed
+
+    Example:
+    ```json
+    {
+        "parent": { "selector": "#usercentrics-cmp-ui" },
+        "target": { "selector": "[aria-label=\"Accept all\"]" }
+    }
+    ```
+
+3. **filteredHtml**: 
+    Context only – use it to understand element hierarchy and sibling 
+    relationships (e.g. which "Agree" button belongs to which consent category).
+    Only derive selectors from the HTML if no structured selector is available.
+
+Note: Note: The structured elements list may contain elements not visible in filteredHtml 
+    (e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
+    If a selector from the structured list cannot be found in filteredHtml, it may still be valid.
+
+Note: Some CMPs dynamically change button labels or visibility based on user interaction 
+    (e.g. "Decline All" becomes "Save Settings" after toggling a category).
+    Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
+    (e.g. #updateButton, #saveButton, .save-consent-btn) – these may become relevant after DO_CONSENT runs.
+
+Analyse the provided data carefully and complete the following steps in order:
+1. Identify the banner structure and its elements
+2. Determine the CSS selectors needed – prioritising the structured elements
+3. Map each UI element (checkbox, toggle, button, anchor) to a consent
     category (A, B, D, E, F, X) and determine the required actions
 4. Before generating the JSON, briefly describe:
-    - Which banner elements you identified in the DOM
-    - Which CSS selectors you will use for detection
-    - How you mapped each UI element to a consent category (A, B, D, E, F, X)
-        and why
+    - Which banner elements you identified
+    - Which CSS selectors you will use and from which source (structured/HTML)
+    - How you mapped each UI element to a consent category and why
 5. Produce the JSON ruleset.
-
 
 A ruleset is successful when the cookie banner disappears after
 execution and all consent categories are correctly mapped.
