@@ -1,0 +1,1502 @@
+[
+  {
+    "frameUrl": "https://www.swedbank.com/",
+    "isMainFrame": true,
+    "isCookieBannerFrame": true,
+    "cmpType": null,
+    "data": {
+      "buttons": [
+        {
+          "type": "button or anker",
+          "text": "Search",
+          "tag": "BUTTON",
+          "attributes": {
+            "type": "button",
+            "tabindex": "0"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "search-button small-screen field"
+          },
+          "selector": "button",
+          "selectorConfidence": "very low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Menu",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "navigation-button  primary menu",
+            "data-js": "menu-toggle",
+            "aria-haspopup": "dialog",
+            "id": "top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home",
+            "aria-expanded": "false"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "container"
+          },
+          "selector": "#top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Log in",
+          "tag": "A",
+          "attributes": {
+            "class": "icon-link  log-in primary",
+            "href": "https://online.swedbank.se/app/ib/logga-in"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "container"
+          },
+          "selector": ".icon-link",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Changes in Swedbank’s Group Executive Committee",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.changes-in-swedbank%E2%80%99s-group-executive-committee.CAD247ECC01512BB.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank Sustainable Bond Impact Report 2025",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.swedbank-sustainable-bond-impact-report-2025.5F1789A1E4EF6419.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Invitation – Swedbank’s interim report for the first quarter 2026",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.invitation-%E2%80%93-swedbank%E2%80%99s-interim-report-for-the-first-quarter-2026.2827C14F3C444E7C.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Follow the latest updates in Swedbank’s Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow   newsroom",
+            "href": "/newsroom/press-releases.html"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "releases-content"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Interim reports",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/reports-and-presentations.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Financial calendar",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/financial-calendar.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Our work with preventing money-laundering and counter-terrorist financing",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/sustainability/prevent-financial-crime/how-we-work-with-aml-and-counter-terrorist-financing.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank's history",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/about-swedbank/our-history.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sustainability",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/sustainability.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/newsroom.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Find available job openings",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/work-with-us.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Settings for cookies",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "#",
+            "data-js": "customize-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Stock quotes for Swedbank A",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/the-share/share-price-graph.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-analytics-click-track": "cta",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "SECTION",
+            "id": "",
+            "className": "component cta arrow"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How we use cookies",
+          "tag": "A",
+          "attributes": {
+            "href": "/about-swedbank/cookies.html",
+            "class": "go-to-page general-link"
+          },
+          "parentInfo": {
+            "tag": "U",
+            "id": "",
+            "className": ""
+          },
+          "selector": ".go-to-page",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Accept all cookies",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "button orange",
+            "type": "button",
+            "id": "cookie-banner-initial-accept-all",
+            "data-js": "accept-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "cookie-initial-buttons"
+          },
+          "selector": "#cookie-banner-initial-accept-all",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Only necessary cookies",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "button orange",
+            "type": "button",
+            "id": "cookie-banner-accept-essentials",
+            "data-js": "save-custom-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "cookie-initial-buttons"
+          },
+          "selector": "#cookie-banner-accept-essentials",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Cookie settings",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "button turqouise",
+            "type": "button",
+            "id": "cookie-banner-initial-customize",
+            "data-js": "customize-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "cookie-initial-buttons"
+          },
+          "selector": "#cookie-banner-initial-customize",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Contact us",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/contact-us.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank Group",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/newsroom.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Work with us",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/work-with-us.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sweden",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.se/",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Sweden, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Sweden, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Estonia",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://swedbank.ee/private?language=ENG",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Estonia, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Estonia, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Latvia",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.lv/private/d2d/start",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Latvia, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Latvia, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Lithuania",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.lt/private/d2d/start",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Lithuania, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Lithuania, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Withdraw cookie consent",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "#",
+            "target": "same-window",
+            "data-analytics-click-track": "footer",
+            "data-cookie-link": "cookie-withdraw"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How we use cookies",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/cookies.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Processing of personal data",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/personal-data.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How Swedbank uses AI",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/how-swedbank-uses-ai.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Recommended browsers",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/browsers.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "User terms",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/user-terms.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Visitors outside of Sweden",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/customers-outside-sweden.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sitemap",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/sitemap.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        }
+      ],
+      "checkboxes": [],
+      "toggles": [],
+      "cmpFound": false,
+      "cmpType": null,
+      "cmpSelector": null,
+      "cmpContainerFound": false,
+      "url": "https://www.swedbank.com/",
+      "filteredHtml": "<body><div data-js=\"page-content\" inert=\"\"> <div data-js=\"header-wrapper\" class=\"header-wrapper\"><div data-js=\"navigation-wrapper\" class=\"navigation-wrapper\"><header class=\"top-bar\" data-js=\"top-bar\"> <div class=\"logo\"> <h1> <a href=\"/\" title=\"Swedbank\" target=\"_top\"> <picture> <source srcset=\"/content/dam/global/brand/logotypes/8999-swedbank-logo-white.svg\" media=\"(prefers-color-scheme: dark)\"> </picture> </a> </h1> </div> <div class=\"search-button small-screen field\" data-js=\"header-search\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <section class=\"component search-modal stretch hidden\" data-comp> <div class=\"modal\" data-js=\"search-modal-wrapper\"> <form action=\"/search.html\" class=\"search-form\" method=\"get\" data-js-search-form=\"\"> <div class=\"search-field-wrapper field\" data-form-field=\"drop-down\"> <div class=\"combo js-select\"> <label aria-label=\"Search\" for=\"id483329337header\" id=\"label-id483329337header\" hidden=\"\">Search</label> <div class=\"combobox combobox-list\"> <div class=\"group\"> <input id=\"id483329337header\" type=\"text\" role=\"combobox\" aria-autocomplete=\"list\" autocomplete=\"off\" aria-labelledby=\"label-id483329337header\" aria-expanded=\"false\" aria-c name=\"q\" data-js-allow-suggesti class=\"search-field-input combo-input\" data-js=\"search-field-input\" data-js-search-field=\"\" data-search-endpoint=\"https://app.swedbank.se/api/content-mgmt/searcher/v1/suggestions/swedbankcom-en\" data-search-api-key=\"BvNFdlD6xbaEMjg5Zia6JCuWWyEjEOdy\" data-search-url=\"https://www.swedbank.com/search.html\" data-js-allow-no-value-search=\"false\"> <span class=\"search-field-buttons\" data-js=\"search-field-buttons\"> <button class=\"icon-button clear hidden without-text\" type=\"button\" data-js=\"clear-search-field\" aria-label=\"Erase\"> <icon-close> </icon-close> </button> <span data-js=\"search-field-divider\" class=\"divider hidden\"></span> <button class=\"icon-button search without-text\" type=\"submit\" data-js=\"search-button\" aria-label=\"Search\"> <icon-search> </icon-search> </button> </span> </div> <ul id=\"combo-id483329337header-listbox\" role=\"listbox\" data-js-suggesti class=\"suggestions\"></ul> </div> </div> </div> <div class=\"popular-search-items\" data-js=\"popular-items\"> <section class=\"component headline \" data-comp> <h2 class=\" \" id=\"search-items-header\"> People look for </h2> </section> <ul> <li> <a class=\"general-link\" href=\"/work-with-us.html\" data-analytics-click-track=\"search-popular\"> Work with us <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/the-share/share-price-graph.html\" data-analytics-click-track=\"search-popular\"> Share price graph <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/reports-and-presentations/interim-reports.html\" data-analytics-click-track=\"search-popular\"> Interim reports <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/about-swedbank/management-and-corporate-governance/the-board-of-directors.html\" data-analytics-click-track=\"search-popular\"> The Board of Directors <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/newsroom.html\" data-analytics-click-track=\"search-popular\"> Newsroom <icon-arrow-large> </icon-arrow-large> </a> </li> </ul> </div> </form> </div> </section> <div class=\"wrapper\"> <div class=\"left\"> <div class=\"actions\"> <div class=\"search-button field\" data-js=\"header-search\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <div class=\"links\"> <a class=\"icon-link\" href=\"https://online.swedbank.se/app/ib/logga-in\" data-analytics-click-track=\"menu-header\"> <icon-log-in class=\"pr-4\"> </icon-log-in> Log in </a> </div> </div> </div> </div> </header></div></div> <div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <div class=\"search-button field\" data-js=\"menu-toggle\" id=\"search\" aria-expanded=\"false\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Menu </span> </section> <div class=\"footer \"> <div class=\"language-selector on-top\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-menu-modal-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-menu-modal-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-menu-modal-language-0\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\" data-js-url=\"https://www.swedbank.com/\" data-analytics-click-track=\"menu-level0-lang\">English</div><div role=\"option\" id=\"combo-id-menu-modal-language-1\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\" data-js-url=\"https://www.swedbank.com/sv/\" data-analytics-click-track=\"menu-level0-lang\">Svenska</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-about-us\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-about-us\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> About us </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-work-with-us\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-work-with-us\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Work with us </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-investor-relations\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-investor-relations\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Investor relations </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-sustainability\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-sustainability\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Sustainability </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-large-corporates\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-large-corporates\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Large corporates </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"search\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-\" id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <div class=\"top-menu-search-form\" data-comp> <form action=\"/search.html\" class=\"search-form\" method=\"get\" data-js-search-form=\"\"> <div class=\"search-field-wrapper field\" data-form-field=\"drop-down\"> <div class=\"combo js-select\"> <label aria-label=\"Search\" for=\"id483329337top-menu\" id=\"label-id483329337top-menu\" hidden=\"\">Search</label> <div class=\"combobox combobox-list\"> <div class=\"group\"> <input id=\"id483329337top-menu\" type=\"text\" role=\"combobox\" aria-autocomplete=\"list\" autocomplete=\"off\" aria-labelledby=\"label-id483329337top-menu\" aria-expanded=\"false\" aria-c name=\"q\" data-js-allow-suggesti class=\"search-field-input combo-input\" data-js=\"search-field-input\" data-js-search-field=\"\" data-search-endpoint=\"https://app.swedbank.se/api/content-mgmt/searcher/v1/suggestions/swedbankcom-en\" data-search-api-key=\"BvNFdlD6xbaEMjg5Zia6JCuWWyEjEOdy\" data-search-url=\"https://www.swedbank.com/search.html\" data-js-allow-no-value-search=\"false\"> <span class=\"search-field-buttons\" data-js=\"search-field-buttons\"> <button class=\"icon-button clear hidden without-text\" type=\"button\" data-js=\"clear-search-field\" aria-label=\"Erase\"> <icon-close> </icon-close> </button> <span data-js=\"search-field-divider\" class=\"divider hidden\"></span> <button class=\"icon-button search without-text\" type=\"submit\" data-js=\"search-button\" aria-label=\"Search\"> <icon-search> </icon-search> </button> </span> </div> <ul id=\"combo-id483329337top-menu-listbox\" role=\"listbox\" data-js-suggesti class=\"suggestions\"></ul> </div> </div> </div> <div class=\"popular-search-items\" data-js=\"popular-items\"> <section class=\"component headline \" data-comp> <h2 class=\" \" id=\"search-items-header\"> People look for </h2> </section> <ul> <li> <a class=\"general-link\" href=\"/work-with-us.html\" data-analytics-click-track=\"search-popular\"> Work with us <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/the-share/share-price-graph.html\" data-analytics-click-track=\"search-popular\"> Share price graph <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/reports-and-presentations/interim-reports.html\" data-analytics-click-track=\"search-popular\"> Interim reports <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/about-swedbank/management-and-corporate-governance/the-board-of-directors.html\" data-analytics-click-track=\"search-popular\"> The Board of Directors <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/newsroom.html\" data-analytics-click-track=\"search-popular\"> Newsroom <icon-arrow-large> </icon-arrow-large> </a> </li> </ul> </div> </form> </div> <div class=\"footer \"> </div> </div> </div> </div> <div class=\"wrapper Site\" id=\"wrapper\" data-siteconfig-sitename-prop=\"8999\" dir=\"ltr\" data-variables-page=\"/content/sites/swedbank/swedbankcom/en/data-source/variables\"> <main id=\"page-content\" tabindex=\"-1\" data-fw-c> <div class=\"responsivegrid\"> <div class=\"root container responsivegrid\"> <div id=\"container-ba52b0225b\" class=\"cmp-container\"> <div class=\"container responsivegrid\"> <div id=\"container-523da7d768\" class=\"cmp-container\"> <div class=\"aem-Grid aem-Grid--12 aem-Grid--default--12 \"> <div class=\"flex-container aem-GridColumn aem-GridColumn--default--12\"> <section class=\"flex-container component template-1-1 background apricot bleed collapse\" data-comp> <div class=\"block-c second\"><div class=\"aem-Grid\"> <div class=\"headline aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component headline \" data-comp> <h1 class=\"orange \"> Welcome to Swedbank Group </h1> </section> </div> <div class=\"rte aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component rte \" data-comp> <div><p>Swedbank is a modern bank with its roots firmly planted in the history of Sweden’s savings banks and the cooperative agricultural bank tradition. We have relationships with 7.3 million private customers and 545 000 corporate customers.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div></div> <div class=\"block-c first bleed\"><div class=\"aem-Grid\"> <div class=\"imagev3 image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component image cmp-image \" data-comp> <figure data-cmp-widths=\"314,512,768,1024\" data-cmp-dmimage=\"\" data-cmp-smartcroprendition=\"Standard\" data-cmp-src=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1071488226_ret_hi%3AStandard?ts=1739186699221&amp;dpr=off\" data-asset-id=\"0d4d8f63-1be0-44a3-b7f8-97f5fd543e89\" id=\"imagev3-0e93bf9cbd\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1071488226_ret_hi%3AStandard?ts=1739186699221&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> </figure> </section> </div> </div></div> </section> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"press-releases-latest aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component press-releases-latest short\" data-comp data-endpoint-url=\"https://www.swedbank.com/\"> <div class=\"background mist block-a\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Latest press releases </h2> </section> <div class=\"releases-content\"> <ul class=\"news-list\" data-js=\"results\"> <li> <div class=\"timestamp\">2026-04-28 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.changes-in-swedbank%E2%80%99s-group-executive-committee.CAD247ECC01512BB.html\"> Changes in Swedbank’s Group Executive Committee </a> </li> <li> <div class=\"timestamp\">2026-04-23 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.swedbank-sustainable-bond-impact-report-2025.5F1789A1E4EF6419.html\"> Swedbank Sustainable Bond Impact Report 2025 </a> </li> <li> <div class=\"timestamp\">2026-04-15 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.invitation-%E2%80%93-swedbank%E2%80%99s-interim-report-for-the-first-quarter-2026.2827C14F3C444E7C.html\"> Invitation – Swedbank’s interim report for the first quarter 2026 </a> </li> </ul> <a class=\"general-link arrow newsroom\" href=\"/newsroom/press-releases.html\"> Follow the latest updates in Swedbank’s Newsroom <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c color\" data-comp> <div class=\"background element mist\"> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Swedbank’s interim reports </h2> </section> <section class=\"component rte \" data-comp> <div><p>Download interim reports and presentations from Swedbank.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/investor-relations/reports-and-presentations.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Interim reports <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c color\" data-comp> <div class=\"background element mist\"> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Financial calendar </h2> </section> <section class=\"component rte \" data-comp> <div><p>See the calendar for Swedbank's reports and other important events.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/investor-relations/financial-calendar.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Financial calendar <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"xf experiencefragment aem-GridColumn aem-GridColumn--default--12\"> </div> </div></div> </div> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"4330\" data-image-width=\"6627\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/GettyImages-1166085791.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1166085791%3AStandard?ts=1739186699142&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> 1166085791 </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Preventing money-laundering </h2> </section> <section class=\"component rte \" data-comp> <div><p>Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) are prioritised focus areas.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/sustainability/prevent-financial-crime/how-we-work-with-aml-and-counter-terrorist-financing.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Our work with preventing money-laundering and counter-terrorist financing <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"1000\" data-image-width=\"2000\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/swedbank/swedbank-group-(com)/about-us/our-history/intro_historia.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/intro_historia?qlt=82&amp;ts=1736263443863&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Our history - collage </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Find out more about Swedbank </h2> </section> <section class=\"component rte \" data-comp> <div><p>Our history is important – but it is also a natural part of our future. Read more about our history, which dates all the way back to 1820.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/about-swedbank/our-history.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Swedbank's history <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> </div> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"5326\" data-image-width=\"7988\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/20220823_swedbank_Bild 13_052.tif\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/20220823_swedbank_Bild%2013_052-1?qlt=82&amp;ts=1739183130273&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Man and woman on their way on a train station </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> We help society to grow </h2> </section> <section class=\"component rte \" data-comp> <div><p>Swedbank is a major player in the financial market and our size makes us systemically significant. As a significant institution in the financial circulation system, we help society to develop and grow.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/sustainability.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Sustainability <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"[{&quot;x&quot;:0.48,&quot;y&quot;:0.59}]\" data-image-height=\"2000\" data-image-width=\"3000\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/20240627_swedbank_21_063.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/20240627_swedbank_21_063-1%3AStandard?ts=1748626429762&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Person working on their laptop. Close up </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Welcome to our newsroom </h2> </section> <section class=\"component rte \" data-comp> <div><p>Our newsroom has news and information about Swedbank Group in the form of press releases, reports and more.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/newsroom.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Newsroom <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> </div> </div> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-a color\" data-comp> <div class=\"background element apricot\"> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"4480\" data-image-width=\"6720\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/GettyImages-1272762019.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1272762019%3AStandard?ts=1739186720524&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> 1272762019 </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Hello future colleague! </h2> </section> <section class=\"component rte \" data-comp> <div><p>We have a variety of jobs available in our home markets of Sweden, Estonia, Latvia and Lithuania, and in other international markets.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/work-with-us.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Find available job openings <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"xf experiencefragment aem-GridColumn aem-GridColumn--default--12\"> <div id=\"xf-8a79b0ae4d\" class=\"cmp-experiencefragment cmp-experiencefragment--stock-quotes\"> <div class=\"xf-content-height\"> <div class=\"root container responsivegrid\"> <div id=\"container-f2839f32d9\" class=\"cmp-container\"> <div class=\"container responsivegrid\"> <div id=\"container-52661c4079\" class=\"cmp-container\"> <div class=\"aem-Grid aem-Grid--12 aem-Grid--default--12 \"> <div class=\"headline aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component headline no-spacing\" data-comp> <h2 class=\"orange \"> Latest stock quotes for Swedbank A </h2> </section> </div> <div class=\"iframe aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component iframe\" data-comp data-endpoint-url=\"/content/experience-fragments/swedbank/swedbank_group_com_/en/product_and_offering/stock-quotes/master/_jcr_content/root/container/iframe_copy_copy_cop\" data-cookie-required=\"functional\"> <div data-component-c> </div> <notification-element class=\"blocked-by-cookie alert\" type=\"alert\" data-js=\"notification\" data-cookie-placeholder=\"\"> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div>To view this content, you first need to accept cookies for Functions, performance and statistics.</div> <a class=\"general-link\" href=\"#\" data-js=\"customize-cookies\"> Settings for cookies </a> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </notification-element> </section> </div> <div class=\"cta aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component cta arrow\" data-comp> <a class=\"general-link arrow \" href=\"/investor-relations/the-share/share-price-graph.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-analytics-click-track=\"cta\" data-trackable-link=\"\"> Stock quotes for Swedbank A <icon-arrow-filled> </icon-arrow-filled> </a> </section> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </main> </div> </div> <section class=\"component cookie-banner stretch\" data-comp id=\"component-cookie-banner\" data-timestamp=\"2024-05-20T22:01:00.000+0000\" data-endpoint-url=\"/content/sites/swedbank/swedbankcom/en/data-source/cookies-config/_jcr_content.model.v2.json\" role=\"status\"> <div class=\"banner languages\" data-js-banner=\"\" tabindex=\"0\"> <header> <div class=\"language-selector\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-cookie-banner-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-cookie-banner-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-cookie-banner-language-0\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\">Svenska</div><div role=\"option\" id=\"combo-id-cookie-banner-language-1\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\">English</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> </header> <div class=\"cookie-container initial\" data-cookie-banner=\"initial\"> <div id=\"cookie-banner-initial-header\"> <div data-lang=\"sv\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Våra cookies, ditt val </h1> </section> </div> <div data-lang=\"en\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Our cookies, your choices </h1> </section> </div> </div> <div id=\"cookie-banner-initial-text\"> <div data-lang=\"sv\"> <section class=\"component rte \" data-comp> <div><p>Vi använder nödvändiga cookies eller liknande tekniker för att webbplatsen ska fungera för dig. Det finns även cookies du kan välja som förbättrar din upplevelse:</p> <section class=\"component vertical bullet-list \" data-comp> <ul class=\"list vertical extra-small orange-bullet white-check\"> <li class=\"extra-small-bullet\"> Funktioner, prestanda och statistik </li> <li class=\"extra-small-bullet\"> Relevant marknadsföring </li> </ul> </section> <p>Du kan ta tillbaka ditt cookie-medgivande när du vill, på cookie-sidan eller under din profil när du är inloggad. <a class=\"go-to-page general-link\" href=\"/sv/about-swedbank/cookies.html\">Så hanterar vi cookies</a>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div data-lang=\"en\"> <section class=\"component rte \" data-comp> <div><p>We use cookies or similar technologies that are necessary for this website to work for you. There are also cookies you can choose to improve your experience:</p> <section class=\"component vertical bullet-list \" data-comp> <ul class=\"list vertical extra-small orange-bullet white-check\"> <li class=\"extra-small-bullet\"> Features, performance and statistics </li> <li class=\"extra-small-bullet\"> Relevant marketing </li> </ul> </section> <p>You can withdraw your cookie consent at any time, on the cookie page or under your profile when you are logged in.&nbsp;<u><a href=\"/about-swedbank/cookies.html\" class=\"go-to-page general-link\">How we use cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div> </div> <div class=\"cookie-container customize hidden\" data-cookie-banner=\"customize\"> <div id=\"cookie-banner-customize-header\"> <div data-lang=\"sv\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Cookie-inställningar </h1> </section> </div> <div data-lang=\"en\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Cookie settings </h1> </section> </div> </div> <div id=\"cookie-banner-customize-text\"> <div data-lang=\"sv\"> <section class=\"component rte \" data-comp> <div><p>Du kan ta tillbaka ditt cookie-medgivande när du vill, på cookie-sidan eller under din profil när du är inloggad.&nbsp;<u><a href=\"/sv/about-swedbank/cookies.html\" class=\"go-to-page general-link\">Så hanterar vi cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div data-lang=\"en\"> <section class=\"component rte \" data-comp> <div><p>You can withdraw your cookie consent at any time, on the cookie page or under your profile when you are logged in. <u><a href=\"/about-swedbank/cookies.html\" class=\"general-link\">How we use cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div> <div class=\"cookie-form\" data-js=\"category-list\"> <div class=\"field \" data-form-field=\"checkbox\"> <fieldset> <legend class=\"visually-hidden\">Cookie settings </legend> <ul> <li> <input name=\"essent\" type=\"checkbox\" id=\"id-890693537-0\" aria-label=\"Necessary\" disabled=\"\" aria-disabled=\"true\" checked=\"\" aria-checked=\"true\"> <label for=\"id-890693537-0\">Necessary</label> <icon-check> </icon-check> <p>Necessary for the website to work smoothly and securely and cannot be deselected. Enable important functions such as login and language settings.</p> </li> <li> <input name=\"functi\" type=\"checkbox\" id=\"id-890693537-1\" aria-label=\"Functions, performance and statistics\" aria-disabled=\"false\" aria-checked=\"false\"> <label for=\"id-890693537-1\">Functions, performance and statistics</label> <icon-check> </icon-check> <p>Required in order for functions and customisation to work. Help us understand how the website is used so that we can improve it. The information is aggregated for all users and can never be linked to you. If you do not accept these cookies, some functions may not work properly.</p> </li> <li> <input name=\"market\" type=\"checkbox\" id=\"id-890693537-2\" aria-label=\"Relevant marketing\" aria-disabled=\"false\" aria-checked=\"false\"> <label for=\"id-890693537-2\">Relevant marketing</label> <icon-check> </icon-check> <p>Help us understand how you use our services so that we can create better tips and offers for you. Some are added by our partners and may affect content and ads you see on other websites. If you do not accept these cookies, you will see less targeted content.</p> </li> </ul> </fieldset> </div> </div> </div> <footer> <div class=\"cookie-initial-buttons\" data-cookie-butt> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-initial-accept-all\" data-js=\"accept-cookies\"> Accept all cookies </button> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-accept-essentials\" data-js=\"save-custom-cookies\"> Only necessary cookies </button> <button class=\"button turqouise\" type=\"button\" id=\"cookie-banner-initial-customize\" data-js=\"customize-cookies\"> Cookie settings </button> </div> <div class=\"cookie-customize-buttons hidden\" data-cookie-butt> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-customize-customize\" data-js=\"save-custom-cookies\"> Save cookie settings </button> </div> </footer> </div> <div class=\"cookie-container success hidden\" data-cookie-banner=\"success\"> <div class=\"content cookie-success-text\"> <span id=\"cookie-banner-success-text\">Your cookie preferences were saved.</span> <a class=\"general-link cookie-link\" href=\"https://www.swedbank.com/about-swedbank/cookies.html\" data-js=\"geoblock-proceed\" id=\"cookie-banner-success-link\"> How to manage cookies </a> </div> </div> </section> <footer dir=\"ltr\" inert=\"\"> <div class=\"component footer dynamic-oak\" data-comp role=\"navigation\" aria-label=\"Page footer\"> <div class=\"dynamic-oak apricot\" data-js-dynamic-oak=\"\"> </div> <div class=\"content background apricot\"> <h1 class=\"screen-reader-only\">Page footer</h1> <div class=\"columns\"> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> About us </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/contact-us.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Contact us </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Swedbank Group </a> </li> <li> <a class=\"general-link footer-link\" href=\"/newsroom.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Newsroom </a> </li> <li> <a class=\"general-link footer-link\" href=\"/work-with-us.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Work with us </a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Home markets </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.se/\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Sweden, Opens another website\">Sweden<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://swedbank.ee/private?language=ENG\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Estonia, Opens another website\">Estonia<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.lv/private/d2d/start\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Latvia, Opens another website\">Latvia<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.lt/private/d2d/start\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Lithuania, Opens another website\">Lithuania<icon-external-link> </icon-external-link></a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Security and integrity </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"#\" target=\"same-window\" data-analytics-click-track=\"footer\" data-cookie-link=\"cookie-withdraw\"> Withdraw cookie consent </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/cookies.html\" target=\"_self\" data-analytics-click-track=\"footer\"> How we use cookies </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/personal-data.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Processing of personal data </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/how-swedbank-uses-ai.html\" target=\"_self\" data-analytics-click-track=\"footer\"> How Swedbank uses AI </a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> About the website </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/browsers.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Recommended browsers </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/user-terms.html\" target=\"_self\" data-analytics-click-track=\"footer\"> User terms </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/customers-outside-sweden.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Visitors outside of Sweden </a> </li> <li> <a class=\"general-link footer-link\" href=\"/sitemap.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Sitemap </a> </li> </ul> </section> </div> <div class=\"bottom full\"> <div class=\"language-selector on-top\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-footer-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-footer-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-footer-language-0\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\" data-js-url=\"https://www.swedbank.com/\" data-analytics-click-track=\"footer\">English</div><div role=\"option\" id=\"combo-id-footer-language-1\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\" data-js-url=\"https://www.swedbank.com/sv/\" data-analytics-click-track=\"footer\">Svenska</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> <div class=\"copyright\"></div> </div> </div> </div> </footer> <div data-comp data-cookie-category=\"functional\"> <div data-script=\"&lt;script src=&quot;/etc.clientlibs/wcms/external/scripts/js/analytics/datalayer/common-datalayer.lc-ea4fb190fa0dbcf414d098f8ec1e4318-lc.min.js&quot;&gt;&lt;/script&gt; \"></div> <div data-script=\"&lt;script src=&quot;/etc.clientlibs/wcms/external/scripts/js/analytics/datalayer/triggers.lc-5c800dca6dba973e8a713832a5575358-lc.min.js&quot;&gt;&lt;/script&gt; \"></div> </div> </body>"
+    },
+    "settings": {
+      "buttons": [
+        {
+          "type": "button or anker",
+          "text": "Search",
+          "tag": "BUTTON",
+          "attributes": {
+            "type": "button",
+            "tabindex": "0"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "search-button small-screen field"
+          },
+          "selector": "button",
+          "selectorConfidence": "very low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Menu",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "navigation-button  primary menu",
+            "data-js": "menu-toggle",
+            "aria-haspopup": "dialog",
+            "id": "top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home",
+            "aria-expanded": "false"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "container"
+          },
+          "selector": "#top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Log in",
+          "tag": "A",
+          "attributes": {
+            "class": "icon-link  log-in primary",
+            "href": "https://online.swedbank.se/app/ib/logga-in"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "container"
+          },
+          "selector": ".icon-link",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Changes in Swedbank’s Group Executive Committee",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.changes-in-swedbank%E2%80%99s-group-executive-committee.CAD247ECC01512BB.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank Sustainable Bond Impact Report 2025",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.swedbank-sustainable-bond-impact-report-2025.5F1789A1E4EF6419.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Invitation – Swedbank’s interim report for the first quarter 2026",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "/newsroom/press-releases.details.invitation-%E2%80%93-swedbank%E2%80%99s-interim-report-for-the-first-quarter-2026.2827C14F3C444E7C.html"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Follow the latest updates in Swedbank’s Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow   newsroom",
+            "href": "/newsroom/press-releases.html"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "releases-content"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Interim reports",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/reports-and-presentations.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Financial calendar",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/financial-calendar.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Our work with preventing money-laundering and counter-terrorist financing",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/sustainability/prevent-financial-crime/how-we-work-with-aml-and-counter-terrorist-financing.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank's history",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/about-swedbank/our-history.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sustainability",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/sustainability.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/newsroom.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Find available job openings",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/work-with-us.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "links"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Settings for cookies",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link",
+            "href": "#",
+            "data-js": "customize-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Stock quotes for Swedbank A",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link arrow ",
+            "href": "/investor-relations/the-share/share-price-graph.html",
+            "target": "_self",
+            "data-analytics-click-track-type": "link",
+            "data-analytics-click-track": "cta",
+            "data-trackable-link": ""
+          },
+          "parentInfo": {
+            "tag": "SECTION",
+            "id": "",
+            "className": "component cta arrow"
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How we use cookies",
+          "tag": "A",
+          "attributes": {
+            "href": "/about-swedbank/cookies.html",
+            "class": "general-link"
+          },
+          "parentInfo": {
+            "tag": "U",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Save cookie settings",
+          "tag": "BUTTON",
+          "attributes": {
+            "class": "button orange",
+            "type": "button",
+            "id": "cookie-banner-customize-customize",
+            "data-js": "save-custom-cookies"
+          },
+          "parentInfo": {
+            "tag": "DIV",
+            "id": "",
+            "className": "cookie-customize-buttons"
+          },
+          "selector": "#cookie-banner-customize-customize",
+          "selectorConfidence": "very high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Contact us",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/contact-us.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Swedbank Group",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Newsroom",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/newsroom.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Work with us",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/work-with-us.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sweden",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.se/",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Sweden, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Sweden, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Estonia",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://swedbank.ee/private?language=ENG",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Estonia, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Estonia, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Latvia",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.lv/private/d2d/start",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Latvia, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Latvia, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Lithuania",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "https://www.swedbank.lt/private/d2d/start",
+            "target": "_self",
+            "data-analytics-click-track": "footer",
+            "aria-label": "Lithuania, Opens another website"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "[aria-label=\"Lithuania, Opens another website\"]",
+          "selectorConfidence": "high",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Withdraw cookie consent",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "#",
+            "target": "same-window",
+            "data-analytics-click-track": "footer",
+            "data-cookie-link": "cookie-withdraw"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How we use cookies",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/cookies.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Processing of personal data",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/personal-data.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "How Swedbank uses AI",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/how-swedbank-uses-ai.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Recommended browsers",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/browsers.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "User terms",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/user-terms.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Visitors outside of Sweden",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/about-swedbank/customers-outside-sweden.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        },
+        {
+          "type": "button or anker",
+          "text": "Sitemap",
+          "tag": "A",
+          "attributes": {
+            "class": "general-link  footer-link",
+            "href": "/sitemap.html",
+            "target": "_self",
+            "data-analytics-click-track": "footer"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "a",
+          "selectorConfidence": "low",
+          "role": null,
+          "isDisabled": false
+        }
+      ],
+      "checkboxes": [
+        {
+          "type": "checkbox",
+          "labelText": "Necessary",
+          "tag": "INPUT",
+          "attributes": {
+            "name": "essent",
+            "type": "checkbox",
+            "id": "id-890693537-0",
+            "aria-label": "Necessary",
+            "disabled": "",
+            "aria-disabled": "true",
+            "checked": "",
+            "aria-checked": "true"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "#id-890693537-0",
+          "selectorConfidence": "very high",
+          "isChecked": true,
+          "isDisabled": true
+        },
+        {
+          "type": "checkbox",
+          "labelText": "Functions, performance and statistics",
+          "tag": "INPUT",
+          "attributes": {
+            "name": "functi",
+            "type": "checkbox",
+            "id": "id-890693537-1",
+            "aria-label": "Functions, performance and statistics",
+            "aria-disabled": "false",
+            "aria-checked": "false"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "#id-890693537-1",
+          "selectorConfidence": "very high",
+          "isChecked": false,
+          "isDisabled": false
+        },
+        {
+          "type": "checkbox",
+          "labelText": "Relevant marketing",
+          "tag": "INPUT",
+          "attributes": {
+            "name": "market",
+            "type": "checkbox",
+            "id": "id-890693537-2",
+            "aria-label": "Relevant marketing",
+            "aria-disabled": "false",
+            "aria-checked": "false"
+          },
+          "parentInfo": {
+            "tag": "LI",
+            "id": "",
+            "className": ""
+          },
+          "selector": "#id-890693537-2",
+          "selectorConfidence": "very high",
+          "isChecked": false,
+          "isDisabled": false
+        }
+      ],
+      "toggles": [],
+      "cmpFound": false,
+      "cmpType": null,
+      "cmpSelector": null,
+      "cmpContainerFound": false,
+      "url": "https://www.swedbank.com/",
+      "filteredHtml": "<body><div data-js=\"page-content\" inert=\"\"> <div data-js=\"header-wrapper\" class=\"header-wrapper\"><div data-js=\"navigation-wrapper\" class=\"navigation-wrapper\"><header class=\"top-bar\" data-js=\"top-bar\"> <div class=\"logo\"> <h1> <a href=\"/\" title=\"Swedbank\" target=\"_top\"> <picture> <source srcset=\"/content/dam/global/brand/logotypes/8999-swedbank-logo-white.svg\" media=\"(prefers-color-scheme: dark)\"> </picture> </a> </h1> </div> <div class=\"search-button small-screen field\" data-js=\"header-search\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <section class=\"component search-modal stretch hidden\" data-comp> <div class=\"modal\" data-js=\"search-modal-wrapper\"> <form action=\"/search.html\" class=\"search-form\" method=\"get\" data-js-search-form=\"\"> <div class=\"search-field-wrapper field\" data-form-field=\"drop-down\"> <div class=\"combo js-select\"> <label aria-label=\"Search\" for=\"id483329337header\" id=\"label-id483329337header\" hidden=\"\">Search</label> <div class=\"combobox combobox-list\"> <div class=\"group\"> <input id=\"id483329337header\" type=\"text\" role=\"combobox\" aria-autocomplete=\"list\" autocomplete=\"off\" aria-labelledby=\"label-id483329337header\" aria-expanded=\"false\" aria-c name=\"q\" data-js-allow-suggesti class=\"search-field-input combo-input\" data-js=\"search-field-input\" data-js-search-field=\"\" data-search-endpoint=\"https://app.swedbank.se/api/content-mgmt/searcher/v1/suggestions/swedbankcom-en\" data-search-api-key=\"BvNFdlD6xbaEMjg5Zia6JCuWWyEjEOdy\" data-search-url=\"https://www.swedbank.com/search.html\" data-js-allow-no-value-search=\"false\"> <span class=\"search-field-buttons\" data-js=\"search-field-buttons\"> <button class=\"icon-button clear hidden without-text\" type=\"button\" data-js=\"clear-search-field\" aria-label=\"Erase\"> <icon-close> </icon-close> </button> <span data-js=\"search-field-divider\" class=\"divider hidden\"></span> <button class=\"icon-button search without-text\" type=\"submit\" data-js=\"search-button\" aria-label=\"Search\"> <icon-search> </icon-search> </button> </span> </div> <ul id=\"combo-id483329337header-listbox\" role=\"listbox\" data-js-suggesti class=\"suggestions\"></ul> </div> </div> </div> <div class=\"popular-search-items\" data-js=\"popular-items\"> <section class=\"component headline \" data-comp> <h2 class=\" \" id=\"search-items-header\"> People look for </h2> </section> <ul> <li> <a class=\"general-link\" href=\"/work-with-us.html\" data-analytics-click-track=\"search-popular\"> Work with us <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/the-share/share-price-graph.html\" data-analytics-click-track=\"search-popular\"> Share price graph <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/reports-and-presentations/interim-reports.html\" data-analytics-click-track=\"search-popular\"> Interim reports <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/about-swedbank/management-and-corporate-governance/the-board-of-directors.html\" data-analytics-click-track=\"search-popular\"> The Board of Directors <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/newsroom.html\" data-analytics-click-track=\"search-popular\"> Newsroom <icon-arrow-large> </icon-arrow-large> </a> </li> </ul> </div> </form> </div> </section> <div class=\"wrapper\"> <div class=\"left\"> <div class=\"actions\"> <div class=\"search-button field\" data-js=\"header-search\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <div class=\"links\"> <a class=\"icon-link\" href=\"https://online.swedbank.se/app/ib/logga-in\" data-analytics-click-track=\"menu-header\"> <icon-log-in class=\"pr-4\"> </icon-log-in> Log in </a> </div> </div> </div> </div> </header></div></div> <div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <div class=\"search-button field\" data-js=\"menu-toggle\" id=\"search\" aria-expanded=\"false\"> <button type=\"button\" tabindex=\"0\"> <span>Search</span> <span class=\"search-icon\"> <icon-search> </icon-search> </span> </button> </div> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Menu </span> </section> <div class=\"footer \"> <div class=\"language-selector on-top\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-menu-modal-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-menu-modal-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-menu-modal-language-0\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\" data-js-url=\"https://www.swedbank.com/\" data-analytics-click-track=\"menu-level0-lang\">English</div><div role=\"option\" id=\"combo-id-menu-modal-language-1\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\" data-js-url=\"https://www.swedbank.com/sv/\" data-analytics-click-track=\"menu-level0-lang\">Svenska</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-about-us\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-about-us\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> About us </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-work-with-us\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-work-with-us\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Work with us </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-investor-relations\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-investor-relations\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Investor relations </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-sustainability\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-sustainability\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Sustainability </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-large-corporates\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" id=\"back-content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home-large-corporates\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <section class=\"component headline \" data-comp> <span class=\" as-h1\"> Large corporates </span> </section> <div class=\"footer \"> </div> </div> </div> <div class=\"top-menu-modal\" tabindex=\"0\" role=\"dialog\" aria-modal=\"true\" data-js=\"top-menu-modal\" data-js-id=\"search\"> <div class=\"overlay\" data-js=\"menu-modal-overlay\"></div> <div class=\"content\" data-js=\"menu-modal-content\"> <div class=\"background\"></div> <button class=\"icon-button close without-text\" type=\"button\" data-js=\"top-menu-modal-close\" aria-label=\"Close\"> <icon-close> </icon-close> </button> <ul class=\"links\"> <li> <button class=\"foldout-button reverse-foldout\" data-js=\"menu-toggle\" data-target=\"top-menu-modal-\" id=\"content-sites-swedbank-swedbankcom-en-data-source-navigation-structure-config-home\" aria-expanded=\"false\"> <icon-chevron> </icon-chevron> Menu </button> </li> </ul> <div class=\"top-menu-search-form\" data-comp> <form action=\"/search.html\" class=\"search-form\" method=\"get\" data-js-search-form=\"\"> <div class=\"search-field-wrapper field\" data-form-field=\"drop-down\"> <div class=\"combo js-select\"> <label aria-label=\"Search\" for=\"id483329337top-menu\" id=\"label-id483329337top-menu\" hidden=\"\">Search</label> <div class=\"combobox combobox-list\"> <div class=\"group\"> <input id=\"id483329337top-menu\" type=\"text\" role=\"combobox\" aria-autocomplete=\"list\" autocomplete=\"off\" aria-labelledby=\"label-id483329337top-menu\" aria-expanded=\"false\" aria-c name=\"q\" data-js-allow-suggesti class=\"search-field-input combo-input\" data-js=\"search-field-input\" data-js-search-field=\"\" data-search-endpoint=\"https://app.swedbank.se/api/content-mgmt/searcher/v1/suggestions/swedbankcom-en\" data-search-api-key=\"BvNFdlD6xbaEMjg5Zia6JCuWWyEjEOdy\" data-search-url=\"https://www.swedbank.com/search.html\" data-js-allow-no-value-search=\"false\"> <span class=\"search-field-buttons\" data-js=\"search-field-buttons\"> <button class=\"icon-button clear hidden without-text\" type=\"button\" data-js=\"clear-search-field\" aria-label=\"Erase\"> <icon-close> </icon-close> </button> <span data-js=\"search-field-divider\" class=\"divider hidden\"></span> <button class=\"icon-button search without-text\" type=\"submit\" data-js=\"search-button\" aria-label=\"Search\"> <icon-search> </icon-search> </button> </span> </div> <ul id=\"combo-id483329337top-menu-listbox\" role=\"listbox\" data-js-suggesti class=\"suggestions\"></ul> </div> </div> </div> <div class=\"popular-search-items\" data-js=\"popular-items\"> <section class=\"component headline \" data-comp> <h2 class=\" \" id=\"search-items-header\"> People look for </h2> </section> <ul> <li> <a class=\"general-link\" href=\"/work-with-us.html\" data-analytics-click-track=\"search-popular\"> Work with us <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/the-share/share-price-graph.html\" data-analytics-click-track=\"search-popular\"> Share price graph <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/investor-relations/reports-and-presentations/interim-reports.html\" data-analytics-click-track=\"search-popular\"> Interim reports <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/about-swedbank/management-and-corporate-governance/the-board-of-directors.html\" data-analytics-click-track=\"search-popular\"> The Board of Directors <icon-arrow-large> </icon-arrow-large> </a> </li> <li> <a class=\"general-link\" href=\"/newsroom.html\" data-analytics-click-track=\"search-popular\"> Newsroom <icon-arrow-large> </icon-arrow-large> </a> </li> </ul> </div> </form> </div> <div class=\"footer \"> </div> </div> </div> </div> <div class=\"wrapper Site\" id=\"wrapper\" data-siteconfig-sitename-prop=\"8999\" dir=\"ltr\" data-variables-page=\"/content/sites/swedbank/swedbankcom/en/data-source/variables\"> <main id=\"page-content\" tabindex=\"-1\" data-fw-c> <div class=\"responsivegrid\"> <div class=\"root container responsivegrid\"> <div id=\"container-ba52b0225b\" class=\"cmp-container\"> <div class=\"container responsivegrid\"> <div id=\"container-523da7d768\" class=\"cmp-container\"> <div class=\"aem-Grid aem-Grid--12 aem-Grid--default--12 \"> <div class=\"flex-container aem-GridColumn aem-GridColumn--default--12\"> <section class=\"flex-container component template-1-1 background apricot bleed collapse\" data-comp> <div class=\"block-c second\"><div class=\"aem-Grid\"> <div class=\"headline aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component headline \" data-comp> <h1 class=\"orange \"> Welcome to Swedbank Group </h1> </section> </div> <div class=\"rte aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component rte \" data-comp> <div><p>Swedbank is a modern bank with its roots firmly planted in the history of Sweden’s savings banks and the cooperative agricultural bank tradition. We have relationships with 7.3 million private customers and 545 000 corporate customers.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div></div> <div class=\"block-c first bleed\"><div class=\"aem-Grid\"> <div class=\"imagev3 image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component image cmp-image \" data-comp> <figure data-cmp-widths=\"314,512,768,1024\" data-cmp-dmimage=\"\" data-cmp-smartcroprendition=\"Standard\" data-cmp-src=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1071488226_ret_hi%3AStandard?ts=1739186699221&amp;dpr=off\" data-asset-id=\"0d4d8f63-1be0-44a3-b7f8-97f5fd543e89\" id=\"imagev3-0e93bf9cbd\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1071488226_ret_hi%3AStandard?ts=1739186699221&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> </figure> </section> </div> </div></div> </section> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"press-releases-latest aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component press-releases-latest short\" data-comp data-endpoint-url=\"https://www.swedbank.com/\"> <div class=\"background mist block-a\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Latest press releases </h2> </section> <div class=\"releases-content\"> <ul class=\"news-list\" data-js=\"results\"> <li> <div class=\"timestamp\">2026-04-28 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.changes-in-swedbank%E2%80%99s-group-executive-committee.CAD247ECC01512BB.html\"> Changes in Swedbank’s Group Executive Committee </a> </li> <li> <div class=\"timestamp\">2026-04-23 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.swedbank-sustainable-bond-impact-report-2025.5F1789A1E4EF6419.html\"> Swedbank Sustainable Bond Impact Report 2025 </a> </li> <li> <div class=\"timestamp\">2026-04-15 08:00</div> <a class=\"general-link\" href=\"/newsroom/press-releases.details.invitation-%E2%80%93-swedbank%E2%80%99s-interim-report-for-the-first-quarter-2026.2827C14F3C444E7C.html\"> Invitation – Swedbank’s interim report for the first quarter 2026 </a> </li> </ul> <a class=\"general-link arrow newsroom\" href=\"/newsroom/press-releases.html\"> Follow the latest updates in Swedbank’s Newsroom <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c color\" data-comp> <div class=\"background element mist\"> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Swedbank’s interim reports </h2> </section> <section class=\"component rte \" data-comp> <div><p>Download interim reports and presentations from Swedbank.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/investor-relations/reports-and-presentations.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Interim reports <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c color\" data-comp> <div class=\"background element mist\"> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Financial calendar </h2> </section> <section class=\"component rte \" data-comp> <div><p>See the calendar for Swedbank's reports and other important events.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/investor-relations/financial-calendar.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Financial calendar <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"xf experiencefragment aem-GridColumn aem-GridColumn--default--12\"> </div> </div></div> </div> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"4330\" data-image-width=\"6627\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/GettyImages-1166085791.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1166085791%3AStandard?ts=1739186699142&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> 1166085791 </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Preventing money-laundering </h2> </section> <section class=\"component rte \" data-comp> <div><p>Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) are prioritised focus areas.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/sustainability/prevent-financial-crime/how-we-work-with-aml-and-counter-terrorist-financing.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Our work with preventing money-laundering and counter-terrorist financing <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"1000\" data-image-width=\"2000\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/swedbank/swedbank-group-(com)/about-us/our-history/intro_historia.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/intro_historia?qlt=82&amp;ts=1736263443863&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Our history - collage </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Find out more about Swedbank </h2> </section> <section class=\"component rte \" data-comp> <div><p>Our history is important – but it is also a natural part of our future. Read more about our history, which dates all the way back to 1820.<br> </p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/about-swedbank/our-history.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Swedbank's history <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> </div> </div> <div class=\"layout-container aem-GridColumn aem-GridColumn--default--12\"> <div class=\"container-component layout-1-1\"> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"5326\" data-image-width=\"7988\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/20220823_swedbank_Bild 13_052.tif\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/20220823_swedbank_Bild%2013_052-1?qlt=82&amp;ts=1739183130273&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Man and woman on their way on a train station </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> We help society to grow </h2> </section> <section class=\"component rte \" data-comp> <div><p>Swedbank is a major player in the financial market and our size makes us systemically significant. As a significant institution in the financial circulation system, we help society to develop and grow.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/sustainability.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Sustainability <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> <div class=\"aem-GridColumn block-c\"><div class=\"aem-Grid\"> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-c \" data-comp> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"[{&quot;x&quot;:0.48,&quot;y&quot;:0.59}]\" data-image-height=\"2000\" data-image-width=\"3000\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/20240627_swedbank_21_063.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/20240627_swedbank_21_063-1%3AStandard?ts=1748626429762&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> Person working on their laptop. Close up </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Welcome to our newsroom </h2> </section> <section class=\"component rte \" data-comp> <div><p>Our newsroom has news and information about Swedbank Group in the form of press releases, reports and more.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/newsroom.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Newsroom <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </section> </div> </div></div> </div> </div> <div class=\"teaser image aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component teaser block-a color\" data-comp> <div class=\"background element apricot\"> <div class=\"hero right-image\"> <div class=\"responsive-background-image\"> <div data-js-focal-image-c class=\"focal-image-container focuspoint\" data-focal-point=\"default\" data-image-height=\"4480\" data-image-width=\"6720\"> <section class=\"component image cmp-image right-image\" data-comp> <figure data-cmp-filereference=\"/content/dam/global/brand/brand-images/GettyImages-1272762019.jpg\" data-cmp-hook-image=\"imageV3\" class=\"cmp-image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\"> <picture> <source srcset=\"https://s7g10.scene7.com/is/image/swedbank/GettyImages-1272762019%3AStandard?ts=1739186720524&amp;dpr=off&amp;fmt=webp-alpha\"> </picture> <figcaption class=\"caption\"> 1272762019 </figcaption> </figure> </section> </div> </div> </div> <div class=\"content\"> <div class=\"flexible\"> <section class=\"component headline \" data-comp> <h2 class=\"orange \"> Hello future colleague! </h2> </section> <section class=\"component rte \" data-comp> <div><p>We have a variety of jobs available in our home markets of Sweden, Estonia, Latvia and Lithuania, and in other international markets.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div class=\"links\"> <a class=\"general-link arrow \" href=\"/work-with-us.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-trackable-link=\"\"> Find available job openings <icon-arrow-filled> </icon-arrow-filled> </a> </div> </div> </div> </section> </div> <div class=\"xf experiencefragment aem-GridColumn aem-GridColumn--default--12\"> <div id=\"xf-8a79b0ae4d\" class=\"cmp-experiencefragment cmp-experiencefragment--stock-quotes\"> <div class=\"xf-content-height\"> <div class=\"root container responsivegrid\"> <div id=\"container-f2839f32d9\" class=\"cmp-container\"> <div class=\"container responsivegrid\"> <div id=\"container-52661c4079\" class=\"cmp-container\"> <div class=\"aem-Grid aem-Grid--12 aem-Grid--default--12 \"> <div class=\"headline aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component headline no-spacing\" data-comp> <h2 class=\"orange \"> Latest stock quotes for Swedbank A </h2> </section> </div> <div class=\"iframe aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component iframe\" data-comp data-endpoint-url=\"/content/experience-fragments/swedbank/swedbank_group_com_/en/product_and_offering/stock-quotes/master/_jcr_content/root/container/iframe_copy_copy_cop\" data-cookie-required=\"functional\"> <div data-component-c> </div> <notification-element class=\"blocked-by-cookie alert\" type=\"alert\" data-js=\"notification\" data-cookie-placeholder=\"\"> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div class=\"badge\"> <icon-alert> </icon-alert> </div> <div> <div>To view this content, you first need to accept cookies for Functions, performance and statistics.</div> <a class=\"general-link\" href=\"#\" data-js=\"customize-cookies\"> Settings for cookies </a> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </notification-element> </section> </div> <div class=\"cta aem-GridColumn aem-GridColumn--default--12\"> <section class=\"component cta arrow\" data-comp> <a class=\"general-link arrow \" href=\"/investor-relations/the-share/share-price-graph.html\" target=\"_self\" data-analytics-click-track-type=\"link\" data-analytics-click-track=\"cta\" data-trackable-link=\"\"> Stock quotes for Swedbank A <icon-arrow-filled> </icon-arrow-filled> </a> </section> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </main> </div> </div> <section class=\"component cookie-banner stretch\" data-comp id=\"component-cookie-banner\" data-timestamp=\"2024-05-20T22:01:00.000+0000\" data-endpoint-url=\"/content/sites/swedbank/swedbankcom/en/data-source/cookies-config/_jcr_content.model.v2.json\" role=\"status\"> <div class=\"banner languages\" data-js-banner=\"\" tabindex=\"0\"> <header> <div class=\"language-selector\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-cookie-banner-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-cookie-banner-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-cookie-banner-language-0\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\">Svenska</div><div role=\"option\" id=\"combo-id-cookie-banner-language-1\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\">English</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> </header> <div class=\"cookie-container initial hidden\" data-cookie-banner=\"initial\"> <div id=\"cookie-banner-initial-header\"> <div data-lang=\"sv\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Våra cookies, ditt val </h1> </section> </div> <div data-lang=\"en\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Our cookies, your choices </h1> </section> </div> </div> <div id=\"cookie-banner-initial-text\"> <div data-lang=\"sv\"> <section class=\"component rte \" data-comp> <div><p>Vi använder nödvändiga cookies eller liknande tekniker för att webbplatsen ska fungera för dig. Det finns även cookies du kan välja som förbättrar din upplevelse:</p> <section class=\"component vertical bullet-list \" data-comp> <ul class=\"list vertical extra-small orange-bullet white-check\"> <li class=\"extra-small-bullet\"> Funktioner, prestanda och statistik </li> <li class=\"extra-small-bullet\"> Relevant marknadsföring </li> </ul> </section> <p>Du kan ta tillbaka ditt cookie-medgivande när du vill, på cookie-sidan eller under din profil när du är inloggad. <a class=\"go-to-page general-link\" href=\"/sv/about-swedbank/cookies.html\">Så hanterar vi cookies</a>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div data-lang=\"en\"> <section class=\"component rte \" data-comp> <div><p>We use cookies or similar technologies that are necessary for this website to work for you. There are also cookies you can choose to improve your experience:</p> <section class=\"component vertical bullet-list \" data-comp> <ul class=\"list vertical extra-small orange-bullet white-check\"> <li class=\"extra-small-bullet\"> Features, performance and statistics </li> <li class=\"extra-small-bullet\"> Relevant marketing </li> </ul> </section> <p>You can withdraw your cookie consent at any time, on the cookie page or under your profile when you are logged in.&nbsp;<u><a href=\"/about-swedbank/cookies.html\" class=\"go-to-page general-link\">How we use cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div> </div> <div class=\"cookie-container customize\" data-cookie-banner=\"customize\"> <div id=\"cookie-banner-customize-header\"> <div data-lang=\"sv\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Cookie-inställningar </h1> </section> </div> <div data-lang=\"en\"> <section class=\"component headline \" data-comp> <h1 class=\" \"> Cookie settings </h1> </section> </div> </div> <div id=\"cookie-banner-customize-text\"> <div data-lang=\"sv\"> <section class=\"component rte \" data-comp> <div><p>Du kan ta tillbaka ditt cookie-medgivande när du vill, på cookie-sidan eller under din profil när du är inloggad.&nbsp;<u><a href=\"/sv/about-swedbank/cookies.html\" class=\"go-to-page general-link\">Så hanterar vi cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> <div data-lang=\"en\"> <section class=\"component rte \" data-comp> <div><p>You can withdraw your cookie consent at any time, on the cookie page or under your profile when you are logged in. <u><a href=\"/about-swedbank/cookies.html\" class=\"general-link\">How we use cookies</a></u>.</p> </div> <footer class=\"footnotes hidden\" aria-label=\"footnotes\" data-js=\"footnotes-footer\"></footer> </section> </div> </div> <div class=\"cookie-form\" data-js=\"category-list\"> <div class=\"field \" data-form-field=\"checkbox\"> <fieldset> <legend class=\"visually-hidden\">Cookie settings </legend> <ul> <li> <input name=\"essent\" type=\"checkbox\" id=\"id-890693537-0\" aria-label=\"Necessary\" disabled=\"\" aria-disabled=\"true\" checked=\"\" aria-checked=\"true\"> <label for=\"id-890693537-0\">Necessary</label> <icon-check> </icon-check> <p>Necessary for the website to work smoothly and securely and cannot be deselected. Enable important functions such as login and language settings.</p> </li> <li> <input name=\"functi\" type=\"checkbox\" id=\"id-890693537-1\" aria-label=\"Functions, performance and statistics\" aria-disabled=\"false\" aria-checked=\"false\"> <label for=\"id-890693537-1\">Functions, performance and statistics</label> <icon-check> </icon-check> <p>Required in order for functions and customisation to work. Help us understand how the website is used so that we can improve it. The information is aggregated for all users and can never be linked to you. If you do not accept these cookies, some functions may not work properly.</p> </li> <li> <input name=\"market\" type=\"checkbox\" id=\"id-890693537-2\" aria-label=\"Relevant marketing\" aria-disabled=\"false\" aria-checked=\"false\"> <label for=\"id-890693537-2\">Relevant marketing</label> <icon-check> </icon-check> <p>Help us understand how you use our services so that we can create better tips and offers for you. Some are added by our partners and may affect content and ads you see on other websites. If you do not accept these cookies, you will see less targeted content.</p> </li> </ul> </fieldset> </div> </div> </div> <footer> <div class=\"cookie-initial-buttons hidden\" data-cookie-butt> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-initial-accept-all\" data-js=\"accept-cookies\"> Accept all cookies </button> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-accept-essentials\" data-js=\"save-custom-cookies\"> Only necessary cookies </button> <button class=\"button turqouise\" type=\"button\" id=\"cookie-banner-initial-customize\" data-js=\"customize-cookies\"> Cookie settings </button> </div> <div class=\"cookie-customize-buttons\" data-cookie-butt> <button class=\"button orange\" type=\"button\" id=\"cookie-banner-customize-customize\" data-js=\"save-custom-cookies\"> Save cookie settings </button> </div> </footer> </div> <div class=\"cookie-container success hidden\" data-cookie-banner=\"success\"> <div class=\"content cookie-success-text\"> <span id=\"cookie-banner-success-text\">Your cookie preferences were saved.</span> <a class=\"general-link cookie-link\" href=\"https://www.swedbank.com/about-swedbank/cookies.html\" data-js=\"geoblock-proceed\" id=\"cookie-banner-success-link\"> How to manage cookies </a> </div> </div> </section> <footer dir=\"ltr\" inert=\"\"> <div class=\"component footer dynamic-oak\" data-comp role=\"navigation\" aria-label=\"Page footer\"> <div class=\"dynamic-oak apricot\" data-js-dynamic-oak=\"\"> </div> <div class=\"content background apricot\"> <h1 class=\"screen-reader-only\">Page footer</h1> <div class=\"columns\"> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> About us </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/contact-us.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Contact us </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Swedbank Group </a> </li> <li> <a class=\"general-link footer-link\" href=\"/newsroom.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Newsroom </a> </li> <li> <a class=\"general-link footer-link\" href=\"/work-with-us.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Work with us </a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Home markets </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.se/\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Sweden, Opens another website\">Sweden<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://swedbank.ee/private?language=ENG\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Estonia, Opens another website\">Estonia<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.lv/private/d2d/start\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Latvia, Opens another website\">Latvia<icon-external-link> </icon-external-link></a> </li> <li> <a class=\"general-link footer-link\" href=\"https://www.swedbank.lt/private/d2d/start\" target=\"_self\" data-analytics-click-track=\"footer\" aria-label=\"Lithuania, Opens another website\">Lithuania<icon-external-link> </icon-external-link></a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> Security and integrity </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"#\" target=\"same-window\" data-analytics-click-track=\"footer\" data-cookie-link=\"cookie-withdraw\"> Withdraw cookie consent </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/cookies.html\" target=\"_self\" data-analytics-click-track=\"footer\"> How we use cookies </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/personal-data.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Processing of personal data </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/how-swedbank-uses-ai.html\" target=\"_self\" data-analytics-click-track=\"footer\"> How Swedbank uses AI </a> </li> </ul> </section> <section class=\"column\"> <section class=\"component headline \" data-comp> <h2 class=\" \"> About the website </h2> </section> <ul> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/browsers.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Recommended browsers </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/user-terms.html\" target=\"_self\" data-analytics-click-track=\"footer\"> User terms </a> </li> <li> <a class=\"general-link footer-link\" href=\"/about-swedbank/customers-outside-sweden.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Visitors outside of Sweden </a> </li> <li> <a class=\"general-link footer-link\" href=\"/sitemap.html\" target=\"_self\" data-analytics-click-track=\"footer\"> Sitemap </a> </li> </ul> </section> </div> <div class=\"bottom full\"> <div class=\"language-selector on-top\" data-js=\"language-selector\"> <div class=\"selector-wrapper\"> <div class=\"field \" data-form-field=\"drop-down\"> <div class=\"combo js-select\" data-js=\"custom-select\"> <div aria-c aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-label=\"Select language\" id=\"combo-id-footer-language\" class=\"combo-input\" role=\"combobox\" tabindex=\"0\" data-name=\"language\" data-value=\"en\">English</div> <div class=\"combo-menu\" role=\"listbox\" id=\"listbox-id-footer-language\" aria-label=\"Select language\" tabindex=\"-1\" data-js=\"path\"> <div role=\"option\" id=\"combo-id-footer-language-0\" class=\"combo-option option-current\" aria-selected=\"true\" data-value=\"en\" data-js-url=\"https://www.swedbank.com/\" data-analytics-click-track=\"footer\">English</div><div role=\"option\" id=\"combo-id-footer-language-1\" class=\"combo-option\" aria-selected=\"false\" data-value=\"sv\" data-js-url=\"https://www.swedbank.com/sv/\" data-analytics-click-track=\"footer\">Svenska</div></div> <icon-chevron additi> </icon-chevron> </div> </div> </div> </div> <div class=\"copyright\"></div> </div> </div> </div> </footer> <div data-comp data-cookie-category=\"functional\"> <div data-script=\"&lt;script src=&quot;/etc.clientlibs/wcms/external/scripts/js/analytics/datalayer/common-datalayer.lc-ea4fb190fa0dbcf414d098f8ec1e4318-lc.min.js&quot;&gt;&lt;/script&gt; \"></div> <div data-script=\"&lt;script src=&quot;/etc.clientlibs/wcms/external/scripts/js/analytics/datalayer/triggers.lc-5c800dca6dba973e8a713832a5575358-lc.min.js&quot;&gt;&lt;/script&gt; \"></div> </div> </body>",
+      "isIframe": false
+    }
+  }
+]
