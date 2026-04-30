@@ -592,8 +592,10 @@ If no cookie banner is detectable in the DOM, explain what you
 observed instead of generating a ruleset.]
 
 RULESET:
-[The JSON ruleset only. No additional text, no markdown fences,
-no explanation - only valid JSON.]
+Always wrap your final ruleset in <ruleset></ruleset> tags like this:
+<ruleset>
+{"detector": ..., "methods": [...]}
+</ruleset>
 """
 
 

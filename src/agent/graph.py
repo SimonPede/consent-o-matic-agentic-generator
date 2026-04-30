@@ -2,6 +2,10 @@ from dotenv import load_dotenv
 import subprocess
 import json
 import os
+import re
+
+import logging
+logger = logging.getLogger(__name__)
 
 from typing import Literal
 from langchain_ollama import ChatOllama
@@ -13,6 +17,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import interrupt
 
 from src.agent.state import AgentState
+from src.prompts.system_prompt import get_system_prompt
 # from nodes import Nodes
 
 llm = ChatOllama(
@@ -20,7 +25,8 @@ llm = ChatOllama(
     reasoning = True,
     temperature = 0,
     base_url = os.getenv("OLLAMA_BASE_URL"),
-    headers = {"Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"}
+    client_kwargs={"headers": {"Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"}},
+    validate_model_on_init = True,
     # other params...
     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 )
@@ -105,8 +111,12 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
 
     url = state.get("url", "")
     
+    #__file__ = .../src/agent/graph.py
+    EXTRACT_DOM_PATH = os.path.join(
+        os.path.dirname(__file__), "..", "tools", "extract_dom.js"
+    )
     result = subprocess.run(
-        ["node", "../tools/extract_dom.js", url],
+        ["node", EXTRACT_DOM_PATH, url],
         capture_output = True,
         text = True
     )
@@ -117,10 +127,13 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
             "last_error": result.stderr
         }
     
-    print("=== STDOUT ===")
-    print(repr(result.stdout[:500]))
-    print("=== STDERR ===")  
-    print(result.stderr[:200])
+    # print("=== STDOUT ===")
+    # print(repr(result.stdout[:500]))
+    # print("=== STDERR ===")  
+    # print(result.stderr[:200])
+    logger.debug("STDOUT: %s", result.stdout[:500])
+    logger.debug("STDERR: %s", result.stderr[:200])
+    
     output = json.loads(result.stdout)
     
     if output:
@@ -132,30 +145,21 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
             "cmp_typ": output[0].get("cmpType", "")
         }
     else:
-        print("extraction_node failed, json.loads failed!!")
-        return {}
+        return {
+            "last_error": "extraction_node: extract_dom.js returned empty result",
+            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script detected and was blocked")]
+        }
 
 
 def llm_node(state: AgentState):
     """"""
-    # system_prompt = SystemMessage(content = "System prompt hier importieren! Der steht in system_prompt.py mit few-shot beispielen. Sind diese automatisch eingefügt?")
+    # system_prompt = SystemMessage(content = get_system_prompt())
     # return {
     #     "messages": [
     #         model_with_tools.invoke(
     #             [system_prompt] + state["messages"] #kombiniert die festen Verhaltensregeln (SystemMessage) mit dem aktuellen Gedächtnis des Agenten
     #         )
     #     ],
-    #     #or rather more like that?
-    #     #"messages": [
-    #     #     model_with_tools.invoke(
-    #     #         [
-    #     #             SystemMessage(
-    #     #                 content="You are a helpful assistant tasked with performing arithmetic on a set of inputs."
-    #     #             )
-    #     #         ]
-    #     #         + state["messages"]
-    #     #     )
-    #     # ],
     #     "attempts": state.get("attempts", 0) + 1
     # }
     from langchain_core.messages import AIMessage
@@ -223,10 +227,23 @@ def human_review_node(state: AgentState) -> object:
 
 def ruleset_output_node(state: AgentState) -> dict:
     #later: extract final JSON from messages
-    print("\n----------FINAL RESULT--------------")
-    print(f"Attempts: {state.get('attempts', 0)}")
-    print(f"Final Result: {state.get('final_result', 'Nothing generated!')}")
-    return {}
+    for message in reversed(state["messages"]):
+        if getattr(message, "tool_calls", None): #to ensure it is not aborted (could happen when message.tool_calls is used)
+            continue
+        content = str(message.content)
+        match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
+        #why re.DOTALL: "." in regex then also matches with line breaks
+        if match:
+            try:
+                ruleset = json.loads(match.group(1).strip())
+                #why match.group(1): returns the content of the first breaks, whats between <ruleset> tags
+                print("\n--------- FINALE RULESET ---------")
+                print(json.dumps(ruleset, indent = 2))
+                return {"final_result": ruleset}
+            except json.JSONDecodeError:
+                pass
+    print("--------- NO RULESET FOUND ---------")
+    return {"last_error": "No ruleset found in agent messages"}
 
 #Code aus den docs:
 # from langchain.messages import ToolMessage
