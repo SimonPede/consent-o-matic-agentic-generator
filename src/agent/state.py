@@ -12,7 +12,6 @@ class AgentState(TypedDict):
     structured_dom_info: list[dict] | None #had to change that because extract_dom does return a list of complex object(s)
     cmp_typ: str
     screenshot_info: dict | None
-    thread_id: str
     final_result: dict | None
     
 #version purely based on original agentic workflow:
@@ -26,5 +25,5 @@ class AgentState(TypedDict):
 #     raw_dom: str
 #     cmp_typ: str
 #     screenshot_info: dict | None
-#     thread_id: str
+#     thread_id: str --> not needed, belongs to langgraph config
 #     final_result: dict | None

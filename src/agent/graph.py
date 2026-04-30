@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import subprocess
 import json
+import os
 
 from typing import Literal
 from langchain_ollama import ChatOllama
@@ -11,15 +12,15 @@ from langgraph.prebuilt import ToolNode
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import interrupt
 
-from state import AgentState
+from src.agent.state import AgentState
 # from nodes import Nodes
-
-load_dotenv() #in .env my API key is stored
 
 llm = ChatOllama(
     model = "gemma4:31b",
     reasoning = True,
     temperature = 0,
+    base_url = os.getenv("OLLAMA_BASE_URL"),
+    headers = {"Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"}
     # other params...
     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 )
@@ -117,17 +118,22 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
         }
     
     print("=== STDOUT ===")
-    print(repr(result.stdout[:500]))  # erste 500 Zeichen
+    print(repr(result.stdout[:500]))
     print("=== STDERR ===")  
     print(result.stderr[:200])
     output = json.loads(result.stdout)
     
-    return {
-        #why am i not using ToolMessage? because ToolMessage needs a tool_call_id! 
-        #HumanMessage can be used to inject context
-        "messages": [HumanMessage(content = f"Here is the DOM info, extracted by the extract tool: {output}")],
-        "structured_dom_info": output
-    }
+    if output:
+        return {
+            #why am i not using ToolMessage? because ToolMessage needs a tool_call_id! 
+            #HumanMessage can be used to inject context
+            "messages": [HumanMessage(content = f"Here is the DOM info, extracted by the extract tool: {output}")],
+            "structured_dom_info": output,
+            "cmp_typ": output[0].get("cmpType", "")
+        }
+    else:
+        print("extraction_node failed, json.loads failed!!")
+        return {}
 
 
 def llm_node(state: AgentState):
@@ -265,16 +271,3 @@ png_data = agent.get_graph(xray=True).draw_mermaid_png()
 
 with open("graph.png", "wb") as f:
     f.write(png_data)
-
-
-#Invoke
-inputs = {
-    "messages": [HumanMessage(content = "Generiere ein Ruleset für diese Website.")],
-    "attempts": 0,
-    "url": "https://www.heise.de"
-}
-
-print("--- Agent starts hussling... ---")
-for chunk in agent.stream(inputs, config = {"configurable": {"thread_id": "1"}}):
-    for node_name, output in chunk.items():
-        print(f"\n[Node: {node_name}]")
