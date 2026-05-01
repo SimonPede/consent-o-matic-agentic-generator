@@ -608,7 +608,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                             selectorConfidence: deepData.selectorConfidence,
                             role: el.getAttribute("role") || null,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                            isShadow: el.getRootNode() instanceof ShadowRoot //for my understanding, LLM doesnt need that i think
+                            // isShadow: el.getRootNode() instanceof ShadowRoot //for my understanding, LLM doesnt need that i think
                             //is this enough?
                         }
                     });
