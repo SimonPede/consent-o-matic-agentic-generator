@@ -29,16 +29,6 @@ llm = ChatOllama(
     # other params...
     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 )
-
-#for implementing: o	bei frameScore bewertung: es so bauen, dass wenn der falsche Frame gefunden wird,
-#es ja aber durch guten Score trotzdem dem LLM gegeben wird und das LLM sagt „the fuck. Ich kann hier nichts für die Regeln finden“,
-# dann das System so bauen, dass es zurück in geht und dem LLM das DOM für den zweitbesten Frame extrahiert und so weiter. Wie?!
-#i have to implemented extratc as a tool and a node, right?
-# @tool
-# def extract_dom_tool(url: str, state: AgentState) -> dict: #doesnt need the State, right?
-#     """extract the DOM... detailed desicription with params etc for LLM"""
-
-#     return {}
     
 @tool
 def analyse_screenshot(url: str) -> str:
@@ -54,9 +44,13 @@ def analyse_screenshot(url: str) -> str:
     """
     return ""
 
-# @tool
-# def request_human_review(state: AgentState) -> str:
-#     return ""
+@tool
+def request_human_review(state: AgentState) -> object:
+    """Call this tool when you are uncertain about the DOM structure,
+    cannot identify the correct selectors, or need human guidance 
+    to proceed. Do not call this tool on every attempt."""
+    
+    return "Human review requested."
 
 @tool
 def test_ruleset(url: str, json_string: str) -> str:
@@ -88,8 +82,8 @@ def validate_json(json_string: str) -> str:
     return ""
     
 
-tools = [analyse_screenshot, test_ruleset, validate_json]
-tools_by_name = {tool.name: tool for tool in tools}
+tools = [analyse_screenshot, test_ruleset, validate_json, request_human_review]
+# tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
 def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
@@ -169,10 +163,16 @@ def llm_node(state: AgentState):
 
 def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "ruleset_output_node"]:
     
-    if state.get("attempts", 0) >= 20:
+    #each human_review gives the LLM 5 new tries
+    if state.get("attempts", 0) >= 20 + (state.get("human_review_count", 0) * 5):
         return "human_review_node"
     
     last_message = state["messages"][-1]
+    
+    if hasattr(last_message, "tool_calls"):
+        for tool_call in last_message.tool_calls:
+            if tool_call["name"] == "request_human_review":
+                return "human_review_node"
     
     if not last_message.tool_calls:
         return "ruleset_output_node"
