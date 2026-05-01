@@ -13,7 +13,6 @@ from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage, Too
 from langchain_core.tools import tool
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
-from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import interrupt
 
 from src.agent.state import AgentState
@@ -25,8 +24,8 @@ llm = ChatOllama(
     reasoning = True,
     temperature = 0,
     base_url = os.getenv("OLLAMA_BASE_URL"),
-    client_kwargs={"headers": {"Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"}},
-    validate_model_on_init = True,
+    client_kwargs = {"headers": {"Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"}},
+    # validate_model_on_init = True,
     # other params...
     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 )
@@ -181,6 +180,17 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
     return "tool_node"
 
 tool_node = ToolNode(tools)
+#Code from the docs for the tool node:
+# from langchain.messages import ToolMessage
+# def tool_node(state: dict):
+#     """Performs the tool call"""
+
+#     result = []
+#     for tool_call in state["messages"][-1].tool_calls:
+#         tool = tools_by_name[tool_call["name"]]
+#         observation = tool.invoke(tool_call["args"])
+#         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
+#     return {"messages": result}
 
 def human_review_node(state: AgentState) -> object:
     
@@ -193,9 +203,10 @@ def human_review_node(state: AgentState) -> object:
         llm_choice = False
         
     question = ""
-    if llm_choice:
+    if llm_choice == False:
         question = "The Agent seems to be stuck, this call was not choicen by the LLM. It already needed 20 attempts and needs help. Please give Feedback:"
-    else: question = "The Agent seems to be stuck and needs help. Please give Feedback:"
+    else:
+        question = "The Agent seems to be stuck and needs help. Please give Feedback:"
         
     context = {
         "question": question,
@@ -218,7 +229,7 @@ def human_review_node(state: AgentState) -> object:
     print(json.dumps(context['current_ruleset'], indent = 2))
     print("=" * 40)
     
-    human_input = interrupt({context})
+    human_input = interrupt(context)
     
     return {
         "messages": [HumanMessage(content = f"Human feedback: {human_input}")],
@@ -245,18 +256,6 @@ def ruleset_output_node(state: AgentState) -> dict:
     print("--------- NO RULESET FOUND ---------")
     return {"last_error": "No ruleset found in agent messages"}
 
-#Code aus den docs:
-# from langchain.messages import ToolMessage
-# def tool_node(state: dict):
-#     """Performs the tool call"""
-
-#     result = []
-#     for tool_call in state["messages"][-1].tool_calls:
-#         tool = tools_by_name[tool_call["name"]]
-#         observation = tool.invoke(tool_call["args"])
-#         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
-#     return {"messages": result}
-
 workflow = StateGraph(AgentState)
 
 workflow.add_node("extraction_node", extraction_node)
@@ -278,13 +277,81 @@ workflow.add_edge("tool_node", "llm_node")
 workflow.add_edge("human_review_node", "llm_node")
 
 workflow.add_edge("ruleset_output_node", END)
+    
+# ARCHITECTURAL DECISION: validate_json removed from tool list
+#
+# Original plan: validate_json as lightweight pre-check before test_ruleset.
+# Planned checks:
+#   1. Syntactic: Is the JSON valid? Are required fields present?
+#   2. Semantic: Do the selectors exist in the extracted DOM?
+#
+# Why semantic check was dropped first:
+#   The LLM is explicitly instructed to MODIFY selectors – adding textFilter,
+#   using parent/target structure, stripping >>> Shadow DOM syntax.
+#   An exact selector match against structured_dom_info would produce false
+#   negatives for valid, intentionally modified selectors.
+#
+# Why syntactic check was dropped second:
+#   test_ruleset uses CoMRuleset as args_schema (Pydantic). This means
+#   LangGraph validates the LLM's tool call BEFORE test_ruleset executes.
+#   Pydantic already checks:
+#     - Valid JSON structure
+#     - Required fields present (detector, methods)
+#     - Correct types
+#   validate_json would duplicate this check with no additional value.
+#
+# When to reconsider:
+#   If evaluation shows the LLM makes too many failed test_ruleset calls
+#   (high browser-start overhead), validate_json can be reintroduced as
+#   a cheap pre-filter. At that point, focus only on structural checks
+#   that Pydantic does NOT cover (e.g. empty methods list, unknown
+#   method names like "DO_CONSENTT" typos).
+#
+# Current tool list: [analyse_screenshot, test_ruleset]
+# validate_json: removed until evaluation justifies reintroduction.
 
-memory = MemorySaver()
+# def extract_all_selectors(structured_dom_info: list) -> set:
+#     #the base ide: iterate over all entries of the outputed dom
+#     # and collect all selectors in a set
+#     selectors = set()
+    
+#     for frame in structured_dom_info:
+#         data = frame.get("data", {})
+        
+#         for el_type in ["buttons", "checkboxes", "toggles"]:
+#             for element in data.get(el_type, []):
+#                 selector = element.get("selector")
+#                 if selector:
+#                     selectors.add(selector)
+#                 data = frame.get("data", {})
+        
+#         data = frame.get("settings", {})
+#         for el_type in ["buttons", "checkboxes", "toggles"]:
+#             for element in data.get(el_type, []):
+#                 selector = element.get("selector")
+#                 if selector:
+#                     selectors.add(selector)
+#     return selectors
 
-agent = workflow.compile(checkpointer = memory)
-
-#Show the agent
-png_data = agent.get_graph(xray=True).draw_mermaid_png()
-
-with open("graph.png", "wb") as f:
-    f.write(png_data)
+# def make_validate_json_tool(structured_dom_info: list):
+#     #make a comment for your future self why you use closures!!
+# dom_selectors = extract_all_selectors(structured_dom_info)
+#     @tool
+#     def validate_json(json_string: str) -> str:
+        # """Lightweight pre-check: verifies that the generated ruleset is valid JSON 
+        # and contains the required top-level fields 'deabetector' and 'methods'."""
+        
+        # try:
+        #     parsed = json.loads(json_string)
+        # except json.JSONDecodeError as e:
+        #     return f"INVALID: JSON syntax error: {str(e)}"
+        
+        # missing = [field for field in ["detector", "methods"] if field not in parsed]
+        # if missing:
+        #     return f"INVALID: Missing required fields: {missing}"
+        
+        # if not isinstance(parsed["methods"], list) or len(parsed["methods"]) == 0:
+        #     return "INVALID: 'methods' must be a non-empty list"
+        
+        # return "VALID: JSON structure looks correct."
+#     return validate_json
