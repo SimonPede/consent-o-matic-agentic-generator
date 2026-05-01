@@ -681,7 +681,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         toggles,
                         cmpFound: true,
                         cmpSelector: selector,
-                        cmpContainerFound: true,
                         url: window.location.href,
                         html: tempDiv.innerHTML
                     };
@@ -770,7 +769,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             cmpFound: false,
             cmpType: null,
             cmpSelector: null,
-            cmpContainerFound: false,
             url: window.location.href,
             html: filterBody.innerHTML,
         };
@@ -783,9 +781,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     }
 
     result.cmpType = cmpType;
-    if (!result.cmpFound) {
-        result.cmpFound = cmpType !== null;
-    }
+    // if (!result.cmpFound) {
+    //     result.cmpFound = cmpType !== null;
+    // }
+
     
     return result;
 }
@@ -1457,13 +1456,30 @@ async function extractStructuredDom(url) {
         let results = [];
         if (cookieBannerFrame) {
             const data = await extractFromFrame(cookieBannerFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-            results.push({frame: cookieBannerFrame, frameUrl: cookieBannerFrame.url(), isMainFrame: cookieBannerFrame  === page.mainFrame(), isCookieBannerFrame: true, cmpType, data})
+            results.push({
+                frame: cookieBannerFrame,
+                frameUrl: cookieBannerFrame.url(),
+                isMainFrame: cookieBannerFrame  === page.mainFrame(),
+                isCookieBannerFrame: true, //true because findCorrectFrame found a frame where the banner seems to be at
+                cmpType,
+                data
+            })
         } else {
             for (const frame of page.frames()) {
                 console.error("No banner frame detected with high confidence. Falling back to all-frame scan.");
-                if (!frame.url() || frame.url() === "about:blank") continue;
+                if (!frame.url() || frame.url() === "about:blank") continue; //TODO: also implement visbilty check?
+
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                results.push({ frame, frameUrl: frame.url(), isMainFrame: frame === page.mainFrame(), isCookieBannerFrame: false, cmpType: null, data });
+                const looksLikeBanner = data.cmpFound //TODO: consider also using other factors like buttons. But likely not reliable and already done before in the code
+
+                results.push({
+                    frame,
+                    frameUrl: frame.url(),
+                    isMainFrame: frame === page.mainFrame(),
+                    isCookieBannerFrame: looksLikeBanner,
+                    cmpType,
+                    data
+                });
             }   
         }
 
@@ -1554,7 +1570,7 @@ async function extractStructuredDom(url) {
     
 };
 
-// i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
+//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
     //in graph.py called like this: 
     const url = process.argv[2];
@@ -1622,7 +1638,6 @@ async function extractStructuredDom(url) {
 //       cmpFound: false,
 //       cmpType: null,
 //       cmpSelector: null,
-//       cmpContainerFound: false,
 //       url: 'https://www.skyscanner.de/sttc/px/captcha-v2/index.html?url=Lw==&uuid=47bb3710-424e-11f1-be4c-f97fa79ab85f',
 //       filteredHtml: '<body><div id="root"><div id="app_main" class="App_App__YzZiO"><section class="App_App__logo__NTM3Y"></section><section class="App_App__image__MzI5Z"><div class="UNKNOWN" data-backpack-ds-comp><div class="BpkImage_bpk-image__NDc4O BpkImage_bpk-image--no-background__MTIzO"></div></div></section><h1 class="App_App__headline__OGFkN">Bist du ein Mensch oder ein Roboter?</h1><section class="App_App__message__YzI1N">Nimm das bitte nicht persönlich – einige Skripts und Bots sind heutzutage bemerkenswert lebensecht!</section><section class="App_App__captcha__NTllM"><div id="px-captcha"></div></section><section class="App_App__resolve__NTJjZ">Du kannst immer noch nicht auf die Seite zugreifen? Bitte überprüfe, ob du JavaScript und Cookies eingeschaltet hast und stelle sicher, dass dein Browser den Ladevorgang nicht unterdrückt.</section><section class="App_App__identifier__M2ZkO">47bb3710-424e-11f1-be4c-f97fa79ab85f</section></div></div><iframe src="https://js.px-cloud.net/?t=d-zgelyj4qu-1777303942797&amp;v=478ee737-424e-11f1-824c-a750f9e5535d" dataframetoken="d-zgelyj4qu-1777303942797" referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1" role="presentation" title=""></iframe></body>'
 //     },

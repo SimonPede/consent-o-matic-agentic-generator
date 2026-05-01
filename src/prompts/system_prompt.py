@@ -46,8 +46,6 @@ one browser frame (either the main page or an iframe):
 - `cmpFound`: Whether a known CMP container was detected in this frame.
 - `cmpSelector`: The CSS selector that matched the CMP container, 
     or null if not found.
-- `cmpContainerFound`: Whether the CMP container element was found 
-    in the DOM at extraction time.
 - `url`: The URL of this frame at extraction time (same as frameUrl 
     at the top level, but scoped to the data object).
 - `filteredHtml`: Filtered HTML of the frame body. See below for guidance.
