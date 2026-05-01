@@ -72,6 +72,14 @@ one browser frame (either the main page or an iframe):
 - `isDisabled`: True if the element is currently non-interactive.
 - `ariaChecked`: Used for toggles only. True if the element currently has the attribute `aria-checked`.
 
+**Settings subpage (optional):**
+- `settings`: If a settings/preferences button was detected and clicked, 
+    this field contains a second extraction pass of the resulting UI.
+    It has the same structure as `data` (buttons, checkboxes, toggles, 
+    cmpSelector, filteredHtml, etc.).
+    Use this for DO_CONSENT actions that require opening the settings page first.
+    If null: no settings page was detected or the click failed.
+
 1. **Structured elements** (buttons, checkboxes, toggles): 
 Your primary source for CSS selectors. Pre-extracted and ready to use.
 Always prefer these over selectors you derive yourself from the HTML.
