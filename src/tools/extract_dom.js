@@ -10,6 +10,11 @@ const N_GRAM_DATA = require("../utils/ngram_data");
 const CMP_REGEX = require("../utils/cmp_regex");
 const CMP_DOMAINS = require("../utils/cmp_domains");
 
+// ---------------
+// IMPORTANT!!!!
+// for get a quicker understanding what the logic of this file is
+// please look in the root because i addeded 020526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
+// ----------------
 
 /**
  * Cleans raw HTML for LLM consumption by removing irrelevant content.
@@ -1202,10 +1207,12 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     if (newFrames.length > 0) {
         console.error(`${newFrames.length} new frames after the click. Starting scoing...`);
         
-        const fallbackAvgWordCount = 100; 
+        const currentFrames = page.frames();
+        
+        const avgWordCount = await frameWordCounter(currentFrames); 
 
         for (const newFrame of newFrames) {
-            const score = await calculateFrameScore(newFrame, fallbackAvgWordCount, CMP_SELECTORS_MAP);
+            const score = await calculateFrameScore(newFrame, avgWordCount, CMP_SELECTORS_MAP);
             console.error(`Frame Score: ${score} for URL: ${newFrame.url()}`);
             
             if (score > highestScore) {
@@ -1519,7 +1526,7 @@ async function extractStructuredDom(url) {
 
             delete result.frame; //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
         }
-        
+
         console.error(results);
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
