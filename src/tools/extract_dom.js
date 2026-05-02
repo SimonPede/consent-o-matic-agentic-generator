@@ -1006,39 +1006,6 @@ async function findCorrectFrame(page, selectorMap) {
     //just for debugging:
     console.error(`I found ${frames.length} frames.`);
 
-    //TODO: test if main frame is enough!!
-    const cmpType = await page.mainFrame().evaluate((selectorMap) => {
-        //new version also with shadowDOM. TODO: is this necessary?! Same question applies to waitForCmpUI
-        //i really reuse this function to often!
-        function querySelectorAllDeep(selector, root = document) {
-            let nodes = Array.from(root.querySelectorAll(selector));
-            // const elements = Array.from(root.querySelectorAll("*"));
-            //should be much faster:
-            const elements = root.querySelectorAll("*");
-            for (let el of elements) {
-                if (el.shadowRoot) {
-                    nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
-                }
-            }
-            //to get a feeling how well this works and how necessary it is:
-            // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
-            // let nodesStandard = Array.from(root.querySelectorAll(selector));
-            // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
-            return nodes;
-        }
-
-        for (const [selector, cmpName] of Object.entries(selectorMap)) {
-            const foundNodes = querySelectorAllDeep(selector);
-            if (foundNodes.length > 0) {
-                return cmpName;
-            }
-        }
-        return null;
-    }, selectorMap);
-
-
-    console.error(`CMP Type detected: ${cmpType}`);
-
     const avgWordCount = await frameWordCounter(frames);
     let bestFrame = null;
     let maxScore = -101;
@@ -1054,11 +1021,11 @@ async function findCorrectFrame(page, selectorMap) {
 
     if (bestFrame && maxScore > 0) {
         console.error(`a frame was picked by score: ${bestFrame.url()} with Score: ${maxScore}`);
-        return { frame: bestFrame, cmpType};
+        return bestFrame;
     }
     //TODO: maybe return a list of frames with at least score > -50 as fallback instead of nothing?
 
-    return { frame: null, cmpType };
+    return null;
 }
 
 /**
@@ -1303,47 +1270,53 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
  * @param {number} timeout - max wait time in ms (default: 10000)
  * @returns {{ frame: Frame, selector: string }|null}
  */
-async function waitForCmpUI(page, selectors, timeout = 10000) {
+async function waitForCmpUI(page, selectorMap, timeout = 10000) {
     console.error("waitForCmpUI started...");
     const start = Date.now();
 
     while (Date.now() - start < timeout) {
         for (const frame of page.frames()) {
             try {
-                const foundSelector = await frame.evaluate((sels) => {
-                    //i really reuse this function to often!
+                const result = await frame.evaluate((map) => {
+
                     function querySelectorAllDeep(selector, root = document) {
                         let nodes = Array.from(root.querySelectorAll(selector));
-
+                        // const elements = Array.from(root.querySelectorAll("*"));
+                        //should be much faster:
                         const elements = root.querySelectorAll("*");
                         for (let el of elements) {
                             if (el.shadowRoot) {
                                 nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
                             }
                         }
+                        //to get a feeling how well this works and how necessary it is:
+                        // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
+                        // let nodesStandard = Array.from(root.querySelectorAll(selector));
+                        // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
                         return nodes;
                     }
 
-                    for (const sel of sels) {
-                        const host = querySelectorAllDeep(sel)[0];
+                    for (const [selector, cmpName] of Object.entries(map)) {
+                        const host = document.querySelector(selector); //much faster than also searching the Shadow DOM and completely enough until now
                         if (host && !["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
                             
                             const searchRoot = host.shadowRoot || host;
                             const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot);
                             
                             if (buttons.length > 0) {
-                                return sel;
+                                return { selector, cmpName };
                             }
                         }
                     }
                     return null;
-                }, selectors);
+                }, selectorMap);
 
-                if (foundSelector) {
-                    console.error(`CMP UI seems to be rendered via: "${foundSelector}"`);
-                    return { frame, selector: foundSelector };
+                if (result) {
+                    console.error(`CMP UI seems to be rendered via: "${result.selector}" (${result.cmpName}) in frame: ${frame.url()}`);
+                    return { frame, selector: result.selector, cmpType: result.cmpName };
                 }
             } catch (e) {
+                continue;
             }
         }
         //Wait 500ms before the next polling attempt
@@ -1440,18 +1413,46 @@ async function extractStructuredDom(url) {
 
         console.error("page is loaded!");
 
-        const waitResult = await waitForCmpUI(page, Object.keys(CMP_SELECTORS_MAP));
-
-        if (waitResult) {
-            console.error(`waitForCmpUI found ${waitResult.selector} in frame ${waitResult.frame.url()}`);
-            //wait shortly in case of more CSS animation
-            await new Promise(resolve => setTimeout(resolve, 1500)); 
-        }
+        const waitResult = await waitForCmpUI(page, CMP_SELECTORS_MAP);
 
         //for debugging: interesting: for https://usercentrics.com/de/ the banner is not visible
         await page.screenshot({ path: "debug.png", fullPage: true });
 
-        const { frame: cookieBannerFrame, cmpType } = await findCorrectFrame(page, CMP_SELECTORS_MAP);
+        // if (waitResult) {
+        //     console.error(`waitForCmpUI found ${waitResult.selector} in frame ${waitResult.frame.url()}`);
+        //     //wait shortly in case of more CSS animation
+        //     await new Promise(resolve => setTimeout(resolve, 1500)); 
+        // }
+
+        //so thing is, waitForCmpUI is now in theory capable of directly finding thee cookie banner container in a frame
+        //i will try wo use this directly and if found, skip findCorrectFrame completely
+        //if this works, that is much much more efficient! TODO!
+        //Problem: not as "paper based" as my scoring function
+        //and it could find an iframe, and tell my system: hey, the correct frame is this! (where ever the iframe element lies)
+        //but the real content of the banner is inside the iframe!
+
+        // if (waitResult) {
+        //     cookieBannerFrame = waitResult.frame;
+        //     cmpType = waitResult.cmpType;
+        //     
+        //     await new Promise(resolve => setTimeout(resolve, 1500)); 
+        // } else {
+        //     console.error("No known CMP found. Starting heuristic frame scoring...");
+        //     const fallbackResult = await findCorrectFrame(page, CMP_SELECTORS_MAP);
+        //     cookieBannerFrame = fallbackResult.frame;
+        //     cmpType = fallbackResult.cmpType;
+        // }
+
+        const cmpType = waitResult ? waitResult.cmpType : null;
+
+        if (waitResult) {
+            console.error(`waitForCmpUI detected CMP Type: ${cmpType}`);
+            //wait shortly in case of more CSS animation. Necessary?! I dont know actually :)
+            await new Promise(resolve => setTimeout(resolve, 1500)); 
+        }
+
+        const cookieBannerFrame = await findCorrectFrame(page, CMP_SELECTORS_MAP);
+
 
         let results = [];
         if (cookieBannerFrame) {
@@ -1466,7 +1467,7 @@ async function extractStructuredDom(url) {
             })
         } else {
             for (const frame of page.frames()) {
-                console.error("No banner frame detected with high confidence. Falling back to all-frame scan.");
+                console.error("Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.");
                 if (!frame.url() || frame.url() === "about:blank") continue; //TODO: also implement visbilty check?
 
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
@@ -1559,7 +1560,7 @@ async function extractStructuredDom(url) {
         await browser.close();
         console.error("browser closed!");
 
-        console.log(JSON.stringify(results)) //for sending it to the pyhton code
+        // console.log(JSON.stringify(results)) //for sending it to the pyhton code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1571,30 +1572,30 @@ async function extractStructuredDom(url) {
 };
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
-(async () => {
-    //in graph.py called like this: 
-    const url = process.argv[2];
-    
-    if (!url) {
-        console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
-        process.exit(1);
-    }
-    
-    const foundData = await extractStructuredDom(url);
-
-    if (foundData) {
-        console.error("foundData was filled with a value");
-    }
-})();
-
-
-//for seperate testing:
 // (async () => {
-//     const foundData = await extractStructuredDom("https://www.cookiebot.com/");
+//     //in graph.py called like this: 
+//     const url = process.argv[2];
+    
+//     if (!url) {
+//         console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
+//         process.exit(1);
+//     }
+    
+//     const foundData = await extractStructuredDom(url);
+
 //     if (foundData) {
-//         console.log("foundData was filled with a value");
+//         console.error("foundData was filled with a value");
 //     }
 // })();
+
+
+// for seperate testing:
+(async () => {
+    const foundData = await extractStructuredDom("https://www.cookiebot.com/");
+    if (foundData) {
+        console.log("foundData was filled with a value");
+    }
+})();
 
 //https://usercentrics.com/de/
 //https://zalando.de
