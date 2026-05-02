@@ -29,67 +29,112 @@ llm = ChatOllama(
     # other params...
     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 )
-
-#for implementing: o	bei frameScore bewertung: es so bauen, dass wenn der falsche Frame gefunden wird,
-#es ja aber durch guten Score trotzdem dem LLM gegeben wird und das LLM sagt „the fuck. Ich kann hier nichts für die Regeln finden“,
-# dann das System so bauen, dass es zurück in geht und dem LLM das DOM für den zweitbesten Frame extrahiert und so weiter. Wie?!
-#i have to implemented extratc as a tool and a node, right?
-# @tool
-# def extract_dom_tool(url: str, state: AgentState) -> dict: #doesnt need the State, right?
-#     """extract the DOM... detailed desicription with params etc for LLM"""
-
-#     return {}
     
 @tool
 def analyse_screenshot(url: str) -> str:
     """
-    Input: URL (String)
-    Output: Structured JSON string with: banner visible (yes/no), banner position, found
-        buttons with text and colour
-    Purpose:
-        Supplements DOM analysis with visual information. Particularly useful
-        when the DOM is obfuscated or button texts are not present in the HTML.
-        Answers: Is a banner visible? Which buttons are shown? Where are they
-        positioned?
+    Captures a screenshot of the given URL and performs visual analysis 
+    of the cookie consent banner using a multimodal LLM.
+    
+    Call this tool when:
+    - The extracted DOM is ambiguous and you cannot confidently identify 
+        banner elements from structured data alone
+    - Button texts are missing or obfuscated in the HTML but may be 
+        visible in the rendered page
+    - You need to verify the visual layout of the banner (e.g. which 
+        buttons are visually prominent, their colour or positioning)
+    - The structured extraction returned no elements but a banner 
+        may still be present in the rendered UI
+    
+    Do NOT call this tool if:
+    - The structured DOM already provides sufficient selectors with 
+        high confidence
+    - You have already called this tool for the same URL in this session
+    
+
+    Note: The banner may not be visible if it has already been dismissed 
+    or if it only appears after user interaction. A missing banner in the 
+    screenshot does not necessarily mean no banner exists.
+        
+    Args:
+        url: The URL of the website for which a ruleset is being generated.
+    
+    Returns:
+        Structured JSON string containing: banner_visible (bool), 
+        banner_position (string), buttons (list of objects with text, 
+        colour, and position).
     """
+    
     return ""
 
-# @tool
-# def request_human_review(state: AgentState) -> str:
-#     return ""
+@tool
+def request_human_review() -> str:
+    """
+    Request manual human intervention when the agent cannot make progress 
+    autonomously. Use this tool sparingly and only as a last resort.
+    
+    Call this tool ONLY in the following situations:
+    - You have attempted multiple selector combinations and all have failed validation
+    - The DOM structure is ambiguous and you cannot determine the correct consent 
+        categories with reasonable confidence
+    - The banner structure deviates significantly from all provided few-shot examples
+        and you cannot derive a plausible ruleset
+    - You have received feedback from test_ruleset indicating persistent failures 
+        that you cannot resolve through self-correction
+    
+    Do NOT call this tool if:
+    - You have not yet attempted to generate a ruleset
+    - A simple selector adjustment might resolve the issue
+    - You have only made one or two attempts
+    
+    A human expert will review the extracted DOM, the current ruleset draft, 
+    and all previous errors, then provide targeted feedback (e.g. the correct 
+    selector, the right consent category, or a structural observation).
+    Incorporate this feedback directly into your next attempt.
 
+    Returns:
+        Human feedback as a string describing what was incorrect and how to fix it.
+    """
+    
+    return "Human review requested."
+
+# @tool(args_schema=CoMRuleset)
 @tool
 def test_ruleset(url: str, json_string: str) -> str:
     """
-    Input: URL (String)
-    Output: Structured JSON string with: banner visible (yes/no), banner position, found
-        buttons with text and colour
-    Purpose:
-        Supplements DOM analysis with visual information. Particularly useful
-        when the DOM is obfuscated or button texts are not present in the HTML.
-        Answers: Is a banner visible? Which buttons are shown? Where are they
-        positioned?
-    """
-    return ""
-
-@tool
-def validate_json(json_string: str) -> str:
-    """
-    Input: JSON string (generated ruleset)
-    Output: "valid" or "invalid (with error description)"
-    Purpose:    
-        Syntactic correctness and schema conformity are enforced by the
-        Pydantic model (CoMRuleset) at the point of the test_ruleset tool call.
-        validate_json serves as a lightweight pre-check, verifying semantic
-        plausibility: do the generated selectors exist in the previously extracted
-        DOM? Are there contradictions between the defined methods and the
-        available DOM elements?
-    """
-    return ""
+    Tests the generated Consent-O-Matic ruleset on the live website by 
+    injecting the CoM engine and executing the defined methods. Use this 
+    tool to verify whether the ruleset works correctly in practice.
     
+    Call this tool when:
+    - You have generated a complete ruleset and want to verify it works
+    - A previous test failed and you have revised the ruleset based on 
+        the error feedback
+    - You want to verify whether a specific selector exists in the live DOM
+        before finalising the ruleset
+    
+    Do NOT call this tool if:
+    - You have not yet generated a complete ruleset with all required fields
+    - The ruleset is clearly incomplete (e.g. missing methods or detectors)
+    - You have already successfully passed this test in the current session
+    
+    Args:
+        url: The URL of the website for which the ruleset is being tested.
+        name: The name of the CMP or ruleset (e.g. "OneTrust", "Cookiebot").
+        detectors: List of detector objects defining how to identify the banner.
+        methods: List of method objects defining the consent actions to execute
+                (HIDE_CMP, OPEN_OPTIONS, DO_CONSENT, SAVE_CONSENT).
+    
+    Returns:
+        Structured JSON string containing: banner_disappeared (bool), 
+        found_selectors (list), missing_selectors (list), 
+        error (string or null).
+    """
+    
+    return ""
 
-tools = [analyse_screenshot, test_ruleset, validate_json]
-tools_by_name = {tool.name: tool for tool in tools}
+tools = [analyse_screenshot, test_ruleset, request_human_review]
+# tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
 def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
@@ -169,10 +214,16 @@ def llm_node(state: AgentState):
 
 def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "ruleset_output_node"]:
     
-    if state.get("attempts", 0) >= 20:
+    #each human_review gives the LLM 5 new tries
+    if state.get("attempts", 0) >= 20 + (state.get("human_review_count", 0) * 5):
         return "human_review_node"
     
     last_message = state["messages"][-1]
+    
+    if hasattr(last_message, "tool_calls"):
+        for tool_call in last_message.tool_calls:
+            if tool_call["name"] == "request_human_review":
+                return "human_review_node"
     
     if not last_message.tool_calls:
         return "ruleset_output_node"
