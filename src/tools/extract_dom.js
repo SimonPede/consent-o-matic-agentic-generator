@@ -1488,25 +1488,38 @@ async function extractStructuredDom(url) {
             return null;
         }
 
+        let settingsExtracted = false;
+
         for (const result of results) {
-            //i prioritize buttons, only search for anker-elements if no matching button was found
-            const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
-                result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
-            
-            if (settingsButton) {
-                result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
-            } else {
-                console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
-                const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
-                if (llmSelector) {
-                    result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
+
+            if(!settingsExtracted) {
+                //i prioritize buttons, only search for anker-elements if no matching button was found
+                const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
+                    result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
+                
+                if (settingsButton) {
+                    result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
                 } else {
-                    result.settings = null;
+                    console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
+                    const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
+                    if (llmSelector) {
+                        result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
+                    } else {
+                        result.settings = null;
+                    }
                 }
+
+                if (result.settings) {
+                    settingsExtracted = true;
+                }
+                
+            } else {
+                result.settings = null;
             }
-            
+
             delete result.frame; //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
         }
+        
         console.error(results);
         console.error("\n========== EXTRACTION RESULTS ==========");
         for (const result of results) {
