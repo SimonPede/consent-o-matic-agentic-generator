@@ -1589,7 +1589,7 @@ async function extractStructuredDom(url) {
         await browser.close();
         console.error("browser closed!");
 
-        // console.log(JSON.stringify(results)) //for sending it to the pyhton code
+        console.log(JSON.stringify(results)) //for sending it to the pyhton code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1601,28 +1601,10 @@ async function extractStructuredDom(url) {
 };
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
-// (async () => {
-//     //in graph.py called like this: 
-//     const url = process.argv[2];
-    
-//     if (!url) {
-//         console.error("Error: No URL provided. Usage: node extract_dom.js <url>");
-//         process.exit(1);
-//     }
-    
-//     const foundData = await extractStructuredDom(url);
-
-//     if (foundData) {
-//         console.error("foundData was filled with a value");
-//     }
-// })();
-
-
-// for seperate testing:
 (async () => {
     const foundData = await extractStructuredDom("https://www.cookiebot.com/");
     if (foundData) {
-        console.log("foundData was filled with a value");
+        console.error("foundData was filled with a value");
     }
 })();
 
