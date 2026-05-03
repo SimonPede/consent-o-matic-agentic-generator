@@ -1267,15 +1267,24 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
 
 /**
  * Polls all frames until a known CMP container with rendered buttons is found.
- * Used before findCorrectFrame() to ensure the banner is fully loaded.
- * 
- * Checks both Light DOM and Shadow DOM (via querySelectorAllDeep) because
- * some CMPs like Usercentrics render their banner inside a Shadow Root.
- * 
+ * Serves two purposes:
+ * 1. Waits for the banner to be fully rendered before extraction starts
+ * 2. Detects the CMP type early (returned as cmpType) so findCorrectFrame()
+ *    does not need to repeat the main frame scan
+ *
+ * Host detection uses document.querySelector() (Light DOM only). Much faster than
+ * querySelectorAllDeep and sufficient since CMP host elements are always in the
+ * Light DOM. Button detection inside the container uses querySelectorAllDeep()
+ * to handle Shadow DOM CMPs like Usercentrics.
+ *
+ * Note: This function intentionally does NOT return the frame as the banner frame.
+ * The host element may be in the main frame while the actual banner content
+ * loads inside an iframe – frame selection is delegated to findCorrectFrame().
+ *
  * @param {Page} page - Puppeteer page instance
- * @param {string[]} selectors - CMP container selectors to watch for
- * @param {number} timeout - max wait time in ms (default: 10000)
- * @returns {{ frame: Frame, selector: string }|null}
+ * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
+ * @param {number} timeout - max polling time in ms (default: 10000)
+ * @returns {{ frame: Frame, selector: string, cmpType: string }|null}
  */
 async function waitForCmpUI(page, selectorMap, timeout = 10000) {
     console.error("waitForCmpUI started...");
