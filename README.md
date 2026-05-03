@@ -2,7 +2,7 @@
 
 An LLM-based agentic system designed to autonomously generate JSON rulesets for the [Consent-O-Matic](https://github.com/cavi-au/Consent-O-Matic) browser extension.
 
-> **Status:** This project is under active development as part of a Bachelor's thesis (April–October 2025).
+> **Status:** This project is under active development as part of a Bachelor's thesis (April–September 2026).
 
 ## Overview
 
@@ -20,7 +20,7 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 
 ## Tech Stack
 
-- **Language:** Python 3.11.9
+- **Language:** Python 3.11.9 and JS
 - **Orchestration:** LangGraph/LangChain
 - **Browser Automation:** Node.js & Puppeteer
 - **Validation:** Pydantic (Type-safe tool calling)
@@ -38,10 +38,10 @@ consent-o-matic-agentic-generator/
 ├── src/
 │   ├── agent/                   # LangGraph graph, nodes, and state definition
 │   ├── prompts/                 # System prompt and few-shot examples (Pseudo-RAG)
-│   │   └── examples/
+│   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
-│   └── utils/                   # Logging and helper functions
+│   └── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
 ├── main.py                      # Entry point
 ├── requirements.txt
 └── package.json
@@ -53,7 +53,7 @@ consent-o-matic-agentic-generator/
 
 - Python 3.11.9
 - Node.js (v18+)
-- OpenAI API Key (will be replaced by an open-source model via Ollama)
+- Ollama/Gemma 4 running on a server from SNET, accessed via bearer-token
 
 1. **Clone the repository:**
    ```bash
@@ -76,12 +76,13 @@ consent-o-matic-agentic-generator/
 4. **Configuration**
    Create a `.env` file in the root directory:
    ```bash
-    OPENAI_API_KEY=your_key_here
+    OLLAMA_URL = http://snet-server:1234
+    OLLAMA_TOKEN = dein-token-hier
    ```
 
 ## Usage
    ```bash
-   python main.py --url https://www.example.com
+   python main.py https://www.example.com
    ```
 
 ## Acknowledgements
