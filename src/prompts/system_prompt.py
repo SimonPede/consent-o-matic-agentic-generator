@@ -9,11 +9,7 @@ from src.prompts.static_few_shot_examples import FEW_SHOT_EXAMPLES
 #
 # Runtime placeholders:
 #   {few_shot_examples} - dynamically selected examples via Pseudo-RAG or static few shots in first iteration
-#                         (populated by src/prompts/example_collector.py)#
-
-
-#IMPORTANT: i have to add sth like: "- `cmpType`: Detected CMP name (e.g. "Sourcepoint", "Cookiebot"), or null if unknown."
-#when implementing RAG/PSEUDO RAG!!!
+#                         (populated by src/prompts/example_collector.py)
 
 SYSTEM_PROMPT = """
 #Consent-O-Matic ruleset generation
@@ -24,7 +20,20 @@ extension for a given website's cookie consent banner.
 Consent-O-Matic is an open-source browser extension that automatically responds to cookie banners according to users' privacy preferences.
 The system consists of two components: a hardcoded engine and interchangeable rulesets (JSON files) for various Consent Management Platforms (CMPs)
 and individual cookie banners. The engine reads the JSON and translates it into concrete DOM interactions.
-The JSON defines not how to click, but where and when.
+The JSON defines the declarative structure of interactions, not their imperative execution.
+
+##Your Task
+
+Analyse the provided data carefully and complete the following steps in order:
+1. Identify the banner structure and its elements
+2. Determine the CSS selectors needed, prioritising the structured elements
+3. Map each UI element (checkbox, toggle, button, anchor) to a consent
+    category (A, B, D, E, F, X) and determine the required actions
+4. Before generating the JSON, briefly describe:
+    - Which banner elements you identified
+    - Which CSS selectors you will use and from which source (structured/HTML)
+    - How you mapped each UI element to a consent category and why
+5. Produce the JSON ruleset.
 
 ## DOM Output Structure
 
@@ -55,7 +64,7 @@ one browser frame (either the main page or an iframe):
     for a asumed button, checkbox or toggle.
 - `text`: Visible button label or aria-label. Use this to identify 
     the button's purpose (e.g. "Accept All", "Reject", "Save Settings").
-    Can also be useful for biudling a more robust element description inside the ruleset.
+    Can also be useful for building a more robust element description inside the ruleset.
     See below for guidance.
 - `tag`: HTML tag name (BUTTON, A, DIV, etc.)
 - `attributes`: All HTML attributes of the element. Contains class, id, 
@@ -91,7 +100,8 @@ Example: instead of `{ "selector": ".message-button" }`, use:
 `{ "selector": ".message-button", "textFilter": "Agree" }`
 or use the parent context:
 `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
-"target": { "selector": "button" }`
+"target": { "selector": "button" }
+`
         
 2. **Shadow DOM Selectors**
 
@@ -127,17 +137,6 @@ Note: Some CMPs dynamically change button labels or visibility based on user int
 (e.g. "Decline All" becomes "Save Settings" after toggling a category).
 Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
 (e.g. #updateButton, #saveButton, .save-consent-btn). These may become relevant after DO_CONSENT runs.
-
-Analyse the provided data carefully and complete the following steps in order:
-1. Identify the banner structure and its elements
-2. Determine the CSS selectors needed, prioritising the structured elements
-3. Map each UI element (checkbox, toggle, button, anchor) to a consent
-    category (A, B, D, E, F, X) and determine the required actions
-4. Before generating the JSON, briefly describe:
-    - Which banner elements you identified
-    - Which CSS selectors you will use and from which source (structured/HTML)
-    - How you mapped each UI element to a consent category and why
-5. Produce the JSON ruleset.
 
 A ruleset is successful when the cookie banner disappears after
 execution and all consent categories are correctly mapped.
@@ -281,7 +280,6 @@ Some actions do something to a target selection, others have to do with control 
                     },
                     "openInTab": false //if set to true, will trigger a ctrl+shift+click instead of a click, which should make the link, if any, open in a new tab, and focus that tab
                 }` |
-Hast the „openInTab“ option: if set to true, will trigger a ctrl+shift+click instead of a click, which should make the link, if any, open in a new tab, and focus that tab |
 | `list` | Run a list of actions in order
             structure:
                 `{
@@ -585,7 +583,7 @@ or trueAction + falseAction (for accept/reject button pairs):
 
 ## Examples
 
-Below are {len(few_shot_examples.split("## Example:")) - 1} examples of correct 
+Below are {promptCounter} examples of correct 
 Consent-O-Matic rulesets with their corresponding DOM extracts.
 
 Note: The DOM structures in these examples have been minified for brevity.
@@ -643,7 +641,7 @@ observed in the DOM, which selectors you identified, and how
 you mapped each element to a consent category and why.
 If the banner structure is ambiguous, state this explicitly here.
 If no cookie banner is detectable in the DOM, explain what you
-observed instead of generating a ruleset.]
+observed instead of generating a ruleset.] 
 
 RULESET:
 Always wrap your final ruleset in <ruleset></ruleset> tags like this:
@@ -667,4 +665,5 @@ def get_system_prompt(few_shot_examples: str = FEW_SHOT_EXAMPLES) -> str:
     Returns:
         Complete system prompt as a string.
     """
-    return SYSTEM_PROMPT.format(few_shot_examples = few_shot_examples)
+    promptCounter = len(few_shot_examples.split("## Example:")) - 1
+    return SYSTEM_PROMPT.format(few_shot_examples = few_shot_examples, promptCounter = promptCounter)
