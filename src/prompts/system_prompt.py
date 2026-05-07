@@ -12,7 +12,7 @@ from src.prompts.static_few_shot_examples import FEW_SHOT_EXAMPLES
 #                         (populated by src/prompts/example_collector.py)
 
 SYSTEM_PROMPT = """
-#Consent-O-Matic ruleset generation
+# Consent-O-Matic ruleset generation
 
 You are an expert Consent-O-Matic ruleset developer. Your task is
 to generate a valid JSON ruleset for the Consent-O-Matic browser
@@ -22,7 +22,7 @@ The system consists of two components: a hardcoded engine and interchangeable ru
 and individual cookie banners. The engine reads the JSON and translates it into concrete DOM interactions.
 The JSON defines the declarative structure of interactions, not their imperative execution.
 
-##Your Task
+## Your Task
 
 Analyse the provided data carefully and complete the following steps in order:
 1. Identify the banner structure and its elements
@@ -242,7 +242,7 @@ Most actions and matchers target a DOM element using this structure:
 Use parent + target for complex selections, especially for
 shadow DOM traversal where parent targets the shadow host.
 
-##simple example:
+## simple example:
 ```json
     "parent": {
     "selector": ".myParent",
@@ -648,6 +648,9 @@ Always wrap your final ruleset in <ruleset></ruleset> tags like this:
 <ruleset>
 {"detector": ..., "methods": [...]}
 </ruleset>
+
+## Reminder
+- Complete all 5 analysis steps before generating JSON
 """
 
 
