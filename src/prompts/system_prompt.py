@@ -53,8 +53,14 @@ one browser frame (either the main page or an iframe):
 **data-level fields**:
 - `buttons, checkboxes, toggles`: See Element-level fields below.
 - `cmpFound`: Whether a known CMP container was detected in this frame.
-- `cmpSelector`: The CSS selector that matched the CMP container, 
-    or null if not found.
+- `cmpSelector`: The CSS selector that matched the CMP container.
+    Use this directly for HIDE_CMP and presentMatcher/showingMatcher in detectors.
+    Example:
+        HIDE_CMP: { "type": "hide", "target": { "selector": "<cmpSelector>" } }
+        presentMatcher: { "type": "css", "target": { "selector": "<cmpSelector>" } }
+    If cmpSelector is null: derive the container from filteredHtml or use
+    the shared parent of known buttons (e.g. via parentInfo.grandparent.selector)
+    (e.g. id="component-cookie-banner", class="cookie-banner").
 - `url`: The URL of this frame at extraction time (same as frameUrl 
     at the top level, but scoped to the data object).
 - `filteredHtml`: Filtered HTML of the frame body. See below for guidance.
@@ -102,6 +108,11 @@ or use the parent context:
 `"parent": { "selector": ".stack-row", "textFilter": "Analytics" }, 
 "target": { "selector": "button" }
 `
+Exception: Even `very high` confidence selectors may be unstable
+if the ID looks auto-generated (e.g. contains long numbers like
+`#id-890693537-2`, or incremental counters like `#ember123`).
+In these cases, prefer stable attributes from the `attributes` field
+(see point 3 below).
         
 2. **Shadow DOM Selectors**
 
@@ -124,7 +135,17 @@ Example:
 }
 ```
 
-3. **filteredHtml**: 
+3. **Prefer stable attributes over generated selectors:**
+Some elements have dynamically generated IDs (e.g. `id="id-890693537-1"`)
+that change across page loads. In this case, prefer stable attributes from
+the `attributes` field instead:
+- `name` attribute: e.g. `input[name='functi']` instead of `#id-890693537-1`
+- `data-*` attributes: e.g. `[data-js='accept-cookies']`
+- `aria-label`: e.g. `[aria-label='Accept all cookies']`
+Check the `attributes` field of each element to identify stable alternatives
+when `selectorConfidence` is low or the ID looks auto-generated.
+
+4. **filteredHtml**: 
 Use it to understand element hierarchy and sibling 
 relationships (e.g. which "Agree" button belongs to which consent category).
 Only derive selectors from the HTML if no structured selector is available.
