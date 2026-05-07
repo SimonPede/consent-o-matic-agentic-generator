@@ -335,6 +335,7 @@ const CMP_SELECTORS = {
 
     //from myself:
     "#transavia-consent-banner": "Transavia",
+    "#component-cookie-banner": "Swedbank"
 };
 
 module.exports = CMP_SELECTORS;

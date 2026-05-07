@@ -430,22 +430,57 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {HTMLElement} el - element found by querySelectorAllDeep()
          * @returns {Object} - tag, id, className of parent, or SHADOW-HOST info if at Shadow boundary
          */
+        // function extractParentInfo(el) {
+        //     const parent = el.parentElement;
+        //     const root = el.getRootNode();
+
+        //     if (!parent && root instanceof ShadowRoot) {
+        //         return {
+        //             tag: "SHADOW-HOST", 
+        //             id: root.host ? root.host.id : null,
+        //             className: root.host ? root.host.className : "shadow-root-boundary"
+        //         };
+        //     }
+
+        //     return {
+        //         tag: parent ? parent.tagName : null,
+        //         id: parent ? parent.id : null,
+        //         className: parent ? parent.className : null
+        //     };
+        // }
+
         function extractParentInfo(el) {
             const parent = el.parentElement;
             const root = el.getRootNode();
 
             if (!parent && root instanceof ShadowRoot) {
                 return {
-                    tag: "SHADOW-HOST", 
+                    tag: "SHADOW-HOST",
                     id: root.host ? root.host.id : null,
-                    className: root.host ? root.host.className : "shadow-root-boundary"
+                    className: root.host ? root.host.className : "shadow-root-boundary",
+                    selector: root.host ? 
+                        (root.host.id ? `#${root.host.id}` : null) : null
                 };
             }
+
+            //Grandparent for deeper hierarchie
+            const grandparent = parent ? parent.parentElement : null;
 
             return {
                 tag: parent ? parent.tagName : null,
                 id: parent ? parent.id : null,
-                className: parent ? parent.className : null
+                className: parent ? parent.className : null,
+                selector: parent ? 
+                    (parent.id ? `#${parent.id}` : 
+                    parent.className ? `.${parent.className.trim().split(/\s+/)[0]}` : null) 
+                    : null,
+                grandparent: grandparent ? {
+                    tag: grandparent.tagName,
+                    id: grandparent.id || null,
+                    className: grandparent.className || null,
+                    selector: grandparent.id ? `#${grandparent.id}` :
+                            grandparent.className ? `.${grandparent.className.trim().split(/\s+/)[0]}` : null
+                } : null
             };
         }
 
@@ -679,6 +714,20 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     ["nav", "script", "style", "img", "svg", "noscript"].forEach(t => {
                         tempDiv.querySelectorAll(t).forEach(n => n.remove());
                     });
+
+                    //does not bring enough!!!
+                    // ["table", "[id*='CookieTabContent']",      // Cookiebot: Cookie-Listen in Tabs
+                    //     "[id*='CookieType']",            // Cookiebot: Cookie-Typ-Container  
+                    //     ".CybotCookiebotDialogDetailBodyContentCookieContainerTypes",
+                    //     "[class*='CookieList']",
+                    //     "[class*='cookie-list']",
+                    //     "[class*='declaration']", "[class*='Declaration']",
+                    //     "[id*='declaration']", "[id*='Declaration']",
+                    //     "[class*='vendor']", "[class*='Vendor']"].forEach(sel => {
+                    //         try {
+                    //             tempDiv.querySelectorAll(sel).forEach(n => n.remove());
+                    //         } catch(e) {}
+                    // });
 
                     bestResult = {
                         buttons,
@@ -1584,12 +1633,63 @@ async function extractStructuredDom(url) {
             }
         }
         console.error("========================================\n");
+
+
+        const sizeAnalysis = results.map(result => {
+            const d = result.data;
+            
+            const buttonsJson = JSON.stringify(d.buttons || []);
+            const checkboxesJson = JSON.stringify(d.checkboxes || []);
+            const togglesJson = JSON.stringify(d.toggles || []);
+            const htmlSize = (d.filteredHtml || d.html || "").length;
+
+            const buttonBreakdown = (d.buttons || []).slice(0, 3).map(btn => ({
+                selector: btn.selector,
+                textSize: JSON.stringify(btn.text || "").length,
+                attributesSize: JSON.stringify(btn.attributes || {}).length,
+                parentInfoSize: JSON.stringify(btn.parentInfo || {}).length,
+                selectorSize: JSON.stringify(btn.selector || "").length,
+                totalSize: JSON.stringify(btn).length,
+            }));
+
+            const html = d.filteredHtml || d.html || "";
+            const lines = html.split("\n").length;
+            const firstChars = html.substring(0, 500);
+            const lastChars = html.substring(html.length - 500);
+
+            console.error("filteredHtml erste 500 Zeichen:");
+            console.error(firstChars);
+            console.error("\nfilteredHtml letzte 500 Zeichen:");
+            console.error(lastChars);
+            console.error(`\nZeilen gesamt: ${lines}`);
+
+            return {
+                frameUrl: result.frameUrl,
+                isCookieFrame: result.isCookieBannerFrame,
+                cmpFound: d.cmpFound,
+                sizes: {
+                    buttons_total: buttonsJson.length,
+                    checkboxes_total: checkboxesJson.length,
+                    toggles_total: togglesJson.length,
+                    filteredHtml: htmlSize,
+                    GESAMT: buttonsJson.length + checkboxesJson.length + 
+                            togglesJson.length + htmlSize,
+                },
+                buttonBreakdown,
+            };
+        });
+
+        console.error("\n========== SIZE ANALYSIS ==========");
+        console.error(JSON.stringify(sizeAnalysis, null, 2));
+        console.error("====================================\n");
+
+
         fs.writeFileSync('extraction_debug.json', JSON.stringify(results, null, 2));
         console.error("Gesamter Output wurde in extraction_debug.json gespeichert.");
         await browser.close();
         console.error("browser closed!");
 
-        console.log(JSON.stringify(results)) //for sending it to the pyhton code
+        // console.log(JSON.stringify(results)) //for sending it to the pyhton code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1602,7 +1702,7 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://www.cookiebot.com/");
+    const foundData = await extractStructuredDom("https://www.swedbank.com/");
     if (foundData) {
         console.error("foundData was filled with a value");
     }
@@ -1614,17 +1714,11 @@ async function extractStructuredDom(url) {
 //https://spiegel.de
 
 //URLS for few shot examples:
-//1: https://www.flightaware.com/ --> not up to da
-//2: https://www.affinity.com/ --> not up to da
-//3: https://cookieinformation.com/ --> not up to da
+//1: https://www.flightaware.com/ --> not up to date
+//2: https://www.affinity.com/ --> not up to date
+//3: https://cookieinformation.com/ --> not up to date
 //4: https://www.cookiebot.com/ --> minor tweaks necessary because of "inline" at the ids
 //5: https://www.swedbank.com/ --> fits almost perfectly. Current uses not the seemingly random generated ids like id-890693537-1
-//--> system prompt: "**Dynamic IDs:** If a checkbox or toggle has an ID that appears dynamically 
-// generated (e.g., contains long numeric strings like `#id-890693537-1`), 
-// do not use the ID as selector. Instead use the `name` attribute:
-// `input[name='functi']` or combine with a stable parent class:
-// `.cookie-form input[name='functi']`
-// The `name` attribute and class names from `parentInfo` are stable alternatives."
 
 // https://www.transavia.com/ --> settings btton führt zum falschen iframe
 // https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page

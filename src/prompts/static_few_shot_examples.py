@@ -5,16 +5,26 @@ def _load(filename):
     path = os.path.join(os.path.dirname(__file__), "examples", filename)
     with open(path, "r", encoding = "utf-8") as f:
         return json.load(f)
+    
+#DEBUG: 
+dom = _load("cookiebot_dom.json")
+print("=== Frame-level keys ===")
+print(list(dom[0].keys()))
+print("\n=== data-level keys ===")
+print(list(dom[0]["data"].keys()))
+print("\n=== erster Button keys ===")
+if dom[0]["data"]["buttons"]:
+    print(list(dom[0]["data"]["buttons"][0].keys()))
 
 def _format(title, dom, ruleset):
     return f"""
 		## Example: {title}
 
 		### Extracted DOM:
-		{json.dumps(_slim_dom(dom), indent = 2)}
+		{json.dumps(_slim_dom(dom))}
 
 		### Correct ruleset:
-		{json.dumps(ruleset, indent = 2)}
+		{json.dumps(ruleset)}
 
 		---
 	"""
@@ -24,16 +34,16 @@ def _slim_dom(dom):
     for frame in dom:
         slim = {
             "frameUrl": frame["frameUrl"],
+            "isMainFrame": frame["isMainFrame"],
+            "isCookieBannerFrame": frame["isCookieBannerFrame"],
             "cmpType": frame["cmpType"],
-            "isMainFrame":  frame["isMainFrame"],
-            "cmpType":  frame["cmpType"],
             "data": {
                 "buttons": _slim_buttons(frame["data"]["buttons"]),
                 "checkboxes": _slim_checkboxes(frame["data"]["checkboxes"]),
                 "toggles": _slim_toggles(frame["data"]["toggles"]),
-                "cmpType": frame["data"]["cmpType"],
+                "cmpFound": frame["data"]["cmpFound"],
                 "cmpSelector": frame["data"].get("cmpSelector"),
-                "cmpContainerFound": frame["data"]["cmpContainerFound"],
+                "cmpType": frame["data"]["cmpType"],
                 "url": frame["data"]["url"],
                 #leaving out filteredHtml for few-shot
             }
@@ -43,9 +53,9 @@ def _slim_dom(dom):
                 "buttons": _slim_buttons(frame["settings"]["buttons"]),
                 "checkboxes": _slim_checkboxes(frame["settings"]["checkboxes"]),
                 "toggles": _slim_toggles(frame["settings"]["toggles"]),
-                "cmpType": frame["settings"]["cmpType"],
+                "cmpFound": frame["settings"]["cmpFound"],
                 "cmpSelector": frame["settings"].get("cmpSelector"),
-                "cmpContainerFound": frame["settings"]["cmpContainerFound"],
+                "cmpType": frame["settings"]["cmpType"],
                 "url": frame["settings"]["url"],
             }
         result.append(slim)
@@ -53,9 +63,11 @@ def _slim_dom(dom):
 
 def _slim_buttons(buttons):
     return [{
+        "type": b["type"],
         "text": b["text"],
         "tag": b["tag"],
-        # "attributes": b["attributes"],
+        "parentInfo": b["parentInfo"],
+        # "attributes": b["attributes"], 
         "selector": b["selector"],
         "selectorConfidence": b["selectorConfidence"],
         "role": b.get("role"),
@@ -64,8 +76,10 @@ def _slim_buttons(buttons):
     
 def _slim_checkboxes(checkboxes):
     return [{
+        "type": c["type"],
         "labelText": c["labelText"],
         "tag": c["tag"],
+        "parentInfo": c["parentInfo"],
         "selector": c["selector"],
         "selectorConfidence": c["selectorConfidence"],
         "isChecked": c["isChecked"],
@@ -74,8 +88,10 @@ def _slim_checkboxes(checkboxes):
 
 def _slim_toggles(toggles):
     return [{
+        "type": t["type"],
         "text": t["text"],
         "tag": t["tag"],
+        "parentInfo": t["parentInfo"],
         "selector": t["selector"],
         "selectorConfidence": t["selectorConfidence"],
         "ariaChecked": t["ariaChecked"],
@@ -89,7 +105,7 @@ FEW_SHOT_EXAMPLES = (
         _load("cookiebot_ruleset.json")
     ) +
     _format(
-        "Swedbank – custom banner (swedbank.com)",
+        "Swedbank, custom banner (swedbank.com)",
         _load("swedbank_dom.json"),
         _load("swedbank_ruleset.json")
     )
