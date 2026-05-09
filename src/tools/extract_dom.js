@@ -1604,12 +1604,12 @@ async function extractStructuredDom(url) {
 
             console.error(`\n   Checkboxes found (${result.data.checkboxes.length}):`);
             for (const cb of result.data.checkboxes) {
-                console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled}`);
+                console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled} --> selector: ${cb.selector}`);
             }
 
             console.error(`\n  Toggles found (${result.data.toggles.length}):`);
             for (const tgl of result.data.toggles) {
-                console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked}`);
+                console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked} --> selector: ${tgl.selector}`);
             }
 
             if (result.settings) {
@@ -1621,12 +1621,12 @@ async function extractStructuredDom(url) {
 
                 console.error(`\n   Checkboxes found (${result.settings.checkboxes.length}):`);
                 for (const cb of result.settings.checkboxes) {
-                    console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled}`);
+                    console.error(`      "${cb.labelText}" | checked: ${cb.isChecked} | disabled: ${cb.isDisabled} --> selector: ${cb.selector}`);
                 }
 
                 console.error(`\n  Toggles found (${result.settings.toggles.length}):`);
                 for (const tgl of result.settings.toggles) {
-                    console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked}`);
+                    console.error(`      "${tgl.text}" | aria-checked: ${tgl.ariaChecked} --> selector: ${tgl.selector}`);
                 }
             } else {
                 console.error(`\n   No settings page found`);
@@ -1635,61 +1635,61 @@ async function extractStructuredDom(url) {
         console.error("========================================\n");
 
 
-        const sizeAnalysis = results.map(result => {
-            const d = result.data;
+        // const sizeAnalysis = results.map(result => {
+        //     const d = result.data;
             
-            const buttonsJson = JSON.stringify(d.buttons || []);
-            const checkboxesJson = JSON.stringify(d.checkboxes || []);
-            const togglesJson = JSON.stringify(d.toggles || []);
-            const htmlSize = (d.filteredHtml || d.html || "").length;
+        //     const buttonsJson = JSON.stringify(d.buttons || []);
+        //     const checkboxesJson = JSON.stringify(d.checkboxes || []);
+        //     const togglesJson = JSON.stringify(d.toggles || []);
+        //     const htmlSize = (d.filteredHtml || d.html || "").length;
 
-            const buttonBreakdown = (d.buttons || []).slice(0, 3).map(btn => ({
-                selector: btn.selector,
-                textSize: JSON.stringify(btn.text || "").length,
-                attributesSize: JSON.stringify(btn.attributes || {}).length,
-                parentInfoSize: JSON.stringify(btn.parentInfo || {}).length,
-                selectorSize: JSON.stringify(btn.selector || "").length,
-                totalSize: JSON.stringify(btn).length,
-            }));
+        //     const buttonBreakdown = (d.buttons || []).slice(0, 3).map(btn => ({
+        //         selector: btn.selector,
+        //         textSize: JSON.stringify(btn.text || "").length,
+        //         attributesSize: JSON.stringify(btn.attributes || {}).length,
+        //         parentInfoSize: JSON.stringify(btn.parentInfo || {}).length,
+        //         selectorSize: JSON.stringify(btn.selector || "").length,
+        //         totalSize: JSON.stringify(btn).length,
+        //     }));
 
-            const html = d.filteredHtml || d.html || "";
-            const lines = html.split("\n").length;
-            const firstChars = html.substring(0, 500);
-            const lastChars = html.substring(html.length - 500);
+        //     const html = d.filteredHtml || d.html || "";
+        //     const lines = html.split("\n").length;
+        //     const firstChars = html.substring(0, 500);
+        //     const lastChars = html.substring(html.length - 500);
 
-            console.error("filteredHtml erste 500 Zeichen:");
-            console.error(firstChars);
-            console.error("\nfilteredHtml letzte 500 Zeichen:");
-            console.error(lastChars);
-            console.error(`\nZeilen gesamt: ${lines}`);
+        //     console.error("filteredHtml erste 500 Zeichen:");
+        //     console.error(firstChars);
+        //     console.error("\nfilteredHtml letzte 500 Zeichen:");
+        //     console.error(lastChars);
+        //     console.error(`\nZeilen gesamt: ${lines}`);
 
-            return {
-                frameUrl: result.frameUrl,
-                isCookieFrame: result.isCookieBannerFrame,
-                cmpFound: d.cmpFound,
-                sizes: {
-                    buttons_total: buttonsJson.length,
-                    checkboxes_total: checkboxesJson.length,
-                    toggles_total: togglesJson.length,
-                    filteredHtml: htmlSize,
-                    GESAMT: buttonsJson.length + checkboxesJson.length + 
-                            togglesJson.length + htmlSize,
-                },
-                buttonBreakdown,
-            };
-        });
+        //     return {
+        //         frameUrl: result.frameUrl,
+        //         isCookieFrame: result.isCookieBannerFrame,
+        //         cmpFound: d.cmpFound,
+        //         sizes: {
+        //             buttons_total: buttonsJson.length,
+        //             checkboxes_total: checkboxesJson.length,
+        //             toggles_total: togglesJson.length,
+        //             filteredHtml: htmlSize,
+        //             GESAMT: buttonsJson.length + checkboxesJson.length + 
+        //                     togglesJson.length + htmlSize,
+        //         },
+        //         buttonBreakdown,
+        //     };
+        // });
 
-        console.error("\n========== SIZE ANALYSIS ==========");
-        console.error(JSON.stringify(sizeAnalysis, null, 2));
-        console.error("====================================\n");
+        // console.error("\n========== SIZE ANALYSIS ==========");
+        // console.error(JSON.stringify(sizeAnalysis, null, 2));
+        // console.error("====================================\n");
 
 
-        fs.writeFileSync('extraction_debug.json', JSON.stringify(results, null, 2));
-        console.error("Gesamter Output wurde in extraction_debug.json gespeichert.");
+        fs.writeFileSync("extraction_debug.json", JSON.stringify(results, null, 2));
+        console.error("Output was stored in extraction_debug.json.");
         await browser.close();
         console.error("browser closed!");
 
-        // console.log(JSON.stringify(results)) //for sending it to the pyhton code
+        // console.log(JSON.stringify(results)) //for sending it to the python code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1702,13 +1702,13 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://www.swedbank.com/");
+    const foundData = await extractStructuredDom("https://www.cookiebot.com/");
     if (foundData) {
         console.error("foundData was filled with a value");
     }
 })();
 
-//https://usercentrics.com/de/
+//https://usercentrics.com
 //https://zalando.de
 //https://heise.de
 //https://spiegel.de
@@ -1717,8 +1717,8 @@ async function extractStructuredDom(url) {
 //1: https://www.flightaware.com/ --> not up to date
 //2: https://www.affinity.com/ --> not up to date
 //3: https://cookieinformation.com/ --> not up to date
-//4: https://www.cookiebot.com/ --> minor tweaks necessary because of "inline" at the ids
-//5: https://www.swedbank.com/ --> fits almost perfectly. Current uses not the seemingly random generated ids like id-890693537-1
+//4: https://www.cookiebot.com/
+//5: https://www.swedbank.com/
 
 // https://www.transavia.com/ --> settings btton führt zum falschen iframe
 // https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page

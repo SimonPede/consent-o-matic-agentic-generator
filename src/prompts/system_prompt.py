@@ -146,9 +146,11 @@ Check the `attributes` field of each element to identify stable alternatives
 when `selectorConfidence` is low or the ID looks auto-generated.
 
 4. **filteredHtml**: 
-Use it to understand element hierarchy and sibling 
-relationships (e.g. which "Agree" button belongs to which consent category).
-Only derive selectors from the HTML if no structured selector is available.
+Use it to identify the banner container selector (required for HIDE_CMP 
+and presentMatcher/showingMatcher) and to understand element hierarchy 
+and sibling relationships (e.g. which "Agree" button belongs to which 
+consent category). Only derive selectors from the HTML if no structured 
+selector is available or it seems really unstable to you.
 
 Note: Note: The structured elements list may contain elements not visible in filteredHtml 
 (e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
@@ -610,6 +612,12 @@ Consent-O-Matic rulesets with their corresponding DOM extracts.
 Note: The DOM structures in these examples have been minified for brevity.
 In real tasks you will receive the full unedited DOM output, but the mapping 
 logic from DOM elements to ruleset actions remains exactly the same.
+
+Note: In the examples below, `filteredHtml` has been omitted for brevity. 
+Some selectors in the example rulesets (e.g. for HIDE_CMP or presentMatcher) 
+were derived from `filteredHtml` and may therefore not appear in the structured 
+elements shown. In your actual task, you will receive the full `filteredHtml` 
+and must derive banner container selectors from it yourself.
 
 Study each example carefully! Pay attention to how selectors from the 
 structured elements map to actions in the ruleset.
