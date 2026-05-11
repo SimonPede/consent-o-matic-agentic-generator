@@ -698,4 +698,4 @@ def get_system_prompt(few_shot_examples: str = FEW_SHOT_EXAMPLES) -> str:
         Complete system prompt as a string.
     """
     promptCounter = len(few_shot_examples.split("## Example:")) - 1
-    return SYSTEM_PROMPT.format(few_shot_examples = few_shot_examples, promptCounter = promptCounter)
+    return SYSTEM_PROMPT.replace("{few_shot_examples}", few_shot_examples).replace("{promptCounter}", str(promptCounter))

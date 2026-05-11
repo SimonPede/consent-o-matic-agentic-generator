@@ -7,14 +7,14 @@ def _load(filename):
         return json.load(f)
     
 #DEBUG: 
-dom = _load("cookiebot_dom.json")
-print("=== Frame-level keys ===")
-print(list(dom[0].keys()))
-print("\n=== data-level keys ===")
-print(list(dom[0]["data"].keys()))
-print("\n=== erster Button keys ===")
-if dom[0]["data"]["buttons"]:
-    print(list(dom[0]["data"]["buttons"][0].keys()))
+# dom = _load("cookiebot_dom.json")
+# print("=== Frame-level keys ===")
+# print(list(dom[0].keys()))
+# print("\n=== data-level keys ===")
+# print(list(dom[0]["data"].keys()))
+# print("\n=== erster Button keys ===")
+# if dom[0]["data"]["buttons"]:
+#     print(list(dom[0]["data"]["buttons"][0].keys()))
 
 def _format(title, dom, ruleset):
     return f"""
@@ -98,15 +98,27 @@ def _slim_toggles(toggles):
         "isDisabled": t["isDisabled"]
     } for t in toggles]
     
+# FEW_SHOT_EXAMPLES = (
+#     _format(
+#         "Cookiebot CMP (cookiebot.com)",
+#         _load("cookiebot_dom.json"),
+#         _load("cookiebot_ruleset.json")
+#     ) +
+#     _format(
+#         "Swedbank, custom banner (swedbank.com)",
+#         _load("swedbank_dom.json"),
+#         _load("swedbank_ruleset.json")
+#     )
+# )
+
 FEW_SHOT_EXAMPLES = (
     _format(
         "Cookiebot CMP (cookiebot.com)",
         _load("cookiebot_dom.json"),
         _load("cookiebot_ruleset.json")
-    ) +
-    _format(
-        "Swedbank, custom banner (swedbank.com)",
-        _load("swedbank_dom.json"),
-        _load("swedbank_ruleset.json")
     )
 )
+
+# FEW_SHOT_EXAMPLES = (
+#     ""
+# )

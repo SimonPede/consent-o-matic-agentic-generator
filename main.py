@@ -10,7 +10,7 @@ from src.agent.graph import workflow
 from langchain_core.messages import HumanMessage
 
 
-url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.heise.de"
+url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.cookiebot.com"
 fresh = "--fresh" in sys.argv  #python main.py https://heise.de --fresh
 
 inputs = {

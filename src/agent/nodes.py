@@ -2,14 +2,13 @@ import subprocess
 import json
 import os
 import re
-from typing import Literal
 
 import logging
 logger = logging.getLogger(__name__)
 
 from langgraph.types import interrupt
 from src.agent.state import AgentState
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from langgraph.types import interrupt
 
 from src.prompts.system_prompt import get_system_prompt
@@ -58,6 +57,8 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
     output = json.loads(result.stdout)
     
     if output:
+        output_str = json.dumps(output)
+        print(f"DOM Output: {len(output_str)} Zeichen")
         return {
             #why am i not using ToolMessage? because ToolMessage needs a tool_call_id! 
             #HumanMessage can be used to inject context
@@ -72,22 +73,36 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
         }
 
 def make_llm_node(model_with_tools):
-	def llm_node(state: AgentState):
-		""""""
-		# system_prompt = SystemMessage(content = get_system_prompt())
-		# return {
-		#     "messages": [
-		#         model_with_tools.invoke(
-		#             [system_prompt] + state["messages"]
-		#         )
-		#     ],
-		#     "attempts": state.get("attempts", 0) + 1
-		# }
-		return {
-			"messages": [AIMessage(content = "TEMP: LLM not callable")],
-			"attempts": state.get("attempts", 0) + 1
-		}
-	return llm_node
+    def llm_node(state: AgentState):
+    #     system_prompt = SystemMessage(content = get_system_prompt())
+    #     #prompt = get_system_prompt().replace("{few_shot_examples}", "").replace("{promptCounter}", "0")
+    #     # for section in prompt.split("##"):
+    #     #     if section.strip():
+    #     #         print(f"## {section[:50]}... → {len(section)} Zeichen")
+    #     return {
+	# 	    "messages": [
+	# 	        model_with_tools.invoke(
+	# 	            [system_prompt] + state["messages"]
+	# 	        )
+	# 	    ],
+	# 	    "attempts": state.get("attempts", 0) + 1
+	# 	}
+        try:
+            system_prompt = SystemMessage(content=get_system_prompt())
+            response = model_with_tools.invoke(
+                [system_prompt] + state["messages"]
+            )
+            print("LLM Response:", str(response.content)[:2000])
+            print(type(response.content))
+            print(response.content[-1] if isinstance(response.content, list) else response.content)
+            return {
+                "messages": [response],
+                "attempts": state.get("attempts", 0) + 1
+            }
+        except Exception as e:
+            print(f"LLM ERROR: {e}")
+            raise
+    return llm_node
 
 def human_review_node(state: AgentState) -> object:
     
@@ -134,11 +149,27 @@ def human_review_node(state: AgentState) -> object:
     }
 
 def ruleset_output_node(state: AgentState) -> dict:
-    #later: extract final JSON from messages
+    """
+    Searches through all agent messages (newest first) for a ruleset
+    wrapped in <ruleset></ruleset> tags and extracts it as JSON.
+    
+    Some LLMs (e.g. Kimi with thinking mode) return content as a list
+    of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
+    Others return a plain string. Both cases are handled here.
+    """
     for message in reversed(state["messages"]):
         if getattr(message, "tool_calls", None): #to ensure it is not aborted (could happen when message.tool_calls is used)
             continue
-        content = str(message.content)
+        
+        content = message.content
+        if isinstance(content, list):
+            text_parts = []
+            for block in content:
+                if isinstance(block, dict) and block.get("type") == "text":
+                    text_parts.append(block.get("text", ""))
+            content = " ".join(text_parts)
+        else:
+            content = str(content)
         match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
         #why re.DOTALL: "." in regex then also matches with line breaks
         if match:
