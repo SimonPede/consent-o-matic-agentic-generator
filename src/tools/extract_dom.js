@@ -888,7 +888,7 @@ async function frameWordCounter(frames, avgWordCount) {
  * Scoring factors (see paper Appendix A.3 for original weights):
  * 
  * Positive:
- *   +2  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
+ *   +5  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al. 2025)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
  * 
@@ -905,6 +905,10 @@ async function frameWordCounter(frames, avgWordCount) {
  *   - No sub-string/duplicate candidate comparison (out of scope for this prototype)
  *   - N-grams extended with German phrases; full multilingual support is a TODO
  *   - Evaluation of the URL and the iframe name (my own idea)
+ *   - and i dont comply to: "iframes were also
+        assessed to be less important as there is typically a wide
+        range of content that can be contained within an iframe
+        not just cookie dialogs."
  *   - TODO: implemented concept from Nouwens et al. (2025) - A Cross-Country Analysis of GDPR Cookie Banners:
  *         they also evaluated if elements had a z-index > 10 and if position: fixed
  * 
@@ -990,7 +994,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             for (const selector of customS) {
                 const relults = querySelectorAllDeep(selector);
                 if (relults.length > 0) {
-                    localScore += 2;
+                    localScore += 5;
                     break;
                 }
             }
@@ -1715,7 +1719,7 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 // (async () => {
-//     const foundData = await extractStructuredDom("https://www.cookiebot.com/");
+//     const foundData = await extractStructuredDom("https://spiegel.de");
 //     if (foundData) {
 //         console.error("foundData was filled with a value");
 //     }

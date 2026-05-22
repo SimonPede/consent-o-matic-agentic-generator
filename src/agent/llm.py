@@ -13,7 +13,7 @@ llm = ChatLiteLLM(
     api_base=os.getenv("LITELLM_BASE_URL"),
     api_key=os.getenv("LITELLM_API_KEY"),
     temperature=0,
-    max_tokens=30384,
+    max_tokens=15384,
     #seems to have no effect:
     # thinking=True,
     # reasoning = True
@@ -23,10 +23,10 @@ llm = ChatLiteLLM(
 # response = llm.invoke("Say hello in one sentence.")
 # print(response.content)
 
-#for accessing models on the SNET Server
+# for accessing models on the SNET Server
 # llm = ChatOllama(
-#     # model = "gemma4:31b",
-#     model = "qwen3:32b",
+#     model = "gemma4:latest",
+#     # model = "qwen3:32b",
 #     reasoning = True,
 #     temperature = 0,
 #     base_url = os.getenv("OLLAMA_BASE_URL"),

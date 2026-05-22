@@ -67,7 +67,7 @@ def _slim_buttons(buttons):
         "text": b["text"],
         "tag": b["tag"],
         "parentInfo": b["parentInfo"],
-        # "attributes": b["attributes"], 
+        "attributes": b["attributes"],
         "selector": b["selector"],
         "selectorConfidence": b["selectorConfidence"],
         "role": b.get("role"),
@@ -98,26 +98,26 @@ def _slim_toggles(toggles):
         "isDisabled": t["isDisabled"]
     } for t in toggles]
     
-# FEW_SHOT_EXAMPLES = (
-#     _format(
-#         "Cookiebot CMP (cookiebot.com)",
-#         _load("cookiebot_dom.json"),
-#         _load("cookiebot_ruleset.json")
-#     ) +
-#     _format(
-#         "Swedbank, custom banner (swedbank.com)",
-#         _load("swedbank_dom.json"),
-#         _load("swedbank_ruleset.json")
-#     )
-# )
-
 FEW_SHOT_EXAMPLES = (
     _format(
         "Cookiebot CMP (cookiebot.com)",
         _load("cookiebot_dom.json"),
         _load("cookiebot_ruleset.json")
+    ) +
+    _format(
+        "Swedbank, custom banner (swedbank.com)",
+        _load("swedbank_dom.json"),
+        _load("swedbank_ruleset.json")
     )
 )
+
+# FEW_SHOT_EXAMPLES = (
+#     _format(
+#         "Cookiebot CMP (cookiebot.com)",
+#         _load("cookiebot_dom.json"),
+#         _load("cookiebot_ruleset.json")
+#     )
+# )
 
 # FEW_SHOT_EXAMPLES = (
 #     ""
