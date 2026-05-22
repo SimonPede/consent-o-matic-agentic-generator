@@ -16,6 +16,7 @@ const CMP_DOMAINS = require("../utils/cmp_domains");
 // please look in the root because i addeded 020526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
 // ----------------
 
+
 /**
  * Cleans raw HTML for LLM consumption by removing irrelevant content.
  * Reduces token count while preserving the structural information needed
@@ -1242,23 +1243,54 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             return null;
         }
     }
-    await new Promise(resolve => setTimeout(resolve, 2000));
     
     //debugging
     // const framesAfterClick = page.frames();
     // console.error("Frames nach Klick:");
     // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
-    await page.screenshot({ path: 'after_click.png' });
+    await page.screenshot({ path: "after_click.png" });
     ///////////
+
+    const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
+        return frame.evaluate((stableTime, timeout) => {
+            return new Promise((resolve) => {
+                let stableTimer;
+                const observer = new MutationObserver(() => {
+                    clearTimeout(stableTimer);
+                    stableTimer = setTimeout(() => {
+                        observer.disconnect();
+                        resolve();
+                    }, stableTime);
+                });
+                observer.observe(document.body, { 
+                    childList: true, subtree: true, 
+                    characterData: true, attributes: true 
+                });
+                stableTimer = setTimeout(() => {
+                    observer.disconnect();
+                    resolve();
+                }, stableTime);
+                setTimeout(() => {
+                    observer.disconnect();
+                    resolve();
+                }, timeout);
+            });
+        }, stableTime, timeout);
+    };
 
     await new Promise(resolve => setTimeout(resolve, 3000));
     const newFrames = page.frames().filter(f => !framesBefore.includes(f.url()));
+
+    const stablePromises = new Map();
+    for (const f of newFrames) {
+        stablePromises.set(f, waitForDOMStable(f, 800, 6000));
+    }
 
     let bestNewFrame = null;
     let highestScore = 0;
     
     if (newFrames.length > 0) {
-        console.error(`${newFrames.length} new frames after the click. Starting scoing...`);
+        console.error(`${newFrames.length} new frames after the click. Starting scoring...`);
         
         const currentFrames = page.frames();
         
@@ -1276,7 +1308,8 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     }
 
     if (bestNewFrame) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
+        await stablePromises.get(bestNewFrame);
         const settings = await extractFromFrame(bestNewFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
         settings.isIframe = bestNewFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
         return settings;
@@ -1287,7 +1320,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
 
         const changes = diff.diffChars(oldState.html, newState.html);
         const addedChars = changes
-            .filter(c => c.added) //filteres for evrything that is actually new
+            .filter(c => c.added) //filteres for everything that is actually new
             .reduce((sum, c) => sum + c.count, 0);
         
         const addedInputs = newState.inputs - oldState.inputs;
@@ -1300,6 +1333,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         //TODO: evaluate if these are good indicators. Maybe include sth like: newly rendered elements in general?
         if (addedChars > 500 || addedInputs > 0 || addedButtons >= 2) {
             console.error(`Settings detected: ${addedChars} chars, ${addedInputs} inputs, ${addedButtons} buttons added.`);
+            await waitForDOMStable(frame);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
 
             if (settings.checkboxes.length > 0 || settings.toggles.length > 0) {
@@ -1307,7 +1341,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
                 settings.isIframe = frame !== page.mainFrame();
                 return settings;
             } else {
-                console.error(" A False Positive after the click?!");
+                console.error("A False Positive after the click?!");
                 return null;
             }
             // console.error(JSON.stringify(result.settings.buttons, null, 2));
@@ -1456,7 +1490,7 @@ async function extractStructuredDom(url) {
     try {
         console.error("puppeteer-browser is getting started...");
         const browser = await puppeteer.launch({
-        headless: true, //users the mor modern headless mode (instead of "shell") --Y harder to detect as a bot
+        headless: true, //users the mor modern headless mode (instead of "shell") --> harder to detect as a bot
             args: [
                 "--no-sandbox", //important for WSL/Linux
                 "--disable-setuid-sandbox", //important for WSL/Linux
@@ -1468,6 +1502,9 @@ async function extractStructuredDom(url) {
 
         const page = await browser.newPage();
         await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
+//      await page.setExtraHTTPHeaders({
+//          'Accept-Language': 'en,de-DE,de;q=0.9'
+//      });
 
         //for debugging:
         // page.on('console', msg => console.error("BROWSER:", msg.text()));
@@ -1704,30 +1741,30 @@ async function extractStructuredDom(url) {
     
 };
 
-(async () => {
-    const url = process.argv[2];
-    if (!url) {
-        console.error("No URL provided");
-        process.exit(1);
-    }
-    const foundData = await extractStructuredDom(url);
-    if (foundData) {
-        console.error("foundData was filled with a value");
-    }
-})();
-
-
-//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 // (async () => {
-//     const foundData = await extractStructuredDom("https://spiegel.de");
+//     const url = process.argv[2];
+//     if (!url) {
+//         console.error("No URL provided");
+//         process.exit(1);
+//     }
+//     const foundData = await extractStructuredDom(url);
 //     if (foundData) {
 //         console.error("foundData was filled with a value");
 //     }
 // })();
 
+
+//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
+(async () => {
+    const foundData = await extractStructuredDom("https://spiegel.de");
+    if (foundData) {
+        console.error("foundData was filled with a value");
+    }
+})();
+
 //https://usercentrics.com
 //https://zalando.de
-//https://heise.de --> do nit use heise.com! Also valid website, but without Cookie-Banner :)
+//https://heise.de --> do not use heise.com! Valid website, but without Cookie-Banner :)
 //https://spiegel.de
 
 //URLS for few shot examples:

@@ -145,6 +145,11 @@ the `attributes` field instead:
 Check the `attributes` field of each element to identify stable alternatives
 when `selectorConfidence` is low or the ID looks auto-generated.
 
+**CRITICAL ROBUSTNESS RULE:** Prefer `aria-label`, `name`, or `data-*` based selectors OVER using a `textFilter` wherever possible! 
+Text inside buttons often changes due to dynamic localization (e.g., English fallback texts loading before German translations) or A/B testing. 
+If an element has a high-confidence selector like `[aria-label="Agree"]`, use ONLY that selector and DO NOT add a `textFilter`. This makes the generated ruleset language-independent and highly robust.
+If an element has a high-confidence selector based on a stable attribute, use ONLY that selector and avoid adding a redundant textFilter.
+
 4. **filteredHtml**: 
 Use it to identify the banner container selector (required for HIDE_CMP 
 and presentMatcher/showingMatcher) and to understand element hierarchy 
