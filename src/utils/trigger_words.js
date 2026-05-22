@@ -132,5 +132,9 @@ const TRIGGER_WORDS_LIST = [
 	"piškotkov", "piškotke", "piškotki", "piškotkih",
 ];
 
-let TRIGGER_WORDS = new RegExp(TRIGGER_WORDS_LIST.join("|"), "i");
+const escaped = TRIGGER_WORDS_LIST.map(phrase => 
+    phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+);
+const TRIGGER_WORDS = new RegExp(escaped.join("|"), "i");
+
 module.exports = TRIGGER_WORDS;
