@@ -1,6 +1,6 @@
 /**
  * General CSS selectors for detecting cookie consent dialog candidates.
- * Adapted from DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs,
+ * Adapted from "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs",
  * Appendix A.2 (Table 6).
  * 
  * Used in calculateFrameScore() to give a small bonus (+2) to frames that contain

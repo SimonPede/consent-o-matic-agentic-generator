@@ -1,3 +1,4 @@
+// heavily inspired by A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them, Appendix B
 const SETTINGS_TERMS = [
     //English/International
     "settings", "preferences", "manage", "customize", "options", 

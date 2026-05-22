@@ -9,6 +9,7 @@ const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
 const N_GRAM_DATA = require("../utils/ngram_data");
 const CMP_REGEX = require("../utils/cmp_regex");
 const CMP_DOMAINS = require("../utils/cmp_domains");
+const TRIGGER_WORDS = require("../utils/trigger_words");
 
 // ---------------
 // IMPORTANT!!!!
@@ -80,18 +81,18 @@ function cleanHtml(html) {
  * @returns {string|null} - CSS selector or null
  */
 async function findSettingsButtonViaLLM(html) {
-    const OLLAMA_URL = process.env.OLLAMA_URL || "http://localhost:11434";
-    const OLLAMA_TOKEN = process.env.OLLAMA_TOKEN || "";
+    const OLLAMA_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+    const OLLAMA_API_KEY = process.env.OLLAMA_API_KEY || "";
 
     try {
         const response = await fetch(`${OLLAMA_URL}/api/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OLLAMA_TOKEN}`
+                "Authorization": `Bearer ${OLLAMA_API_KEY}`
             },
             body: JSON.stringify({
-                model: "gemma4",
+                model: "gemma4:latest",
                 prompt: `You are analysing a cookie banner HTML.
                         Find the button or link that opens the settings or preferences page.
                         Return ONLY a valid CSS selector string, nothing else.
@@ -892,6 +893,8 @@ async function frameWordCounter(frames, avgWordCount) {
  *   +5  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al. 2025)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
+ *   +2 per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
+ *      capped at +10 to avoid over-weighting frames with many cookie-related mentions
  * 
  * Negative:
  *   -20  Word count < 5 (likely a clickable element, not a dialog)
@@ -901,6 +904,7 @@ async function frameWordCounter(frames, avgWordCount) {
  *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
  * 
  * Deviations from paper:
+ *   - Applying the scoring logic not to candidates of banners but iframes
  *   - No screenshot-based visibility check (Selenium-specific, not available in Puppeteer)
  *     --> replaced with CSS computed style + bounding box check
  *   - No sub-string/duplicate candidate comparison (out of scope for this prototype)
@@ -911,7 +915,9 @@ async function frameWordCounter(frames, avgWordCount) {
         range of content that can be contained within an iframe
         not just cookie dialogs."
  *   - TODO: implemented concept from Nouwens et al. (2025) - A Cross-Country Analysis of GDPR Cookie Banners:
- *         they also evaluated if elements had a z-index > 10 and if position: fixed
+ *      they also evaluated if elements had a z-index > 10 and if position: fixed
+ *   - Trigger word matching uses a RegExp over full frame text 
+ *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
  * @param {Frame} frame - Puppeteer frame to score
  * @param {number} avgWordCount - average word count across all frames (from frameWordCounter())
@@ -932,7 +938,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             frameScoreBonus += 20; //TODO: evaluate!
         }
 
-        const score = await frame.evaluate((customS, avg, selectorMap, nGrams) => {
+        const score = await frame.evaluate((customS, avg, selectorMap, nGrams, triggerWords) => {
             const el = document.body;
             if (!el) {
                 return -100;
@@ -1008,6 +1014,10 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
                 }
             }
 
+            const matches = text.match(new RegExp(triggerWords.source, "gi")) || []; //finds ALL matches (g = global, i = case-insensitive)
+            localScore += Math.min(matches.length * 2, 10); //Math.min(..., 10) caps the bonus at +10 to avoid over-weighting
+            //TODO: Evaluate!
+
             //N-Gram Analyse used by paper would need translation into english
             //far to slow and costly for my agent system. i try to use a similar but simplified version
             for (const [n, phrases] of Object.entries(nGrams).reverse()) {
@@ -1021,7 +1031,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             }
 
             return localScore;
-        }, DARKDIALOGS_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA);
+        }, DARKDIALOGS_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA, TRIGGER_WORDS);
 
         if (score < -100) {
             return score;
