@@ -80,18 +80,18 @@ function cleanHtml(html) {
  * @returns {string|null} - CSS selector or null
  */
 async function findSettingsButtonViaLLM(html) {
-    const OLLAMA_URL = process.env.OLLAMA_URL || "http://localhost:11434";
-    const OLLAMA_TOKEN = process.env.OLLAMA_TOKEN || "";
+    const OLLAMA_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+    const OLLAMA_API_KEY = process.env.OLLAMA_API_KEY || "";
 
     try {
         const response = await fetch(`${OLLAMA_URL}/api/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OLLAMA_TOKEN}`
+                "Authorization": `Bearer ${OLLAMA_API_KEY}`
             },
             body: JSON.stringify({
-                model: "gemma4",
+                model: "gemma4:latest",
                 prompt: `You are analysing a cookie banner HTML.
                         Find the button or link that opens the settings or preferences page.
                         Return ONLY a valid CSS selector string, nothing else.
