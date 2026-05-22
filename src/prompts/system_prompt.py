@@ -452,14 +452,11 @@ or trueAction + falseAction (for accept/reject button pairs):
             {
                 "presentMatcher": {
                     "type": "css",
-                    "target": {
-                        "selector": "#theCMP"
-                    }
+                    "target": { "selector": "#theCMP" }
                 },
                 "showingMatcher": {
-                    "target": {
-                        "selector": "#theCMP.isShowing"
-                    }
+                    "type": "css",
+                    "target": { "selector": "#theCMP.isShowing" }
                 }
             }
         ],
@@ -468,84 +465,48 @@ or trueAction + falseAction (for accept/reject button pairs):
                 "name": "OPEN_OPTIONS",
                 "action": {
                     "type": "click",
-                    "target": {
-                        "selector": ".button",
-                        "textFilter": "Change settings"
-                    }
+                    "target": { "selector": ".button", "textFilter": "Change settings" }
                 }
             },
             {
                 "name": "DO_CONSENT",
                 "action": {
-                    "type": "list",
-                    "actions": [
+                    "type": "consent",
+                    "consents": [
                         {
-                            "type": "click",
-                            "target": {
-                                "selector": ".menu-vendors"
+                            "type": "A",
+                            "matcher": {
+                                "type": "checkbox",
+                                "parent": { "selector": ".vendor-item", "textFilter": "Functional cookies" },
+                                "target": { "selector": "input" }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "parent": { "selector": ".vendor-item", "textFilter": "Functional cookies" },
+                                "target": { "selector": "label" }
                             }
                         },
                         {
-                            "type": "consent",
-                            "consents": [
-                                {
-                                "type": "A",
-                                "matcher": {
-                                    "type": "checkbox",
-                                    "parent": {
-                                        "selector": ".vendor-item",
-                                        "textFilter": "Functional cookies"
-                                    },
-                                    "target": {
-                                        "selector": "input"
-                                    }
-                                },
-                                "toggleAction": {
-                                    "type": "click",
-                                    "parent": {
-                                        "selector": ".vendor-item",
-                                        "textFilter": "Functional cookies"
-                                    },
-                                    "target": {
-                                        "selector": "label"
-                                    }
-                                }
+                            "type": "F",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": { "selector": ".vendor-item", "textFilter": "Advertisement cookies" },
+                                "target": { "selector": "button", "textFilter": "Accept" }
                             },
-                            {
-                                "type": "F",
-                                "matcher": {
-                                    "type": "checkbox",
-                                    "parent": {
-                                        "selector": ".vendor-item",
-                                        "textFilter": "Advertisement cookies"
-                                    },
-                                    "target": {
-                                        "selector": "input"
-                                    }
-                                },
-                                "toggleAction": {
-                                    "type": "click",
-                                    "parent": {
-                                        "selector": ".vendor-item",
-                                        "textFilter": "Advertisement cookies"
-                                    },
-                                    "target": {
-                                        "selector": "label"
-                                    }
-                                }
+                            "falseAction": {
+                                "type": "click",
+                                "parent": { "selector": ".vendor-item", "textFilter": "Advertisement cookies" },
+                                "target": { "selector": "button", "textFilter": "Reject" }
                             }
-                        ]
-                    }
-                ]
+                        }
+                    ]
                 }
             },
             {
                 "name": "SAVE_CONSENT",
                 "action": {
                     "type": "click",
-                    "target": {
-                        "selector": ".save-consent-btn"
-                    }
+                    "target": { "selector": ".save-consent-btn" }
                 }
             }
         ]
@@ -645,7 +606,7 @@ structured elements map to actions in the ruleset.
     Instead, use the common parent as parent with a childFilter targeting the label by text. Then target the button within that common parent.
 	You can identify this pattern from the structured output: if the label's parentInfo.selector matches the button's parentInfo.grandparent.selector, they are siblings and this pattern applies.
 	Correct pattern:
-	```
+	```json
 	{
         "type": "D",
         "trueAction": {
@@ -714,6 +675,7 @@ Always wrap your final ruleset in <ruleset></ruleset> tags like this:
 </ruleset>
 
 ## Reminder
+
 - Complete all 5 analysis steps before generating JSON
 """
 
