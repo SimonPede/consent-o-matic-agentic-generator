@@ -663,7 +663,9 @@ structured elements map to actions in the ruleset.
         }
     }
     ```
-
+- For DO_CONSENT, always use a consent action with a consents array. Do NOT use ifcss to handle per-category consent!
+    ifcss is control flow only (it checks whether a DOM element exists, then branches). Each consent category gets one entry in the consents array,
+    using either toggleAction + matcher (for toggles/checkboxes) or trueAction/falseAction (for button pairs)
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
