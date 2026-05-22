@@ -628,6 +628,9 @@ structured elements map to actions in the ruleset.
 
 ## Constraints
 
+- Cookie banners sometimes use colloquial or non-standard button labels instead of explicit "Accept"/"Reject" wording.
+    When matching buttons via textFilter, consider informal variants such as "I am ok", "Sounds good", "That's fine", "Got it", "I agree", "Sure", or "No thanks".
+    Do not rely solely on explicit consent vocabulary
 - If you cannot find a clear match for a consent category, 
     use category X (Other Purposes) rather than guessing
 - If the banner structure is ambiguous, state this explicitly 
