@@ -16,12 +16,12 @@ def _load(filename):
 # if dom[0]["data"]["buttons"]:
 #     print(list(dom[0]["data"]["buttons"][0].keys()))
 
-def _format(title, dom, ruleset):
+def _format(title, dom, ruleset, include_filtered_html = False):
     return f"""
 		## Example: {title}
 
 		### Extracted DOM:
-		{json.dumps(_slim_dom(dom))}
+		{json.dumps(_slim_dom(dom, include_filtered_html))}
 
 		### Correct ruleset:
 		{json.dumps(ruleset)}
@@ -29,7 +29,7 @@ def _format(title, dom, ruleset):
 		---
 	"""
 
-def _slim_dom(dom):
+def _slim_dom(dom, include_filtered_html = False):
     result = []
     for frame in dom:
         slim = {
@@ -45,7 +45,7 @@ def _slim_dom(dom):
                 "cmpSelector": frame["data"].get("cmpSelector"),
                 "cmpType": frame["data"]["cmpType"],
                 "url": frame["data"]["url"],
-                #leaving out filteredHtml for few-shot
+                "filteredHtml": frame["data"].get("filteredHtml") if include_filtered_html else None
             }
         }
         if frame.get("settings"):
@@ -57,6 +57,7 @@ def _slim_dom(dom):
                 "cmpSelector": frame["settings"].get("cmpSelector"),
                 "cmpType": frame["settings"]["cmpType"],
                 "url": frame["settings"]["url"],
+                "filteredHtml": frame["data"].get("filteredHtml") if include_filtered_html else None
             }
         result.append(slim)
     return result
@@ -102,12 +103,14 @@ FEW_SHOT_EXAMPLES = (
     _format(
         "Cookiebot CMP (cookiebot.com)",
         _load("cookiebot_dom.json"),
-        _load("cookiebot_ruleset.json")
+        _load("cookiebot_ruleset.json"),
+        include_filtered_html = False
     ) +
     _format(
         "Swedbank, custom banner (swedbank.com)",
         _load("swedbank_dom.json"),
-        _load("swedbank_ruleset.json")
+        _load("swedbank_ruleset.json"),
+        include_filtered_html = True
     )
 )
 

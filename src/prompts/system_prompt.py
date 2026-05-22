@@ -427,21 +427,40 @@ description – do not rely on keywords alone, reason semantically.
 | X | Other Purposes | Data collection whose purpose is not clearly described on the website or does not fall into any other category |
 
 
-Each consent entry uses toggleAction + matcher (for checkboxes)
-or trueAction + falseAction (for accept/reject button pairs):
+**CRITICAL: You must choose ONLY ONE of the following JSON structures per category. Never combine them.**
 
+**Structure 1: For Checkboxes and Toggles**
+Use ONLY `matcher` and `toggleAction`.
 ```json
 {
     "type": "A",
-    "toggleAction": {}, //will be run if the matcher says the consent is in a state different from what the user has asked it to be
-    "matcher": {}, //For a checkbox matcher, the consent is given if the checkbox is checked. For a CSS matcher the consent is given if the matcher finds a DOM selection.
-    "trueAction": {}, //user has given consent for this category type
-    "falseAction": {} //run if the user has not given consent to this category type
-}```
+    "matcher": {
+        "type": "checkbox",
+        "target": { "selector": "input.functional-cookie" }
+    },
+    "toggleAction": {
+        "type": "click",
+        "target": { "selector": "label.functional-cookie" }
+    }
+}
+```
 
-
+**Structure 2: For Accept/Reject Button Pairs**
+Use ONLY `trueAction` and `falseAction`.
+```json
+{
+    "type": "F",
+        "trueAction": {
+            "type": "click",
+            "target": { "selector": "button.accept-marketing" }
+        },
+        "falseAction": {
+            "type": "click",
+            "target": { "selector": "button.reject-marketing" }
+    }
+}
+```
 ---
-
 
 ### full example of a CMP "MyCMP" that has 2 consent categories to toggle
 
@@ -574,7 +593,8 @@ Note: The DOM structures in these examples have been minified for brevity.
 In real tasks you will receive the full unedited DOM output, but the mapping 
 logic from DOM elements to ruleset actions remains exactly the same.
 
-Note: In the examples below, `filteredHtml` has been omitted for brevity. 
+Note: `filteredHtml` is included where selectors cannot be derived 
+from structured elements alone (e.g. for HIDE_CMP or presentMatcher). 
 Some selectors in the example rulesets (e.g. for HIDE_CMP or presentMatcher) 
 were derived from `filteredHtml` and may therefore not appear in the structured 
 elements shown. In your actual task, you will receive the full `filteredHtml` 
@@ -628,8 +648,7 @@ structured elements map to actions in the ruleset.
     }
     ```
 - For DO_CONSENT, always use a consent action with a consents array. Do NOT use ifcss to handle per-category consent!
-    ifcss is control flow only (it checks whether a DOM element exists, then branches). Each consent category gets one entry in the consents array,
-    using either toggleAction + matcher (for toggles/checkboxes) or trueAction/falseAction (for button pairs)
+    ifcss is control flow only (it checks whether a DOM element exists, then branches).
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
@@ -677,6 +696,7 @@ Always wrap your final ruleset in <ruleset></ruleset> tags like this:
 ## Reminder
 
 - Complete all 5 analysis steps before generating JSON
+
 """
 
 
