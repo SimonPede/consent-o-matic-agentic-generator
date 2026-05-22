@@ -637,6 +637,33 @@ structured elements map to actions in the ruleset.
 - Some categories are marked as required (e.g. '(consent required)' or '(Zustimmung erforderlich)').
     For these categories, the Reject button often exists in the DOM but is hidden and will not appear in the structured output.
     Only generate a trueAction that clicks Accept, doo not include a falseAction, as clicking a hidden button will fail silently.
+- Sibling Button Pattern (Label + Buttons share a common parent)
+	When a category label (e.g. h2) and its action buttons are siblings under a common parent container (e.g. .stack-row), do NOT use the label as parent directly — the buttons are not its children.
+    Instead, use the common parent as parent with a childFilter targeting the label by text. Then target the button within that common parent.
+	You can identify this pattern from the structured output: if the label's parentInfo.selector matches the button's parentInfo.grandparent.selector, they are siblings and this pattern applies.
+	Correct pattern:
+	```
+	{
+        "type": "D",
+        "trueAction": {
+        "type": "click",
+        "parent": {
+            "selector": ".stack-row",
+            "childFilter": {
+            "target": {
+                "selector": "h2",
+                "textFilter": "Store and/or access information"
+            }
+            }
+        },
+        "target": {
+            "selector": ".pur-buttons-container button",
+            "textFilter": "Agree"
+        }
+        }
+    }
+    ```
+
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
