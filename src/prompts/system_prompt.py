@@ -634,6 +634,9 @@ structured elements map to actions in the ruleset.
     in your ANALYSIS before attempting a ruleset
 - Less is more: if you are unsure whether an element is part of
     the banner, leave it out rather than including it speculatively
+- Some categories are marked as required (e.g. '(consent required)' or '(Zustimmung erforderlich)').
+    For these categories, the Reject button often exists in the DOM but is hidden and will not appear in the structured output.
+    Only generate a trueAction that clicks Accept, doo not include a falseAction, as clicking a hidden button will fail silently.
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
