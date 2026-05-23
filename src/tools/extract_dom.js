@@ -60,18 +60,6 @@ function cleanHtml(html) {
 //after:  settings-subpage "9845",first banner page "7937"
 //--> reduction of around 50%
 
-//using:
-// function cleanHtml(html) {
-//     return html
-//         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-//         .replace(/\s*style="[^"]*"/gi, '') //no inline-style
-//         .replace(/\s*on\w+="[^"]*"/gi, '')  //no event handler
-//         .replace(/\s+/g, ' ')               //
-//         .trim();
-// }
-//changes nothing :)
-
-
 /**
  * LLM-based fallback for settings button detection.
  * Called when SETTINGS_PATTERN regex fails to identify a settings button.
@@ -717,20 +705,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         tempDiv.querySelectorAll(t).forEach(n => n.remove());
                     });
 
-                    //does not bring enough!!!
-                    // ["table", "[id*='CookieTabContent']",      // Cookiebot: Cookie-Listen in Tabs
-                    //     "[id*='CookieType']",            // Cookiebot: Cookie-Typ-Container  
-                    //     ".CybotCookiebotDialogDetailBodyContentCookieContainerTypes",
-                    //     "[class*='CookieList']",
-                    //     "[class*='cookie-list']",
-                    //     "[class*='declaration']", "[class*='Declaration']",
-                    //     "[id*='declaration']", "[id*='Declaration']",
-                    //     "[class*='vendor']", "[class*='Vendor']"].forEach(sel => {
-                    //         try {
-                    //             tempDiv.querySelectorAll(sel).forEach(n => n.remove());
-                    //         } catch(e) {}
-                    // });
-
                     bestResult = {
                         buttons,
                         checkboxes,
@@ -748,8 +722,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             }
         
         //Step 2: No known CMP detected --> extract structured DOM of whole DOM
-
-        //as everything in this code: this is incomplete :)
         // const NEGATIVE_SELECTORS = ["nav", "header", "footer", 
         //     "script", "style", "img", "svg", "noscript"];
         //the UserCentrics Banner has most of its content inside the header and footer
@@ -836,10 +808,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     }
 
     result.cmpType = cmpType;
-    // if (!result.cmpFound) {
-    //     result.cmpFound = cmpType !== null;
-    // }
-
     
     return result;
 }
@@ -921,9 +889,10 @@ async function frameWordCounter(frames, avgWordCount) {
  * @param {Frame} frame - Puppeteer frame to score
  * @param {number} avgWordCount - average word count across all frames (from frameWordCounter())
  * @param {Object} selectorMap - CMP_SELECTORS_MAP for domain-specific selector matching
+ * @param {number} iframeBonus - Bonus calculated in `findCorrectFrame` based on frames z-index and position value
  * @returns {number} - score (higher = more likely to be a cookie banner frame)
  */
-async function calculateFrameScore(frame, avgWordCount, selectorMap) {
+async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus = 0) {
     try {
         const url = frame.url();
         const name = frame.name();
@@ -1036,7 +1005,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             return score;
         }
 
-        return score + frameScoreBonus;
+        return score + frameScoreBonus + iframeBonus;
     } catch (err) {
         console.error("frame could not be scored!");
         return -100;
@@ -1061,6 +1030,10 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
  *   - N-gram analysis of visible text content
  *   - CSS selector matching (general: +5, CMP-specific: +10)
  *   - Word count penalties
+ *   - iframe element CSS properties: position:fixed + z-index > 10 (+15 bonus)
+ *     Adaptation of Nouwens et al. (2025) banner candidate detection to iframe level.
+ *     Original paper applies this to DOM elements; here applied to iframe elements
+ *     in the parent page context.
  *   The highest-scoring frame is returned if score > 0.
  *   Inspired by: DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs
  * 
@@ -1079,7 +1052,23 @@ async function findCorrectFrame(page, selectorMap) {
     let maxScore = -101;
 
     for (const frame of frames) {
-        const score = await calculateFrameScore(frame, avgWordCount, selectorMap);
+        let iFrameBonus = 0;
+        try {
+            const frameElement = await frame.frameElement();
+            if(frameElement) {
+                const highZAndIsFixed = await frameElement.evaluate(el => {
+                    const style = window.getComputedStyle(el);
+                    return style.position === "fixed" && parseInt(style.zIndex) > 10;
+                });
+
+                if(highZAndIsFixed) {
+                    iFrameBonus += 15; //TODO: evaluate
+                }
+            }
+        } catch (err) {
+            //silently skip cross-origin failures e.g.
+        }
+        const score = await calculateFrameScore(frame, avgWordCount, selectorMap, iFrameBonus);
 
         if (score > maxScore) {
             maxScore = score;
@@ -1252,13 +1241,8 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             return null;
         }
     }
-    
-    //debugging
-    // const framesAfterClick = page.frames();
-    // console.error("Frames nach Klick:");
-    // framesAfterClick.forEach((f, i) => console.error(`Frame ${i}: ${f.url()}`));
+
     await page.screenshot({ path: "after_click.png" });
-    ///////////
 
     const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
         return frame.evaluate((stableTime, timeout) => {
@@ -1322,7 +1306,6 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
         const settings = await extractFromFrame(bestNewFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
         settings.isIframe = bestNewFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
         return settings;
-        // console.error(JSON.stringify(result.settings.buttons, null, 2));
     } else {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const newState = await getFrameState(frame);
@@ -1353,7 +1336,6 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
                 console.error("A False Positive after the click?!");
                 return null;
             }
-            // console.error(JSON.stringify(result.settings.buttons, null, 2));
         } else {
             console.error("Settings click seems to have had no effect");
             return null;
@@ -1401,10 +1383,6 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
                                 nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
                             }
                         }
-                        //to get a feeling how well this works and how necessary it is:
-                        // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
-                        // let nodesStandard = Array.from(root.querySelectorAll(selector));
-                        // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
                         return nodes;
                     }
 
@@ -1438,36 +1416,6 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
     console.error("Timeout: CMP UI was not fully rendered in time!");
     return null;
 }
-
-
-/**
- * Two-Pass DOM Extraction Strategy
- * 
- * Cookie banners often consist of two layers:
- * 1. The initial banner (accept/reject/settings buttons)
- * 2. A settings/preferences page (granular toggles and checkboxes per category)
- * 
- * A single DOM extraction pass is insufficient to generate a complete CoM ruleset,
- * because the selectors for granular consent options are only present in the DOM
- * AFTER the user clicks the settings button.
- * 
- * Solution: After the initial extraction, we search the extracted buttons for a
- * settings button using a multilingual regex pattern (based on Nouwens et al. 2025,
- * Appendix B). If found, Puppeteer clicks it, waits for the settings page to load,
- * and extractFromFrame() runs a second time on the now-visible settings DOM.
- * 
- * Both extraction results are returned together:
- * { initial: {...}, settings: {...} | null }
- * 
- * This gives the LLM all selectors it needs to generate a complete ruleset in one pass,
- * without requiring a second agent loop iteration or relying solely on analyse_screenshot.
- * 
- * i have to consider this new idea:
- * TODO: Store browserWSEndpoint in LangGraph agent state to allow test_ruleset
- * and subsequent extract_dom calls to reconnect via puppeteer.connect() instead
- * of launching a new browser instance. This enables multi-pass extraction across
- * tool calls without losing the browser session.
- */
 
 /**
  * Main orchestration function for DOM extraction.
@@ -1813,69 +1761,3 @@ async function extractStructuredDom(url) {
 //     settings: null
 //   }
 // ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 2. Greedy Extraction Logic ("Best-Fit" Strategy)
-// The Change: Shifted from "First-Fit" (returning the first element that matches a CMP selector) to "Best-Fit" (iterating through all matches and selecting the one with the highest interactiveCount).
-
-// Reasoning: CMPs like OneTrust often inject multiple elements matching the same CSS patterns (e.g., empty backdrops or hidden containers). Selecting the first match often results in "empty" extractions.
-
-// Academic Justification: To ensure heuristic robustness, the agent implements a density-based selection algorithm. By quantifying interactive potential (buttons, toggles, checkboxes), the system prioritizes the active UI layer over decorative or structural background elements.
-
-// 3. Render-Tree Aware State Diffing
-// The Change: Integrated an isVisible check into the getFrameState function used for click-success verification.
-
-// Reasoning: Many CMPs "preload" the settings menu in a hidden state (display: none). A standard HTML string-diff detects no change after a click because the code existed beforehand.
-
-// Academic Justification: Interaction verification in Single Page Applications (SPAs) must distinguish between the DOM Tree (presence) and the Render Tree (visibility). By monitoring Computed Styles, the agent validates the success of an action based on actual user-perceivable UI state changes.
-
-// 4. Native DOM Event Dispatching
-// The Change: Implemented a dual-layer click strategy using native target.click() and MouseEvent dispatching (mousedown, mouseup) within the browser context.
-
-// Reasoning: Puppeteer’s synthetic page.click() simulates coordinates and can be intercepted by invisible overlays or z-index filters (Backdrops). Native JS clicks bypass these visual obstructions.
-
-// Academic Justification: Automated interaction with third-party overlays requires bypassing the Synthetic Event System of high-level drivers to ensure reliability against visual occlusion (e.g., modal backdrops).
-
-// 5. Semantic Label Resolution (ARIA-Mapping)
-// The Change: Overhauled findLabelForInput to resolve aria-labelledby (including multi-ID strings), aria-label, and implicit label relationships.
-
-// Reasoning: Modern frameworks rarely use the classic <label for="..."> syntax. Without resolving ARIA relationships, extracted checkboxes/toggles remain "anonymous" and useless for LLM processing.
-
-// Academic Justification: Addressing the Semantic Gap in automated audits. By implementing a Multi-tier Label Resolution Heuristic, the system reconstructs the Accessibility Object Model (AOM) relationships, turning raw technical nodes into semantically meaningful data points for the audit agent.
-
-
-
-
-
-
-
-
-
-
-//Die Evaluation auf komplexen Domänen wie Swedbank zeigte, dass die Implementierung einer Render-Tree-basierten Sichtbarkeitsprüfung (mittels offsetParent) kritisch für den Erfolg der Extraktion ist. Während naive DOM-Scans an visuell verschleierten <input>-Tags scheiterten, konnte die angepasste Heuristik alle Consent-Checkboxen sowie deren Zustände (disabled/checked) fehlerfrei erfassen. Das auftretende 'Hintergrund-Rauschen' (irrelevante Navigationslinks) beeinträchtigt die nachgelagerte LLM-Verarbeitung nicht, da die semantische Eindeutigkeit der Consent-Elemente erhalten bleibt.
