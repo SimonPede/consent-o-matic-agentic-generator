@@ -672,7 +672,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                             parentInfo: extractParentInfo(el),
                             selector: deepData.selector,
                             selectorConfidence: deepData.selectorConfidence,
-                            ariaChecked: el.getAttribute("aria-checked"),
+                            ariaChecked: el.getAttribute("aria-checked") ? el.getAttribute("aria-checked") : el.checked !== undefined ? String(el.checked) : null,
                             isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                         }
                     });
@@ -780,7 +780,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     selectorConfidence: deepData.selectorConfidence,
                     role: el.getAttribute("role") || null,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
-                    //is this enough?
                 }
             });
 
@@ -796,7 +795,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     parentInfo: extractParentInfo(el),
                     selector: deepData.selector,
                     selectorConfidence: deepData.selectorConfidence,
-                    ariaChecked: el.getAttribute("aria-checked"),
+                    ariaChecked: el.getAttribute("aria-checked") ? el.getAttribute("aria-checked") : el.checked !== undefined ? String(el.checked) : null,
                     isDisabled: el.disabled || el.getAttribute("aria-disabled") === "true",
                 }
             });
