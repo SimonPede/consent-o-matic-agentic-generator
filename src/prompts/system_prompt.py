@@ -610,7 +610,14 @@ structured elements map to actions in the ruleset.
 
 {few_shot_examples}
 
+## OneTrust Extraction Rules
 
+OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's dynamic ID structure.
+- Labels for checkboxes are often found in adjacent <span> or <div> elements with specific classes like .ot-li-title.
+    If an id contains ot-group-id, look for the sibling element that contains the actual category name (e.g., "Marketing", "Functional").
+- Prefer ID-based selectors like #ot-group-id-C0002 (these are stable for OneTrust categories).
+- If you see multiple "Reject All" buttons, prefer the one with the class .ot-pc-refuse-all-handler as it is the most robust selector
+    for OneTrust's preference center.
 
 ## Constraints
 

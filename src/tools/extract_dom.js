@@ -1759,7 +1759,7 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://heise.de");
+    const foundData = await extractStructuredDom("https://www.affinity.com/");
     if (foundData) {
         console.error("foundData was filled with a value");
     }
@@ -1770,14 +1770,14 @@ async function extractStructuredDom(url) {
 //https://heise.de --> do not use heise.com! Valid website, but without Cookie-Banner :)
 //https://spiegel.de
 
-//URLs for few shot examples:
 //1: https://www.flightaware.com/ --> not up to date
 //2: https://www.affinity.com/ --> not up to date
 //3: https://cookieinformation.com/ --> not up to date
 //4: https://www.cookiebot.com/
 //5: https://www.swedbank.com/
+//6: https://www.transavia.com/
 
-// https://www.transavia.com/ --> settings btton führt zum falschen iframe
+//Problems with:
 // https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
 
 
