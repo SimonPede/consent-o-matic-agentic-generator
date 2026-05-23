@@ -13,22 +13,7 @@ from langgraph.types import interrupt
 
 from src.prompts.system_prompt import get_system_prompt
 
-def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
-    """
-    Input: URL (String)
-    Output:
-        Structured JSON object with: found buttons/sliders/toggles (text, selector,
-        probable action, category), filtered HTML snippet as fallback (without
-        style, scripts, img etc.), metadata (URL, detected CMP)
-    Purpose:
-        Extracts the relevant DOM section of the cookie banner using frame
-        traversal and shadow DOM traversal via parent-target selection according
-        to the CoM engine specification. First attempts to find known CMPs
-        (OneTrust, Cookiebot, etc.) via specific selectors, falls back to generic
-        heuristics (z-index, cookie keywords in classes/IDs), and uses the entire
-        body as a last resort fallback.
-    """
-
+def extraction_node(state: AgentState) -> dict:
     url = state.get("url", "")
     
     #__file__ = .../src/agent/graph.py
@@ -46,11 +31,7 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
         return {
             "last_error": result.stderr
         }
-    
-    # print("=== STDOUT ===")
-    # print(repr(result.stdout[:500]))
-    # print("=== STDERR ===")  
-    # print(result.stderr[:200])
+
     logger.debug("STDOUT: %s", result.stdout[:500])
     logger.debug("STDERR: %s", result.stderr[:200])
     
@@ -74,21 +55,8 @@ def extraction_node(state: AgentState) -> dict: #doesnt need the State, right?
 
 def make_llm_node(model_with_tools):
     def llm_node(state: AgentState):
-    #     system_prompt = SystemMessage(content = get_system_prompt())
-    #     #prompt = get_system_prompt().replace("{few_shot_examples}", "").replace("{promptCounter}", "0")
-    #     # for section in prompt.split("##"):
-    #     #     if section.strip():
-    #     #         print(f"## {section[:50]}... → {len(section)} Zeichen")
-    #     return {
-	# 	    "messages": [
-	# 	        model_with_tools.invoke(
-	# 	            [system_prompt] + state["messages"]
-	# 	        )
-	# 	    ],
-	# 	    "attempts": state.get("attempts", 0) + 1
-	# 	}
         try:
-            system_prompt = SystemMessage(content=get_system_prompt())
+            system_prompt = SystemMessage(content = get_system_prompt())
             response = model_with_tools.invoke(
                 [system_prompt] + state["messages"]
             )
@@ -104,8 +72,7 @@ def make_llm_node(model_with_tools):
             raise
     return llm_node
 
-def human_review_node(state: AgentState) -> object:
-    
+def human_review_node(state: AgentState) -> object:  
     last_message = state["messages"][-1]
     
     attempts = state.get("attempts", 0)
@@ -170,6 +137,7 @@ def ruleset_output_node(state: AgentState) -> dict:
             content = " ".join(text_parts)
         else:
             content = str(content)
+
         match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
         #why re.DOTALL: "." in regex then also matches with line breaks
         if match:
@@ -180,6 +148,18 @@ def ruleset_output_node(state: AgentState) -> dict:
                 print(json.dumps(ruleset, indent = 2))
                 return {"final_result": ruleset}
             except json.JSONDecodeError:
-                pass
+                return {
+                    "last_error": "Invalid JSON in ruleset tags",
+                    "messages": [HumanMessage(content = (
+                        "Your previous response contained <ruleset> tags, bggut the JSON inside was invalid. "
+                        "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
+                    ))]
+                }
     print("--------- NO RULESET FOUND ---------")
-    return {"last_error": "No ruleset found in agent messages"}
+    return {
+        "last_error": "No ruleset found in agent messages",
+        "messages": [HumanMessage(content = (
+            "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
+            "Please output your final ruleset now, wrapped in <ruleset></ruleset> tags."
+        ))]
+    }

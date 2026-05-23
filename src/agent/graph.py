@@ -1,6 +1,7 @@
 from src.agent.llm import llm
 from src.agent.state import AgentState
 from src.agent.routing import route_after_llm
+from src.agent.routing import route_after_ruleset
 from src.tools.analyse_screenshot import analyse_screenshot
 from src.tools.test_ruleset import test_ruleset
 from src.tools.request_human_review import request_human_review
@@ -49,7 +50,11 @@ workflow.add_conditional_edges(
 workflow.add_edge("tool_node", "llm_node")
 workflow.add_edge("human_review_node", "llm_node")
 
-workflow.add_edge("ruleset_output_node", END)
+workflow.add_conditional_edges(
+    "ruleset_output_node",
+    route_after_ruleset,
+    ["llm_node", END]
+)
     
 # ARCHITECTURAL DECISION: validate_json removed from tool list
 #

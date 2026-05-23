@@ -1019,7 +1019,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
             //TODO: Evaluate!
 
             //N-Gram Analyse used by paper would need translation into english
-            //far to slow and costly for my agent system. i try to use a similar but simplified version
+            //far to slow and costly for my agent system. i try to use a similar but simplified version (for now only english and german phrases)
             for (const [n, phrases] of Object.entries(nGrams).reverse()) {
                 const weight = parseInt(n);
                 for (const phrase of phrases) {
@@ -1060,13 +1060,13 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap) {
  *   - Domain matching against known CMP CDN domains (+50 bonus)
  *   - URL/name regex matching against CMP-related keywords (+20 bonus)
  *   - N-gram analysis of visible text content
- *   - CSS selector matching (general: +2, CMP-specific: +10)
+ *   - CSS selector matching (general: +5, CMP-specific: +10)
  *   - Word count penalties
  *   The highest-scoring frame is returned if score > 0.
  *   Inspired by: DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs
  * 
  * @param {Page} page - Puppeteer page instance
- * @param {Object} selectorMap - CSS selector → CMP name map (CMP_SELECTORS_MAP)
+ * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
  * @returns {{ frame: Frame|null, cmpType: string|null }}
  */
 async function findCorrectFrame(page, selectorMap) {

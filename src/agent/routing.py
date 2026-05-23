@@ -1,5 +1,6 @@
 from typing import Literal
 from src.agent.state import AgentState
+from langgraph.graph import END
 
 def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "ruleset_output_node"]:
     
@@ -18,3 +19,8 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
         return "ruleset_output_node"
     
     return "tool_node"
+
+def route_after_ruleset(state: AgentState) -> str:
+    if state.get("final_result"):
+        return END
+    return "llm_node"
