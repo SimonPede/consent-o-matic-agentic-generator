@@ -862,6 +862,10 @@ async function frameWordCounter(frames, avgWordCount) {
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
  *   +2 per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
  *      capped at +10 to avoid over-weighting frames with many cookie-related mentions
+*    +15  element within frame has position:fixed + z-index > 10
+ *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
+ *   +10  iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
+ *        Adaptation of same principle to the iframe element in the parent page context.
  * 
  * Negative:
  *   -20  Word count < 5 (likely a clickable element, not a dialog)
@@ -881,8 +885,7 @@ async function frameWordCounter(frames, avgWordCount) {
         assessed to be less important as there is typically a wide
         range of content that can be contained within an iframe
         not just cookie dialogs."
- *   - TODO: implemented concept from Nouwens et al. (2025) - A Cross-Country Analysis of GDPR Cookie Banners:
- *      they also evaluated if elements had a z-index > 10 and if position: fixed
+ *   - position:fixed + z-index check adapted from Nouwens et al. (2025), not DarkDialogs
  *   - Trigger word matching uses a RegExp over full frame text 
  *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
@@ -998,6 +1001,14 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 }
             }
 
+            const fixedHighZElements = Array.from(document.querySelectorAll("*")).filter(el => {
+                const style = window.getComputedStyle(el);
+                return style.position === "fixed" && parseInt(style.zIndex) > 10;
+            });
+            if (fixedHighZElements.length > 0) {
+                localScore += 15; //TODO: evaluate
+            }
+
             return localScore;
         }, DARKDIALOGS_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA, TRIGGER_WORDS);
 
@@ -1030,7 +1041,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
  *   - N-gram analysis of visible text content
  *   - CSS selector matching (general: +5, CMP-specific: +10)
  *   - Word count penalties
- *   - iframe element CSS properties: position:fixed + z-index > 10 (+15 bonus)
+ *   - iframe element CSS properties: position:fixed + z-index > 10 (+10 bonus)
  *     Adaptation of Nouwens et al. (2025) banner candidate detection to iframe level.
  *     Original paper applies this to DOM elements; here applied to iframe elements
  *     in the parent page context.
@@ -1062,7 +1073,7 @@ async function findCorrectFrame(page, selectorMap) {
                 });
 
                 if(highZAndIsFixed) {
-                    iFrameBonus += 15; //TODO: evaluate
+                    iFrameBonus += 10; //TODO: evaluate
                 }
             }
         } catch (err) {
