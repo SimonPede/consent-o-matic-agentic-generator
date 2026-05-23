@@ -508,6 +508,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
 
             if (depth > 5) {
+                print("generateDeepSelector reached depth 5!")
                 return { selector: el.tagName.toLowerCase(), selectorConfidence: "very low" };
             }
             const firstClass = el.className && typeof el.className === "string" 
@@ -570,17 +571,21 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             const style = window.getComputedStyle(el);
             const rect = el.getBoundingClientRect();
 
+            //detecting input elements is a bit tricky
+            //there are often hidden for more customization (no width, height etc)
+            //if the parent is visible, i take it
+            if (el.tagName === "INPUT") {
+                const parentStyle = el.parentElement ? window.getComputedStyle(el.parentElement) : null;
+                if (parentStyle && (parentStyle.display === "none" || parentStyle.visibility === "hidden")) {
+                    return false;
+                }
+                return true;
+            }
+
             //if the element or the container has display:none, "el.offsetParent === null" is true
             //fixed seems to be a weird edge case. TODO: check if true!
             if (el.offsetParent === null && style.position !== "fixed") {
                 return false;
-            }
-
-            //detecting input elements is a bit tricky
-            //there are often hidden for more customization (no width, height etc)
-            //so as long as it is in the render tree (first check) and not hidden, i take it
-            if (el.tagName === "INPUT") {
-                return style.visibility !== "hidden";
             }
 
             return rect.width > 0 && 
@@ -626,6 +631,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
                 const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot)
                     .filter(el => isVisible(el))
+                    .filter(el => el.tagName !== "INPUT")
                     .map(el => {
                         const deepData = generateDeepSelector(el, searchRoot);
                         return {
@@ -740,6 +746,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
         const buttons = querySelectorAllDeep("button, a, [role='button']")
             .filter(el => isVisible(el))
+            .filter(el => el.tagName !== "INPUT")
             .map(el => {
                 const deepData = generateDeepSelector(el);
                 return {
@@ -1150,17 +1157,21 @@ async function getFrameState(frame) {
             const style = window.getComputedStyle(el);
             const rect = el.getBoundingClientRect();
 
+            //detecting input elements is a bit tricky
+            //there are often hidden for more customization (no width, height etc)
+            //if the parent is visible, i take it
+            if (el.tagName === "INPUT") {
+                const parentStyle = el.parentElement ? window.getComputedStyle(el.parentElement) : null;
+                if (parentStyle && (parentStyle.display === "none" || parentStyle.visibility === "hidden")) {
+                    return false;
+                }
+                return true;
+            }
+            
             //if the element or the container has display:none, "el.offsetParent === null" is true
             //fixed seems to be a weird edge case. TODO: check if true!
             if (el.offsetParent === null && style.position !== "fixed") {
                 return false;
-            }
-
-            //detecting input elements is a bit tricky
-            //there are often hidden for more customization (no width, height etc)
-            //so as long as it is in the render tree (first check) and not hidden, i take it
-            if (el.tagName === "INPUT") {
-                return style.visibility !== "hidden";
             }
 
             return rect.width > 0 && 
@@ -1182,11 +1193,12 @@ async function getFrameState(frame) {
  * Extracted as a separate function to avoid code duplication between the
  * regex-based and LLM-based settings button detection paths.
  * 
- * Click strategy (two attempts):
- * 1. JS click via frame.evaluate(): dispatches mousedown + mouseup + click events.
- *    More reliable for CMPs that listen to individual mouse events.
- *    Also handles Shadow DOM selectors via >>> syntax.
- * 2. Puppeteer frame.click() as fallback if JS click returns false.
+ *  Click strategy (three-tier):
+ * 1. Shadow-DOM-aware JS injection: Performs deep traversal including piercing 
+ * Shadow DOM boundaries via '>>>' syntax. Matches buttons by text label 
+ * (case-insensitive) if provided to handle ambiguous/duplicate selectors.
+ * 2. Event Dispatching: Triggers native mousedown, mouseup, and click sequences.
+ * 3. Puppeteer Fallback: Uses standard frame.click() if the JS injection fails.
  * 
  * After clicking, three scenarios are handled:
  * 1. New iframe(s) appear: scored via calculateFrameScore(), best frame extracted.
@@ -1195,12 +1207,12 @@ async function getFrameState(frame) {
  * 3. No significant change detected: returns null (click had no effect).
  * 
  * @param {Frame} frame - Puppeteer frame containing the settings button
- * @param {string} selector - CSS selector of the button (supports >>> for Shadow DOM)
+ * @param {string} settingsButtonOrSelector - CSS selector returned by the LLM or the button object found by Regex (supports >>> for Shadow DOM)
  * @param {Page} page - Puppeteer page instance (needed to detect new frames)
  * @param {string|null} cmpType - detected CMP name, propagated to extraction result
  * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
  */
-async function clickAndExtractSettings(frame, selector, page, cmpType) {
+async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cmpType) {
     //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
     //two options: extract from all frames again
     //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
@@ -1209,25 +1221,38 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
     //supplemented by visible input/button count changes as additional signals.
     //TODO: evaluate optimal thresholds empirically (currently: >500 chars, >0 inputs, >=2 buttons)
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
-    console.error(`settings selector: ${selector}`);
+    console.error(`settings selector or button: ${settingsButtonOrSelector}`);
     const oldState = await getFrameState(frame);
 
-    const clickSuccess = await frame.evaluate((sel) => {
+    const selector = typeof settingsButtonOrSelector === "string" ? settingsButtonOrSelector : settingsButtonOrSelector.selector;
+    const textToMatch = typeof settingsButtonOrSelector === "string" ? null : settingsButtonOrSelector.text;
+
+    const clickSuccess = await frame.evaluate((sel, btnText) => {
         const parts = sel.split(" >>> ");
         let currentRoot = document;
-        let target = null;
+        let candidates = [];
 
         for (let i = 0; i < parts.length; i++) {
-            target = currentRoot.querySelector(parts[i]);
-            if (!target) {
-                return false;
+            if (i === parts.length - 1) {
+                candidates = Array.from(currentRoot.querySelectorAll(parts[i]));
+            } else {
+                let host = currentRoot.querySelector(parts[i]);
+                if (!host || !host.shadowRoot) return false;
+                currentRoot = host.shadowRoot;
             }
-            
-            if (i < parts.length - 1) {
-                currentRoot = target.shadowRoot;
-                if (!currentRoot) {
-                    return false
-                };
+        }
+        
+        if (candidates.length === 0) return false;
+
+        let target = candidates[0];
+
+        if (btnText) {
+            const found = candidates.find(el => {
+                const elText = (el.innerText || el.getAttribute("aria-label") || el.title || "").trim().toLowerCase();
+                return elText.includes(btnText.toLowerCase()) || btnText.toLowerCase().includes(elText);
+            });
+            if (found) {
+                target = found;
             }
         }
 
@@ -1241,7 +1266,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             return true;
         }
         return false;
-    }, selector);
+    }, selector, textToMatch);
 
     if (!clickSuccess) {
         console.error("JS Click failed. Trying Puppeteer fallback...");
@@ -1339,7 +1364,7 @@ async function clickAndExtractSettings(frame, selector, page, cmpType) {
             await waitForDOMStable(frame);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
 
-            if (settings.checkboxes.length > 0 || settings.toggles.length > 0) {
+            if (settings.checkboxes.length > 0 || settings.toggles.length > 0 || settings.buttons.length > 2) {
                 console.error(`Settings UI seems to be there! ${settings.checkboxes.length + settings.toggles.length} functional elements got found.`);
                 settings.isIframe = frame !== page.mainFrame();
                 return settings;
@@ -1464,15 +1489,25 @@ async function extractStructuredDom(url) {
                 "--disable-setuid-sandbox", //important for WSL/Linux
                 "--disable-blink-features=AutomationControlled", //when chrome is not controlled by an actual user it sets navigator.webdriver = true.
                 //CMPs can detect that and block the banner or nerver render it
-                "--window-size=1920,1080" //unsure if really necessary, but ensures that puppeteer launches desktop version
+                "--window-size=1920,1080", //unsure if really necessary, but ensures that puppeteer launches desktop version
+                "--lang=en-US,en"
             ]
         });
 
         const page = await browser.newPage();
         await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
-//      await page.setExtraHTTPHeaders({
-//          'Accept-Language': 'en,de-DE,de;q=0.9'
-//      });
+        await page.setExtraHTTPHeaders({
+            "Accept-Language": "en-US,en;q=0.9"
+        });
+
+        await page.evaluateOnNewDocument(() => {
+            Object.defineProperty(navigator, "language", {
+                get: function() { return "en-US"; }
+            });
+            Object.defineProperty(navigator, "languages", {
+                get: function() { return ["en-US", "en"]; }
+            });
+        });
 
         //for debugging:
         // page.on('console', msg => console.error("BROWSER:", msg.text()));
@@ -1572,7 +1607,7 @@ async function extractStructuredDom(url) {
                     result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
                 
                 if (settingsButton) {
-                    result.settings = await clickAndExtractSettings(result.frame, settingsButton.selector, page, cmpType);
+                    result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
                 } else {
                     console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
                     const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
@@ -1698,7 +1733,7 @@ async function extractStructuredDom(url) {
         await browser.close();
         console.error("browser closed!");
 
-        console.log(JSON.stringify(results)) //for sending it to the python code
+        // console.log(JSON.stringify(results)) //for sending it to the python code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1724,7 +1759,7 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://spiegel.de");
+    const foundData = await extractStructuredDom("https://heise.de");
     if (foundData) {
         console.error("foundData was filled with a value");
     }
@@ -1735,7 +1770,7 @@ async function extractStructuredDom(url) {
 //https://heise.de --> do not use heise.com! Valid website, but without Cookie-Banner :)
 //https://spiegel.de
 
-//URLS for few shot examples:
+//URLs for few shot examples:
 //1: https://www.flightaware.com/ --> not up to date
 //2: https://www.affinity.com/ --> not up to date
 //3: https://cookieinformation.com/ --> not up to date
