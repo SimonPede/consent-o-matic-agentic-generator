@@ -50,7 +50,7 @@ def extraction_node(state: AgentState) -> dict:
     else:
         return {
             "last_error": "extraction_node: extract_dom.js returned empty result",
-            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script detected and was blocked")]
+            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked")]
         }
 
 def make_llm_node(model_with_tools):

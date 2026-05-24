@@ -1,3 +1,6 @@
+import subprocess
+import json
+import os
 from langchain_core.tools import tool
 
 # @tool(args_schema=CoMRuleset)
@@ -33,4 +36,22 @@ def test_ruleset(url: str, json_string: str) -> str:
         error (string or null).
     """
     
-    return ""
+    script_path = os.path.join(os.path.dirname(__file__), "test_ruleset.js")
+
+    try:
+        result = subprocess.run(
+            ["node", script_path, url, json_string],
+            capture_output = True,
+            text = True,
+            timeout = 300,
+        )
+
+        #last line of stdout is the result JSON
+        lines = [line for line in result.stdout.strip().splitlines() if line]
+        output = json.loads(lines[-1])
+        return json.dumps(output)
+
+    except subprocess.TimeoutExpired:
+        return json.dumps({"handled": False, "error": "Timeout after 300s"})
+    except Exception as e:
+        return json.dumps({"handled": False, "error": str(e)})

@@ -2,7 +2,7 @@ from src.agent.llm import llm
 from src.agent.state import AgentState
 from src.agent.routing import route_after_llm
 from src.agent.routing import route_after_ruleset
-from src.tools.analyse_screenshot import analyse_screenshot
+# from src.tools.analyse_screenshot import analyse_screenshot
 from src.tools.test_ruleset import test_ruleset
 from src.tools.request_human_review import request_human_review
 from langgraph.graph import StateGraph, START, END
@@ -10,7 +10,7 @@ from langgraph.prebuilt import ToolNode
 
 from src.agent.nodes import make_llm_node, extraction_node, human_review_node, ruleset_output_node
 
-tools = [analyse_screenshot, test_ruleset, request_human_review]
+tools = [test_ruleset, request_human_review]
 # tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
