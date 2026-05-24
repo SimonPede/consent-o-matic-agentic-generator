@@ -883,6 +883,8 @@ async function frameWordCounter(frames, avgWordCount) {
  *   -100 No text content (very unlikely to be a cookie dialog)
  *   -100 Element not visible (display:none, visibility:hidden, or zero dimensions)
  *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
+ *   -30  iframe element itself is not inside the current viewport and should therefore not be visible
+ *        (passed as iframeBonus)
  * 
  * Deviations from paper:
  *   - Applying the scoring logic not to candidates of banners but iframes
@@ -896,6 +898,8 @@ async function frameWordCounter(frames, avgWordCount) {
         range of content that can be contained within an iframe
         not just cookie dialogs."
  *   - position:fixed + z-index check adapted from Nouwens et al. (2025), not DarkDialogs
+        & reduced iFrameBonus by 30 if it is not inside the current viewport and should therefore not be visible
+        (Gundelach & Herrman, 2023; Klein and Musch et al., 2022)
  *   - Trigger word matching uses a RegExp over full frame text 
  *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
@@ -1055,6 +1059,9 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
  *     Adaptation of Nouwens et al. (2025) banner candidate detection to iframe level.
  *     Original paper applies this to DOM elements; here applied to iframe elements
  *     in the parent page context.
+ *     Additionally reduce iFrameBonus by 30 if it is not inside the current viewport
+ *     and should therefore not be visible (mainly inspired by Accept All Exploits: Exploring the Security Impact of Cookie Banners paper
+ *     & Cookiescanner: An Automated Tool for Detecting and Evaluating GDPR Consent Notices on Websites)
  *   The highest-scoring frame is returned if score > 0.
  *   Inspired by: DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs
  * 
@@ -1077,13 +1084,24 @@ async function findCorrectFrame(page, selectorMap) {
         try {
             const frameElement = await frame.frameElement();
             if (frameElement) {
-                const highZAndIsFixed = await frameElement.evaluate(el => {
+                const frameInfo = await frameElement.evaluate(el => {
                     const style = window.getComputedStyle(el);
-                    return style.position === "fixed" && parseInt(style.zIndex) > 10;
+                    const r = el.getBoundingClientRect();
+                    return {
+                        highZAndIsFixed: style.position === "fixed" && parseInt(style.zIndex) > 10,
+                        inViewport: r.top < window.innerHeight && 
+                                    r.bottom > 0 && 
+                                    r.left < window.innerWidth && 
+                                    r.right > 0
+                    };
                 });
 
-                if (highZAndIsFixed) {
+                if (frameInfo.highZAndIsFixed) {
                     iFrameBonus += 10; //TODO: evaluate
+                }
+
+                if (frameInfo.inViewport) {
+                    iFrameBonus -= 30; //TODO: evaluate
                 }
             }
         } catch (err) {
@@ -1606,7 +1624,7 @@ async function extractStructuredDom(url) {
 
         for (const result of results) {
 
-            if(!settingsExtracted) {
+            if (!settingsExtracted) {
                 //i prioritize buttons, only search for anker-elements if no matching button was found
                 const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
                     result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
