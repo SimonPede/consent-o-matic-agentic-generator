@@ -872,10 +872,13 @@ async function frameWordCounter(frames, avgWordCount) {
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
  *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
  *       capped at +10 to avoid over-weighting frames with many cookie-related mentions
-*    +15  element within frame has position:fixed + z-index > 10
+ *   +15 element within frame has position:fixed + z-index > 10
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
  *   +10  iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
  *        Adaptation of same principle to the iframe element in the parent page context.
+ *   +5  element within frame is displayed at the top of the screen
+ *        Direct adaption of Klein and Musch et al., 2022, p.914
+ *        applied only to fixed/high-z elements to avoid false positives from header/nav elements
  * 
  * Negative:
  *   -20  Word count < 5 (likely a clickable element, not a dialog)
@@ -900,6 +903,7 @@ async function frameWordCounter(frames, avgWordCount) {
  *   - position:fixed + z-index check adapted from Nouwens et al. (2025), not DarkDialogs
         & reduced iFrameBonus by 30 if it is not inside the current viewport and should therefore not be visible
         (Gundelach & Herrman, 2023; Klein and Musch et al., 2022)
+        & and evaluation if element within frame is displayed at the top of the screen (Klein and Musch et al., 2022, p.914)
  *   - Trigger word matching uses a RegExp over full frame text 
  *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
@@ -1015,12 +1019,37 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 }
             }
 
-            const fixedHighZElements = Array.from(document.querySelectorAll("*")).filter(el => {
+            const frameElements = querySelectorAllDeep("*");
+
+            let hasFixedHighZ = false;
+            let topLevelCount = 0;
+
+            for (const el of frameElements) {
                 const style = window.getComputedStyle(el);
-                return style.position === "fixed" && parseInt(style.zIndex) > 10;
-            });
-            if (fixedHighZElements.length > 0) {
-                localScore += 15; //TODO: evaluate
+                if (style.position === "fixed" && parseInt(style.zIndex) > 10) {
+                    hasFixedHighZ = true;
+                    //NOTE: the logic for computing topLevelCount is copied from
+                    //"Accept All Exploits: Exploring the Security Impact of Cookie Banners" paper, p. 914
+                    //the bonus and the topLevelCount > 1 threshold is my design
+                    //to avoid false positives by header or nav elements i include this evaluation only if the element
+                    //has already a large z-index and is fixed
+
+                    //i think it would be even better to calculate the ccordinates the middle of the object not just the left corner
+                    //so instead of "const {x, y} = el.getBoundingClientRect();" -->
+                    const rect = el.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    if (el === document.elementFromPoint(x, y)) {
+                        topLevelCount++;
+                    }
+                }
+            }
+
+            if (hasFixedHighZ) {
+                localScore += 15; //TODO: evaluate bonus!
+            }
+            if (topLevelCount > 1) {
+                localScore += 5; //TODO: evaluate bonus!
             }
 
             return localScore;
