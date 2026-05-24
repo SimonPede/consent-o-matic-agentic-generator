@@ -1,7 +1,7 @@
 /**
  * Multilingual regex for detecting CMP-related frame URLs and names.
  * Covers some known CMP providers, privacy-related terms, and EU languages.
- * Used in findCorrectFrame() Tier 2 detection.
+ * Used in calculateFrameScore()
  */
 const CMP_REGEX = new RegExp(
 	[

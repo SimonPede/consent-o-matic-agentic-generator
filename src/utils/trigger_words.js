@@ -26,6 +26,7 @@ const TRIGGER_WORDS_LIST = [
     "datenschutzeinstellungen", "einstellungen verwalten", "zwecke anzeigen",
 	"alle akzeptieren", "ablehnen", "datenschutzerklärung", "datenschutz", "akzeptieren",
 	"stimme zu", "zustimmen", "berechtigtes interesse", "privatsphäre",
+	"Cookies sind kleine Textdateien",
 
     //Northern Europe (Denmark, Sweden, Norway, Finland, Estonia, Iceland, Ireland)
     "asetukset","inställningar", "seaded",

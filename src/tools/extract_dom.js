@@ -566,6 +566,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * Note: opacity threshold 0.05 is pragmatic: may need empirical tuning.
          * Note: fixed-position elements are excluded from the offsetParent check
          *       because fixed elements always have offsetParent === null.
+         * Note: does not use a strict viewport-check because i also want to find buttons
+         * that are only seen if the user scrolls
          * 
          * @param {HTMLElement} el - element to check
          * @returns {boolean}
@@ -1008,7 +1010,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             //TODO: Evaluate!
 
             //N-Gram Analyse used by paper would need translation into english
-            //far to slow and costly for my agent system. i try to use a similar but simplified version (for now only english and german phrases)
+            //far to slow and costly for my agent system. i try to use a similar but simplified version
             for (const [n, phrases] of Object.entries(nGrams).reverse()) {
                 const weight = parseInt(n);
                 for (const phrase of phrases) {
@@ -1039,7 +1041,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                     const rect = el.getBoundingClientRect();
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
-                    if (el === document.elementFromPoint(x, y)) {
+                    if (el === document.elementFromPoint(centerX, centerY)) {
                         topLevelCount++;
                     }
                 }
