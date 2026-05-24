@@ -63,10 +63,10 @@ function cleanHtml(html) {
 /**
  * LLM-based fallback for settings button detection.
  * Called when SETTINGS_PATTERN regex fails to identify a settings button.
- * Sends filteredHtml to Ollama and expects a single CSS selector in return.
+ * Sends filteredHtml to Ollama and expects a JSON object including the CSS selector and text of the button.
  * 
  * @param {string} html - filteredHtml from extractFromFrame()
- * @returns {string|null} - CSS selector or null
+ * @returns {{selector: string, text: string}|null} - button object or null
  */
 async function findSettingsButtonViaLLM(html) {
     const OLLAMA_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
@@ -81,15 +81,13 @@ async function findSettingsButtonViaLLM(html) {
             },
             body: JSON.stringify({
                 model: "gemma4:latest",
-                prompt: `You are analysing a cookie banner HTML.
-                        Find the button or link that opens the settings or preferences page.
-                        Return ONLY a valid CSS selector string, nothing else.
-                        No explanation, no JSON, no markdown: just the raw selector.
+                prompt: `You are analysing HTML of a website.
+                        Find the button or link that opens the settings or preferences page of the Cookie Banner.
+                        Return ONLY a valid JSON object with exactly two fields, nothing else.
+                        No explanation, no markdown, no code blocks.
 
-                        Examples of valid responses:
-                        [aria-label="Settings"]
-                        .settings-button
-                        #cookie-preferences-btn
+                        Example of a valid response:
+                        {"selector": "[aria-label='Settings']", "text": "Settings"}
 
                         HTML:
                         ${html}`,
@@ -103,14 +101,19 @@ async function findSettingsButtonViaLLM(html) {
         }
 
         const data = await response.json();
-        const selector = String(data.response?.trim());
+        const raw = data.response?.trim();
         
-        if (!selector) {
+        try {
+            const parsed = JSON.parse(raw);
+            if (!parsed.selector) {
+                return null;
+            }
+            console.error(`LLM suggested settings button - selector: "${parsed.selector}", text: "${parsed.text}"`);
+            return parsed;
+        } catch (e) {
+            console.error("LLM response was not valid JSON:", raw);
             return null;
         }
-        
-        console.error(`LLM suggested settings selector: "${selector}"`);
-        return selector;
 
     } catch (error) {
         console.error("findSettingsButtonViaLLM failed:", error.message);
@@ -867,8 +870,8 @@ async function frameWordCounter(frames, avgWordCount) {
  *   +5  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al. 2025)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
- *   +2 per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
- *      capped at +10 to avoid over-weighting frames with many cookie-related mentions
+ *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
+ *       capped at +10 to avoid over-weighting frames with many cookie-related mentions
 *    +15  element within frame has position:fixed + z-index > 10
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
  *   +10  iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
@@ -1073,13 +1076,13 @@ async function findCorrectFrame(page, selectorMap) {
         let iFrameBonus = 0;
         try {
             const frameElement = await frame.frameElement();
-            if(frameElement) {
+            if (frameElement) {
                 const highZAndIsFixed = await frameElement.evaluate(el => {
                     const style = window.getComputedStyle(el);
                     return style.position === "fixed" && parseInt(style.zIndex) > 10;
                 });
 
-                if(highZAndIsFixed) {
+                if (highZAndIsFixed) {
                     iFrameBonus += 10; //TODO: evaluate
                 }
             }
@@ -1207,7 +1210,7 @@ async function getFrameState(frame) {
  * 3. No significant change detected: returns null (click had no effect).
  * 
  * @param {Frame} frame - Puppeteer frame containing the settings button
- * @param {string} settingsButtonOrSelector - CSS selector returned by the LLM or the button object found by Regex (supports >>> for Shadow DOM)
+ * @param {string} settingsButtonOrSelector - button object found by Regex or the LLM (supports >>> for Shadow DOM)
  * @param {Page} page - Puppeteer page instance (needed to detect new frames)
  * @param {string|null} cmpType - detected CMP name, propagated to extraction result
  * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
@@ -1221,11 +1224,12 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
     //supplemented by visible input/button count changes as additional signals.
     //TODO: evaluate optimal thresholds empirically (currently: >500 chars, >0 inputs, >=2 buttons)
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
-    console.error(`settings selector or button: ${settingsButtonOrSelector}`);
     const oldState = await getFrameState(frame);
 
-    const selector = typeof settingsButtonOrSelector === "string" ? settingsButtonOrSelector : settingsButtonOrSelector.selector;
-    const textToMatch = typeof settingsButtonOrSelector === "string" ? null : settingsButtonOrSelector.text;
+    const selector = settingsButtonOrSelector.selector;
+    const textToMatch = settingsButtonOrSelector.text;
+
+    console.error(`settings click target - selector: ${selector}, textMatch: ${textToMatch}`);
 
     const clickSuccess = await frame.evaluate((sel, btnText) => {
         const parts = sel.split(" >>> ");
@@ -1280,6 +1284,7 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
 
     await page.screenshot({ path: "after_click.png" });
 
+    //honestly have to test this function, found it and hope it helps, did not write it myself
     const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
         return frame.evaluate((stableTime, timeout) => {
             return new Promise((resolve) => {
@@ -1343,7 +1348,7 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
         settings.isIframe = bestNewFrame !== page.mainFrame(); //isIframe signals to the LLM whether to set iframeFilter: true in the CoM ruleset
         return settings;
     } else {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
         const newState = await getFrameState(frame);
 
         const changes = diff.diffChars(oldState.html, newState.html);
@@ -1369,7 +1374,7 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
                 settings.isIframe = frame !== page.mainFrame();
                 return settings;
             } else {
-                console.error("A False Positive after the click?!");
+                console.error("Settings-page seems to have no input elements! A False Positive after the click?!");
                 return null;
             }
         } else {
@@ -1610,9 +1615,9 @@ async function extractStructuredDom(url) {
                     result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
                 } else {
                     console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
-                    const llmSelector = await findSettingsButtonViaLLM(result.data.filteredHtml);
-                    if (llmSelector) {
-                        result.settings = await clickAndExtractSettings(result.frame, llmSelector, page, cmpType);
+                    const llmSettingsButton = await findSettingsButtonViaLLM(result.data.filteredHtml);
+                    if (llmSettingsButton) {
+                        result.settings = await clickAndExtractSettings(result.frame, llmSettingsButton, page, cmpType);
                     } else {
                         result.settings = null;
                     }
