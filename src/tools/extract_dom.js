@@ -14,7 +14,7 @@ const TRIGGER_WORDS = require("../utils/trigger_words");
 // ---------------
 // IMPORTANT!!!!
 // for get a quicker understanding what the logic of this file is
-// please look in the root because i addeded 020526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
+// please look in the root because i addeded 250526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
 // ----------------
 
 
@@ -1050,7 +1050,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             if (hasFixedHighZ) {
                 localScore += 15; //TODO: evaluate bonus!
             }
-            if (topLevelCount > 1) {
+            if (topLevelCount) {
                 localScore += 5; //TODO: evaluate bonus!
             }
 
@@ -1259,12 +1259,12 @@ async function getFrameState(frame) {
  * 3. No significant change detected: returns null (click had no effect).
  * 
  * @param {Frame} frame - Puppeteer frame containing the settings button
- * @param {string} settingsButtonOrSelector - button object found by Regex or the LLM (supports >>> for Shadow DOM)
+ * @param {string} settingsButton - button object found by Regex or the LLM (supports >>> for Shadow DOM)
  * @param {Page} page - Puppeteer page instance (needed to detect new frames)
  * @param {string|null} cmpType - detected CMP name, propagated to extraction result
  * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
  */
-async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cmpType) {
+async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
     //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
     //two options: extract from all frames again
     //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
@@ -1275,8 +1275,14 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
     const oldState = await getFrameState(frame);
 
-    const selector = settingsButtonOrSelector.selector;
-    const textToMatch = settingsButtonOrSelector.text;
+    const selector = settingsButton.selector ? settingsButton.selector : "";
+    const textToMatch = settingsButton.text ? settingsButton.text : "";
+
+    if (selector === "") {
+        console.error(`clickAndExtractSettings did not get a selector for the settings button!`)
+    } else if (textToMatch === "") {
+        console.error(`clickAndExtractSettings did not get a text for the settings button!`)
+    }
 
     console.error(`settings click target - selector: ${selector}, textMatch: ${textToMatch}`);
 
@@ -1731,56 +1737,6 @@ async function extractStructuredDom(url) {
             }
         }
         console.error("========================================\n");
-
-
-        // const sizeAnalysis = results.map(result => {
-        //     const d = result.data;
-            
-        //     const buttonsJson = JSON.stringify(d.buttons || []);
-        //     const checkboxesJson = JSON.stringify(d.checkboxes || []);
-        //     const togglesJson = JSON.stringify(d.toggles || []);
-        //     const htmlSize = (d.filteredHtml || d.html || "").length;
-
-        //     const buttonBreakdown = (d.buttons || []).slice(0, 3).map(btn => ({
-        //         selector: btn.selector,
-        //         textSize: JSON.stringify(btn.text || "").length,
-        //         attributesSize: JSON.stringify(btn.attributes || {}).length,
-        //         parentInfoSize: JSON.stringify(btn.parentInfo || {}).length,
-        //         selectorSize: JSON.stringify(btn.selector || "").length,
-        //         totalSize: JSON.stringify(btn).length,
-        //     }));
-
-        //     const html = d.filteredHtml || d.html || "";
-        //     const lines = html.split("\n").length;
-        //     const firstChars = html.substring(0, 500);
-        //     const lastChars = html.substring(html.length - 500);
-
-        //     console.error("filteredHtml erste 500 Zeichen:");
-        //     console.error(firstChars);
-        //     console.error("\nfilteredHtml letzte 500 Zeichen:");
-        //     console.error(lastChars);
-        //     console.error(`\nZeilen gesamt: ${lines}`);
-
-        //     return {
-        //         frameUrl: result.frameUrl,
-        //         isCookieFrame: result.isCookieBannerFrame,
-        //         cmpFound: d.cmpFound,
-        //         sizes: {
-        //             buttons_total: buttonsJson.length,
-        //             checkboxes_total: checkboxesJson.length,
-        //             toggles_total: togglesJson.length,
-        //             filteredHtml: htmlSize,
-        //             GESAMT: buttonsJson.length + checkboxesJson.length + 
-        //                     togglesJson.length + htmlSize,
-        //         },
-        //         buttonBreakdown,
-        //     };
-        // });
-
-        // console.error("\n========== SIZE ANALYSIS ==========");
-        // console.error(JSON.stringify(sizeAnalysis, null, 2));
-        // console.error("====================================\n");
-
 
         fs.writeFileSync("extraction_debug.json", JSON.stringify(results, null, 2));
         console.error("Output was stored in extraction_debug.json.");
