@@ -105,8 +105,6 @@ try {
     process.exit(1);
 }
 
-console.log(JSON.stringify({ debug: "Arguments parsed", url, rulesetKeys: Object.keys(ruleset) }));
-
 //files in dependency order - Tools first, ConsentEngine last
 const COM_DIR = path.join(__dirname, "consent-engine");
 const COM_FILES = [
@@ -119,6 +117,11 @@ const COM_FILES = [
     "ConsentEngine.js",
 ];
 
+/**
+ * Reads, bundles, and patches the Consent-O-Matic (CoM) source files.
+ * Transforms the ES6 modules into a single, globally executable script
+ * and injects custom error logging for automated LLM testing.
+ */
 function buildCoMSource() {
     return COM_FILES.map((file) => {
         let content = fs.readFileSync(path.join(COM_DIR, file), "utf8");
@@ -128,12 +131,53 @@ function buildCoMSource() {
         content = content.replace(/^export default /gm, "");
         //"export class X {" --> "class X {"
         content = content.replace(/^export /gm, "");
+
+		//CoM natively fails silently to not bother end-users. I patch Action.js 
+        //on-the-fly to force explicit console warnings when selectors fail,
+        //providing feedback for the LLM's self-correction loop
+		if (file === "Action.js") {
+            //If a target is missing, inject a warning
+            content = content.replace(
+                /if\s*\(\s*result\.target\s*!=\s*null\s*\)\s*\{/g, 
+                `if (result.target == null) { console.warn("ACTION_TARGET_NOT_FOUND: " + (this.config.target ? this.config.target.selector : "unknown")); } if (result.target != null) {`
+            );
+            
+            //WaitCSS Actions. If the retry timeout is reached, inject a warning into the final "else" block.
+            content = content.replace(
+                /setTimeout\(checkCss, waitTime\);\s*\}\s*else\s*\{/g,
+                `setTimeout(checkCss, waitTime); } else { console.warn("WAITCSS_TIMEOUT: " + (self.config.target ? self.config.target.selector : "unknown")); `
+            );
+        }
+
         return content;
     }).join("\n");
 }
 
 const comSource = buildCoMSource();
 
+
+/**
+ * ERROR HANDLING PIPELINE FOR CONSENT-O-MATIC ENGINE
+ * The injected LLM rulesets pass through 3 distinct failure phases.
+ * * --- PHASE 1: PARSING & STRUCTURE (Initialization) ---
+ * Trigger: Console Error containing "Invalid CMP"
+ * Cause: Fundamental JSON syntax error, missing mandatory fields in matchers, 
+ * or unsupported action types. The CMP class fails to instantiate.
+ * Catch: Listen via page.on('console').
+ * * --- PHASE 2: DETECTION (Matcher Phase) ---
+ * Trigger: Callback Payload { handled: false }
+ * Causes based on Console Logs:
+ * - "No CMP detected in 5 seconds...": presentMatcher failed (selector not in DOM).
+ * - "[CMP Name] - Not showing": presentMatcher succeeded, but showingMatcher failed (element hidden).
+ * - "Found multiple CMPS's...": Matchers are too generic (e.g., just matching 'div').
+ * * --- PHASE 3: EXECUTION (DO_CONSENT & Interaction Phase) ---
+ * Trigger: Callback Payload { handled: false, error: true } or 0 clicks.
+ * Causes based on Console Logs:
+ * - "Error during consent handling: [Error]": Ruleset crashed during execution 
+ * (e.g., click target doesn't exist, waitcss timeout, infinite loop).
+ * - "Consent-O-Matic click count was 0...": Engine ran without crashing, but 
+ * no DOM interactions occurred (target selectors missed).
+ */
 async function runTest() {
 	console.error("Starting CoM Test Engine...");
 
@@ -164,6 +208,40 @@ async function runTest() {
 			get: function() { return ["en-US", "en"]; }
 		});
 	});
+
+	let engineErrors = [];
+	let catchNextError = false;
+
+    page.on("console", msg => {
+        const type = msg.type();
+        const text = msg.text();
+
+		//this structure is useful because of this code in ConsentEngine.js:
+			//console.groupCollapsed("Invalid CMP (" + key + ") detected, please update GDPR consent engine or fix the rule generating this error:");
+			//console.error(err);
+			//console.groupEnd();
+		//also makes sure i dont log every error from the website itself (would create a lot of noise for the LLM)
+		if (catchNextError && type === "error") {
+            engineErrors.push(`Details: ${text}`);
+            catchNextError = false;
+            return;
+        }
+
+        //the phrases i look for are used in ConsentEngine.js:
+		if (text.includes("Invalid CMP")) {
+            engineErrors.push(text);
+            catchNextError = true;
+        } else if (
+            text.includes("Error during consent handling") ||
+            text.includes("No CMP detected in 5 seconds") ||
+            text.includes("Not showing") ||
+            text.includes("Found multiple CMPS's")
+        ) {
+            engineErrors.push(text);
+        } else if (text.includes("ACTION_TARGET_NOT_FOUND") || text.includes("WAITCSS_TIMEOUT")) {
+			engineErrors.push(`Selector Failed: ${text}`);
+		}
+    });
 
     try {
         console.error("Navigating to the page...");
@@ -203,9 +281,9 @@ async function runTest() {
                     // skipSubmitConfirmation: false,
                     // dontHideProgressDialog: true,
 					"clickDelay": false,
-					"skipSubmit": true,
+					"skipSubmit": false, //or is true better for testing if save button click works?!
 					"paintMatchers": false,
-					"debugClicks": false,
+					"debugClicks": true,
 					"alwaysForceRulesUpdate": false,
 					"skipHideMethod": false,
 					"debugLog": true,
@@ -227,7 +305,19 @@ async function runTest() {
             });
         }, ruleset);
 
-        console.log(JSON.stringify({ handled: result.handled, cmpName: result.cmpName || null, clicks: result.clicks || 0, error: null }));
+        let finalError = result.error ? "Execution error in Consent-O-Matic." : null;
+        if (engineErrors.length > 0) {
+            finalError = engineErrors.join(" | ");
+        } else if (!result.handled) {
+            finalError = "Banner not found or matchers failed.";
+        }
+
+        console.log(JSON.stringify({ 
+            handled: result.handled, 
+            cmpName: result.cmpName || null, 
+            clicks: result.clicks || 0, 
+            error: finalError 
+        }));
 
     } catch (err) {
         console.log(JSON.stringify({ 
