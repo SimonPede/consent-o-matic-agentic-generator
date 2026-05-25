@@ -41,6 +41,7 @@ consent-o-matic-agentic-generator/
 │   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
+│   │   └── consent-engine/      # source code of the CoM-Engine used for the test_ruleset node in Langgraph
 │   └── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
 ├── main.py                      # Entry point
 ├── requirements.txt
@@ -76,13 +77,13 @@ consent-o-matic-agentic-generator/
 4. **Configuration**
    Create a `.env` file in the root directory:
    ```bash
-    OLLAMA_URL = http://snet-server:1234
-    OLLAMA_TOKEN = dein-token-hier
+    OLLAMA_BASE_URL = http://snet-server:1234
+    OLLAMA_API_KEY = dein-token-hier
    ```
 
 ## Usage
    ```bash
-   python main.py https://www.example.com
+   python main.py https://www.example.com --fresh
    ```
 
 ## Acknowledgements
