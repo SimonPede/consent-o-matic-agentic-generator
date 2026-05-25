@@ -661,6 +661,19 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     ```
 - For DO_CONSENT, always use a consent action with a consents array. Do NOT use ifcss to handle per-category consent!
     ifcss is control flow only (it checks whether a DOM element exists, then branches).
+- Multi-page banners: After OPEN_OPTIONS clicks a settings button, the DOM often changes 
+    significantly. Selectors for DO_CONSENT and SAVE_CONSENT must come from the 
+    settings page DOM, not the initial banner DOM. 
+    These are often completely different elements with different IDs and classes.
+    If your extraction includes both a main banner view and a settings view 
+    (e.g. two separate DOM sections or a second extraction after clicking settings),
+    use the settings-view selectors for DO_CONSENT and SAVE_CONSENT.
+    When in doubt: prefer selectors with "level", "preference", "settings", or 
+    "detail" in their ID/class over top-level banner container selectors.
+- For SAVE_CONSENT, use CSS comma syntax to include fallbacks when the banner 
+    has multiple possible save buttons (e.g. one on the main banner, one on the 
+    settings page): "#saveBtn, #confirmBtn". Only do this when you can identify 
+    two distinct save buttons in the DOM - do not guess selectors.
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
