@@ -4,7 +4,8 @@ const fs = require("fs");
 //utils imports
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
-const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
+// const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
+const SETTINGS_PATTERN = require("../utils/settingsButtons_terms copy");
 const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
 const N_GRAM_DATA = require("../utils/ngram_data");
 const CMP_REGEX = require("../utils/cmp_regex");
@@ -59,6 +60,22 @@ function cleanHtml(html) {
 //before: settings-subpage "21483",first banner page "15760"
 //after:  settings-subpage "9845",first banner page "7937"
 //--> reduction of around 50%
+
+
+/**
+ * Normalizes button text for robust matching.
+ * Removes accents, spaces, and punctuation, converting everything to lowercase.
+ * Example: "Cookie-Einstellungen verwalten!" -> "cookieeinstellungenverwalten"
+ * 
+ * @param {string} text - text string to normalize
+ */
+function normalizeText(text) {
+    if (!text) return "";
+    return text.normalize("NFKD")
+                .replace(/[\u0300-\u036f]/g, "") //löscht die "fliegenden" Akzente
+                .replace(/[^a-z0-9]/gi, "")      //deletes everything except a-z & 0-9 (inkl. whitespaces)
+                .toLowerCase();
+}
 
 /**
  * LLM-based fallback for settings button detection.
@@ -1662,9 +1679,16 @@ async function extractStructuredDom(url) {
         for (const result of results) {
 
             if (!settingsExtracted) {
-                //i prioritize buttons, only search for anker-elements if no matching button was found
-                const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
-                    result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
+                for (const btn of result.data.buttons) {
+                    if (btn.tag === "BUTTON" || btn.tag === "A") {
+                        const normalizedBtnText = normalizeText(btn.text);
+
+                        if (SETTINGS_PATTERN.test(normalizedBtnText)) {
+                            settingsButton = btn;
+                            break;
+                        }
+                    }
+                }
                 
                 if (settingsButton) {
                     result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
