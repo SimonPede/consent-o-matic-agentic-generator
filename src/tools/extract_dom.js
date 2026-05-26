@@ -4,7 +4,7 @@ const fs = require("fs");
 //utils imports
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
-// const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
+//const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
 const SETTINGS_PATTERN = require("../utils/settingsButtons_terms Consent Observatory");
 const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
 const N_GRAM_DATA = require("../utils/ngram_data");
@@ -1683,7 +1683,12 @@ async function extractStructuredDom(url) {
                     if (btn.tag === "BUTTON" || btn.tag === "A") {
                         const normalizedBtnText = normalizeText(btn.text);
 
-                        if (SETTINGS_PATTERN.test(normalizedBtnText)) {
+                        //Max length 30 chars: real settings button labels are short.
+                        //Prevents false positives on long IAB purpose descriptions
+                        //(e.g. "storing or accessing information on an end device")
+                        //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
+                        if (SETTINGS_PATTERN.test(normalizedBtnText) && normalizedBtnText.length < 30) {
+                            console.error(`Settings match: "${btn.text}" → normalized: "${normalizedBtnText}"`);
                             settingsButton = btn;
                             break;
                         }
@@ -1767,7 +1772,7 @@ async function extractStructuredDom(url) {
         await browser.close();
         console.error("browser closed!");
 
-        // console.log(JSON.stringify(results)) //for sending it to the python code
+        console.log(JSON.stringify(results)) //for sending it to the python code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1778,26 +1783,26 @@ async function extractStructuredDom(url) {
     
 };
 
-// (async () => {
-//     const url = process.argv[2];
-//     if (!url) {
-//         console.error("No URL provided");
-//         process.exit(1);
-//     }
-//     const foundData = await extractStructuredDom(url);
-//     if (foundData) {
-//         console.error("foundData was filled with a value");
-//     }
-// })();
-
-
-//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://www.affinity.com/");
+    const url = process.argv[2];
+    if (!url) {
+        console.error("No URL provided");
+        process.exit(1);
+    }
+    const foundData = await extractStructuredDom(url);
     if (foundData) {
         console.error("foundData was filled with a value");
     }
 })();
+
+
+//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
+// (async () => {
+//     const foundData = await extractStructuredDom("https://www.affinity.com/");
+//     if (foundData) {
+//         console.error("foundData was filled with a value");
+//     }
+// })();
 
 //https://usercentrics.com
 //https://zalando.de
