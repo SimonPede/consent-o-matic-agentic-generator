@@ -5,7 +5,7 @@ const fs = require("fs");
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
 // const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
-const SETTINGS_PATTERN = require("../utils/settingsButtons_terms copy");
+const SETTINGS_PATTERN = require("../utils/settingsButtons_terms Consent Observatory");
 const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
 const N_GRAM_DATA = require("../utils/ngram_data");
 const CMP_REGEX = require("../utils/cmp_regex");
@@ -94,7 +94,7 @@ async function findSettingsButtonViaLLM(html) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OLLAMA_API_KEY}`
+                "Authorization": `Bearer ${OLLAMA_BEARER_TOKEN}`
             },
             body: JSON.stringify({
                 model: "gemma4:latest",

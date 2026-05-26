@@ -1,6 +1,9 @@
 // Extracted from NormalizedWordButtonGatherer.js
 // Source: https://github.com/cavi-au/consent-observatory.eu
-// License: MPL 2.0, Copyright (c) 2023 Rolf Bagge, Janus Kristensen, CAVI Aarhus University
+// Copyright (c) 2023 Rolf Bagge, Janus Kristensen
+// Copyright (c) 2024, 2025 Janus Kristensen
+// CAVI, Aarhus University
+// Mozilla Public License Version 2.0
 // Category 3 = Settings/Options buttons
 // Generated: 2026-05-25
 

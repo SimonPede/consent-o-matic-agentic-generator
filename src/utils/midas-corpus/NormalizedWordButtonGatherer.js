@@ -4,13 +4,15 @@
  * Original file:
  * Copyright (c) 2023 Rolf Bagge, Janus Kristensen
  * Copyright (c) 2024, 2025 Janus Kristensen
- * CAVI - Center for Advanced Visualization and Interaction, Aarhus University
+ * CAVI, Aarhus University
+ * 
  * Source: https://github.com/cavi-au/consent-observatory.eu
  * License: Mozilla Public License Version 2.0
  * 
  * Modifications (2026, Simon Pede):
  * - Removed all gatherer logic, keeping only the normalizedWords corpus
- * - Used as data source for generate_settings_terms.js
+ * - Used as data source for "settingsButtons_terms Consent Observatory.js" by implementing a filter function
+    that filters the data for category 3 and writes them directly into "settingsButtons_terms Consent Observatory.js"
  */
 
 let normalizedWords = [
@@ -37111,10 +37113,9 @@ const settingsWords = normalizedWords
     .filter(obj => obj.category === 3)
     .map(obj => obj.normalized);
 
-console.log(`Gefiltert: ${settingsWords.length} Settings-Wörter gefunden!`);
+console.log(`Filtered word corpus: ${settingsWords.length} settings phrases found!`);
 
-const fileContent = `// Diese Datei wurde automatisch aus dem Consent Observatory Corpus generiert.
-// Midas Category 3 (Settings/Options)
+const fileContent = `
 
 const settingsWords = ${JSON.stringify(settingsWords, null, 2)};
 
@@ -37124,7 +37125,7 @@ const SETTINGS_PATTERN = new RegExp(settingsWords.join("|"), "i");
 module.exports = SETTINGS_PATTERN;
 `;
 
-const outputPath = path.join(__dirname, "settingsButtons_terms copy.js");
+const outputPath = path.join(__dirname, "./settingsButtons_terms Consent Observatory.js");
 fs.writeFileSync(outputPath, fileContent);
 
-console.log("Erfolg! utils/settingsButtons_terms.js wurde neu geschrieben.");
+console.log("Erfolg! utils/settingsButtons_terms Consent Observatory.js wurde neu geschrieben.");
