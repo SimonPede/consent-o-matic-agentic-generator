@@ -160,6 +160,7 @@ def ruleset_output_node(state: AgentState) -> dict:
         "last_error": "No ruleset found in agent messages",
         "messages": [HumanMessage(content = (
             "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
-            "Please output your final ruleset now, wrapped in <ruleset></ruleset> tags."
+            "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
+            "Do NOT output <ruleset> tags until the tool returns 'handled': true."
         ))]
     }

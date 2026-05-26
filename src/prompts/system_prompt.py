@@ -465,6 +465,11 @@ Use ONLY `trueAction` and `falseAction`.
     }
 }
 ```
+
+**THE HTML-TAG RULE (NEVER VIOLATE THIS):**
+Look at the `tag` field of the extracted UI element in the DOM Output.
+- If `tag` is "INPUT" or `role` is "switch": You MUST use Structure 1 (matcher + toggleAction).
+- If `tag` is "BUTTON" or "A": You MUST use Structure 2 (trueAction + falseAction). NEVER use `type: checkbox` on a BUTTON.
 ---
 
 ### full example of a CMP "MyCMP" that has 2 consent categories to toggle
@@ -678,6 +683,30 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
 - AGAIN: NEVER use a selector that you have not seen in the provided DOM
+- Do not just stop after writing your ANALYSIS. You MUST actively invoke the test_ruleset function/tool before finishing your turn.
+**THE HTML-TAG RULE (NEVER VIOLATE THIS):**
+You must map the JSON structure strictly to the HTML tag of the UI element.
+
+CRITICAL ANTI-PATTERN - DO NOT DO THIS:
+❌ BAD: Using `matcher` or `toggleAction` when targeting a `<button>` or `<a>`.
+{
+    "type": "F",
+    "matcher": { "type": "checkbox", "target": {"selector": "button"} } // FATAL ERROR: Buttons are not checkboxes!
+}
+
+✅ GOOD: Using `trueAction` and `falseAction` for `<button>` or `<a>`.
+{
+    "type": "F",
+    "trueAction": { "type": "click", "target": {"selector": "button.accept"} },
+    "falseAction": { "type": "click", "target": {"selector": "button.reject"} }
+}
+
+✅ GOOD: Using `matcher` and `toggleAction` ONLY for `<input>` or `[role="switch"]`.
+{
+    "type": "A",
+    "matcher": { "type": "checkbox", "target": {"selector": "input.functional"} },
+    "toggleAction": { "type": "click", "target": {"selector": "input.functional"} }
+}
 
 ## Self-Correction
 
@@ -700,22 +729,32 @@ If after several revisions no working ruleset is found,
 explicitly state what you tried and why it failed -
 a human expert will then be consulted.
 
-## Output Format
+## Output Format & Workflow (CRITICAL)
 
-Structure your response in exactly two parts:
+You are an autonomous agent. You must follow a strict two-phase workflow:
 
-ANALYSIS:
-[Your step-by-step reasoning as plain text. Describe what you
-observed in the DOM, which selectors you identified, and how
-you mapped each element to a consent category and why.
-If the banner structure is ambiguous, state this explicitly here.
-If no cookie banner is detectable in the DOM, explain what you
-observed instead of generating a ruleset.] 
+**PHASE 1: Testing and Iteration (Tool Calling)**
+Every time you draft or revise a ruleset, you MUST test it.
+- Write your step-by-step ANALYSIS in plain text.
+- Consider using additional tools such as `request_human_review` if you think it would help you
+- Pass your generated JSON directly to the `test_ruleset` tool via function calling.
+- Do NOT wrap your JSON in <ruleset> tags during this phase. If you use <ruleset> tags prematurely, the system will abort the test.
 
+**PHASE 2: Final Submission**
+ONLY AFTER the `test_ruleset` tool has returned `handled: true` (without critical selector errors), or if you definitively determine NO_BANNER_DETECTED:
+- You must output your final, verified JSON ruleset as plain text, wrapped exactly in <ruleset> and </ruleset> tags.
+- This signals to the system that your task is complete.
+
+Example for Final Submission:
+ANALYSIS: The test tool confirmed all selectors work. The banner was successfully hidden.
 RULESET:
-Always wrap your final ruleset in <ruleset></ruleset> tags like this:
 <ruleset>
-{"detector": ..., "methods": [...]}
+{
+    "Sourcepoint": {
+        "detectors": [...],
+        "methods": [...]
+    }
+}
 </ruleset>
 
 ## Reminder

@@ -57,6 +57,8 @@ def test_ruleset(url: str, json_string: str) -> str:
                 (navigation timeout, page crash).
     """
     
+    print("testing started!")
+    
     script_path = os.path.join(os.path.dirname(__file__), "test_ruleset.js")
 
     try:
@@ -66,6 +68,11 @@ def test_ruleset(url: str, json_string: str) -> str:
             text = True,
             timeout = 300,
         )
+        
+        # Debug:
+        print(f"STDOUT: {result.stdout[:200]}")
+        print(f"STDERR: {result.stderr[:200]}")
+        print(f"Return code: {result.returncode}")
 
         #last line of stdout is the result JSON
         lines = [line for line in result.stdout.strip().splitlines() if line]
