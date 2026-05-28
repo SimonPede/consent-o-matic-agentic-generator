@@ -155,6 +155,57 @@ function buildCoMSource() {
 
 const comSource = buildCoMSource();
 
+async function runEngineInFrame(targetFrame, ruleset) {
+    console.error(`Injecting engine into frame: ${targetFrame.url()}`);
+    await targetFrame.addScriptTag({ content: comSource });
+
+    //run the test with the ruleset
+    return await targetFrame.evaluate((ruleConfig) => {
+        return new Promise((resolve) => {
+            //define window.chrome as an empty function because ConsentEngine.js
+            //at one point calls chrome.runtime.sendMessage();
+            //this would otherwise crash my code as chrome is undefined in puppeteer context
+            if (typeof chrome === "undefined") {
+                window.chrome = { runtime: { sendMessage: () => {} } };
+            }
+
+            ConsentEngine.singleton = null;
+            ConsentEngine.generalSettings = { hideInsteadOfPIP: true };
+            ConsentEngine.debugValues = {
+                // clickDelay: false,
+                // skipSubmit: false,
+                // paintMatchers: false,
+                // debugClicks: false,
+                // skipHideMethod: false,
+                // debugLog: false,
+                // skipSubmitConfirmation: false,
+                // dontHideProgressDialog: true,
+                "clickDelay": false,
+                "skipSubmit": false, //or is true better for testing if save button click works?!
+                "paintMatchers": false,
+                "debugClicks": true,
+                "alwaysForceRulesUpdate": false,
+                "skipHideMethod": false,
+                "debugLog": true,
+                "debugTranslations": false,
+                "skipSubmitConfirmation": false,
+                "dontHideProgressDialog": false
+            };
+
+            ConsentEngine.singleton = new ConsentEngine(ruleConfig, {
+                "A": false,
+                "B": false,
+                "D": false,
+                "E": false,
+                "F": false,
+                "X": false
+                }, (evt)=>{
+                    resolve(evt);
+            });
+        });
+    }, ruleset);
+}
+
 
 /**
  * ERROR HANDLING PIPELINE FOR CONSENT-O-MATIC ENGINE
@@ -260,50 +311,33 @@ async function runTest() {
         await page.addScriptTag({ content: comSource });
 
         //run the test with the ruleset
-        const result = await page.evaluate((ruleConfig) => {
-            return new Promise((resolve) => {
-				//define window.chrome as an empty function because ConsentEngine.js
-				//at one point calls chrome.runtime.sendMessage();
-				//this would otherwise crash my code as chrome is undefined in puppeteer context
-                if (typeof chrome === "undefined") {
-                    window.chrome = { runtime: { sendMessage: () => {} } };
+        let result = await runEngineInFrame(page.mainFrame(), ruleset);
+
+        if (!result.handled) {
+            console.error("Main frame in testing didnt work! Trying iframes...")
+            const frames = page.frames()
+            for (const frame of frames) {
+                if(frame === page.mainFrame()) {
+                    continue;
                 }
 
-				ConsentEngine.singleton = null;
-                ConsentEngine.generalSettings = { hideInsteadOfPIP: true };
-                ConsentEngine.debugValues = {
-                    // clickDelay: false,
-                    // skipSubmit: false,
-                    // paintMatchers: false,
-                    // debugClicks: false,
-                    // skipHideMethod: false,
-                    // debugLog: false,
-                    // skipSubmitConfirmation: false,
-                    // dontHideProgressDialog: true,
-					"clickDelay": false,
-					"skipSubmit": false, //or is true better for testing if save button click works?!
-					"paintMatchers": false,
-					"debugClicks": true,
-					"alwaysForceRulesUpdate": false,
-					"skipHideMethod": false,
-					"debugLog": true,
-					"debugTranslations": false,
-					"skipSubmitConfirmation": false,
-					"dontHideProgressDialog": false
-                };
+                try {
+                    const frameUrl = frame.url();
+                    if (frameUrl === "about:blank" || frameUrl === "") {
+                        continue;
+                    }
 
-				ConsentEngine.singleton = new ConsentEngine(ruleConfig, {
-					"A": false,
-					"B": false,
-					"D": false,
-					"E": false,
-					"F": false,
-					"X": false
-					}, (evt)=>{
-						resolve(evt);
-				});
-            });
-        }, ruleset);
+                    const frameResult = await runEngineInFrame(frame, ruleset);
+                    if (frameResult && frameResult.handled) {
+                        result = frameResult;
+                        console.error("Success! CMP handled inside iframe.");
+                        break;
+                    }
+                } catch (err) {
+                    console.error(`Could not evaluate in frame: ${err.message}`);
+                }
+            }
+        }
 
         let finalError = result.error ? "Execution error in Consent-O-Matic." : null;
         if (engineErrors.length > 0) {
