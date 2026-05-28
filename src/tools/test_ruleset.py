@@ -60,17 +60,20 @@ def test_ruleset(url: str, json_string: str) -> str:
     print("testing started!")
     
     script_path = os.path.join(os.path.dirname(__file__), "test_ruleset.js")
+    
+    print(len(json_string))
 
     try:
         result = subprocess.run(
-            ["node", script_path, url, json_string],
+            ["node", script_path, url],
+            input = json_string,
             capture_output = True,
             text = True,
             timeout = 300,
         )
         
-        # Debug:
-        print(f"STDOUT: {result.stdout[:200]}")
+        #Debug
+        print(f"STDOUT: {result.stdout[:400]}")
         print(f"STDERR: {result.stderr[:200]}")
         print(f"Return code: {result.returncode}")
 

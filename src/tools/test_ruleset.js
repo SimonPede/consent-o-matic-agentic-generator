@@ -89,21 +89,23 @@ const path = require("path");
 
 //Arguments from Python subprocess call:
 //node test_ruleset.js <url> <ruleset_json>
-const url = process.argv[2];
-const rulesetJson = process.argv[3];
+// const url = process.argv[2];
+// const rulesetJson = process.argv[3];
 
-if (!url || !rulesetJson) {
-    console.log(JSON.stringify({ error: "Missing arguments: url and ruleset_json required" }));
-    process.exit(1);
-}
+// if (!url || !rulesetJson) {
+//     console.log(JSON.stringify({ error: "Missing arguments: url and ruleset_json required" }));
+//     process.exit(1);
+// }
 
-let ruleset;
-try {
-    ruleset = JSON.parse(rulesetJson);
-} catch (e) {
-    console.log(JSON.stringify({ error: "Invalid JSON: " + e.message }));
-    process.exit(1);
-}
+// console.error(`JSON length received: ${rulesetJson.length}`);
+
+// let ruleset;
+// try {
+//     ruleset = JSON.parse(rulesetJson);
+// } catch (e) {
+//     console.log(JSON.stringify({ error: "Invalid JSON: " + e.message }));
+//     process.exit(1);
+// }
 
 //files in dependency order - Tools first, ConsentEngine last
 const COM_DIR = path.join(__dirname, "consent-engine");
@@ -229,7 +231,7 @@ async function runEngineInFrame(targetFrame, ruleset) {
  * - "Consent-O-Matic click count was 0...": Engine ran without crashing, but 
  * no DOM interactions occurred (target selectors missed).
  */
-async function runTest() {
+async function runTest(ruleset) {
 	console.error("Starting CoM Test Engine...");
 
 	//browser gets initiated exactly as in my extract script
@@ -365,4 +367,32 @@ async function runTest() {
     }
 }
 
-runTest();
+// runTest(ruleset);
+
+const url = process.argv[2];
+
+if (!url) {
+    console.log(JSON.stringify({ error: "Missing argument: url required" }));
+    process.exit(1);
+}
+
+let rulesetJson = "";
+
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", chunk => {
+    rulesetJson += chunk;
+});
+
+process.stdin.on("end", () => {
+    let ruleset;
+    try {
+        ruleset = JSON.parse(rulesetJson);
+    } catch (e) {
+        console.log(JSON.stringify({ error: "Invalid JSON from Python: " + e.message }));
+        process.exit(1);
+    }
+
+    console.error(`${JSON.stringify(ruleset).length}`)
+
+    runTest(ruleset); 
+});
