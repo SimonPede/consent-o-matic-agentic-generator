@@ -1,6 +1,23 @@
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 
 /**
+ * helper function to iterate all frames and call frameHasBanner for each
+ *
+ * @param {Page} page - Puppeteer page instance
+ * @returns {boolean} heuristicFound - true if frameHasBanner returns true
+ */
+async function scanAllFramesForBanner(page) {
+    let heuristicFound = false;
+    for (const frame of page.frames()) {
+        if (await frameHasBanner(frame)) {
+            heuristicFound = true;
+            break;
+        }
+    }
+    return heuristicFound;
+}
+
+/**
  * Polls all frames until a known CMP container with rendered buttons is found.
  * Serves two purposes:
  * 1. Waits for the banner to be fully rendered before extraction starts
@@ -12,9 +29,6 @@ const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
  * Light DOM. Button detection inside the container uses querySelectorAllDeep()
  * to handle Shadow DOM CMPs like Usercentrics.
  *
- * Note: This function intentionally does NOT return the frame as the banner frame.
- * The host element may be in the main frame while the actual banner content
- * loads inside an iframe – frame selection is delegated to findCorrectFrame().
  *
  * @param {Page} page - Puppeteer page instance
  * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)
@@ -74,14 +88,274 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
     return null;
 }
 
+/**
+ * Inspired by WordBoxGatherer.js (findAnchors, findWords)
+ * Source: https://github.com/cavi-au/consent-observatory.eu/blob/master/rules/Gatherers/WordBoxGatherer.js
+ * 
+ * Copyright (c) 2023 Rolf Bagge, Janus Kristensen
+ * Copyright (c) 2024, 2025 Janus Kristensen
+ * CAVI, Aarhus University
+ * License: MPL 2.0
+ * 
+ * Modifications:
+ * - findAnchors: returns elements only (no path tracking); added null-check;
+ *   uses style.zIndex directly instead of getPropertyValue()
+ * - findWords: takes pre-built regex instead of corpus object; returns boolean
+ *   instead of match array; added Shadow DOM traversal; added null-check on attributes
+ * - word corpus (triggers array): extracted from WordBoxGatherer corpus,
+ *   triggers only, antiTriggers omitted, simplified to array
+ */
+async function frameHasBanner(frame) {
+    //this is copied/extracted by hand from https://github.com/cavi-au/consent-observatory.eu/blob/master/rules/Gatherers/WordBoxGatherer.js
+    //without the few "antiTriggers"
+    const triggers = [
+        //international
+        "cookie", "cookies", "GDPR",
+        //Austria
+        "alle akzeptieren", "einstellungen verwalten", "zwecke anzeigen", "ablehnen", "datenschutzerklärung",
+        //Belgium
+        "accepter", "en savoir plus", "akkoord", "meer informatie", "alle cookies aanvaarden", "paramètres", "accepteren", "d'accord",
+        //Bulgaria
+        "Политика за поверителност", "Приемане", "затваряне", "Настройки", "Отхвърли Всички", "Приеми Всички", "Научете повече",
+        "Приемане и затваряне", "Приемам", "към сайта", "Опции за управление", "Подробни настройки", "продължи", "бисквитки", "бисквитките", "приемете",
+        "Политика за защита на личните данни", "Политика за бисквитките", "съгласие", "Научете повече", "Политика за използване на бисквитки",
+        "други възможности", "приемате", "декларацията за поверителност", "съгласявате", "персонализираме съдържанието",
+        //Croatia
+        "Prihvati i zatvori", "Prihvaćam", "Saznaj više", "Saznajte više", "Prihvati sve kolačiće", "Prihvaćam sve", "Postavke", "Postavke kolačića",
+        "Slažem se", "Pogledajte naše partnere", "Upravljanje opcijama", "Ne prihvaćam", "Više informacija", "Politika privatnosti", "Pravila privatnosti",
+        "Odbaci sve", "Prihvati i zatvori", "Prihvati", "na stranicu", "Opcije za upravljanje", "Detaljne postavke", "nastavi", "kolačići", "kolačići", "prihvati",
+        "Pravila o kolačićima", "pristanak", "Pravila o kolačićima", "druge opcije", "prihvaćam", "izjava o privatnosti", "slažem se", "prilagodite sadržaj",
+        //Cyprus
+        "ΑΠΟΔΟΧΗ ΟΛΩΝ", "ΔΙΑΔΟΧΗ ΟΛΩΝ", "ΑΠΟΡΡΙΨΗ ΟΛΩΝ", "ΣΥΜΦΩΝΩ", "Ρυθμίσεις Cookies", "Αποδοχή όλων", "ΔΙΑΦΩΝΩ", "ΠΡΟΤΙΜΗΣΕΙΣ", "Πολιτική Απορρήτου",
+        //Czech Republic
+        "Podrobné nastavení", "Povolit vše", "Souhlasím", "Odmítnout", "Rozumím", "Povolit nezbytné", "Další volby", "Přijmout vše", "Upravit mé předvolby", "Nastavení", "Zásady ochrany osobních údajů",
+        //Germany
+        "datenschutz", "akzeptieren", "stimme zu", "zustimmen", "berechtigtes interesse", "Privatsphäre",
+        //Denmark
+        "privatliv", "samtykke", "acceptér", "tillad", "legitim interesse",
+        //Estonia
+        "nõustun", "keeldu", "luba kõik", "kohanda", "küpsiste seaded", "küpsiste sätted", "küpsised", "nõustu", "halda", "privaatsus",
+        "küpsiseid", "küpsistega", "küpsistest", "privaatsuspoliitika", "sulge", "seaded", "rohkem teavet", "keeldun", "kuva eesmärgid",
+        "muudan küpsiste seadistusi", "küpsiste seadetega", "sain aru", "loen veel", "privaatsuspõhimõtete", "nõustun kõigi küpsistega", "selge", "lisainfo",
+        "isikupärastamiseks", "isikupärastatud", "isikupärasem", "seaded", "tingimused", "tingimustega", "seadistusi",
+        //England/US
+        "we and our \\d+ partners", "privacy", "consent", "accept", "agree", "legitimate interest",
+        //Spain
+        "privacidad", "acept", "acceptar", "acordar", "interés legítimo",
+        //Finland
+        "evästeitä","evästeiden", "tietosuoja", "hyväksy", "hylkää", "asetukset", "suostumustasi", "suostumuksesi",
+        //France
+        "confidentialité", "accepter", "accord", "intérêt légitime",
+        //Greece
+        "ΠΕΡΙΣΣΟΤΕΡΕΣ ΕΠΙΛΟΓΕΣ", "ΣΥΜΦΩΝΩ", "ΔΙΑΦΩΝΩ", "ΑΠΟΔΟΧΗ", "ΑΠΟΡΡΙΨΗ", "Περισσότερα", "ΑΠΟΡΡΗΤΗΝ", "Πολιτική Απορρήτου",
+        //Hungary
+        "cookie-kat", "Elfogadom", "TOVÁBBI OPCIÓK", "NEM ELFOGADOM", "További információ", "Elfogadás és bezárás", "Beállítások",
+        "Beállítások kezelése", "Hozzájárulás", "ÖSSZES ENGEDÉLYEZÉSE", "Mindent elfogadok", " Adatvédelmi szabályzat", "Elfogadás",
+        "Adatvédelmi szabályzat", "sütik", "Az Ön adatainak védelme fontos számunkra", "Tartalom testreszabása", "Lehetőségek", "További lehetőségek",
+        "Részletek", "Cookie-k", "Információ", "Cookie-szabályzat", "kapcsolódó sütikkel kapcsolatos információk",
+        //Iceland
+        "vefkökur", "kökur", "vafrakökur", "samþykkja", "hafna", "vefköku stillingar", "leyfa", "vista val", "fótspor",
+        //Ireland
+        "fianáin", "cuacha", "lean ar aghaidh", "cosanta sonraí", "socruithe fianán", "glac le gach fianán", "diúltú neamhriachtanach", "bainistigh fianáin",
+        //Italy
+        "politica", "consenso", "accetta", "concordare", "interesse legittimo",
+        //Latvia
+        "Piekrītu", "PIELĀGOT", "PAPILDU OPCIJAS", "Uzzināt vairāk", "Atļaut visas sīkdatnes", "Apstiprināt", "Pārvaldības iespējas", "Apstiprināt",
+        "Pārvaldības iespējas", "СОГЛАСЕН", "NEPIEKRIŢU", "ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ", "Privātuma politika", "Piekrist", "aizvērt", "Iestatījumi",
+        "Noraidīt visu", "Pieņemt visu", "Uzzināt vairāk", "Pieņemt un aizvērt", "Piekrist", "Opcijas pārvaldība", "Detalizēti iestatījumi", "Turpināt",
+        "sīkfaili", "pieņemt", "piekrišana", "Uzzināt vairāk", "Sīkfailu politika", "cits opcijas", "Es piekrītu", "paziņojums par konfidencialitāti", "Es piekrītu", "pielāgot saturu",
+        //Lithuania
+        "Sutinku", "Tvarkyti parinktis", "Leisti visus slapukus", "DAUGIAU PASIRINKIMŲ", "Atsisakyti visų", "Supratau", "Slapukų nustatymai", "Sutikimas",
+        "Rodyti informaciją", "Patvirtinti", "Privatumo politika", "Rinktis", "Slapuku politikoje", "nesutinku", "Tinkinti", "Priimti", "Slapukai",
+        "Slapukų politika", "Privatumo pareiškimas", "Nustatymai", "Rodyti paskirtis", "Privatumas", "Slapukuose", "Tvarkyti parinktis",
+        "Slapuku politikoje", "Nuostatos", "Rinkodara", "Slapukus",
+        //Luxembourg
+        "J'accepte", "Je refuse", "Gérer les cookies", "Paramètres des cookies", "Accepter tout", "Afficher toutes les finalités", "Privatsphär",
+        //Malta
+        "il-privatezza", "il-cookies", "tal-cookies", "naqbel", "naċċetta", "aktar dwar il cookies", "aċċetta", "irrifjuta",
+        //Netherlands
+        "accepteren", "afwijzen", "akkoord", "instellen", "toestemming", "privacy-instellingen", "instellingen", "cookiebeleid", "privacyverklaring",
+        //Norway
+        "informasjonskapsler", "personvern", "godta", "avvis",
+        //Poland
+        "plików", "plikach", "akceptuję", "odrzucenie wszystkich", "zaakceptuj", "ordzuć", "prwatność",
+        //Portugal
+        "privacidade", "consentimento", "aceitar", "concordo", "interesse legítimo",
+        //Romania
+        "cookie-uri", "ACCEPT TOATE", "VREAU SA MODIFIC SETARILE INDIVIDUAL", "MODIFIC SETĂRILE",
+        "MAI MULTE OPȚIUNI", "Respinge toate", "Gestionajți opțiunile", "Consimțământ", "Setari cookie-uri",
+        "SETĂRI COOKIES", "Politica de confidențialitate",
+        //Slovakia
+        "Pokračovať s nevyhnutnými cookies", "Nastavenia", "Súhlasím", "Prijať všetko", "Akceptovať", "Zamietnuť",
+        "Nastavenie cookies", "Nastavenia cookies", "Ďalšie informácie", "Bližšie informácie", "Zásady ochrany osobných údajov",
+        //Slovenia
+        "STRINJAM SE", "VEČ MOŽNOSTI", "NASTAVITVE", "SPREJMI", "SPREJMEM", "NE STRINJAM SE", "NASTAVITVE PIŠKOTOV", "Sprejmem vse",
+        "Dovoli vse in zapri", "PRILAGODI", "Politika zasebnosti", "zavrni vse", "namesti vse", "po meri", "vi redu", "razumem", "piškotkov",
+        "piškotke", "piškotki", "piškotkih",
+        //Sweden
+        "acceptera", "godkänn", "kakor"
+    ];
 
-// Schritt 1: Argumente einlesen (url + ruleset von Python)
-// Schritt 2: CoM-Source vorbereiten (buildCoMSource)
-// Schritt 3: Browser öffnen, Seite laden, Engine injizieren
-// Schritt 4: Ergebnis als JSON auf stdout ausgeben
+    try {
+        return await frame.evaluate((triggers) => {
+            //Midas's Anchor Search: Find layout wrappers (including Shadow DOM)
+            function findAnchors(currentElement) {
+                if (!currentElement) return [];
+                
+                const style = window.getComputedStyle(currentElement);
+                //Check this element's own styles for a match, do not dive deeper if found
+                if (
+                    (style.zIndex && !isNaN(style.zIndex) && parseInt(style.zIndex) > 10) ||
+                    (style.position && style.position.includes("fixed"))
+                ) {
+                    return [currentElement];
+                }
+
+                let anchors = [];
+                for (let i = 0; i < currentElement.children.length; i++) {
+                    anchors = anchors.concat(findAnchors(currentElement.children[i]));
+                }
+                //scan shadow children
+                if (currentElement.shadowRoot) {
+                    for (let i = 0; i < currentElement.shadowRoot.children.length; i++) {
+                        anchors = anchors.concat(findAnchors(currentElement.shadowRoot.children[i]));
+                    }
+                }
+                return anchors;
+            }
+
+            //Midas's Word Search: Recursive search in text-nodes and attributes
+            function findWords(currentElement, regex) {
+                //ignore parts of page invisible to the user (Midas's original logic)
+                if (currentElement.getClientRects().length === 0) return false;
+
+                let comparisonText = "";
+                if (currentElement.attributes) {
+                    for (let i = 0; i < currentElement.attributes.length; i++) {
+                        comparisonText += currentElement.attributes[i].value + " ";
+                    }
+                }
+
+                for (let i = 0; i < currentElement.childNodes.length; i++) {
+                    if (currentElement.childNodes[i].nodeType === Node.TEXT_NODE) {
+                        comparisonText += currentElement.childNodes[i].textContent + " ";
+                    }
+                }
+
+                const matches = comparisonText.match(regex) || [];
+                if (matches.length > 0) {
+                    return true;
+                }
+
+                for (let i = 0; i < currentElement.children.length; i++) {
+                    if (findWords(currentElement.children[i], regex)) return true;
+                }
+                
+                if (currentElement.shadowRoot) {
+                    for (let i = 0; i < currentElement.shadowRoot.children.length; i++) {
+                        if (findWords(currentElement.shadowRoot.children[i], regex)) return true;
+                    }
+                }
+                
+                return false;
+            }
+
+            const anchors = findAnchors(document.body);
+            const triggerRegex = new RegExp(
+                triggers.map(w => "(?:[^\\S\\r\\n]|[\\(\\\"]|^)" + w + "(?:[\\s\\.\\;\\:\\)\\\",]|$)").join("|"), 
+                "mgi"
+            );
+
+            for (const anchor of anchors) {
+                if (findWords(anchor, triggerRegex)) {
+                    return true;
+                }
+            }
+            return false;
+        }, triggers);
+    } catch (err) {
+        return false;
+    }
+}
+
+/**
+ * Evaluates the visual and technical state of the main page.
+ * Acts as an independent auditor to verify if a cookie banner is still present.
+ * @param {Page} page - The Puppeteer page object
+ * @returns {Promise<Object>} Telemetry data (hasTcfApi, tcf_visible, tcf_hidden, overlay_blocking)
+ */
+async function evaluatePageState(page) {
+    return await page.evaluate(async () => {
+        const telemetry = {
+            hasTcfApi: false,
+            tcf_visible: null,
+            tcf_hidden: null,
+            overlay_blocking: false,
+        };
+
+        //TCF API ping logic adapted from IABJSGatherer.js
+        //Source: https://github.com/cavi-au/consent-observatory.eu/blob/master/rules/Gatherers/IABJSGatherer.js
+        //Copyright (c) 2023 Rolf Bagge,
+        //Copyright (c) 2024, 2025 Janus Kristensen
+        //CAVI, Aarhus University
+        //License: MPL 2.0
+        telemetry.hasTcfApi = (window["__tcfapi"] != null);
+        let pingResult = null;
+
+        if (telemetry.hasTcfApi) {
+            try {
+                const pingResult = await new Promise((resolve) => {
+                    const timeoutId = setTimeout(() => {
+                        resolve(null);
+                    }, 2000);
+
+                    window["__tcfapi"]("ping", 2, (result) => {
+                        clearTimeout(timeoutId);
+                        resolve(result);
+                    });
+                });
+
+                if (pingResult) {
+                    telemetry.tcf_visible = (pingResult.displayStatus === "visible");
+                    telemetry.tcf_hidden = (pingResult.displayStatus === "hidden")
+                } else {
+                    telemetry.error = "API timeout";
+                }
+            } catch (err) {
+                telemetry.error = "API error: " + err.message;
+            }
+        }
+
+        function checkOverlay() {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const elementsAtCenter = document.elementsFromPoint(centerX, centerY); //should be sorted starting with the highest z-index
+            
+            if (elementsAtCenter.length > 0) {
+                const topElement = elementsAtCenter[0];
+
+                if (topElement !== document.body && topElement !== document.documentElement) {
+                    const style = window.getComputedStyle(topElement);
+                    const rect = topElement.getBoundingClientRect();
+                    
+                    const isFullOverlay = 
+                        (style.position === "fixed" || style.position === "absolute") &&
+                        rect.width >= window.innerWidth * 0.5 &&
+                        rect.height >= window.innerHeight * 0.5;
+                    const zIndex = parseInt(style.zIndex) || 0;
+
+                    telemetry.overlay_blocking = isFullOverlay && zIndex > 10;
+                }
+            }
+        }
+
+        checkOverlay();
+        return telemetry;
+    });
+}
 
 
-//THANK YOU JANUS FOR THE HELP!!! 
+//THANK YOU JANUS FOR THE HELP!!!
 
 const puppeteer = require("puppeteer");
 const fs = require("fs");
@@ -309,8 +583,13 @@ async function runTest(ruleset) {
 
         const waitResult = await waitForCmpUI(page, CMP_SELECTORS_MAP);
 
-        //inject CoM engine globally into the page
-        await page.addScriptTag({ content: comSource });
+        const baselineTcfAndOverlay = await evaluatePageState(page);
+        const baselineHeuristic = await scanAllFramesForBanner(page);
+
+        const baselineState = {
+            ...baselineTcfAndOverlay,
+            heuristic_banner_found: baselineHeuristic
+        };
 
         //run the test with the ruleset
         let result = await runEngineInFrame(page.mainFrame(), ruleset);
@@ -341,6 +620,16 @@ async function runTest(ruleset) {
             }
         }
 
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        const auditTcfAndOverlay = await evaluatePageState(page);
+        const auditHeuristic = await scanAllFramesForBanner(page);
+
+        const auditState = {
+            ...auditTcfAndOverlay,
+            heuristic_banner_found: auditHeuristic
+        };
+
         let finalError = result.error ? "Execution error in Consent-O-Matic." : null;
         if (engineErrors.length > 0) {
             finalError = engineErrors.join(" | ");
@@ -352,7 +641,11 @@ async function runTest(ruleset) {
             handled: result.handled, 
             cmpName: result.cmpName || null, 
             clicks: result.clicks || 0, 
-            error: finalError 
+            error: finalError,
+            telemetry: {
+                baseline: baselineState,
+                audit: auditState
+            }
         }));
 
     } catch (err) {

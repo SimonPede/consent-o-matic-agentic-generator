@@ -1148,7 +1148,7 @@ async function findCorrectFrame(page, selectorMap) {
                     iFrameBonus += 10; //TODO: evaluate
                 }
 
-                if (frameInfo.inViewport) {
+                if (!frameInfo.inViewport) {
                     iFrameBonus -= 30; //TODO: evaluate
                 }
             }
