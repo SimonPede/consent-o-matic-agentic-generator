@@ -5,16 +5,6 @@ def _load(filename):
     path = os.path.join(os.path.dirname(__file__), "examples", filename)
     with open(path, "r", encoding = "utf-8") as f:
         return json.load(f)
-    
-#DEBUG: 
-# dom = _load("cookiebot_dom.json")
-# print("=== Frame-level keys ===")
-# print(list(dom[0].keys()))
-# print("\n=== data-level keys ===")
-# print(list(dom[0]["data"].keys()))
-# print("\n=== erster Button keys ===")
-# if dom[0]["data"]["buttons"]:
-#     print(list(dom[0]["data"]["buttons"][0].keys()))
 
 def _format(title, dom, ruleset, include_filtered_html = False):
     return f"""
@@ -99,6 +89,49 @@ def _slim_toggles(toggles):
         "isDisabled": t["isDisabled"]
     } for t in toggles]
     
+#these result in too much tokens for LiteLLM
+# FEW_SHOT_EXAMPLES = (
+#     _format(
+#         "Cookiebot CMP (cookiebot.com)",
+#         _load("cookiebot_dom.json"),
+#         _load("cookiebot_ruleset.json"),
+#         include_filtered_html = False
+#     ) +
+#     _format(
+#         "Swedbank, custom banner (swedbank.com)",
+#         _load("swedbank_dom.json"),
+#         _load("swedbank_ruleset.json"),
+#         include_filtered_html = True
+#     ) +
+#     _format(
+#         "Sourcepoint CMP with Buttons (heise.de style)",
+#         _load("sourcepoint_mock_dom.json"),
+#         _load("sourcepoint_mock_ruleset.json"),
+#         include_filtered_html = True
+#     )
+# )
+
+# FEW_SHOT_EXAMPLES = (
+#     _format(
+#         "Cookiebot CMP (cookiebot.com)",
+#         _load("cookiebot_dom.json"),
+#         _load("cookiebot_ruleset.json"),
+#         include_filtered_html = False
+#     ) +
+#     _format(
+#         "Swedbank, custom banner (swedbank.com)",
+#         _load("swedbank_dom.json"),
+#         _load("swedbank_ruleset.json"),
+#         include_filtered_html = False
+#     ) +
+#     _format(
+#         "Sourcepoint CMP with Buttons (heise.de style)",
+#         _load("sourcepoint_mock_dom.json"),
+#         _load("sourcepoint_mock_ruleset.json"),
+#         include_filtered_html = True
+#     )
+# )
+
 FEW_SHOT_EXAMPLES = (
     _format(
         "Cookiebot CMP (cookiebot.com)",
@@ -107,9 +140,9 @@ FEW_SHOT_EXAMPLES = (
         include_filtered_html = False
     ) +
     _format(
-        "Swedbank, custom banner (swedbank.com)",
-        _load("swedbank_dom.json"),
-        _load("swedbank_ruleset.json"),
+        "Sourcepoint CMP with Buttons",
+        _load("sourcepoint_mock_dom.json"),
+        _load("sourcepoint_mock_ruleset.json"),
         include_filtered_html = True
     )
 )

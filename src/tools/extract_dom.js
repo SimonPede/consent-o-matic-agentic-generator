@@ -4,7 +4,8 @@ const fs = require("fs");
 //utils imports
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
-const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
+//const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
+const SETTINGS_PATTERN = require("../utils/settingsButtons_terms Consent Observatory");
 const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
 const N_GRAM_DATA = require("../utils/ngram_data");
 const CMP_REGEX = require("../utils/cmp_regex");
@@ -14,7 +15,7 @@ const TRIGGER_WORDS = require("../utils/trigger_words");
 // ---------------
 // IMPORTANT!!!!
 // for get a quicker understanding what the logic of this file is
-// please look in the root because i addeded 020526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
+// please look in the root because i addeded 250526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
 // ----------------
 
 
@@ -60,6 +61,22 @@ function cleanHtml(html) {
 //after:  settings-subpage "9845",first banner page "7937"
 //--> reduction of around 50%
 
+
+/**
+ * Normalizes button text for robust matching.
+ * Removes accents, spaces, and punctuation, converting everything to lowercase.
+ * Example: "Cookie-Einstellungen verwalten!" -> "cookieeinstellungenverwalten"
+ * 
+ * @param {string} text - text string to normalize
+ */
+function normalizeText(text) {
+    if (!text) return "";
+    return text.normalize("NFKD")
+                .replace(/[\u0300-\u036f]/g, "") //löscht die "fliegenden" Akzente
+                .replace(/[^a-z0-9]/gi, "")      //deletes everything except a-z & 0-9 (inkl. whitespaces)
+                .toLowerCase();
+}
+
 /**
  * LLM-based fallback for settings button detection.
  * Called when SETTINGS_PATTERN regex fails to identify a settings button.
@@ -77,7 +94,7 @@ async function findSettingsButtonViaLLM(html) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OLLAMA_API_KEY}`
+                "Authorization": `Bearer ${OLLAMA_BEARER_TOKEN}`
             },
             body: JSON.stringify({
                 model: "gemma4:latest",
@@ -1050,7 +1067,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             if (hasFixedHighZ) {
                 localScore += 15; //TODO: evaluate bonus!
             }
-            if (topLevelCount > 1) {
+            if (topLevelCount) {
                 localScore += 5; //TODO: evaluate bonus!
             }
 
@@ -1131,7 +1148,7 @@ async function findCorrectFrame(page, selectorMap) {
                     iFrameBonus += 10; //TODO: evaluate
                 }
 
-                if (frameInfo.inViewport) {
+                if (!frameInfo.inViewport) {
                     iFrameBonus -= 30; //TODO: evaluate
                 }
             }
@@ -1259,12 +1276,12 @@ async function getFrameState(frame) {
  * 3. No significant change detected: returns null (click had no effect).
  * 
  * @param {Frame} frame - Puppeteer frame containing the settings button
- * @param {string} settingsButtonOrSelector - button object found by Regex or the LLM (supports >>> for Shadow DOM)
+ * @param {string} settingsButton - button object found by Regex or the LLM (supports >>> for Shadow DOM)
  * @param {Page} page - Puppeteer page instance (needed to detect new frames)
  * @param {string|null} cmpType - detected CMP name, propagated to extraction result
  * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
  */
-async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cmpType) {
+async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
     //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
     //two options: extract from all frames again
     //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
@@ -1275,8 +1292,14 @@ async function clickAndExtractSettings(frame, settingsButtonOrSelector, page, cm
     const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
     const oldState = await getFrameState(frame);
 
-    const selector = settingsButtonOrSelector.selector;
-    const textToMatch = settingsButtonOrSelector.text;
+    const selector = settingsButton.selector ? settingsButton.selector : "";
+    const textToMatch = settingsButton.text ? settingsButton.text : "";
+
+    if (selector === "") {
+        console.error(`clickAndExtractSettings did not get a selector for the settings button!`)
+    } else if (textToMatch === "") {
+        console.error(`clickAndExtractSettings did not get a text for the settings button!`)
+    }
 
     console.error(`settings click target - selector: ${selector}, textMatch: ${textToMatch}`);
 
@@ -1656,9 +1679,21 @@ async function extractStructuredDom(url) {
         for (const result of results) {
 
             if (!settingsExtracted) {
-                //i prioritize buttons, only search for anker-elements if no matching button was found
-                const settingsButton = result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "BUTTON") ||
-                    result.data.buttons.find(btn => SETTINGS_PATTERN.test(btn.text) && btn.tag === "A");
+                for (const btn of result.data.buttons) {
+                    if (btn.tag === "BUTTON" || btn.tag === "A") {
+                        const normalizedBtnText = normalizeText(btn.text);
+
+                        //Max length 30 chars: real settings button labels are short.
+                        //Prevents false positives on long IAB purpose descriptions
+                        //(e.g. "storing or accessing information on an end device")
+                        //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
+                        if (SETTINGS_PATTERN.test(normalizedBtnText) && normalizedBtnText.length < 30) {
+                            console.error(`Settings match: "${btn.text}" → normalized: "${normalizedBtnText}"`);
+                            settingsButton = btn;
+                            break;
+                        }
+                    }
+                }
                 
                 if (settingsButton) {
                     result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
@@ -1732,62 +1767,12 @@ async function extractStructuredDom(url) {
         }
         console.error("========================================\n");
 
-
-        // const sizeAnalysis = results.map(result => {
-        //     const d = result.data;
-            
-        //     const buttonsJson = JSON.stringify(d.buttons || []);
-        //     const checkboxesJson = JSON.stringify(d.checkboxes || []);
-        //     const togglesJson = JSON.stringify(d.toggles || []);
-        //     const htmlSize = (d.filteredHtml || d.html || "").length;
-
-        //     const buttonBreakdown = (d.buttons || []).slice(0, 3).map(btn => ({
-        //         selector: btn.selector,
-        //         textSize: JSON.stringify(btn.text || "").length,
-        //         attributesSize: JSON.stringify(btn.attributes || {}).length,
-        //         parentInfoSize: JSON.stringify(btn.parentInfo || {}).length,
-        //         selectorSize: JSON.stringify(btn.selector || "").length,
-        //         totalSize: JSON.stringify(btn).length,
-        //     }));
-
-        //     const html = d.filteredHtml || d.html || "";
-        //     const lines = html.split("\n").length;
-        //     const firstChars = html.substring(0, 500);
-        //     const lastChars = html.substring(html.length - 500);
-
-        //     console.error("filteredHtml erste 500 Zeichen:");
-        //     console.error(firstChars);
-        //     console.error("\nfilteredHtml letzte 500 Zeichen:");
-        //     console.error(lastChars);
-        //     console.error(`\nZeilen gesamt: ${lines}`);
-
-        //     return {
-        //         frameUrl: result.frameUrl,
-        //         isCookieFrame: result.isCookieBannerFrame,
-        //         cmpFound: d.cmpFound,
-        //         sizes: {
-        //             buttons_total: buttonsJson.length,
-        //             checkboxes_total: checkboxesJson.length,
-        //             toggles_total: togglesJson.length,
-        //             filteredHtml: htmlSize,
-        //             GESAMT: buttonsJson.length + checkboxesJson.length + 
-        //                     togglesJson.length + htmlSize,
-        //         },
-        //         buttonBreakdown,
-        //     };
-        // });
-
-        // console.error("\n========== SIZE ANALYSIS ==========");
-        // console.error(JSON.stringify(sizeAnalysis, null, 2));
-        // console.error("====================================\n");
-
-
         fs.writeFileSync("extraction_debug.json", JSON.stringify(results, null, 2));
         console.error("Output was stored in extraction_debug.json.");
         await browser.close();
         console.error("browser closed!");
 
-        // console.log(JSON.stringify(results)) //for sending it to the python code
+        console.log(JSON.stringify(results)) //for sending it to the python code
         return results;
     } catch (error) {
         console.error("extractStructuredDom failed:", error.message);
@@ -1798,26 +1783,26 @@ async function extractStructuredDom(url) {
     
 };
 
-// (async () => {
-//     const url = process.argv[2];
-//     if (!url) {
-//         console.error("No URL provided");
-//         process.exit(1);
-//     }
-//     const foundData = await extractStructuredDom(url);
-//     if (foundData) {
-//         console.error("foundData was filled with a value");
-//     }
-// })();
-
-
-//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 (async () => {
-    const foundData = await extractStructuredDom("https://www.affinity.com/");
+    const url = process.argv[2];
+    if (!url) {
+        console.error("No URL provided");
+        process.exit(1);
+    }
+    const foundData = await extractStructuredDom(url);
     if (foundData) {
         console.error("foundData was filled with a value");
     }
 })();
+
+
+//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
+// (async () => {
+//     const foundData = await extractStructuredDom("https://www.affinity.com/");
+//     if (foundData) {
+//         console.error("foundData was filled with a value");
+//     }
+// })();
 
 //https://usercentrics.com
 //https://zalando.de

@@ -16,7 +16,8 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 - **Reasoning:** Iterative logic to identify selectors and map consent categories.
 - **Action:** Generation of schema-compliant JSON rulesets.
 - **Self-Correction:** Automated browser testing to verify ruleset functionality.
-- **Human-in-the-Loop:** Console-based feedback mechanism for cases where automated
+- **Human-in-the-Loop:** Console-based feedback mechanism for cases where automated generation fails after 20 tries
+   or the LLM decides it needs human support
 
 ## Tech Stack
 
@@ -41,6 +42,7 @@ consent-o-matic-agentic-generator/
 │   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
+│   │   └── consent-engine/      # source code of the CoM-Engine used for the test_ruleset node in Langgraph
 │   └── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
 ├── main.py                      # Entry point
 ├── requirements.txt
@@ -76,16 +78,19 @@ consent-o-matic-agentic-generator/
 4. **Configuration**
    Create a `.env` file in the root directory:
    ```bash
-    OLLAMA_URL = http://snet-server:1234
-    OLLAMA_TOKEN = dein-token-hier
+    OLLAMA_BASE_URL = http://snet-server:1234
+    OLLAMA_BEARER_TOKEN = your-toke-here
    ```
 
 ## Usage
    ```bash
-   python main.py https://www.example.com
+   python main.py https://www.example.com --fresh
    ```
 
 ## Acknowledgements
 This project is developed in cooperation with the Consent-O-Matic team at Aarhus University 
 and supervised by Thomas Franklin Cory at the Service-centric Networking (SNET) research 
 group, TU Berlin.
+
+## License
+This project is licensed under the MIT license, but some utility components in src/utils/ are derived from the Consent Observatory project and are licensed under the Mozilla Public License 2.0.

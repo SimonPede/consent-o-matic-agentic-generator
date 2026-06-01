@@ -1,0 +1,70 @@
+{
+    "Sourcepoint": {
+        "detectors": [
+            {
+                "presentMatcher": [{
+                    "type": "css",
+                    "target": { "selector": ".message-container" }
+                }],
+                "showingMatcher": [{
+                    "type": "css",
+                    "target": { "selector": ".message-container", "displayFilter": true }
+                }]
+            }
+        ],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "click",
+                    "target": { "selector": "[aria-label=\"Settings\"]" }
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "F",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": { "selector": "h2", "textFilter": "Personalised advertising" }
+                                    }
+                                },
+                                "target": { "selector": "button", "textFilter": "Agree" }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": { "selector": "h2", "textFilter": "Personalised advertising" }
+                                    }
+                                },
+                                "target": { "selector": "button", "textFilter": "Reject" }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": {
+                    "type": "click",
+                    "target": { "selector": "[aria-label=\"Agree to selected\"]" }
+                }
+            },
+            {
+                "name": "HIDE_CMP",
+                "action": {
+                    "type": "hide",
+                    "target": { "selector": ".message-container" }
+                }
+            }
+        ]
+    }
+}

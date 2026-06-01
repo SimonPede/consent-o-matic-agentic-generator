@@ -50,7 +50,7 @@ def extraction_node(state: AgentState) -> dict:
     else:
         return {
             "last_error": "extraction_node: extract_dom.js returned empty result",
-            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script detected and was blocked")]
+            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked")]
         }
 
 def make_llm_node(model_with_tools):
@@ -160,6 +160,7 @@ def ruleset_output_node(state: AgentState) -> dict:
         "last_error": "No ruleset found in agent messages",
         "messages": [HumanMessage(content = (
             "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
-            "Please output your final ruleset now, wrapped in <ruleset></ruleset> tags."
+            "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
+            "Do NOT output <ruleset> tags until the tool returns 'handled': true."
         ))]
     }

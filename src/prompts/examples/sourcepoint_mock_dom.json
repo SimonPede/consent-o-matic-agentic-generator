@@ -1,0 +1,69 @@
+[
+	{
+		"frameUrl": "https://cmp.example.com",
+		"isMainFrame": false,
+		"isCookieBannerFrame": true,
+		"cmpType": "Sourcepoint",
+		"data": {
+		"buttons": [
+			{
+			"type": "button",
+			"text": "Settings",
+			"tag": "BUTTON",
+			"parentInfo": { "tag": "DIV" },
+			"attributes": { "aria-label": "Settings" },
+			"selector": "[aria-label=\"Settings\"]",
+			"selectorConfidence": "high",
+			"isDisabled": false
+			}
+		],
+		"checkboxes": [],
+		"toggles": [],
+		"cmpFound": true,
+		"cmpSelector": ".message-container",
+		"cmpType": "Sourcepoint",
+		"url": "https://cmp.example.com"
+		},
+		"settings": {
+		"buttons": [
+			{
+			"type": "button",
+			"text": "Agree",
+			"tag": "BUTTON",
+			"parentInfo": { "tag": "DIV", "grandparent": { "tag": "DIV", "className": "stack-row" } },
+			"attributes": { "aria-label": "Agree" },
+			"selector": ".btn-agree",
+			"selectorConfidence": "low",
+			"isDisabled": false
+			},
+			{
+			"type": "button",
+			"text": "Reject",
+			"tag": "BUTTON",
+			"parentInfo": { "tag": "DIV", "grandparent": { "tag": "DIV", "className": "stack-row" } },
+			"attributes": { "aria-label": "Reject" },
+			"selector": ".btn-reject",
+			"selectorConfidence": "low",
+			"isDisabled": false
+			},
+			{
+			"type": "button",
+			"text": "Agree to selected",
+			"tag": "BUTTON",
+			"parentInfo": { "tag": "DIV" },
+			"attributes": { "aria-label": "Agree to selected" },
+			"selector": "[aria-label=\"Agree to selected\"]",
+			"selectorConfidence": "high",
+			"isDisabled": false
+			}
+		],
+		"checkboxes": [],
+		"toggles": [],
+		"cmpFound": true,
+		"cmpSelector": ".message-container",
+		"cmpType": "Sourcepoint",
+		"url": "https://cmp.example.com",
+		"filteredHtml": "<div class=\"message-container\"><div class=\"stack-row\"><h2>Personalised advertising</h2><button class=\"btn-agree\">Agree</button><button class=\"btn-reject\">Reject</button></div></div>"
+		}
+	}
+]
