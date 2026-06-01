@@ -629,10 +629,14 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
 - Cookie banners sometimes use colloquial or non-standard button labels instead of explicit "Accept"/"Reject" wording.
     When matching buttons via textFilter, consider informal variants such as "I am ok", "Sounds good", "That's fine", "Got it", "I agree", "Sure", or "No thanks".
     Do not rely solely on explicit consent vocabulary
-- If you cannot find a clear match for a consent category, 
+- If you cannot find a clear match for a consent category,
     use category X (Other Purposes) rather than guessing
-- If the banner structure is ambiguous, state this explicitly 
+- If the banner structure is ambiguous, state this explicitly
     in your ANALYSIS before attempting a ruleset
+- NEVER translate any text found in the DOM when using it in a rule
+    (e.g. as a textFilter value). Use the exact string as it appears,
+    even if this results in mixed languages within the same ruleset.
+    Translation makes rules non-deterministic and breaks debuggability.
 - Less is more: if you are unsure whether an element is part of
     the banner, leave it out rather than including it speculatively
 - Some categories are marked as required (e.g. '(consent required)' or '(Zustimmung erforderlich)').
