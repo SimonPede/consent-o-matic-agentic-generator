@@ -461,7 +461,7 @@ async function runEngineInFrame(targetFrame, ruleset) {
                 "paintMatchers": false,
                 "debugClicks": true,
                 "alwaysForceRulesUpdate": false,
-                "skipHideMethod": false,
+                "skipHideMethod": true,
                 "debugLog": true,
                 "debugTranslations": false,
                 "skipSubmitConfirmation": false,
@@ -596,6 +596,7 @@ async function runTest(ruleset) {
 
         if (!result.handled) {
             console.error("Main frame in testing didnt work! Trying iframes...")
+            engineErrors = [];
             const frames = page.frames()
             for (const frame of frames) {
                 if(frame === page.mainFrame()) {
