@@ -104,6 +104,15 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
  *   instead of match array; added Shadow DOM traversal; added null-check on attributes
  * - word corpus (triggers array): extracted from WordBoxGatherer corpus,
  *   triggers only, antiTriggers omitted, simplified to array
+ * 
+ * Searches for cookie consent indicators in the page using two strategies:
+ * - findAnchors: walks the DOM (incl. Shadow DOM) looking for fixed/high-z-index
+ *   layout wrappers that likely represent overlay banners
+ * - findWords: recursively checks text nodes and attributes within each anchor
+ *   against a multilingual trigger word list (DE, EN, FR ...)
+ * Returns true if any anchor contains a trigger word match, false otherwise.
+ *
+ * @param {import('puppeteer').Frame} frame - Puppeteer frame instance
  */
 async function frameHasBanner(frame) {
     //this is copied/extracted by hand from https://github.com/cavi-au/consent-observatory.eu/blob/master/rules/Gatherers/WordBoxGatherer.js
@@ -381,7 +390,7 @@ const path = require("path");
 //     process.exit(1);
 // }
 
-//files in dependency order - Tools first, ConsentEngine last
+//files in dependency order
 const COM_DIR = path.join(__dirname, "consent-engine");
 const COM_FILES = [
     "Tools.js",
@@ -395,8 +404,9 @@ const COM_FILES = [
 
 /**
  * Reads, bundles, and patches the Consent-O-Matic (CoM) source files.
- * Transforms the ES6 modules into a single, globally executable script
+ * Transforms the modules into a single, globally executable script
  * and injects custom error logging for automated LLM testing.
+ * I need to change this dynamic injection! Its funny, but not good
  */
 function buildCoMSource() {
     return COM_FILES.map((file) => {
@@ -485,25 +495,28 @@ async function runEngineInFrame(targetFrame, ruleset) {
 
 /**
  * ERROR HANDLING PIPELINE FOR CONSENT-O-MATIC ENGINE
- * The injected LLM rulesets pass through 3 distinct failure phases.
- * * --- PHASE 1: PARSING & STRUCTURE (Initialization) ---
- * Trigger: Console Error containing "Invalid CMP"
- * Cause: Fundamental JSON syntax error, missing mandatory fields in matchers, 
- * or unsupported action types. The CMP class fails to instantiate.
- * Catch: Listen via page.on('console').
- * * --- PHASE 2: DETECTION (Matcher Phase) ---
- * Trigger: Callback Payload { handled: false }
- * Causes based on Console Logs:
- * - "No CMP detected in 5 seconds...": presentMatcher failed (selector not in DOM).
- * - "[CMP Name] - Not showing": presentMatcher succeeded, but showingMatcher failed (element hidden).
- * - "Found multiple CMPS's...": Matchers are too generic (e.g., just matching 'div').
- * * --- PHASE 3: EXECUTION (DO_CONSENT & Interaction Phase) ---
- * Trigger: Callback Payload { handled: false, error: true } or 0 clicks.
- * Causes based on Console Logs:
- * - "Error during consent handling: [Error]": Ruleset crashed during execution 
- * (e.g., click target doesn't exist, waitcss timeout, infinite loop).
- * - "Consent-O-Matic click count was 0...": Engine ran without crashing, but 
- * no DOM interactions occurred (target selectors missed).
+ * Injected LLM rulesets can fail at 3 distinct phases.
+ *
+ * --- PHASE 1: PARSING & STRUCTURE
+ * Trigger: Console error containing "Invalid CMP"
+ * Cause: JSON syntax error, missing mandatory fields in matchers,
+ * or unsupported action type. CMP class fails to instantiate.
+ * Catch: page.on('console')
+ *
+ * PHASE 2: DETECTION
+ * Trigger: Callback payload { handled: false }
+ * Causes (based on console logs):
+ * - "No CMP detected in 5 seconds...": presentMatcher failed (selector not in DOM)
+ * - "[CMP Name] - Not showing": presentMatcher ok, showingMatcher failed (element hidden)
+ * - "Found multiple CMPs...": matchers too generic (e.g. bare 'div')
+ *
+ * PHASE 3: EXECUTION
+ * Trigger: Callback payload { handled: false, error: true } or 0 clicks
+ * Causes (based on console logs):
+ * - "Error during consent handling: [Error]": crash during execution
+ *   (click target missing, waitcss timeout, infinite loop)
+ * - "Consent-O-Matic click count was 0...": engine ran without crashing
+ *   but no DOM interactions occurred (selectors missed)
  */
 async function runTest(ruleset) {
 	console.error("Starting CoM Test Engine...");

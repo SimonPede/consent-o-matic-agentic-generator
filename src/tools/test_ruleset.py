@@ -110,7 +110,7 @@ def test_ruleset(url: str, json_string: str) -> str:
         return json.dumps({"handled": False, "error": str(e)})
     
     
-#for my orientation what I still plan to implement
+#for my orientation what I still plan to implement or wanted in the past
     # """
     # Tests the generated Consent-O-Matic ruleset on the live website by 
     # injecting the CoM engine and executing the defined methods. Use this 
