@@ -13,7 +13,7 @@ llm = ChatLiteLLM(
     api_base = os.getenv("LITELLM_BASE_URL"),
     api_key = os.getenv("LITELLM_API_KEY"),
     temperature = 0,
-    max_tokens = 13384,
+    max_tokens = 5000,
     #seems to have no effect:
     # thinking=True,
     # reasoning = True

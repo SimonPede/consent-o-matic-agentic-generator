@@ -104,8 +104,12 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
  *   revoke buttons (e.g. the fingerprint buttons used by usercentrics.com)
  * - findWords: takes pre-built regex instead of corpus object; returns boolean
  *   instead of match array; added Shadow DOM traversal; added null-check on attributes;
+ *   added my own antiTriggers array: anchors containing post-consent success messages
+ *   (e.g. "preferences were saved") are excluded to prevent false positives
+ *   from CMPs that replace the banner content with a confirmation message
+ *   instead of removing the container (e.g. swedbank.com)
  * - word corpus (triggers array): extracted from WordBoxGatherer corpus,
- *   triggers only, antiTriggers omitted, simplified to array
+ *   triggers only, antiTriggers omitted, simplified to array;
  * 
  * Searches for cookie consent indicators in the page using two strategies:
  * - findAnchors: walks the DOM (incl. Shadow DOM) looking for fixed/high-z-index
@@ -207,8 +211,16 @@ async function frameHasBanner(frame) {
         "acceptera", "godkänn", "kakor"
     ];
 
+    //i defined these myself based on own limited testing
+    const antiTriggers = [
+        "preferences were saved",
+        "successfully saved",
+        "cookie-success",
+        "erfolgreich gespeichert"
+    ];
+
     try {
-        return await frame.evaluate((triggers) => {
+        return await frame.evaluate((triggers, antiTriggers) => {
             //Midas's Anchor Search: Find layout wrappers (including Shadow DOM) (modified)
             function findAnchors(currentElement) {
                 if (!currentElement) {
@@ -247,7 +259,7 @@ async function frameHasBanner(frame) {
             }
 
             //Midas's Word Search: Recursive search in text-nodes and attributes (modified)
-            function findWords(currentElement, regex) {
+            function findWords(currentElement, triggerRegex, antiTriggerRegex) {
                 //ignore parts of page invisible to the user (Midas's original logic)
                 if (currentElement.getClientRects().length === 0) {
                     return false;
@@ -266,18 +278,22 @@ async function frameHasBanner(frame) {
                     }
                 }
 
-                const matches = comparisonText.match(regex) || [];
+                if (antiTriggerRegex.test(comparisonText)) {
+                    return false; 
+                }
+
+                const matches = comparisonText.match(triggerRegex) || [];
                 if (matches.length > 0) {
                     return true;
                 }
 
                 for (let i = 0; i < currentElement.children.length; i++) {
-                    if (findWords(currentElement.children[i], regex)) return true;
+                    if (findWords(currentElement.children[i], triggerRegex, antiTriggerRegex)) return true;
                 }
                 
                 if (currentElement.shadowRoot) {
                     for (let i = 0; i < currentElement.shadowRoot.children.length; i++) {
-                        if (findWords(currentElement.shadowRoot.children[i], regex)) return true;
+                        if (findWords(currentElement.shadowRoot.children[i], triggerRegex, antiTriggerRegex)) return true;
                     }
                 }
                 
@@ -290,13 +306,15 @@ async function frameHasBanner(frame) {
                 "mgi"
             );
 
+            const antiTriggerRegex = new RegExp(antiTriggers.join("|"), "i");
+
             for (const anchor of anchors) {
-                if (findWords(anchor, triggerRegex)) {
+                if (findWords(anchor, triggerRegex, antiTriggerRegex)) {
                     return true;
                 }
             }
             return false;
-        }, triggers);
+        }, triggers, antiTriggers);
     } catch (err) {
         return false;
     }
@@ -481,7 +499,7 @@ async function runEngineInFrame(targetFrame, ruleset) {
                 // debugLog: false,
                 // skipSubmitConfirmation: false,
                 // dontHideProgressDialog: true,
-                "clickDelay": false,
+                "clickDelay": true,
                 "skipSubmit": false, //or is true better for testing if save button click works?!
                 "paintMatchers": false,
                 "debugClicks": true,
@@ -490,7 +508,7 @@ async function runEngineInFrame(targetFrame, ruleset) {
                 "debugLog": true,
                 "debugTranslations": false,
                 "skipSubmitConfirmation": false,
-                "dontHideProgressDialog": false
+                "dontHideProgressDialog": true
             };
 
             ConsentEngine.singleton = new ConsentEngine(ruleConfig, {
@@ -550,6 +568,13 @@ async function runTest(ruleset) {
 			"--lang=en-US,en"
 		]
 	});
+    //when it seems helpful to see what puppeteer does use this browser config:
+    // const browser = await puppeteer.launch({
+    //     headless: false,
+    //     slowMo: 1000,
+    //     defaultViewport: null,
+    //     args: ['--start-maximized']
+    // });
     const page = await browser.newPage();
 
 	await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
