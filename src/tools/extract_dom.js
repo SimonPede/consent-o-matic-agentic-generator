@@ -832,7 +832,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
     if (result.html) {
         const cleaned = cleanHtml(result.html);
-        result.filteredHtml = cleaned.slice(0, 200000);
+        result.filteredHtml = cleaned.slice(0, 100000);
         delete result.html;
     }
 
@@ -1689,6 +1689,18 @@ async function extractStructuredDom(url) {
                         //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
                         if (SETTINGS_PATTERN.test(normalizedBtnText) && normalizedBtnText.length < 30) {
                             console.error(`Settings match: "${btn.text}" → normalized: "${normalizedBtnText}"`);
+                            
+                            const href = (btn.attributes && btn.attributes.href) ? btn.attributes.href.toLowerCase() : "";;
+                            const isRealNavigation = 
+                                href.startsWith("http") || 
+                                href.includes("policy") || 
+                                href.includes("privacy")
+                            
+                            if (isRealNavigation) {
+                                console.error("Settings Match dismissed!")
+                                continue;
+                            }
+
                             settingsButton = btn;
                             break;
                         }
@@ -1798,7 +1810,7 @@ async function extractStructuredDom(url) {
 
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 // (async () => {
-//     const foundData = await extractStructuredDom("https://www.affinity.com/");
+//     const foundData = await extractStructuredDom("https://www.transavia.com/");
 //     if (foundData) {
 //         console.error("foundData was filled with a value");
 //     }
