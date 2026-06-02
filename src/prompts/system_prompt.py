@@ -161,11 +161,6 @@ Note: Note: The structured elements list may contain elements not visible in fil
 (e.g. Shadow DOM elements, or elements removed by negative filtering of nav/script/img/svg).
 If a selector from the structured list cannot be found in filteredHtml, it may still be valid.
 
-Note: Some CMPs dynamically change button labels or visibility based on user interaction 
-(e.g. "Decline All" becomes "Save Settings" after toggling a category).
-Look for hidden elements in the DOM that share similar IDs or containers as visible buttons
-(e.g. #updateButton, #saveButton, .save-consent-btn). These may become relevant after DO_CONSENT runs.
-
 A ruleset is successful when the cookie banner disappears after
 execution and all consent categories are correctly mapped.
 
@@ -701,6 +696,12 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     use the settings-view selectors for DO_CONSENT and SAVE_CONSENT.
     When in doubt: prefer selectors with "level", "preference", "settings", or 
     "detail" in their ID/class over top-level banner container selectors.
+- Hidden Save Buttons (CRITICAL): Some CMPs hide the actual "Save settings" button 
+    (e.g. display:none) until the user interacts with DO_CONSENT. These buttons often 
+    have IDs like #updateButton, #saveButton, or classes like .save-consent-btn.
+    If you find such a hidden button in the structured output (isDisabled: true or 
+    display:none in attributes), you MUST use it for SAVE_CONSENT — NOT the 
+    "Accept all" button.
 - For use CSS comma syntax to include fallbacks when the banner 
     has multiple possible selectors for one element such as the SAVE_CONSENT Banner (e.g. one on the main banner, one on the 
     settings page): "#saveBtn, #confirmBtn". Only do this when you can identify 
@@ -800,7 +801,17 @@ RULESET:
 ## Reminder
 
 - Complete all 5 analysis steps before generating JSON
-
+- Coverage Check (MANDATORY): After drafting your ruleset, count the number of 
+    interactive elements (buttons, checkboxes, toggles) in the structured output 
+    and verify that each one is either mapped to a consent category in DO_CONSENT 
+    or explicitly excluded with a reason in your ANALYSIS. If any element is 
+    unaccounted for, revise your ruleset before calling test_ruleset.
+- CRITICAL SAVE_CONSENT Anti-Pattern: NEVER use an "Accept All" or "Allow All" button as the target for SAVE_CONSENT.
+    WHY: Clicking "Accept All" automatically overwrites and destroys all granular choices the engine just made in DO_CONSENT.
+- Dynamic save buttons (The "Decline" Fallback): If a dedicated "Save Preferences" button could not be found by you, not even a hidden one,
+    you MUST use the selector of the "Decline All" or "Reject All" button for SAVE_CONSENT.
+    WHY: In many modern CMPs, as soon as a user toggles a consent category in DO_CONSENT, the SPA dynamically transforms
+    the existing "Decline All" button into the "Save Settings" button. Therefore, the "Decline All" selector is the mathematically correct fallback for saving.
 """
 
 
