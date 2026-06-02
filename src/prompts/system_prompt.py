@@ -705,6 +705,12 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     has multiple possible selectors for one element such as the SAVE_CONSENT Banner (e.g. one on the main banner, one on the 
     settings page): "#saveBtn, #confirmBtn". Only do this when you can identify 
     two distinct save buttons in the DOM - do not guess selectors.
+- CRITICAL: If any element selector contains `>>>` (Shadow DOM syntax), you MUST use 
+    the parent/target structure in your ruleset. There is NO alternative — direct selectors 
+    cannot pierce Shadow DOM in CoM's engine. If you find yourself writing a direct selector 
+    for an element that had `>>>` in the extraction, STOP and rewrite it using parent/target.
+    Additionally, do NOT use `displayFilter: true` on showingMatcher for Shadow DOM host 
+elements — the host may not pass display checks even when the banner is visually present.
 - Do not generate a ruleset if no cookie banner is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULESET field
@@ -715,24 +721,31 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
 You must map the JSON structure strictly to the HTML tag of the UI element.
 
 CRITICAL ANTI-PATTERN - DO NOT DO THIS:
-❌ BAD: Using `matcher` or `toggleAction` when targeting a `<button>` or `<a>`.
+❌ BAD: Using the "checkbox" matcher on ANYTHING other than an actual `<input type="checkbox">`.
 {
     "type": "F",
-    "matcher": { "type": "checkbox", "target": {"selector": "button"} } // FATAL ERROR: Buttons are not checkboxes!
+    "matcher": { "type": "checkbox", "target": {"selector": "button[role='switch']"} } // FATAL ERROR: Buttons/divs do not have a HTML .checked property! CoM will fail.
 }
 
-✅ GOOD: Using `trueAction` and `falseAction` for `<button>` or `<a>`.
-{
-    "type": "F",
-    "trueAction": { "type": "click", "target": {"selector": "button.accept"} },
-    "falseAction": { "type": "click", "target": {"selector": "button.reject"} }
-}
-
-✅ GOOD: Using `matcher` and `toggleAction` ONLY for `<input>` or `[role="switch"]`.
+✅ GOOD: For custom toggles (`<button>`, `<div>`, `[role="switch"]`), you MUST use a "css" matcher targeting the active state (e.g., `aria-checked="true"` or `.active`) combined with a toggleAction.
 {
     "type": "A",
-    "matcher": { "type": "checkbox", "target": {"selector": "input.functional"} },
-    "toggleAction": { "type": "click", "target": {"selector": "input.functional"} }
+    "matcher": { "type": "css", "target": {"selector": "#uc-category-functional-toggle[aria-checked='true']"} },
+    "toggleAction": { "type": "click", "target": {"selector": "#uc-category-functional-toggle"} }
+}
+
+✅ GOOD: For native checkboxes (`<input type="checkbox">`), use the "checkbox" matcher combined with a toggleAction.
+{
+    "type": "B",
+    "matcher": { "type": "checkbox", "target": {"selector": "input.functional-cookies"} },
+    "toggleAction": { "type": "click", "target": {"selector": "input.functional-cookies"} }
+}
+
+✅ GOOD: For distinct pairs of Accept/Reject buttons, do not use matchers or toggleActions. Use trueAction and falseAction.
+{
+    "type": "E",
+    "trueAction": { "type": "click", "target": {"selector": "button.accept"} },
+    "falseAction": { "type": "click", "target": {"selector": "button.reject"} }
 }
 
 ## Self-Correction
