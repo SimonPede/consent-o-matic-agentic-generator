@@ -99,9 +99,11 @@ async function waitForCmpUI(page, selectorMap, timeout = 10000) {
  * 
  * Modifications:
  * - findAnchors: returns elements only (no path tracking); added null-check;
- *   uses style.zIndex directly instead of getPropertyValue()
+ *   uses style.zIndex directly instead of getPropertyValue();
+ *   added check if the found anchor is smaller than 100x100 pixels to throw away
+ *   revoke buttons (e.g. the fingerprint buttons used by usercentrics.com)
  * - findWords: takes pre-built regex instead of corpus object; returns boolean
- *   instead of match array; added Shadow DOM traversal; added null-check on attributes
+ *   instead of match array; added Shadow DOM traversal; added null-check on attributes;
  * - word corpus (triggers array): extracted from WordBoxGatherer corpus,
  *   triggers only, antiTriggers omitted, simplified to array
  * 
@@ -207,16 +209,27 @@ async function frameHasBanner(frame) {
 
     try {
         return await frame.evaluate((triggers) => {
-            //Midas's Anchor Search: Find layout wrappers (including Shadow DOM)
+            //Midas's Anchor Search: Find layout wrappers (including Shadow DOM) (modified)
             function findAnchors(currentElement) {
-                if (!currentElement) return [];
+                if (!currentElement) {
+                    return [];
+                }
                 
                 const style = window.getComputedStyle(currentElement);
-                //Check this element's own styles for a match, do not dive deeper if found
+
                 if (
                     (style.zIndex && !isNaN(style.zIndex) && parseInt(style.zIndex) > 10) ||
                     (style.position && style.position.includes("fixed"))
                 ) {
+                    const rect = currentElement.getBoundingClientRect();
+                    const isRevokeButton = 
+                        rect.width > 0 && rect.width <= 100 &&
+                        rect.height > 0 && rect.height <= 100;
+                    
+                    if (isRevokeButton) {
+                        return [];
+                    }
+
                     return [currentElement];
                 }
 
@@ -233,10 +246,12 @@ async function frameHasBanner(frame) {
                 return anchors;
             }
 
-            //Midas's Word Search: Recursive search in text-nodes and attributes
+            //Midas's Word Search: Recursive search in text-nodes and attributes (modified)
             function findWords(currentElement, regex) {
                 //ignore parts of page invisible to the user (Midas's original logic)
-                if (currentElement.getClientRects().length === 0) return false;
+                if (currentElement.getClientRects().length === 0) {
+                    return false;
+                }
 
                 let comparisonText = "";
                 if (currentElement.attributes) {
@@ -517,6 +532,8 @@ async function runEngineInFrame(targetFrame, ruleset) {
  *   (click target missing, waitcss timeout, infinite loop)
  * - "Consent-O-Matic click count was 0...": engine ran without crashing
  *   but no DOM interactions occurred (selectors missed)
+ * 
+ * @param {object} ruleset - JS Object Version of the generated ruleset by the LLM
  */
 async function runTest(ruleset) {
 	console.error("Starting CoM Test Engine...");

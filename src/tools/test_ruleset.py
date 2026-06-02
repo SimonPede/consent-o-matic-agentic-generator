@@ -33,7 +33,7 @@ def test_ruleset(url: str, json_string: str) -> str:
         JSON string with the following fields:
         - handled (bool): True if CoM successfully executed all methods
             without a crash. NOTE: handled=true does NOT guarantee all
-            selectors worked - check the error field for selector failures.
+            selectors worked --> check the error field for selector failures.
         - cmpName (str|null): Name of the CMP rule that was triggered.
         - clicks (int): Number of DOM interactions performed. If 0 despite
             handled=true, no selectors matched anything in the DOM.
@@ -50,9 +50,9 @@ def test_ruleset(url: str, json_string: str) -> str:
             - "Invalid CMP <name>": The ruleset has a structural error
                 (wrong field names, unsupported action types).
             - "No CMP detected in 5 seconds": presentMatcher selector
-                not found in DOM - check your detector selectors.
+                not found in DOM, check your detector selectors.
             - "[CMP] - Not showing": presentMatcher matched but
-                showingMatcher failed - element exists but is hidden.
+                showingMatcher failed, element exists but is hidden.
             - "Puppeteer Error: <message>": Browser-level failure
                 (navigation timeout, page crash).
         - telemetry (dict): Independent verification of banner state,
@@ -71,10 +71,10 @@ def test_ruleset(url: str, json_string: str) -> str:
                 containing consent vocabulary was found in any frame
         
         Interpreting telemetry for self-correction:
-        - Best case: audit.tcf_hidden=true → banner definitively closed.
-        - If audit.heuristic_banner_found=true → banner still visible despite
+        - Best case: audit.tcf_hidden=true --> banner definitively closed.
+        - If audit.heuristic_banner_found=true --> banner still visible despite
             handled=true. Your selectors likely did not interact correctly.
-        - If baseline.heuristic_banner_found=false → no banner was detected
+        - If baseline.heuristic_banner_found=false --> no banner was detected
             before CoM ran. Check your URL or banner may require interaction
             to appear.
     """

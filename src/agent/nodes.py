@@ -144,8 +144,8 @@ def ruleset_output_node(state: AgentState) -> dict:
             try:
                 ruleset = json.loads(match.group(1).strip())
                 #why match.group(1): returns the content of the first breaks, whats between <ruleset> tags
-                print("\n--------- FINALE RULESET ---------")
-                print(json.dumps(ruleset, indent = 2))
+                # print("\n--------- FINALE RULESET ---------")
+                # print(json.dumps(ruleset, indent = 2))
                 return {"final_result": ruleset}
             except json.JSONDecodeError:
                 return {
