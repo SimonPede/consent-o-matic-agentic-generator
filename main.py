@@ -17,12 +17,12 @@ inputs = {
     "messages": [HumanMessage(content = f"Generate a Consent-O-Matic ruleset for: {url}")],
     "url": url,
     "attempts": 0,
-    "failed_selectors": [],
     "human_review_count": 0,
     "last_error": "",
     "structured_dom_info": None,
     "cmp_typ": "",
     "screenshot_info": None,
+    "current_ruleset_draft": "",
     "final_result": None
 }
 

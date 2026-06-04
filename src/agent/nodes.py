@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 from langgraph.types import interrupt
 from src.agent.state import AgentState
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langgraph.types import interrupt
 
 from src.prompts.system_prompt import get_system_prompt
@@ -60,9 +60,14 @@ def make_llm_node(model_with_tools):
             response = model_with_tools.invoke(
                 [system_prompt] + state["messages"]
             )
-            print("LLM Response:", str(response.content)[:2000])
-            print(type(response.content))
-            print(response.content[-1] if isinstance(response.content, list) else response.content)
+            
+            if isinstance(response.content, list):
+                for block in response.content:
+                    if isinstance(block, dict) and block.get("type") == "text":
+                        print("LLM Response:", block.get("text", ""))
+            else:
+                print("LLM Response:", response.content)
+    
             return {
                 "messages": [response],
                 "attempts": state.get("attempts", 0) + 1
@@ -73,7 +78,11 @@ def make_llm_node(model_with_tools):
     return llm_node
 
 def human_review_node(state: AgentState) -> object:  
-    last_message = state["messages"][-1]
+    last_ai_message = None
+    for message in reversed(state["messages"]):
+        if not isinstance(message, ToolMessage):
+            last_ai_message = message
+            break
     
     attempts = state.get("attempts", 0)
     llm_choice = True
@@ -91,22 +100,22 @@ def human_review_node(state: AgentState) -> object:
         "question": question,
         "url": state.get("url"),
         "attempts": attempts,
-        "last_message": str(last_message.content),
-        "failed_selectors": state.get("failed_selectors", []),
+        "last_ai_message": str(last_ai_message.content),
         "last_error": state.get("last_error", "No error stored!"),
+        "ruleset_draft": state.get("current_ruleset_draft"),
         "current_ruleset": state.get("final_result", "No ruleset generated yet.")
     }
     
-    print("\n" + "=" * 40)
+    print("\n" + "-" * 40)
     print("HUMAN REVIEW REQUIRED")
     print("="*20)
+    print(f"Question:              {context['question']}")
     print(f"URL:              {context['url']}")
     print(f"Tries:         {context['attempts']}")
     print(f"Last error:   {context['last_error']}")
-    print(f"Failed Selectors: {context['failed_selectors']}")
-    print(f"\nRuleset draft:")
-    print(json.dumps(context['current_ruleset'], indent = 2))
-    print("=" * 40)
+    print(f"\nRuleset draft:   {context['ruleset_draft']}")
+    print(f"\nLast LLM Message:   {context['last_ai_message']}")
+    print("-" * 40)
     
     human_input = interrupt(context)
     
@@ -123,7 +132,7 @@ def ruleset_output_node(state: AgentState) -> dict:
     Some LLMs (e.g. Kimi with thinking mode) return content as a list
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
     Others return a plain string. Both cases are handled here.
-    """
+    """ 
     for message in reversed(state["messages"]):
         if getattr(message, "tool_calls", None): #to ensure it is not aborted (could happen when message.tool_calls is used)
             continue
@@ -144,8 +153,6 @@ def ruleset_output_node(state: AgentState) -> dict:
             try:
                 ruleset = json.loads(match.group(1).strip())
                 #why match.group(1): returns the content of the first breaks, whats between <ruleset> tags
-                # print("\n--------- FINALE RULESET ---------")
-                # print(json.dumps(ruleset, indent = 2))
                 return {"final_result": ruleset}
             except json.JSONDecodeError:
                 return {

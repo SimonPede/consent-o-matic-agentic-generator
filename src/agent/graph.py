@@ -1,3 +1,4 @@
+import json
 from src.agent.llm import llm
 from src.agent.state import AgentState
 from src.agent.routing import route_after_llm
@@ -11,21 +12,34 @@ from langgraph.prebuilt import ToolNode
 from src.agent.nodes import make_llm_node, extraction_node, human_review_node, ruleset_output_node
 
 tools = [test_ruleset, request_human_review]
-# tools_by_name = {tool.name: tool for tool in tools}
+tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
-tool_node = ToolNode(tools)
+# tool_node = ToolNode(tools)
 #Code from the docs for the tool node:
-# from langchain.messages import ToolMessage
-# def tool_node(state: dict):
-#     """Performs the tool call"""
+from langchain.messages import ToolMessage
+def tool_node(state: dict):
+    """Performs the tool call"""
 
-#     result = []
-#     for tool_call in state["messages"][-1].tool_calls:
-#         tool = tools_by_name[tool_call["name"]]
-#         observation = tool.invoke(tool_call["args"])
-#         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
-#     return {"messages": result}
+    result = []
+    state_updates = {}
+    
+    for tool_call in state["messages"][-1].tool_calls:
+        tool = tools_by_name[tool_call["name"]]
+        observation = tool.invoke(tool_call["args"])
+
+        result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
+        
+        if tool_call["name"] == "test_ruleset":
+            state_updates["current_ruleset_draft"] = tool_call["args"].get("json_string")
+            
+            try:
+                parsed = json.loads(observation)
+                if parsed.get("error"):
+                    state_updates["last_error"] = parsed["error"]
+            except:
+                pass
+    return {"messages": result, **state_updates}
 
 llm_node = make_llm_node(model_with_tools)
 
@@ -56,7 +70,7 @@ workflow.add_conditional_edges(
     ["llm_node", END]
 )
     
-# ARCHITECTURAL DECISION: validate_json removed from tool list
+#validate_json removed from tool list
 #
 # Original plan: validate_json as lightweight pre-check before test_ruleset.
 # Planned checks:
@@ -87,49 +101,3 @@ workflow.add_conditional_edges(
 #
 # Current tool list: [analyse_screenshot, test_ruleset]
 # validate_json: removed until evaluation justifies reintroduction.
-
-# def extract_all_selectors(structured_dom_info: list) -> set:
-#     #the base ide: iterate over all entries of the outputed dom
-#     # and collect all selectors in a set
-#     selectors = set()
-    
-#     for frame in structured_dom_info:
-#         data = frame.get("data", {})
-        
-#         for el_type in ["buttons", "checkboxes", "toggles"]:
-#             for element in data.get(el_type, []):
-#                 selector = element.get("selector")
-#                 if selector:
-#                     selectors.add(selector)
-#                 data = frame.get("data", {})
-        
-#         data = frame.get("settings", {})
-#         for el_type in ["buttons", "checkboxes", "toggles"]:
-#             for element in data.get(el_type, []):
-#                 selector = element.get("selector")
-#                 if selector:
-#                     selectors.add(selector)
-#     return selectors
-
-# def make_validate_json_tool(structured_dom_info: list):
-#     #make a comment for your future self why you use closures!!
-# dom_selectors = extract_all_selectors(structured_dom_info)
-#     @tool
-#     def validate_json(json_string: str) -> str:
-        # """Lightweight pre-check: verifies that the generated ruleset is valid JSON 
-        # and contains the required top-level fields 'deabetector' and 'methods'."""
-        
-        # try:
-        #     parsed = json.loads(json_string)
-        # except json.JSONDecodeError as e:
-        #     return f"INVALID: JSON syntax error: {str(e)}"
-        
-        # missing = [field for field in ["detector", "methods"] if field not in parsed]
-        # if missing:
-        #     return f"INVALID: Missing required fields: {missing}"
-        
-        # if not isinstance(parsed["methods"], list) or len(parsed["methods"]) == 0:
-        #     return "INVALID: 'methods' must be a non-empty list"
-        
-        # return "VALID: JSON structure looks correct."
-#     return validate_json
