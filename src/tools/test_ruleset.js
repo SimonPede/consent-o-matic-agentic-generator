@@ -1,5 +1,11 @@
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 
+//--------------------------------
+
+//THANK YOU JANUS FOR THE HELP!!!
+
+//--------------------------------
+
 /**
  * helper function to iterate all frames and call frameHasBanner for each
  *
@@ -321,14 +327,14 @@ async function frameHasBanner(frame) {
 }
 
 /**
- * Evaluates the visual and technical state of the main page.
+ * Evaluates the technical state of the main page.
  * Acts as an independent auditor to verify if a cookie banner is still present.
  * @param {Page} page - The Puppeteer page object
  * @returns {Promise<Object>} Telemetry data (hasTcfApi, tcf_visible, tcf_hidden, overlay_blocking)
  */
 async function evaluatePageState(page) {
     return await page.evaluate(async () => {
-        const telemetry = {
+        const bannerStatus = {
             hasTcfApi: false,
             tcf_visible: null,
             tcf_hidden: null,
@@ -341,10 +347,10 @@ async function evaluatePageState(page) {
         //Copyright (c) 2024, 2025 Janus Kristensen
         //CAVI, Aarhus University
         //License: MPL 2.0
-        telemetry.hasTcfApi = (window["__tcfapi"] != null);
+        bannerStatus.hasTcfApi = (window["__tcfapi"] != null);
         let pingResult = null;
 
-        if (telemetry.hasTcfApi) {
+        if (bannerStatus.hasTcfApi) {
             try {
                 const pingResult = await new Promise((resolve) => {
                     const timeoutId = setTimeout(() => {
@@ -358,46 +364,19 @@ async function evaluatePageState(page) {
                 });
 
                 if (pingResult) {
-                    telemetry.tcf_visible = (pingResult.displayStatus === "visible");
-                    telemetry.tcf_hidden = (pingResult.displayStatus === "hidden")
+                    bannerStatus.tcf_visible = (pingResult.displayStatus === "visible");
+                    bannerStatus.tcf_hidden = (pingResult.displayStatus === "hidden")
                 } else {
-                    telemetry.error = "API timeout";
+                    bannerStatus.error = "API timeout";
                 }
             } catch (err) {
-                telemetry.error = "API error: " + err.message;
+                bannerStatus.error = "API error: " + err.message;
             }
         }
 
-        function checkOverlay() {
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const elementsAtCenter = document.elementsFromPoint(centerX, centerY); //should be sorted starting with the highest z-index
-            
-            if (elementsAtCenter.length > 0) {
-                const topElement = elementsAtCenter[0];
-
-                if (topElement !== document.body && topElement !== document.documentElement) {
-                    const style = window.getComputedStyle(topElement);
-                    const rect = topElement.getBoundingClientRect();
-                    
-                    const isFullOverlay = 
-                        (style.position === "fixed" || style.position === "absolute") &&
-                        rect.width >= window.innerWidth * 0.5 &&
-                        rect.height >= window.innerHeight * 0.5;
-                    const zIndex = parseInt(style.zIndex) || 0;
-
-                    telemetry.overlay_blocking = isFullOverlay && zIndex > 10;
-                }
-            }
-        }
-
-        checkOverlay();
-        return telemetry;
+        return bannerStatus;
     });
 }
-
-
-//THANK YOU JANUS FOR THE HELP!!!
 
 const puppeteer = require("puppeteer");
 const fs = require("fs");
