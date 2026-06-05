@@ -3,15 +3,14 @@ from src.agent.llm import llm
 from src.agent.state import AgentState
 from src.agent.routing import route_after_llm
 from src.agent.routing import route_after_ruleset
-# from src.tools.analyse_screenshot import analyse_screenshot
+from src.tools.analyse_screenshot import analyse_screenshot
 from src.tools.test_ruleset import test_ruleset
 from src.tools.request_human_review import request_human_review
 from langgraph.graph import StateGraph, START, END
-from langgraph.prebuilt import ToolNode
 
 from src.agent.nodes import make_llm_node, extraction_node, human_review_node, ruleset_output_node
 
-tools = [test_ruleset, request_human_review]
+tools = [test_ruleset, request_human_review, analyse_screenshot]
 tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
@@ -28,7 +27,7 @@ def tool_node(state: dict):
         tool = tools_by_name[tool_call["name"]]
         observation = tool.invoke(tool_call["args"])
 
-        result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
+        result.append(ToolMessage(content = observation, tool_call_id=tool_call["id"]))
         
         if tool_call["name"] == "test_ruleset":
             state_updates["current_ruleset_draft"] = tool_call["args"].get("json_string")
@@ -37,8 +36,19 @@ def tool_node(state: dict):
                 parsed = json.loads(observation)
                 if parsed.get("error"):
                     state_updates["last_error"] = parsed["error"]
-            except:
-                pass
+            except json.JSONDecodeError:
+                state_updates["last_error"] = f"test_ruleset tool returned invalid JSON: {observation[:100]}"
+            
+        elif tool_call["name"] == "analyse_screenshot":
+            try:
+                parsed = json.loads(observation)
+                state_updates["screenshot_info"] = parsed
+                
+                if parsed.get("error"):
+                    state_updates["last_error"] = parsed["error"]
+            except json.JSONDecodeError:
+                state_updates["last_error"] = f"Screenshot tool returned invalid JSON: {observation[:100]}"
+            
     return {"messages": result, **state_updates}
 
 llm_node = make_llm_node(model_with_tools)
@@ -51,7 +61,6 @@ workflow.add_node("tool_node", tool_node)
 workflow.add_node("human_review_node", human_review_node)
 workflow.add_node("ruleset_output_node", ruleset_output_node)
 
-# Add edges to connect nodes
 workflow.add_edge(START, "extraction_node")
 workflow.add_edge("extraction_node", "llm_node")
 

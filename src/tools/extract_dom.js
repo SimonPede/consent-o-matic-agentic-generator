@@ -15,7 +15,7 @@ const TRIGGER_WORDS = require("../utils/trigger_words");
 // ---------------
 // IMPORTANT!!!!
 // for get a quicker understanding what the logic of this file is
-// please look in the root because i addeded 250526-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
+// please look in the root because i addeded 040626-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
 // ----------------
 
 
@@ -65,15 +65,15 @@ function cleanHtml(html) {
 /**
  * Normalizes button text for robust matching.
  * Removes accents, spaces, and punctuation, converting everything to lowercase.
- * Example: "Cookie-Einstellungen verwalten!" -> "cookieeinstellungenverwalten"
+ * Example: "Cookie Settings" --> "cookiesettings"
  * 
  * @param {string} text - text string to normalize
  */
 function normalizeText(text) {
     if (!text) return "";
     return text.normalize("NFKD")
-                .replace(/[\u0300-\u036f]/g, "") //löscht die "fliegenden" Akzente
-                .replace(/[^a-z0-9]/gi, "")      //deletes everything except a-z & 0-9 (inkl. whitespaces)
+                .replace(/[\u0300-\u036f]/g, "") //deletes floating accents
+                .replace(/[^a-z0-9]/gi, "")      //deletes everything except a-z & 0-9 (incl. whitespaces)
                 .toLowerCase();
 }
 
@@ -87,7 +87,7 @@ function normalizeText(text) {
  */
 async function findSettingsButtonViaLLM(html) {
     const OLLAMA_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
-    const OLLAMA_API_KEY = process.env.OLLAMA_API_KEY || "";
+    const OLLAMA_BEARER_TOKEN = process.env.OLLAMA_BEARER_TOKEN || "";
 
     try {
         const response = await fetch(`${OLLAMA_URL}/api/generate`, {
@@ -106,8 +106,7 @@ async function findSettingsButtonViaLLM(html) {
                         Example of a valid response:
                         {"selector": "[aria-label='Settings']", "text": "Settings"}
 
-                        HTML:
-                        ${html}`,
+                        HTML: ${html}`,
                 stream: false
             })
         });
