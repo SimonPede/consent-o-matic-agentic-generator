@@ -55,28 +55,33 @@ def test_ruleset(url: str, json_string: str) -> str:
                 showingMatcher failed, element exists but is hidden.
             - "Puppeteer Error: <message>": Browser-level failure
                 (navigation timeout, page crash).
-        - telemetry (dict): Independent verification of banner state,
-            evaluated before and after CoM execution.
-            Contains two keys: "baseline" (before CoM) and "audit" (after CoM).
-            Each has the following fields:
-            - hasTcfApi (bool): Whether the IAB TCF API is present on the page.
-                True for many professional CMPs (OneTrust, Sourcepoint, etc.).
-            - tcf_visible (bool|null): True if TCF API reports banner as visible.
-                null if hasTcfApi is false or API timed out.
-            - tcf_hidden (bool|null): True if TCF API reports banner as hidden.
-                If audit.tcf_hidden is true, the banner was successfully closed.
-            - overlay_blocking (bool): True if a big overlay still blocks
-                the page center after CoM ran.
-            - heuristic_banner_found (bool): True if a fixed/high-z-index element
-                containing consent vocabulary was found in any frame
+            - bannerStatus (dict): Independent verification of the cookie banner state,
+                evaluated before (baseline) and after (audit) CoM execution.
+                Contains two keys: "baseline" and "audit". Each has the following fields:
+                - hasTcfApi (bool): Whether the IAB TCF API is present on the page.
+                    True for many professional CMPs (OneTrust, Sourcepoint, etc.).
+                - tcfVisible (bool|null): True if TCF API reports banner as visible.
+                    null if hasTcfApi is false or API timed out.
+                - tcfHidden (bool|null): True if TCF API reports banner as hidden.
+                    If audit.tcfHidden is true, the banner was successfully closed.
+                - scrollLocked (bool): True if the page's scrolling is disabled via CSS 
+                    (overflow: hidden), which is an indicator of an active full-screen modal.
+                - heuristicBannerFound (bool): True if a fixed/high-z-index element
+                    containing consent vocabulary was found in any frame via Midas heuristic.
+                - showingMatcherFound (bool|null): True if the specific element defined 
+                    in your ruleset's showingMatcher is found and visually visible. 
+                    null if no target selector could be parsed from your ruleset or the element is a shadow host.
         
-        Interpreting telemetry for self-correction:
-        - Best case: audit.tcf_hidden=true --> banner definitively closed.
-        - If audit.heuristic_banner_found=true --> banner still visible despite
-            handled=true. Your selectors likely did not interact correctly.
-        - If baseline.heuristic_banner_found=false --> no banner was detected
-            before CoM ran. Check your URL or banner may require interaction
-            to appear.
+            Interpreting bannerStatus for self-correction:
+            - Best case: audit.tcfHidden=true AND audit.heuristicBannerFound=false 
+            AND audit.showingMatcherFound=false --> Banner definitively closed.
+            - If baseline.showingMatcherFound=false: Your showingMatcher selector is incorrect! 
+            The engine couldn't even find your defined banner before clicking. Fix the detector.
+            - If audit.showingMatcherFound=true OR audit.heuristicBannerFound=true: 
+            The banner is still visible despite handled=true. Your method selectors (OPEN_OPTIONS, 
+            DO_CONSENT, SAVE_CONSENT) likely failed to interact with the correct elements.
+            - If baseline.heuristicBannerFound=false: No banner was detected at all before 
+            running the engine. Verify the URL or check if the banner requires interaction.
     """
     
     print("testing started!")
@@ -96,8 +101,7 @@ def test_ruleset(url: str, json_string: str) -> str:
         
         #Debug
         print(f"STDOUT: {result.stdout[:400]}")
-        print(f"STDERR: {result.stderr[:200]}")
-        print(f"Return code: {result.returncode}")
+        # print(f"Return code: {result.returncode}")
 
         #last line of stdout is the result JSON
         lines = [line for line in result.stdout.strip().splitlines() if line]
