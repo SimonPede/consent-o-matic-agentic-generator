@@ -27,8 +27,8 @@ from langchain_core.tools import tool
 @tool
 def analyse_screenshot(url: str) -> str:
     """
-    Captures a screenshot of the given URL and performs visual analysis 
-    of the cookie consent banner using a multimodal LLM.
+    Captures a screenshot of the INITIAL landing state (fresh page load) of the given URL 
+    and performs visual analysis of the cookie consent banner using a multimodal LLM.
     
     Call this tool when:
     - The extracted DOM is ambiguous and you cannot confidently identify 
@@ -44,11 +44,13 @@ def analyse_screenshot(url: str) -> str:
     - The structured DOM already provides sufficient selectors with 
         high confidence
     - You have already called this tool for the same URL in this session
-    
+    - You want to inspect a subpage, a settings menu, or the state AFTER 
+        interacting with the banner (this tool ONLY performs a fresh, initial page load)
 
-    Note: The banner may not be visible if it has already been dismissed 
-    or if it only appears after user interaction. A missing banner in the 
-    screenshot does not necessarily mean no banner exists.
+    Note: This tool triggers a completely clean, isolated browser navigation. It cannot 
+    persist previous click states or open configuration menus. A missing banner in the 
+    screenshot does not necessarily mean no banner exists; it may require user interaction 
+    or have been dismissed in a different context.
         
     Args:
         url: The URL of the website for which a ruleset is being generated.
