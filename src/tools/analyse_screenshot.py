@@ -2,13 +2,12 @@ import subprocess
 import json
 import os
 import requests
-import os
 from langchain_core.tools import tool
 
 # ARCHITECTURAL NOTE: Tool-based Vision Extraction vs. Direct Multimodal Agent
 # 
 # Instead of feeding raw image data directly into the main agent's conversation loop, 
-# i isolate the multimodal inference within this tool for several reasons:
+# this system isolates the multimodal inference within this specialized tool for several key reasons:
 #
 # 1. Separation of Concerns: Keeps the main agent focused on code generation 
 #    and ruleset logic, preventing "prompt pollution" and keeping the system prompt lean.
@@ -78,11 +77,38 @@ def analyse_screenshot(url: str) -> str:
         node_output = json.loads(lines[-1])
         base64_image = node_output.get("screenshot")
         
+        if not lines:
+            return json.dumps({"error": "No output received from headless browser script"})
+        
         if not base64_image:
             return json.dumps({"error": "No screenshot data received from browser"})
         
         ollama_url = os.getenv("OLLAMA_BASE_URL")
         ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
+        
+        prompt = """
+        You are analyzing a screenshot of a website to identify cookie consent banners.
+
+        Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
+        No explanation, no markdown, no code blocks.
+
+        {
+            "bannerVisible": true if a cookie consent banner is visible, false otherwise,
+            "bannerDismissed": true if the banner has already been dismissed or is not present,
+            "bannerPosition": "top", "bottom", "center", "full-screen" or null if no banner,
+            "cmpType": name of the CMP if recognizable (e.g. "OneTrust", "Cookiebot"), or null,
+            "settingsButtonVisible": true if a settings/preferences button is visible,
+            "buttons": [
+                {
+                    "text": visible button label,
+                    "colour": dominant button colour,
+                    "position": "left", "center", "right"
+                }
+            ]
+        }
+
+        If no banner is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
+        """
 
         response = requests.post(
             f"{ollama_url}/api/generate",
@@ -92,29 +118,7 @@ def analyse_screenshot(url: str) -> str:
             },
             json = {
                 "model": "gemma4:latest",
-                "prompt": """
-                You are analyzing a screenshot of a website to identify cookie consent banners.
-
-                Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
-                No explanation, no markdown, no code blocks.
-
-                {
-                    "bannerVisible": true if a cookie consent banner is visible, false otherwise,
-                    "bannerDismissed": true if the banner has already been dismissed or is not present,
-                    "bannerPosition": "top", "bottom", "center", "full-screen" or null if no banner,
-                    "cmpType": name of the CMP if recognizable (e.g. "OneTrust", "Cookiebot"), or null,
-                    "settingsButtonVisible": true if a settings/preferences button is visible,
-                    "buttons": [
-                        {
-                            "text": visible button label,
-                            "colour": dominant button colour,
-                            "position": "left", "center", "right"
-                        }
-                    ]
-                }
-
-                If no banner is visible, return banner_visible: false, banner_dismissed: true, and an empty buttons array.
-                """,
+                "prompt": prompt,
                 "images": [base64_image],
                 "stream": False
             }

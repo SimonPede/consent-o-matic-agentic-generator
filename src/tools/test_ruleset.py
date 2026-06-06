@@ -71,17 +71,17 @@ def test_ruleset(url: str, json_string: str) -> str:
                 - showingMatcherFound (bool|null): True if the specific element defined 
                     in your ruleset's showingMatcher is found and visually visible. 
                     null if no target selector could be parsed from your ruleset or the element is a shadow host.
-        
-            Interpreting bannerStatus for self-correction:
-            - Best case: audit.tcfHidden=true AND audit.heuristicBannerFound=false 
-            AND audit.showingMatcherFound=false --> Banner definitively closed.
-            - If baseline.showingMatcherFound=false: Your showingMatcher selector is incorrect! 
-            The engine couldn't even find your defined banner before clicking. Fix the detector.
-            - If audit.showingMatcherFound=true OR audit.heuristicBannerFound=true: 
-            The banner is still visible despite handled=true. Your method selectors (OPEN_OPTIONS, 
-            DO_CONSENT, SAVE_CONSENT) likely failed to interact with the correct elements.
-            - If baseline.heuristicBannerFound=false: No banner was detected at all before 
-            running the engine. Verify the URL or check if the banner requires interaction.
+                    
+    Interpreting bannerStatus for self-correction:
+    - Best case: audit.tcfHidden=true AND audit.heuristicBannerFound=false 
+    AND audit.showingMatcherFound=false --> Banner definitively closed.
+    - If baseline.showingMatcherFound=false: Your showingMatcher selector is incorrect! 
+    The engine couldn't even find your defined banner before clicking. Fix the detector.
+    - If audit.showingMatcherFound=true OR audit.heuristicBannerFound=true: 
+    The banner is still visible despite handled=true. Your method selectors (OPEN_OPTIONS, 
+    DO_CONSENT, SAVE_CONSENT) likely failed to interact with the correct elements.
+    - If baseline.heuristicBannerFound=false: No banner was detected at all before 
+    running the engine. Verify the URL or check if the banner requires interaction.
     """
     
     print("testing started!")
@@ -99,12 +99,15 @@ def test_ruleset(url: str, json_string: str) -> str:
             timeout = 300,
         )
         
-        #Debug
+        #Debug logging for process monitoring
         print(f"STDOUT: {result.stdout[:400]}")
-        # print(f"Return code: {result.returncode}")
 
-        #last line of stdout is the result JSON
         lines = [line for line in result.stdout.strip().splitlines() if line]
+        
+        #Safeguard against unexpected process terminations or empty outputs
+        if not lines:
+            return json.dumps({"handled": False, "error": "No output received from the testing environment"})
+
         output = json.loads(lines[-1])
         return json.dumps(output)
 
@@ -112,35 +115,3 @@ def test_ruleset(url: str, json_string: str) -> str:
         return json.dumps({"handled": False, "error": "Timeout after 300s"})
     except Exception as e:
         return json.dumps({"handled": False, "error": str(e)})
-    
-    
-#for my orientation what I still plan to implement or wanted in the past
-    # """
-    # Tests the generated Consent-O-Matic ruleset on the live website by 
-    # injecting the CoM engine and executing the defined methods. Use this 
-    # tool to verify whether the ruleset works correctly in practice.
-    
-    # Call this tool when:
-    # - You have generated a complete ruleset and want to verify it works
-    # - A previous test failed and you have revised the ruleset based on 
-    #     the error feedback
-    # - You want to verify whether a specific selector exists in the live DOM
-    #     before finalising the ruleset
-    
-    # Do NOT call this tool if:
-    # - You have not yet generated a complete ruleset with all required fields
-    # - The ruleset is clearly incomplete (e.g. missing methods or detectors)
-    # - You have already successfully passed this test in the current session
-    
-    # Args:
-    #     url: The URL of the website for which the ruleset is being tested.
-    #     name: The name of the CMP or ruleset (e.g. "OneTrust", "Cookiebot").
-    #     detectors: List of detector objects defining how to identify the banner.
-    #     methods: List of method objects defining the consent actions to execute
-    #             (HIDE_CMP, OPEN_OPTIONS, DO_CONSENT, SAVE_CONSENT).
-    
-    # Returns:
-    #     Structured JSON string containing: banner_disappeared (bool), 
-    #     found_selectors (list), missing_selectors (list), 
-    #     error (string or null).
-    # """
