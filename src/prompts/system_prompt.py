@@ -603,7 +603,12 @@ from structured elements alone (e.g. for HIDE_CMP or presentMatcher).
 Some selectors in the example rulesets (e.g. for HIDE_CMP or presentMatcher) 
 were derived from `filteredHtml` and may therefore not appear in the structured 
 elements shown. In your actual task, you will receive the full `filteredHtml` 
-and must derive banner container selectors from it yourself.
+and maybe have to derive banner container selectors from it yourself.
+
+HOWEVER, to find the banner container, you MUST follow this strict priority:
+1. CHECK `cmpSelector`: If the input JSON provides a `cmpSelector` (e.g., "#usercentrics-cmp-ui"), use this EXACT selector for your `presentMatcher` and `showingMatcher`.
+2. CHECK `parentInfo`: If `cmpSelector` is null, look at the `parentInfo.grandparent.selector` or `parentInfo.selector` of the extracted buttons. The most common highest-level wrapper is your banner container.
+3. FALLBACK: Only if the above fail, look into `filteredHtml` to find the outermost <div> or <aside> wrapping the banner text.
 
 Study each example carefully! Pay attention to how selectors from the 
 structured elements map to actions in the ruleset.

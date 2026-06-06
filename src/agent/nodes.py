@@ -18,7 +18,7 @@ def extraction_node(state: AgentState) -> dict:
     
     #__file__ = .../src/agent/graph.py
     EXTRACT_DOM_PATH = os.path.join(
-        os.path.dirname(__file__), "..", "tools", "extract_dom.js"
+        os.path.dirname(__file__), "..", "tools", "extract_dom", "main.js"
     )
     result = subprocess.run(
         ["node", EXTRACT_DOM_PATH, url],

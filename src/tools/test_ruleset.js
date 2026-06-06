@@ -5,9 +5,9 @@ const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const waitForCmpUi = require("../utils/wait_for_cmp_ui");
 const WORD_BOX_TRIGGERS = require("../utils/midas-corpus/word_box_triggers");
 
-// ----------------------------------------------------------------------
-// Acknowledgements: Special thanks to Janus for architectural assistance.
-// ----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//Acknowledgements: Special thanks to Janus for architectural assistance.
+//----------------------------------------------------------------------
 
 //files in dependency order
 const COM_DIR = path.join(__dirname, "consent-engine");
@@ -80,6 +80,14 @@ async function checkShowingMatcher(page, matcherTargetSelector, matcherParentSel
     return await page.evaluate((targetSel, parentSel) => {
 
         //querySelectorDeep is copied from my extract_dom.js code
+        /**
+         * Performs a deep recursive lookup to isolate the first matching element reference 
+         * while seamlessly piercing nested Shadow DOM boundaries.
+         *
+         * @param {string} selector - Functional CSS selector pattern
+         * @param {Document|ShadowRoot|HTMLElement} root - Evaluation root
+         * @returns {HTMLElement|null} - The discovered element reference, or null
+         */
         function querySelectorDeep(selector, root = document) {
             let found = root.querySelector(selector);
             if (found) return found;
@@ -543,6 +551,11 @@ async function runTest(ruleset) {
 
         console.error("page is loaded!");
 
+        //Blocking Telemetry Barrier: The rich metadata object returned by waitForCmpUi 
+        //is intentionally ignored in this test runner context. We leverage this call 
+        //exclusively to guarantee that the consent interface is fully inflated and klickable 
+        //before extracting baseline metrics. If it times out, we still proceed to allow 
+        //the baseline heuristics to independently verify the absence of a banner.
         await waitForCmpUi(page, CMP_SELECTORS_MAP);
 
         const baselineTcfAndOverlay = await evaluatePageState(page);

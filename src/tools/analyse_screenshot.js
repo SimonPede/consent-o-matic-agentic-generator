@@ -58,6 +58,12 @@ async function run() {
 
 		console.error("page is loaded!");
 
+		//Pure Synchronization Barrier: The return value is intentionally ignored here.
+        //The script only requires this helper to block execution until the CMP layout 
+        //is fully rendered and stable before capturing the visual state. If a timeout 
+        //occurs (returning null), execution must proceed regardless, as the website 
+        //might not feature a cookie banner at all, which the downstream vision LLM 
+        //will correctly evaluate from the screenshot.
 		await waitForCmpUi(page, CMP_SELECTORS_MAP);
 
 		const screenshot = await page.screenshot({ encoding: "base64" });
