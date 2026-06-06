@@ -6,6 +6,8 @@ from src.agent.routing import route_after_ruleset
 from src.tools.analyse_screenshot import analyse_screenshot
 from src.tools.test_ruleset import test_ruleset
 from src.tools.request_human_review import request_human_review
+from src.utils import call_ollama_vision
+from langchain_core.messages import HumanMessage
 from langgraph.graph import StateGraph, START, END
 
 from src.agent.nodes import make_llm_node, extraction_node, human_review_node, ruleset_output_node
@@ -34,8 +36,21 @@ def tool_node(state: dict):
             
             try:
                 parsed = json.loads(observation)
+                
+                if parsed.get("auditScreenshot"):
+                    print("Test failed but audit screenshot found! Invoking Ollama Vision...")
+                    
+                    vision_result = call_ollama_vision(parsed["auditScreenshot"])
+                    print(f"Vision result: {vision_result}")
+                    
+                    state_updates["screenshot_info"] = vision_result
+                    state_updates["messages"] = [HumanMessage(
+                        content = f"Visual audit after test: {json.dumps(vision_result)}"
+                    )]
+                    
                 if parsed.get("error"):
                     state_updates["last_error"] = parsed["error"]
+                    
             except json.JSONDecodeError:
                 state_updates["last_error"] = f"test_ruleset tool returned invalid JSON: {observation[:100]}"
             
