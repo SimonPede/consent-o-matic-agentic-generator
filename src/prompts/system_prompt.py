@@ -766,9 +766,9 @@ Then, plan the revision:
 Finally, generate the new revised RULESET.
 Do not repeat selectors that have already failed.
 
-If after several revisions no working ruleset is found,
+If after several revisions (5 or more) no working ruleset is found,
 explicitly state what you tried and why it failed -
-a human expert will then be consulted.
+you MUST call request_human_review. Do not generate another ruleset attempt.
 
 ## Output Format & Workflow (CRITICAL)
 
