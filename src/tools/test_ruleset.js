@@ -759,7 +759,22 @@ async function runTest(ruleset) {
             finalError = "Banner not found or matchers failed.";
         }
 
-        console.log(JSON.stringify({ 
+        let auditScreenshot = null;
+
+        const bannerStillVisible = 
+            auditState.heuristicBannerFound === true || 
+            auditState.showingMatcherFound === true;
+
+        if (bannerStillVisible) {
+            try {
+                console.error("Validation failed: Banner is still visible. Captures audit screenshot...");
+                auditScreenshot = await page.screenshot({ encoding: "base64" });
+            } catch (err) {
+                console.error("Failed to take audit screenshot:", err.message);
+            }
+        }
+
+        console.log(JSON.stringify({
             handled: result.handled, 
             cmpName: result.cmpName || null, 
             clicks: result.clicks || 0, 
@@ -767,7 +782,8 @@ async function runTest(ruleset) {
             bannerStatus: {
                 baseline: baselineState,
                 audit: auditState
-            }
+            },
+            auditScreenshot: auditScreenshot
         }));
 
     } catch (err) {
