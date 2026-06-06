@@ -1,7 +1,12 @@
-//source: Nouwens et al. (2025) - A Cross-Country Analysis of GDPR Cookie Banners
-//Appendix C: CMP CSS Selectors
-//and on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs".pdf, Appendix B
-const CMP_SELECTORS = {
+/**
+ * Highly specific CSS selectors mapping directly to known Consent Management Platforms (CMPs).
+ * Synthesized from two primary academic sources:
+ * 1. "A Cross-Country Analysis of GDPR Cookie Banners" (Nouwens et al., 2025), Appendix C
+ * 2. "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs" (Singh et al., 2026), Appendix B
+ * * Utilized in `calculateFrameScore()` to instantly identify explicit CMP frames.
+ * Matching any of these targeted selectors grants a maximum heuristic bonus (+10).
+ */
+const CMP_SELECTORS_MAP = {
     //8works
     '[id*="eightworks-cookie-consent"]': "8works",
     '[class*="eightworks-cookie-consent"]': "8works", 
@@ -338,4 +343,4 @@ const CMP_SELECTORS = {
     "#component-cookie-banner": "Swedbank"
 };
 
-module.exports = CMP_SELECTORS;
+module.exports = CMP_SELECTORS_MAP;

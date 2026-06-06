@@ -1,10 +1,10 @@
-//These TRIGGER_WORDS are my own combination of phrases/words heavily inspired by two papers:
-//1. A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them (Nouwens et al., 2025), Appendix B
-//2. When the Abyss Looks Back: Unveiling Evolving Dark Patterns in Cookie Consent Banners (Singh et al., 2026), Appendix Table 7, p. 15
-//   (only a subset was adopted, as the full lexicon targets Dark Pattern detection, not banner frame identification)
-//NOTE: SETTINGS_TERMS from "settingsButtons_term.js" have been merged into this list
+// These trigger phrases are heavily inspired by two academic papers:
+//1. "A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them" (Nouwens et al., 2025), Appendix B
+//2. "When the Abyss Looks Back: Unveiling Evolving Dark Patterns in Cookie Consent Banners" (Singh et al., 2026), Appendix Table 7, p. 15
+//		(Only a subset was adopted, as the full lexicon targets Dark Pattern detection, not banner frame identification)
+//NOTE: Settings terms from the former "settingsButtons_term.js" have been merged into this list.
 
-const TRIGGER_WORDS_LIST = [
+const triggerWordsList = [
     //English/International
     "settings", "preferences", "manage", "customize", "options", 
     "manage options", "manage preferences", "manage settings", "Show Purposes",
@@ -133,9 +133,9 @@ const TRIGGER_WORDS_LIST = [
 	"piškotkov", "piškotke", "piškotki", "piškotkih",
 ];
 
-const escaped = TRIGGER_WORDS_LIST.map(phrase => 
-    phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+const escaped = triggerWordsList.map(phrase => 
+    phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 );
-const TRIGGER_WORDS = new RegExp(escaped.join("|"), "i");
+const TRIGGER_WORDS_REGEX = new RegExp(escaped.join("|"), "i");
 
-module.exports = TRIGGER_WORDS;
+module.exports = TRIGGER_WORDS_REGEX;

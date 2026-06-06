@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 /**
  * NormalizedWordButtonGatherer - Word Corpus (normalizedWords)
  * 
@@ -37106,26 +37109,17 @@ let normalizedWords = [
   }
 ];
 
-const fs = require("fs");
-const path = require("path");
-
 const settingsWords = normalizedWords
     .filter(obj => obj.category === 3)
     .map(obj => obj.normalized);
 
-console.log(`Filtered word corpus: ${settingsWords.length} settings phrases found!`);
-
 const fileContent = `
-
 const settingsWords = ${JSON.stringify(settingsWords, null, 2)};
-
-// Regex erstellt ein Muster: "wort1|wort2|wort3"
 const SETTINGS_PATTERN = new RegExp(settingsWords.join("|"), "i");
-
 module.exports = SETTINGS_PATTERN;
 `;
 
-const outputPath = path.join(__dirname, "./settingsButtons_terms Consent Observatory.js");
+const outputPath = path.join(__dirname, "./settings_buttons_terms.js");
 fs.writeFileSync(outputPath, fileContent);
 
-console.log("Erfolg! utils/settingsButtons_terms Consent Observatory.js wurde neu geschrieben.");
+console.log("Success! utils/settings_buttons_terms.js was updated.");

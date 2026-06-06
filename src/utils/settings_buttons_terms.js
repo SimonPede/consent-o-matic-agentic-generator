@@ -8,7 +8,7 @@
 // Generated: 2026-05-25
 
 //these are 1280 words
-const settingsWords = [
+const settingTerms = [
   "cookiessettings",
   "indstillinger",
   "moreoptions",
@@ -1291,7 +1291,6 @@ const settingsWords = [
   "præferencer"
 ];
 
-//Regex erstellt: "wort1|wort2|wort3"
-const SETTINGS_PATTERN = new RegExp(settingsWords.join("|"), "i");
+const SETTING_TERMS_REGEX = new RegExp(settingTerms.join("|"), "i");
 
-module.exports = SETTINGS_PATTERN;
+module.exports = SETTING_TERMS_REGEX;

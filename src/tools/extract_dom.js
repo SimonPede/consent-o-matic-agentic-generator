@@ -4,13 +4,12 @@ const fs = require("fs");
 //utils imports
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
-//const SETTINGS_PATTERN = require("../utils/settingsButtons_terms");
-const SETTINGS_PATTERN = require("../utils/settingsButtons_terms Consent Observatory");
-const DARKDIALOGS_SELECTORS = require("../utils/darkdialogs_selectors");
-const N_GRAM_DATA = require("../utils/ngram_data");
-const CMP_REGEX = require("../utils/cmp_regex");
+const SETTINGS_TERMS_REGEX = require("../utils/settings_buttons_terms");
+const GENERAL_SELECTORS = require("../utils/general_selectors.js");
+const N_GRAM_DATA = require("../utils/n_gram_data");
+const CMP_FRAME_REGEX = require("../utils/cmp_frame_regex");
 const CMP_DOMAINS = require("../utils/cmp_domains");
-const TRIGGER_WORDS = require("../utils/trigger_words");
+const TRIGGER_WORDS_REGEX = require("../utils/trigger_words");
 
 // ---------------
 // IMPORTANT!!!!
@@ -886,9 +885,9 @@ async function frameWordCounter(frames, avgWordCount) {
  * 
  * Positive:
  *   +5  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
- *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al. 2025)
+ *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al., 2025 + Singh et al., 2026)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
- *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al. 2025 + Singh et al. 2026)
+ *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al., 2025 + Singh et al., 2026)
  *       capped at +10 to avoid over-weighting frames with many cookie-related mentions
  *   +15 element within frame has position:fixed + z-index > 10
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
@@ -941,7 +940,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             frameScoreBonus += 50; //TODO: evaluate!
         }
 
-        if (CMP_REGEX.test(url) || CMP_REGEX.test(name)) {
+        if (CMP_FRAME_REGEX.test(url) || CMP_FRAME_REGEX.test(name)) {
             frameScoreBonus += 20; //TODO: evaluate!
         }
 
@@ -1071,7 +1070,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             }
 
             return localScore;
-        }, DARKDIALOGS_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA, TRIGGER_WORDS);
+        }, GENERAL_SELECTORS, avgWordCount, selectorMap, N_GRAM_DATA, TRIGGER_WORDS_REGEX);
 
         if (score < -100) {
             return score;
@@ -1686,7 +1685,7 @@ async function extractStructuredDom(url) {
                         //Prevents false positives on long IAB purpose descriptions
                         //(e.g. "storing or accessing information on an end device")
                         //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
-                        if (SETTINGS_PATTERN.test(normalizedBtnText) && normalizedBtnText.length < 30) {
+                        if (SETTINGS_TERMS_REGEX.test(normalizedBtnText) && normalizedBtnText.length < 30) {
                             console.error(`Settings match: "${btn.text}" → normalized: "${normalizedBtnText}"`);
                             
                             const href = (btn.attributes && btn.attributes.href) ? btn.attributes.href.toLowerCase() : "";;

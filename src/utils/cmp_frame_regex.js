@@ -1,7 +1,9 @@
 /**
  * Multilingual regex for detecting CMP-related frame URLs and names.
  * Covers some known CMP providers, privacy-related terms, and EU languages.
- * Used in calculateFrameScore()
+ * 
+ * Utilized in `calculateFrameScore()` to flag iframes whose metadata strongly 
+ * indicates they host a cookie consent interface (+20 bonus score).
  */
 const CMP_REGEX = new RegExp(
 	[

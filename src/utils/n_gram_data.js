@@ -2,6 +2,11 @@
  * N-gram phrases for cookie consent dialog detection.
  * Adapted from DarkDialogs paper, Appendix A.3
  * Used in calculateFrameScore() – longer n-grams get higher weight.
+ * 
+ * Modification:
+ * Automated localization was applied via machine translation to expand the original 
+ * English lexicon with German and other language equivalents. These localized variations serve as 
+ * experimental heuristics and are subject to empirical validation.
  */
 const N_GRAM_DATA = {
 	5: [

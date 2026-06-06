@@ -1,5 +1,6 @@
-// heavily inspired by A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them, Appendix B
-const SETTINGS_TERMS = [
+//my old version of this list/regex pattern. I know use "settingsButtons_terms.js"
+//heavily inspired by A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them, Appendix B
+const settingTerms = [
     //English/International
     "settings", "preferences", "manage", "customize", "options", 
     "manage options", "manage preferences", "manage settings", "Show Purposes",
@@ -38,6 +39,6 @@ const SETTINGS_TERMS = [
     "опции за управление", "други възможности",
     "setări", "modific setările", "mai multe opțiuni", "gestionati opțiunile", "setari cookie-uri"
 ];
-//TODO: verify if this is enough or too much even (--> false positives)
-let SETTINGS_PATTERN = new RegExp(SETTINGS_TERMS.join("|"), "i");
+
+let SETTINGS_TERMS_REGEX = new RegExp(settingTerms.join("|"), "i");
 module.exports = SETTINGS_PATTERN;
