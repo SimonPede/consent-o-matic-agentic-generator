@@ -1,29 +1,33 @@
 import subprocess
 import json
+import logging
 import os
 import re
 
-import logging
-logger = logging.getLogger(__name__)
-
-from langgraph.types import interrupt
-from src.agent.state import AgentState
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langgraph.types import interrupt
 
+from src.agent.state import AgentState
 from src.prompts.system_prompt import get_system_prompt
 
+logger = logging.getLogger(__name__)
+
+
 def extraction_node(state: AgentState) -> dict:
+    """Executes the external headless browser automation sequence via a Node.js subprocess.
+    
+    Extracts structured DOM fields and raw, filtered HTML from the live website target,
+    parsing the dataset into the active execution context stream.
+    """
     url = state.get("url", "")
     
-    #__file__ = .../src/agent/graph.py
-    EXTRACT_DOM_PATH = os.path.join(
+    extract_dom_path = os.path.join(
         os.path.dirname(__file__), "..", "tools", "extract_dom", "main.js"
     )
     result = subprocess.run(
-        ["node", EXTRACT_DOM_PATH, url],
-        capture_output = True,
-        text = True
+        ["node", extract_dom_path, url],
+        capture_output=True,
+        text=True
     )
 
     if result.returncode != 0:
@@ -39,24 +43,30 @@ def extraction_node(state: AgentState) -> dict:
     
     if output:
         output_str = json.dumps(output)
-        print(f"DOM Output: {len(output_str)} Zeichen")
+        print(f"DOM Extraction Matrix generated: {len(output_str)} characters fetched.")
         return {
-            #why am i not using ToolMessage? because ToolMessage needs a tool_call_id! 
-            #HumanMessage can be used to inject context
-            "messages": [HumanMessage(content = f"Here is the DOM info, extracted by the extract tool: {output}")],
+            #Rationale Note for Thesis: A ToolMessage requires an active, intercepted tool_call_id. 
+            #Injecting the extracted layout environment via a HumanMessage acts as a clean 
+            #and deterministic context-inflation mechanism for the LLM prompt buffer.
+            "messages": [HumanMessage(content=f"Here is the DOM info, extracted by the extract tool: {output}")],
             "structured_dom_info": output,
-            "cmp_typ": output[0].get("cmpType", "")
+            "cmp_type": output[0].get("cmpType", "")
         }
     else:
         return {
             "last_error": "extraction_node: extract_dom.js returned empty result",
-            "messages": [HumanMessage(content = "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked")]
+            "messages": [
+                HumanMessage(content=(
+                    "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked"
+                ))
+            ]
         }
 
 def make_llm_node(model_with_tools):
+    """Factory closure that wraps the core LLM inference loop with injected tools."""
     def llm_node(state: AgentState):
         try:
-            system_prompt = SystemMessage(content = get_system_prompt())
+            system_prompt = SystemMessage(content=get_system_prompt())
             response = model_with_tools.invoke(
                 [system_prompt] + state["messages"]
             )
@@ -75,9 +85,11 @@ def make_llm_node(model_with_tools):
         except Exception as e:
             print(f"LLM ERROR: {e}")
             raise
+        
     return llm_node
 
-def human_review_node(state: AgentState) -> object:  
+def human_review_node(state: AgentState) -> dict:
+    """Halts graph execution and prompts an operator via state interrupts to provide human feedback to the agent."""
     last_ai_message = None
     for message in reversed(state["messages"]):
         if not isinstance(message, ToolMessage):
@@ -91,8 +103,8 @@ def human_review_node(state: AgentState) -> object:
         llm_choice = False
         
     question = ""
-    if llm_choice == False:
-        question = "The Agent seems to be stuck, this call was not choicen by the LLM. It already needed 20 attempts and needs help. Please give Feedback:"
+    if not llm_choice:
+        question = "The Agent seems to be stuck, this call was not chosen by the LLM. It already needed 20 attempts and needs help. Please give Feedback:"
     else:
         question = "The Agent seems to be stuck and needs help. Please give Feedback:"
         
@@ -100,7 +112,7 @@ def human_review_node(state: AgentState) -> object:
         "question": question,
         "url": state.get("url"),
         "attempts": attempts,
-        "last_ai_message": str(last_ai_message.content),
+        "last_ai_message": str(last_ai_message.content) if last_ai_message else "None",
         "last_error": state.get("last_error", "No error stored!"),
         "ruleset_draft": state.get("current_ruleset_draft"),
         "current_ruleset": state.get("final_result", "No ruleset generated yet.")
@@ -120,21 +132,21 @@ def human_review_node(state: AgentState) -> object:
     human_input = interrupt(context)
     
     return {
-        "messages": [HumanMessage(content = f"Human feedback: {human_input}")],
+        "messages": [HumanMessage(content=f"Human feedback: {human_input}")],
         "human_review_count": state.get("human_review_count", 0) + 1
     }
 
 def ruleset_output_node(state: AgentState) -> dict:
     """
-    Searches through all agent messages (newest first) for a ruleset
-    wrapped in <ruleset></ruleset> tags and extracts it as JSON.
+    Parses agent messages chronologically backward to extract final rulesets from markdown enclosures.
     
     Some LLMs (e.g. Kimi with thinking mode) return content as a list
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
     Others return a plain string. Both cases are handled here.
     """ 
     for message in reversed(state["messages"]):
-        if getattr(message, "tool_calls", None): #to ensure it is not aborted (could happen when message.tool_calls is used)
+        #to ensure loop is not aborted (could happen when message.tool_calls is used)
+        if getattr(message, "tool_calls", None):
             continue
         
         content = message.content
@@ -147,27 +159,32 @@ def ruleset_output_node(state: AgentState) -> dict:
         else:
             content = str(content)
 
+        #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
         match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
-        #why re.DOTALL: "." in regex then also matches with line breaks
+        
         if match:
             try:
+                #Note: match.group(1) returns the content of the first capture group (inside the tags)
                 ruleset = json.loads(match.group(1).strip())
-                #why match.group(1): returns the content of the first breaks, whats between <ruleset> tags
                 return {"final_result": ruleset}
             except json.JSONDecodeError:
                 return {
                     "last_error": "Invalid JSON in ruleset tags",
-                    "messages": [HumanMessage(content = (
-                        "Your previous response contained <ruleset> tags, bggut the JSON inside was invalid. "
-                        "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
-                    ))]
+                    "messages": [
+                        HumanMessage(content=(
+                            "Your previous response contained <ruleset> tags, but the JSON inside was invalid. "
+                            "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
+                        ))
+                    ]
                 }
     print("--------- NO RULESET FOUND ---------")
     return {
         "last_error": "No ruleset found in agent messages",
-        "messages": [HumanMessage(content = (
-            "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
-            "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
-            "Do NOT output <ruleset> tags until the tool returns 'handled': true."
-        ))]
+        "messages": [
+            HumanMessage(content=(
+                "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
+                "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
+                "Do NOT output <ruleset> tags until the tool returns 'handled': true."
+            ))
+        ]
     }

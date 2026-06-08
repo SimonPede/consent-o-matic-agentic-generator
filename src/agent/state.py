@@ -9,7 +9,7 @@ class AgentState(TypedDict):
     human_review_count: int
     last_error: str
     structured_dom_info: list[dict] | None
-    cmp_typ: str
+    cmp_type: str
     screenshot_info: dict | None
     current_ruleset_draft: str
     final_result: dict | None

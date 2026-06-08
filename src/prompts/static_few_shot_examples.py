@@ -1,17 +1,20 @@
 import json
 import os
+from typing import Any, Dict, List
 
-def _load(filename):
+def load(filename: str) -> Any:
+    """Loads a raw example JSON data from the local repository subsystem."""
     path = os.path.join(os.path.dirname(__file__), "examples", filename)
-    with open(path, "r", encoding = "utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def _format(title, dom, ruleset, include_filtered_html = False):
+def format(title: str, dom: List[Dict[str, Any]], ruleset: Dict[str, Any], include_filtered_html: bool = False) -> str:
+    """Formats a single unified few-shot example block into clean markdown notation."""
     return f"""
 		## Example: {title}
 
 		### Extracted DOM:
-		{json.dumps(_slim_dom(dom, include_filtered_html))}
+		{json.dumps(slim_extracted_dom(dom, include_filtered_html))}
 
 		### Correct ruleset:
 		{json.dumps(ruleset)}
@@ -19,40 +22,50 @@ def _format(title, dom, ruleset, include_filtered_html = False):
 		---
 	"""
 
-def _slim_dom(dom, include_filtered_html = False):
-    result = []
+def slim_extracted_dom(dom: List[Dict[str, Any]], include_filtered_html: bool = False) -> List[Dict[str, Any]]:
+    """Minifies the complete multi-frame DOM tree structure to conserve critical LLM token budget."""
+    minified_extraction_result = []
+    
     for frame in dom:
-        slim = {
+        frame_data = frame.get("data", {})
+        
+        slim_frame = {
             "frameUrl": frame["frameUrl"],
             "isMainFrame": frame["isMainFrame"],
             "isCookieBannerFrame": frame["isCookieBannerFrame"],
             "cmpType": frame["cmpType"],
             "data": {
-                "buttons": _slim_buttons(frame["data"]["buttons"]),
-                "checkboxes": _slim_checkboxes(frame["data"]["checkboxes"]),
-                "toggles": _slim_toggles(frame["data"]["toggles"]),
-                "cmpFound": frame["data"]["cmpFound"],
-                "cmpSelector": frame["data"].get("cmpSelector"),
-                "cmpType": frame["data"]["cmpType"],
-                "url": frame["data"]["url"],
-                "filteredHtml": frame["data"].get("filteredHtml") if include_filtered_html else None
+                "buttons": slim_buttons(frame_data.get("buttons", [])),
+                "checkboxes": slim_checkboxes(frame_data.get("checkboxes", [])),
+                "toggles": slim_toggles(frame_data.get("toggles", [])),
+                "cmpFound": frame_data.get("cmpFound", False),
+                "cmpSelector": frame_data.get("cmpSelector"),
+                "cmpType": frame_data.get("cmpType"),
+                "url": frame_data.get("url"),
+                "filteredHtml": frame_data.get("filteredHtml") if include_filtered_html else None
             }
         }
+        
         if frame.get("settings"):
-            slim["settings"] = {
-                "buttons": _slim_buttons(frame["settings"]["buttons"]),
-                "checkboxes": _slim_checkboxes(frame["settings"]["checkboxes"]),
-                "toggles": _slim_toggles(frame["settings"]["toggles"]),
-                "cmpFound": frame["settings"]["cmpFound"],
-                "cmpSelector": frame["settings"].get("cmpSelector"),
-                "cmpType": frame["settings"]["cmpType"],
-                "url": frame["settings"]["url"],
-                "filteredHtml": frame["data"].get("filteredHtml") if include_filtered_html else None
+            settings_data = frame["settings"]
+            
+            slim_frame["settings"] = {
+                "buttons": slim_buttons(settings_data.get("buttons", [])),
+                "checkboxes": slim_checkboxes(settings_data.get("checkboxes", [])),
+                "toggles": slim_toggles(settings_data.get("toggles", [])),
+                "cmpFound": settings_data.get("cmpFound", False),
+                "cmpSelector": settings_data.get("cmpSelector"),
+                "cmpType": settings_data.get("cmpType"),
+                "url": settings_data.get("url"),
+                "filteredHtml": settings_data.get("filteredHtml") if include_filtered_html else None
             }
-        result.append(slim)
-    return result
+            
+        minified_extraction_result.append(slim_frame)
+        
+    return minified_extraction_result
 
-def _slim_buttons(buttons):
+def slim_buttons(buttons: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Filters and keeps only 'essential' interactive attributes for button elements."""
     return [{
         "type": b["type"],
         "text": b["text"],
@@ -65,7 +78,8 @@ def _slim_buttons(buttons):
         "isDisabled": b["isDisabled"]
     } for b in buttons]
     
-def _slim_checkboxes(checkboxes):
+def slim_checkboxes(checkboxes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Filters and keeps only 'essential' interactive attributes for checkbox inputs."""
     return [{
         "type": c["type"],
         "labelText": c["labelText"],
@@ -77,7 +91,8 @@ def _slim_checkboxes(checkboxes):
         "isDisabled": c["isDisabled"]
     } for c in checkboxes]
 
-def _slim_toggles(toggles):
+def slim_toggles(toggles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Filters and keeps only 'essential' interactive attributes for toggle elements."""
     return [{
         "type": t["type"],
         "text": t["text"],
@@ -88,73 +103,74 @@ def _slim_toggles(toggles):
         "ariaChecked": t["ariaChecked"],
         "isDisabled": t["isDisabled"]
     } for t in toggles]
-    
+
+
 #these result in too much tokens for LiteLLM
-# FEW_SHOT_EXAMPLES = (
-#     _format(
+# few_shot_examples = (
+#     format(
 #         "Cookiebot CMP (cookiebot.com)",
-#         _load("cookiebot_dom.json"),
-#         _load("cookiebot_ruleset.json"),
+#         load("cookiebot_dom.json"),
+#         load("cookiebot_ruleset.json"),
 #         include_filtered_html = False
 #     ) +
-#     _format(
+#     format(
 #         "Swedbank, custom banner (swedbank.com)",
-#         _load("swedbank_dom.json"),
-#         _load("swedbank_ruleset.json"),
+#         load("swedbank_dom.json"),
+#         load("swedbank_ruleset.json"),
 #         include_filtered_html = True
 #     ) +
-#     _format(
+#     format(
 #         "Sourcepoint CMP with Buttons (heise.de style)",
-#         _load("sourcepoint_mock_dom.json"),
-#         _load("sourcepoint_mock_ruleset.json"),
+#         load("sourcepoint_mock_dom.json"),
+#         load("sourcepoint_mock_ruleset.json"),
 #         include_filtered_html = True
 #     )
 # )
 
-# FEW_SHOT_EXAMPLES = (
-#     _format(
+# few_shot_examples = (
+#     format(
 #         "Cookiebot CMP (cookiebot.com)",
-#         _load("cookiebot_dom.json"),
-#         _load("cookiebot_ruleset.json"),
-#         include_filtered_html = False
+#         load("cookiebot_dom.json"),
+#         load("cookiebot_ruleset.json"),
+#         include_filtered_html=False
 #     ) +
-#     _format(
+#     format(
 #         "Swedbank, custom banner (swedbank.com)",
-#         _load("swedbank_dom.json"),
-#         _load("swedbank_ruleset.json"),
-#         include_filtered_html = False
+#         load("swedbank_dom.json"),
+#         load("swedbank_ruleset.json"),
+#         include_filtered_html=False
 #     ) +
-#     _format(
+#     format(
 #         "Sourcepoint CMP with Buttons (heise.de style)",
-#         _load("sourcepoint_mock_dom.json"),
-#         _load("sourcepoint_mock_ruleset.json"),
-#         include_filtered_html = True
+#         load("sourcepoint_mock_dom.json"),
+#         load("sourcepoint_mock_ruleset.json"),
+#         include_filtered_html=True
 #     )
 # )
 
-FEW_SHOT_EXAMPLES = (
-    _format(
+few_shot_examples = (
+    format(
         "Cookiebot CMP (cookiebot.com)",
-        _load("cookiebot_dom.json"),
-        _load("cookiebot_ruleset.json"),
-        include_filtered_html = False
+        load("cookiebot_dom.json"),
+        load("cookiebot_ruleset.json"),
+        include_filtered_html=False
     ) +
-    _format(
+    format(
         "Sourcepoint CMP with Buttons",
-        _load("sourcepoint_mock_dom.json"),
-        _load("sourcepoint_mock_ruleset.json"),
-        include_filtered_html = True
+        load("sourcepoint_mock_dom.json"),
+        load("sourcepoint_mock_ruleset.json"),
+        include_filtered_html=True
     )
 )
 
-# FEW_SHOT_EXAMPLES = (
-#     _format(
+# few_shot_examples = (
+#     format(
 #         "Cookiebot CMP (cookiebot.com)",
-#         _load("cookiebot_dom.json"),
-#         _load("cookiebot_ruleset.json")
+#         load("cookiebot_dom.json"),
+#         load("cookiebot_ruleset.json")
 #     )
 # )
 
-# FEW_SHOT_EXAMPLES = (
+# few_shot_examples = (
 #     ""
 # )

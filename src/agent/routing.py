@@ -3,24 +3,35 @@ from src.agent.state import AgentState
 from langgraph.graph import END
 
 def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "ruleset_output_node"]:
+    """Evaluates the final message in the stream to determine the next operational graph node."""
+    #Dynamic budgeting: Each completed human feedback expands the number of allowed
+    #iterations by 5
+    max_attempts_budget = 20 + (state.get("human_review_count", 0) * 5)
     
-    #each human_review gives the LLM 5 new tries
-    if state.get("attempts", 0) >= 20 + (state.get("human_review_count", 0) * 5):
+    if state.get("attempts", 0) >= max_attempts_budget:
         return "human_review_node"
     
     last_message = state["messages"][-1]
     
-    if hasattr(last_message, "tool_calls"):
-        for tool_call in last_message.tool_calls:
-            if tool_call["name"] == "request_human_review":
-                return "human_review_node"
+    tool_calls = getattr(last_message, "tool_calls", None) or []
     
-    if not last_message.tool_calls:
+    for tool_call in tool_calls:
+        if tool_call["name"] == "request_human_review":
+            return "human_review_node"
+    
+    if not tool_calls:
         return "ruleset_output_node"
     
     return "tool_node"
 
-def route_after_ruleset(state: AgentState) -> str:
+def route_after_ruleset(state: AgentState) -> Literal["llm_node", "__end__"]:
+    """
+    Validates the presence of a successfully serialized final ruleset.
+    
+    Routes execution to graph termination if extraction criteria are fulfilled; 
+    otherwise, triggers an inference loopback sequence.
+    """
     if state.get("final_result"):
         return END
+    
     return "llm_node"
