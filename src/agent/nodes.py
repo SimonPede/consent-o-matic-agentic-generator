@@ -22,7 +22,7 @@ def extraction_node(state: AgentState) -> dict:
     url = state.get("url", "")
     
     extract_dom_path = os.path.join(
-        os.path.dirname(__file__), "..", "tools", "extract_dom", "main.js"
+        os.path.dirname(__file__), "..", "tools", "extract-dom", "main.js"
     )
     result = subprocess.run(
         ["node", extract_dom_path, url],

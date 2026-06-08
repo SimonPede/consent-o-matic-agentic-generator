@@ -42,9 +42,13 @@ consent-o-matic-agentic-generator/
 │   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
+│   │   └── extract-dom/         # the DOM extraction script providing the LLM with the necessary DOM information
 │   │   └── consent-engine/      # source code of the CoM-Engine used for the test_ruleset node in Langgraph
-│   └── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
+│   ├── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
+│   │   └── midas-corpus/        # utility files that are derived from the Consent Observatory project
 ├── main.py                      # Entry point
+├── extract_dom_flow-chart.pdf   # Flow Chart visualizing the logic of my extract_dom script
+├── agentic_flow_MVP.pdf         # Visualization of my agentic system and its components
 ├── requirements.txt
 └── package.json
 ```
@@ -56,6 +60,7 @@ consent-o-matic-agentic-generator/
 - Python 3.11.9
 - Node.js (v18+)
 - Ollama/Gemma 4 running on a server from SNET, accessed via bearer-token
+- Alternatively, LiteLLM/Gemma 4 provided by the Aarhus University, accessed via API-Key
 
 1. **Clone the repository:**
    ```bash
@@ -79,7 +84,7 @@ consent-o-matic-agentic-generator/
    Create a `.env` file in the root directory:
    ```bash
     OLLAMA_BASE_URL = http://snet-server:1234
-    OLLAMA_BEARER_TOKEN = your-toke-here
+    OLLAMA_BEARER_TOKEN = your-token-here
    ```
 
 ## Usage
