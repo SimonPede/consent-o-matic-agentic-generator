@@ -93,10 +93,10 @@ def test_ruleset(url: str, json_string: str) -> str:
     try:
         result = subprocess.run(
             ["node", script_path, url],
-            input = json_string,
-            capture_output = True,
-            text = True,
-            timeout = 300,
+            input=json_string,
+            capture_output=True,
+            text=True,
+            timeout=300,
         )
         
         #Debug logging for process monitoring

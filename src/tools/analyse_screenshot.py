@@ -67,9 +67,9 @@ def analyse_screenshot(url: str) -> str:
     try:
         result = subprocess.run(
             ["node", script_path, url],
-            capture_output = True,
-            text = True,
-            timeout = 300,
+            capture_output=True,
+            text=True,
+            timeout=300,
         )
 
         lines = [line for line in result.stdout.strip().splitlines() if line]
@@ -112,11 +112,11 @@ def analyse_screenshot(url: str) -> str:
 
         response = requests.post(
             f"{ollama_url}/api/generate",
-            headers = {
+            headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {ollama_token}"
             },
-            json = {
+            json={
                 "model": "gemma4:latest",
                 "prompt": prompt,
                 "images": [base64_image],

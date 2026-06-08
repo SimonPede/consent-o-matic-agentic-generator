@@ -39,11 +39,11 @@ def call_ollama_vision(base64_image: str) -> dict:
     try:
         response = requests.post(
 			f"{ollama_url}/api/generate",
-			headers = {
+			headers={
 				"Content-Type": "application/json",
 				"Authorization": f"Bearer {ollama_token}"
 			},
-			json = {
+			json={
 				"model": "gemma4:latest",
 				"prompt": prompt,
 				"images": [base64_image],
