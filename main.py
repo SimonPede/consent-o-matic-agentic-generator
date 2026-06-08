@@ -1,91 +1,79 @@
+import os
 import sys
 from datetime import datetime
-from dotenv import load_dotenv
 
-# from langgraph.checkpoint.memory import MemorySaver
-#now i want to utilize a small db with help of SQLite () so i am not dependend on storage of the thread in RAM (i can get a coffe, before answering the LLM :)):
-#https://reference.langchain.com/python/langgraph.checkpoint.sqlite
+from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage
+#Utilizing a small db with help of SQLite (), we are not dependend on storage of the thread in RAM (we can get a coffe, before answering the LLM :)):
+#for more info: https://reference.langchain.com/python/langgraph.checkpoint.sqlite
 from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.types import Command
+
+#Import the uncompiled StateGraph blueprint from our agent module
 from src.agent.graph import workflow
-from langchain_core.messages import HumanMessage
 
 load_dotenv()
 
-url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.cookiebot.com"
-fresh = "--fresh" in sys.argv  #python main.py https://heise.de --fresh
+def main() -> None:
+    url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.cookiebot.com"
+    fresh_session = "--fresh" in sys.argv  #python main.py https://heise.de --fresh
 
-inputs = {
-    "messages": [HumanMessage(content = f"Generate a Consent-O-Matic ruleset for: {url}")],
-    "url": url,
-    "attempts": 0,
-    "human_review_count": 0,
-    "last_error": "",
-    "structured_dom_info": None,
-    "cmp_typ": "",
-    "screenshot_info": None,
-    "current_ruleset_draft": "",
-    "final_result": None
-}
+    inputs = {
+        "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
+        "url": url,
+        "attempts": 0,
+        "human_review_count": 0,
+        "last_error": "",
+        "structured_dom_info": None,
+        "cmp_type": "",
+        "screenshot_info": None,
+        "current_ruleset_draft": "",
+        "final_result": None
+    }
 
-#Threads enable the checkpointing of multiple different runs, making them essential for multi-tenant chat applications
-#and other scenarios where maintaining separate states is necessary.
-#A thread is a unique ID assigned to a series of checkpoints saved by a checkpointer. When using a checkpointer,
-#you must specify a thread_id and optionally checkpoint_id when running the graph.
-#thread_id is simply the ID of a thread. This is always required.
-#checkpoint_id can optionally be passed. This identifier refers to a specific checkpoint within a thread. This can be used to kick off a run of a graph from some point halfway through a thread.
-#You must pass these when invoking the graph as part of the configurable part of the config, e.g.
+    #Thread Checkpointing Strategy: Establishes context persistence
+    if fresh_session:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        thread_id = f"{url}_{timestamp}"
+    else:
+        thread_id = url
 
-# {"configurable": {"thread_id": "1"}}  # valid config
-# {"configurable": {"thread_id": "1", "checkpoint_id": "0c62ca34-ac19-445d-bbb0-5b4984975b2a"}}  # also valid config
-
-if fresh:
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    thread_id = f"{url}_{timestamp}"
-else:
-    thread_id = url
-
-config = {"configurable": {"thread_id": thread_id}}
-
-with SqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
-
-    agent = workflow.compile(checkpointer = checkpointer)
-
-    png_data = agent.get_graph(xray = True).draw_mermaid_png()
-
-    with open("graph.png", "wb") as f:
-        f.write(png_data)
-        
-    print(f"--- Agent starts for: {url} ---")
-    #my first version:
-    # for chunk in agent.stream(inputs, config = config):
-    #     for node_name, output in chunk.items():
-    #         if node_name == "__interrupt__":
-
-    #             print("\n" + "-"*30)
-    #             feedback = input("Your Feedback: ")
-
-    #             for chunk in agent.stream(Command(resume = feedback), config = config):
-    #                 for node_name, output in chunk.items():
-    #                     print(f"\n[Node: {node_name}]")
-    #         else:
-    #             print(f"\n[Node: {node_name}]")
+    config = {"configurable": {"thread_id": thread_id}}
     
-    #my second version should correct a flaw, i think would create problems
-    #what happens when a sceond interrupt is called?
-    current_input = inputs
-    
-    while True:
-        interrupted = False
+    #Context Manager guarantees seamless SQLite connection handling
+    with SqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
+
+        agent = workflow.compile(checkpointer=checkpointer)
+
+        png_data = agent.get_graph(xray=True).draw_mermaid_png()
+
+        try:
+            png_data = agent.get_graph(xray=True).draw_mermaid_png()
+            with open("graph.png", "wb") as f:
+                f.write(png_data)
+        except Exception as error:
+            print(f"Visualization Note: Skipping graph rendering (graphviz/mermaid missing): {error}")      
+            
+        print(f"--- Agent starts for: {url} ---")
+        current_input = inputs
         
-        for chunk in agent.stream(current_input, config = config):
-            for node_name, output in chunk.items():
-                if node_name == "__interrupt__":
-                    interrupted = True
-                    feedback = input("Your Feedback: ")
-                    current_input = Command(resume = feedback)
-                else:
-                    print(f"\n[Node: {node_name}]")
-        
-        if not interrupted:
-            break
+        while True:
+            interrupted = False
+            
+            #NOTE: old version broke on consecutive interrupts (what if the LLM gets stuck multiple times?).
+            #this loop handles endless consecutive human reviews safely until the graph finishes.
+            for chunk in agent.stream(current_input, config=config):
+                for node_name, output in chunk.items():
+                    if node_name == "__interrupt__":
+                        interrupted = True
+                        feedback = input("Your Feedback: ")
+                        current_input = Command(resume=feedback)
+                    else:
+                        print(f"\n[Node: {node_name}]")
+            
+            if not interrupted:
+                print("\n Execution Pipeline Successfully Terminated")
+                break
+            
+if __name__ == "__main__":
+    main()
