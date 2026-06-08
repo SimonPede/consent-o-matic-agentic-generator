@@ -1,0 +1,116 @@
+{
+    "Cookie Information": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#coiOverlay"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#coiOverlay",
+                            "displayFilter": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "click",
+                    "target": {
+                        "selector": "#show_details"
+                    }
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "A",
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": "#cookie_cat_functional"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": "#cookie_cat_functional"
+                                }
+                            }
+                        },
+                        {
+                            "type": "B",
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": "#cookie_cat_statistic"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": "#cookie_cat_statistic"
+                                }
+                            }
+                        },
+                        {
+                            "type": "F",
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": "#cookie_cat_marketing"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": "#cookie_cat_marketing"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "wait",
+                            "waitTime": 500
+                        },
+                        {
+                            "type": "click",
+                            "target": {
+                                "selector": "#declineButton"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "HIDE_CMP",
+                "action": {
+                    "type": "hide",
+                    "target": {
+                        "selector": "#coiOverlay"
+                    }
+                }
+            }
+        ]
+    }
+}

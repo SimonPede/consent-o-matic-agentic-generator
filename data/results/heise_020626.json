@@ -1,0 +1,190 @@
+{
+  "Sourcepoint": {
+    "detectors": [
+      {
+        "presentMatcher": [
+          {
+            "type": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]",
+              "iframeFilter": true
+            }
+          }
+        ],
+        "showingMatcher": [
+          {
+            "type": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]",
+              "displayFilter": true,
+              "iframeFilter": true
+            }
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "name": "OPEN_OPTIONS",
+        "action": {
+          "type": "click",
+          "target": {
+            "selector": "[aria-label=\"Settings\"]",
+            "iframeFilter": true
+          }
+        }
+      },
+      {
+        "name": "DO_CONSENT",
+        "action": {
+          "type": "consent",
+          "consents": [
+            {
+              "type": "D",
+              "trueAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Store and/or access information on a device"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Agree"
+                }
+              }
+            },
+            {
+              "type": "F",
+              "trueAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Data processing by advertising providers"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Agree"
+                }
+              }
+            },
+            {
+              "type": "E",
+              "trueAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Displaying external content"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Agree"
+                }
+              },
+              "falseAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Displaying external content"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Reject"
+                }
+              }
+            },
+            {
+              "type": "X",
+              "trueAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Recommendations of own products"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Agree"
+                }
+              },
+              "falseAction": {
+                "type": "click",
+                "parent": {
+                  "selector": ".stack-row",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h2",
+                      "textFilter": "Recommendations of own products"
+                    }
+                  },
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".pur-buttons-container button",
+                  "textFilter": "Reject"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "SAVE_CONSENT",
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "wait",
+              "waitTime": 500
+            },
+            {
+              "type": "click",
+              "target": {
+                "selector": "[aria-label=\"Agree to selected\"]",
+                "iframeFilter": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "HIDE_CMP",
+        "action": {
+          "type": "hide",
+          "target": {
+            "selector": "[class*=\"message-container\"]",
+            "iframeFilter": true
+          }
+        }
+      }
+    ]
+  }
+}

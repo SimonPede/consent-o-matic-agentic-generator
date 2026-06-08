@@ -1,0 +1,92 @@
+{
+    "Swedbank": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#component-cookie-banner"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#component-cookie-banner",
+                            "displayFilter": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "click",
+                    "target": {
+                        "selector": "#cookie-banner-initial-customize"
+                    }
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "B",
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": "input[name='functi']"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": "input[name='functi']"
+                                }
+                            }
+                        },
+                        {
+                            "type": "F",
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": "input[name='market']"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": "input[name='market']"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": {
+                    "type": "click",
+                    "target": {
+                        "selector": "#cookie-banner-customize-customize"
+                    }
+                }
+            },
+            {
+                "name": "HIDE_CMP",
+                "action": {
+                    "type": "hide",
+                    "target": {
+                        "selector": "#component-cookie-banner"
+                    }
+                }
+            }
+        ]
+    }
+}

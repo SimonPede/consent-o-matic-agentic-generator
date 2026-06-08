@@ -3,7 +3,6 @@
 node_modules/
 __pycache__/
 *.db
-data/results/*
 .DS_Store
 debug.png
 extraction_debug.json

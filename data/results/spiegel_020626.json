@@ -1,0 +1,297 @@
+{
+    "Sourcepoint": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "[class*='message-container']"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "[class*='message-container']",
+                            "displayFilter": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "click",
+                            "target": {
+                                "selector": "[aria-label='Preferences']"
+                            }
+                        },
+                        {
+                            "type": "waitcss",
+                            "target": {
+                                "selector": ".tcfv2-stack"
+                            },
+                            "retries": 15,
+                            "waitTime": 300
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "D",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Store and/or access information"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Store and/or access information"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Reject"
+                                }
+                            }
+                        },
+                        {
+                            "type": "F",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Personalisierte Werbung"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Personalisierte Werbung"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Reject"
+                                }
+                            }
+                        },
+                        {
+                            "type": "F",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Politische Werbung"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Politische Werbung"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Reject"
+                                }
+                            }
+                        },
+                        {
+                            "type": "E",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Drittanbieter Inhalte aus sozialen Netzwerken"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Drittanbieter Inhalte aus sozialen Netzwerken"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Reject"
+                                }
+                            }
+                        },
+                        {
+                            "type": "E",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "redaktionelle Inhaltsempfehlungen"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            },
+                            "falseAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "redaktionelle Inhaltsempfehlungen"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Reject"
+                                }
+                            }
+                        },
+                        {
+                            "type": "X",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Verlagsangebote"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            }
+                        },
+                        {
+                            "type": "X",
+                            "trueAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": ".stack-row",
+                                    "childFilter": {
+                                        "target": {
+                                            "selector": "h2",
+                                            "textFilter": "Produkt- und Vertriebsentwicklung"
+                                        }
+                                    }
+                                },
+                                "target": {
+                                    "selector": "button",
+                                    "textFilter": "Accept"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "wait",
+                            "waitTime": 500
+                        },
+                        {
+                            "type": "click",
+                            "target": {
+                                "selector": "button.sp_choice_type_SAVE_AND_EXIT"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "HIDE_CMP",
+                "action": {
+                    "type": "hide",
+                    "target": {
+                        "selector": "[class*='message-container']"
+                    }
+                }
+            }
+        ]
+    }
+}

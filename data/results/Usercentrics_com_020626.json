@@ -1,0 +1,130 @@
+{
+    "Usercentrics": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#usercentrics-cmp-ui"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#usercentrics-cmp-ui"
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "click",
+                    "parent": {
+                        "selector": "#usercentrics-cmp-ui"
+                    },
+                    "target": {
+                        "selector": "#uc-more-link"
+                    }
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "A",
+                            "matcher": {
+                                "type": "css",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-functional-toggle[aria-checked='true']"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-functional-toggle"
+                                }
+                            }
+                        },
+                        {
+                            "type": "B",
+                            "matcher": {
+                                "type": "css",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-customcategory-46c19ef2-b8c3-4ca2-a8eb-93286568a1d1-toggle[aria-checked='true']"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-customcategory-46c19ef2-b8c3-4ca2-a8eb-93286568a1d1-toggle"
+                                }
+                            }
+                        },
+                        {
+                            "type": "F",
+                            "matcher": {
+                                "type": "css",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-marketing-toggle[aria-checked='true']"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "parent": {
+                                    "selector": "#usercentrics-cmp-ui"
+                                },
+                                "target": {
+                                    "selector": "#uc-category-marketing-toggle"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": {
+                    "type": "click",
+                    "parent": {
+                        "selector": "#usercentrics-cmp-ui"
+                    },
+                    "target": {
+                        "selector": "#save"
+                    }
+                }
+            },
+            {
+                "name": "HIDE_CMP",
+                "action": {
+                    "type": "hide",
+                    "target": {
+                        "selector": "#usercentrics-cmp-ui"
+                    }
+                }
+            }
+        ]
+    }
+}
