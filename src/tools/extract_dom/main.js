@@ -27,7 +27,10 @@ const findSettingsButtonViaLLM = require("./llm_fallback");
  * @param {string} text - text string to normalize
  */
 function normalizeText(text) {
-    if (!text) return "";
+    if (!text) {
+		return "";
+	}
+	
     return text.normalize("NFKD")
                 .replace(/[\u0300-\u036f]/g, "") //deletes floating accents
                 .replace(/[^a-z0-9]/gi, "")      //deletes everything except a-z & 0-9 (incl. whitespaces)
@@ -127,7 +130,9 @@ async function extractStructuredDom(url) {
         } else {
             for (const frame of page.frames()) {
                 console.error("Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.");
-                if (!frame.url() || frame.url() === "about:blank") continue; //TODO: also implement visbilty check?
+                if (!frame.url() || frame.url() === "about:blank") {
+					continue; //TODO: also implement visbilty check?
+				}
 
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
                 const looksLikeBanner = data.cmpFound //TODO: consider also using other factors like buttons. But likely not reliable and already done before in the code
@@ -186,6 +191,7 @@ async function extractStructuredDom(url) {
                 } else {
                     console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
                     const llmSettingsButton = await findSettingsButtonViaLLM(result.data.filteredHtml);
+
                     if (llmSettingsButton) {
                         result.settings = await clickAndExtractSettings(result.frame, llmSettingsButton, page, cmpType);
                     } else {

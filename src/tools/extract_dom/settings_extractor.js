@@ -338,6 +338,8 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         await stablePromises.get(bestNewFrame);
         const settings = await extractFromFrame(bestNewFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
         settings.isIframe = bestNewFrame !== page.mainFrame();
+        await Promise.allSettled([...stablePromises.values()]);
+
         return settings;
     } else {
         const newState = await getFrameState(frame);
@@ -363,13 +365,19 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
             if (settings.checkboxes.length > 0 || settings.toggles.length > 0 || settings.buttons.length > 2) {
                 console.error(`Settings UI seems to be there! ${settings.checkboxes.length + settings.toggles.length} functional elements got found.`);
                 settings.isIframe = frame !== page.mainFrame();
+                await Promise.allSettled([...stablePromises.values()]);
+
                 return settings;
             } else {
                 console.error("Settings-page seems to have no input elements! A False Positive after the click?!");
+                await Promise.allSettled([...stablePromises.values()]);
+                
                 return null;
             }
         } else {
             console.error("Settings click seems to have had no effect");
+            await Promise.allSettled([...stablePromises.values()]);
+
             return null;
         }
     }

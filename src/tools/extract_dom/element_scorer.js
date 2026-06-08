@@ -187,7 +187,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 }
             }
 
-            const matches = text.match(new RegExp(triggerPattern, "gi")) || []; //finds ALL matches (g = global, i = case-insensitive)
+            const matches = text.match(new RegExp(triggerWords, "gi")) || []; //finds ALL matches (g = global, i = case-insensitive)
             localScore += Math.min(matches.length * 2, 10); //Math.min(..., 10) caps the bonus at +10 to avoid over-weighting
             //TODO: Evaluate!
 
