@@ -21,11 +21,12 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 
 ## Tech Stack
 
-- **Language:** Python 3.11.9 and JS
+- **Language:** Python 3.11.9 and JavaScript
 - **Orchestration:** LangGraph/LangChain
 - **Browser Automation:** Node.js & Puppeteer
-- **Validation:** Pydantic (Type-safe tool calling)
-- **Tracing:** LangSmith
+- **LLM:** Gemma 4 31B via Ollama (SNET server) or LiteLLM (Aarhus University)
+- **Validation:** Pydantic (type-safe tool calling) (not implemented at the moment)
+- **Tracing & Observability:** LangSmith
 
 ## Project Structure
 
@@ -35,10 +36,10 @@ consent-o-matic-agentic-generator/
 ├── data/                        # Test URLs and generated results
 │   └── results/
 ├── evaluation/                  # Benchmarking scripts and datasets
-│   └── gold_standard/           # Reference rulesets for evaluation
+│   └── gold-standard/           # Reference rulesets for evaluation
 ├── src/
 │   ├── agent/                   # LangGraph graph, nodes, and state definition
-│   ├── prompts/                 # System prompt and few-shot examples (Pseudo-RAG)
+│   ├── prompts/                 # System prompt and few-shot examples (Pseudo-RAG not implemented at the moment)
 │   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
@@ -47,9 +48,12 @@ consent-o-matic-agentic-generator/
 │   ├── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
 │   │   └── midas-corpus/        # utility files that are derived from the Consent Observatory project
 ├── main.py                      # Entry point
-├── extract_dom_flow-chart.pdf   # Flow Chart visualizing the logic of my extract_dom script
+├── langgraph.json               # LangSmith Studio configuration
+├── extract_dom_flow_chart.pdf   # Flow Chart visualizing the logic of my extract_dom script
 ├── agentic_flow_MVP.pdf         # Visualization of my agentic system and its components
-├── requirements.txt
+├── requirements.txt             # Pinned direct Python dependencies
+├── requirements_dev.txt         # Development-only dependencies (LangSmith Studio)
+├── requirements_frozen.txt      # Full dependency snapshot for reproducibility
 └── package.json
 ```
 
@@ -59,8 +63,8 @@ consent-o-matic-agentic-generator/
 
 - Python 3.11.9
 - Node.js (v18+)
-- Ollama/Gemma 4 running on a server from SNET, accessed via bearer-token
-- Alternatively, LiteLLM/Gemma 4 provided by the Aarhus University, accessed via API-Key
+- Access to Gemma 4 via Ollama (SNET server, bearer token) or LiteLLM (Aarhus University, API key)
+   (other LLMs capable of tool calling & vision as well as reasoning should also provide similiar results)
 
 1. **Clone the repository:**
    ```bash
@@ -80,17 +84,68 @@ consent-o-matic-agentic-generator/
    npm install
    ```
 
-4. **Configuration**
-   Create a `.env` file in the root directory:
-   ```bash
-    OLLAMA_BASE_URL = http://snet-server:1234
-    OLLAMA_BEARER_TOKEN = your-token-here
-   ```
+### 4. Configuration
+ 
+Create a `.env` file in the root directory:
+ 
+```bash
+#LLM Access (choose one)
+OLLAMA_BASE_URL=http://snet-server:1234
+OLLAMA_BEARER_TOKEN=your-token-here
+#or
+LITELLM_BASE_URL=http://litelllm-server:1234
+LITELLM_API_KEY=your-api-key-here
+ 
+#LangSmith Tracing
+LANGSMITH_TRACING=true
+LANGSMITH_API_KEY=your-langsmith-api-key
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+#optional:
+LANGSMITH_PROJECT="your project"
+```
+
+> All runs are automatically traced to LangSmith when `LANGSMITH_TRACING=true` is set. To disable tracing, set it to `false` — no data will leave your machine.
 
 ## Usage
-   ```bash
-   python main.py https://www.example.com --fresh
-   ```
+ 
+```bash
+python main.py https://www.example.com
+```
+ 
+Add `--fresh` to force a new thread instead of resuming a previous checkpoint:
+ 
+```bash
+python main.py https://www.example.com --fresh
+```
+
+## Development: LangSmith Studio (Optional)
+ 
+[LangSmith Studio](https://smith.langchain.com/studio) is a visual interface for interacting with your agent in real-time. It shows each step the agent takes — prompts sent to the model, tool calls and their results, token counts, and latency per node. You can submit inputs directly from the UI, inspect intermediate states, and interact with `human_review` interrupts without using the console.
+ 
+Studio is **not required** for normal usage — `main.py` works independently. Use Studio when you want to visually debug a run or test a specific input interactively.
+
+### Setup
+ 
+Install the development dependencies:
+ 
+```bash
+pip install -r requirements_dev.txt
+```
+ 
+Start the local agent server (requires WSL users to use `--tunnel`):
+ 
+```bash
+langgraph dev
+#or for WSL:
+langgraph dev --tunnel
+```
+ 
+Then open Studio at:
+```
+https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+```
+ 
+The agent graph, all state fields, and tool calls are visible and interactive directly in the UI.
 
 ## Acknowledgements
 This project is developed in cooperation with the Consent-O-Matic team at Aarhus University 
