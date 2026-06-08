@@ -1,7 +1,8 @@
-langgraph
-langchain-core
-langchain-ollama
-langchain-litellm
-pydantic
-python-dotenv
-langsmith
+langgraph==1.1.4
+langchain-core==1.2.23
+langchain-ollama==1.1.0
+langchain-litellm==0.6.5
+pydantic==2.12.5
+python-dotenv==1.2.2
+langsmith==0.7.23
+langgraph-checkpoint-sqlite==3.0.3

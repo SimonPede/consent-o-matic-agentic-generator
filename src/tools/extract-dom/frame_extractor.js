@@ -709,7 +709,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 		//Capping the payload string length at 100k characters 
         //acts as a strict token budget constraint, ensuring optimal LLM inference performance 
     	//and preventing context window overflows during prompt generation loops.
-        result.filteredHtml = cleaned.slice(0, 40000);
+        result.filteredHtml = cleaned.slice(0, 20000);
 		
         delete result.html;
     }

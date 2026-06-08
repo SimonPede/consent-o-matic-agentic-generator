@@ -3,6 +3,8 @@
 node_modules/
 __pycache__/
 *.db
+*.pckl
+=0.2.6
 .DS_Store
 debug.png
 extraction_debug.json

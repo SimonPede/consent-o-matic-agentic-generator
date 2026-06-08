@@ -1,5 +1,6 @@
 import sys
 from datetime import datetime
+from dotenv import load_dotenv
 
 # from langgraph.checkpoint.memory import MemorySaver
 #now i want to utilize a small db with help of SQLite () so i am not dependend on storage of the thread in RAM (i can get a coffe, before answering the LLM :)):
@@ -9,6 +10,7 @@ from langgraph.types import Command
 from src.agent.graph import workflow
 from langchain_core.messages import HumanMessage
 
+load_dotenv()
 
 url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.cookiebot.com"
 fresh = "--fresh" in sys.argv  #python main.py https://heise.de --fresh
