@@ -632,8 +632,10 @@ async function runTest(ruleset) {
         const bannerStillVisible = 
             auditState.heuristicBannerFound === true || 
             auditState.showingMatcherFound === true;
+        
+        const isDetectorFailure = finalError && finalError.includes("No CMP detected");
 
-        if (bannerStillVisible) {
+        if (bannerStillVisible && !isDetectorFailure) {
             try {
                 console.error("Validation failed: Banner is still visible. Captures audit screenshot...");
                 auditScreenshot = await page.screenshot({ encoding: "base64" });

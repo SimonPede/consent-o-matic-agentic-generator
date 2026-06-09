@@ -136,50 +136,106 @@ def human_review_node(state: AgentState) -> dict:
         "human_review_count": state.get("human_review_count", 0) + 1
     }
 
+# def ruleset_output_node(state: AgentState) -> dict:
+#     """
+#     Parses agent messages chronologically backward to extract final rulesets from markdown enclosures.
+    
+#     Some LLMs (e.g. Kimi with thinking mode) return content as a list
+#     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
+#     Others return a plain string. Both cases are handled here.
+#     """ 
+#     for message in reversed(state["messages"]):
+#         #to ensure loop is not aborted (could happen when message.tool_calls is used)
+#         if getattr(message, "tool_calls", None):
+#             continue
+        
+#         content = message.content
+#         if isinstance(content, list):
+#             text_parts = []
+#             for block in content:
+#                 if isinstance(block, dict) and block.get("type") == "text":
+#                     text_parts.append(block.get("text", ""))
+#             content = " ".join(text_parts)
+#         else:
+#             content = str(content)
+
+#         #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
+#         match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
+        
+#         if match:
+#             try:
+#                 #Note: match.group(1) returns the content of the first capture group (inside the tags)
+#                 ruleset = json.loads(match.group(1).strip())
+#                 return {"final_result": ruleset}
+#             except json.JSONDecodeError:
+#                 return {
+#                     "last_error": "Invalid JSON in ruleset tags",
+#                     "messages": [
+#                         HumanMessage(content=(
+#                             "Your previous response contained <ruleset> tags, but the JSON inside was invalid. "
+#                             "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
+#                         ))
+#                     ]
+#                 }
+#     print("--------- NO RULESET FOUND ---------")
+#     return {
+#         "last_error": "No ruleset found in agent messages",
+#         "messages": [
+#             HumanMessage(content=(
+#                 "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
+#                 "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
+#                 "Do NOT output <ruleset> tags until the tool returns 'handled': true."
+#             ))
+#         ]
+#     }
+
 def ruleset_output_node(state: AgentState) -> dict:
     """
-    Parses agent messages chronologically backward to extract final rulesets from markdown enclosures.
+    Extracts the final ruleset from markdown enclosures in the latest AI message.
     
     Some LLMs (e.g. Kimi with thinking mode) return content as a list
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
     Others return a plain string. Both cases are handled here.
     """ 
-    for message in reversed(state["messages"]):
-        #to ensure loop is not aborted (could happen when message.tool_calls is used)
-        if getattr(message, "tool_calls", None):
-            continue
-        
-        content = message.content
-        if isinstance(content, list):
-            text_parts = []
-            for block in content:
-                if isinstance(block, dict) and block.get("type") == "text":
-                    text_parts.append(block.get("text", ""))
-            content = " ".join(text_parts)
-        else:
-            content = str(content)
+    #We only check the very last message, preventing infinite historical loops
+    last_message = state["messages"][-1]
+    content = last_message.content
+    
+    if isinstance(content, list):
+        text_parts = []
+        for block in content:
+            if isinstance(block, dict) and block.get("type") == "text":
+                text_parts.append(block.get("text", ""))
+        content = " ".join(text_parts)
+    else:
+        content = str(content)
 
-        #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
-        match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
-        
-        if match:
-            try:
-                #Note: match.group(1) returns the content of the first capture group (inside the tags)
-                ruleset = json.loads(match.group(1).strip())
-                return {"final_result": ruleset}
-            except json.JSONDecodeError:
-                return {
-                    "last_error": "Invalid JSON in ruleset tags",
-                    "messages": [
-                        HumanMessage(content=(
-                            "Your previous response contained <ruleset> tags, but the JSON inside was invalid. "
-                            "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
-                        ))
-                    ]
-                }
+    #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
+    match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
+    
+    if match:
+        try:
+            #NOTE: match.group(1) returns the content of the first capture group (inside the tags)
+            ruleset = json.loads(match.group(1).strip())
+            return {"final_result": ruleset}
+        except json.JSONDecodeError as error:
+            error_message = f"Invalid JSON in ruleset tags: {str(error)}"
+            print(f"--------- JSON ERROR: {error_message} ---------")
+            
+            return {
+                "last_error": error_message,
+                "messages": [
+                    HumanMessage(content=(
+                        "Your previous response contained <ruleset> tags, but the JSON inside was invalid.\n "
+                        f"The Python JSON parser threw this exact error: '{str(error)}'\n"
+                        "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
+                    ))
+                ]
+            }
+            
     print("--------- NO RULESET FOUND ---------")
     return {
-        "last_error": "No ruleset found in agent messages",
+        "last_error": "No ruleset found in agent message",
         "messages": [
             HumanMessage(content=(
                 "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "

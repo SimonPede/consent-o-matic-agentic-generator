@@ -31,6 +31,15 @@ def test_ruleset(url: str, json_string: str) -> str:
 
     Returns:
         JSON string with the following fields:
+        
+        CRITICAL ANALYSIS WORKFLOW:
+        When receiving this output, you MUST follow these steps in exact order:
+        1. FIRST, read the 'error' field. If it is not null, this is the root cause!
+        2. If 'error' contains "No CMP detected", your DETECTORS ARE WRONG (presentMatcher/showingMatcher).
+            The engine aborted before even looking at methods. Do NOT attempt to fix DO_CONSENT or SAVE_CONSENT in this case.
+        3. If 'error' contains "ACTION_TARGET_NOT_FOUND", look at the specific selector that failed.
+        4. ONLY AFTER analyzing the error, use the Vision result and bannerStatus to confirm if the banner is still visible.
+        
         - handled (bool): True if CoM successfully executed all methods
             without a crash. NOTE: handled=true does NOT guarantee all
             selectors worked --> check the error field for selector failures.

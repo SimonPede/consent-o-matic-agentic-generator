@@ -39,6 +39,11 @@ def tool_node(state: dict) -> dict:
     
     for tool_call in state["messages"][-1].tool_calls:
         target_tool = tools_by_name[tool_call["name"]]
+        
+        if tool_call["name"] == "test_ruleset":
+            if isinstance(tool_call["args"]["json_string"], dict):
+                tool_call["args"]["json_string"] = json.dumps(tool_call["args"]["json_string"])
+                
         tool_observation = target_tool.invoke(tool_call["args"])
 
         results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
@@ -48,6 +53,7 @@ def tool_node(state: dict) -> dict:
             
             try:
                 parsed_test_results = json.loads(tool_observation)
+                actual_error = parsed_test_results.get("error") or ""
                 
                 if parsed_test_results.get("auditScreenshot"):
                     print("Test failed but audit screenshot found! Invoking Ollama Vision...")
@@ -60,8 +66,17 @@ def tool_node(state: dict) -> dict:
                         content = f"Visual audit after test: {json.dumps(vision_result)}"
                     )]
                     
-                if parsed_test_results.get("error"):
-                    state_updates["last_error"] = parsed_test_results["error"]
+                elif "No CMP detected" in actual_error:
+                    state_updates["messages"] = [HumanMessage(
+                        content=(
+                            "DETECTOR FAILURE: 'No CMP detected' means your "
+                            "presentMatcher or showingMatcher selector did NOT match "
+                            "the banner. Fix your detector selectors FIRST, then test again."
+                        )
+                    )]
+                
+                if actual_error:
+                    state_updates["last_error"] = actual_error
                     
             except json.JSONDecodeError:
                 state_updates["last_error"] = f"test_ruleset tool returned invalid JSON: {tool_observation[:100]}"
