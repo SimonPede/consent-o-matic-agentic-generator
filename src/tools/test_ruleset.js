@@ -385,6 +385,13 @@ function buildComSource() {
             );
         }
 
+        if (file === "Matcher.js") {
+            content = content.replace(
+                /throw new Error\("No checkbox found, cannot check state"\);/g,
+                `console.warn("ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: " + (this.config.target ? this.config.target.selector : "unknown")); throw new Error("No checkbox found, cannot check state");`
+            );
+        }
+
         return content;
     }).join("\n");
 }
