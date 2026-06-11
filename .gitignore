@@ -16,3 +16,6 @@ test_screenshot.py
 checkpoints.db
 checkpoints.db-shm
 checkpoints.db-wal
+data/logs/runs/.gitkeep
+data/logs/runs/*.json
+data/logs/evaluation_summary.csv
