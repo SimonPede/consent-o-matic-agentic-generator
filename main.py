@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -12,6 +13,11 @@ from langgraph.types import Command
 #Import the uncompiled StateGraph blueprint from our agent module
 from src.agent.graph import workflow
 
+#Import for run logging
+from src.utils.run_logger import log_run
+from src.agent.llm import MODEL_NAME
+from src.prompts.static_few_shot_examples import FEW_SHOT_CONFIG
+
 load_dotenv()
 
 def main() -> None:
@@ -21,13 +27,18 @@ def main() -> None:
     inputs = {
         "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
         "url": url,
+        "structured_dom_chars": 0,
         "attempts": 0,
         "human_review_count": 0,
         "last_error": "",
+        "error_history": [],
         "structured_dom_info": None,
         "cmp_type": "",
         "screenshot_info": None,
         "current_ruleset_draft": "",
+        "last_test_result": None,
+        "test_ruleset_count": 0,
+        "analyse_screenshot_count": 0,
         "final_result": None
     }
 
@@ -45,8 +56,6 @@ def main() -> None:
 
         agent = workflow.compile(checkpointer=checkpointer)
 
-        png_data = agent.get_graph(xray=True).draw_mermaid_png()
-
         try:
             png_data = agent.get_graph(xray=True).draw_mermaid_png()
             with open("graph.png", "wb") as f:
@@ -56,6 +65,7 @@ def main() -> None:
             
         print(f"--- Agent starts for: {url} ---")
         current_input = inputs
+        start_time = time.perf_counter()
         
         while True:
             interrupted = False
@@ -75,5 +85,12 @@ def main() -> None:
                 print("\n Execution Pipeline Successfully Terminated")
                 break
             
+        end_time = time.perf_counter()
+        duration = end_time - start_time
+        
+        print(f"\nSaving evaluation metadata for {url}...")
+        final_state = agent.get_state(config)
+        log_run(final_state.values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
+        
 if __name__ == "__main__":
     main()

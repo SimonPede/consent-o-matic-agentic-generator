@@ -41,14 +41,26 @@ def tool_node(state: dict) -> dict:
         target_tool = tools_by_name[tool_call["name"]]
         
         if tool_call["name"] == "test_ruleset":
-            if isinstance(tool_call["args"]["json_string"], dict):
-                tool_call["args"]["json_string"] = json.dumps(tool_call["args"]["json_string"])
-                
-        tool_observation = target_tool.invoke(tool_call["args"])
+            args = tool_call.get("args", {})
+            json_string = args.get("json_string")
+            url = args.get("url")
+            
+            if json_string is None or url is None:
+                tool_observation = json.dumps({
+                    "handled": False,
+                    "error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both"
+                })
+            else:
+                if isinstance(json_string, dict):
+                    tool_call["args"]["json_string"] = json.dumps(json_string)
+                tool_observation = target_tool.invoke(tool_call["args"])
+        else:
+            tool_observation = target_tool.invoke(tool_call["args"])
 
         results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
         
         if tool_call["name"] == "test_ruleset":
+            state_updates["test_ruleset_count"] = state.get("test_ruleset_count", 0) + 1
             state_updates["current_ruleset_draft"] = tool_call["args"].get("json_string")
             
             try:
@@ -76,12 +88,17 @@ def tool_node(state: dict) -> dict:
                     )]
                 
                 if actual_error:
+                    state_updates["error_history"] = [actual_error]
                     state_updates["last_error"] = actual_error
+                
+                parsed_test_results.pop("auditScreenshot", None)
+                state_updates["last_test_result"] = parsed_test_results
                     
             except json.JSONDecodeError:
                 state_updates["last_error"] = f"test_ruleset tool returned invalid JSON: {tool_observation[:100]}"
             
         elif tool_call["name"] == "analyse_screenshot":
+            state_updates["analyse_screenshot_count"] = state.get("analyse_screenshot_count", 0) + 1
             try:
                 parsed_analysis = json.loads(tool_observation)
                 state_updates["screenshot_info"] = parsed_analysis

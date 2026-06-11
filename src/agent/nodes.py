@@ -43,13 +43,15 @@ def extraction_node(state: AgentState) -> dict:
     
     if output:
         output_str = json.dumps(output)
-        print(f"DOM Extraction Matrix generated: {len(output_str)} characters fetched.")
+        output_length = len(output_str)
+        print(f"DOM Extraction Matrix generated: {output_length} characters fetched.")
         return {
             #Rationale Note for Thesis: A ToolMessage requires an active, intercepted tool_call_id. 
             #Injecting the extracted layout environment via a HumanMessage acts as a clean 
             #and deterministic context-inflation mechanism for the LLM prompt buffer.
             "messages": [HumanMessage(content=f"Here is the DOM info, extracted by the extract tool: {output}")],
             "structured_dom_info": output,
+            "structured_dom_chars": output_length,
             "cmp_type": output[0].get("cmpType", "")
         }
     else:
@@ -135,59 +137,6 @@ def human_review_node(state: AgentState) -> dict:
         "messages": [HumanMessage(content=f"Human feedback: {human_input}")],
         "human_review_count": state.get("human_review_count", 0) + 1
     }
-
-# def ruleset_output_node(state: AgentState) -> dict:
-#     """
-#     Parses agent messages chronologically backward to extract final rulesets from markdown enclosures.
-    
-#     Some LLMs (e.g. Kimi with thinking mode) return content as a list
-#     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
-#     Others return a plain string. Both cases are handled here.
-#     """ 
-#     for message in reversed(state["messages"]):
-#         #to ensure loop is not aborted (could happen when message.tool_calls is used)
-#         if getattr(message, "tool_calls", None):
-#             continue
-        
-#         content = message.content
-#         if isinstance(content, list):
-#             text_parts = []
-#             for block in content:
-#                 if isinstance(block, dict) and block.get("type") == "text":
-#                     text_parts.append(block.get("text", ""))
-#             content = " ".join(text_parts)
-#         else:
-#             content = str(content)
-
-#         #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
-#         match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
-        
-#         if match:
-#             try:
-#                 #Note: match.group(1) returns the content of the first capture group (inside the tags)
-#                 ruleset = json.loads(match.group(1).strip())
-#                 return {"final_result": ruleset}
-#             except json.JSONDecodeError:
-#                 return {
-#                     "last_error": "Invalid JSON in ruleset tags",
-#                     "messages": [
-#                         HumanMessage(content=(
-#                             "Your previous response contained <ruleset> tags, but the JSON inside was invalid. "
-#                             "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
-#                         ))
-#                     ]
-#                 }
-#     print("--------- NO RULESET FOUND ---------")
-#     return {
-#         "last_error": "No ruleset found in agent messages",
-#         "messages": [
-#             HumanMessage(content=(
-#                 "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
-#                 "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
-#                 "Do NOT output <ruleset> tags until the tool returns 'handled': true."
-#             ))
-#         ]
-#     }
 
 def ruleset_output_node(state: AgentState) -> dict:
     """

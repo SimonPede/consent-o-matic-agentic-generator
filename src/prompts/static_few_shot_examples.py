@@ -2,6 +2,11 @@ import json
 import os
 from typing import Any, Dict, List
 
+FEW_SHOT_CONFIG = "cookiebot+swedbank+sourcepoint (filteredHtml: False/True/True)"
+# FEW_SHOT_CONFIG = "cookiebot+swedbank+sourcepoint (filteredHtml: False/False/True)"
+# FEW_SHOT_CONFIG = "cookiebot+sourcepoint (filteredHtml: False/True)"
+# FEW_SHOT_CONFIG = "None"
+
 def load(filename: str) -> Any:
     """Loads a raw example JSON data from the local repository subsystem."""
     path = os.path.join(os.path.dirname(__file__), "examples", filename)
@@ -104,73 +109,64 @@ def slim_toggles(toggles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         "isDisabled": t["isDisabled"]
     } for t in toggles]
 
-
-#these result in too much tokens for LiteLLM
-# few_shot_examples = (
-#     format(
-#         "Cookiebot CMP (cookiebot.com)",
-#         load("cookiebot_dom.json"),
-#         load("cookiebot_ruleset.json"),
-#         include_filtered_html = False
-#     ) +
-#     format(
-#         "Swedbank, custom banner (swedbank.com)",
-#         load("swedbank_dom.json"),
-#         load("swedbank_ruleset.json"),
-#         include_filtered_html = True
-#     ) +
-#     format(
-#         "Sourcepoint CMP with Buttons (heise.de style)",
-#         load("sourcepoint_mock_dom.json"),
-#         load("sourcepoint_mock_ruleset.json"),
-#         include_filtered_html = True
-#     )
-# )
-
-# few_shot_examples = (
-#     format(
-#         "Cookiebot CMP (cookiebot.com)",
-#         load("cookiebot_dom.json"),
-#         load("cookiebot_ruleset.json"),
-#         include_filtered_html=False
-#     ) +
-#     format(
-#         "Swedbank, custom banner (swedbank.com)",
-#         load("swedbank_dom.json"),
-#         load("swedbank_ruleset.json"),
-#         include_filtered_html=False
-#     ) +
-#     format(
-#         "Sourcepoint CMP with Buttons (heise.de style)",
-#         load("sourcepoint_mock_dom.json"),
-#         load("sourcepoint_mock_ruleset.json"),
-#         include_filtered_html=True
-#     )
-# )
-
-few_shot_examples = (
-    format(
-        "Cookiebot CMP (cookiebot.com)",
-        load("cookiebot_dom.json"),
-        load("cookiebot_ruleset.json"),
-        include_filtered_html=False
-    ) +
-    format(
-        "Sourcepoint CMP with Buttons",
-        load("sourcepoint_mock_dom.json"),
-        load("sourcepoint_mock_ruleset.json"),
-        include_filtered_html=True
+if FEW_SHOT_CONFIG == "cookiebot+swedbank+sourcepoint (filteredHtml: False/True/True)":
+    few_shot_examples = (
+        format(
+            "Cookiebot CMP (cookiebot.com)",
+            load("cookiebot_dom.json"),
+            load("cookiebot_ruleset.json"),
+            include_filtered_html = False
+        ) +
+        format(
+            "Swedbank, custom banner (swedbank.com)",
+            load("swedbank_dom.json"),
+            load("swedbank_ruleset.json"),
+            include_filtered_html = True
+        ) +
+        format(
+            "Sourcepoint CMP with Buttons (heise.de style)",
+            load("sourcepoint_mock_dom.json"),
+            load("sourcepoint_mock_ruleset.json"),
+            include_filtered_html = True
+        )
     )
-)
-
-# few_shot_examples = (
-#     format(
-#         "Cookiebot CMP (cookiebot.com)",
-#         load("cookiebot_dom.json"),
-#         load("cookiebot_ruleset.json")
-#     )
-# )
-
-# few_shot_examples = (
-#     ""
-# )
+elif FEW_SHOT_CONFIG == "cookiebot+swedbank+sourcepoint (filteredHtml: False/False/True)":
+    few_shot_examples = (
+        format(
+            "Cookiebot CMP (cookiebot.com)",
+            load("cookiebot_dom.json"),
+            load("cookiebot_ruleset.json"),
+            include_filtered_html=False
+        ) +
+        format(
+            "Swedbank, custom banner (swedbank.com)",
+            load("swedbank_dom.json"),
+            load("swedbank_ruleset.json"),
+            include_filtered_html=False
+        ) +
+        format(
+            "Sourcepoint CMP with Buttons (heise.de style)",
+            load("sourcepoint_mock_dom.json"),
+            load("sourcepoint_mock_ruleset.json"),
+            include_filtered_html=True
+        )
+    )
+elif FEW_SHOT_CONFIG == "cookiebot+sourcepoint (filteredHtml: False/True)":
+    few_shot_examples = (
+        format(
+            "Cookiebot CMP (cookiebot.com)",
+            load("cookiebot_dom.json"),
+            load("cookiebot_ruleset.json"),
+            include_filtered_html=False
+        ) +
+        format(
+            "Sourcepoint CMP with Buttons",
+            load("sourcepoint_mock_dom.json"),
+            load("sourcepoint_mock_ruleset.json"),
+            include_filtered_html=True
+        )
+    )
+elif FEW_SHOT_CONFIG == "None":
+    few_shot_examples = (
+        ""
+    )
