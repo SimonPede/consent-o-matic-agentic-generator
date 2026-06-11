@@ -276,6 +276,7 @@ const CMP_SELECTORS_MAP = {
 
     //Usercentrics
     //changes i made myself
+    '#usercentrics-cmp-ui': "Usercentrics",
     'aside#usercentrics-cmp-ui': "Usercentrics",
     '[id="usercentrics-cmp-ui"]': "Usercentrics",
     '#usercentrics-root': "Usercentrics",

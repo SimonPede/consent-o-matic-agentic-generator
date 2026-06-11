@@ -637,8 +637,9 @@ async function runTest(ruleset) {
         let auditScreenshot = null;
 
         const bannerStillVisible = 
-            auditState.heuristicBannerFound === true || 
-            auditState.showingMatcherFound === true;
+            auditState.heuristicBannerFound === true
+            || 
+            (auditState.hasTcfApi === true && auditState.tcfVisible === true);
         
         const isDetectorFailure = finalError && finalError.includes("No CMP detected");
 
