@@ -169,7 +169,12 @@ async function extractStructuredDom(url) {
                         if (SETTINGS_TERMS_REGEX.test(normalizedBtnText) && normalizedBtnText.length < 30) {
                             console.error(`Settings match: "${btn.text}" --> normalized: "${normalizedBtnText}"`);
                             
-                            const href = (btn.attributes && btn.attributes.href) ? btn.attributes.href.toLowerCase() : "";;
+                            let href = "";
+                            if (btn.attributes) {
+                                href = btn.attributes.href || btn.attributes["data-href"] || btn.attributes["data-url"] || "";
+                            }
+                            href = href.toLowerCase();
+                            
                             const isRealNavigation = 
                                 href.startsWith("http") || 
                                 href.includes("policy") || 

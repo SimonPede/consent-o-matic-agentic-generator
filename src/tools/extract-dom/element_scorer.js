@@ -70,6 +70,9 @@ async function frameWordCounter(frames) {
  *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
  *   -30  iframe element itself is not inside the current viewport and should therefore not be visible
  *        (passed as iframeBonus)
+ *   -0   fixed/high-z elements with >10 internal same-origin links are excluded
+ *        from the hasFixedHighZ bonus to avoid false positives from nav/footer elements.
+ *        Inspired by CookieCrumbler (Brave Software, github.com/brave/cookiecrumbler)
  * 
  * Deviations from paper:
  *   - Applying the scoring logic not to candidates of banners but iframes
@@ -86,7 +89,9 @@ async function frameWordCounter(frames) {
         & reduced iFrameBonus by 30 if it is not inside the current viewport and should therefore not be visible
         (Gundelach & Herrman, 2023; Klein and Musch et al., 2022)
         & and evaluation if element within frame is displayed at the top of the screen (Klein and Musch et al., 2022, p.914)
- *   - Trigger word matching uses a RegExp over full frame text 
+ *   - fixed/high-z elements with >10 internal links excluded from scoring
+ *      (CookieCrumbler-inspired heuristic to filter nav/footer false positives)
+ *   - Trigger word matching uses a RegExp over full frame text
  *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
  * @param {Frame} frame - Puppeteer frame to score
@@ -208,22 +213,52 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             let hasFixedHighZ = false;
             let topLevelCount = 0;
 
-            for (const el of frameElements) {
-                const style = window.getComputedStyle(el);
+            for (const element of frameElements) {
+                const style = window.getComputedStyle(element);
+
                 if (style.position === "fixed" && parseInt(style.zIndex) > 10) {
+
+                    const elementsWithLink = element.querySelectorAll("a[href], button[data-href], button[data-url], button[href], [role='link']");
+                    let internalLinkCount = 0
+
+                    for (const linkElement of elementsWithLink) {
+                        try {
+                            const targetUrl = linkElement.getAttribute("href") || linkElement.getAttribute("data-href") || linkElement.getAttribute("data-url");
+
+                            if (!targetUrl) {
+                                continue;
+                            }
+                            
+                            const linkUrl = new URL(targetUrl, window.location.origin);
+
+                            if (linkUrl.hostname === window.location.hostname) {
+                                internalLinkCount++;
+                            }
+                        } catch (err) {
+                            //Ignore invalid or pseudo-URLs
+                        }
+                    }
+
+                    if (internalLinkCount > 10) {
+                        //Skip elements with many internal links (e.g. nav, footer):
+                        //cookie banners rarely contain navigation structures.
+                        //Inspired by CookieCrumbler (Brave, github.com/brave/cookiecrumbler).
+                        continue; 
+                    }
+
                     hasFixedHighZ = true;
                     //NOTE: the logic for computing topLevelCount is copied from
                     //"Accept All Exploits: Exploring the Security Impact of Cookie Banners" paper, p. 914
-                    //the bonus and the topLevelCount > 1 threshold is my design
+                    //the bonus and the topLevelCount > 1 threshold is my own addition to this logic
                     //to avoid false positives by header or nav elements i include this evaluation only if the element
                     //has already a large z-index and is fixed
 
                     //i think it would be even better to calculate the coordinates the middle of the object not just the left corner
                     //so instead of "const {x, y} = el.getBoundingClientRect();" -->
-                    const rect = el.getBoundingClientRect();
+                    const rect = element.getBoundingClientRect();
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
-                    if (el === document.elementFromPoint(centerX, centerY)) {
+                    if (element === document.elementFromPoint(centerX, centerY)) {
                         topLevelCount++;
                     }
                 }
