@@ -49,13 +49,13 @@
                             "matcher": {
                                 "type": "checkbox",
                                 "target": {
-                                    "selector": ".cookie-form input[name='functi']"
+                                    "selector": "input[name='functi']"
                                 }
                             },
                             "toggleAction": {
                                 "type": "click",
                                 "target": {
-                                    "selector": ".cookie-form input[name='functi']"
+                                    "selector": "input[name='functi']"
                                 }
                             },
                             "type": "B"
@@ -64,13 +64,13 @@
                             "matcher": {
                                 "type": "checkbox",
                                 "target": {
-                                    "selector": ".cookie-form input[name='market']"
+                                    "selector": "input[name='market']"
                                 }
                             },
                             "toggleAction": {
                                 "type": "click",
                                 "target": {
-                                    "selector": ".cookie-form input[name='market']"
+                                    "selector": "input[name='market']"
                                 }
                             },
                             "type": "F"
