@@ -54,7 +54,8 @@ def run_single(agent, url: str) -> None:
         "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
         "url": url,
         "structured_dom_chars": 0,
-        "attempts": 0,
+        "attempts": 0, #IMPORTANT: this counts the number of times the "llm_node" is used. Represents the entire "work load"
+        #NOT the number of tries the LLM needed to generate a correct ruleset! For that metric "test_ruleset_count" is sufficient
         "human_review_count": 0,
         "last_error": "",
         "structured_dom_info": None,
