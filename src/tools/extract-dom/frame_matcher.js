@@ -54,9 +54,9 @@ async function findCorrectFrame(page, selectorMap) {
                     const r = el.getBoundingClientRect();
                     return {
                         highZAndIsFixed: style.position === "fixed" && parseInt(style.zIndex) > 10,
-                        inViewport: r.top < window.innerHeight && 
-                                    r.bottom > 0 && 
-                                    r.left < window.innerWidth && 
+                        inViewport: r.top < window.innerHeight &&
+                                    r.bottom > 0 &&
+                                    r.left < window.innerWidth &&
                                     r.right > 0
                     };
                 });

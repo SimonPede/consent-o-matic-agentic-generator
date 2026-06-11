@@ -56,7 +56,7 @@ async function frameWordCounter(frames) {
  *       capped at +10 to avoid over-weighting frames with many cookie-related mentions
  *   +15 element within frame has position:fixed + z-index > 10
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
- *   +10  iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
+ *   +10 iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
  *        Adaptation of same principle to the iframe element in the parent page context.
  *   +5  element within frame is displayed at the top of the screen
  *        Direct adaption of Klein and Musch et al., 2022, p.914
@@ -70,13 +70,14 @@ async function frameWordCounter(frames) {
  *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
  *   -30  iframe element itself is not inside the current viewport and should therefore not be visible
  *        (passed as iframeBonus)
- *   -0   fixed/high-z elements with >10 internal same-origin links are excluded
- *        from the hasFixedHighZ bonus to avoid false positives from nav/footer elements.
- *        Inspired by CookieCrumbler (Brave Software, github.com/brave/cookiecrumbler)
+ *   [excluded from +15 bonus] fixed/high-z elements with >10 internal same-origin links
+ *        (nav/footer filter, inspired by CookieCrumbler, Brave Software)
+ *   [excluded from +15 bonus] fixed/high-z elements smaller than 100x100px
+ *        (revoke button filter, adapted from frameHasBanner() findAnchors() from `test_ruleset.js`)
  * 
  * Deviations from paper:
- *   - Applying the scoring logic not to candidates of banners but iframes
- *   - No screenshot-based visibility check (Selenium-specific, not available in Puppeteer)
+ *   - Applying the scoring logic not to candidates of banners but iframe
+ *   - No screenshot-based visibility check
  *     --> replaced with CSS computed style + bounding box check
  *   - No sub-string/duplicate candidate comparison (out of scope for this prototype)
  *   - N-grams extended with German phrases; full multilingual support is a TODO
@@ -217,6 +218,11 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 const style = window.getComputedStyle(element);
 
                 if (style.position === "fixed" && parseInt(style.zIndex) > 10) {
+                    const rect = element.getBoundingClientRect();
+
+                    if (rect.width > 0 && rect.width <= 100 && rect.height > 0 && rect.height <= 100) {
+                        continue;
+                    }
 
                     const elementsWithLink = element.querySelectorAll("a[href], button[data-href], button[data-url], button[href], [role='link']");
                     let internalLinkCount = 0
