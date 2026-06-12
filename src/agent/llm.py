@@ -9,8 +9,8 @@ load_dotenv()
 #LiteLLM:
 #MODEL_NAME="openai/natai/kimi-k2.5"
 # MODEL_NAME="openai/natai/minimax-m2.5" #does not work at the moment
-# MODEL_NAME="openai/cavi/medium"
-MODEL_NAME="openai/cavi/small"
+MODEL_NAME="openai/cavi/medium"
+#MODEL_NAME="openai/cavi/small"
 # MODEL_NAME="openai/natai/gpt-oss"
 #Ollama:
 # MODEL_NAME="gemma4:31b"
