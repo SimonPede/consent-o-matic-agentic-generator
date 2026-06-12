@@ -2,8 +2,9 @@ import subprocess
 import json
 import os
 from langchain_core.tools import tool
+#Pydantic Schema
+from src.schemas.ruleset import CoMRuleset
 
-# @tool(args_schema=CoMRuleset)
 @tool
 def test_ruleset(url: str, json_string: str) -> str:
     """
@@ -98,6 +99,21 @@ def test_ruleset(url: str, json_string: str) -> str:
     script_path = os.path.join(os.path.dirname(__file__), "test_ruleset.js")
     
     print(len(json_string))
+    
+    try:
+        parsed = json.loads(json_string)
+    except json.JSONDecodeError as e:
+        return json.dumps({"handled": False, "error": f"Invalid JSON: {e}"})
+    
+    #Structural pre-validation of the ruleset before launching the Puppeteer subprocess.
+    #NOTE: CoMRuleset is intentionally NOT used as args_schema for this tool (was initialy planned).
+    #Using it as args_schema would replace the entire tool argument schema, requiring
+    #the LLM to pass ruleset fields directly as tool arguments instead of as a
+    #JSON string --> breaking the existing json_string-based workflow.
+    try:
+        CoMRuleset.model_validate(parsed)
+    except Exception as e:
+        return json.dumps({"handled": False, "error": f"Ruleset structure invalid: {e}"})
 
     try:
         result = subprocess.run(

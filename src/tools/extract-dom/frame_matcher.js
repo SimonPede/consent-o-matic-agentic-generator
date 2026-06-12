@@ -46,12 +46,15 @@ async function findCorrectFrame(page, selectorMap) {
 
     for (const frame of frames) {
         let iFrameBonus = 0;
+        
         try {
             const frameElement = await frame.frameElement();
+
             if (frameElement) {
                 const frameInfo = await frameElement.evaluate(el => {
                     const style = window.getComputedStyle(el);
                     const r = el.getBoundingClientRect();
+
                     return {
                         highZAndIsFixed: style.position === "fixed" && parseInt(style.zIndex) > 10,
                         inViewport: r.top < window.innerHeight &&

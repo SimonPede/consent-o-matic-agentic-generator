@@ -49,7 +49,7 @@ async function frameWordCounter(frames) {
  * Scoring factors (see paper Appendix A.3 for original weights):
  * 
  * Positive:
- *   +5  General CSS selector match (TABLE_6_CUSTOM_SELECTORS)
+ *   +5  General CSS selector match (GENERAL_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al., 2025 + Singh et al., 2026)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
  *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al., 2025 + Singh et al., 2026)
@@ -134,6 +134,30 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 return -100;
             }
 
+            /**
+             * Recursively queries the DOM including all Shadow DOM trees.
+             * 
+             * Standard querySelectorAll() cannot pierce Shadow DOM boundaries – elements
+             * inside Shadow Roots are completely invisible to it. This function solves this
+             * by first querying the current root (document or ShadowRoot), then finding all
+             * elements that host a Shadow Root and recursing into each one.
+             * 
+             * Why this works: querySelectorAll() CAN search inside a ShadowRoot if called
+             * directly ON the ShadowRoot object. So instead of trying to pierce the boundary,
+             * we step through the door: find the host via el.shadowRoot, then call
+             * querySelectorAll on the ShadowRoot itself.
+             * 
+             * Limitation: only works for open Shadow DOMs (mode: "open").
+             * Closed Shadow DOMs (mode: "closed") are inaccessible via JavaScript by design.
+             * In practice, CMPs use open Shadow DOMs (verified: Usercentrics).
+             * 
+             * Performance note: uses root.querySelectorAll("*") without Array.from() to avoid
+             * unnecessary array allocation on large DOMs.
+             * 
+             * @param {string} selector - Functional CSS selector pattern to discover (e.g. "button", "[role='switch']")
+             * @param {Document|ShadowRoot|HTMLElement} root - Boundary evaluation root (defaults to document)
+             * @returns {Array<HTMLElement>} - All matching elements across light DOM and all Shadow DOMs
+             */
             function querySelectorAllDeep(selector, root = document) {
                 let nodes = Array.from(root.querySelectorAll(selector));
                 const elements = root.querySelectorAll("*");
@@ -149,7 +173,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 return nodes;
             }
 
-            //functionality really similiar to getDeeperInnerHTML()
+            //functionality really similiar to getDeepInnerHtml() in `frame_extractor.js`
             function getDeepText(node) {
                 let text = "";
                 const root = node.shadowRoot || node;

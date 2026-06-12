@@ -13,6 +13,7 @@ after_click.png
 graph.png
 test_output.json
 test_screenshot.py
+test_schema.py
 checkpoints.db
 checkpoints.db-shm
 checkpoints.db-wal

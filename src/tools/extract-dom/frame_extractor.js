@@ -161,7 +161,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @param {HTMLElement|ShadowRoot} node - Element or ShadowRoot to extract HTML from
          * @returns {string} - Full HTML string including all Shadow DOM content
          */
-        function getDeepInnerHTML(node) {
+        function getDeepInnerHtml(node) {
             //Light DOM:
                 // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
                 //     #shadow-root (open)            Shadow Root
@@ -180,7 +180,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
 					//Standard child.outerHTML would fail to capture downstream shadow layers if the child is a host.
                     //Instead, we recursively inject the deep structural layout mapping.
-                    clone.innerHTML = getDeepInnerHTML(child);
+                    clone.innerHTML = getDeepInnerHtml(child);
                     htmlResult += clone.outerHTML;
 
                 } else if (child.nodeType === Node.TEXT_NODE) {
@@ -208,7 +208,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             }
             return attributes;
         }
-
 
 		// ======================================================================
         // ARCHITECTURAL ITERATION NOTE: Accessibility-Driven Semantic Resolution
@@ -306,9 +305,9 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         }
 
 		/**
-         * Extracts structural ancestry metadata (parent and grandparent nodes) for a given element.
+         * Extracts structural metadata (parent and grandparent nodes) for a given element.
          * Enriches the low-dimensional JSON schema with hierarchical layout depth, allowing the 
-         * downstream LLM to synthesize highly specific and contextualized CSS selectors.
+         * LLM to synthesize highly specific and contextualized CSS selectors.
          * 
 		 * Encapsulation Boundary Resolution:
          * Natively, elements at the root tier of a Shadow DOM return `null` for `parentElement`. 
@@ -500,7 +499,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //If the matched element hosts a Shadow Root (e.g. Usercentrics uses
         //<aside id="usercentrics-cmp-ui"> with a Shadow Root), we use the
         //Shadow Root as the search root for element extraction.
-        //getDeepInnerHTML() recursively collects HTML from both light and shadow DOM.
+        //getDeepInnerHtml() recursively collects HTML from both light and shadow DOM.
         //
         //Known Limitation: Deeply nested Shadow DOM CMPs (e.g. Usercentrics) may not
         //be fully supported. The CMP type is detected correctly via main frame scan,
@@ -592,11 +591,12 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                     });
 
                 const interactiveElementsCount = buttons.length + checkboxes.length + toggles.length;
+
                 if (interactiveElementsCount > maxInteractiveElements && interactiveElementsCount > 0) {
                     maxInteractiveElements = interactiveElementsCount;
                     
                     const hostClone = host.cloneNode(false);
-                    hostClone.innerHTML = getDeepInnerHTML(host);
+                    hostClone.innerHTML = getDeepInnerHtml(host);
                     const tempDiv = document.createElement("div");
                     tempDiv.appendChild(hostClone);
 
@@ -630,7 +630,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const NEGATIVE_SELECTORS = ["nav", "script", "style", "img", "svg", "noscript"];
 
         const hostClone = document.body.cloneNode(false);
-        hostClone.innerHTML = getDeepInnerHTML(document.body);
+        hostClone.innerHTML = getDeepInnerHtml(document.body);
 
         const filterBody = document.createElement("div");
         filterBody.appendChild(hostClone);
