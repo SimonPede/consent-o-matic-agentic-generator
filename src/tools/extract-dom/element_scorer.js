@@ -273,7 +273,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                         //Skip elements with many internal links (e.g. nav, footer):
                         //cookie banners rarely contain navigation structures.
                         //Inspired by CookieCrumbler (Brave, github.com/brave/cookiecrumbler).
-                        continue; 
+                        continue;
                     }
 
                     hasFixedHighZ = true;
@@ -285,7 +285,6 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
 
                     //i think it would be even better to calculate the coordinates the middle of the object not just the left corner
                     //so instead of "const {x, y} = el.getBoundingClientRect();" -->
-                    const rect = element.getBoundingClientRect();
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
                     if (element === document.elementFromPoint(centerX, centerY)) {
