@@ -16,7 +16,7 @@ from src.agent.routing import route_after_llm, route_after_ruleset
 from src.tools.analyse_screenshot import analyse_screenshot
 from src.tools.test_ruleset import test_ruleset
 from src.tools.request_human_review import request_human_review
-from src.utils import call_ollama_vision
+from src.utils import call_vision
 
 tools = [test_ruleset, request_human_review, analyse_screenshot]
 tools_by_name = {tool.name: tool for tool in tools}
@@ -70,7 +70,7 @@ def tool_node(state: dict) -> dict:
                 if parsed_test_results.get("auditScreenshot"):
                     print("Test failed but audit screenshot found! Invoking Ollama Vision...")
                     
-                    vision_result = call_ollama_vision(parsed_test_results["auditScreenshot"])
+                    vision_result = call_vision(parsed_test_results["auditScreenshot"])
                     print(f"Vision result: {vision_result}")
                     
                     state_updates["screenshot_info"] = vision_result

@@ -66,7 +66,15 @@ async function run() {
         //will correctly evaluate from the screenshot.
 		await waitForCmpUi(page, CMP_SELECTORS_MAP);
 
-		const screenshot = await page.screenshot({ encoding: "base64" });
+		//the gemma model on the SNET Server (using Ollama) has no problem with this config
+		//const screenshot = await page.screenshot({ encoding: "base64" });
+
+		//for LiteLLM i will use:
+		const screenshot = await page.screenshot({ 
+			encoding: "base64",
+			type: "jpeg",
+			quality: 60 
+		});
 		console.log(JSON.stringify({ screenshot: screenshot }));
 
 	} catch (err) {

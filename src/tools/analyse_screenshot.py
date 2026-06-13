@@ -64,62 +64,109 @@ def analyse_screenshot(url: str) -> str:
     
     script_path = os.path.join(os.path.dirname(__file__), "analyse_screenshot.js")
 
+    result = subprocess.run(
+        ["node", script_path, url],
+        capture_output=True,
+        text=True,
+        timeout=300,
+    )
+
+    lines = [line for line in result.stdout.strip().splitlines() if line]
+    
+    node_output = json.loads(lines[-1])
+    base64_image = node_output.get("screenshot")
+    
+    if not lines:
+        return json.dumps({"error": "No output received from headless browser script"})
+    
+    if not base64_image:
+        return json.dumps({"error": "No screenshot data received from browser"})
+    
+    # ollama_url = os.getenv("OLLAMA_BASE_URL")
+    # ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
+    liteLlm_url = os.getenv("LITELLM_BASE_URL") # Oder wie auch immer du die Aarhus-URL nennst
+    api_key = os.getenv("LITELLM_API_KEY")
+    
+    prompt = """
+    You are analyzing a screenshot of a website to identify cookie consent banners.
+
+    Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
+    No explanation, no markdown, no code blocks.
+
+    {
+        "bannerVisible": true if a cookie consent banner is visible, false otherwise,
+        "bannerDismissed": true if the banner has already been dismissed or is not present,
+        "bannerPosition": "top", "bottom", "center", "full-screen" or null if no banner,
+        "cmpType": name of the CMP if recognizable (e.g. "OneTrust", "Cookiebot"), or null,
+        "settingsButtonVisible": true if a settings/preferences button is visible,
+        "buttons": [
+            {
+                "text": visible button label,
+                "colour": dominant button colour,
+                "position": "left", "center", "right"
+            }
+        ]
+    }
+
+    If no banner is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
+    """
+    #use this version when using Olamma/SNET Server
+    # try:
+    #     response = requests.post(
+    #         f"{ollama_url}/api/generate",
+    #         headers={
+    #             "Content-Type": "application/json",
+    #             "Authorization": f"Bearer {ollama_token}"
+    #         },
+    #         json={
+    #             "model": "gemma4:latest",
+    #             "prompt": prompt,
+    #             "images": [base64_image],
+    #             "stream": False
+    #         }
+    #     )
+        
+    #     response.raise_for_status()
+        
+    #     data = response.json()
+        
+    #     response_text = data.get("response", "").replace("```json", "").replace("```", "").strip()
+        
+    #     try:
+    #         return json.loads(response_text)
+    #     except json.JSONDecodeError:
+    #         return {"error": f"Vision response was not valid JSON: {response_text[:200]}"}
+    
+    # except Exception as e:
+    #     return {"error": f"Vision analysis failed: {str(e)}"}
+    
+    #use this version when using LiteLLM
     try:
-        result = subprocess.run(
-            ["node", script_path, url],
-            capture_output=True,
-            text=True,
-            timeout=300,
-        )
-
-        lines = [line for line in result.stdout.strip().splitlines() if line]
-        
-        node_output = json.loads(lines[-1])
-        base64_image = node_output.get("screenshot")
-        
-        if not lines:
-            return json.dumps({"error": "No output received from headless browser script"})
-        
-        if not base64_image:
-            return json.dumps({"error": "No screenshot data received from browser"})
-        
-        ollama_url = os.getenv("OLLAMA_BASE_URL")
-        ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
-        
-        prompt = """
-        You are analyzing a screenshot of a website to identify cookie consent banners.
-
-        Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
-        No explanation, no markdown, no code blocks.
-
-        {
-            "bannerVisible": true if a cookie consent banner is visible, false otherwise,
-            "bannerDismissed": true if the banner has already been dismissed or is not present,
-            "bannerPosition": "top", "bottom", "center", "full-screen" or null if no banner,
-            "cmpType": name of the CMP if recognizable (e.g. "OneTrust", "Cookiebot"), or null,
-            "settingsButtonVisible": true if a settings/preferences button is visible,
-            "buttons": [
-                {
-                    "text": visible button label,
-                    "colour": dominant button colour,
-                    "position": "left", "center", "right"
-                }
-            ]
-        }
-
-        If no banner is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
-        """
-
         response = requests.post(
-            f"{ollama_url}/api/generate",
+            f"{liteLlm_url}/chat/completions",
             headers={
                 "Content-Type": "application/json",
-                "Authorization": f"Bearer {ollama_token}"
+                "Authorization": f"Bearer {api_key}"
             },
             json={
-                "model": "gemma4:latest",
-                "prompt": prompt,
-                "images": [base64_image],
+                "model": "natai/kimi-k2.5",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": prompt
+                            },
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/jpeg;base64,{base64_image}"
+                                }
+                            }
+                        ]
+                    }
+                ],
                 "stream": False
             }
         )
@@ -128,9 +175,13 @@ def analyse_screenshot(url: str) -> str:
         
         data = response.json()
         
-        response_text = data.get("response", "").replace("```json", "").replace("```", "").strip()
+        raw_content = data["choices"][0]["message"]["content"]
+        response_text = raw_content.replace("```json", "").replace("```", "").strip()
         
-        return response_text
-
+        try:
+            return response_text
+        except json.JSONDecodeError:
+            return {"error": f"Vision response was not valid JSON: {response_text[:200]}"}
+    
     except Exception as e:
-        return json.dumps({"handled": False, "error": str(e)})
+        return {"error": f"Vision analysis failed: {str(e)}"}

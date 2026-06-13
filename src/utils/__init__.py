@@ -1,1 +1,1 @@
-from src.utils.call_ollama_vision import call_ollama_vision
+from src.utils.call_vision import call_vision

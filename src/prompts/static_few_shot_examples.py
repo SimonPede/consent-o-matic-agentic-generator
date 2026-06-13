@@ -3,8 +3,8 @@ import os
 from typing import Any, Dict, List
 
 #FEW_SHOT_CONFIG = "cookiebot+swedbank+sourcepoint (filteredHtml: False/True/True)"
-# FEW_SHOT_CONFIG = "cookiebot+swedbank+sourcepoint (filteredHtml: False/False/True)"
-FEW_SHOT_CONFIG = "cookiebot+sourcepoint (filteredHtml: False/True)"
+FEW_SHOT_CONFIG = "cookiebot+swedbank+sourcepoint (filteredHtml: False/False/True)"
+#FEW_SHOT_CONFIG = "cookiebot+sourcepoint (filteredHtml: False/True)"
 # FEW_SHOT_CONFIG = "None"
 
 def load(filename: str) -> Any:
