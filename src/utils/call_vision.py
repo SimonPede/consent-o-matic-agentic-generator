@@ -8,9 +8,9 @@ def call_vision(base64_image: str) -> dict:
     to analyze the visual state of the cookie consent banner.
     """
     
-    # ollama_url = os.getenv("OLLAMA_BASE_URL")
-    # ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
-    liteLlm_url = os.getenv("LITELLM_BASE_URL") # Oder wie auch immer du die Aarhus-URL nennst
+    ollama_url = os.getenv("OLLAMA_BASE_URL")
+    ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
+    liteLlm_url = os.getenv("LITELLM_BASE_URL")
     api_key = os.getenv("LITELLM_API_KEY")
     
     prompt = """
