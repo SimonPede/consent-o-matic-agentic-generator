@@ -59,6 +59,8 @@ def analyse_screenshot(url: str) -> str:
         bannerPosition (string), cmpType(string), settingsButtonVisible (bool),
         buttons (list of objects with text, colour, and position).
     """
+    #Configuration Toggle
+    use_liteLlm = True
     
     print("Screenshot tool started!")
     
@@ -82,9 +84,10 @@ def analyse_screenshot(url: str) -> str:
     if not base64_image:
         return json.dumps({"error": "No screenshot data received from browser"})
     
-    # ollama_url = os.getenv("OLLAMA_BASE_URL")
-    # ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
-    liteLlm_url = os.getenv("LITELLM_BASE_URL") # Oder wie auch immer du die Aarhus-URL nennst
+    ollama_url = os.getenv("OLLAMA_BASE_URL")
+    ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
+    
+    liteLlm_url = os.getenv("LITELLM_BASE_URL")
     api_key = os.getenv("LITELLM_API_KEY")
     
     prompt = """
@@ -110,78 +113,69 @@ def analyse_screenshot(url: str) -> str:
 
     If no banner is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
     """
-    #use this version when using Olamma/SNET Server
-    # try:
-    #     response = requests.post(
-    #         f"{ollama_url}/api/generate",
-    #         headers={
-    #             "Content-Type": "application/json",
-    #             "Authorization": f"Bearer {ollama_token}"
-    #         },
-    #         json={
-    #             "model": "gemma4:latest",
-    #             "prompt": prompt,
-    #             "images": [base64_image],
-    #             "stream": False
-    #         }
-    #     )
-        
-    #     response.raise_for_status()
-        
-    #     data = response.json()
-        
-    #     response_text = data.get("response", "").replace("```json", "").replace("```", "").strip()
-        
-    #     try:
-    #         return json.loads(response_text)
-    #     except json.JSONDecodeError:
-    #         return {"error": f"Vision response was not valid JSON: {response_text[:200]}"}
-    
-    # except Exception as e:
-    #     return {"error": f"Vision analysis failed: {str(e)}"}
-    
-    #use this version when using LiteLLM
     try:
-        response = requests.post(
-            f"{liteLlm_url}/chat/completions",
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {api_key}"
-            },
-            json={
-                "model": "natai/kimi-k2.5",
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": prompt
-                            },
-                            {
-                                "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:image/jpeg;base64,{base64_image}"
+        response_text = ""
+        
+        if use_liteLlm:
+            response = requests.post(
+                f"{liteLlm_url}/chat/completions",
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {api_key}"
+                },
+                json={
+                    "model": "natai/kimi-k2.5",
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": prompt
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{base64_image}"
+                                    }
                                 }
-                            }
-                        ]
-                    }
-                ],
-                "stream": False
-            }
-        )
+                            ]
+                        }
+                    ],
+                    "stream": False
+                }
+            )
+            
+            response.raise_for_status()
+            
+            data = response.json()
+            response_text = data["choices"][0]["message"]["content"]
+
+        else:
+            response = requests.post(
+                f"{ollama_url}/api/generate",
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {ollama_token}"
+                },
+                json={
+                    "model": "gemma4:latest",
+                    "prompt": prompt,
+                    "images": [base64_image],
+                    "stream": False
+                }
+            )
         
-        response.raise_for_status()
-        
-        data = response.json()
-        
-        raw_content = data["choices"][0]["message"]["content"]
-        response_text = raw_content.replace("```json", "").replace("```", "").strip()
+            response.raise_for_status()
+            
+            data = response.json()
+            response_text = data.get("response", "")
+            
+        cleaned_response = response_text.replace("```json", "").replace("```JSON", "").replace("```", "").strip()
         
         try:
-            return response_text
+            return cleaned_response
         except json.JSONDecodeError:
             return {"error": f"Vision response was not valid JSON: {response_text[:200]}"}
-    
     except Exception as e:
         return {"error": f"Vision analysis failed: {str(e)}"}
