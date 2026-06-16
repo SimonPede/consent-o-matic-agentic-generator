@@ -160,14 +160,15 @@ async function extractStructuredDom(url) {
 
                 for (const btn of result.data.buttons) {
                     if (btn.tag === "BUTTON" || btn.tag === "A") {
+                        const loweredButtonText = btn.text.toLowerCase();
                         const normalizedBtnText = normalizeText(btn.text);
 
                         //Max length 30 chars: real settings button labels are short.
                         //Prevents false positives on long IAB purpose descriptions
                         //(e.g. "storing or accessing information on an end device")
                         //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
-                        if (SETTINGS_TERMS_REGEX.test(normalizedBtnText) && normalizedBtnText.length < 30) {
-                            console.error(`Settings match: "${btn.text}" --> normalized: "${normalizedBtnText}"`);
+                        if (SETTINGS_TERMS_REGEX.test(loweredButtonText) && normalizedBtnText.length < 30) {
+                            console.error(`Settings match: "${btn.text}" --> lowered: "${loweredButtonText}"`);
                             
                             let href = "";
                             if (btn.attributes) {
@@ -185,10 +186,23 @@ async function extractStructuredDom(url) {
                                 continue;
                             }
 
-                            settingsButton = btn;
-                            break;
+                            //buttons are prioritized over ankers
+                            if (btn.tag === "BUTTON") {
+                                settingsButton = btn;
+                                break;
+
+                                if (!fallbackAnchorMatch) {
+                                    fallbackAnchorMatch = btn;
+                                    console.error("Found <a> match, saving as fallback but continuing search...");
+                                }
+                            }
                         }
                     }
+                }
+
+                if (!settingsButton && fallbackAnchorMatch) {
+                    settingsButton = fallbackAnchorMatch;
+                    console.error("Using <a> tag fallback for settings button.");
                 }
                 
                 if (settingsButton) {
@@ -306,7 +320,7 @@ function printExtractionSummary(results) {
 //for testing this script seperatly
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 // (async () => {
-//     const foundData = await extractStructuredDom("https://www.transavia.com/");
+//     const foundData = await extractStructuredDom("https://www.svt.se");
 //     if (foundData) {
 //         console.error("foundData was filled with a value");
 //     }
@@ -327,6 +341,7 @@ function printExtractionSummary(results) {
 //Problems with:
 //https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
 //https://www.skyscanner.de --> detects puppeteer and blocks it
+//https://www.svt.se
 
 //URLs i want to test:
 //https://teamworksplus.de
