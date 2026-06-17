@@ -320,7 +320,7 @@ function printExtractionSummary(results) {
 //for testing this script seperatly
 //i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
 // (async () => {
-//     const foundData = await extractStructuredDom("https://www.svt.se");
+//     const foundData = await extractStructuredDom("https://claude.ai");
 //     if (foundData) {
 //         console.error("foundData was filled with a value");
 //     }
@@ -337,11 +337,12 @@ function printExtractionSummary(results) {
 //https://www.cookiebot.com/
 //https://www.swedbank.com/
 //https://www.transavia.com/
+//https://www.svt.se
 
 //Problems with:
 //https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
 //https://www.skyscanner.de --> detects puppeteer and blocks it
-//https://www.svt.se
+//https://claude.ai
 
 //URLs i want to test:
 //https://teamworksplus.de

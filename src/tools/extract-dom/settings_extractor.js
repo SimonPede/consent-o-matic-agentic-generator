@@ -275,8 +275,6 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         }
     }
 
-    await page.screenshot({ path: "after_click.png" });
-
     //honestly have to test this function, found it and hope it helps, did not write it myself
     const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
         return frame.evaluate((stableTime, timeout) => {
@@ -312,6 +310,9 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
     for (const f of newFrames) {
         stablePromises.set(f, waitForDOMStable(f, 800, 6000));
     }
+
+    await page.screenshot({ path: "after_click.png" });
+
 
     let bestNewFrame = null;
     let highestScore = 0;
@@ -349,6 +350,12 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
             .filter(c => c.added) //filteres for everything that is actually new
             .reduce((sum, c) => sum + c.count, 0);
         
+        const removedChars = changes
+            .filter(c => c.removed)
+            .reduce((sum, c) => sum + c.count, 0);
+
+        const totalChange = addedChars + removedChars;
+        
         const addedInputs = newState.inputs - oldState.inputs;
         const addedButtons = newState.buttons - oldState.buttons;
 
@@ -357,7 +364,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         console.error(`New state: ${newState.buttons} buttons, ${newState.inputs} inputs.`);
 
         //TODO: evaluate if these are good indicators. Maybe include sth like: newly rendered elements in general?
-        if (addedChars > 500 || addedInputs > 0 || addedButtons >= 2) {
+        if (totalChange > 500 || addedInputs > 0 || addedButtons >= 2) {
             console.error(`Settings detected: ${addedChars} chars, ${addedInputs} inputs, ${addedButtons} buttons added.`);
             await waitForDOMStable(frame);
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);

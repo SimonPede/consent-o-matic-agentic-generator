@@ -340,8 +340,9 @@ const CMP_SELECTORS_MAP = {
     '[class*="cmpbox"]' : "Quantcast",
 
     //from myself:
-    "#transavia-consent-banner": "Transavia",
-    "#component-cookie-banner": "Swedbank"
+    "#transavia-consent-banner": "Transavia_Custom",
+    "#component-cookie-banner": "Swedbank_Custom",
+    "[data-testid='consent-banner']": "Anthropic_Custom"
 };
 
 module.exports = CMP_SELECTORS_MAP;
