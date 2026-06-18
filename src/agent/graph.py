@@ -56,8 +56,6 @@ def tool_node(state: dict) -> dict:
                 tool_observation = target_tool.invoke(tool_call["args"])
         else:
             tool_observation = target_tool.invoke(tool_call["args"])
-
-        results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
         
         if tool_call["name"] == "test_ruleset":
             state_updates["test_ruleset_count"] = state.get("test_ruleset_count", 0) + 1
@@ -96,6 +94,7 @@ def tool_node(state: dict) -> dict:
                     state_updates["last_error"] = actual_error
                 
                 parsed_test_results.pop("auditScreenshot", None)
+                tool_observation = json.dumps(parsed_test_results)
                 state_updates["last_test_result"] = parsed_test_results
                     
             except json.JSONDecodeError:
@@ -111,6 +110,8 @@ def tool_node(state: dict) -> dict:
                     state_updates["last_error"] = parsed_analysis["error"]
             except json.JSONDecodeError:
                 state_updates["last_error"] = f"Screenshot tool returned invalid JSON: {tool_observation[:100]}"
+        
+        results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
             
     return {"messages": results, **state_updates}
 

@@ -1,5 +1,6 @@
 import sys
 import time
+import warnings
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -17,6 +18,8 @@ from src.agent.llm import MODEL_NAME
 from src.prompts.static_few_shot_examples import FEW_SHOT_CONFIG
 
 load_dotenv()
+
+warnings.filterwarnings("ignore", category=UserWarning, module="pydantic")
 
 def load_urls_from_file(filepath: str) -> list:
     """Reads a .txt file with urls and returns a list with these urls
