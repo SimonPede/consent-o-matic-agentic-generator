@@ -98,7 +98,9 @@ def tool_node(state: dict) -> dict:
                 state_updates["last_test_result"] = parsed_test_results
                     
             except json.JSONDecodeError:
-                state_updates["last_error"] = f"test_ruleset tool returned invalid JSON: {tool_observation[:100]}"
+                actual_error = f"test_ruleset tool returned invalid JSON: {tool_observation[:100]}"
+                state_updates["error_history"] = [actual_error]
+                state_updates["last_error"] = actual_error
             
         elif tool_call["name"] == "analyse_screenshot":
             state_updates["analyse_screenshot_count"] = state.get("analyse_screenshot_count", 0) + 1
@@ -107,9 +109,12 @@ def tool_node(state: dict) -> dict:
                 state_updates["screenshot_info"] = parsed_analysis
                 
                 if parsed_analysis.get("error"):
+                    state_updates["error_history"] = [parsed_analysis["error"]]
                     state_updates["last_error"] = parsed_analysis["error"]
             except json.JSONDecodeError:
-                state_updates["last_error"] = f"Screenshot tool returned invalid JSON: {tool_observation[:100]}"
+                actual_error = f"Screenshot tool returned invalid JSON: {tool_observation[:100]}"
+                state_updates["error_history"] = [actual_error]
+                state_updates["last_error"] = actual_error
         
         results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
             
