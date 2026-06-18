@@ -45,6 +45,18 @@ def extraction_node(state: AgentState) -> dict:
         output_str = json.dumps(output)
         output_length = len(output_str)
         print(f"DOM Extraction Matrix generated: {output_length} characters fetched.")
+        
+        settings_extracted_flag = False
+        cmp_type_value = ""
+        
+        if isinstance(output, list):
+            for frame_data in output:
+                if frame_data.get("settings") is not None:
+                    settings_extracted_flag = True
+                
+                if frame_data.get("cmpType") is not None:
+                    cmp_type_value = frame_data.get("cmpType")
+        
         return {
             #Rationale Note for Thesis: A ToolMessage requires an active, intercepted tool_call_id. 
             #Injecting the extracted layout environment via a HumanMessage acts as a clean 
@@ -52,7 +64,8 @@ def extraction_node(state: AgentState) -> dict:
             "messages": [HumanMessage(content=f"Here is the DOM info, extracted by the extract tool: {output}")],
             "structured_dom_info": output,
             "structured_dom_chars": output_length,
-            "cmp_type": output[0].get("cmpType", "")
+            "cmp_type": cmp_type_value,
+            "settings_extracted": settings_extracted_flag
         }
     else:
         return {

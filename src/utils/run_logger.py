@@ -33,6 +33,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     error_history = state.get("error_history", [])
     final_test_error = test_result.get("error") or ""
     final_ruleset = state.get("final_result", "No final ruleset")
+    settings_extracted = state.get("settings_extracted", False)
     
     banner_dismissed = (
         (baseline.get("heuristicBannerFound") == True
@@ -60,6 +61,43 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         and banner_dismissed
     )
     
+    final_ruleset_dict = {}
+    if isinstance(final_ruleset, dict):
+        final_ruleset_dict = final_ruleset
+    
+    used_methods = []
+    for cmp_data in final_ruleset_dict.values():
+        if isinstance(cmp_data, dict):
+            methods = cmp_data.get("methods", [])
+            for method in methods:
+                if "name" in method:
+                    used_methods.append(method["name"])
+    
+    #resolution_type classifies the outcome of a successful run into one of four categories.
+    #It distinguishes between genuinely granular consent handling and simpler fallback strategies,
+    #which auto_success alone cannot capture (a banner dismissed via "Reject All" also counts as success)
+    #
+    #GRANULAR_CONSENT:          DO_CONSENT method present --> agent mapped individual categories (A/B/F/X)
+    #DECLINE_FALLBACK:          No DO_CONSENT, but settings were extracted --> agent chose "Reject All"
+    #                           despite a settings page being available (extraction succeeded, LLM fallback)
+    #DECLINE_FALLBACK_OR_BINARY: No DO_CONSENT, no settings extracted --> either the banner had no
+    #                           granular options (binary banner), or settings extraction failed silently.
+    #                           Requires manual verification to distinguish.
+    #FAILED:                    auto_success is False --> banner not dismissed or no valid ruleset produced.
+    #UNKNOWN:                   Ruleset present but no recognizable method names found (should not occur).
+    resolution_type = ""
+    if not auto_success:
+        resolution_type = "FAILED"
+    elif "DO_CONSENT" in used_methods:
+        resolution_type = "GRANULAR_CONSENT"
+    elif "SAVE_CONSENT" in used_methods:
+        if settings_extracted:
+            resolution_type = "DECLINE_FALLBACK"
+        else:
+            resolution_type = "DECLINE_FALLBACK_OR_BINARY"
+    else:
+        resolution_type = "UNKNOWN"
+        
     log_entry = {
         "timestamp": datetime.now().isoformat(),
         "url": url,
@@ -67,8 +105,10 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "model_used": model_name,
         "few_shot_config": few_shot_config,
         "auto_success": auto_success,
+        "resolution_type": resolution_type,
         "verified": None,  #Manual override placeholder for ground-truth audits
         "cmp_type": state.get("cmp_type", ""),
+        "settings_extracted": settings_extracted,
         "handled": test_result.get("handled"),
         "banner_dismissed": banner_dismissed,
         "attempts": state.get("attempts", 0),
@@ -102,8 +142,10 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "model_used",
         "few_shot_config",
         "auto_success",
+        "resolution_type",
         "verified",
         "cmp_type",
+        "settings_extracted",
         "handled",
         "banner_dismissed",
         "attempts",
@@ -125,8 +167,10 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["model_used"],
         log_entry["few_shot_config"],
         log_entry["auto_success"],
+        log_entry["resolution_type"],
         log_entry["verified"],
         log_entry["cmp_type"],
+        log_entry["settings_extracted"],
         log_entry["handled"],
         log_entry["banner_dismissed"],
         log_entry["attempts"],
@@ -150,4 +194,4 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
             writer.writerow(csv_headers)
         writer.writerow(csv_row)
     
-    print(f"Run logged: {filename} | success={auto_success} | attempts={log_entry['attempts']}")
+    print(f"Run logged: {filename} | success={auto_success} | resolution={resolution_type} | attempts={log_entry['attempts']}")

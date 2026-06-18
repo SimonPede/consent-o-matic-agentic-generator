@@ -12,6 +12,7 @@ class AgentState(TypedDict):
     error_history: Annotated[list[str], operator.add]
     structured_dom_info: list[dict] | None
     cmp_type: str
+    settings_extracted: bool
     screenshot_info: dict | None
     current_ruleset_draft: str
     last_test_result: dict | None #used to make logging easier

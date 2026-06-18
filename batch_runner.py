@@ -60,6 +60,7 @@ def run_single(agent, url: str) -> None:
         "last_error": "",
         "structured_dom_info": None,
         "cmp_type": "",
+        "settings_extracted": False,
         "screenshot_info": None,
         "current_ruleset_draft": "",
         "last_test_result": None,
