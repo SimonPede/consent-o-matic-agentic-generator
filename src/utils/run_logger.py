@@ -27,21 +27,31 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     """
     url = state.get("url", "unknown")
     test_result = state.get("last_test_result") or {}
+    settings_extracted = state.get("settings_extracted", False)
+    screenshot_info = state.get("screenshot_info", {})
+    vision_banner_dismissed = screenshot_info.get("bannerDismissed")
+    
     banner_status = test_result.get("bannerStatus", {})
     baseline = banner_status.get("baseline", {})
     audit = banner_status.get("audit", {})
+    
     error_history = state.get("error_history", [])
     final_test_error = test_result.get("error") or ""
-    final_ruleset = state.get("final_result", "No final ruleset")
-    settings_extracted = state.get("settings_extracted", False)
+    final_ruleset = state.get("final_result", None)
     
     banner_dismissed = (
         (baseline.get("heuristicBannerFound") == True
         and audit.get("heuristicBannerFound") == False)
         or
-        (baseline.get("hasTcfApi") == True and baseline.get("tcfVisible") == True
-        and audit.get("hasTcfApi") == True and audit.get("tcfVisible") == False)
+        (baseline.get("hasTcfApi") == True
+        and baseline.get("tcfVisible") == True
+        and audit.get("hasTcfApi") == True
+        and audit.get("tcfVisible") == False)
     )
+    
+    heuristic_vision_mismatch = False
+    if vision_banner_dismissed is not None:
+        heuristic_vision_mismatch = (banner_dismissed != vision_banner_dismissed)
 
     #auto_success is determined by four independent signals:
     # 1. handled: true  --> the CoM engine completed its execution flow
@@ -111,6 +121,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "settings_extracted": settings_extracted,
         "handled": test_result.get("handled"),
         "banner_dismissed": banner_dismissed,
+        "vision_banner_dismissed": vision_banner_dismissed,
+        "heuristic_vision_mismatch": heuristic_vision_mismatch,
         "attempts": state.get("attempts", 0),
         "human_review_count": state.get("human_review_count", 0),
         "test_ruleset_count": state.get("test_ruleset_count", 0),
@@ -148,6 +160,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "settings_extracted",
         "handled",
         "banner_dismissed",
+        "vision_banner_dismissed",
+        "heuristic_vision_mismatch",
         "attempts",
         "human_review_count",
         "test_ruleset_count",
@@ -173,6 +187,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["settings_extracted"],
         log_entry["handled"],
         log_entry["banner_dismissed"],
+        log_entry["vision_banner_dismissed"],
+        log_entry["heuristic_vision_mismatch"],
         log_entry["attempts"],
         log_entry["human_review_count"],
         log_entry["test_ruleset_count"],

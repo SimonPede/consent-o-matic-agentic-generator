@@ -67,16 +67,20 @@ def tool_node(state: dict) -> dict:
                 parsed_test_results = json.loads(tool_observation)
                 actual_error = parsed_test_results.get("error") or ""
                 
-                if parsed_test_results.get("auditScreenshot"):
-                    print("Test failed but audit screenshot found! Invoking Ollama Vision...")
+                if (parsed_test_results.get("auditScreenshot")):
+                    print("Audit screenshot found! Invoking Vision Model...")
                     
                     vision_result = call_vision(parsed_test_results["auditScreenshot"])
                     print(f"Vision result: {vision_result}")
-                    
+                
                     state_updates["screenshot_info"] = vision_result
-                    state_updates["messages"] = [HumanMessage(
-                        content = f"Visual audit after test: {json.dumps(vision_result)}"
-                    )]
+                
+                    banner_still_visible_heuristic = parsed_test_results.get("bannerStatus", {}).get("audit", {}).get("heuristicBannerFound")
+                        
+                    if actual_error or banner_still_visible_heuristic == True:
+                        state_updates["messages"] = [HumanMessage(
+                            content=f"Visual audit after test: {json.dumps(vision_result)}"
+                        )]
                     
                 elif "No CMP detected" in actual_error:
                     state_updates["messages"] = [HumanMessage(

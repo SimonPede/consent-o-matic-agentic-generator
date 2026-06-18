@@ -18,7 +18,8 @@ def call_vision(base64_image: str) -> dict:
     
     prompt = """
     You are analyzing a screenshot of a website AFTER an automated script tried to interact with or dismiss a cookie consent banner.
-    Independent data shows the banner or its settings menu might still be visible or stuck.
+    Your task is to independently verify whether the banner was successfully dismissed or is still visible.
+    This verification is used to cross-check the heuristic banner detection and improve evaluation accuracy.
 
     Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
     No explanation, no markdown, no code blocks.

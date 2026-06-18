@@ -643,9 +643,22 @@ async function runTest(ruleset) {
         
         const isDetectorFailure = finalError && finalError.includes("No CMP detected");
 
-        if (bannerStillVisible && !isDetectorFailure) {
+        //this logic is more efficient for every day use
+        // if (bannerStillVisible && !isDetectorFailure) {
+        //     try {
+        //         console.error("Validation failed: Banner is still visible. Captures audit screenshot...");
+        //         auditScreenshot = await page.screenshot({ encoding: "base64" });
+        //     } catch (err) {
+        //         console.error("Failed to take audit screenshot:", err.message);
+        //     }
+        // }
+
+        //EVALUATION MODE: Always capture audit screenshot for vision cross-validation.
+        //In production, replace this block with the commented logic above (screenshot
+        //only when bannerStillVisible) to improve performance.
+        if (!isDetectorFailure) {
             try {
-                console.error("Validation failed: Banner is still visible. Captures audit screenshot...");
+                console.error("Capturing final audit screenshot for vision verification...");
                 auditScreenshot = await page.screenshot({ encoding: "base64" });
             } catch (err) {
                 console.error("Failed to take audit screenshot:", err.message);
