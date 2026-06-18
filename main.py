@@ -28,7 +28,7 @@ def main() -> None:
         "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
         "url": url,
         "structured_dom_chars": 0,
-        "attempts": 0,
+        "llm_calls": 0,
         "human_review_count": 0,
         "last_error": "",
         "error_history": [],

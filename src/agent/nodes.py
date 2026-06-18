@@ -95,7 +95,7 @@ def make_llm_node(model_with_tools):
     
             return {
                 "messages": [response],
-                "attempts": state.get("attempts", 0) + 1
+                "llm_calls": state.get("llm_calls", 0) + 1
             }
         except Exception as e:
             print(f"LLM ERROR: {e}")
@@ -111,22 +111,22 @@ def human_review_node(state: AgentState) -> dict:
             last_ai_message = message
             break
     
-    attempts = state.get("attempts", 0)
+    llm_calls = state.get("llm_calls", 0)
     llm_choice = True
     
-    if attempts >= 20:
+    if llm_calls >= 20:
         llm_choice = False
         
     question = ""
     if not llm_choice:
-        question = "The Agent seems to be stuck, this call was not chosen by the LLM. It already needed 20 attempts and needs help. Please give Feedback:"
+        question = "The Agent seems to be stuck, this call was not chosen by the LLM. It already needed 20 llm_calls and needs help. Please give Feedback:"
     else:
         question = "The Agent seems to be stuck and needs help. Please give Feedback:"
         
     context = {
         "question": question,
         "url": state.get("url"),
-        "attempts": attempts,
+        "llm_calls": llm_calls,
         "last_ai_message": str(last_ai_message.content) if last_ai_message else "None",
         "last_error": state.get("last_error", "No error stored!"),
         "ruleset_draft": state.get("current_ruleset_draft"),
@@ -138,7 +138,7 @@ def human_review_node(state: AgentState) -> dict:
     print("="*20)
     print(f"Question:              {context['question']}")
     print(f"URL:              {context['url']}")
-    print(f"Tries:         {context['attempts']}")
+    print(f"Tries:         {context['llm_calls']}")
     print(f"Last error:   {context['last_error']}")
     print(f"\nRuleset draft:   {context['ruleset_draft']}")
     print(f"\nLast LLM Message:   {context['last_ai_message']}")

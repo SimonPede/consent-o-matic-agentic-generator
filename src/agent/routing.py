@@ -6,9 +6,9 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
     """Evaluates the final message in the stream to determine the next operational graph node."""
     #Dynamic budgeting: Each completed human feedback expands the number of allowed
     #iterations by 5
-    max_attempts_budget = 20 + (state.get("human_review_count", 0) * 5)
+    max_llm_calls_budget = 20 + (state.get("human_review_count", 0) * 5)
     
-    if state.get("attempts", 0) >= max_attempts_budget:
+    if state.get("llm_calls", 0) >= max_llm_calls_budget:
         return "human_review_node"
     
     last_message = state["messages"][-1]

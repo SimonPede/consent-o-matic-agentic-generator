@@ -57,8 +57,7 @@ def run_single(agent, url: str) -> None:
         "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
         "url": url,
         "structured_dom_chars": 0,
-        "attempts": 0, #IMPORTANT: this counts the number of times the "llm_node" is used. Represents the entire "work load"
-        #NOT the number of tries the LLM needed to generate a correct ruleset! For that metric "test_ruleset_count" is sufficient
+        "llm_calls": 0, #IMPORTANT: NOT the number of tries the LLM needed to generate a correct ruleset! For that metric "test_ruleset_count" is sufficient
         "human_review_count": 0,
         "last_error": "",
         "structured_dom_info": None,
@@ -103,7 +102,7 @@ def run_single(agent, url: str) -> None:
             duration = time.perf_counter() - start_time
             
             log_run(
-                {"url": url, "attempts": 0, "last_error": str(e),
+                {"url": url, "llm_calls": 0, "last_error": str(e),
                 "final_result": None, "last_test_result": None,
                 "human_review_count": 0, "cmp_type": ""},
                 duration_seconds=duration,
@@ -123,13 +122,18 @@ def run_single(agent, url: str) -> None:
 
         state_values = dict(final_state.values)
         state_values["last_error"] = "ABORTED: max auto-resumes reached"
+        state_values["aborted_max_resumes"] = True
         log_run(state_values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
         
         return
 
     print(f"\nSaving evaluation metadata for {url}...")
     duration = time.perf_counter() - start_time
+    
     final_state = agent.get_state(config)
+    state_values = dict(final_state.values)
+    state_values["aborted_max_resumes"] = False
+    
     log_run(final_state.values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
 
 def main() -> None:

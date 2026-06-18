@@ -6,7 +6,7 @@ class AgentState(TypedDict):
     messages: Annotated[list[AnyMessage], operator.add]
     url: str
     structured_dom_chars: int
-    attempts: int
+    llm_calls: int
     human_review_count: int
     last_error: str
     error_history: Annotated[list[str], operator.add]
