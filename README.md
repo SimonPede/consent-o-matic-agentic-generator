@@ -25,29 +25,28 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 - **Orchestration:** LangGraph/LangChain
 - **Browser Automation:** Node.js & Puppeteer
 - **LLM:** Gemma 4 31B via Ollama (SNET server) or LiteLLM (Aarhus University)
-- **Validation:** Pydantic (type-safe tool calling) (not implemented at the moment)
+- **Validation:** Pydantic (type-safe tool calling)
 - **Tracing & Observability:** LangSmith
-
-## Project Structure
 
 ## Project Structure
 ```
 consent-o-matic-agentic-generator/
 ├── data/                        # Test URLs and generated results
-│   └── results/
-├── evaluation/                  # Benchmarking scripts and datasets
-│   └── gold-standard/           # Reference rulesets for evaluation
+│   ├── logs/                    # Logging results
+│   ├── results/                 # Verified results
+├── evaluation/                  # Evaluation scripts and urls to be evaluated
 ├── src/
 │   ├── agent/                   # LangGraph graph, nodes, and state definition
-│   ├── prompts/                 # System prompt and few-shot examples (Pseudo-RAG not implemented at the moment)
+│   ├── prompts/                 # System prompt and few-shot examples
 │   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
 │   ├── schemas/                 # Pydantic models for the CoM ruleset schema
 │   ├── tools/                   # Custom tools for DOM extraction and testing
-│   │   └── extract-dom/         # the DOM extraction script providing the LLM with the necessary DOM information
-│   │   └── consent-engine/      # source code of the CoM-Engine used for the test_ruleset node in Langgraph
+│   │   └── extract-dom/         # The DOM extraction script providing the LLM with the necessary DOM information
+│   │   └── consent-engine/      # Source code of the CoM-Engine used for the test_ruleset node in Langgraph
 │   ├── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
-│   │   └── midas-corpus/        # utility files that are derived from the Consent Observatory project
+│   │   └── midas-corpus/        # Utility files that are derived from the Consent Observatory project
 ├── main.py                      # Entry point
+├── batch_runner.py              # Used for running the agent over a set of given urls
 ├── langgraph.json               # LangSmith Studio configuration
 ├── extract_dom_flow_chart.pdf   # Flow Chart visualizing the logic of my extract_dom script
 ├── agentic_flow_MVP.pdf         # Visualization of my agentic system and its components
@@ -64,7 +63,7 @@ consent-o-matic-agentic-generator/
 - Python 3.11.9
 - Node.js (v18+)
 - Access to Gemma 4 via Ollama (SNET server, bearer token) or LiteLLM (Aarhus University, API key)
-   (other LLMs capable of tool calling & vision as well as reasoning should also provide similiar results)
+   (other LLMs capable of tool calling & vision as well as reasoning should also provide similar results)
 
 1. **Clone the repository:**
    ```bash
@@ -93,7 +92,7 @@ Create a `.env` file in the root directory:
 OLLAMA_BASE_URL=http://snet-server:1234
 OLLAMA_BEARER_TOKEN=your-token-here
 #or
-LITELLM_BASE_URL=http://litelllm-server:1234
+LITELLM_BASE_URL=http://litellm-server:1234
 LITELLM_API_KEY=your-api-key-here
  
 #LangSmith Tracing
@@ -116,6 +115,12 @@ Add `--fresh` to force a new thread instead of resuming a previous checkpoint:
  
 ```bash
 python main.py https://www.example.com --fresh
+```
+
+When wanting to run the agent on multiple websites configure the `urls.txt` (one URL per line) in evaluation/ and use
+
+```bash
+python batch_runner.py
 ```
 
 ## Development: LangSmith Studio (Optional)
