@@ -1,6 +1,6 @@
-import os
 import sys
 import time
+import warnings
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -19,6 +19,8 @@ from src.agent.llm import MODEL_NAME
 from src.prompts.static_few_shot_examples import FEW_SHOT_CONFIG
 
 load_dotenv()
+
+warnings.filterwarnings("ignore", category=UserWarning, module="pydantic")
 
 def main() -> None:
     url = sys.argv[1] if (len(sys.argv) > 1) else "https://www.cookiebot.com"

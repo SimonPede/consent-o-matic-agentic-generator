@@ -1,6 +1,7 @@
 import subprocess
 import json
 import logging
+from datetime import datetime
 import os
 import re
 
@@ -123,15 +124,38 @@ def human_review_node(state: AgentState) -> dict:
     else:
         question = "The Agent seems to be stuck and needs help. Please give Feedback:"
         
+    current_ruleset_draft = state.get("current_ruleset_draft")
+    
+    if current_ruleset_draft:
+        try:
+            current_ruleset_draft = json.loads(current_ruleset_draft)
+        except (json.JSONDecodeError, TypeError):
+            current_ruleset_draft = "Invalid or unparseable JSON draft."
+    else:
+        current_ruleset_draft = "No ruleset could be found!"
+    
     context = {
         "question": question,
-        "url": state.get("url"),
+        "url": state.get("url", "No url provided!"),
         "llm_calls": llm_calls,
         "last_ai_message": str(last_ai_message.content) if last_ai_message else "None",
         "last_error": state.get("last_error", "No error stored!"),
-        "ruleset_draft": state.get("current_ruleset_draft"),
-        "current_ruleset": state.get("final_result", "No ruleset generated yet.")
+        "ruleset_draft": current_ruleset_draft
     }
+    
+    log_dir = "data/logs/human-reviews"
+    os.makedirs(log_dir, exist_ok=True)
+    
+    clean_url = context["url"].replace("https://", "").replace("http://", "").rstrip("/").replace("/", "_")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{timestamp}_{clean_url}.json"
+    filepath = os.path.join(log_dir, filename)
+    
+    try:
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(context, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Failed to log human review context {e}")
     
     print("\n" + "-" * 40)
     print("HUMAN REVIEW REQUIRED")
@@ -140,7 +164,7 @@ def human_review_node(state: AgentState) -> dict:
     print(f"URL:              {context['url']}")
     print(f"Tries:         {context['llm_calls']}")
     print(f"Last error:   {context['last_error']}")
-    print(f"\nRuleset draft:   {context['ruleset_draft']}")
+    print(f"\nRuleset draft:   {json.dumps(context['ruleset_draft'], indent=2, ensure_ascii=False)}")
     print(f"\nLast LLM Message:   {context['last_ai_message']}")
     print("-" * 40)
     

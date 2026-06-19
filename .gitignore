@@ -19,4 +19,6 @@ checkpoints.db-shm
 checkpoints.db-wal
 data/logs/runs/.gitkeep
 data/logs/runs/*.json
+data/logs/human-reviews/.gitkeep
+data/logs/human-reviews/*.json
 data/logs/evaluation_summary.csv
