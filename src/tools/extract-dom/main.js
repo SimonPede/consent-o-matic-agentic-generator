@@ -157,6 +157,7 @@ async function extractStructuredDom(url) {
         for (const result of results) {
             if (!settingsExtracted) {
                 let settingsButton = null;
+                let fallbackAnchorMatch = null;
 
                 for (const btn of result.data.buttons) {
                     if (btn.tag === "BUTTON" || btn.tag === "A") {
@@ -191,6 +192,7 @@ async function extractStructuredDom(url) {
                                 settingsButton = btn;
                                 break;
 
+                            } else if(btn.tag === "A") {
                                 if (!fallbackAnchorMatch) {
                                     fallbackAnchorMatch = btn;
                                     console.error("Found <a> match, saving as fallback but continuing search...");
