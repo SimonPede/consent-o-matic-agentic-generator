@@ -505,7 +505,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //be fully supported. The CMP type is detected correctly via main frame scan,
         //but waitForSelector() cannot pierce Shadow DOM boundaries, meaning the banner
         //container may not yet be present when extraction runs.
-        //Affected CMPs: unknown!! TODO.
+        //Affected CMPs: unknown!! --> TODO.
 
         //NOTE: bestResult logic instead of first-match:
         //When testing on flightaware.com, the settings page loaded inside a div
@@ -518,7 +518,14 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
         for (const selector of selectors) {
             
-            const host = querySelectorDeep(selector);
+            //i initially used:
+            // const host = querySelectorDeep(selector);
+            //BUT: document.querySelector() (Light DOM only) is much faster than
+            //querySelectorAllDeep and sufficient since CMP host elements are always in the
+            //Light DOM. Button detection inside the container uses querySelectorAllDeep()
+            //to handle Shadow DOM CMPs like Usercentrics.
+            //as already mentioned in utils/wait_for_cmp_ui.js
+            const host = documentRoot.querySelector(selector);
 
             if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
 				continue;

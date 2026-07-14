@@ -49,6 +49,8 @@ async function frameWordCounter(frames) {
  * Scoring factors (see paper Appendix A.3 for original weights):
  * 
  * Positive:
+ *   +50 Match with a few known CMP domain URLs
+ *   +20 Match with CMP-related frame URLs and names
  *   +5  General CSS selector match (GENERAL_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al., 2025 + Singh et al., 2026)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
@@ -58,7 +60,7 @@ async function frameWordCounter(frames) {
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
  *   +10 iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
  *        Adaptation of same principle to the iframe element in the parent page context.
- *   +5  element within frame is displayed at the top of the screen
+ *   +5  element within frame is not obscured by another overlapping element
  *        Direct adaption of Klein and Musch et al., 2022, p.914
  *        applied only to fixed/high-z elements to avoid false positives from header/nav elements
  * 
@@ -77,12 +79,14 @@ async function frameWordCounter(frames) {
  * 
  * Deviations from paper:
  *   - Applying the scoring logic not to candidates of banners but iframe
+ *   - Utilizing known CMP domain URLs CMP-related phrases for scoring
+ *   - Map used for CMP-specific selector match heavily expanded with findings from Nouwens et al., 2025
  *   - No screenshot-based visibility check
  *     --> replaced with CSS computed style + bounding box check
  *   - No sub-string/duplicate candidate comparison (out of scope for this prototype)
- *   - N-grams extended with German phrases; full multilingual support is a TODO
- *   - Evaluation of the URL and the iframe name (my own idea)
- *   - and i dont comply to: "iframes were also
+ *   - This Code is shadow DOM aware
+ *   - N-grams extended with some european languages; full multilingual support is a TODO
+ *   - Not complying to the quote: "iframes were also
         assessed to be less important as there is typically a wide
         range of content that can be contained within an iframe
         not just cookie dialogs."
@@ -221,8 +225,6 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             localScore += Math.min(matches.length * 2, 10); //Math.min(..., 10) caps the bonus at +10 to avoid over-weighting
             //TODO: Evaluate!
 
-            //N-Gram Analyse used by paper would need translation into english
-            //far to slow and costly for my agent system. i try to use a similar but simplified version
             for (const [n, phrases] of Object.entries(nGrams).reverse()) {
                 const weight = parseInt(n);
                 for (const phrase of phrases) {

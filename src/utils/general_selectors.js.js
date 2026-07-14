@@ -3,7 +3,7 @@
  * Adapted from "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs",
  * Appendix A.2 (Table 6).
  * 
- * Used in calculateFrameScore() to give a small bonus (+2) to frames that contain
+ * Used in calculateFrameScore() to give a small bonus (+5) to frames that contain
  * elements matching these selectors, indicating a higher likelihood of being a CMP banner.
  * These are general selectors (less specific than CMP_SELECTORS_MAP, +10).
  * 

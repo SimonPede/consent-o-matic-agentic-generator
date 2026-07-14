@@ -313,7 +313,6 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
 
     await page.screenshot({ path: "after_click.png" });
 
-
     let bestNewFrame = null;
     let highestScore = 0;
     
