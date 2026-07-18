@@ -11,13 +11,13 @@ const waitForCmpUi = require("../../utils/wait_for_cmp_ui.js");
 const findCorrectFrame = require("./frame_matcher.js");
 const extractFromFrame = require("./frame_extractor");
 const clickAndExtractSettings = require("./settings_extractor");
-const findSettingsButtonViaLLM = require("./llm_fallback");
+const findSettingsButtonViaLlm = require("./llm_fallback");
 
-// ---------------
-// IMPORTANT!!!!
-// for get a quicker understanding what the logic of this file is
-// please look in the root because i addeded 040626-extract_dom-Flow in root for visualizing the strcuture and logic of extract_dom.js
-// ----------------
+//---------------
+//IMPORTANT!!!!
+//for get a quicker understanding what the logic of this extract script is
+//please look in the root because i addeded extract_dom_flow_chart.pdf for a visualization of the logic amd structure
+//----------------
 
 /**
  * Normalizes button text for robust matching.
@@ -48,7 +48,7 @@ function normalizeText(text) {
  * 3. Extract initial banner DOM via extractFromFrame()
  * 4. Search for a settings button using a multilingual regex (SETTINGS_PATTERN)
  * 5a. If regex succeeds: click and extract settings DOM via clickAndExtractSettings()
- * 5b. If regex fails: LLM fallback via findSettingsButtonViaLLM(), then same click logic
+ * 5b. If regex fails: LLM fallback via findSettingsButtonViaLlm(), then same click logic
  * 
  * waitUntil "networkidle2" waits until at most 2 network requests are active.
  * An additional 2s buffer handles dynamically injected banners that load after
@@ -104,11 +104,11 @@ async function extractStructuredDom(url) {
         console.error("page is loaded!");
 
         const waitResult = await waitForCmpUi(page, CMP_SELECTORS_MAP);
-
-        const cmpType = waitResult ? waitResult.cmpType : null;
+        const cmpType = null;
 
         if (waitResult) {
             console.error(`waitForCmpUI detected CMP Type: ${cmpType}`);
+            cmpType = waitResult.cmpType;
             //wait shortly in case of more CSS animation
             await new Promise(resolve => setTimeout(resolve, 1500)); 
         }
@@ -211,7 +211,7 @@ async function extractStructuredDom(url) {
                     result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
                 } else {
                     console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
-                    const llmSettingsButton = await findSettingsButtonViaLLM(result.data.filteredHtml);
+                    const llmSettingsButton = await findSettingsButtonViaLlm(result.data.filteredHtml);
 
                     if (llmSettingsButton) {
                         result.settings = await clickAndExtractSettings(result.frame, llmSettingsButton, page, cmpType);
@@ -228,7 +228,7 @@ async function extractStructuredDom(url) {
                 result.settings = null;
             }
 
-            //frame object needs to be deleted (too big, only necessary for clicking the settings-button)
+            //frame object needs to be deleted as it is very large and only necessary for clicking the settings-button
             delete result.frame;
         }
 

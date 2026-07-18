@@ -6,7 +6,7 @@
  * @param {string} html - filteredHtml from extractFromFrame()
  * @returns {{selector: string, text: string}|null} - button object or null
  */
-async function findSettingsButtonViaLLM(html) {
+async function findSettingsButtonViaLlm(html) {
     //Configuration Toggle
     const use_liteLlm = true;
 
@@ -98,4 +98,4 @@ async function findSettingsButtonViaLLM(html) {
     }
 }
 
-module.exports = findSettingsButtonViaLLM;
+module.exports = findSettingsButtonViaLlm;
