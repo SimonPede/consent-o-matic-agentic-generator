@@ -3,31 +3,6 @@ const { calculateFrameScore, frameWordCounter } = require("./element_scorer");
 /**
  * Heuristically identifies and isolates the functional iframe boundary most likely 
  * to host the active cookie consent interface.
- * Uses a two-step approach:
- * 
- * Step 1: CMP Type Detection (main frame scan):
- *   Scans the main frame for known CMP container elements using CMP_SELECTORS_MAP
- *   (Nouwens et al. 2025, Appendix C). Returns the CMP name if found (e.g. "Sourcepoint").
- *   Runs on main frame only: CMP providers always place a bootstrap container there
- *   even when the banner itself loads in an iframe.
- *   Verified on: heise.de (Sourcepoint), spiegel.de, usercentrics.com
- * 
- * Step 2: Score-based Frame Selection (calculateFrameScore):
- *   All frames are scored. The score incorporates:
- *   - Domain matching against known CMP CDN domains (+50 bonus)
- *   - URL/name regex matching against CMP-related keywords (+20 bonus)
- *   - N-gram analysis of visible text content
- *   - CSS selector matching (general: +5, CMP-specific: +10)
- *   - Word count penalties
- *   - iframe element CSS properties: position:fixed + z-index > 10 (+10 bonus)
- *     Adaptation of Nouwens et al. (2025) banner candidate detection to iframe level.
- *     Original paper applies this to DOM elements; here applied to iframe elements
- *     in the parent page context.
- *     Additionally reduce iFrameBonus by 30 if it is not inside the current viewport
- *     and should therefore not be visible (mainly inspired by Accept All Exploits: Exploring the Security Impact of Cookie Banners paper
- *     & Cookiescanner: An Automated Tool for Detecting and Evaluating GDPR Consent Notices on Websites)
- *   The highest-scoring frame is returned if score > 0.
- *   Inspired by: DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs
  * 
  * @param {Page} page - Puppeteer page instance
  * @param {Object} selectorMap - CSS selector --> CMP name map (CMP_SELECTORS_MAP)

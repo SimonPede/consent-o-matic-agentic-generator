@@ -46,9 +46,9 @@ function normalizeText(text) {
  * 1. Launch browser and navigate to URL
  * 2. Detect CMP type and find the correct frame via findCorrectFrame()
  * 3. Extract initial banner DOM via extractFromFrame()
- * 4. Search for a settings button using a multilingual regex (SETTINGS_PATTERN)
+ * 4. Search for a settings button using a multilingual regex (SETTINGS_TERMS_REGEX)
  * 5a. If regex succeeds: click and extract settings DOM via clickAndExtractSettings()
- * 5b. If regex fails: LLM fallback via findSettingsButtonViaLlm(), then same click logic
+ * 5b. If regex fails: LLM fallback via findSettingsButtonViaLlm(), then the same click logic
  * 
  * waitUntil "networkidle2" waits until at most 2 network requests are active.
  * An additional 2s buffer handles dynamically injected banners that load after

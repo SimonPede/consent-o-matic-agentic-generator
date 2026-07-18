@@ -2,7 +2,7 @@
  * Highly specific CSS selectors mapping directly to known Consent Management Platforms (CMPs).
  * Synthesized from two primary academic sources:
  * 1. "A Cross-Country Analysis of GDPR Cookie Banners" (Nouwens et al., 2025), Appendix C
- * 2. "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs" (Singh et al., 2026), Appendix B
+ * 2. "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs" (Kirkman et al., 2023), Appendix B
  * * Utilized in `calculateFrameScore()` to instantly identify explicit CMP frames.
  * Matching any of these targeted selectors grants a maximum heuristic bonus (+10).
  */

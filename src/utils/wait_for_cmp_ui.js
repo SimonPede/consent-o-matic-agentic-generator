@@ -42,7 +42,7 @@ async function waitForCmpUi(page, selectorMap, timeout = 10000) {
                     }
 
                     for (const [selector, cmpName] of Object.entries(map)) {
-                        const host = document.querySelector(selector); //much faster than also searching the Shadow DOM and completely enough until now
+                        const host = document.querySelector(selector);
                         if (host && !["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
                             
                             const searchRoot = host.shadowRoot || host;

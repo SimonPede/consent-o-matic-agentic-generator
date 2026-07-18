@@ -12,8 +12,9 @@ const TRIGGER_WORDS_REGEX = require("../../utils/trigger_words");
  * Frames that cannot be evaluated (e.g. cross-origin iframes) are silently
  * skipped via try/catch to avoid crashing the scoring pipeline.
  * 
- * Shadow DOM traversal not needed here: document.body.innerText returns
- * rendered text which includes Shadow DOM content automatically.
+ * Crucially, this function uses the same deep Shadow DOM traversal algorithm
+ * as the scoring function, ignoring explicitly hidden elements (display:none)
+ * to ensure the calculated baseline perfectly matches the frame-level evaluation.
  * 
  * @param {Frame[]} frames - array of all Puppeteer frames on the page
  * @returns {Promise<number>} - Dynamic average word count baseline, or 0 if unassessable
@@ -24,7 +25,27 @@ async function frameWordCounter(frames) {
     for (const frame of frames) {
         try {
             const count =  await frame.evaluate(() => {
-                const text = document.body ? document.body.innerText.trim() : "";
+
+                // Same deep text extraction as in calculateFrameScore
+                function getDeepText(node) {
+                    let text = "";
+                    const root = node.shadowRoot || node;
+
+                    for (const child of root.childNodes) {
+                        if (child.nodeType === Node.TEXT_NODE) {
+                            text += " " + child.textContent;
+                        } else if(child.nodeType === Node.ELEMENT_NODE) {
+                            text += " " + getDeepText(child);
+                        }
+                    }
+                    return text.trim();
+                }
+
+                if (!document.body) {
+                    return 0;
+                }
+
+                const text = getDeepText(document.body).replace(/\s+/g, " ").trim();
                 return text.split(/\s+/).filter(w => w.length > 0).length;
             });
             wordCounts.push(count);
@@ -46,7 +67,7 @@ async function frameWordCounter(frames) {
  * Inspired by and partially adapted from the scoring system in:
  * "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs"
  * 
- * Scoring factors (see paper Appendix A.3 for original weights):
+ * Scoring factors (see paper Appendix A.1 for original weights):
  * 
  * Positive:
  *   +50 Match with a few known CMP domain URLs
@@ -68,14 +89,14 @@ async function frameWordCounter(frames) {
  *   -20  Word count < 5 (likely a clickable element, not a dialog)
  *   -20  Word count > average + 100 (likely contains non-banner content)
  *   -100 No text content (very unlikely to be a cookie dialog)
- *   -100 Element not visible (display:none, visibility:hidden, or zero dimensions)
+ *   -100 Frame body explicitly hidden (display:none or visibility:hidden)
  *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
  *   -30  iframe element itself is not inside the current viewport and should therefore not be visible
  *        (passed as iframeBonus)
  *   [excluded from +15 bonus] fixed/high-z elements with >10 internal same-origin links
  *        (nav/footer filter, inspired by CookieCrumbler, Brave Software)
- *   [excluded from +15 bonus] fixed/high-z elements smaller than 100x100px
- *        (revoke button filter, adapted from frameHasBanner() findAnchors() from `test_ruleset.js`)
+ *   [excluded from +15 bonus] fixed/high-z elements with an area <= 10000px (e.g. smaller than 100x100px)
+ *        (revoke button filter, based on observations e.g. Usercentrics)
  * 
  * Deviations from paper:
  *   - Applying the scoring logic not to candidates of banners but iframe
@@ -94,8 +115,9 @@ async function frameWordCounter(frames) {
         & reduced iFrameBonus by 30 if it is not inside the current viewport and should therefore not be visible
         (Gundelach & Herrman, 2023; Klein and Musch et al., 2022)
         & and evaluation if element within frame is displayed at the top of the screen (Klein and Musch et al., 2022, p.914)
- *   - fixed/high-z elements with >10 internal links excluded from scoring
- *      (CookieCrumbler-inspired heuristic to filter nav/footer false positives)
+ *   - fixed/high-z elements with >10 internal links (CookieCrumbler-inspired heuristic to filter nav/footer false positives)
+        or elements with an area <= 10000px (e.g. smaller than 100x100px) excluded from scoring
+        (based on problems experienced during development, e.g. on https://usercentrics.com/, caused by the revoke-consent button in the bottom left)
  *   - Trigger word matching uses a RegExp over full frame text
  *      (multilingual vocabulary from Nouwens et al. 2025 Appendix B + Singh et al. 2026 Table 7)
  * 
@@ -127,16 +149,20 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                 return -100;
             }
 
-            const rect = bodyNode.getBoundingClientRect();
+            // const rect = bodyNode.getBoundingClientRect();
             const style = window.getComputedStyle(bodyNode);
-            const isVisible = rect.width > 0 && 
-                            rect.height > 0 && 
-                            style.display !== "none" &&
-                            style.visibility !== "hidden";
 
-            if (!isVisible) {
+            if (style.display === "none" || style.visibility === "hidden") {
                 return -100;
             }
+            // const isVisible = rect.width > 0 && 
+            //                 rect.height > 0 && 
+            //                 style.display !== "none" &&
+            //                 style.visibility !== "hidden";
+
+            // if (!isVisible) {
+            //     return -100;
+            // }
 
             /**
              * Recursively queries the DOM including all Shadow DOM trees.
@@ -238,15 +264,16 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             const frameElements = querySelectorAllDeep("*");
 
             let hasFixedHighZ = false;
-            let topLevelCount = 0;
+            let isTopLevel = false;
 
             for (const element of frameElements) {
                 const style = window.getComputedStyle(element);
 
                 if (style.position === "fixed" && parseInt(style.zIndex) > 10) {
                     const rect = element.getBoundingClientRect();
+                    const area = rect.width * rect.height;
 
-                    if (rect.width > 0 && rect.width <= 100 && rect.height > 0 && rect.height <= 100) {
+                    if (area <= 10000) {
                         continue;
                     }
 
@@ -289,8 +316,11 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                     //so instead of "const {x, y} = el.getBoundingClientRect();" -->
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
-                    if (element === document.elementFromPoint(centerX, centerY)) {
-                        topLevelCount++;
+
+                    const topEl = document.elementFromPoint(centerX, centerY);
+
+                    if (topEl && (element === topEl || element.contains(topEl))) {
+                        isTopLevel = true;
                     }
                 }
             }
