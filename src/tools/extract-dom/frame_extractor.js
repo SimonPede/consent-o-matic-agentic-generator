@@ -22,7 +22,7 @@ function cleanHtml(html) {
         .replace(/\s*style="[^"]*"/gi, "")
         //removes inline JS event handlers (e.g., onclick, onload)
         .replace(/\s*on\w+="[^"]*"/gi, "")
-        //collapses multiple whitespaces, tabs, and newlines into a singel one
+        //collapses multiple whitespaces, tabs, and newlines into a single one
         .replace(/\s+/g, " ")   
         .trim();
 }
@@ -500,12 +500,6 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //<aside id="usercentrics-cmp-ui"> with a Shadow Root), we use the
         //Shadow Root as the search root for element extraction.
         //getDeepInnerHtml() recursively collects HTML from both light and shadow DOM.
-        //
-        //Known Limitation: Deeply nested Shadow DOM CMPs (e.g. Usercentrics) may not
-        //be fully supported. The CMP type is detected correctly via main frame scan,
-        //but waitForSelector() cannot pierce Shadow DOM boundaries, meaning the banner
-        //container may not yet be present when extraction runs.
-        //Affected CMPs: unknown!! --> TODO.
 
         //NOTE: bestResult logic instead of first-match:
         //When testing on flightaware.com, the settings page loaded inside a div
@@ -513,27 +507,28 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         //would pick the first matching container (the banner) even after the settings
         //page became visible. By selecting the container with the most interactive
         //elements, we ensure the settings page is correctly extracted after clicking.
+        
         let bestResult = null;
         let maxInteractiveElements = -1;
 
         for (const selector of selectors) {
             
             //i initially used:
-            // const host = querySelectorDeep(selector);
+            //const host = querySelectorDeep(selector);
             //BUT: document.querySelector() (Light DOM only) is much faster than
             //querySelectorAllDeep and sufficient since CMP host elements are always in the
             //Light DOM. Button detection inside the container uses querySelectorAllDeep()
             //to handle Shadow DOM CMPs like Usercentrics.
             //as already mentioned in utils/wait_for_cmp_ui.js
-            const host = documentRoot.querySelector(selector);
+            const host = document.querySelector(selector);
 
             if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
 				continue;
 			}
         
                 const searchRoot = host.shadowRoot || host;
-
-                const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot)
+                
+                const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", searchRoot)
                     .filter(element => isVisible(element))
                     .filter(element => element.tagName !== "INPUT") //Safeguard against misclassified form controls
                     .map(element => {
@@ -646,7 +641,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             filterBody.querySelectorAll(selector).forEach(element => element.remove());
         });
 
-        const buttons = querySelectorAllDeep("button, a, [role='button']")
+        const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], input[type='button'], input[role='submit'], .btn")
             .filter(element => isVisible(element))
             .filter(element => element.tagName !== "INPUT")
             .map(element => {
