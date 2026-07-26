@@ -27,7 +27,7 @@ def main() -> None:
     fresh_session = "--fresh" in sys.argv  #python main.py https://heise.de --fresh
 
     inputs = {
-        "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
+        "messages": [HumanMessage(content=f"Generate a Consent-O-Matic rule for: {url}")],
         "url": url,
         "structured_dom_chars": 0,
         "llm_calls": 0,
@@ -38,9 +38,9 @@ def main() -> None:
         "cmp_type": "",
         "settings_extracted": False,
         "screenshot_info": None,
-        "current_ruleset_draft": "",
+        "current_rule_draft": "",
         "last_test_result": None,
-        "test_ruleset_count": 0,
+        "test_rule_count": 0,
         "analyse_screenshot_count": 0,
         "final_result": None
     }

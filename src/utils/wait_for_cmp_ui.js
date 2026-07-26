@@ -3,7 +3,7 @@
  * Serves two purposes:
  * 1. Waits for the banner to be fully rendered before extraction starts
  * 2. Detects the CMP type early (returned as cmpType) so findCorrectFrame()
- *    does not need to repeat the main frame scan
+ *    does not need to repeat the same frame scanning
  *
  * Host detection uses document.querySelector() (Light DOM only). Much faster than
  * querySelectorAllDeep and sufficient since CMP host elements are always in the

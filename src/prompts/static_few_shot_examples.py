@@ -13,7 +13,7 @@ def load(filename: str) -> Any:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def format(title: str, dom: List[Dict[str, Any]], ruleset: Dict[str, Any], include_filtered_html: bool = False) -> str:
+def format(title: str, dom: List[Dict[str, Any]], rule: Dict[str, Any], include_filtered_html: bool = False) -> str:
     """Formats a single unified few-shot example block into clean markdown notation."""
     return f"""
 		## Example: {title}
@@ -21,8 +21,8 @@ def format(title: str, dom: List[Dict[str, Any]], ruleset: Dict[str, Any], inclu
 		### Extracted DOM:
 		{json.dumps(slim_extracted_dom(dom, include_filtered_html))}
 
-		### Correct ruleset:
-		{json.dumps(ruleset)}
+		### Correct rule:
+		{json.dumps(rule)}
 
 		---
 	"""
@@ -114,19 +114,19 @@ if FEW_SHOT_CONFIG == "cookiebot+swedbank+sourcepoint (filteredHtml: False/True/
         format(
             "Cookiebot CMP (cookiebot.com)",
             load("cookiebot_dom.json"),
-            load("cookiebot_ruleset.json"),
+            load("cookiebot_rule.json"),
             include_filtered_html = False
         ) +
         format(
             "Swedbank, custom banner (swedbank.com)",
             load("swedbank_dom.json"),
-            load("swedbank_ruleset.json"),
+            load("swedbank_rule.json"),
             include_filtered_html = True
         ) +
         format(
             "Sourcepoint CMP with Buttons (heise.de style)",
             load("sourcepoint_mock_dom.json"),
-            load("sourcepoint_mock_ruleset.json"),
+            load("sourcepoint_mock_rule.json"),
             include_filtered_html = True
         )
     )
@@ -135,19 +135,19 @@ elif FEW_SHOT_CONFIG == "cookiebot+swedbank+sourcepoint (filteredHtml: False/Fal
         format(
             "Cookiebot CMP (cookiebot.com)",
             load("cookiebot_dom.json"),
-            load("cookiebot_ruleset.json"),
+            load("cookiebot_rule.json"),
             include_filtered_html=False
         ) +
         format(
             "Swedbank, custom banner (swedbank.com)",
             load("swedbank_dom.json"),
-            load("swedbank_ruleset.json"),
+            load("swedbank_rule.json"),
             include_filtered_html=False
         ) +
         format(
             "Sourcepoint CMP with Buttons (heise.de style)",
             load("sourcepoint_mock_dom.json"),
-            load("sourcepoint_mock_ruleset.json"),
+            load("sourcepoint_mock_rule.json"),
             include_filtered_html=True
         )
     )
@@ -156,13 +156,13 @@ elif FEW_SHOT_CONFIG == "cookiebot+sourcepoint (filteredHtml: False/True)":
         format(
             "Cookiebot CMP (cookiebot.com)",
             load("cookiebot_dom.json"),
-            load("cookiebot_ruleset.json"),
+            load("cookiebot_rule.json"),
             include_filtered_html=False
         ) +
         format(
             "Sourcepoint CMP with Buttons",
             load("sourcepoint_mock_dom.json"),
-            load("sourcepoint_mock_ruleset.json"),
+            load("sourcepoint_mock_rule.json"),
             include_filtered_html=True
         )
     )

@@ -71,9 +71,9 @@ async function frameWordCounter(frames) {
  * 
  * Positive:
  *   +50 Match with a few known CMP domain URLs
- *   +20 Match with CMP-related frame URLs and names
+ *   +20 Match with CMP-related frame URLs and names (custom addition using CMP_FRAME_REGEX)
  *   +5  General CSS selector match (GENERAL_SELECTORS)
- *   +10 CMP-specific selector match (CMP_SELECTORS_MAP, Nouwens et al., 2025 + Singh et al., 2026)
+ *   +10 CMP-specific selector match (CMP_SELECTORS_MAP: Nouwens et al., 2025 + Kirkman et al., 2023)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
  *   +2  per trigger word match (multilingual consent vocabulary, Nouwens et al., 2025 + Singh et al., 2026)
  *       capped at +10 to avoid over-weighting frames with many cookie-related mentions
@@ -86,11 +86,11 @@ async function frameWordCounter(frames) {
  *        applied only to fixed/high-z elements to avoid false positives from header/nav elements
  * 
  * Negative:
- *   -20  Word count < 5 (likely a clickable element, not a dialog)
+ *   -20  Word count < 20 (Adjusted from DarkDialogs: Since scoring applies to entire frames rather than single elements, a valid GDPR consent dialog requires a significantly higher minimum word count)
  *   -20  Word count > average + 100 (likely contains non-banner content)
  *   -100 No text content (very unlikely to be a cookie dialog)
  *   -100 Frame body explicitly hidden (display:none or visibility:hidden)
- *        Inspired by paper's screenshot-based visibility check (S.18), adapted for Puppeteer
+ *        Inspired by paper's screenshot-based visibility check (S.18). Scoring gets aborted.
  *   -30  iframe element itself is not inside the current viewport and should therefore not be visible
  *        (passed as iframeBonus)
  *   [excluded from +15 bonus] fixed/high-z elements with >10 internal same-origin links
@@ -100,7 +100,8 @@ async function frameWordCounter(frames) {
  * 
  * Deviations from paper:
  *   - Applying the scoring logic not to candidates of banners but iframe
- *   - Utilizing known CMP domain URLs CMP-related phrases for scoring
+ *   - Utilizing CMP-related frame URLs and names
+ *   - Increased minimum word count penalty threshold from 5 to 20 to reflect the architectural shift from element-level to frame-level evaluation.
  *   - Map used for CMP-specific selector match heavily expanded with findings from Nouwens et al., 2025
  *   - No screenshot-based visibility check
  *     --> replaced with CSS computed style + bounding box check
@@ -225,7 +226,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
 
             if (wordsCounter === 0) {
                 return -100;
-            } else if (wordsCounter < 5) {
+            } else if (wordsCounter < 20) {
                 localScore -= 20;
             } else if (wordsCounter > (avg + 100)) {
                 localScore -= 20;
@@ -264,7 +265,7 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             const frameElements = querySelectorAllDeep("*");
 
             let hasFixedHighZ = false;
-            let isTopLevel = false;
+            let topLevelCount = 0;
 
             for (const element of frameElements) {
                 const style = window.getComputedStyle(element);
@@ -316,11 +317,8 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                     //so instead of "const {x, y} = el.getBoundingClientRect();" -->
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
-
-                    const topEl = document.elementFromPoint(centerX, centerY);
-
-                    if (topEl && (element === topEl || element.contains(topEl))) {
-                        isTopLevel = true;
+                    if (element === document.elementFromPoint(centerX, centerY)) {
+                        topLevelCount++;
                     }
                 }
             }

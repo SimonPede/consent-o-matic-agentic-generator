@@ -10,7 +10,7 @@ from langchain_core.tools import tool
 # this system isolates the multimodal inference within this specialized tool for several key reasons:
 #
 # 1. Separation of Concerns: Keeps the main agent focused on code generation 
-#    and ruleset logic, preventing "prompt pollution" and keeping the system prompt lean.
+#    and rule logic, preventing "prompt pollution" and keeping the system prompt lean.
 #
 # 2. Token & Context Efficiency: Images consume massive amounts of tokens and draw heavy
 #    attention weights. Passing raw images into the main chat history would quickly exhaust 
@@ -52,7 +52,7 @@ def analyse_screenshot(url: str) -> str:
     or have been dismissed in a different context.
         
     Args:
-        url: The URL of the website for which a ruleset is being generated.
+        url: The URL of the website for which a rule is being generated.
     
     Returns:
         Structured JSON string containing: bannerVisible (bool), bannerDismissed (bool), 

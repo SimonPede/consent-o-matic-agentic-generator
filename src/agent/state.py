@@ -14,9 +14,9 @@ class AgentState(TypedDict):
     cmp_type: str
     settings_extracted: bool
     screenshot_info: dict | None
-    current_ruleset_draft: str
+    current_rule_draft: str
     last_test_result: dict | None #used to make logging easier
-    test_ruleset_count: int
+    test_rule_count: int
     analyse_screenshot_count: int
     final_result: dict | None
 

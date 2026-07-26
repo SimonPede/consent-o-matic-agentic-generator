@@ -3,30 +3,30 @@ import json
 import os
 from langchain_core.tools import tool
 #Pydantic Schema
-from src.schemas.ruleset import CoMRuleset
+from src.schemas.rule import CoMRuleset
 
 @tool
-def test_ruleset(url: str, json_string: str) -> str:
+def test_rule(url: str, json_string: str) -> str:
     """
-    Tests the generated Consent-O-Matic ruleset on the live website by
+    Tests the generated Consent-O-Matic rule on the live website by
     injecting the CoM engine into a Puppeteer-controlled browser and
     executing the defined consent methods.
 
     Call this tool when:
-    - You have generated a complete ruleset and want to verify it works
-    - A previous test failed and you have revised the ruleset based on
+    - You have generated a complete rule and want to verify it works
+    - A previous test failed and you have revised the rule based on
         the error feedback
     - You want to verify whether a specific selector exists in the live DOM
-        before finalising the ruleset
+        before finalising the rule
 
     Do NOT call this tool if:
-    - You have not yet generated a complete ruleset with all required fields
-    - The ruleset is clearly incomplete (e.g. missing methods or detectors)
+    - You have not yet generated a complete rule with all required fields
+    - The rule is clearly incomplete (e.g. missing methods or detectors)
     - You have already successfully passed this test in the current session
 
     Args:
-        url: The URL of the website to test the ruleset on.
-        json_string: The complete ruleset as a JSON string, wrapped in the
+        url: The URL of the website to test the rule on.
+        json_string: The complete rule as a JSON string, wrapped in the
             CMP name as top-level key:
             {"CMPName": {"detectors": [...], "methods": [...]}}.
 
@@ -57,7 +57,7 @@ def test_ruleset(url: str, json_string: str) -> str:
                 (the first listed selector failure).
             - "Selector Failed: WAITCSS_TIMEOUT: <selector>":
                 A waitcss action timed out waiting for an element.
-            - "Invalid CMP <name>": The ruleset has a structural error
+            - "Invalid CMP <name>": The rule has a structural error
                 (wrong field names, unsupported action types).
             - "No CMP detected in 5 seconds": presentMatcher selector
                 not found in DOM, check your detector selectors.
@@ -79,8 +79,8 @@ def test_ruleset(url: str, json_string: str) -> str:
                 - heuristicBannerFound (bool): True if a fixed/high-z-index element
                     containing consent vocabulary was found in any frame via Midas heuristic.
                 - showingMatcherFound (bool|null): True if the specific element defined 
-                    in your ruleset's showingMatcher is found and visually visible. 
-                    null if no target selector could be parsed from your ruleset or the element is a shadow host.
+                    in your rule's showingMatcher is found and visually visible. 
+                    null if no target selector could be parsed from your rule or the element is a shadow host.
                     
     Interpreting bannerStatus for self-correction:
     - Best case: audit.tcfHidden=true AND audit.heuristicBannerFound=false 
@@ -96,7 +96,7 @@ def test_ruleset(url: str, json_string: str) -> str:
     
     print("testing started!")
     
-    script_path = os.path.join(os.path.dirname(__file__), "test_ruleset.js")
+    script_path = os.path.join(os.path.dirname(__file__), "test_rule.js")
     
     print(len(json_string))
     
@@ -105,10 +105,10 @@ def test_ruleset(url: str, json_string: str) -> str:
     except json.JSONDecodeError as e:
         return json.dumps({"handled": False, "error": f"Invalid JSON: {e}"})
     
-    #Structural pre-validation of the ruleset before launching the Puppeteer subprocess.
+    #Structural pre-validation of the rule before launching the Puppeteer subprocess.
     #NOTE: CoMRuleset is intentionally NOT used as args_schema for this tool (was initialy planned).
     #Using it as args_schema would replace the entire tool argument schema, requiring
-    #the LLM to pass ruleset fields directly as tool arguments instead of as a
+    #the LLM to pass rule fields directly as tool arguments instead of as a
     #JSON string --> breaking the existing json_string-based workflow.
     try:
         CoMRuleset.model_validate(parsed)

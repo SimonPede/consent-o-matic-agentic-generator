@@ -4,7 +4,9 @@
 // Copyright (c) 2024, 2025 Janus Kristensen
 // CAVI, Aarhus University
 // Mozilla Public License Version 2.0
-// Category 3 = Settings/Options buttons
+// Modification: extracted only the Category 3 (Settings/Options) 
+// entries from the original multi-category corpus; no other content 
+// changes made.
 // Generated: 2026-05-25
 
 //these are 1280 words

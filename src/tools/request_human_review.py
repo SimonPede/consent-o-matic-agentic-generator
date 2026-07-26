@@ -4,7 +4,7 @@ from langchain_core.tools import tool
 def request_human_review() -> str:
     """
     Request manual human intervention when the agent cannot make progress 
-    autonomously. Use this tool sparingly and only as a last resort.
+    autonomously. Use this tool sparingly and at least five attempts failed.
     
     Call this tool ONLY in the following situations:
     - You have attempted multiple selector combinations and all have failed validation
@@ -12,7 +12,7 @@ def request_human_review() -> str:
         categories with reasonable confidence
     - The banner structure deviates significantly from all provided few-shot examples
         and you cannot derive a plausible ruleset
-    - You have received feedback from test_ruleset indicating persistent failures 
+    - You have received feedback from rule indicating persistent failures 
         that you cannot resolve through self-correction
     
     Do NOT call this tool if:

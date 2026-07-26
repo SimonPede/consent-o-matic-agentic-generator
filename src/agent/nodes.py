@@ -112,27 +112,31 @@ def human_review_node(state: AgentState) -> dict:
             last_ai_message = message
             break
     
+    
+    
     llm_calls = state.get("llm_calls", 0)
     llm_choice = True
     
-    if llm_calls >= 20:
+    max_llm_calls_budget = 20 + (state.get("human_review_count", 0) * 5)
+    
+    if llm_calls >= max_llm_calls_budget:
         llm_choice = False
         
     question = ""
     if not llm_choice:
-        question = "The Agent seems to be stuck, this call was not chosen by the LLM. It already needed 20 llm_calls and needs help. Please give Feedback:"
+        question = "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:"
     else:
-        question = "The Agent seems to be stuck and needs help. Please give Feedback:"
+        question = "The Agent asks for help. Please give Feedback:"
         
-    current_ruleset_draft = state.get("current_ruleset_draft")
+    current_rule_draft = state.get("current_rule_draft")
     
-    if current_ruleset_draft:
+    if current_rule_draft:
         try:
-            current_ruleset_draft = json.loads(current_ruleset_draft)
+            current_rule_draft = json.loads(current_rule_draft)
         except (json.JSONDecodeError, TypeError):
-            current_ruleset_draft = "Invalid or unparseable JSON draft."
+            current_rule_draft = "Invalid or unparseable JSON draft."
     else:
-        current_ruleset_draft = "No ruleset could be found!"
+        current_rule_draft = "No rule could be found!"
     
     context = {
         "question": question,
@@ -140,7 +144,7 @@ def human_review_node(state: AgentState) -> dict:
         "llm_calls": llm_calls,
         "last_ai_message": str(last_ai_message.content) if last_ai_message else "None",
         "last_error": state.get("last_error", "No error stored!"),
-        "ruleset_draft": current_ruleset_draft
+        "rule_draft": current_rule_draft
     }
     
     log_dir = "data/logs/human-reviews"
@@ -164,7 +168,7 @@ def human_review_node(state: AgentState) -> dict:
     print(f"URL:              {context['url']}")
     print(f"Tries:         {context['llm_calls']}")
     print(f"Last error:   {context['last_error']}")
-    print(f"\nRuleset draft:   {json.dumps(context['ruleset_draft'], indent=2, ensure_ascii=False)}")
+    print(f"\nRuleset draft:   {json.dumps(context['rule_draft'], indent=2, ensure_ascii=False)}")
     print(f"\nLast LLM Message:   {context['last_ai_message']}")
     print("-" * 40)
     
@@ -175,9 +179,9 @@ def human_review_node(state: AgentState) -> dict:
         "human_review_count": state.get("human_review_count", 0) + 1
     }
 
-def ruleset_output_node(state: AgentState) -> dict:
+def rule_output_node(state: AgentState) -> dict:
     """
-    Extracts the final ruleset from markdown enclosures in the latest AI message.
+    Extracts the final rule from markdown enclosures in the latest AI message.
     
     Some LLMs (e.g. Kimi with thinking mode) return content as a list
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
@@ -197,36 +201,36 @@ def ruleset_output_node(state: AgentState) -> dict:
         content = str(content)
 
     #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
-    match = re.search(r"<ruleset>(.*?)</ruleset>", content, re.DOTALL)
+    match = re.search(r"<rule>(.*?)</rule>", content, re.DOTALL)
     
     if match:
         try:
             #NOTE: match.group(1) returns the content of the first capture group (inside the tags)
-            ruleset = json.loads(match.group(1).strip())
-            return {"final_result": ruleset}
+            rule = json.loads(match.group(1).strip())
+            return {"final_result": rule}
         except json.JSONDecodeError as error:
-            error_message = f"Invalid JSON in ruleset tags: {str(error)}"
+            error_message = f"Invalid JSON in rule tags: {str(error)}"
             print(f"--------- JSON ERROR: {error_message} ---------")
             
             return {
                 "last_error": error_message,
                 "messages": [
                     HumanMessage(content=(
-                        "Your previous response contained <ruleset> tags, but the JSON inside was invalid.\n "
+                        "Your previous response contained <rule> tags, but the JSON inside was invalid.\n "
                         f"The Python JSON parser threw this exact error: '{str(error)}'\n"
-                        "Please output the ruleset again with valid JSON inside <ruleset></ruleset> tags."
+                        "Please output the rule again with valid JSON inside <rule></rule> tags."
                     ))
                 ]
             }
             
     print("--------- NO RULESET FOUND ---------")
     return {
-        "last_error": "No ruleset found in agent message",
+        "last_error": "No rule found in agent message",
         "messages": [
             HumanMessage(content=(
-                "Your previous response did not contain a ruleset wrapped in <ruleset></ruleset> tags. "
-                "If you have drafted a ruleset based on your analysis, you MUST call the 'test_ruleset' tool to test it on the live DOM first! "
-                "Do NOT output <ruleset> tags until the tool returns 'handled': true."
+                "Your previous response did not contain a rule wrapped in <rule></rule> tags. "
+                "If you have drafted a rule based on your analysis, you MUST call the 'test_rule' tool to test it on the live DOM first! "
+                "Do NOT output <rule> tags until the tool returns 'handled': true."
             ))
         ]
     }

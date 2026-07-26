@@ -45,7 +45,7 @@ def run_single(agent, url: str) -> None:
 
     Args:
         agent: The compiled LangGraph agent instance.
-        url: The target website URL to generate a ruleset for.
+        url: The target website URL to generate a rule for.
     """
     print(f"Starting run for {url}")
     
@@ -54,20 +54,20 @@ def run_single(agent, url: str) -> None:
     config = {"configurable": {"thread_id": thread_id}}
 
     inputs = {
-        "messages": [HumanMessage(content=f"Generate a Consent-O-Matic ruleset for: {url}")],
+        "messages": [HumanMessage(content=f"Generate a Consent-O-Matic rule for: {url}")],
         "url": url,
         "structured_dom_chars": 0,
-        "llm_calls": 0, #IMPORTANT: NOT the number of tries the LLM needed to generate a correct ruleset! For that metric "test_ruleset_count" is sufficient
+        "llm_calls": 0, #IMPORTANT: NOT the number of tries the LLM needed to generate a correct rule! For that metric "test_rule_count" is sufficient
         "human_review_count": 0,
         "last_error": "",
         "structured_dom_info": None,
         "cmp_type": "",
         "settings_extracted": False,
         "screenshot_info": None,
-        "current_ruleset_draft": "",
+        "current_rule_draft": "",
         "last_test_result": None,
         "error_history": [],
-        "test_ruleset_count": 0,
+        "test_rule_count": 0,
         "analyse_screenshot_count": 0,
         "final_result": None
     }
@@ -92,7 +92,7 @@ def run_single(agent, url: str) -> None:
                         prompt = (
                             "Batch evaluation mode active. No human is available to review or help. "
                             "You must think and try it one last time, then finalize your task immediately based on your knowledge. "
-                            "Output your best guess for the <ruleset> to finish the graph."
+                            "Output your best guess for the <rule> to finish the graph."
                         )
                         current_input = Command(resume=prompt)
                     else:

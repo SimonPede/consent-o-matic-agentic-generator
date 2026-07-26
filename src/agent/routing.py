@@ -2,7 +2,7 @@ from typing import Literal
 from src.agent.state import AgentState
 from langgraph.graph import END
 
-def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "ruleset_output_node"]:
+def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "rule_output_node"]:
     """Evaluates the final message in the stream to determine the next operational graph node."""
     #Dynamic budgeting: Each completed human feedback expands the number of allowed
     #iterations by 5
@@ -20,13 +20,13 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
             return "human_review_node"
     
     if not tool_calls:
-        return "ruleset_output_node"
+        return "rule_output_node"
     
     return "tool_node"
 
-def route_after_ruleset(state: AgentState) -> Literal["llm_node", "__end__"]:
+def route_after_rule(state: AgentState) -> Literal["llm_node", "__end__"]:
     """
-    Validates the presence of a successfully serialized final ruleset.
+    Validates the presence of a successfully serialized final rule.
     
     Routes execution to graph termination if extraction criteria are fulfilled; 
     otherwise, triggers an inference loopback sequence.

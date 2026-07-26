@@ -9,12 +9,12 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
 
     Writes two outputs:
     - A timestamped JSON file in data/logs/runs/ containing the full run record
-        including the final ruleset, banner status, and complete error history.
+        including the final rule, banner status, and complete error history.
     - An appended row in data/logs/evaluation_summary.csv for aggregated analysis.
 
     The auto_success flag is computed from four independent signals: CoM engine
     completion (handled), absence of selector errors in the final test run
-    (final_test_error), presence of a valid LLM-generated ruleset (final_result),
+    (final_test_error), presence of a valid LLM-generated rule (final_result),
     and confirmed banner dismissal via heuristic or TCF API signals (banner_dismissed).
     It does NOT verify correct consent category assignment (A/B/F/X), that
     requires manual annotation via the verified field.
@@ -37,7 +37,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     
     error_history = state.get("error_history", [])
     final_test_error = test_result.get("error") or ""
-    final_ruleset = state.get("final_result", None)
+    final_rule = state.get("final_result", None)
     
     banner_dismissed = (
         (baseline.get("heuristicBannerFound") == True
@@ -56,7 +56,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     #auto_success is determined by four independent signals:
     # 1. handled: true  --> the CoM engine completed its execution flow
     # 2. no final_test_error --> the last test run produced no selector or action errors
-    # 3. final_result is set --> the LLM produced a valid <ruleset> output
+    # 3. final_result is set --> the LLM produced a valid <rule> output
     # 4. banner_dismissed --> heuristicBannerFound flipped from True (baseline) to False (audit),
     #    confirming the banner is no longer detectable on the page; alternativly the CMP used the
     #    tcfApi and tcfVisible flipped from True (baseline) to False (audit)
@@ -71,12 +71,12 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         and banner_dismissed
     )
     
-    final_ruleset_dict = {}
-    if isinstance(final_ruleset, dict):
-        final_ruleset_dict = final_ruleset
+    final_rule_dict = {}
+    if isinstance(final_rule, dict):
+        final_rule_dict = final_rule
     
     used_methods = []
-    for cmp_data in final_ruleset_dict.values():
+    for cmp_data in final_rule_dict.values():
         if isinstance(cmp_data, dict):
             methods = cmp_data.get("methods", [])
             for method in methods:
@@ -93,7 +93,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     #DECLINE_FALLBACK_OR_BINARY: No DO_CONSENT, no settings extracted --> either the banner had no
     #                           granular options (binary banner), or settings extraction failed silently.
     #                           Requires manual verification to distinguish.
-    #FAILED:                    auto_success is False --> banner not dismissed or no valid ruleset produced.
+    #FAILED:                    auto_success is False --> banner not dismissed or no valid rule produced.
     #UNKNOWN:                   Ruleset present but no recognizable method names found (should not occur).
     resolution_type = ""
     if not auto_success:
@@ -126,7 +126,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "heuristic_vision_mismatch": heuristic_vision_mismatch,
         "llm_calls": state.get("llm_calls", 0),
         "human_review_count": state.get("human_review_count", 0),
-        "test_ruleset_count": state.get("test_ruleset_count", 0),
+        "test_rule_count": state.get("test_rule_count", 0),
         "analyse_screenshot_count": state.get("analyse_screenshot_count", 0),
         "final_test_error": final_test_error,
         "error_history": error_history,
@@ -135,7 +135,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
             "baseline": baseline,
             "audit": audit
         },
-        "final_ruleset": final_ruleset,
+        "final_rule": final_rule,
     }
     
     os.makedirs("data/logs/runs", exist_ok=True)
@@ -166,14 +166,14 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "heuristic_vision_mismatch",
         "llm_calls",
         "human_review_count",
-        "test_ruleset_count",
+        "test_rule_count",
         "analyse_screenshot_count",
         "final_test_error",
         "error_history",
         "duration_seconds",
         "banner_status_baseline",
         "banner_status_audit",
-        "final_ruleset",
+        "final_rule",
     ]
     
     csv_row = [
@@ -194,14 +194,14 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["heuristic_vision_mismatch"],
         log_entry["llm_calls"],
         log_entry["human_review_count"],
-        log_entry["test_ruleset_count"],
+        log_entry["test_rule_count"],
         log_entry["analyse_screenshot_count"],
         log_entry["final_test_error"],
         json.dumps(log_entry["error_history"], default=str),
         log_entry["duration_seconds"],
         json.dumps(baseline),
         json.dumps(audit),
-        json.dumps(log_entry["final_ruleset"])
+        json.dumps(log_entry["final_rule"])
     ]
     
     file_exists = os.path.exists(csv_filename)

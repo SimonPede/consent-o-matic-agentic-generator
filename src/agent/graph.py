@@ -8,17 +8,17 @@ from src.agent.nodes import (
     extraction_node,
     human_review_node,
     make_llm_node,
-    ruleset_output_node,
+    rule_output_node,
 )
 
 from src.agent.state import AgentState
-from src.agent.routing import route_after_llm, route_after_ruleset
+from src.agent.routing import route_after_llm, route_after_rule
 from src.tools.analyse_screenshot import analyse_screenshot
-from src.tools.test_ruleset import test_ruleset
+from src.tools.test_rule import test_rule
 from src.tools.request_human_review import request_human_review
 from src.utils import call_vision
 
-tools = [test_ruleset, request_human_review, analyse_screenshot]
+tools = [test_rule, request_human_review, analyse_screenshot]
 tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
@@ -40,7 +40,7 @@ def tool_node(state: dict) -> dict:
     for tool_call in state["messages"][-1].tool_calls:
         target_tool = tools_by_name[tool_call["name"]]
         
-        if tool_call["name"] == "test_ruleset":
+        if tool_call["name"] == "test_rule":
             args = tool_call.get("args", {})
             json_string = args.get("json_string")
             url = args.get("url")
@@ -57,9 +57,9 @@ def tool_node(state: dict) -> dict:
         else:
             tool_observation = target_tool.invoke(tool_call["args"])
         
-        if tool_call["name"] == "test_ruleset":
-            state_updates["test_ruleset_count"] = state.get("test_ruleset_count", 0) + 1
-            state_updates["current_ruleset_draft"] = tool_call["args"].get("json_string")
+        if tool_call["name"] == "test_rule":
+            state_updates["test_rule_count"] = state.get("test_rule_count", 0) + 1
+            state_updates["current_rule_draft"] = tool_call["args"].get("json_string")
             
             try:
                 parsed_test_results = json.loads(tool_observation)
@@ -98,7 +98,7 @@ def tool_node(state: dict) -> dict:
                 state_updates["last_test_result"] = parsed_test_results
                     
             except json.JSONDecodeError:
-                actual_error = f"test_ruleset tool returned invalid JSON: {tool_observation[:100]}"
+                actual_error = f"test_rule tool returned invalid JSON: {tool_observation[:100]}"
                 state_updates["error_history"] = [actual_error]
                 state_updates["last_error"] = actual_error
             
@@ -128,7 +128,7 @@ workflow.add_node("extraction_node", extraction_node)
 workflow.add_node("llm_node", llm_node)
 workflow.add_node("tool_node", tool_node)
 workflow.add_node("human_review_node", human_review_node)
-workflow.add_node("ruleset_output_node", ruleset_output_node)
+workflow.add_node("rule_output_node", rule_output_node)
 
 workflow.add_edge(START, "extraction_node")
 workflow.add_edge("extraction_node", "llm_node")
@@ -136,14 +136,14 @@ workflow.add_edge("extraction_node", "llm_node")
 workflow.add_conditional_edges(
     "llm_node",
     route_after_llm,
-    ["tool_node", "human_review_node", "ruleset_output_node"]
+    ["tool_node", "human_review_node", "rule_output_node"]
 )
 
 workflow.add_edge("tool_node", "llm_node")
 workflow.add_edge("human_review_node", "llm_node")
 
 workflow.add_conditional_edges(
-    "ruleset_output_node",
-    route_after_ruleset,
+    "rule_output_node",
+    route_after_rule,
     ["llm_node", END]
 )

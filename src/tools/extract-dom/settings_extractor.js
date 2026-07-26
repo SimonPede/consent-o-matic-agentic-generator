@@ -311,7 +311,11 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         stablePromises.set(f, waitForDOMStable(f, 800, 6000));
     }
 
-    await page.screenshot({ path: "after_click.png" });
+    try {
+        await page.screenshot({ path: "after_click.png" });
+    } catch (err) {
+        console.error(`Debug settings screenshot skipped after timeout/error: ${err.message}`);
+    }
 
     let bestNewFrame = null;
     let highestScore = 0;
