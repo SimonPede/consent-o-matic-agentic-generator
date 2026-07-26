@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const diff = require("diff");
 const fs = require("fs");
+const path = require("path");
 //utils imports
 const CMP_SELECTORS_MAP = require("../../utils/cmp_selectors_map");
 const CMP_SELECTORS = Object.keys(CMP_SELECTORS_MAP);
@@ -12,6 +13,46 @@ const findCorrectFrame = require("./frame_matcher.js");
 const extractFromFrame = require("./frame_extractor");
 const clickAndExtractSettings = require("./settings_extractor");
 const findSettingsButtonViaLlm = require("./llm_fallback");
+
+function loadEnvFromProjectRoot() {
+    const envPath = path.resolve(__dirname, "../../../.env");
+
+    if (!fs.existsSync(envPath)) {
+        return;
+    }
+
+    try {
+        const content = fs.readFileSync(envPath, "utf8");
+        const lines = content.split(/\r?\n/);
+
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed || trimmed.startsWith("#")) {
+                continue;
+            }
+
+            const separatorIndex = trimmed.indexOf("=");
+            if (separatorIndex <= 0) {
+                continue;
+            }
+
+            const key = trimmed.slice(0, separatorIndex).trim();
+            let value = trimmed.slice(separatorIndex + 1).trim();
+
+            if (!key || process.env[key] !== undefined) {
+                continue;
+            }
+
+            if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+                value = value.slice(1, -1);
+            }
+
+            process.env[key] = value;
+        }
+    } catch (err) {
+        console.error(`Failed to load .env from project root: ${err.message}`);
+    }
+}
 
 //---------------
 //IMPORTANT!!!!
@@ -104,11 +145,11 @@ async function extractStructuredDom(url) {
         console.error("page is loaded!");
 
         const waitResult = await waitForCmpUi(page, CMP_SELECTORS_MAP);
-        const cmpType = null;
+        let cmpType = null;
 
         if (waitResult) {
-            console.error(`waitForCmpUI detected CMP Type: ${cmpType}`);
             cmpType = waitResult.cmpType;
+            console.error(`waitForCmpUI detected CMP Type: ${cmpType}`);
             //wait shortly in case of more CSS animation
             await new Promise(resolve => setTimeout(resolve, 1500)); 
         }
@@ -207,10 +248,20 @@ async function extractStructuredDom(url) {
                     console.error("Using <a> tag fallback for settings button.");
                 }
                 
+                let shouldTryLlmFallback = false;
+
                 if (settingsButton) {
                     result.settings = await clickAndExtractSettings(result.frame, settingsButton, page, cmpType);
+                    if (!result.settings) {
+                        console.error(`Regex click had no effect in frame ${result.frame.url()}, trying LLM fallback...`);
+                        shouldTryLlmFallback = true;
+                    }
                 } else {
                     console.error(`Regex failed in frame ${result.frame.url()}, trying LLM fallback...`);
+                    shouldTryLlmFallback = true;
+                }
+
+                if (shouldTryLlmFallback) {
                     const llmSettingsButton = await findSettingsButtonViaLlm(result.data.filteredHtml);
 
                     if (llmSettingsButton) {
@@ -307,26 +358,22 @@ function printExtractionSummary(results) {
 }
 
 (async () => {
-    const url = process.argv[2];
+    loadEnvFromProjectRoot();
+
+    const cliUrl = process.argv[2];
+    const testUrl = "https://claude.ai";
+    const url = cliUrl || testUrl;
+
     if (!url) {
-        console.error("No URL provided");
+        console.error("No URL provided. Use process.argv[2] or EXTRACT_DOM_TEST_URL.");
         process.exit(1);
     }
+
     const foundData = await extractStructuredDom(url);
     if (foundData) {
         console.error("foundData was filled with a value");
     }
 })();
-
-
-//for testing this script seperatly
-//i now only use console.error() instead of .log for debugging etc, because this would otherwise get implemented in the input for the langgraph script
-// (async () => {
-//     const foundData = await extractStructuredDom("https://claude.ai");
-//     if (foundData) {
-//         console.error("foundData was filled with a value");
-//     }
-// })();
 
 //script works on:
 //https://usercentrics.com

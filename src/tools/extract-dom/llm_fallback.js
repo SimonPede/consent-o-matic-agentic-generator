@@ -1,20 +1,30 @@
 /**
  * LLM-based fallback for settings button detection.
  * Called when SETTINGS_TERMS_REGEX fails to identify a settings button.
- * Sends filteredHtml to Ollama or LiteLLM and expects a JSON object including the CSS selector and text of the button.
- * 
+ * Sends filteredHtml to LiteLLM (preferred) or Ollama and expects JSON with selector and text.
+ *
  * @param {string} html - filteredHtml from extractFromFrame()
- * @returns {{selector: string, text: string}|null} - button object or null
+ * @returns {{selector: string, text: string}|null}
  */
+
+function buildEndpoint(baseUrl, suffix) {
+    if (!baseUrl) {
+        return "";
+    }
+
+    const normalizedBase = baseUrl.trim().replace(/\/+$/, "");
+    return `${normalizedBase}${suffix}`;
+}
+
 async function findSettingsButtonViaLlm(html) {
-    //Configuration Toggle
-    const use_liteLlm = true;
+    const liteLlmUrl = process.env.LITELLM_BASE_URL || "";
+    const liteLlmApiKey = process.env.LITELLM_API_KEY || "";
 
-    const OLLAMA_URL = process.env.OLLAMA_BASE_URL || "";
-    const OLLAMA_BEARER_TOKEN = process.env.OLLAMA_BEARER_TOKEN || "";
+    const ollamaUrl = process.env.OLLAMA_BASE_URL || "";
+    const ollamaBearerToken = process.env.OLLAMA_BEARER_TOKEN || "";
 
-    const LITELLM_URL = process.env.LITELLM_BASE_URL || ""; 
-    const LITELLM_API_KEY = process.env.LITELLM_API_KEY || "";
+    const liteLlmEndpoint = buildEndpoint(liteLlmUrl, "/chat/completions");
+    const ollamaEndpoint = buildEndpoint(ollamaUrl, "/api/generate");
 
     const prompt = `
     You are analysing HTML of a website.
@@ -26,23 +36,23 @@ async function findSettingsButtonViaLlm(html) {
     {"selector": "[aria-label='Settings']", "text": "Settings"}
 
     HTML: ${html}
-    `
+    `;
 
     try {
         let rawContent = "";
 
-        if (use_liteLlm) {
-            const response = await fetch(`${LITELLM_URL}/chat/completions`, {
+        if (liteLlmEndpoint) {
+            const headers = { "Content-Type": "application/json" };
+            if (liteLlmApiKey) {
+                headers.Authorization = `Bearer ${liteLlmApiKey}`;
+            }
+
+            const response = await fetch(liteLlmEndpoint, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${LITELLM_API_KEY}`
-                },
+                headers,
                 body: JSON.stringify({
                     model: "natai/kimi-k2.5",
-                    messages: [
-                        { role: "user", content: prompt }
-                    ],
+                    messages: [{ role: "user", content: prompt }],
                     stream: false
                 })
             });
@@ -54,45 +64,46 @@ async function findSettingsButtonViaLlm(html) {
 
             const data = await response.json();
             rawContent = data.choices?.[0]?.message?.content || "";
-            
-        } else {
-            const response = await fetch(`${OLLAMA_URL}/api/generate`, {
+
+        } else if (ollamaEndpoint) {
+            const headers = { "Content-Type": "application/json" };
+            if (ollamaBearerToken) {
+                headers.Authorization = `Bearer ${ollamaBearerToken}`;
+            }
+
+            const response = await fetch(ollamaEndpoint, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${OLLAMA_BEARER_TOKEN}`
-                },
+                headers,
                 body: JSON.stringify({
                     model: "gemma4:latest",
-                    prompt: prompt,
+                    prompt,
                     stream: false
                 })
             });
 
             if (!response.ok) {
-                console.error(`LLM call failed: ${response.status}`);
+                console.error(`Ollama call failed: ${response.status}`);
                 return null;
             }
 
             const data = await response.json();
             rawContent = data.response?.trim() || "";
+
+        } else {
+            console.error("findSettingsButtonViaLLM skipped: missing LITELLM_BASE_URL and OLLAMA_BASE_URL.");
+            return null;
         }
 
         const cleanedText = rawContent.replace(/```json/gi, "").replace(/```/g, "").trim();
-        
-        try {
-            const parsed = JSON.parse(cleanedText);
-            if (!parsed.selector) {
-                return null;
-            }
-            console.error(`LLM suggested settings button - selector: "${parsed.selector}", text: "${parsed.text}"`);
-            return parsed;
-        } catch (e) {
-            console.error("LLM response was not valid JSON. Cleaned string was:", cleanedText);
+        const parsed = JSON.parse(cleanedText);
+
+        if (!parsed.selector) {
             return null;
         }
-        
-    } catch(err) {
+
+        console.error(`LLM suggested settings button - selector: "${parsed.selector}", text: "${parsed.text}"`);
+        return parsed;
+    } catch (err) {
         console.error("findSettingsButtonViaLLM failed:", err.message);
         return null;
     }
