@@ -3,7 +3,7 @@ const path = require("path");
 const puppeteer = require("puppeteer");
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const waitForCmpUi = require("../utils/wait_for_cmp_ui");
-const WORD_BOX_TRIGGERS = require("../utils/midas-corpus/word_box_triggers");
+const WORD_BOX_TRIGGERS = require("../utils/observatory-corpus/word_box_triggers");
 
 //----------------------------------------------------------------------
 //Acknowledgements: Special thanks to Janus for architectural assistance.
@@ -160,7 +160,8 @@ async function checkShowingMatcher(page, matcherTargetSelector, matcherParentSel
  * into an external data module (`wordBoxTriggers`) to preserve separation of concerns.
  * - Anti-Triggers: Implemented a local exclusion dictionary to catch post-consent confirmation states. 
  * This effectively suppresses false positives on websites that dynamically substitute banner content 
- * with confirmation strings instead of tearing down the layout node (e.g., Swedbank).
+ * with confirmation strings instead of tearing down the layout node (e.g., Swedbank). The ones already
+ * used by WordBoxGatherer.js are marked.
  * * Execution Strategies:
  * - Structural Traversal: Walks the Light and Shadow DOM hierarchy searching for high-z-index or fixed 
  * positioning elements indicating an overlay layer.
@@ -171,12 +172,20 @@ async function checkShowingMatcher(page, matcherTargetSelector, matcherParentSel
  * @returns {Promise<boolean>} - True if a visual container with matching consent terminology is confirmed
  */
 async function frameHasBanner(frame) {
-    //Experimentally defined indicators to suppress post-consent layout false positives
     const antiTriggers = [
+        //Experimentally defined indicators to suppress post-consent layout false positives
         "preferences were saved",
         "successfully saved",
         "cookie-success",
-        "erfolgreich gespeichert"
+        "erfolgreich gespeichert",
+        //defined in WordBoxGatherer.js:
+        "\\d+ years or older",
+        "\\d+ years",
+        "\\d+ Jahre oder älter",
+        "\\d+ jaar of ouder",
+        "\\d+ anni o più",
+        "\\d+ ans ou plus",
+        "\\d+ anos ou mais"
     ];
 
     try {

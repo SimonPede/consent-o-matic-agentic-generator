@@ -1,12 +1,12 @@
 # Consent-O-Matic Agentic Generator
 
-An LLM-based agentic system designed to autonomously generate JSON rulesets for the [Consent-O-Matic](https://github.com/cavi-au/Consent-O-Matic) browser extension.
+An LLM-based agentic system designed to autonomously generate JSON rules for the [Consent-O-Matic](https://github.com/cavi-au/Consent-O-Matic) browser extension.
 
 > **Status:** This project is under active development as part of a Bachelor's thesis (April–September 2026).
 
 ## Overview
 
-This project automates the creation of cookie banner rulesets by combining DOM analysis, multimodal vision, and an iterative self-correction loop. It is developed as part of a Bachelor's thesis in cooperation with the Consent-O-Matic research team at Aarhus University.
+This project automates the creation of consent interface rules by combining DOM analysis, multimodal vision, and an iterative self-correction loop. It is developed as part of a Bachelor's thesis in cooperation with the Centre for Advanced Visualisation and Interaction (CAVI) at Aarhus University.
 
 ## Architecture
 
@@ -14,10 +14,10 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 
 - **Perception:** DOM extraction via Puppeteer and visual analysis via multimodal LLMs.
 - **Reasoning:** Iterative logic to identify selectors and map consent categories.
-- **Action:** Generation of schema-compliant JSON rulesets.
-- **Self-Correction:** Automated browser testing to verify ruleset functionality.
+- **Action:** Generation of schema-compliant JSON rules.
+- **Self-Correction:** Automated browser testing to verify rules functionality.
 - **Human-in-the-Loop:** Console-based feedback mechanism for cases where automated generation fails after 20 tries
-   or the LLM decides it needs human support
+   or the LLM decides it needs human support.
 
 ## Tech Stack
 
@@ -44,7 +44,7 @@ consent-o-matic-agentic-generator/
 │   │   └── extract-dom/         # The DOM extraction script providing the LLM with the necessary DOM information
 │   │   └── consent-engine/      # Source code of the CoM-Engine used for the test_ruleset node in Langgraph
 │   ├── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
-│   │   └── midas-corpus/        # Utility files that are derived from the Consent Observatory project
+│   │   └── observatory-corpus   # Utility files that are derived from the Consent Observatory project
 ├── main.py                      # Entry point
 ├── batch_runner.py              # Used for running the agent over a set of given urls
 ├── langgraph.json               # LangSmith Studio configuration
@@ -153,7 +153,7 @@ https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
 The agent graph, all state fields, and tool calls are visible and interactive directly in the UI.
 
 ## Acknowledgements
-This project is developed in cooperation with the Consent-O-Matic team at Aarhus University 
+This project is developed in cooperation with the the Centre for Advanced Visualisation and Interaction (CAVI) team at Aarhus University 
 and supervised by Thomas Franklin Cory at the Service-centric Networking (SNET) research 
 group, TU Berlin.
 
