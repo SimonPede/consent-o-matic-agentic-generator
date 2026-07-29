@@ -1,0 +1,15 @@
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.env
+data/logs/
+data/results/
+.git/
+.gitignore
+*.pdf
+test_screenshot.py
+test_schema.py
+test_few_shot.py
+extraction_debug.json
+*.png

@@ -108,7 +108,8 @@ async function extractStructuredDom(url) {
     try {
         console.error("puppeteer-browser is getting started...");
         const browser = await puppeteer.launch({
-        headless: true, //users the mor modern headless mode (instead of "shell") --> harder to detect as a bot
+            headless: true, //users the mor modern headless mode (instead of "shell") --> harder to detect as a bot
+            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
             args: [
                 "--no-sandbox", //important for WSL/Linux
                 "--disable-setuid-sandbox", //important for WSL/Linux

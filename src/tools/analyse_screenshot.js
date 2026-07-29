@@ -13,6 +13,7 @@ async function run() {
 
 	const browser = await puppeteer.launch({
 		headless: true, //users the more modern headless mode (instead of "shell") --> harder to detect as a bot
+		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
 			args: [
 				"--no-sandbox", //important for WSL/Linux
 				"--disable-setuid-sandbox", //important for WSL/Linux
