@@ -4,6 +4,7 @@ import logging
 from datetime import datetime
 import os
 import re
+import time
 
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langgraph.types import interrupt
@@ -12,6 +13,38 @@ from src.agent.state import AgentState
 from src.prompts.system_prompt import get_system_prompt
 
 logger = logging.getLogger(__name__)
+
+def write_extract_dom_log(url: str, command: list[str], result: subprocess.CompletedProcess, duration_seconds: float, parsed_output=None, parse_error: str | None = None) -> None:
+    """Writes a structured extraction run log to data/logs/extract-dom/."""
+    try:
+        log_dir = os.path.join("data", "logs", "extract-dom")
+        os.makedirs(log_dir, exist_ok=True)
+
+        clean_url = (url or "unknown").replace("https://", "").replace("http://", "").rstrip("/").replace("/", "_")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        log_path = os.path.join(log_dir, f"{timestamp}_{clean_url}.json")
+
+        stderr_lines = [line for line in result.stderr.splitlines() if line.strip()]
+
+        log_payload = {
+            "timestamp": datetime.now().isoformat(),
+            "url": url,
+            "command": command,
+            "duration_seconds": round(duration_seconds, 3),
+            "returncode": result.returncode,
+            "stderr": {
+                "lines": stderr_lines,
+            },
+            "stdout_json_parse_error": parse_error,
+            "stdout_json": parsed_output,
+        }
+
+        with open(log_path, "w", encoding="utf-8") as file_handle:
+            json.dump(log_payload, file_handle, indent=2, ensure_ascii=False)
+
+        print(f"extract-dom JSON log written: {log_path}")
+    except Exception as log_error:
+        print(f"Failed to write extract-dom JSON log: {log_error}")
 
 
 def extraction_node(state: AgentState) -> dict:
@@ -25,11 +58,38 @@ def extraction_node(state: AgentState) -> dict:
     extract_dom_path = os.path.join(
         os.path.dirname(__file__), "..", "tools", "extract-dom", "main.js"
     )
+    extract_cmd = ["node", extract_dom_path, url]
+    extract_start_time = time.perf_counter()
     result = subprocess.run(
-        ["node", extract_dom_path, url],
+        extract_cmd,
         capture_output=True,
         text=True
     )
+
+    extract_duration_seconds = int((time.perf_counter() - extract_start_time))
+
+    output = None
+    parse_error = None
+    if result.stdout and result.stdout.strip():
+        try:
+            output = json.loads(result.stdout)
+        except json.JSONDecodeError as error:
+            parse_error = str(error)
+
+    write_extract_dom_log(
+        url=url,
+        command=extract_cmd,
+        result=result,
+        duration_seconds=extract_duration_seconds,
+        parsed_output=output,
+        parse_error=parse_error,
+    )
+
+    print(f"extract-dom runtime: {extract_duration_seconds:.2f}s")
+
+    if result.stderr:
+        print("\n[extract-dom logs]")
+        print(result.stderr, end="" if result.stderr.endswith("\n") else "\n")
 
     if result.returncode != 0:
         print("extraction_node, extract_tool returned 1:", result.stderr)
@@ -37,10 +97,19 @@ def extraction_node(state: AgentState) -> dict:
             "last_error": result.stderr
         }
 
+    if parse_error:
+        return {
+            "last_error": f"extraction_node: extract_dom.js returned invalid JSON: {parse_error}",
+            "messages": [
+                HumanMessage(content=(
+                    "DOM extraction returned invalid JSON output. "
+                    "Please inspect the extract-dom JSON log in data/logs/extract-dom/."
+                ))
+            ]
+        }
+
     logger.debug("STDOUT: %s", result.stdout[:500])
     logger.debug("STDERR: %s", result.stderr[:200])
-    
-    output = json.loads(result.stdout)
     
     if output:
         output_str = json.dumps(output)
