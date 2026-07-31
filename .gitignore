@@ -22,3 +22,8 @@ data/logs/runs/*.json
 data/logs/human-reviews/.gitkeep
 data/logs/human-reviews/*.json
 data/logs/evaluation_summary.csv
+claude_example.txt
+claude_example_formatted.md
+transavia_example.txt
+transavia_example_formatted.md
+data/logs/extract-dom/*.json
