@@ -15,7 +15,7 @@ from src.prompts.system_prompt import get_system_prompt
 logger = logging.getLogger(__name__)
 
 def write_extract_dom_log(url: str, command: list[str], result: subprocess.CompletedProcess, duration_seconds: float, parsed_output=None, parse_error: str | None = None) -> None:
-    """Writes a structured extraction run log to data/logs/extract-dom/."""
+    """Writes a structured extract-dom execution log to data/logs/extract-dom/."""
     try:
         log_dir = os.path.join("data", "logs", "extract-dom")
         os.makedirs(log_dir, exist_ok=True)
@@ -128,9 +128,8 @@ def extraction_node(state: AgentState) -> dict:
                     cmp_type_value = frame_data.get("cmpType")
         
         return {
-            #Rationale Note for Thesis: A ToolMessage requires an active, intercepted tool_call_id. 
-            #Injecting the extracted layout environment via a HumanMessage acts as a clean 
-            #and deterministic context-inflation mechanism for the LLM prompt buffer.
+            #ToolMessage requires a valid, active tool_call_id.
+            #At this stage, extraction output is therefore injected via HumanMessage.
             "messages": [HumanMessage(content=f"Here is the DOM info, extracted by the extract tool: {output}")],
             "structured_dom_info": output,
             "structured_dom_chars": output_length,
@@ -148,7 +147,7 @@ def extraction_node(state: AgentState) -> dict:
         }
 
 def make_llm_node(model_with_tools):
-    """Factory closure that wraps the core LLM inference loop with injected tools."""
+    """Returns an LLM node closure bound to the configured tool-enabled model."""
     def llm_node(state: AgentState):
         try:
             system_prompt = SystemMessage(content=get_system_prompt())
@@ -174,14 +173,12 @@ def make_llm_node(model_with_tools):
     return llm_node
 
 def human_review_node(state: AgentState) -> dict:
-    """Halts graph execution and prompts an operator via state interrupts to provide human feedback to the agent."""
+    """Pauses execution and requests operator feedback via LangGraph interrupt."""
     last_ai_message = None
     for message in reversed(state["messages"]):
         if not isinstance(message, ToolMessage):
             last_ai_message = message
             break
-    
-    
     
     llm_calls = state.get("llm_calls", 0)
     llm_choice = True
@@ -234,11 +231,11 @@ def human_review_node(state: AgentState) -> dict:
     print("HUMAN REVIEW REQUIRED")
     print("="*20)
     print(f"Question:              {context['question']}")
-    print(f"URL:              {context['url']}")
-    print(f"Tries:         {context['llm_calls']}")
-    print(f"Last error:   {context['last_error']}")
-    print(f"\nRuleset draft:   {json.dumps(context['rule_draft'], indent=2, ensure_ascii=False)}")
-    print(f"\nLast LLM Message:   {context['last_ai_message']}")
+    print(f"URL:                   {context['url']}")
+    print(f"Tries:                 {context['llm_calls']}")
+    print(f"Last error:            {context['last_error']}")
+    print(f"\nRuleset draft:       {json.dumps(context['rule_draft'], indent=2, ensure_ascii=False)}")
+    print(f"\nLast LLM Message:    {context['last_ai_message']}")
     print("-" * 40)
     
     human_input = interrupt(context)
@@ -256,7 +253,7 @@ def rule_output_node(state: AgentState) -> dict:
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
     Others return a plain string. Both cases are handled here.
     """ 
-    #We only check the very last message, preventing infinite historical loops
+    #Only inspect the most recent message to avoid historical-loop effects.
     last_message = state["messages"][-1]
     content = last_message.content
     
@@ -269,12 +266,12 @@ def rule_output_node(state: AgentState) -> dict:
     else:
         content = str(content)
 
-    #Reason for usage of "re.DOTALL": "." in regex then also matches with line breaks
+    #`re.DOTALL` allows `.` to match line breaks inside <rule>...</rule>.
     match = re.search(r"<rule>(.*?)</rule>", content, re.DOTALL)
     
     if match:
         try:
-            #NOTE: match.group(1) returns the content of the first capture group (inside the tags)
+            #`match.group(1)` returns the first capture group (content inside tags).
             rule = json.loads(match.group(1).strip())
             return {"final_result": rule}
         except json.JSONDecodeError as error:

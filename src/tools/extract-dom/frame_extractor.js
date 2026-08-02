@@ -1,7 +1,7 @@
 /**
  * Cleans raw HTML for LLM consumption by removing irrelevant content.
- * Reduces token count while preserving the structural information needed
- * for CSS selector generation and banner analysis.
+ * Reduces token count while preserving structure required for selector
+ * generation and CMP analysis.
  *
  * Removes:
  * - <script> tags and their content (irrelevant for DOM structure analysis)
@@ -10,9 +10,6 @@
  *   used in practice and styles are still preserved in the structured
  *   attributes field of each extracted element
  *
- * Note: styleFilter cannot be derived from filteredHtml after this cleaning.
- * If styleFilter becomes necessary, use the attributes field of buttons/checkboxes/toggles.
- *
  * @param {string} html - Raw HTML string to clean
  * @returns {string} - Cleaned HTML string
  */
@@ -20,35 +17,23 @@ function cleanHtml(html) {
     return html
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
         .replace(/\s*style="[^"]*"/gi, "")
-        //removes inline JS event handlers (e.g., onclick, onload)
+        // Remove inline JS event handlers (e.g., onclick, onload).
         .replace(/\s*on\w+="[^"]*"/gi, "")
-        //collapses multiple whitespaces, tabs, and newlines into a single one
+        // Collapse repeated whitespace into a single space.
         .replace(/\s+/g, " ")   
         .trim();
 }
 
-//clean HTML tested using heise.de banner
-//version used: 
-// function cleanHtml(html) {
-//     return html
-//     .replace(/\s*style="[^"]*"/gi, '') //no inline-style
-//     .replace(/\s*on\w+="[^"]*"/gi, '')  //no event handler
-//     .replace(/\s+/g, ' ')               //
-//     .trim();
-// }
-//before: settings-subpage "21483",first banner page "15760"
-//after:  settings-subpage "9845",first banner page "7937"
-//--> reduction of around 50%
-
 /**
  * Core content extraction engine. Parses the document tree of a targeted frame context
- * to collect interactive nodes (buttons, checkboxes, toggles) and compile a filtered HTML matrix.
+ * to collect interactive nodes (buttons, checkboxes, toggles) and compile a structured HTML output.
  *
  * @param {Frame} frame - The Puppeteer Frame instance to extract data from
- * @param {Array} selectors - keys values from selectorsMap
+ * @param {Array} selectors - Selector keys from selectorsMap
  * @param {Object} selectorsMap - CSS dictionary mapping selectors to corporate CMP classes
  * @param {string|null} cmpType - Pre-detected CMP classification name, or null
- * @returns {Promise<Object>} - Resolves with the extracted interactive node matrix and cleaned DOM string
+ * @returns {Promise<Object>} - Extraction result containing `buttons`, `checkboxes`,
+ * `toggles`, `cmpFound`, `cmpType`, `cmpSelector`, `url`, and `filteredHtml`
  */
 async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) {
     const result = await frame.evaluate((selectors, selectorsMap) => {
@@ -68,7 +53,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * 
          * Limitation: only works for open Shadow DOMs (mode: "open").
          * Closed Shadow DOMs (mode: "closed") are inaccessible via JavaScript by design.
-         * In practice, CMPs use open Shadow DOMs (verified: Usercentrics).
+         * In practice, CMPs seen so far use open Shadow DOMs (e.g., Usercentrics).
          * 
          * Performance note: uses root.querySelectorAll("*") without Array.from() to avoid
          * unnecessary array allocation on large DOMs.
@@ -91,7 +76,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
 		/**
          * Performs a deep recursive lookup to isolate the first matching element reference 
-         * while seamlessly piercing nested Shadow DOM boundaries.
+         * while piercing nested Shadow DOM boundaries.
          *
          * @param {string} selector - Functional CSS selector pattern
          * @param {Document|ShadowRoot|HTMLElement} root - Evaluation root
@@ -99,46 +84,30 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          */
         function querySelectorDeep(selector, root = document) {
             let found = root.querySelector(selector);
-            if (found) return found;
+            if (found) {
+                return found;
+            }
 
             const all = root.querySelectorAll("*");
             for (const el of all) {
                 if (el.shadowRoot) {
                     found = querySelectorDeep(selector, el.shadowRoot);
-                    if (found) return found;
+                    if (found){
+                        return found;
+                    }
                 }
             }
             return null;
         }
 
-		// ======================================================================
-        // ARCHITECTURAL ITERATION NOTE: Structural Dissolution via Naive Traversal
-        // ======================================================================
-        //Retained for historical validation and design matrix documentation:
-        //
-        //An early architectural iteration attempted to serialize the deep tree by flattening 
-        //innerHTML nodes dynamically. However, this approach introduced two systemic critical failures:
-        //
-        //1. Structural Hierarchy Dissolution: Flattened string concatenation strips out parent-child 
-        //   nesting context. An active target element (e.g., a consent button) trapped deep inside 
-        //   a shadow container wrapper would be serialized as a detached sibling node on the same 
-        //   logical tier as its host element, ruining downstream structural layout parsing.
-        //
-        //2. Multi-Level Shadow Frontier Blindness: Invoking querySelectorAll("*") on a top-level 
-        //   document context isolates visible host nodes, but remains blind to nested shadow hosts 
-        //   deeper within sub-layers. If a corporate CMP dynamically embeds a shadow-encapsulated 
-        //   toggle element deep within the layout tree of an outer shadow boundary, a single flat 
-        //   traversal tier completely skips the inner node structure.
-        //
-        //Therefore, strict hierarchical tree traversal with multi-level boundary piercing 
-        //must be actively enforced in the production pipeline.
-        //======================================================================
+        //Preserve tree hierarchy during serialization.
+        //A flattened traversal loses parent/child structure and can miss nested
+        //shadow hosts. The recursive approach below avoids both issues.
 
         /**
          * Recursively collects the full HTML of a node including all Shadow DOM content.
          * 
-         * Standard innerHTML and outerHTML cannot see inside Shadow Roots.They silently
-         * ignore all Shadow DOM content. This function rebuilds the HTML tree by walking
+         * Standard innerHTML and outerHTML cannot see inside Shadow Roots. This function rebuilds the HTML tree by walking
          * childNodes level by level (not querySelectorAll which also cannot pierce Shadow DOM)
          * and recursing into Shadow Roots whenever encountered.
          * 
@@ -162,24 +131,17 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @returns {string} - Full HTML string including all Shadow DOM content
          */
         function getDeepInnerHtml(node) {
-            //Light DOM:
-                // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
-                //     #shadow-root (open)            Shadow Root
-                //         <dialog>                   Shadow DOM content
-                //             <button>Accept</button>
-                //         </dialog>
             let htmlResult = "";
 
-			//Redirect evaluation context if the targeted node functions as an active encapsulation host
+            //If the node is a shadow host, traverse from its ShadowRoot.
             const root = node.shadowRoot || node;
 
             for (const child of root.childNodes) {
                 if (child.nodeType === Node.ELEMENT_NODE) {
-                    //first clone the shell of the element (e.g: <div class=""...)
+                    //Clone only the shell first (no descendants).
                     let clone = child.cloneNode(false);
 
-					//Standard child.outerHTML would fail to capture downstream shadow layers if the child is a host.
-                    //Instead, we recursively inject the deep structural layout mapping.
+                    //Recursively inject deep content to include nested shadow layers.
                     clone.innerHTML = getDeepInnerHtml(child);
                     htmlResult += clone.outerHTML;
 
@@ -191,15 +153,10 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         }
 
         /**
-         * Compiles and extracts all active HTML attribute tokens of a given element node 
-         * into a structured key-value map.
-		 * 
-		 * Provides the main LLM orchestration engine with the full semantic feature context 
-         * (ids, class lists, accessibility labels, and dataset properties) required to synthesize 
-         * deterministic and high-confidence CSS selectors for Consent-O-Matic engines.
-         * 
+         * Extracts all attributes of an element into a key-value object.
+         *
          * @param {HTMLElement} element - HTML element to extract attributes from
-         * @returns {Object} - Key-value pairs of all discovered node attributes (e.g. { id: "btn-accept", class: "cmp-button" })
+         * @returns {Object} - Attribute map (e.g. { id: "btn-accept", class: "cmp-button" })
          */
         function extractAllAttributes(element) {
             const attributes = {};
@@ -209,25 +166,9 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             return attributes;
         }
 
-		// ======================================================================
-        // ARCHITECTURAL ITERATION NOTE: Accessibility-Driven Semantic Resolution
-        // ======================================================================
-        // A previous iteration prioritized native semantic layout elements (<label>) 
-        // as the primary data source, treating ARIA properties as a last-resort fallback. 
-        // However, empirical testing on production-grade corporate CMP frameworks revealed 
-        // that reactive web architectures (e.g., React, Vue, or shadow-encapsulated layouts) 
-        // regularly substitute native elements with custom styled <div> or <aside> blocks.
-        //
-        // In these highly non-standard environments, ARIA node metadata functions as the definitive 
-        // single source of truth for assistive technologies. Prioritizing ARIA resolution ensures 
-        // highest extraction fidelity for downstream LLM prompt classification inputs.
-        //
-        // Furthermore, a critical structural edge case was resolved: the 'aria-labelledby' 
-        // specification explicitly permits space-separated multi-ID sequences. Passing raw 
-        // multi-ID strings directly into querySelector triggers invalid token evaluation crashes. 
-        // The production pipeline now splits token streams systematically and dynamically fallbacks 
-        // across encapsulation roots.
-        // ======================================================================
+        //Prefer ARIA-based label resolution first.
+        //In modern CMP UIs, native <label> bindings are often replaced by custom
+        //structures, while ARIA metadata remains the most reliable signal.
 
         /**
          * Finds the human-readable label text associated with a checkbox or toggle input.
@@ -238,7 +179,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * or the ShadowRoot the input lives in. Calling querySelector() on that root searches
          * within the correct DOM context.
          * 
-         * Four strategies in priority order:
+         * Five strategies in priority order:
          * 1. ARIA association: aria-labelledby (supports multiple space-separated IDs)
          * 2. Direct ARIA label: aria-label attribute on the input itself
          * 3. Explicit association: <label for="inputId"> linked via input.id
@@ -251,23 +192,15 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         function findLabelForInput(input) {
             const root = input.getRootNode();
 
-            //Step 1: Check for aria-labelledby attribute
-            //aria-labelledby is the strongest ARIA labelling mechanism:
-            //it explicitly points to one or more elements that serve as the label for this input.
+            //Step 1: `aria-labelledby` can reference one or more label elements.
             const labelledByToken = input.getAttribute("aria-labelledby");
 
             if (labelledByToken && root.querySelector) {
-                //aria-labelledby can reference MULTIPLE elements via space-separated IDs.
                 //Example: aria-labelledby="title-id description-id"
                 const labelIds = labelledByToken.split(/\s+/);
-                //Old Version: Passed the entire string into querySelector("#" + labelledBy)
-                //If the string contained a space, it created an invalid CSS selector and failed completely
                 let combinedTextBuffer = [];
                 for (const id of labelIds) {
-                    //prefer getElementById() when available (faster than querySelector)
-                    //because getElementById searches by ID directly without CSS parsing.
-                    //However, ShadowRoot does not have getElementById()
-                    //fall back to querySelector("#id") for Shadow DOM contexts.
+                    //Prefer `getElementById` when available; ShadowRoot does not provide it.
                     const labelElement = root.getElementById ? root.getElementById(id) : root.querySelector(`#${id}`);
                     if (labelElement && labelElement.innerText.trim()) {
                         combinedTextBuffer.push(labelElement.innerText.trim());
@@ -331,7 +264,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 };
             }
 
-            //Grandparent for deeper hierarchie
+            //Include grandparent information for additional selector context.
             const grandparentElement = parentElement ? parentElement.parentElement : null;
 
             return {
@@ -383,7 +316,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * @returns {{ selector: string, selectorConfidence: string }}
          */
         function generateDeepSelector(el, searchRoot = document, depth = 0) {
-            //TODO: evaluate optimal classCount threshold empirically (currently: ≤5)
+            //TODO: Evaluate optimal classCount threshold empirically (currently <= 5).
 
             if (depth > 5) {
                 console.error("Telemetry Alert: generateDeepSelector execution exceeded maximum safe depth allocation.");
@@ -403,27 +336,25 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
                             : el.tagName.toLowerCase();
 
-            const selectorConfidence = el.id ? "very high"
+            selectorConfidence = el.id ? "very high"
                 : el.getAttribute("aria-label") ? "high"
                     : firstClass && classCount === 1 ? "medium"
                         : firstClass ? "low" : "very low";
             
 
             /**
-             * Perspective: Inside-Out. 
-             * Checks if the element is encapsulated within a Shadow DOM.
-             * If the root node is a ShadowRoot, we use root.host to "exit" the shadow
-             * and find the owning element (Host) in the Light DOM to build a recursive path.
+             * Inside-out strategy: if the element is in a ShadowRoot, recursively
+             * resolve its host selector and append the local selector part.
              */
             const activeBoundary = el.getRootNode();
     
-            if (activeBoundary instanceof ShadowRoot) { //am i currently in a shadow DOM?
-                const shadowHostElement = activeBoundary.host; //to generate the click, puppeteer needs to know what the host in the light DOM is
+            if (activeBoundary instanceof ShadowRoot) { //Element is inside Shadow DOM.
+                const shadowHostElement = activeBoundary.host;
 
                 const parentResult = generateDeepSelector(shadowHostElement, shadowHostElement.getRootNode(), depth + 1);
                 
                 return {
-                    //using special puppeteer syntax: https://pptr.dev/guides/page-interactions#querying-elements-in-shadow-dom
+                    //Puppeteer-specific shadow-piercing syntax.
                     selector: `${parentResult.selector} >>> ${selector}`,
                     selectorConfidence: parentResult.selectorConfidence === "very high" ? selectorConfidence : "medium" 
                 };
@@ -449,8 +380,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
          * Note: opacity threshold 0.05 is pragmatic: may need empirical tuning.
          * Note: fixed-position elements are excluded from the offsetParent check
          *       because fixed elements always have offsetParent === null.
-         * Note: does not use a strict viewport-check because i also want to find buttons
-         * that are only seen if the user scrolls
+         * Note: intentionally avoids strict viewport checks, so elements below the
+         * fold can still be detected.
          * 
          * @param {HTMLElement} element - element to check
          * @returns {boolean}
@@ -459,9 +390,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             const style = window.getComputedStyle(element);
             const rect = element.getBoundingClientRect();
 
-            //detecting input elements is a bit tricky
-            //there are often hidden for more customization (no width, height etc)
-            //if the parent is visible, i take it
+            //INPUT controls are often visually hidden and rendered via styled wrappers.
+            //Keep them if they are present in the render tree and not explicitly hidden.
             if (element.tagName === "INPUT") {
                 const parentStyle = element.parentElement ? window.getComputedStyle(element.parentElement) : null;
 
@@ -475,8 +405,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 return true;
             }
 
-			//If the element or the container has display:none, "element.offsetParent === null" is true.
-            //Fixed positioning context is a verified W3C edge case returning null natively!
+            //`offsetParent === null` typically indicates `display:none` on self/ancestor.
+            //Fixed-position elements are excluded because they also return null.
             if (element.offsetParent === null && style.position !== "fixed") {
                 return false;
             }
@@ -489,39 +419,26 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 				hasActiveAlphaChannel;
         }
 
-        //Step 1: Check if a known CMP banner container is directly accessible in this frame.
-        //Uses querySelectorDeep() to find the container including Shadow DOM hosts.
-        //cmpType is already determined in findCorrectFrame() via main frame scan.
-        //cmpFound: true signals high-confidence extraction (direct selector match).
-        //cmpFound: false (Step 2) signals generic extraction.
+        //Step 1: Try known CMP container selectors in the current frame.
+        //`cmpFound: true` means a direct match; otherwise Step 2 performs a generic scan.
         //
-        //Shadow DOM handling:
-        //If the matched element hosts a Shadow Root (e.g. Usercentrics uses
-        //<aside id="usercentrics-cmp-ui"> with a Shadow Root), we use the
-        //Shadow Root as the search root for element extraction.
-        //getDeepInnerHtml() recursively collects HTML from both light and shadow DOM.
+        //If the matched host has a ShadowRoot, use it as the search root.
+        //`getDeepInnerHtml()` serializes both light and shadow DOM content.
 
-        //NOTE: bestResult logic instead of first-match:
-        //When testing on flightaware.com, the settings page loaded inside a div
-        //that already existed but was hidden. Without bestResult logic, the code
-        //would pick the first matching container (the banner) even after the settings
-        //page became visible. By selecting the container with the most interactive
-        //elements, we ensure the settings page is correctly extracted after clicking.
+        //Choose the candidate with the highest count of interactive elements.
+        //This avoids returning stale/hidden containers when multiple matches exist.
         
         let bestResult = null;
         let maxInteractiveElements = -1;
 
         for (const selector of selectors) {
             
-            //i initially used:
-            //const host = querySelectorDeep(selector);
-            //BUT: document.querySelector() (Light DOM only) is much faster than
-            //querySelectorAllDeep and sufficient since CMP host elements are always in the
-            //Light DOM. Button detection inside the container uses querySelectorAllDeep()
-            //to handle Shadow DOM CMPs like Usercentrics.
-            //as already mentioned in utils/wait_for_cmp_ui.js
+            //`document.querySelector()` is intentionally used here for performance.
+            //CMP host containers are expected in Light DOM; deep traversal is applied
+            //later for interactive elements within the selected container.
             const host = document.querySelector(selector);
 
+            //Do not exclude `header`/`footer`: some CMPs place primary controls there.
             if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
 				continue;
 			}
@@ -530,7 +447,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 
                 const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", searchRoot)
                     .filter(element => isVisible(element))
-                    .filter(element => element.tagName !== "INPUT") //Safeguard against misclassified form controls
+                    .filter(element => element.tagName !== "INPUT") //Guard against misclassified form controls.
                     .map(element => {
                         const deepSelectorData = generateDeepSelector(element, searchRoot);
                         return {
@@ -546,11 +463,9 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         }
                     });
                     
-                //TODO: Toggle detection via class names (.toggle, .switch) may produce false positives.
-                //Consider adding a text-based filter using cookie-related keywords to reduce noise.
-                //aria-checked is the key attribute: "true" = consent given, "false" = consent denied.
-                //Note: Modern CMPs often use div/span elements styled as toggles instead of 
-                //native <input type="checkbox"> – hence the role="switch" selector.
+                //TODO: class-based toggle detection may produce false positives.
+                //Consider adding text-based cookie keyword filtering if needed.
+                //`aria-checked` is the primary state signal for custom switch controls.
                 const toggles = querySelectorAllDeep("[role='switch'], .toggle, .switch, [class*='toggle'] [class*='switch']", searchRoot)
                     .filter(element => isVisible(element))
                     .map(element => {
@@ -568,13 +483,9 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         }
                     });
 
-                //Extracts native HTML checkboxes via input[type='checkbox'].
-                //Native checkboxes are more reliably detected than custom styled elements
-                //because they always use the standard HTML input element regardless of CMP styling.
-                //isChecked reflects the current state of the checkbox (true = checked, false = unchecked).
-                //the semantic meaning (consent given/denied) depends on the CMP's implementation
-                //and must be interpreted by the LLM using labelText and surrounding context.
-                //labelText is critical here since input elements have no innerText of their own.
+                //Extract native checkboxes via `input[type='checkbox']`.
+                //`isChecked` captures UI state; semantic meaning is resolved downstream
+                //using `labelText` and surrounding context.
                 const checkboxes = querySelectorAllDeep("input[type='checkbox']", searchRoot)
                     .filter(element => isVisible(element))
                     .map(element => {
@@ -622,13 +533,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 return bestResult;
             }
         
-		//Step 2: Fallback Extraction Sequence: Executed when no known corporate CMP is detected.
-        //Falls back to a generic extraction across the entire document body context.
+		//Step 2: generic fallback when no known CMP selector matches.
         
-        //Architectural Iteration Note: A previous configuration blacklisted "header" and "footer" tags.
-        //However, empirical testing revealed that major frameworks (such as Usercentrics) frequently 
-        //nest critical interactive content inside semantic <header> and <footer> elements. 
-        //To prevent data loss, these tags are intentionally omitted from the negative selector matrix.
         const NEGATIVE_SELECTORS = ["nav", "script", "style", "img", "svg", "noscript"];
 
         const hostClone = document.body.cloneNode(false);
@@ -641,7 +547,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             filterBody.querySelectorAll(selector).forEach(element => element.remove());
         });
 
-        const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], input[type='button'], input[role='submit'], .btn")
+        const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn")
             .filter(element => isVisible(element))
             .filter(element => element.tagName !== "INPUT")
             .map(element => {
@@ -708,10 +614,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     if (result.html) {
         const cleaned = cleanHtml(result.html);
 
-		//Capping the payload string length at 100k characters 
-        //acts as a strict token budget constraint, ensuring optimal LLM inference performance 
-    	//and preventing context window overflows during prompt generation loops.
-        result.filteredHtml = cleaned.slice(0, 100000);
+		//Cap payload to 70k chars to control prompt size and token budget.
+        result.filteredHtml = cleaned.slice(0, 70000);
 		
         delete result.html;
     }

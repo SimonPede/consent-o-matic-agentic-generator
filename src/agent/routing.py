@@ -3,9 +3,9 @@ from src.agent.state import AgentState
 from langgraph.graph import END
 
 def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_node", "rule_output_node"]:
-    """Evaluates the final message in the stream to determine the next operational graph node."""
-    #Dynamic budgeting: Each completed human feedback expands the number of allowed
-    #iterations by 5
+    """Routes execution after an LLM step based on tool calls and call budget."""
+    #Dynamic budgeting: each completed human review increases
+    #the allowed LLM-call budget by 5.
     max_llm_calls_budget = 20 + (state.get("human_review_count", 0) * 5)
     
     if state.get("llm_calls", 0) >= max_llm_calls_budget:
@@ -26,10 +26,9 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
 
 def route_after_rule(state: AgentState) -> Literal["llm_node", "__end__"]:
     """
-    Validates the presence of a successfully serialized final rule.
+    Routes to END when a final rule is available.
     
-    Routes execution to graph termination if extraction criteria are fulfilled; 
-    otherwise, triggers an inference loopback sequence.
+    Otherwise, loops back to the LLM node for further refinement.
     """
     if state.get("final_result"):
         return END

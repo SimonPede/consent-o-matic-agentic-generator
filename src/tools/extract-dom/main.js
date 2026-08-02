@@ -14,6 +14,13 @@ const extractFromFrame = require("./frame_extractor");
 const clickAndExtractSettings = require("./settings_extractor");
 const findSettingsButtonViaLlm = require("./llm_fallback");
 
+
+//---------------------------------------------------------------------------------
+//IMPORTANT!!!!
+//for get a quicker understanding what the logic of this extract script is
+//please look in the root because i addeded extract_dom_flow_chart.pdf for a visualization of the logic amd structure
+//---------------------------------------------------------------------------------
+
 function loadEnvFromProjectRoot() {
     const envPath = path.resolve(__dirname, "../../../.env");
 
@@ -54,12 +61,6 @@ function loadEnvFromProjectRoot() {
     }
 }
 
-//---------------
-//IMPORTANT!!!!
-//for get a quicker understanding what the logic of this extract script is
-//please look in the root because i addeded extract_dom_flow_chart.pdf for a visualization of the logic amd structure
-//----------------
-
 /**
  * Normalizes button text for robust matching.
  * Removes accents, spaces, and punctuation, converting everything to lowercase.
@@ -85,11 +86,12 @@ function normalizeText(text) {
  * 
  * Workflow:
  * 1. Launch browser and navigate to URL
- * 2. Detect CMP type and find the correct frame via findCorrectFrame()
- * 3. Extract initial banner DOM via extractFromFrame()
- * 4. Search for a settings button using a multilingual regex (SETTINGS_TERMS_REGEX)
- * 5a. If regex succeeds: click and extract settings DOM via clickAndExtractSettings()
- * 5b. If regex fails: LLM fallback via findSettingsButtonViaLlm(), then the same click logic
+ * 2. Wait for consent banner to load and detect CMP type via known selectors usiing waitForCmpUi()
+ * 3. Identify the correct frame via findCorrectFrame()
+ * 4. Extract initial banner DOM via extractFromFrame()
+ * 5. Search for a settings button using a multilingual regex (SETTINGS_TERMS_REGEX) and an LLM fallback
+ * 6a. If regex succeeds: click and extract settings DOM via clickAndExtractSettings()
+ * 6b. If regex fails: LLM fallback via findSettingsButtonViaLlm(), then the same click logic
  * 
  * waitUntil "networkidle2" waits until at most 2 network requests are active.
  * An additional 2s buffer handles dynamically injected banners that load after
@@ -99,10 +101,10 @@ function normalizeText(text) {
  * @returns {Array|null} - Array of result objects, each containing:
  *   - frameUrl: URL of the extracted frame
  *   - isMainFrame: whether the frame is the main page frame
- *   - isCookieFrame: whether a Cookie-Banner iframe was detected or not
+ *   - isCookieFrame: whether a the frame surely contains the consent banner or not
  *   - cmpType: detected CMP name (e.g. "Sourcepoint", "OneTrust") or null
  *   - data: initial banner extraction (buttons, checkboxes, toggles, filteredHtml)
- *   - settings: settings page extraction, or null if no settings button found/clicked
+ *   - settings: settings page extraction, or null if no settings button found or click failed
  */
 async function extractStructuredDom(url) {
     try {
@@ -206,9 +208,9 @@ async function extractStructuredDom(url) {
                         const normalizedBtnText = normalizeText(btn.text);
 
                         //Max length 30 chars: real settings button labels are short.
-                        //Prevents false positives on long IAB purpose descriptions
+                        //Prevents false positives on long texts (like IAB purpose descriptions)
                         //(e.g. "storing or accessing information on an end device")
-                        //which contain short substrings from the settings word corpus. (happens e.g. for heise.de)
+                        //which contain short substrings from the settings word corpus.
                         if (SETTINGS_TERMS_REGEX.test(loweredButtonText) && normalizedBtnText.length < 30) {
                             console.error(`Settings match: "${btn.text}" --> lowered: "${loweredButtonText}"`);
                             
@@ -224,7 +226,7 @@ async function extractStructuredDom(url) {
                                 href.includes("privacy")
                             
                             if (isRealNavigation) {
-                                console.error("Settings Match dismissed!")
+                                console.error("Settings Match dismissed due to it being a real navigation element!")
                                 continue;
                             }
 
@@ -233,10 +235,10 @@ async function extractStructuredDom(url) {
                                 settingsButton = btn;
                                 break;
 
-                            } else if(btn.tag === "A") {
+                            } else if (btn.tag === "A") {
                                 if (!fallbackAnchorMatch) {
                                     fallbackAnchorMatch = btn;
-                                    console.error("Found <a> match, saving as fallback but continuing search...");
+                                    console.error("Settings button search: Found <a> match, saving as fallback but continuing search...");
                                 }
                             }
                         }
@@ -302,8 +304,8 @@ async function extractStructuredDom(url) {
 }
 
 /**
- * Standard out diagnostic logger that aggregates and prints structured 
- * summaries of the extracted node matrix.
+ * Debug logger that aggregates and prints structured 
+ * summaries of the extracted information.
  * * @param {Array} results - The compiled array of extraction data structures
  */
 function printExtractionSummary(results) {
@@ -387,11 +389,11 @@ function printExtractionSummary(results) {
 //https://www.swedbank.com/
 //https://www.transavia.com/
 //https://www.svt.se
+//https://claude.ai
 
 //Problems with:
 //https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
 //https://www.skyscanner.de --> detects puppeteer and blocks it
-//https://claude.ai
 
 //URLs i want to test:
 //https://teamworksplus.de

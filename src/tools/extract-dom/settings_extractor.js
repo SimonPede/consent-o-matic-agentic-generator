@@ -9,13 +9,13 @@ const { frameWordCounter, calculateFrameScore } = require("./element_scorer");
 const extractFromFrame = require("./frame_extractor");
 
 /**
- * Captures the current interactive state of a frame for DOM-diff comparison.
+ * Captures the interactive frame state for pre/post-click DOM comparison.
  * Called before and after clicking a settings button in clickAndExtractSettings().
  * 
- * Returns counts of visible inputs and buttons (used to detect if the settings
- * page loaded) and the full HTML (used for character-level diff via Diff.diffChars()).
+ * Returns counts of visible inputs and buttons (used to detect whether a settings
+ * view appeared) and full HTML (used for character-level diff via Diff.diffChars()).
  * 
- * Note: querySelectorAllDeep, getDeepInnerHTML and isVisible are redefined here
+ * Note: querySelectorAllDeep, getDeepInnerHTML, and isVisible are redefined here
  * because frame.evaluate() runs in browser context and cannot access Node.js scope.
  * 
  * @param {Frame} frame - Puppeteer frame to capture state from
@@ -39,7 +39,7 @@ async function getFrameState(frame) {
          * 
          * Limitation: only works for open Shadow DOMs (mode: "open").
          * Closed Shadow DOMs (mode: "closed") are inaccessible via JavaScript by design.
-         * In practice, CMPs use open Shadow DOMs (verified: Usercentrics).
+         * In practice, CMPs seen so far use open Shadow DOMs (e.g., Usercentrics).
          * 
          * Performance note: uses root.querySelectorAll("*") without Array.from() to avoid
          * unnecessary array allocation on large DOMs.
@@ -88,24 +88,19 @@ async function getFrameState(frame) {
          * @returns {string} - Full HTML string including all Shadow DOM content
          */
         function getDeepInnerHTML(node) {
-            //Light DOM:
-                // <aside id="usercentrics-cmp-ui">  Shadow Host --> aside.shadowRoot is truthy but "aside instanceof ShadowRoot" is falsy (checks not if element has shadow DOm but if its Shadow Root)
-                //     #shadow-root (open)            Shadow Root
-                //         <dialog>                   Shadow DOM content
-                //             <button>Accept</button>
-                //         </dialog>
+            //If `node` is a shadow host, traversal starts at `node.shadowRoot`.
+            //Otherwise, traversal starts at `node` directly.
             let htmlResult = "";
 
-			//Redirect evaluation context if the targeted node functions as an active encapsulation host
+			//Redirect evaluation to ShadowRoot when the node is a host element.
             const root = node.shadowRoot || node;
 
             for (const child of root.childNodes) {
                 if (child.nodeType === Node.ELEMENT_NODE) {
-                    //first clone the shell of the element (e.g: <div class=""...)
+                    //Clone only the element shell first (no descendants).
                     let clone = child.cloneNode(false);
 
-					//Standard child.outerHTML would fail to capture downstream shadow layers if the child is a host.
-                    //Instead, we recursively inject the deep structural layout mapping.
+					//Inject recursively collected deep content, including nested shadow layers.
                     clone.innerHTML = getDeepInnerHTML(child);
                     htmlResult += clone.outerHTML;
 
@@ -140,9 +135,8 @@ async function getFrameState(frame) {
             const style = window.getComputedStyle(element);
             const rect = element.getBoundingClientRect();
 
-            //detecting input elements is a bit tricky
-            //there are often hidden for more customization (no width, height etc)
-            //if the parent is visible, i take it
+            //INPUT controls are often visually hidden and rendered through wrappers.
+            //Treat them as visible when neither the input nor its parent is hidden.
             if (element.tagName === "INPUT") {
                 const parentStyle = element.parentElement ? window.getComputedStyle(element.parentElement) : null;
 
@@ -156,8 +150,8 @@ async function getFrameState(frame) {
                 return true;
             }
 
-			//If the element or the container has display:none, "element.offsetParent === null" is true.
-            //Fixed positioning context is a verified W3C edge case returning null natively!
+			//`offsetParent === null` usually indicates `display:none` on self or ancestor.
+            //Exclude fixed-position elements because they also return null natively.
             if (element.offsetParent === null && style.position !== "fixed") {
                 return false;
             }
@@ -171,8 +165,8 @@ async function getFrameState(frame) {
         }
 
         return {
-            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").filter(isVisible).length, //same limitation regarding false postives as mentioned above
-            buttons: querySelectorAllDeep("button, a, [role='button']").filter(isVisible).length,
+            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").filter(isVisible).length, //Same false-positive risk as class-based toggle detection.
+            buttons: querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn").filter(isVisible).length,
             html: getDeepInnerHTML(document.body)
         };
     });
@@ -180,37 +174,30 @@ async function getFrameState(frame) {
 
 /**
  * Clicks a settings/preferences button and extracts the resulting DOM.
- * Extracted as a separate function to avoid code duplication between the
- * regex-based and LLM-based settings button detection paths.
+ * Separated to avoid duplication between regex-based and LLM-based
+ * settings button detection paths.
  * 
- *  Click strategy (three-tier):
- * 1. Shadow-DOM-aware JS injection: Performs deep traversal including piercing 
- * Shadow DOM boundaries via '>>>' syntax. Matches buttons by text label 
- * (case-insensitive) if provided to handle ambiguous/duplicate selectors.
- * 2. Event Dispatching: Triggers native mousedown, mouseup, and click sequences.
- * 3. Puppeteer Fallback: Uses standard frame.click() if the JS injection fails.
+ * Click strategy (three tiers):
+ * 1. Shadow-DOM-aware JS traversal with `>>>` support.
+ * 2. Explicit mouse event dispatch (`mousedown`, `mouseup`, `click`).
+ * 3. Puppeteer fallback via `frame.click()` if JS traversal fails.
  * 
- * After clicking, three scenarios are handled:
- * 1. New iframe(s) appear: scored via calculateFrameScore(), best frame extracted.
- * 2. Existing frame DOM changes significantly (chars/inputs/buttons added):
- *    extracted from same frame if functional elements (checkboxes/toggles) are found.
- * 3. No significant change detected: returns null (click had no effect).
+ * After clicking, three outcomes are handled:
+ * 1. New iframe(s) appear: scored via calculateFrameScore(); best candidate is extracted.
+ * 2. Same frame changes significantly: extract from current frame if functional controls exist.
+ * 3. No meaningful change: return null.
  * 
  * @param {Frame} frame - Puppeteer frame containing the settings button
- * @param {string} settingsButton - button object found by Regex or the LLM (supports >>> for Shadow DOM)
+ * @param {{ selector: string, text?: string }} settingsButton - Button descriptor from regex or LLM (`>>>` supported)
  * @param {Page} page - Puppeteer page instance (needed to detect new frames)
  * @param {string|null} cmpType - detected CMP name, propagated to extraction result
  * @returns {Object|null} - extracted settings DOM object, or null if click had no effect
  */
 async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
-    //the problem: i dont know what the click causes. Sometimes the DOM is updated in the same frame, sometimes a new iFrame pops up
-    //two options: extract from all frames again
-    //or compare the DOM of the frame before and after the click --> is it different? then extract from this frame
-    //otherwise look for new iframes that got loaded
-    //DOM change detection uses Diff.diffChars() for character-level comparison,
-    //supplemented by visible input/button count changes as additional signals.
-    //TODO: evaluate optimal thresholds empirically (currently: >500 chars, >0 inputs, >=2 buttons)
-    const framesBefore = page.frames().map(f => f.url()); //which frames are there before the click?
+    //CMP clicks may either mutate the current frame or spawn a new iframe.
+    //Handle both paths and use DOM-diff heuristics as an additional signal.
+    //TODO:Evaluate thresholds empirically (current defaults: >500 chars, >0 inputs, >=2 buttons).
+    const framesBefore = page.frames().map(f => f.url()); //Frame URL snapshot before click.
     const oldState = await getFrameState(frame);
 
     const selector = settingsButton.selector ? settingsButton.selector : "";
@@ -254,9 +241,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         }
 
         if (target) {
-            //mousedown + mouseup instead of target.click(): more reliable for CMPs
-            //that listen to individual mouse events rather than the synthetic click event.
-            //Recommended by supervisor Thomas Franklin Cory.
+            //Dispatch full mouse sequence for CMPs that ignore `element.click()`.
             target.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
             target.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
             target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
@@ -275,7 +260,8 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         }
     }
 
-    //honestly have to test this function, found it and hope it helps, did not write it myself
+    //Wait until DOM mutations settle, or return after timeout.
+    //Reduces extraction from intermediate render states.
     const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
         return frame.evaluate((stableTime, timeout) => {
             return new Promise((resolve) => {
@@ -350,7 +336,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
 
         const changes = diff.diffChars(oldState.html, newState.html);
         const addedChars = changes
-            .filter(c => c.added) //filteres for everything that is actually new
+            .filter(c => c.added) //Count only newly added characters.
             .reduce((sum, c) => sum + c.count, 0);
         
         const removedChars = changes
@@ -366,7 +352,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         console.error(`Old state: ${oldState.buttons} buttons, ${oldState.inputs} inputs.`);
         console.error(`New state: ${newState.buttons} buttons, ${newState.inputs} inputs.`);
 
-        //TODO: evaluate if these are good indicators. Maybe include sth like: newly rendered elements in general?
+        //TODO:Revisit heuristic quality; consider adding generic newly-rendered element counts.
         if (totalChange > 500 || addedInputs > 0 || addedButtons >= 2) {
             console.error(`Settings detected: ${addedChars} chars, ${addedInputs} inputs, ${addedButtons} buttons added.`);
             await waitForDOMStable(frame);

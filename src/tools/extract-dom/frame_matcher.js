@@ -12,7 +12,6 @@ const { calculateFrameScore, frameWordCounter } = require("./element_scorer");
 async function findCorrectFrame(page, selectorMap) {
     const frames = page.frames();
 
-    //just for debugging:
     console.error(`I found ${frames.length} frames.`);
 
     const avgWordCount = await frameWordCounter(frames);

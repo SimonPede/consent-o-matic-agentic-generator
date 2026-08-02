@@ -26,7 +26,7 @@ async function frameWordCounter(frames) {
         try {
             const count =  await frame.evaluate(() => {
 
-                // Same deep text extraction as in calculateFrameScore
+                //Same deep text extraction as in calculateFrameScore
                 function getDeepText(node) {
                     let text = "";
                     const root = node.shadowRoot || node;
@@ -156,14 +156,6 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             if (style.display === "none" || style.visibility === "hidden") {
                 return -100;
             }
-            // const isVisible = rect.width > 0 && 
-            //                 rect.height > 0 && 
-            //                 style.display !== "none" &&
-            //                 style.visibility !== "hidden";
-
-            // if (!isVisible) {
-            //     return -100;
-            // }
 
             /**
              * Recursively queries the DOM including all Shadow DOM trees.
@@ -197,14 +189,21 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                         nodes = nodes.concat(querySelectorAllDeep(selector, el.shadowRoot));
                     }
                 }
-                //to get a feeling how well this works and how necessary it is:
-                // console.error(`querySelectorAllDeep found ${nodes.length} nodes for ${selector}`);
-                // let nodesStandard = Array.from(root.querySelectorAll(selector));
-                // console.error(`querySelectorAll (standard) found ${nodesStandard.length} nodes for ${selector}`);
+
                 return nodes;
             }
-
-            //functionality really similiar to getDeepInnerHtml() in `frame_extractor.js`
+            /**
+            * Recursively extracts concatenated text content from a node, including text
+            * contained in nested Shadow DOM trees.
+            *
+            * If the provided node is a Shadow Host, traversal starts at `node.shadowRoot`;
+            * otherwise traversal starts at the node itself. The function walks through
+            * `childNodes`, collects `TEXT_NODE` content, and recurses into `ELEMENT_NODE`
+            * children.
+            *
+            * @param {HTMLElement|ShadowRoot} node - Root element or ShadowRoot to extract text from.
+            * @returns {string} Trimmed, whitespace-separated text extracted from light and shadow DOM.
+            */
             function getDeepText(node) {
                 let text = "";
                 const root = node.shadowRoot || node;
@@ -250,7 +249,6 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
 
             const matches = text.match(new RegExp(triggerWords, "gi")) || []; //finds ALL matches (g = global, i = case-insensitive)
             localScore += Math.min(matches.length * 2, 10); //Math.min(..., 10) caps the bonus at +10 to avoid over-weighting
-            //TODO: Evaluate!
 
             for (const [n, phrases] of Object.entries(nGrams).reverse()) {
                 const weight = parseInt(n);
@@ -302,18 +300,18 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
                     if (internalLinkCount > 10) {
                         //Skip elements with many internal links (e.g. nav, footer):
                         //cookie banners rarely contain navigation structures.
-                        //Inspired by CookieCrumbler (Brave, github.com/brave/cookiecrumbler).
+                        //Inspired by Cookiecrumbler (Brave, github.com/brave/cookiecrumbler).
                         continue;
                     }
 
                     hasFixedHighZ = true;
-                    //NOTE: the logic for computing topLevelCount is copied from
+                    //NOTE: the logic for computing topLevelCount was first copied from
                     //"Accept All Exploits: Exploring the Security Impact of Cookie Banners" paper, p. 914
-                    //the bonus and the topLevelCount > 1 threshold is my own addition to this logic
+                    //But, the bonus and the topLevelCount > 1 threshold is my own addition to this logic
                     //to avoid false positives by header or nav elements i include this evaluation only if the element
                     //has already a large z-index and is fixed
 
-                    //i think it would be even better to calculate the coordinates the middle of the object not just the left corner
+                    //Additionally I think it would be even better to calculate the coordinates the middle of the object not just the left corner
                     //so instead of "const {x, y} = el.getBoundingClientRect();" -->
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;

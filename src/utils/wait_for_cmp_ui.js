@@ -30,8 +30,7 @@ async function waitForCmpUi(page, selectorMap, timeout = 10000) {
 
                     function querySelectorAllDeep(selector, root = document) {
                         let nodes = Array.from(root.querySelectorAll(selector));
-                        // const elements = Array.from(root.querySelectorAll("*"));
-                        //should be much faster:
+
                         const elements = root.querySelectorAll("*");
                         for (let el of elements) {
                             if (el.shadowRoot) {
@@ -46,7 +45,7 @@ async function waitForCmpUi(page, selectorMap, timeout = 10000) {
                         if (host && !["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
                             
                             const searchRoot = host.shadowRoot || host;
-                            const buttons = querySelectorAllDeep("button, a, [role='button']", searchRoot);
+                            const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", searchRoot);
                             
                             if (buttons.length > 0) {
                                 return { selector, cmpName };

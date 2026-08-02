@@ -6,13 +6,13 @@ from langchain_litellm import ChatLiteLLM
 
 load_dotenv()
 
-#LiteLLM:
+#LiteLLM models:
 MODEL_NAME="openai/natai/kimi-k2.5"
-# MODEL_NAME="openai/natai/minimax-m2.5" #does not work at the moment
+# MODEL_NAME="openai/natai/minimax-m2.5" #Currently not working in this setup.
 #MODEL_NAME="openai/cavi/medium"
 #MODEL_NAME="openai/cavi/small"
 # MODEL_NAME="openai/natai/gpt-oss"
-#Ollama:
+#Ollama models:
 #MODEL_NAME="gemma4:31b"
 # MODEL_NAME="qwen3.6:latest"
 # MODEL_NAME="qwen3:32b"
@@ -23,12 +23,12 @@ llm = ChatLiteLLM(
     api_key=os.getenv("LITELLM_API_KEY"),
     temperature=0,
     max_tokens=5000,
-    #seems to have no effect:
+    #These flags seem to have no effect with the current backend:
     # thinking=True,
     # reasoning=True
 )
 
-#for accessing models on the SNET Server
+#Alternative configuration for models hosted on the SNET server:
 # llm = ChatOllama(
 #     model=MODEL_NAME,
 #     reasoning=True,
@@ -44,6 +44,6 @@ llm = ChatLiteLLM(
 #     #https://reference.langchain.com/python/langchain-ollama/chat_models/ChatOllama?_gl=1*vdpck4*_gcl_au*MzczODM4NTUyLjE3NzMyMTk1MDM.*_ga*MzAyMjMwMzMzLjE3NzMyMTk1MDM.*_ga_47WX3HKKY2*czE3NzUzODkyNjYkbzIxJGcxJHQxNzc1MzkzOTM2JGo1NiRsMCRoMA..#member-format-18
 # )
 
-#for quick testing:
+#Quick local sanity check:
 # response = llm.invoke("Say hello in one sentence.")
 # print(response.content)
