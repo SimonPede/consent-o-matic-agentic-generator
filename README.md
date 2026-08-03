@@ -24,11 +24,12 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 - **Language:** Python 3.11.9 and JavaScript
 - **Orchestration:** LangGraph/LangChain
 - **Browser Automation:** Node.js & Puppeteer
-- **LLM:** Gemma 4 31B via Ollama (SNET server) or LiteLLM (Aarhus University)
+- **LLM:** Gemma 4 31B via Ollama (SNET server) or Kimi K2.5 via LiteLLM (Aarhus University)
 - **Validation:** Pydantic (type-safe tool calling)
 - **Tracing & Observability:** LangSmith
 
 ## Project Structure
+
 ```
 consent-o-matic-agentic-generator/
 ├── data/                        # Test URLs and generated results
@@ -152,10 +153,36 @@ https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
  
 The agent graph, all state fields, and tool calls are visible and interactive directly in the UI.
 
+## Docker (Alternative)
+
+To ensure absolute reproducibility and avoid dependency conflicts between Python, Node.js, and Puppeteer's Chromium binaries, running the system via Docker is also possible. 
+
+1. Build the image
+```bash
+docker build -t consent-o-matic-agent .
+```
+
+2. Run the agent for a single URL
+```bash
+#Note: --network host is required to resolve local LLM endpoints (e.g., Ollama)
+docker run --rm --network host --env-file .env consent-o-matic-agent https://www.example.com
+```
+
+3. Run the batch evaluator:
+If you want to evaluate multiple websites listed in evaluation/urls.txt, override the entrypoint:
+```bash
+docker run --rm --network host --env-file .env --entrypoint python consent-o-matic-agent batch_runner.py
+```
+
+Note on Terminal Output: Currently, running the system via Docker may truncate or suppress the intermediate reasoning traces (the "analysis" blocks) in the standard terminal output. If you need to inspect the model's full reasoning process directly in the console, running the system natively is recommended. (Alternatively, use LangSmith Studio to inspect the full trace).
+
+
 ## Acknowledgements
+
 This project is developed in cooperation with the the Centre for Advanced Visualisation and Interaction (CAVI) team at Aarhus University 
 and supervised by Thomas Franklin Cory at the Service-centric Networking (SNET) research 
 group, TU Berlin.
 
 ## License
+
 This project is licensed under the MIT license, but some utility components in src/utils/ are derived from the Consent Observatory project and are licensed under the Mozilla Public License 2.0.
