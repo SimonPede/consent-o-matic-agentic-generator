@@ -18,7 +18,8 @@ const findSettingsButtonViaLlm = require("./llm_fallback");
 //---------------------------------------------------------------------------------
 //IMPORTANT!!!!
 //for get a quicker understanding what the logic of this extract script is
-//please look in the root because i addeded extract_dom_flow_chart.pdf for a visualization of the logic amd structure
+//please look in the root because i added `extract_dom_flow_chart.pdf` for a visualization of the logic and structure
+//of everything happening inside the `extract-dom` folder
 //---------------------------------------------------------------------------------
 
 function loadEnvFromProjectRoot() {
@@ -86,7 +87,7 @@ function normalizeText(text) {
  * 
  * Workflow:
  * 1. Launch browser and navigate to URL
- * 2. Wait for consent banner to load and detect CMP type via known selectors usiing waitForCmpUi()
+ * 2. Wait for consent banner to load and detect CMP type via known selectors using waitForCmpUi()
  * 3. Identify the correct frame via findCorrectFrame()
  * 4. Extract initial banner DOM via extractFromFrame()
  * 5. Search for a settings button using a multilingual regex (SETTINGS_TERMS_REGEX) and an LLM fallback
@@ -116,8 +117,8 @@ async function extractStructuredDom(url) {
                 "--no-sandbox", //important for WSL/Linux
                 "--disable-setuid-sandbox", //important for WSL/Linux
                 "--disable-blink-features=AutomationControlled", //when chrome is not controlled by an actual user it sets navigator.webdriver = true.
-                //CMPs can detect that and block the banner or nerver render it
-                "--window-size=1920,1080", //unsure if really necessary, but ensures that puppeteer launches desktop version
+                //a website can detect that and block the banner or nerver render it
+                "--window-size=1920,1080", //ensures that puppeteer launches desktop version
                 "--lang=en-US,en"
             ]
         });
@@ -152,7 +153,7 @@ async function extractStructuredDom(url) {
 
         if (waitResult) {
             cmpType = waitResult.cmpType;
-            console.error(`waitForCmpUI detected CMP Type: ${cmpType}`);
+            console.error(`waitForCmpUi detected CMP Type: ${cmpType}`);
             //wait shortly in case of more CSS animation
             await new Promise(resolve => setTimeout(resolve, 1500)); 
         }
@@ -378,7 +379,7 @@ function printExtractionSummary(results) {
     }
 })();
 
-//script works on:
+//script is confirmed to work on:
 //https://usercentrics.com
 //https://zalando.de
 //https://heise.de --> do not use heise.com! Valid website, but without Cookie-Banner :)

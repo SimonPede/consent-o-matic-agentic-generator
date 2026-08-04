@@ -20,7 +20,7 @@
  * @returns {{ frame: Frame, selector: string, cmpType: string }|null}
  */
 async function waitForCmpUi(page, selectorMap, timeout = 10000) {
-    console.error("waitForCmpUI started...");
+    console.error("waitForCmpUi started...");
     const start = Date.now();
 
     while (Date.now() - start < timeout) {

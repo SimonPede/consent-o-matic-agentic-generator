@@ -8,10 +8,10 @@ load_dotenv()
 
 #LiteLLM models:
 MODEL_NAME="openai/natai/kimi-k2.5"
-# MODEL_NAME="openai/natai/minimax-m2.5" #Currently not working in this setup.
 #MODEL_NAME="openai/cavi/medium"
 #MODEL_NAME="openai/cavi/small"
-# MODEL_NAME="openai/natai/gpt-oss"
+#MODEL_NAME="openai/natai/gpt-oss"
+
 #Ollama models:
 #MODEL_NAME="gemma4:31b"
 # MODEL_NAME="qwen3.6:latest"
@@ -22,9 +22,10 @@ llm = ChatLiteLLM(
     api_base=os.getenv("LITELLM_BASE_URL"),
     api_key=os.getenv("LITELLM_API_KEY"),
     temperature=0,
-    max_tokens=5000,
+    max_tokens=6000,
+    stream=False
     #These flags seem to have no effect with the current backend:
-    # thinking=True,
+    #thinking=True,
     # reasoning=True
 )
 

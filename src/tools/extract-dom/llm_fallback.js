@@ -7,6 +7,25 @@
  * @returns {{selector: string, text: string}|null}
  */
 
+/**
+ * Cleans HTML for LLM consumption by removing low-value noise.
+ *
+ * @param {string} html - Raw HTML string to clean
+ * @returns {string} - Cleaned HTML string
+ */
+function cleanHtml(html) {
+    return html
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+        .replace(/\s*style="[^"]*"/gi, "")
+        // Remove inline JS event handlers (e.g., onclick, onload).
+        .replace(/\s*on\w+="[^"]*"/gi, "")
+        // Collapse repeated whitespace into a single space.
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+const MAX_FALLBACK_HTML_CHARS = 70000;
+
 function buildEndpoint(baseUrl, suffix) {
     if (!baseUrl) {
         return "";
@@ -26,16 +45,19 @@ async function findSettingsButtonViaLlm(html) {
     const liteLlmEndpoint = buildEndpoint(liteLlmUrl, "/chat/completions");
     const ollamaEndpoint = buildEndpoint(ollamaUrl, "/api/generate");
 
+    //Defensively clean and cap HTML to avoid provider payload/context limits.
+    const preparedHtml = cleanHtml(String(html || "")).slice(0, MAX_FALLBACK_HTML_CHARS);
+
     const prompt = `
     You are analysing HTML of a website.
-    Find the button or link that opens the settings or preferences page of the Cookie Banner.
+    Find the button or link that opens the settings or preferences page of the consent banner.
     Return ONLY a valid JSON object with exactly two fields, nothing else.
     No explanation, no markdown, no code blocks.
 
     Example of a valid response:
     {"selector": "[aria-label='Settings']", "text": "Settings"}
 
-    HTML: ${html}
+    HTML: ${preparedHtml}
     `;
 
     try {
@@ -53,19 +75,24 @@ async function findSettingsButtonViaLlm(html) {
                 body: JSON.stringify({
                     model: "natai/kimi-k2.5",
                     messages: [{ role: "user", content: prompt }],
-                    stream: false
                 })
             });
 
             if (!response.ok) {
-                console.error(`LiteLLM call failed: ${response.status}`);
-                return null;
+                const errorBody = await response.text();
+                console.error(`LiteLLM call failed: ${response.status} ${response.statusText}`);
+                console.error(`LiteLLM error body: ${errorBody.slice(0, 1500)}`);
+            } else {
+                const data = await response.json();
+                rawContent = data.choices?.[0]?.message?.content || "";
             }
 
-            const data = await response.json();
-            rawContent = data.choices?.[0]?.message?.content || "";
+            if (!rawContent && ollamaEndpoint) {
+                console.error("LiteLLM returned no usable result. Falling back to Ollama...");
+            }
+        }
 
-        } else if (ollamaEndpoint) {
+        if (!rawContent && ollamaEndpoint) {
             const headers = { "Content-Type": "application/json" };
             if (ollamaBearerToken) {
                 headers.Authorization = `Bearer ${ollamaBearerToken}`;
@@ -75,21 +102,23 @@ async function findSettingsButtonViaLlm(html) {
                 method: "POST",
                 headers,
                 body: JSON.stringify({
-                    model: "gemma4:latest",
+                    model: "gemma4:31b",
                     prompt,
                     stream: false
                 })
             });
 
             if (!response.ok) {
-                console.error(`Ollama call failed: ${response.status}`);
+                const errorBody = await response.text();
+                console.error(`Ollama call failed: ${response.status} ${response.statusText}`);
+                console.error(`Ollama error body: ${errorBody.slice(0, 1500)}`);
                 return null;
             }
 
             const data = await response.json();
             rawContent = data.response?.trim() || "";
 
-        } else {
+        } else if (!rawContent) {
             console.error("findSettingsButtonViaLLM skipped: missing LITELLM_BASE_URL and OLLAMA_BASE_URL.");
             return null;
         }

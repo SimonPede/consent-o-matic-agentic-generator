@@ -87,7 +87,7 @@ def call_vision(base64_image: str) -> dict:
                     "Authorization": f"Bearer {ollama_token}"
                 },
                 json={
-                    "model": "gemma4:latest",
+                    "model": "gemma4:31b",
                     "prompt": prompt,
                     "images": [base64_image],
                     "stream": False

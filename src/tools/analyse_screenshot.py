@@ -159,7 +159,7 @@ def analyse_screenshot(url: str) -> str:
                     "Authorization": f"Bearer {ollama_token}"
                 },
                 json={
-                    "model": "gemma4:latest",
+                    "model": "gemma4:31b",
                     "prompt": prompt,
                     "images": [base64_image],
                     "stream": False
