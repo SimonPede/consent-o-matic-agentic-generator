@@ -1,5 +1,7 @@
 import sys
 import time
+import os
+import multiprocessing as mp
 import warnings
 from datetime import datetime
 
@@ -61,6 +63,7 @@ def run_single(agent, url: str) -> None:
         "human_review_count": 0,
         "last_error": "",
         "structured_dom_info": None,
+        "extraction_duration_seconds": 0.0,
         "cmp_type": "",
         "settings_extracted": False,
         "screenshot_info": None,
@@ -69,7 +72,7 @@ def run_single(agent, url: str) -> None:
         "error_history": [],
         "test_rule_count": 0,
         "analyse_screenshot_count": 0,
-        "final_result": None
+        "final_result": None,
     }
     
     start_time = time.perf_counter()
@@ -104,7 +107,7 @@ def run_single(agent, url: str) -> None:
             log_run(
                 {"url": url, "llm_calls": 0, "last_error": str(e),
                 "final_result": None, "last_test_result": None,
-                "human_review_count": 0, "cmp_type": ""},
+                "human_review_count": 0, "cmp_type": "", "extraction_duration_seconds": 0.0},
                 duration_seconds=duration,
                 model_name=MODEL_NAME,
                 few_shot_config=FEW_SHOT_CONFIG
@@ -136,6 +139,57 @@ def run_single(agent, url: str) -> None:
     
     log_run(final_state.values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
 
+
+def run_single_in_subprocess(url: str) -> None:
+    """
+    Worker entrypoint for exactly one URL.
+    Compiles its own agent/checkpointer inside the child process.
+    """
+    with SqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
+        agent = workflow.compile(checkpointer=checkpointer)
+        run_single(agent, url)
+
+
+def run_single_with_timeout(url: str, timeout_seconds: int) -> None:
+    """
+    Runs a single URL in an isolated process with a hard overall timeout.
+
+    If the timeout is hit, the worker process is terminated and a timeout run
+    is logged so the batch can continue deterministically.
+    """
+    start_time = time.perf_counter()
+
+    process = mp.Process(target=run_single_in_subprocess, args=(url,))
+    process.start()
+    process.join(timeout=timeout_seconds)
+
+    if process.is_alive():
+        print(f"Overall timeout reached for {url} after {timeout_seconds}s --> terminating worker.")
+        process.terminate()
+        process.join(timeout=5)
+
+        duration = time.perf_counter() - start_time
+        log_run(
+            {
+                "url": url,
+                "llm_calls": 0,
+                "last_error": f"ABORTED: overall timeout reached ({timeout_seconds}s)",
+                "final_result": None,
+                "last_test_result": None,
+                "human_review_count": 0,
+                "cmp_type": "",
+                "aborted_timeout": True,
+                "extraction_duration_seconds": 0.0,
+            },
+            duration_seconds=duration,
+            model_name=MODEL_NAME,
+            few_shot_config=FEW_SHOT_CONFIG,
+        )
+        return
+
+    if process.exitcode not in (0, None):
+        print(f"Worker for {url} exited with code {process.exitcode}.")
+
 def main() -> None:
     """
     Entry point for the batch evaluation pipeline.
@@ -145,17 +199,16 @@ def main() -> None:
     """
     url_file_path = "evaluation/urls.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
+    timeout_seconds = 600
     
     print(f"Batch Evaluation started: {len(evaluation_urls)} URLs")
     print(f"Model: {MODEL_NAME} | Few-Shot: {FEW_SHOT_CONFIG}\n")
+    print(f"Per-URL overall timeout: {timeout_seconds}s\n")
 
     try:
-        with SqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
-            agent = workflow.compile(checkpointer=checkpointer)
-
-            for i, url in enumerate(evaluation_urls, 1):
-                print(f"\nProgress: {i}/{len(evaluation_urls)}")
-                run_single(agent, url)
+        for i, url in enumerate(evaluation_urls, 1):
+            print(f"\nProgress: {i}/{len(evaluation_urls)}")
+            run_single_with_timeout(url, timeout_seconds)
     except KeyboardInterrupt:
         print("\n Batch run was interrupted by the user! Exiting...")
         sys.exit(0)
