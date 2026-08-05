@@ -161,6 +161,29 @@ def make_llm_node(model_with_tools):
                         print("LLM Response:", block.get("text", ""))
             else:
                 print("LLM Response:", response.content)
+                
+            #Field name differs by backend: LiteLLM uses "finish_reason", Ollama uses "done_reason".
+            metadata = response.response_metadata
+            finish_reason = metadata.get("finish_reason")
+            done_reason = metadata.get("done_reason")
+            
+            is_truncated = (finish_reason == "length") or (
+                done_reason is not None and done_reason != "stop"
+            )
+            
+            if is_truncated:
+                print(f"WARNING: LLM response was truncated")
+                
+                return {
+                    "messages": [HumanMessage(content=(
+                        "Your previous response was cut off because it "
+                        "exceeded the maximum output length. Please provide "
+                        "a more concise analysis, or continue directly with "
+                        "your next action, without repeating what you "
+                        "already covered."
+                    ))],
+                    "llm_calls": state.get("llm_calls", 0) + 1
+                }
     
             return {
                 "messages": [response],
