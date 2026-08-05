@@ -108,6 +108,12 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     else:
         resolution_type = "UNKNOWN"
         
+    extraction_duration_seconds = round(state.get("extraction_duration_seconds", 0), 2)
+    total_duration_seconds = round(duration_seconds, 2)
+    extraction_share_percent = round(
+        (extraction_duration_seconds / total_duration_seconds) * 100, 2
+    ) if total_duration_seconds > 0 else 0.0
+
     log_entry = {
         "timestamp": datetime.now().isoformat(),
         "url": url,
@@ -130,7 +136,9 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "analyse_screenshot_count": state.get("analyse_screenshot_count", 0),
         "final_test_error": final_test_error,
         "error_history": error_history,
-        "duration_seconds": round(duration_seconds, 2),
+        "duration_seconds": total_duration_seconds,
+        "extraction_duration_seconds": extraction_duration_seconds,
+        "extraction_share_percent": extraction_share_percent,
         "banner_status": {
             "baseline": baseline,
             "audit": audit
@@ -171,6 +179,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "final_test_error",
         "error_history",
         "duration_seconds",
+        "extraction_duration_seconds",
+        "extraction_share_percent",
         "banner_status_baseline",
         "banner_status_audit",
         "final_rule",
@@ -199,6 +209,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["final_test_error"],
         json.dumps(log_entry["error_history"], default=str),
         log_entry["duration_seconds"],
+        log_entry["extraction_duration_seconds"],
+        log_entry["extraction_share_percent"],
         json.dumps(baseline),
         json.dumps(audit),
         json.dumps(log_entry["final_rule"])

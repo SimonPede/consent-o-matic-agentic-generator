@@ -11,6 +11,7 @@ class AgentState(TypedDict):
     last_error: str
     error_history: Annotated[list[str], operator.add]
     structured_dom_info: list[dict] | None
+    extraction_duration_seconds: float
     cmp_type: str
     settings_extracted: bool
     screenshot_info: dict | None

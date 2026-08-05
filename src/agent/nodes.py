@@ -66,7 +66,7 @@ def extraction_node(state: AgentState) -> dict:
         text=True
     )
 
-    extract_duration_seconds = int((time.perf_counter() - extract_start_time))
+    extract_duration_seconds = round(time.perf_counter() - extract_start_time, 2)
 
     output = None
     parse_error = None
@@ -94,12 +94,14 @@ def extraction_node(state: AgentState) -> dict:
     if result.returncode != 0:
         print("extraction_node, extract_tool returned 1:", result.stderr)
         return {
-            "last_error": result.stderr
+            "last_error": result.stderr,
+            "extraction_duration_seconds": extract_duration_seconds,
         }
 
     if parse_error:
         return {
             "last_error": f"extraction_node: extract_dom.js returned invalid JSON: {parse_error}",
+            "extraction_duration_seconds": extract_duration_seconds,
             "messages": [
                 HumanMessage(content=(
                     "DOM extraction returned invalid JSON output. "
@@ -134,11 +136,13 @@ def extraction_node(state: AgentState) -> dict:
             "structured_dom_info": output,
             "structured_dom_chars": output_length,
             "cmp_type": cmp_type_value,
-            "settings_extracted": settings_extracted_flag
+            "settings_extracted": settings_extracted_flag,
+            "extraction_duration_seconds": extract_duration_seconds,
         }
     else:
         return {
             "last_error": "extraction_node: extract_dom.js returned empty result",
+            "extraction_duration_seconds": extract_duration_seconds,
             "messages": [
                 HumanMessage(content=(
                     "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked"

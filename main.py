@@ -35,6 +35,7 @@ def main() -> None:
         "last_error": "",
         "error_history": [],
         "structured_dom_info": None,
+        "extraction_duration_seconds": 0.0,
         "cmp_type": "",
         "settings_extracted": False,
         "screenshot_info": None,
@@ -42,7 +43,7 @@ def main() -> None:
         "last_test_result": None,
         "test_rule_count": 0,
         "analyse_screenshot_count": 0,
-        "final_result": None
+        "final_result": None,
     }
 
     #Thread Checkpointing Strategy: Establishes context persistence
