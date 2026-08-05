@@ -55,8 +55,6 @@ async function run() {
 			timeout: 30000
 		});
 
-		await new Promise(resolve => setTimeout(resolve, 2000));
-
 		console.error("page is loaded!");
 
 		//Pure Synchronization Barrier: The return value is intentionally ignored here.

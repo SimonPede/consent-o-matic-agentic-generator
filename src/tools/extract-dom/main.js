@@ -140,11 +140,9 @@ async function extractStructuredDom(url) {
 
         console.error("Navigating to the page...");
         await page.goto(url, {
-            waitUntil: "networkidle2",
+            waitUntil: "domcontentloaded",
             timeout: 30000
         });
-
-        await new Promise(resolve => setTimeout(resolve, 2000));
 
         console.error("page is loaded!");
 

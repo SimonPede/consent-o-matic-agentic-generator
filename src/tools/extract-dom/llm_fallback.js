@@ -15,7 +15,7 @@ function cleanHtml(html) {
         .trim();
 }
 
-const MAX_FALLBACK_HTML_CHARS = 150000;
+const MAX_FALLBACK_HTML_CHARS = 70000;
 
 function buildEndpoint(baseUrl, suffix) {
     if (!baseUrl) {

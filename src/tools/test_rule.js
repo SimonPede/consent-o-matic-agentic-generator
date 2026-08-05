@@ -562,8 +562,6 @@ async function runTest(rule) {
             timeout: 30000
         });
 
-		await new Promise(resolve => setTimeout(resolve, 2000));
-
         console.error("page is loaded!");
 
         //Blocking Telemetry Barrier: The rich metadata object returned by waitForCmpUi 
