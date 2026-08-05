@@ -7,14 +7,14 @@ def call_vision(base64_image: str) -> dict:
     Sends a base64-encoded screenshot taken by Puppeteer to the local Ollama vision model
     to analyze the visual state of the cookie consent banner.
     """
-    #Configuration Toggle
-    use_liteLlm = True
+    llm_backend = os.getenv("LLM_BACKEND", "litellm").strip().lower()
     
     ollama_url = os.getenv("OLLAMA_BASE_URL")
     ollama_token = os.getenv("OLLAMA_BEARER_TOKEN")
     
     liteLlm_url = os.getenv("LITELLM_BASE_URL")
     api_key = os.getenv("LITELLM_API_KEY")
+    vision_model = os.getenv("VISION_MODEL_NAME")
     
     prompt = """
     You are analyzing a screenshot of a website AFTER an automated script tried to interact with or dismiss a cookie consent banner.
@@ -43,8 +43,10 @@ def call_vision(base64_image: str) -> dict:
     """
     try:
         response_text = ""
+        if not vision_model:
+            return {"error": "Missing model configuration: set VISION_MODEL_NAME"}
         
-        if use_liteLlm:
+        if llm_backend == "litellm":
             response = requests.post(
                 f"{liteLlm_url}/chat/completions",
                 headers={
@@ -52,7 +54,7 @@ def call_vision(base64_image: str) -> dict:
                     "Authorization": f"Bearer {api_key}"
                 },
                 json={
-                    "model": "natai/kimi-k2.5",
+                    "model": vision_model,
                     "messages": [
                         {
                             "role": "user",
@@ -79,7 +81,7 @@ def call_vision(base64_image: str) -> dict:
             data = response.json()
             response_text = data["choices"][0]["message"]["content"]
 
-        else:
+        elif llm_backend == "ollama":
             response = requests.post(
                 f"{ollama_url}/api/generate",
                 headers={
@@ -87,7 +89,7 @@ def call_vision(base64_image: str) -> dict:
                     "Authorization": f"Bearer {ollama_token}"
                 },
                 json={
-                    "model": "gemma4:31b",
+                    "model": vision_model,
                     "prompt": prompt,
                     "images": [base64_image],
                     "stream": False
@@ -98,6 +100,8 @@ def call_vision(base64_image: str) -> dict:
             
             data = response.json()
             response_text = data.get("response", "")
+        else:
+            return {"error": f"Unsupported LLM_BACKEND: {llm_backend}"}
             
         cleaned_response = response_text.replace("```json", "").replace("```JSON", "").replace("```", "").strip()
         

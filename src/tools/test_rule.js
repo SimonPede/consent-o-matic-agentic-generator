@@ -558,7 +558,7 @@ async function runTest(rule) {
     try {
         console.error("Navigating to the page...");
         await page.goto(url, {
-            waitUntil: "networkidle2",
+            waitUntil: "domcontentloaded",
             timeout: 30000
         });
 

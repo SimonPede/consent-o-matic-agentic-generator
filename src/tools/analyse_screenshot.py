@@ -59,8 +59,7 @@ def analyse_screenshot(url: str) -> str:
         bannerPosition (string), cmpType(string), settingsButtonVisible (bool),
         buttons (list of objects with text, colour, and position).
     """
-    #Configuration Toggle
-    use_liteLlm = True
+    llm_backend = os.getenv("LLM_BACKEND", "litellm").strip().lower()
     
     print("Screenshot tool started!")
     
@@ -89,6 +88,7 @@ def analyse_screenshot(url: str) -> str:
     
     liteLlm_url = os.getenv("LITELLM_BASE_URL")
     api_key = os.getenv("LITELLM_API_KEY")
+    vision_model = os.getenv("VISION_MODEL_NAME")
     
     prompt = """
     You are analyzing a screenshot of a website to identify cookie consent banners.
@@ -115,8 +115,10 @@ def analyse_screenshot(url: str) -> str:
     """
     try:
         response_text = ""
+        if not vision_model:
+            return json.dumps({"error": "Missing model configuration: set VISION_MODEL_NAME"})
         
-        if use_liteLlm:
+        if llm_backend == "litellm":
             response = requests.post(
                 f"{liteLlm_url}/chat/completions",
                 headers={
@@ -124,7 +126,7 @@ def analyse_screenshot(url: str) -> str:
                     "Authorization": f"Bearer {api_key}"
                 },
                 json={
-                    "model": "natai/kimi-k2.5",
+                    "model": vision_model,
                     "messages": [
                         {
                             "role": "user",
@@ -151,7 +153,7 @@ def analyse_screenshot(url: str) -> str:
             data = response.json()
             response_text = data["choices"][0]["message"]["content"]
 
-        else:
+        elif llm_backend == "ollama":
             response = requests.post(
                 f"{ollama_url}/api/generate",
                 headers={
@@ -159,7 +161,7 @@ def analyse_screenshot(url: str) -> str:
                     "Authorization": f"Bearer {ollama_token}"
                 },
                 json={
-                    "model": "gemma4:31b",
+                    "model": vision_model,
                     "prompt": prompt,
                     "images": [base64_image],
                     "stream": False
@@ -170,6 +172,8 @@ def analyse_screenshot(url: str) -> str:
             
             data = response.json()
             response_text = data.get("response", "")
+        else:
+            return json.dumps({"error": f"Unsupported LLM_BACKEND: {llm_backend}"})
             
         cleaned_response = response_text.replace("```json", "").replace("```JSON", "").replace("```", "").strip()
         

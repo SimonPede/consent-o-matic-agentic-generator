@@ -75,7 +75,7 @@ consent-o-matic-agentic-generator/
 2. **Set up Python environment**
    ```bash
     python -m venv .venv
-    source .venv/bin/activate  # Windows: .venv\Scripts\activate
+    source .venv/bin/activate  #Windows: .venv\Scripts\activate
     pip install -r requirements.txt
    ```
 
@@ -89,10 +89,20 @@ consent-o-matic-agentic-generator/
 Create a `.env` file in the root directory:
  
 ```bash
-#LLM Access (choose one)
+#Backend switch: choose exactly one
+LLM_BACKEND=litellm
+#LLM_BACKEND=ollama
+
+#Text-model configuration (examples)
+LITELLM_MODEL_NAME=openai/natai/kimi-k2.5
+OLLAMA_MODEL_NAME=gemma4:31b
+
+#Vision-model configuration (used by vision tools only), e.g.:
+VISION_MODEL_NAME=natai/kimi-k2.5
+
+#Provider endpoints/credentials
 OLLAMA_BASE_URL=http://snet-server:1234
 OLLAMA_BEARER_TOKEN=your-token-here
-#or
 LITELLM_BASE_URL=http://litellm-server:1234
 LITELLM_API_KEY=your-api-key-here
  
@@ -100,9 +110,14 @@ LITELLM_API_KEY=your-api-key-here
 LANGSMITH_TRACING=true
 LANGSMITH_API_KEY=your-langsmith-api-key
 LANGSMITH_ENDPOINT=https://api.smith.langchain.com
-#optional:
+#Optional:
 LANGSMITH_PROJECT="your project"
 ```
+
+Notes:
+- `LLM_BACKEND` controls which provider API is called (`litellm` or `ollama`).
+- Text generation uses `LITELLM_MODEL_NAME` or `OLLAMA_MODEL_NAME` (depending on backend).
+- Vision analysis uses **only** `VISION_MODEL_NAME`.
 
 > All runs are automatically traced to LangSmith when `LANGSMITH_TRACING=true` is set. To disable tracing, set it to `false` — no data will leave your machine.
 

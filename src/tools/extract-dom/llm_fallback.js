@@ -1,13 +1,4 @@
 /**
- * LLM-based fallback for settings button detection.
- * Called when SETTINGS_TERMS_REGEX fails to identify a settings button.
- * Sends filteredHtml to LiteLLM (preferred) or Ollama and expects JSON with selector and text.
- *
- * @param {string} html - filteredHtml from extractFromFrame()
- * @returns {{selector: string, text: string}|null}
- */
-
-/**
  * Cleans HTML for LLM consumption by removing low-value noise.
  *
  * @param {string} html - Raw HTML string to clean
@@ -17,14 +8,14 @@ function cleanHtml(html) {
     return html
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
         .replace(/\s*style="[^"]*"/gi, "")
-        // Remove inline JS event handlers (e.g., onclick, onload).
+        //Remove inline JS event handlers (e.g., onclick, onload).
         .replace(/\s*on\w+="[^"]*"/gi, "")
-        // Collapse repeated whitespace into a single space.
+        //Collapse repeated whitespace into a single space.
         .replace(/\s+/g, " ")
         .trim();
 }
 
-const MAX_FALLBACK_HTML_CHARS = 70000;
+const MAX_FALLBACK_HTML_CHARS = 150000;
 
 function buildEndpoint(baseUrl, suffix) {
     if (!baseUrl) {
@@ -35,12 +26,24 @@ function buildEndpoint(baseUrl, suffix) {
     return `${normalizedBase}${suffix}`;
 }
 
+/**
+ * LLM-based fallback for settings button detection.
+ * Called when SETTINGS_TERMS_REGEX fails to identify a settings button.
+ * Sends filteredHtml to LiteLLM (preferred) or Ollama and expects JSON with selector and text.
+ *
+ * @param {string} html - filteredHtml from extractFromFrame()
+ * @returns {{selector: string, text: string}|null}
+ */
 async function findSettingsButtonViaLlm(html) {
+    const llmBackend = (process.env.LLM_BACKEND || "litellm").trim().toLowerCase();
+
     const liteLlmUrl = process.env.LITELLM_BASE_URL || "";
     const liteLlmApiKey = process.env.LITELLM_API_KEY || "";
+    const liteLlmModelName = process.env.LITELLM_MODEL_NAME || process.env.LLM_MODEL_NAME || "";
 
     const ollamaUrl = process.env.OLLAMA_BASE_URL || "";
     const ollamaBearerToken = process.env.OLLAMA_BEARER_TOKEN || "";
+    const ollamaModelName = process.env.OLLAMA_MODEL_NAME || process.env.LLM_MODEL_NAME || "";
 
     const liteLlmEndpoint = buildEndpoint(liteLlmUrl, "/chat/completions");
     const ollamaEndpoint = buildEndpoint(ollamaUrl, "/api/generate");
@@ -63,7 +66,16 @@ async function findSettingsButtonViaLlm(html) {
     try {
         let rawContent = "";
 
-        if (liteLlmEndpoint) {
+        if (llmBackend === "litellm") {
+            if (!liteLlmEndpoint) {
+                console.error("findSettingsButtonViaLlM skipped: missing LITELLM_BASE_URL.");
+                return null;
+            }
+            if (!liteLlmModelName) {
+                console.error("findSettingsButtonViaLlM skipped: missing LITELLM_MODEL_NAME.");
+                return null;
+            }
+
             const headers = { "Content-Type": "application/json" };
             if (liteLlmApiKey) {
                 headers.Authorization = `Bearer ${liteLlmApiKey}`;
@@ -73,7 +85,7 @@ async function findSettingsButtonViaLlm(html) {
                 method: "POST",
                 headers,
                 body: JSON.stringify({
-                    model: "natai/kimi-k2.5",
+                    model: liteLlmModelName,
                     messages: [{ role: "user", content: prompt }],
                 })
             });
@@ -86,13 +98,16 @@ async function findSettingsButtonViaLlm(html) {
                 const data = await response.json();
                 rawContent = data.choices?.[0]?.message?.content || "";
             }
-
-            if (!rawContent && ollamaEndpoint) {
-                console.error("LiteLLM returned no usable result. Falling back to Ollama...");
+        } else if (llmBackend === "ollama") {
+            if (!ollamaEndpoint) {
+                console.error("findSettingsButtonViaLlM skipped: missing OLLAMA_BASE_URL.");
+                return null;
             }
-        }
+            if (!ollamaModelName) {
+                console.error("findSettingsButtonViaLlM skipped: missing OLLAMA_MODEL_NAME.");
+                return null;
+            }
 
-        if (!rawContent && ollamaEndpoint) {
             const headers = { "Content-Type": "application/json" };
             if (ollamaBearerToken) {
                 headers.Authorization = `Bearer ${ollamaBearerToken}`;
@@ -102,7 +117,7 @@ async function findSettingsButtonViaLlm(html) {
                 method: "POST",
                 headers,
                 body: JSON.stringify({
-                    model: "gemma4:31b",
+                    model: ollamaModelName,
                     prompt,
                     stream: false
                 })
@@ -110,16 +125,15 @@ async function findSettingsButtonViaLlm(html) {
 
             if (!response.ok) {
                 const errorBody = await response.text();
-                console.error(`Ollama call failed: ${response.status} ${response.statusText}`);
-                console.error(`Ollama error body: ${errorBody.slice(0, 1500)}`);
+                console.error(`findSettingsButtonViaLlM: Ollama call failed: ${response.status} ${response.statusText}`);
+                console.error(`findSettingsButtonViaLlM: Ollama error body: ${errorBody.slice(0, 1500)}`);
                 return null;
             }
 
             const data = await response.json();
             rawContent = data.response?.trim() || "";
-
-        } else if (!rawContent) {
-            console.error("findSettingsButtonViaLLM skipped: missing LITELLM_BASE_URL and OLLAMA_BASE_URL.");
+        } else {
+            console.error(`Unsupported LLM_BACKEND: "${llmBackend}"`);
             return null;
         }
 
@@ -133,7 +147,7 @@ async function findSettingsButtonViaLlm(html) {
         console.error(`LLM suggested settings button - selector: "${parsed.selector}", text: "${parsed.text}"`);
         return parsed;
     } catch (err) {
-        console.error("findSettingsButtonViaLLM failed:", err.message);
+        console.error("findSettingsButtonViaLlM failed:", err.message);
         return null;
     }
 }
