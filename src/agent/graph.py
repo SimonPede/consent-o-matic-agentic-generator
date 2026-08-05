@@ -59,7 +59,12 @@ def tool_node(state: dict) -> dict:
         
         if tool_call["name"] == "test_rule":
             state_updates["test_rule_count"] = state.get("test_rule_count", 0) + 1
-            state_updates["current_rule_draft"] = tool_call["args"].get("json_string")
+            
+            
+            #only overwrite current_rule_draft if a json_string was actually provided
+            submitted_json_string = tool_call["args"].get("json_string")
+            if submitted_json_string is not None:
+                state_updates["current_rule_draft"] = submitted_json_string
             
             try:
                 parsed_test_results = json.loads(tool_observation)
