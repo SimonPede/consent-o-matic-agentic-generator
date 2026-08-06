@@ -28,7 +28,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     url = state.get("url", "unknown")
     test_result = state.get("last_test_result") or {}
     settings_extracted = state.get("settings_extracted", False)
-    screenshot_info = state.get("screenshot_info", {})
+    screenshot_info = state.get("screenshot_info") or {}
     vision_banner_dismissed = screenshot_info.get("bannerDismissed")
     
     banner_status = test_result.get("bannerStatus", {})
@@ -134,6 +134,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "human_review_count": state.get("human_review_count", 0),
         "test_rule_count": state.get("test_rule_count", 0),
         "analyse_screenshot_count": state.get("analyse_screenshot_count", 0),
+        "last_error": state.get("last_error", ""),
         "final_test_error": final_test_error,
         "error_history": error_history,
         "duration_seconds": total_duration_seconds,
@@ -176,6 +177,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "human_review_count",
         "test_rule_count",
         "analyse_screenshot_count",
+        "last_error",
         "final_test_error",
         "error_history",
         "duration_seconds",
@@ -206,6 +208,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["human_review_count"],
         log_entry["test_rule_count"],
         log_entry["analyse_screenshot_count"],
+        log_entry["last_error"],
         log_entry["final_test_error"],
         json.dumps(log_entry["error_history"], default=str),
         log_entry["duration_seconds"],

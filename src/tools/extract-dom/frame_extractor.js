@@ -352,18 +352,34 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
             const firstClass = el.className && typeof el.className === "string" 
                 ? el.className.trim().split(" ")[0] : null;
-            const classCount = firstClass ? searchRoot.querySelectorAll(`.${firstClass}`).length : 0;
 
-            const selector = el.id ? `#${el.id}`
+            const escapedId = (el.id && typeof CSS !== "undefined" && typeof CSS.escape === "function")
+                ? CSS.escape(el.id)
+                : el.id;
+
+            const escapedFirstClass = (firstClass && typeof CSS !== "undefined" && typeof CSS.escape === "function")
+                ? CSS.escape(firstClass)
+                : firstClass;
+
+            let classCount = 0;
+            if (escapedFirstClass) {
+                try {
+                    classCount = searchRoot.querySelectorAll(`.${escapedFirstClass}`).length;
+                } catch (_error) {
+                    classCount = 0;
+                }
+            }
+
+            const selector = escapedId ? `#${escapedId}`
                 : el.getAttribute("aria-label") ? `[aria-label="${el.getAttribute("aria-label")}"]`
-                    : firstClass && classCount === 1 ? `.${firstClass}` //unique
-                        : firstClass && classCount <= 5 ? `.${firstClass}` //acceptable
+                    : escapedFirstClass && classCount === 1 ? `.${escapedFirstClass}` //unique
+                        : escapedFirstClass && classCount <= 5 ? `.${escapedFirstClass}` //acceptable
                             : el.tagName.toLowerCase();
 
-            selectorConfidence = el.id ? "very high"
+            selectorConfidence = escapedId ? "very high"
                 : el.getAttribute("aria-label") ? "high"
-                    : firstClass && classCount === 1 ? "medium"
-                        : firstClass ? "low" : "very low";
+                    : escapedFirstClass && classCount === 1 ? "medium"
+                        : escapedFirstClass ? "low" : "very low";
             
 
             /**
