@@ -1,10 +1,30 @@
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 
 URL = "https://gdprconsent.projects.cavi.au.dk/reports.php"
 N = 100
 
+BLOCKED_HOSTS = {"myprivacy.dpgmedia.nl"}
 EXCLUDE_ALL_COMMENTS = True
+
+def normalize_to_http(url: str) -> str:
+    url = url.strip()
+    if url.startswith("//"):
+        return f"https:{url}"
+    if not url.startswith(("http://", "https://")):
+        return f"https://{url}"
+    return url
+
+
+def extract_host_safe(url: str) -> str | None:
+    """Returns normalized hostname or None for malformed URLs."""
+    try:
+        host = urlparse(url).netloc.lower().rstrip(".")
+        return host or None
+    except ValueError:
+        #Some rows contain malformed hrefs (e.g. invalid IPv6-like patterns).
+        return None
 
 def fetch_sites(n=N, exclude_all_comments=EXCLUDE_ALL_COMMENTS):
     response = requests.get(URL, timeout=30)
@@ -31,6 +51,14 @@ def fetch_sites(n=N, exclude_all_comments=EXCLUDE_ALL_COMMENTS):
 
         link = cells[1].find("a")
         site = link["href"].strip() if link and link.get("href") else cells[1].get_text(strip=True)
+        
+        normalized_site = normalize_to_http(site)
+        host = extract_host_safe(normalized_site)
+        if host is None:
+            continue
+
+        if host in BLOCKED_HOSTS:
+            continue
 
         comment = cells[2].get_text(strip=True)
 
@@ -41,7 +69,7 @@ def fetch_sites(n=N, exclude_all_comments=EXCLUDE_ALL_COMMENTS):
             if "#nowayout" in comment:
                 continue
 
-        entries.append({"reports": reports, "site": site, "comment": comment})
+        entries.append({"reports": reports, "site": normalized_site, "comment": comment})
         
     return entries[:n]
 
@@ -56,12 +84,7 @@ if __name__ == "__main__":
     with open(output_path, "w", encoding="utf-8") as f:
         for entry in top_sites:
             site = entry["site"]
-
-            if site.startswith("//"):
-                site = f"https:{site}"
-            elif not site.startswith(("http://", "https://")):
-                site = f"https://{site}"
-                
+            
             f.write(site + "\n")
     
     print(f"\nWrote {len(top_sites)} URLs to {output_path}")
