@@ -455,8 +455,42 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             const hasActiveAlphaChannel = parseFloat(style.opacity) > 0.05;
 
             return hasFunctionalDimensions && 
-				style.visibility !== "hidden" && 
-				hasActiveAlphaChannel;
+					style.visibility !== "hidden" && 
+					hasActiveAlphaChannel;
+        }
+
+        function getElementActionText(element) {
+            return (
+                element.innerText.trim() ||
+                element.getAttribute("aria-label") ||
+                element.title ||
+                ""
+            ).trim();
+        }
+
+        function isRelevantAnchor(element) {
+            if (!element || element.tagName !== "A") {
+                return true;
+            }
+
+            const actionText = getElementActionText(element);
+            if (actionText.length > 0) {
+                return true;
+            }
+
+            const role = (element.getAttribute("role") || "").toLowerCase();
+            if (role === "button") {
+                return true;
+            }
+
+            const href = (element.getAttribute("href") || "").trim().toLowerCase();
+            const hasDialogSemantics = element.hasAttribute("aria-controls") || element.hasAttribute("aria-haspopup");
+
+            if (hasDialogSemantics && (href === "" || href === "#" || href.startsWith("javascript:"))) {
+                return true;
+            }
+
+            return false;
         }
 
         //Step 1: Try known CMP container selectors in the current frame.
@@ -488,11 +522,12 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", searchRoot)
                     .filter(element => isVisible(element))
                     .filter(element => element.tagName !== "INPUT") //Guard against misclassified form controls.
+                    .filter(element => isRelevantAnchor(element))
                     .map(element => {
                         const deepSelectorData = generateDeepSelector(element, searchRoot);
                         return {
                             type: "button or anchor",
-                            text: element.innerText.trim() || element.getAttribute("aria-label") || element.title || "",
+                            text: getElementActionText(element),
                             tag: element.tagName,
                             attributes: extractAllAttributes(element),
                             parentInfo: extractParentInfo(element),
@@ -590,11 +625,12 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn")
             .filter(element => isVisible(element))
             .filter(element => element.tagName !== "INPUT")
+            .filter(element => isRelevantAnchor(element))
             .map(element => {
                 const deepSelectorData = generateDeepSelector(element);
                 return {
                     type: "button or anchor",
-                    text: element.innerText.trim() || element.getAttribute("aria-label") || element.title || "",
+                    text: getElementActionText(element),
                     tag: element.tagName,
                     attributes: extractAllAttributes(element),
                     parentInfo: extractParentInfo(element),
