@@ -665,7 +665,11 @@ async function runTest(rule) {
         if (!isDetectorFailure) {
             try {
                 console.error("Capturing final audit screenshot for vision verification...");
-                auditScreenshot = await page.screenshot({ encoding: "base64" });
+                auditScreenshot = await page.screenshot({ 
+                    encoding: "base64",
+                    type: "jpeg",
+                    quality: 60 
+                });
             } catch (err) {
                 console.error("Failed to take audit screenshot:", err.message);
             }
