@@ -35,6 +35,7 @@ def tool_node(state: dict) -> dict:
     """
 
     results = []
+    supplemental_messages = []
     state_updates = {}
     
     for tool_call in state["messages"][-1].tool_calls:
@@ -81,18 +82,18 @@ def tool_node(state: dict) -> dict:
                     banner_still_visible_heuristic = parsed_test_results.get("bannerStatus", {}).get("audit", {}).get("heuristicBannerFound")
                         
                     if actual_error or banner_still_visible_heuristic == True:
-                        state_updates["messages"] = [HumanMessage(
+                        supplemental_messages.append(HumanMessage(
                             content=f"Visual audit after test: {json.dumps(vision_result)}"
-                        )]
+                        ))
                     
                 elif "No CMP detected" in actual_error:
-                    state_updates["messages"] = [HumanMessage(
+                    supplemental_messages.append(HumanMessage(
                         content=(
                             "DETECTOR FAILURE: 'No CMP detected' means your "
                             "presentMatcher or showingMatcher selector did NOT match "
                             "the banner. Fix your detector selectors FIRST, then test again."
                         )
-                    )]
+                    ))
                 
                 if actual_error:
                     state_updates["error_history"] = [actual_error]
@@ -123,7 +124,8 @@ def tool_node(state: dict) -> dict:
         
         results.append(ToolMessage(content=tool_observation, tool_call_id=tool_call["id"]))
             
-    return {"messages": results, **state_updates}
+    combined_messages = results + supplemental_messages
+    return {"messages": combined_messages, **state_updates}
 
 llm_node = make_llm_node(model_with_tools)
 
