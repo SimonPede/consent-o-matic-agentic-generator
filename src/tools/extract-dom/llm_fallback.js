@@ -16,6 +16,7 @@ function cleanHtml(html) {
 }
 
 const MAX_FALLBACK_HTML_CHARS = 70000;
+const LLM_FALLBACK_TIMEOUT_MS = 180000; //3min
 
 function buildEndpoint(baseUrl, suffix) {
     if (!baseUrl) {
@@ -24,6 +25,20 @@ function buildEndpoint(baseUrl, suffix) {
 
     const normalizedBase = baseUrl.trim().replace(/\/+$/, "");
     return `${normalizedBase}${suffix}`;
+}
+
+async function fetchWithTimeout(url, options, timeoutMs) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+        return await fetch(url, {
+            ...options,
+            signal: controller.signal,
+        });
+    } finally {
+        clearTimeout(timer);
+    }
 }
 
 /**
@@ -35,6 +50,11 @@ function buildEndpoint(baseUrl, suffix) {
  * @returns {{selector: string, text: string}|null}
  */
 async function findSettingsButtonViaLlm(html) {
+    if (!html || typeof html !== "string" || html.trim().length === 0) {
+        console.error("findSettingsButtonViaLlM skipped: filteredHtml missing/omitted.");
+        return null;
+    }
+
     const llmBackend = (process.env.LLM_BACKEND || "litellm").trim().toLowerCase();
 
     const liteLlmUrl = process.env.LITELLM_BASE_URL || "";
@@ -81,14 +101,14 @@ async function findSettingsButtonViaLlm(html) {
                 headers.Authorization = `Bearer ${liteLlmApiKey}`;
             }
 
-            const response = await fetch(liteLlmEndpoint, {
+            const response = await fetchWithTimeout(liteLlmEndpoint, {
                 method: "POST",
                 headers,
                 body: JSON.stringify({
                     model: liteLlmModelName,
                     messages: [{ role: "user", content: prompt }],
                 })
-            });
+            }, LLM_FALLBACK_TIMEOUT_MS);
 
             if (!response.ok) {
                 const errorBody = await response.text();
@@ -113,7 +133,7 @@ async function findSettingsButtonViaLlm(html) {
                 headers.Authorization = `Bearer ${ollamaBearerToken}`;
             }
 
-            const response = await fetch(ollamaEndpoint, {
+            const response = await fetchWithTimeout(ollamaEndpoint, {
                 method: "POST",
                 headers,
                 body: JSON.stringify({
@@ -121,7 +141,7 @@ async function findSettingsButtonViaLlm(html) {
                     prompt,
                     stream: false
                 })
-            });
+            }, LLM_FALLBACK_TIMEOUT_MS);
 
             if (!response.ok) {
                 const errorBody = await response.text();
@@ -147,6 +167,10 @@ async function findSettingsButtonViaLlm(html) {
         console.error(`LLM suggested settings button - selector: "${parsed.selector}", text: "${parsed.text}"`);
         return parsed;
     } catch (err) {
+        if (err && err.name === "AbortError") {
+            console.error(`findSettingsButtonViaLlM timed out after ${LLM_FALLBACK_TIMEOUT_MS}ms`);
+            return null;
+        }
         console.error("findSettingsButtonViaLlM failed:", err.message);
         return null;
     }

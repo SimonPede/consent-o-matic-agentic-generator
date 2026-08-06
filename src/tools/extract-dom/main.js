@@ -264,7 +264,8 @@ async function extractStructuredDom(url) {
                 }
 
                 if (shouldTryLlmFallback) {
-                    const llmSettingsButton = await findSettingsButtonViaLlm(result.data.filteredHtml);
+                    const llmFallbackHtml = result.data.llmFallbackHtml || result.data.filteredHtml;
+                    const llmSettingsButton = await findSettingsButtonViaLlm(llmFallbackHtml);
 
                     if (llmSettingsButton) {
                         result.settings = await clickAndExtractSettings(result.frame, llmSettingsButton, page, cmpType);
@@ -283,6 +284,7 @@ async function extractStructuredDom(url) {
 
             //frame object needs to be deleted as it is very large and only necessary for clicking the settings-button
             delete result.frame;
+            delete result.data.llmFallbackHtml;
         }
 
         printExtractionSummary(results);

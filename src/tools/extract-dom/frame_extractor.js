@@ -161,9 +161,33 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         function extractAllAttributes(element) {
             const attributes = {};
             for (const attr of element.attributes) {
-                attributes[attr.name] = attr.value;
+                if (attr.name === "class") {
+                    attributes[attr.name] = attr.value
+                        .trim()
+                        .split(/\s+/)
+                        .filter(Boolean)
+                        .slice(0, 7)
+                        .join(" ");
+                } else {
+                    attributes[attr.name] = attr.value;
+                }
             }
             return attributes;
+        }
+
+        function compactClassName(classNameValue) {
+            if (typeof classNameValue !== "string") {
+                return classNameValue || null;
+            }
+
+            const normalized = classNameValue
+                .trim()
+                .split(/\s+/)
+                .filter(Boolean)
+                .slice(0, 7)
+                .join(" ");
+
+            return normalized || null;
         }
 
         //Prefer ARIA-based label resolution first.
@@ -258,7 +282,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 return {
                     tag: "SHADOW-HOST",
                     id: rootNode.host ? rootNode.host.id : null,
-                    className: rootNode.host ? rootNode.host.className : "shadow-root-boundary",
+                    className: rootNode.host ? compactClassName(rootNode.host.className) : "shadow-root-boundary",
                     selector: rootNode.host ? 
                         (rootNode.host.id ? `#${rootNode.host.id}` : null) : null
                 };
@@ -270,7 +294,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
             return {
                 tag: parentElement ? parentElement.tagName : null,
                 id: parentElement ? parentElement.id : null,
-                className: parentElement ? parentElement.className : null,
+                className: parentElement ? compactClassName(parentElement.className) : null,
                 selector: parentElement ? 
                     (parentElement.id ? `#${parentElement.id}` : 
                     parentElement.className ? `.${parentElement.className.trim().split(/\s+/)[0]}` : null) 
@@ -278,7 +302,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 grandparent: grandparentElement ? {
                     tag: grandparentElement.tagName,
                     id: grandparentElement.id || null,
-                    className: grandparentElement.className || null,
+                    className: compactClassName(grandparentElement.className),
                     selector: grandparentElement.id ? `#${grandparentElement.id}` :
                             grandparentElement.className ? `.${grandparentElement.className.trim().split(/\s+/)[0]}` : null
                 } : null
@@ -614,9 +638,19 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
     if (result.html) {
         const cleaned = cleanHtml(result.html);
 
-		//Cap payload to 70k chars to control prompt size and token budget.
-        result.filteredHtml = cleaned.slice(0, 70000);
-		
+		//For unusually large pages, remove HTML payload entirely to avoid context blow-ups.
+        if (cleaned.length > 100000) {
+            result.filteredHtml = "";
+            result.llmFallbackHtml = cleaned.slice(0, 70000);
+            result.filteredHtmlOmitted = true;
+            result.filteredHtmlOriginalChars = cleaned.length;
+        } else {
+            //Cap payload to 70k chars to control prompt size and token budget.
+            result.filteredHtml = cleaned.slice(0, 70000);
+            result.filteredHtmlOmitted = false;
+            result.filteredHtmlOriginalChars = cleaned.length;
+        }
+			
         delete result.html;
     }
 
