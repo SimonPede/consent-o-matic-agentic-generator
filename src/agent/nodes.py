@@ -14,6 +14,20 @@ from src.prompts.system_prompt import get_system_prompt
 
 logger = logging.getLogger(__name__)
 
+
+def _extract_dom_error_from_stderr(stderr_text: str) -> str:
+    """Extracts the most useful extract-dom failure line from stderr output."""
+    if not stderr_text:
+        return ""
+
+    stderr_lines = [line.strip() for line in stderr_text.splitlines() if line.strip()]
+
+    for line in stderr_lines:
+        if "extractStructuredDom critical execution failure" in line:
+            return line
+
+    return stderr_lines[-1] if stderr_lines else ""
+
 def write_extract_dom_log(url: str, command: list[str], result: subprocess.CompletedProcess, duration_seconds: float, parsed_output=None, parse_error: str | None = None) -> None:
     """Writes a structured extract-dom execution log to data/logs/extract-dom/."""
     try:
@@ -59,12 +73,42 @@ def extraction_node(state: AgentState) -> dict:
         os.path.dirname(__file__), "..", "tools", "extract-dom", "main.js"
     )
     extract_cmd = ["node", extract_dom_path, url]
+    extract_timeout_seconds = 450
     extract_start_time = time.perf_counter()
-    result = subprocess.run(
-        extract_cmd,
-        capture_output=True,
-        text=True
-    )
+    try:
+        result = subprocess.run(
+            extract_cmd,
+            capture_output=True,
+            text=True,
+            timeout=extract_timeout_seconds,
+        )
+    except subprocess.TimeoutExpired as timeout_error:
+        extract_duration_seconds = round(time.perf_counter() - extract_start_time, 2)
+        timeout_stderr = (
+            f"extract_dom.js timed out after {extract_timeout_seconds}s for URL: {url}"
+        )
+
+        timeout_result = subprocess.CompletedProcess(
+            args=extract_cmd,
+            returncode=124,
+            stdout=(timeout_error.stdout or "") if isinstance(timeout_error.stdout, str) else "",
+            stderr=timeout_stderr,
+        )
+
+        write_extract_dom_log(
+            url=url,
+            command=extract_cmd,
+            result=timeout_result,
+            duration_seconds=extract_duration_seconds,
+            parsed_output=None,
+            parse_error=timeout_stderr,
+        )
+
+        print(timeout_stderr)
+        return {
+            "last_error": timeout_stderr,
+            "extraction_duration_seconds": extract_duration_seconds,
+        }
 
     extract_duration_seconds = round(time.perf_counter() - extract_start_time, 2)
 
@@ -93,8 +137,9 @@ def extraction_node(state: AgentState) -> dict:
 
     if result.returncode != 0:
         print("extraction_node, extract_tool returned 1:", result.stderr)
+        concise_error = _extract_dom_error_from_stderr(result.stderr)
         return {
-            "last_error": result.stderr,
+            "last_error": concise_error or result.stderr,
             "extraction_duration_seconds": extract_duration_seconds,
         }
 
@@ -140,8 +185,13 @@ def extraction_node(state: AgentState) -> dict:
             "extraction_duration_seconds": extract_duration_seconds,
         }
     else:
+        stderr_error = _extract_dom_error_from_stderr(result.stderr)
+        empty_result_error = "extraction_node: extract_dom.js returned empty result"
+        if stderr_error:
+            empty_result_error = f"{empty_result_error} | {stderr_error}"
+
         return {
-            "last_error": "extraction_node: extract_dom.js returned empty result",
+            "last_error": empty_result_error,
             "extraction_duration_seconds": extract_duration_seconds,
             "messages": [
                 HumanMessage(content=(

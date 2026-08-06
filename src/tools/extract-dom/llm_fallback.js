@@ -59,11 +59,11 @@ async function findSettingsButtonViaLlm(html) {
 
     const liteLlmUrl = process.env.LITELLM_BASE_URL || "";
     const liteLlmApiKey = process.env.LITELLM_API_KEY || "";
-    const liteLlmModelName = process.env.LITELLM_MODEL_NAME || process.env.LLM_MODEL_NAME || "";
+    const liteLlmModelName = process.env.LLM_FALLBACK_NAME || "";
 
     const ollamaUrl = process.env.OLLAMA_BASE_URL || "";
     const ollamaBearerToken = process.env.OLLAMA_BEARER_TOKEN || "";
-    const ollamaModelName = process.env.OLLAMA_MODEL_NAME || process.env.LLM_MODEL_NAME || "";
+    const ollamaModelName = process.env.OLLAMA_MODEL_NAME || process.env.LLM_FALLBACK_NAME || "";
 
     const liteLlmEndpoint = buildEndpoint(liteLlmUrl, "/chat/completions");
     const ollamaEndpoint = buildEndpoint(ollamaUrl, "/api/generate");

@@ -5,7 +5,12 @@ from urllib.parse import urlparse
 URL = "https://gdprconsent.projects.cavi.au.dk/reports.php"
 N = 100
 
-BLOCKED_HOSTS = {"myprivacy.dpgmedia.nl"}
+BLOCKED_HOSTS = [
+    "myprivacy.dpgmedia.nl", #not supported anymore
+    "www.heise.de", #known dual-iframe pattern
+    "www.spiegel.de", #known dual-iframe pattern
+    "mdjildafknihdffpkfmmpnpoiajfjnjd"
+]
 EXCLUDE_ALL_COMMENTS = True
 
 def normalize_to_http(url: str) -> str:

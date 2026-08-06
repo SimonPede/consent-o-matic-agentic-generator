@@ -5,6 +5,8 @@
  * 2. "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs" (Kirkman et al., 2023), Appendix B
  * * Utilized in `calculateFrameScore()` to instantly identify explicit CMP frames.
  * Matching any of these targeted selectors grants a maximum heuristic bonus (+10).
+ * 
+ * A several I added myself during development, these are all marked as such
  */
 const CMP_SELECTORS_MAP = {
     //8works
@@ -270,9 +272,12 @@ const CMP_SELECTORS_MAP = {
     '[class*="module-notification-137"]' : "Unidentified CMP",
     '[id*="cookieNoticeContent"]' : "Unidentified CMP",
     '[class*="cookieNoticeContent"]' : "Unidentified CMP",
-    // Unidentified CMP 006 (ends with "popup-text" --> generic, which could lead to false positives)
+    //Unidentified CMP 006 (ends with "popup-text" --> generic, which could lead to false positives)
     '[id$="popup-text"]' : "Unidentified CMP",
     '[class$="popup-text"]' : "Unidentified CMP",
+    //ones I added during development
+    '[id*="cos-banner"]' : "Unidentified CMP",
+    '[class*="page-notice__main"]' : "Unidentified CMP",
 
     //Usercentrics
     //changes i made myself

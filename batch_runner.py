@@ -137,7 +137,7 @@ def run_single(agent, url: str) -> None:
     state_values = dict(final_state.values)
     state_values["aborted_max_resumes"] = False
     
-    log_run(final_state.values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
+    log_run(state_values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
 
 
 def run_single_in_subprocess(url: str) -> None:
@@ -189,6 +189,23 @@ def run_single_with_timeout(url: str, timeout_seconds: int) -> None:
 
     if process.exitcode not in (0, None):
         print(f"Worker for {url} exited with code {process.exitcode}.")
+        duration = time.perf_counter() - start_time
+        log_run(
+            {
+                "url": url,
+                "llm_calls": 0,
+                "last_error": f"ABORTED: worker crashed (exit code {process.exitcode})",
+                "final_result": None,
+                "last_test_result": None,
+                "human_review_count": 0,
+                "cmp_type": "",
+                "aborted_worker_crash": True,
+                "extraction_duration_seconds": 0.0,
+            },
+            duration_seconds=duration,
+            model_name=MODEL_NAME,
+            few_shot_config=FEW_SHOT_CONFIG,
+        )
 
 def main() -> None:
     """
@@ -197,9 +214,9 @@ def main() -> None:
     Iterates over evaluation_urls and runs the agent for each URL sequentially.
     All runs are logged to data/logs/runs/ (JSON) and data/logs/evaluation_summary.csv.
     """
-    url_file_path = "evaluation/urls.txt"
+    url_file_path = "evaluation/reported_urls.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
-    timeout_seconds = 600
+    timeout_seconds = 900
     
     print(f"Batch Evaluation started: {len(evaluation_urls)} URLs")
     print(f"Model: {MODEL_NAME} | Few-Shot: {FEW_SHOT_CONFIG}\n")

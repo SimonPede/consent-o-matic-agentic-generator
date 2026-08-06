@@ -1,9 +1,7 @@
 https://arstechnica.com
-https://www.heise.de
 https://www.imdb.com
 https://www.amazon.de
 https://www.kleinanzeigen.de
-https://www.spiegel.de
 https://www.bbc.co.uk
 https://www.zeit.de
 https://www.samsung.com
@@ -98,3 +96,5 @@ https://www.foreca.fi
 https://www.doctolib.fr
 https://www.ryanair.com
 https://www.metoffice.gov.uk
+https://www.faz.net
+https://www.diy.com
