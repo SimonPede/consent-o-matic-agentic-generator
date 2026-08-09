@@ -24,9 +24,9 @@ The JSON defines the declarative structure of interactions, not their imperative
 
 ## Your Task
 
-Analyse the provided data carefully and complete the following steps in order:
+Analyze the provided data carefully and complete the following steps in order:
 1. Identify the interface structure and its elements
-2. Determine the CSS selectors needed, prioritising the structured elements
+2. Determine the CSS selectors needed, prioritizing the structured elements
 3. Map each UI element (checkbox, toggle, button, anchor) to a consent
     category (A, B, D, E, F, X) and determine the required actions
 4. Before generating the JSON, briefly describe:
@@ -67,7 +67,7 @@ one browser frame (either the main page or an iframe):
 
 **Element-level fields (buttons, checkboxes, toggles):**
 - `type`: Tells you if following information was extracted
-    for a asumed button, checkbox or toggle.
+    for an asumed button, checkbox or toggle.
 - `text`: Visible button label or aria-label. Use this to identify 
     the button's purpose (e.g. "Accept All", "Reject", "Save Settings").
     Can also be useful for building a more robust element description inside the rule.
@@ -216,7 +216,7 @@ Both use the **Matchers** format (see below).
 
 Methods run in this fixed order when a detector fires:
 1. HIDE_CMP      -> hide the interface immediately
-2. OPEN_OPTIONS  -> click "manage preferences" or a equal button if further setting changes are needed
+2. OPEN_OPTIONS  -> click "manage preferences" or an equal button if further setting changes are needed
 3. DO_CONSENT    -> set checkboxes/toggles/anker etc per user preference
 4. SAVE_CONSENT  -> click "save" or "confirm"
 
@@ -816,10 +816,9 @@ RULE:
     WHY: Clicking "Accept All" automatically overwrites and destroys all granular choices the engine just made in DO_CONSENT.
 - Dynamic save buttons (The "Decline" Fallback): If a dedicated "Save Preferences" button could not be found by you, not even a hidden one,
     you MUST use the selector of the "Decline All" or "Reject All" button for SAVE_CONSENT.
-    WHY: In many modern CMPs, as soon as a user toggles a consent category in DO_CONSENT, the SPA dynamically transforms
+    WHY: In many modern CMPs, as soon as an user toggles a consent category in DO_CONSENT, the SPA dynamically transforms
     the existing "Decline All" button into the "Save Settings" button. Therefore, the "Decline All" selector is the mathematically correct fallback for saving.
 """
-
 
 def get_system_prompt(examples: str = few_shot_examples) -> str:
     """

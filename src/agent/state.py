@@ -18,5 +18,5 @@ class AgentState(TypedDict):
     current_rule_draft: str
     last_test_result: dict | None
     test_rule_count: int
-    analyse_screenshot_count: int
+    analyze_screenshot_count: int
     final_result: dict | None

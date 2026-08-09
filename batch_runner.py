@@ -71,7 +71,7 @@ def run_single(agent, url: str) -> None:
         "last_test_result": None,
         "error_history": [],
         "test_rule_count": 0,
-        "analyse_screenshot_count": 0,
+        "analyze_screenshot_count": 0,
         "final_result": None,
     }
     

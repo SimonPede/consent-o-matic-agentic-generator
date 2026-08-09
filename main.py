@@ -42,7 +42,7 @@ def main() -> None:
         "current_rule_draft": "",
         "last_test_result": None,
         "test_rule_count": 0,
-        "analyse_screenshot_count": 0,
+        "analyze_screenshot_count": 0,
         "final_result": None,
     }
 

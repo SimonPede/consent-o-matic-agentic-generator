@@ -13,12 +13,12 @@ from src.agent.nodes import (
 
 from src.agent.state import AgentState
 from src.agent.routing import route_after_llm, route_after_rule
-from src.tools.analyse_screenshot import analyse_screenshot
+from src.tools.analyze_screenshot import analyze_screenshot
 from src.tools.test_rule import test_rule
 from src.tools.request_human_review import request_human_review
 from src.utils import call_vision
 
-tools = [test_rule, request_human_review, analyse_screenshot]
+tools = [test_rule, request_human_review, analyze_screenshot]
 tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
@@ -108,8 +108,8 @@ def tool_node(state: dict) -> dict:
                 state_updates["error_history"] = [actual_error]
                 state_updates["last_error"] = actual_error
             
-        elif tool_call["name"] == "analyse_screenshot":
-            state_updates["analyse_screenshot_count"] = state.get("analyse_screenshot_count", 0) + 1
+        elif tool_call["name"] == "analyze_screenshot":
+            state_updates["analyze_screenshot_count"] = state.get("analyze_screenshot_count", 0) + 1
             try:
                 parsed_analysis = json.loads(tool_observation)
                 state_updates["screenshot_info"] = parsed_analysis

@@ -24,7 +24,7 @@ from langchain_core.tools import tool
 #    code-generation LLM and the local vision model (Ollama) completely independently.
 
 @tool
-def analyse_screenshot(url: str) -> str:
+def analyze_screenshot(url: str) -> str:
     """
     Captures a screenshot of the INITIAL landing state (fresh page load) of the given URL 
     and performs visual analysis of the cookie consent banner using a multimodal LLM.
@@ -35,7 +35,7 @@ def analyse_screenshot(url: str) -> str:
     - Button texts are missing or obfuscated in the HTML but may be 
         visible in the rendered page
     - You need to verify the visual layout of the banner (e.g. which 
-        buttons are visually prominent, their colour or positioning)
+        buttons are visually prominent, their color or positioning)
     - The structured extraction returned no elements but a banner 
         may still be present in the rendered UI
     
@@ -57,13 +57,13 @@ def analyse_screenshot(url: str) -> str:
     Returns:
         Structured JSON string containing: bannerVisible (bool), bannerDismissed (bool), 
         bannerPosition (string), cmpType(string), settingsButtonVisible (bool),
-        buttons (list of objects with text, colour, and position).
+        buttons (list of objects with text, color, and position).
     """
     llm_backend = os.getenv("LLM_BACKEND", "litellm").strip().lower()
     
     print("Screenshot tool started!")
     
-    script_path = os.path.join(os.path.dirname(__file__), "analyse_screenshot.js")
+    script_path = os.path.join(os.path.dirname(__file__), "analyze_screenshot.js")
 
     result = subprocess.run(
         ["node", script_path, url],
@@ -105,7 +105,7 @@ def analyse_screenshot(url: str) -> str:
         "buttons": [
             {
                 "text": visible button label,
-                "colour": dominant button colour,
+                "color": dominant button color,
                 "position": "left", "center", "right"
             }
         ]

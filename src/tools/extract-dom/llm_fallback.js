@@ -72,7 +72,7 @@ async function findSettingsButtonViaLlm(html) {
     const preparedHtml = cleanHtml(String(html || "")).slice(0, MAX_FALLBACK_HTML_CHARS);
 
     const prompt = `
-    You are analysing HTML of a website.
+    You are analyzing HTML of a website.
     Find the button or link that opens the settings or preferences page of the consent banner.
     Return ONLY a valid JSON object with exactly two fields, nothing else.
     No explanation, no markdown, no code blocks.

@@ -33,7 +33,7 @@ def call_vision(base64_image: str) -> dict:
         "buttons": [
             {
                 "text": visible button label (e.g., "Save Choices", "Confirm My Selection", "Back"),
-                "colour": dominant button colour,
+                "color": dominant button color,
                 "position": "left", "center", "right"
             }
         ]
