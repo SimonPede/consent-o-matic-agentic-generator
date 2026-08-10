@@ -97,8 +97,11 @@ LLM_BACKEND=litellm
 LITELLM_MODEL_NAME=openai/natai/kimi-k2.5
 OLLAMA_MODEL_NAME=gemma4:31b
 
-#Vision-model configuration (used by vision tools only), e.g.:
+#Vision-model configuration (used by vision tools only)
 VISION_MODEL_NAME=natai/kimi-k2.5
+
+#LLM fallback model for extract-dom/settings detection (text-only fallback)
+LLM_FALLBACK_NAME=natai/kimi-k2.5
 
 #Provider endpoints/credentials
 OLLAMA_BASE_URL=http://snet-server:1234
@@ -116,8 +119,10 @@ LANGSMITH_PROJECT="your project"
 
 Notes:
 - `LLM_BACKEND` controls which provider API is called (`litellm` or `ollama`).
-- Text generation uses `LITELLM_MODEL_NAME` or `OLLAMA_MODEL_NAME` (depending on backend).
+- Text generation in the main agent uses `LITELLM_MODEL_NAME` or `OLLAMA_MODEL_NAME` (depending on backend).
 - Vision analysis uses **only** `VISION_MODEL_NAME`.
+- `LLM_FALLBACK_NAME` is used by the extract-dom settings fallback (`llm_fallback.js`) and is intentionally separated from the main agent model.
+- In this setup, the SDK-based main agent call typically uses `openai/...` model naming, while raw HTTP fallback/vision calls use `natai/...` model group naming.
 
 > All runs are automatically traced to LangSmith when `LANGSMITH_TRACING=true` is set. To disable tracing, set it to `false` — no data will leave your machine.
 
