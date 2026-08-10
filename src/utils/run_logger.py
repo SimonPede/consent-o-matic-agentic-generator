@@ -83,7 +83,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
                 if "name" in method:
                     used_methods.append(method["name"])
     
-    #resolution_type classifies the outcome of a successful run into one of four categories.
+    #strategy_type describes WHICH strategy the generated rule used (independent of success).
     #It distinguishes between genuinely granular consent handling and simpler fallback strategies,
     #which auto_success alone cannot capture (a banner dismissed via "Reject All" also counts as success)
     #
@@ -93,20 +93,20 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
     #DECLINE_FALLBACK_OR_BINARY: No DO_CONSENT, no settings extracted --> either the banner had no
     #                           granular options (binary banner), or settings extraction failed silently.
     #                           Requires manual verification to distinguish.
-    #FAILED:                    auto_success is False --> banner not dismissed or no valid rule produced.
     #UNKNOWN:                   Ruleset present but no recognizable method names found (should not occur).
-    resolution_type = ""
-    if not auto_success:
-        resolution_type = "FAILED"
-    elif "DO_CONSENT" in used_methods:
-        resolution_type = "GRANULAR_CONSENT"
+    strategy_type = ""
+    if "DO_CONSENT" in used_methods:
+        strategy_type = "GRANULAR_CONSENT"
     elif "SAVE_CONSENT" in used_methods:
         if settings_extracted:
-            resolution_type = "DECLINE_FALLBACK"
+            strategy_type = "DECLINE_FALLBACK"
         else:
-            resolution_type = "DECLINE_FALLBACK_OR_BINARY"
+            strategy_type = "DECLINE_FALLBACK_OR_BINARY"
     else:
-        resolution_type = "UNKNOWN"
+        strategy_type = "UNKNOWN"
+
+    #resolution_type is pure run outcome.
+    resolution_type = "SUCCESS" if auto_success else "FAILED"
         
     extraction_duration_seconds = round(state.get("extraction_duration_seconds", 0), 2)
     total_duration_seconds = round(duration_seconds, 2)
@@ -123,6 +123,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "auto_success": auto_success,
         "aborted_max_resumes": state.get("aborted_max_resumes", False), #only set when using the `batch_runner.py`
         "resolution_type": resolution_type,
+        "strategy_type": strategy_type,
         "verified": None,  #Manual override placeholder for ground-truth audits
         "cmp_type": state.get("cmp_type", ""),
         "settings_extracted": settings_extracted,
@@ -166,6 +167,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "auto_success",
         "aborted_max_resumes",
         "resolution_type",
+        "strategy_type",
         "verified",
         "cmp_type",
         "settings_extracted",
@@ -197,6 +199,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["auto_success"],
         log_entry["aborted_max_resumes"],
         log_entry["resolution_type"],
+        log_entry["strategy_type"],
         log_entry["verified"],
         log_entry["cmp_type"],
         log_entry["settings_extracted"],

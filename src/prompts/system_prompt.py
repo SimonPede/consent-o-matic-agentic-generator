@@ -770,7 +770,7 @@ Do NOT repeat selectors that have already failed.
 If you receive a "Visual audit after test: {...}" message, use it to understand
 the current page state. If bannerVisible is true, the interface is most likely still present.
 Use the buttons list to identify elements you missed, identify their text and understand which
-state the the interface is after your rule was applied.
+state the interface is after your rule was applied.
 
 If after several revisions (5 or more) no working rule is found,
 explicitly state what you tried and why it failed -
