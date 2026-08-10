@@ -506,17 +506,21 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
         let maxInteractiveElements = -1;
 
         for (const selector of selectors) {
-            
-            //`document.querySelector()` is intentionally used here for performance.
-            //CMP host containers are expected in Light DOM; deep traversal is applied
-            //later for interactive elements within the selected container.
-            const host = document.querySelector(selector);
+            //Some CMPs render multiple panels with the same container selector
+            //(e.g. overview + settings) and also dont remove the overview container.
+            //--> evaluate all matches and pick the most interactive one instead of only taking the first match.
+            const hosts = Array.from(document.querySelectorAll(selector));
 
-            //Do not exclude `header`/`footer`: some CMPs place primary controls there.
-            if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
-				continue;
-			}
-        
+            if (!hosts.length) {
+                continue;
+            }
+
+            for (const host of hosts) {
+                //Do not exclude `header`/`footer`: some CMPs place primary controls there.
+                if (!host || ["SCRIPT", "STYLE", "LINK", "META"].includes(host.tagName)) {
+                    continue;
+                }
+
                 const searchRoot = host.shadowRoot || host;
                 
                 const buttons = querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", searchRoot)
@@ -602,11 +606,12 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         html: tempDiv.innerHTML
                     };
                 }
-            }; //end of for-loop
-
-            if (bestResult) {
-                return bestResult;
             }
+        } //end selector-loop
+
+        if (bestResult) {
+            return bestResult;
+        }
         
 		//Step 2: generic fallback when no known CMP selector matches.
         

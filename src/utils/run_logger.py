@@ -231,4 +231,4 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
             writer.writerow(csv_headers)
         writer.writerow(csv_row)
     
-    print(f"Run logged: {filename} | success={auto_success} | resolution={resolution_type} | llm_calls={log_entry['llm_calls']}")
+    print(f"Run logged: {filename} | success={auto_success} | strategy_type={strategy_type} | llm_calls={log_entry['llm_calls']}")

@@ -365,7 +365,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
 
                 return settings;
             } else {
-                console.error("Settings-page seems to have no input elements! A False Positive after the click?!");
+                console.error("Settings-page seems to have nearly no input elements! A false Ppositive after the click?!");
                 await Promise.allSettled([...stablePromises.values()]);
                 
                 return null;
