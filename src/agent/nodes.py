@@ -13,7 +13,7 @@ from src.agent.state import AgentState
 from src.prompts.system_prompt import get_system_prompt
 
 logger = logging.getLogger(__name__)
-
+KEEP_LAST_THINKING_BLOCKS = max(0, int(os.getenv("KEEP_LAST_THINKING_BLOCKS", "2")))
 
 def _extract_dom_error_from_stderr(stderr_text: str) -> str:
     """Extracts the most useful extract-dom failure line from stderr output."""
@@ -27,6 +27,72 @@ def _extract_dom_error_from_stderr(stderr_text: str) -> str:
             return line
 
     return stderr_lines[-1] if stderr_lines else ""
+
+
+def _copy_message_with_content(message, content):
+    if hasattr(message, "model_copy"):
+        return message.model_copy(update={"content": content})
+    if hasattr(message, "copy"):
+        return message.copy(update={"content": content})
+    return message
+
+
+def _trim_old_thinking_blocks(messages, keep_last_thinking_blocks: int):
+    """Keeps only the last N `thinking` blocks across full history.
+
+    All non-thinking blocks (`text`, tool outputs, etc.) are preserved.
+    """
+    if keep_last_thinking_blocks < 0:
+        keep_last_thinking_blocks = 0
+
+    thinking_positions = []
+    for message_index, message in enumerate(messages):
+        content = getattr(message, "content", None)
+        if not isinstance(content, list): #ollama output format gets ignored due to a lack of seperate thinking blocks
+            continue
+
+        for block_index, block in enumerate(content):
+            if isinstance(block, dict) and block.get("type") == "thinking":
+                thinking_positions.append((message_index, block_index))
+
+    if keep_last_thinking_blocks > 0 :
+        keep_positions = set(thinking_positions[-keep_last_thinking_blocks:])
+    else:
+        keep_positions = set()
+
+    trimmed_messages = []
+    removed_thinking_blocks = 0
+
+    for message_index, message in enumerate(messages):
+        content = getattr(message, "content", None)
+        if not isinstance(content, list):
+            trimmed_messages.append(message)
+            continue
+
+        new_content = []
+        for block_index, block in enumerate(content):
+            if not isinstance(block, dict):
+                new_content.append(block)
+                continue
+
+            if block.get("type") != "thinking":
+                new_content.append(block)
+                continue
+
+            if (message_index, block_index) in keep_positions:
+                new_content.append(block)
+            else:
+                removed_thinking_blocks += 1
+
+        trimmed_messages.append(_copy_message_with_content(message, new_content))
+
+    if removed_thinking_blocks > 0:
+        print(
+            f"Trimmed {removed_thinking_blocks} old thinking blocks "
+            f"(kept last {keep_last_thinking_blocks})."
+        )
+
+    return trimmed_messages
 
 def write_extract_dom_log(url: str, command: list[str], result: subprocess.CompletedProcess, duration_seconds: float, parsed_output=None, parse_error: str | None = None) -> None:
     """Writes a structured extract-dom execution log to data/logs/extract-dom/."""
@@ -205,8 +271,12 @@ def make_llm_node(model_with_tools):
     def llm_node(state: AgentState):
         try:
             system_prompt = SystemMessage(content=get_system_prompt())
+            sanitized_messages = _trim_old_thinking_blocks(
+                state["messages"],
+                KEEP_LAST_THINKING_BLOCKS,
+            )
             response = model_with_tools.invoke(
-                [system_prompt] + state["messages"]
+                [system_prompt] + sanitized_messages
             )
             
             if isinstance(response.content, list):

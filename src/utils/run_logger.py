@@ -3,7 +3,14 @@ import os
 import csv
 from datetime import datetime
 
-def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  few_shot_config: str = "unknown") -> None:
+def log_run(
+    state: dict,
+    duration_seconds: float,
+    model_name: str = "unknown",
+    few_shot_config: str = "unknown",
+    overall_timeout_seconds: int | None = None,
+    aborted_max_resumes: bool | None = None,
+) -> None:
     """
     Persists the evaluation metadata of a completed agent run.
 
@@ -121,7 +128,8 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "model_used": model_name,
         "few_shot_config": few_shot_config,
         "auto_success": auto_success,
-        "aborted_max_resumes": state.get("aborted_max_resumes", False), #only set when using the `batch_runner.py`
+        "aborted_max_resumes": aborted_max_resumes, #only set when using the `batch_runner.py`
+        "overall_timeout_seconds": overall_timeout_seconds, #only set when using the `batch_runner.py`
         "resolution_type": resolution_type,
         "strategy_type": strategy_type,
         "verified": None,  #Manual override placeholder for ground-truth audits
@@ -166,6 +174,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         "few_shot_config",
         "auto_success",
         "aborted_max_resumes",
+        "overall_timeout_seconds",
         "resolution_type",
         "strategy_type",
         "verified",
@@ -198,6 +207,7 @@ def log_run(state: dict, duration_seconds: float, model_name: str = "unknown",  
         log_entry["few_shot_config"],
         log_entry["auto_success"],
         log_entry["aborted_max_resumes"],
+        log_entry["overall_timeout_seconds"],
         log_entry["resolution_type"],
         log_entry["strategy_type"],
         log_entry["verified"],

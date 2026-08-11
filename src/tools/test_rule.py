@@ -126,6 +126,8 @@ def test_rule(url: str, json_string: str) -> str:
         
         #Debug logging for process monitoring
         print(f"STDOUT: {result.stdout[:400]}")
+        if os.getenv("TEST_RULE_BANNER_DEBUG") == "1" and result.stderr:
+            print(f"STDERR: {result.stderr[:4000]}")
 
         lines = [line for line in result.stdout.strip().splitlines() if line]
         
