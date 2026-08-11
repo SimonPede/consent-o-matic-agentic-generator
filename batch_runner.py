@@ -225,7 +225,7 @@ def main() -> None:
     """
     url_file_path = "evaluation/reported_urls.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
-    timeout_seconds = 1500 #25min
+    timeout_seconds = 1800 #30min
     
     print(f"Batch Evaluation started: {len(evaluation_urls)} URLs")
     print(f"Model: {MODEL_NAME} | Few-Shot: {FEW_SHOT_CONFIG}\n")
