@@ -4,6 +4,7 @@ const puppeteer = require("puppeteer");
 const CMP_SELECTORS_MAP = require("../utils/cmp_selectors_map");
 const waitForCmpUi = require("../utils/wait_for_cmp_ui");
 const WORD_BOX_TRIGGERS = require("../utils/observatory-corpus/word_box_triggers");
+const BANNER_DEBUG = process.env.TEST_RULE_BANNER_DEBUG === "1";
 
 //----------------------------------------------------------------------
 //Acknowledgements: Special thanks to Janus for architectural assistance.
@@ -30,7 +31,7 @@ const COM_FILES = [
 async function scanAllFramesForBanner(page) {
     let heuristicFound = false;
     for (const frame of page.frames()) {
-        if (await frameHasBanner(frame)) {
+        if (await frameHasBanner(frame, BANNER_DEBUG)) {
             heuristicFound = true;
             break;
         }
@@ -171,7 +172,7 @@ async function checkShowingMatcher(page, matcherTargetSelector, matcherParentSel
  * @param {Frame} frame - Puppeteer frame instance
  * @returns {Promise<boolean>} - True if a visual container with matching consent terminology is confirmed
  */
-async function frameHasBanner(frame) {
+async function frameHasBanner(frame, debug = false) {
     const antiTriggers = [
         //Experimentally defined indicators to suppress post-consent layout false positives
         "preferences were saved",
@@ -189,7 +190,67 @@ async function frameHasBanner(frame) {
     ];
 
     try {
-        return await frame.evaluate((triggers, antiTriggers) => {
+        return await frame.evaluate((triggers, antiTriggers, debugEnabled) => {
+
+            let debugLogCount = 0;
+            const maxDebugLogs = 25;
+
+            function debugLog(message) {
+                if (!debugEnabled) {
+                    return;
+                }
+                if (debugLogCount >= maxDebugLogs) {
+                    return;
+                }
+                debugLogCount += 1;
+                console.warn(`BANNER_DEBUG: ${message}`);
+            }
+
+            function isExplicitRevisitOrRevokeControl(element) {
+                if (!element) {
+                    return false;
+                }
+
+                const relevantAttrNames = [
+                    "id",
+                    "class",
+                    "data-cky-tag",
+                    "data-testid",
+                    "data-test",
+                    "data-qa"
+                ];
+
+                const allCandidates = [element];
+                const descendants = element.querySelectorAll(
+                    "[id], [class], [data-cky-tag], [data-testid], [data-test], [data-qa], [aria-label], [title], [name]"
+                );
+                for (const descendant of descendants) {
+                    allCandidates.push(descendant);
+                }
+
+                const attrValues = [];
+                for (const candidate of allCandidates) {
+                    for (const attrName of relevantAttrNames) {
+                        const attrValue = candidate.getAttribute(attrName);
+                        if (attrValue) {
+                            attrValues.push(String(attrValue).toLowerCase());
+                        }
+                    }
+                }
+
+                if (attrValues.length === 0) {
+                    return false;
+                }
+
+                const combinedAttrs = attrValues.join(" ");
+                const matched = /(?:^|[-_\s])(revisit|revoke)(?:$|[-_\s])/.test(combinedAttrs);
+                if (matched) {
+                    const preview = combinedAttrs.slice(0, 180);
+                    debugLog(`revisit/revoke signal matched; preview='${preview}'`);
+                }
+                return matched;
+            }
+
             //Midas's Anchor Search: Find layout wrappers (including Shadow DOM) (modified)
             function findAnchors(currentElement) {
                 if (!currentElement) {
@@ -203,9 +264,27 @@ async function frameHasBanner(frame) {
                     (style.position && style.position.includes("fixed"))
                 ) {
                     const rect = currentElement.getBoundingClientRect();
-                    const isRevokeButton = (rect.width * rect.height) <= 10000;
+                    const area = rect.width * rect.height;
+                    const isRevokeButton = area <= 10000;
+                    const isExplicitRevisitWidget = isExplicitRevisitOrRevokeControl(currentElement);
+
+                    if (debugEnabled && debugLogCount < maxDebugLogs) {
+                        const className = (currentElement.className || "").toString().slice(0, 80);
+                        const idName = (currentElement.id || "").toString().slice(0, 40);
+                        debugLog(
+                            `anchor-candidate tag=${currentElement.tagName} id='${idName}' class='${className}' ` +
+                            `area=${Math.round(area)} z=${style.zIndex || ""} pos=${style.position || ""} ` +
+                            `small=${isRevokeButton} explicitRevisit=${isExplicitRevisitWidget}`
+                        );
+                    }
                     
-                    if (isRevokeButton) {
+                    if (isRevokeButton || isExplicitRevisitWidget) {
+                        if (isRevokeButton) {
+                            debugLog(`filtered small anchor area=${Math.round(area)} tag=${currentElement.tagName}`);
+                        }
+                        if (isExplicitRevisitWidget) {
+                            debugLog(`filtered explicit revisit/revoke anchor tag=${currentElement.tagName} area=${Math.round(area)}`);
+                        }
                         return [];
                     }
 
@@ -281,7 +360,7 @@ async function frameHasBanner(frame) {
                 }
             }
             return false;
-        }, WORD_BOX_TRIGGERS, antiTriggers);
+        }, WORD_BOX_TRIGGERS, antiTriggers, debug);
     } catch (err) {
         return false;
     }
@@ -532,6 +611,10 @@ async function runTest(rule) {
     page.on("console", msg => {
         const type = msg.type();
         const text = msg.text();
+
+        if (BANNER_DEBUG && text.startsWith("BANNER_DEBUG:")) {
+            console.error(text);
+        }
 
 		//Sequential error tracking tailored to catch structural groupCollapsed exceptions from ConsentEngine.js
 		if (catchNextError && type === "error") {

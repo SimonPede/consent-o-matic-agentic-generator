@@ -11,7 +11,7 @@ from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.types import Command
 
-#Import the uncompiled StateGraph blueprint from our agent module
+#Import the uncompiled StateGraph blueprint from the agent module
 from src.agent.graph import workflow
 
 #Import for run logging
@@ -125,8 +125,13 @@ def run_single(agent, url: str) -> None:
 
         state_values = dict(final_state.values)
         state_values["last_error"] = "ABORTED: max auto-resumes reached"
-        state_values["aborted_max_resumes"] = True
-        log_run(state_values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
+        log_run(
+            state_values,
+            duration_seconds=duration,
+            model_name=MODEL_NAME,
+            few_shot_config=FEW_SHOT_CONFIG,
+            aborted_max_resumes=True,
+        )
         
         return
 
@@ -134,10 +139,13 @@ def run_single(agent, url: str) -> None:
     duration = time.perf_counter() - start_time
     
     final_state = agent.get_state(config)
-    state_values = dict(final_state.values)
-    state_values["aborted_max_resumes"] = False
-    
-    log_run(state_values, duration_seconds=duration, model_name=MODEL_NAME, few_shot_config=FEW_SHOT_CONFIG)
+    log_run(
+        final_state.values,
+        duration_seconds=duration,
+        model_name=MODEL_NAME,
+        few_shot_config=FEW_SHOT_CONFIG,
+        aborted_max_resumes=False,
+    )
 
 
 def run_single_in_subprocess(url: str) -> None:
@@ -184,6 +192,7 @@ def run_single_with_timeout(url: str, timeout_seconds: int) -> None:
             duration_seconds=duration,
             model_name=MODEL_NAME,
             few_shot_config=FEW_SHOT_CONFIG,
+            overall_timeout_seconds=timeout_seconds,
         )
         return
 
@@ -216,7 +225,7 @@ def main() -> None:
     """
     url_file_path = "evaluation/reported_urls.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
-    timeout_seconds = 900
+    timeout_seconds = 1500 #25min
     
     print(f"Batch Evaluation started: {len(evaluation_urls)} URLs")
     print(f"Model: {MODEL_NAME} | Few-Shot: {FEW_SHOT_CONFIG}\n")
