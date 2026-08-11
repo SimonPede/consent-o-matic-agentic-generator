@@ -99,7 +99,7 @@ Always prefer these over selectors you derive yourself from the HTML.
 
 Each structured element includes amongst other fields a **selectorConfidence** field:
 - **very high** / **high**: Use the selector directly in the rule.
-- **medium**: Selector is likely unique – use it, but verify against filteredHtml.
+- **medium**: Selector is likely unique: use it, but verify against filteredHtml.
 - **low** / **very low**: Selector may match multiple elements. 
 Use CoM's `textFilter` or `parentInfo` to make it more specific.
 Example: instead of `{ "selector": ".message-button" }`, use:
@@ -415,7 +415,7 @@ Matchers are used to check for the presence of some DOM selection, or the state 
 The consent action maps UI elements to these six categories.
 The user's preference for each category (on/off) determines which action fires.
 Map each UI toggle/checkbox/button to exactly one category based on its
-description and surrounding elements – do not rely on keywords alone, reason semantically.
+description and surrounding elements, do not rely on keywords alone, reason semantically.
 
 | Code | Category | Description |
 |------|----------|-------------|
@@ -639,7 +639,7 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     For these categories, the Reject button often exists in the DOM but is hidden and will not appear in the structured output.
     Only generate a trueAction that clicks Accept, doo not include a falseAction, as clicking a hidden button will fail silently.
 - Sibling Button Pattern (Label + Buttons share a common parent)
-	When a category label (e.g. h2) and its action buttons are siblings under a common parent container (e.g. .stack-row), do NOT use the label as parent directly — the buttons are not its children.
+	When a category label (e.g. h2) and its action buttons are siblings under a common parent container (e.g. .stack-row), do NOT use the label as parent directly, the buttons are not its children.
     Instead, use the common parent as parent with a childFilter targeting the label by text. Then target the button within that common parent.
 	You can identify this pattern from the structured output: if the label's parentInfo.selector matches the button's parentInfo.grandparent.selector, they are siblings and this pattern applies.
 	Correct pattern:
@@ -701,18 +701,18 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     (e.g. display:none) until the user interacts with DO_CONSENT. These buttons often 
     have IDs like #updateButton, #saveButton, or classes like .save-consent-btn.
     If you find such a hidden button in the structured output (isDisabled: true or 
-    display:none in attributes), you MUST use it for SAVE_CONSENT — NOT the 
-    "Accept all" button.
+    display:none in attributes), you MUST use it for SAVE_CONSENT, NOT the "Accept all" button.
 - For use CSS comma syntax to include fallbacks when the interface 
-    has multiple possible selectors for one element such as the SAVE_CONSENT Banner (e.g. one on the main interface, one on the 
-    settings page): "#saveBtn, #confirmBtn". Only do this when you can identify 
+    has multiple possible selectors for one element such as the SAVE_CONSENT Banner
+    (e.g. one on the main interface, one on the settings page):
+    "#saveBtn, #confirmBtn". Only do this when you can identify 
     two distinct save buttons in the DOM - do not guess selectors.
 - CRITICAL: If any element selector contains `>>>` (Shadow DOM syntax), you MUST use 
-    the parent/target structure in your rule. There is NO alternative — direct selectors 
+    the parent/target structure in your rule. There is NO alternative, direct selectors 
     cannot pierce Shadow DOM in CoM's engine. If you find yourself writing a direct selector 
     for an element that had `>>>` in the extraction, STOP and rewrite it using parent/target.
-    Additionally, do NOT use `displayFilter: true` on showingMatcher for Shadow DOM host 
-elements — the host may not pass display checks even when the interface is visually present.
+    Additionally, do NOT use `displayFilter: true` on showingMatcher for Shadow DOM host elements,
+    the host may not pass display checks even when the interface is visually present.
 - Do not generate a rule if no consent interface is detectable
     in the DOM. Instead explain what you observed in your ANALYSIS
     and write "NO_BANNER_DETECTED" in the RULE field
