@@ -3,7 +3,7 @@ import json
 import os
 from langchain_core.tools import tool
 #Pydantic Schema
-from src.schemas.rule import CoMRuleset
+from src.schemas.rule import CoMRule
 
 @tool
 def test_rule(url: str, json_string: str) -> str:
@@ -111,7 +111,7 @@ def test_rule(url: str, json_string: str) -> str:
     #the LLM to pass rule fields directly as tool arguments instead of as a
     #JSON string --> breaking the existing json_string-based workflow.
     try:
-        CoMRuleset.model_validate(parsed)
+        CoMRule.model_validate(parsed)
     except Exception as e:
         return json.dumps({"handled": False, "error": f"Ruleset structure invalid: {e}"})
 

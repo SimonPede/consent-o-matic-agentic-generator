@@ -32,5 +32,5 @@ class CMPConfig(BaseModel):
     detectors: List[Detector]
     methods: List[Method]
 
-class CoMRuleset(RootModel[Dict[str, CMPConfig]]):
+class CoMRule(RootModel[Dict[str, CMPConfig]]):
     pass

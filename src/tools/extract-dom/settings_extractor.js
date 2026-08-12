@@ -262,25 +262,43 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
 
     //Wait until DOM mutations settle, or return after timeout.
     //Reduces extraction from intermediate render states.
+    //Step-by-step behavior:
+    //1) Start observing DOM mutations inside the target frame.
+    //2) Every mutation resets a short "stability timer".
+    //3) If no mutation arrives during stableTime, consider the DOM settled.
+    //4) If mutations never settle, force-resolve after timeout to avoid hanging.
     const waitForDOMStable = (frame, stableTime = 500, timeout = 5000) => {
         return frame.evaluate((stableTime, timeout) => {
             return new Promise((resolve) => {
+                //`stableTimer` represents "quiet period completed".
                 let stableTimer;
+
+                //Observe changes to subtree structure, text nodes, and attributes.
+                //If any change happens, restart the quiet-period timer.
                 const observer = new MutationObserver(() => {
                     clearTimeout(stableTimer);
                     stableTimer = setTimeout(() => {
+                        //No changes for `stableTime` ms -> DOM considered stable.
                         observer.disconnect();
                         resolve();
                     }, stableTime);
                 });
+
+                //Start observing from <body> for broad coverage of modal/settings UIs.
                 observer.observe(document.body, { 
                     childList: true, subtree: true, 
                     characterData: true, attributes: true 
                 });
+
+                //Initial fallback: if no mutation is emitted at all, still resolve
+                //after one stability window.
                 stableTimer = setTimeout(() => {
                     observer.disconnect();
                     resolve();
                 }, stableTime);
+
+                //Hard timeout guard: if the page keeps mutating (animations, trackers,
+                //live counters), stop waiting and continue pipeline execution.
                 setTimeout(() => {
                     observer.disconnect();
                     resolve();
