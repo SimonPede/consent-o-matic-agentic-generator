@@ -31,6 +31,8 @@ def main() -> None:
         "url": url,
         "structured_dom_chars": 0,
         "llm_calls": 0,
+        "model_aborted": False,
+        "abort_reason": "",
         "human_review_count": 0,
         "last_error": "",
         "error_history": [],

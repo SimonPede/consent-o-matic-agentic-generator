@@ -26,11 +26,11 @@ def route_after_llm(state: AgentState) -> Literal["tool_node", "human_review_nod
 
 def route_after_rule(state: AgentState) -> Literal["llm_node", "__end__"]:
     """
-    Routes to END when a final rule is available.
+    Routes to END when a final rule is available or the model aborted intentionally.
     
     Otherwise, loops back to the LLM node for further refinement.
     """
-    if state.get("final_result"):
+    if state.get("final_result") or state.get("model_aborted") == True:
         return END
     
     return "llm_node"

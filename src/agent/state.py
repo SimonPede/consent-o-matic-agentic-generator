@@ -7,6 +7,8 @@ class AgentState(TypedDict):
     url: str
     structured_dom_chars: int
     llm_calls: int
+    model_aborted: bool
+    abort_reason: str
     human_review_count: int
     last_error: str
     error_history: Annotated[list[str], operator.add]

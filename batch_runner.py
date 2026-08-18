@@ -60,6 +60,8 @@ def run_single(agent, url: str) -> None:
         "url": url,
         "structured_dom_chars": 0,
         "llm_calls": 0, #IMPORTANT: NOT the number of tries the LLM needed to generate a correct rule! For that metric "test_rule_count" is sufficient
+        "model_aborted": False,
+        "abort_reason": "",
         "human_review_count": 0,
         "last_error": "",
         "structured_dom_info": None,
@@ -72,7 +74,7 @@ def run_single(agent, url: str) -> None:
         "error_history": [],
         "test_rule_count": 0,
         "analyze_screenshot_count": 0,
-        "final_result": None,
+        "final_result": None,,
     }
     
     start_time = time.perf_counter()
@@ -107,7 +109,8 @@ def run_single(agent, url: str) -> None:
             log_run(
                 {"url": url, "llm_calls": 0, "last_error": str(e),
                 "final_result": None, "last_test_result": None,
-                "human_review_count": 0, "cmp_type": "", "extraction_duration_seconds": 0.0},
+                "human_review_count": 0, "cmp_type": "", "extraction_duration_seconds": 0.0,
+                "model_aborted": False, "abort_reason": ""},
                 duration_seconds=duration,
                 model_name=MODEL_NAME,
                 few_shot_config=FEW_SHOT_CONFIG
@@ -188,6 +191,8 @@ def run_single_with_timeout(url: str, timeout_seconds: int) -> None:
                 "cmp_type": "",
                 "aborted_timeout": True,
                 "extraction_duration_seconds": 0.0,
+                "model_aborted": False,
+                "abort_reason": "",
             },
             duration_seconds=duration,
             model_name=MODEL_NAME,
@@ -210,6 +215,8 @@ def run_single_with_timeout(url: str, timeout_seconds: int) -> None:
                 "cmp_type": "",
                 "aborted_worker_crash": True,
                 "extraction_duration_seconds": 0.0,
+                "model_aborted": False,
+                "abort_reason": "",
             },
             duration_seconds=duration,
             model_name=MODEL_NAME,
@@ -223,7 +230,7 @@ def main() -> None:
     Iterates over evaluation_urls and runs the agent for each URL sequentially.
     All runs are logged to data/logs/runs/ (JSON) and data/logs/evaluation_summary.csv.
     """
-    url_file_path = "evaluation/reported_urls.txt"
+    url_file_path = "evaluation/test_urls.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
     timeout_seconds = 1800 #30min
     

@@ -394,7 +394,7 @@ def human_review_node(state: AgentState) -> dict:
 
 def rule_output_node(state: AgentState) -> dict:
     """
-    Extracts the final rule from markdown enclosures in the latest AI message.
+    Extracts either the final rule or an intentional abort marker from the latest AI message.
     
     Some LLMs (e.g. Kimi with thinking mode) return content as a list
     of blocks like [{"type": "thinking", ...}, {"type": "text", ...}].
@@ -413,13 +413,27 @@ def rule_output_node(state: AgentState) -> dict:
     else:
         content = str(content)
 
-    #`re.DOTALL` allows `.` to match line breaks inside <rule>...</rule>.
-    match = re.search(r"<rule>(.*?)</rule>", content, re.DOTALL)
+    #`re.DOTALL` allows `.` to match line breaks inside <abort>...</abort>.
+    abort_match = re.search(r"<abort>(.*?)</abort>", content, re.DOTALL)
+    if abort_match:
+        abort_reason = abort_match.group(1).strip()
+        if not abort_reason:
+            abort_reason = "Model aborted without an explicit reason."
+
+        print(f"--------- MODEL ABORT: {abort_reason} ---------")
+        return {
+            "model_aborted": True,
+            "abort_reason": abort_reason,
+            "last_error": abort_reason,
+            "error_history": [abort_reason],
+        }
+
+    rule_match = re.search(r"<rule>(.*?)</rule>", content, re.DOTALL)
     
-    if match:
+    if rule_match:
         try:
             #`match.group(1)` returns the first capture group (content inside tags).
-            rule = json.loads(match.group(1).strip())
+            rule = json.loads(rule_match.group(1).strip())
             return {"final_result": rule}
         except json.JSONDecodeError as error:
             error_message = f"Invalid JSON in rule tags: {str(error)}"
@@ -439,11 +453,13 @@ def rule_output_node(state: AgentState) -> dict:
     print("--------- NO RULESET FOUND ---------")
     return {
         "last_error": "No rule found in agent message",
-        "messages": [
-            HumanMessage(content=(
-                "Your previous response did not contain a rule wrapped in <rule></rule> tags. "
-                "If you have drafted a rule based on your analysis, you MUST call the 'test_rule' tool to test it on the live DOM first! "
-                "Do NOT output <rule> tags until the tool returns 'handled': true."
-            ))
-        ]
-    }
+            "messages": [
+                HumanMessage(content=(
+                    "Your previous response did not contain a rule wrapped in <rule></rule> tags "
+                    "or an abort wrapped in <abort></abort> tags. "
+                    "If you have drafted a rule based on your analysis, you MUST call the 'test_rule' tool to test it on the live DOM first! "
+                    "Do NOT output <rule> tags until the tool returns 'handled': true. "
+                    "Only use <abort></abort> when the interface is fundamentally unresolvable within the current architecture."
+                ))
+            ]
+        }

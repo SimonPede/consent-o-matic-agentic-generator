@@ -683,9 +683,12 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
     After OPEN_OPTIONS clicks a settings button, the DOM often changes significantly. Selectors for DO_CONSENT and SAVE_CONSENT must come from the settings page DOM, not the initial interface DOM.
     If your extraction includes both a main interface view and a settings view, ALWAYS use the settings-view selectors for DO_CONSENT and SAVE_CONSENT.
     
-    SPECIAL CASE (The iframeFilter): Sometimes, SPAs (like Sourcepoint) render the Settings menu in a completely different iframe after OPEN_OPTIONS is clicked.
-    If your mathematically correct SAVE_CONSENT selector repeatedly fails with ACTION_TARGET_NOT_FOUND, the button is likely trapped in a different frame. 
-    When you are sure this is the case, state it explicitly in your ANALYIS!
+    - SOURCEPOINT EXCEPTION (CRITICAL FALLBACK):
+        If you identify the CMP as "Sourcepoint" (often indicated by classes like .sp_choice_type_...), DO NOT attempt to use OPEN_OPTIONS or the GRANULAR_CONSENT strategy.
+        Sourcepoint renders its settings menu in nested secondary iframes that your architecture cannot navigate, even when you see the URL of the frame in the extraction
+        and the extract script successfully extracted it.
+        When detecting Sourcepoint, you MUST immediately switch to the DECLINE_FALLBACK strategy on the primary banner.
+        Leave DO_CONSENT empty and set SAVE_CONSENT to the selector of the "Reject All" or "Decline" button on the first layer. BUT NEVER "Accept All"!
 - For DO_CONSENT, always use a consent action with a consents array. Do NOT use ifcss to handle per-category consent!
     ifcss is control flow only (it checks whether a DOM element exists, then branches).
 - Multi-page interfaces: After OPEN_OPTIONS clicks a settings button, the DOM often changes 
@@ -791,6 +794,7 @@ Every time you draft or revise a rule, you MUST test it.
 ONLY AFTER the `test_rule` tool has returned `handled: true` (without critical selector errors), or if you definitively determine NO_BANNER_DETECTED:
 - You must output your final, verified JSON rule as plain text, wrapped exactly in <rule> and </rule> tags.
 - This signals to the system that your task is complete.
+- If the interface is fundamentally unresolvable within the current architecture, you may instead terminate with a plain-text abort wrapped exactly in <abort> and </abort> tags.
 
 Example for Final Submission:
 ANALYSIS: The test tool confirmed all selectors work. The interface was successfully hidden.
@@ -814,10 +818,19 @@ RULE:
     unaccounted for, revise your rule before calling test_rule.
 - CRITICAL SAVE_CONSENT Anti-Pattern: NEVER use an "Accept All" or "Allow All" button as the target for SAVE_CONSENT.
     WHY: Clicking "Accept All" automatically overwrites and destroys all granular choices the engine just made in DO_CONSENT.
-- Dynamic save buttons (The "Decline" Fallback): If a dedicated "Save Preferences" button could not be found by you, not even a hidden one,
-    you MUST use the selector of the "Decline All" or "Reject All" button for SAVE_CONSENT.
-    WHY: In many modern CMPs, as soon as an user toggles a consent category in DO_CONSENT, the SPA dynamically transforms
-    the existing "Decline All" button into the "Save Settings" button. Therefore, the "Decline All" selector is the mathematically correct fallback for saving.
+- Dynamic save buttons (The "Decline" Fallback):
+    Sometimes you successfully extract the settings page and find the "Save Preferences" button, but the banner still does not close during testing.
+    This happens when the site disables the save button (via disabled or aria-disabled) until a toggle is explicitly changed.
+    If your mathematically correct SAVE_CONSENT selector fails to close the banner and you suspect the button is disabled or trapped, DO NOT get stuck in an endless loop trying to click it.
+    Your escape hatch: Abandon the settings page. Switch your strategy to DECLINE_FALLBACK, leave DO_CONSENT empty,
+    and use the selector for the "Reject All" or "Decline All" button from the INITIAL main banner as your SAVE_CONSENT.
+    Prioritize closing the banner over granular consent if the settings are fundamentally broken.
+- PAY-OR-CONSENT DEAD END (CRITICAL ABORT RULE):
+    If you fall back to the primary banner and the first visible layer offers an "Accept All" action but no "Reject All" or "Decline" action,
+    you must treat the interface as unresolvable within the current architecture.
+    You MUST NEVER use "Accept All" as a fallback.
+    In this situation, stop trying to generate another rule and end the run with:
+    <abort>PAY_OR_CONSENT_DEAD_END: No reject button on primary layer.</abort>
 """
 
 def get_system_prompt(examples: str = few_shot_examples) -> str:
