@@ -3,6 +3,35 @@ import os
 import csv
 from datetime import datetime
 
+
+def _derive_auto_success_failure_reasons(
+    test_result: dict,
+    final_test_error: str,
+    final_rule,
+    banner_dismissed: bool,
+    state: dict,
+) -> list[str]:
+    """Returns explicit reasons explaining why auto_success evaluated to false."""
+    reasons = []
+
+    if test_result.get("handled") != True:
+        reasons.append("engine_not_handled")
+    if final_test_error:
+        reasons.append("final_test_error_present")
+    if final_rule is None:
+        reasons.append("no_final_rule")
+    if not banner_dismissed:
+        reasons.append("banner_not_dismissed")
+    if state.get("aborted_timeout") == True:
+        reasons.append("overall_timeout")
+    if state.get("last_error") == "ABORTED: max auto-resumes reached":
+        reasons.append("max_auto_resumes_reached")
+    if state.get("model_aborted") == True:
+        reasons.append("model_aborted")
+
+    return reasons
+
+
 def log_run(
     state: dict,
     duration_seconds: float,
@@ -77,6 +106,15 @@ def log_run(
         and state.get("final_result") is not None
         and banner_dismissed
     )
+    auto_success_failure_reasons = []
+    if not auto_success:
+        auto_success_failure_reasons = _derive_auto_success_failure_reasons(
+            test_result=test_result,
+            final_test_error=final_test_error,
+            final_rule=final_rule,
+            banner_dismissed=banner_dismissed,
+            state=state,
+        )
     
     final_rule_dict = {}
     if isinstance(final_rule, dict):
@@ -101,6 +139,7 @@ def log_run(
     #                           granular options (binary banner), or settings extraction failed silently.
     #                           Requires manual verification to distinguish.
     #UNKNOWN:                   Ruleset present but no recognizable method names found (should not occur).
+    #MODEL_ABORTED              The LLM decided, based on instructions in the system prompt, the given banner is unsolvable with the current system 
     strategy_type = ""
     if "DO_CONSENT" in used_methods:
         strategy_type = "GRANULAR_CONSENT"
@@ -109,6 +148,8 @@ def log_run(
             strategy_type = "DECLINE_FALLBACK"
         else:
             strategy_type = "DECLINE_FALLBACK_OR_BINARY"
+    elif state.get("model_aborted") == True:
+        strategy_type = "MODEL_ABORTED"
     else:
         strategy_type = "UNKNOWN"
         
@@ -125,6 +166,7 @@ def log_run(
         "model_used": model_name,
         "few_shot_config": few_shot_config,
         "auto_success": auto_success,
+        "auto_success_failure_reasons": auto_success_failure_reasons,
         "aborted_max_resumes": aborted_max_resumes, #only set when using the `batch_runner.py`
         "overall_timeout_seconds": overall_timeout_seconds, #only set when using the `batch_runner.py`
         "strategy_type": strategy_type,
@@ -140,6 +182,8 @@ def log_run(
         "test_rule_count": state.get("test_rule_count", 0),
         "analyze_screenshot_count": state.get("analyze_screenshot_count", 0),
         "last_error": state.get("last_error", ""),
+        "abort_reason": state.get("abort_reason", ""),
+        "model_aborted": state.get("model_aborted", False),
         "final_test_error": final_test_error,
         "error_history": error_history,
         "duration_seconds": total_duration_seconds,
@@ -235,4 +279,8 @@ def log_run(
             writer.writerow(csv_headers)
         writer.writerow(csv_row)
     
-    print(f"Run logged: {filename} | success={auto_success} | strategy_type={strategy_type} | llm_calls={log_entry['llm_calls']}")
+    print(
+        f"Run logged: {filename} | success={auto_success} | "
+        f"failure_reasons={auto_success_failure_reasons} | "
+        f"strategy_type={strategy_type} | llm_calls={log_entry['llm_calls']}"
+    )
