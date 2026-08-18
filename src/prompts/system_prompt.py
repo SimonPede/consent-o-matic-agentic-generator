@@ -1,12 +1,5 @@
 from src.prompts.static_few_shot_examples import few_shot_examples
 
-# Prompt architecture follows TELeR Level 6 (Santu & Feng, 2023):
-#   1) Description of high-level goal
-#   2) Detailed bulleted list of sub-tasks
-#   3) Guideline on how output will be evaluated / Few-Shot Examples
-#   4) Additional relevant information via retrieval-based techniques
-#   5) Explicit statement asking LLM to explain its own output
-#
 # Runtime placeholders:
 #   {few_shot_examples} - dynamically selected examples via Pseudo-RAG or static few shots in first iteration
 #                         (populated by src/prompts/example_collector.py)
@@ -682,6 +675,14 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
 - Multi-page interfaces & Cross-Frame Routing (CRITICAL):
     After OPEN_OPTIONS clicks a settings button, the DOM often changes significantly. Selectors for DO_CONSENT and SAVE_CONSENT must come from the settings page DOM, not the initial interface DOM.
     If your extraction includes both a main interface view and a settings view, ALWAYS use the settings-view selectors for DO_CONSENT and SAVE_CONSENT.
+    If the settings extraction contains real category controls (checkboxes, toggles, or per-category buttons) plus a plausible save/reject button,
+    you MUST prefer the granular settings workflow (`OPEN_OPTIONS` -> `DO_CONSENT` -> `SAVE_CONSENT`) over a simple first-layer `DECLINE_FALLBACK`.
+    A successful first-layer reject click does NOT justify ignoring an available settings dialog, unless one of the explicit fallback exceptions in this prompt applies.
+    In particular, do NOT finalize a plain decline rule just because `handled: true` on the first layer if the extracted settings view clearly exposes categories that should be mapped.
+    On a settings subpage or preferences dialog, `SAVE_CONSENT` MUST target a confirming control such as "Save", "Save preferences", "Confirm", "Apply", "Reject all", "Alle ablehnen",
+    or another explicit decision button from that settings view.
+    Do NOT use a passive close control such as an `X`, close icon, "Schliessen", or generic dismiss button for `SAVE_CONSENT` if an explicit save/reject button exists on the same settings view.
+    Only use a close-style control as `SAVE_CONSENT` when the settings view truly has no explicit confirm/save/reject action and the extraction/test feedback supports that conclusion.
     
     - SOURCEPOINT EXCEPTION (CRITICAL FALLBACK):
         If you identify the CMP as "Sourcepoint" (often indicated by classes like .sp_choice_type_...), DO NOT attempt to use OPEN_OPTIONS or the GRANULAR_CONSENT strategy.
@@ -689,6 +690,16 @@ OneTrust Extraction Rule: If you see onetrust in the cmpType, expect OneTrust's 
         and the extract script successfully extracted it.
         When detecting Sourcepoint, you MUST immediately switch to the DECLINE_FALLBACK strategy on the primary banner.
         Leave DO_CONSENT empty and set SAVE_CONSENT to the selector of the "Reject All" or "Decline" button on the first layer. BUT NEVER "Accept All"!
+        For Sourcepoint detectors, use a selector from INSIDE the visible Sourcepoint iframe, not the iframe wrapper in the main frame.
+        Detection and action must run in the same iframe context, so selectors such as inner `.message-container`, `#notice`, or a visible first-layer text node
+        are preferable to matching `iframe[src*="privacy-mgmt.com"]` in the main frame.
+        NEVER use outer wrapper selectors such as `#sp_message_container_*`, `#sp_message_iframe_*`, or `iframe[src*="privacy-mgmt.com"]` as Sourcepoint detectors.
+        These elements only prove that an iframe exists in the main frame; they do NOT place the engine inside the inner Sourcepoint document where the reject button actually lives.
+        For Sourcepoint actions, all click targets MUST use `iframeFilter: true`, because the actual reject button lives inside the iframe and the engine does not jump
+        from a main-frame iframe wrapper match into the iframe automatically.
+        For Sourcepoint first-layer reject buttons, prefer robust text-based selectors (`textFilter` on "Reject", "Decline", "I do not agree", etc.) over opaque or numeric classes such as `.sp_choice_type_13`.
+        If a Sourcepoint test already returns `cmpName: "Sourcepoint"` or otherwise shows that the CMP was detected, do NOT keep rewriting the detector again.
+        In that situation, revise only the first-layer reject button selector inside the iframe.
 - For DO_CONSENT, always use a consent action with a consents array. Do NOT use ifcss to handle per-category consent!
     ifcss is control flow only (it checks whether a DOM element exists, then branches).
 - Multi-page interfaces: After OPEN_OPTIONS clicks a settings button, the DOM often changes 
@@ -774,6 +785,18 @@ If you receive a "Visual audit after test: {...}" message, use it to understand
 the current page state. If bannerVisible is true, the interface is most likely still present.
 Use the buttons list to identify elements you missed, identify their text and understand which
 state the interface is after your rule was applied.
+Treat the visual audit as supporting evidence, not as proof that the rule works.
+In particular, if the screenshot suggests the banner is gone but the test output still contains
+errors such as `Banner not found or matchers failed.`, `No CMP detected`, `showingMatcherFound: false`,
+or `ACTION_TARGET_NOT_FOUND`, do NOT finalize the rule and do NOT argue that the rule is valid anyway.
+Instead, use the non-visual feedback first and make at least one further revision attempt based on the
+detector, showingMatcher, iframe context, or click selector that failed.
+`scrollLocked` is only a secondary signal. If `handled: true`, `error: null`, the banner matchers disappear in the audit,
+and the visual audit shows the banner is gone, you MUST NOT abandon a granular settings workflow solely because
+`scrollLocked` remains true. Residual scroll locking can be caused by unrelated page mechanics or incomplete cleanup
+that does not invalidate the consent interaction itself.
+Only treat `scrollLocked: true` as a reason to revise the rule when it is accompanied by other failure evidence,
+such as a still-visible banner, failing matchers, click errors, or an obviously still-open modal.
 
 If after several revisions (5 or more) no working rule is found,
 explicitly state what you tried and why it failed -
@@ -825,6 +848,10 @@ RULE:
     Your escape hatch: Abandon the settings page. Switch your strategy to DECLINE_FALLBACK, leave DO_CONSENT empty,
     and use the selector for the "Reject All" or "Decline All" button from the INITIAL main banner as your SAVE_CONSENT.
     Prioritize closing the banner over granular consent if the settings are fundamentally broken.
+    This fallback is allowed only after the settings path was actually attempted or clearly shown to be unusable by the extraction or test feedback.
+    It is NOT allowed merely because a top-level decline button happened to work on the first try.
+    It is also NOT allowed merely because `scrollLocked` remains true after an otherwise successful granular test.
+    It is also NOT allowed if the settings view contains an explicit save/confirm/reject button that you simply did not use yet.
 - PAY-OR-CONSENT DEAD END (CRITICAL ABORT RULE):
     If you fall back to the primary banner and the first visible layer offers an "Accept All" action but no "Reject All" or "Decline" action,
     you must treat the interface as unresolvable within the current architecture.

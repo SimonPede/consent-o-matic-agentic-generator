@@ -4,6 +4,24 @@ import csv
 from datetime import datetime
 
 
+def _has_non_empty_do_consent(final_rule_dict: dict) -> bool:
+    """Returns True only if a DO_CONSENT method contains at least one consent mapping."""
+    for cmp_data in final_rule_dict.values():
+        if not isinstance(cmp_data, dict):
+            continue
+
+        methods = cmp_data.get("methods", [])
+        for method in methods:
+            if method.get("name") != "DO_CONSENT":
+                continue
+
+            action = method.get("action", {})
+            consents = action.get("consents", [])
+            if isinstance(consents, list) and len(consents) > 0:
+                return True
+
+    return False
+
 def _derive_auto_success_failure_reasons(
     test_result: dict,
     final_test_error: str,
@@ -119,6 +137,8 @@ def log_run(
     final_rule_dict = {}
     if isinstance(final_rule, dict):
         final_rule_dict = final_rule
+
+    has_non_empty_do_consent = _has_non_empty_do_consent(final_rule_dict)
     
     used_methods = []
     for cmp_data in final_rule_dict.values():
@@ -141,7 +161,7 @@ def log_run(
     #UNKNOWN:                   Ruleset present but no recognizable method names found (should not occur).
     #MODEL_ABORTED              The LLM decided, based on instructions in the system prompt, the given banner is unsolvable with the current system 
     strategy_type = ""
-    if "DO_CONSENT" in used_methods:
+    if has_non_empty_do_consent:
         strategy_type = "GRANULAR_CONSENT"
     elif "SAVE_CONSENT" in used_methods:
         if settings_extracted:
