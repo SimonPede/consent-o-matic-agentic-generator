@@ -111,9 +111,6 @@ def log_run(
             strategy_type = "DECLINE_FALLBACK_OR_BINARY"
     else:
         strategy_type = "UNKNOWN"
-
-    #resolution_type is pure run outcome.
-    resolution_type = "SUCCESS" if auto_success else "FAILED"
         
     extraction_duration_seconds = round(state.get("extraction_duration_seconds", 0), 2)
     total_duration_seconds = round(duration_seconds, 2)
@@ -130,7 +127,6 @@ def log_run(
         "auto_success": auto_success,
         "aborted_max_resumes": aborted_max_resumes, #only set when using the `batch_runner.py`
         "overall_timeout_seconds": overall_timeout_seconds, #only set when using the `batch_runner.py`
-        "resolution_type": resolution_type,
         "strategy_type": strategy_type,
         "verified": None,  #Manual override placeholder for ground-truth audits
         "cmp_type": state.get("cmp_type", ""),
@@ -175,7 +171,6 @@ def log_run(
         "auto_success",
         "aborted_max_resumes",
         "overall_timeout_seconds",
-        "resolution_type",
         "strategy_type",
         "verified",
         "cmp_type",
@@ -208,7 +203,6 @@ def log_run(
         log_entry["auto_success"],
         log_entry["aborted_max_resumes"],
         log_entry["overall_timeout_seconds"],
-        log_entry["resolution_type"],
         log_entry["strategy_type"],
         log_entry["verified"],
         log_entry["cmp_type"],
