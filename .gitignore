@@ -27,3 +27,4 @@ claude_example_formatted.md
 transavia_example.txt
 transavia_example_formatted.md
 data/logs/extract-dom/*.json
+evaluation/*.png

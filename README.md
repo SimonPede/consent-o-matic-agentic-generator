@@ -39,17 +39,17 @@ consent-o-matic-agentic-generator/
 ├── src/
 │   ├── agent/                   # LangGraph graph, nodes, and state definition
 │   ├── prompts/                 # System prompt and few-shot examples
-│   │   └── examples/            # Rulesets and their corresponding DOM (extracted by my extract tool) used for few-shot examples
-│   ├── schemas/                 # Pydantic models for the CoM ruleset schema
-│   ├── tools/                   # Custom tools for DOM extraction and testing
+│   │   └── examples/            # Rules and their corresponding DOM used for few-shot examples
+│   ├── schemas/                 # Pydantic model for the CoM rule schema
+│   ├── tools/                   # Custom tools (DOM extraction, testing, screenshots)
 │   │   └── extract-dom/         # The DOM extraction script providing the LLM with the necessary DOM information
-│   │   └── consent-engine/      # Source code of the CoM-Engine used for the test_ruleset node in Langgraph
+│   │   └── consent-engine/      # Source code of the CoM-Engine used for the test_rule tool
 │   ├── utils/                   # Logging, helper functions and objects/arrays used e.g. regex matching
 │   │   └── observatory-corpus   # Utility files that are derived from the Consent Observatory project
 ├── main.py                      # Entry point
 ├── batch_runner.py              # Used for running the agent over a set of given urls
 ├── langgraph.json               # LangSmith Studio configuration
-├── extract_dom_flow_chart.pdf   # Flow Chart visualizing the logic of my extract_dom script
+├── extract_dom_flow_chart.pdf   # Flow Chart visualizing the logic of my extract-dom script
 ├── agentic_flow_MVP.pdf         # Visualization of my agentic system and its components
 ├── requirements.txt             # Pinned direct Python dependencies
 ├── requirements_dev.txt         # Development-only dependencies (LangSmith Studio)
