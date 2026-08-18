@@ -226,8 +226,8 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 for (const id of labelIds) {
                     //Prefer `getElementById` when available; ShadowRoot does not provide it.
                     const labelElement = root.getElementById ? root.getElementById(id) : root.querySelector(`#${id}`);
-                    if (labelElement && labelElement.innerText.trim()) {
-                        combinedTextBuffer.push(labelElement.innerText.trim());
+                    if (labelElement && (labelElement.innerText || "").trim()) {
+                        combinedTextBuffer.push((labelElement.innerText || "").trim());
                     }
                 }
 
@@ -243,14 +243,14 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
             if (input.id && root.querySelector) {
                 const declarativeLabel = root.querySelector(`label[for="${input.id}"]`);
-                if (declarativeLabel && declarativeLabel.innerText.trim()) {
-                    return declarativeLabel.innerText.trim();
+                if (declarativeLabel && (declarativeLabel.innerText || "").trim()) {
+                    return (declarativeLabel.innerText || "").trim();
                 }
             }
 
             const closestLabelElement = input.closest("label");
-            if (closestLabelElement && closestLabelElement.innerText.trim()) {
-                return closestLabelElement.innerText.trim();
+            if (closestLabelElement && (closestLabelElement.innerText || "").trim()) {
+                return (closestLabelElement.innerText || "").trim();
             }
 
             const elementTitleText = input.getAttribute("title");
@@ -461,7 +461,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
 
         function getElementActionText(element) {
             return (
-                element.innerText.trim() ||
+                (element.innerText || "").trim() ||
                 element.getAttribute("aria-label") ||
                 element.title ||
                 ""
@@ -551,7 +551,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                         const deepSelectorData = generateDeepSelector(element, searchRoot);
                         return {
                             type: "toggle",
-                            text: element.innerText.trim() || element.getAttribute("aria-label") || findLabelForInput(element) || "",
+                            text: (element.innerText || "").trim() || element.getAttribute("aria-label") || findLabelForInput(element) || "",
                             tag: element.tagName,
                             attributes: extractAllAttributes(element),
                             parentInfo: extractParentInfo(element),
@@ -652,7 +652,7 @@ async function extractFromFrame(frame, selectors, selectorsMap, cmpType = null) 
                 const deepSelectorData = generateDeepSelector(element);
                 return {
                     type: "toggle",
-                    text: element.innerText.trim(),
+                    text: (element.innerText || "").trim(),
                     tag: element.tagName,
                     attributes: extractAllAttributes(element),
                     parentInfo: extractParentInfo(element),
