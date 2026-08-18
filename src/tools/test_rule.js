@@ -589,12 +589,17 @@ async function runTest(rule) {
     //     defaultViewport: null,
     //     args: ["--start-maximized"]
     // });
-    const page = await browser.newPage();
+	const page = await browser.newPage();
 
 	await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
 	await page.setExtraHTTPHeaders({
 		"Accept-Language": "en-US,en;q=0.9"
 	});
+
+	//Some CMP pages ship a strict Content Security Policy (CSP) that blocks inline scripts.
+	//ConsentEngine is injected later via addScriptTag({ content: ... }), so bypass CSP
+	//here to ensure Puppeteer can add the engine bundle into the target frame.
+	await page.setBypassCSP(true);
 
 	await page.evaluateOnNewDocument(() => {
 		Object.defineProperty(navigator, "language", {
