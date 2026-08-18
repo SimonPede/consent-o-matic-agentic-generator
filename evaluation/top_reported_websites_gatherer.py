@@ -30,6 +30,10 @@ def extract_host_safe(url: str) -> str | None:
     except ValueError:
         #Some rows contain malformed hrefs (e.g. invalid IPv6-like patterns).
         return None
+    
+def is_valid_public_website_host(host: str) -> bool:
+    """Reject obvious non-website entries such as `newtab` or extension IDs."""
+    return "." in host
 
 def fetch_sites(n=N, exclude_all_comments=EXCLUDE_ALL_COMMENTS):
     response = requests.get(URL, timeout=30)
@@ -59,7 +63,11 @@ def fetch_sites(n=N, exclude_all_comments=EXCLUDE_ALL_COMMENTS):
         
         normalized_site = normalize_to_http(site)
         host = extract_host_safe(normalized_site)
+        
         if host is None:
+            continue
+        
+        if not is_valid_public_website_host(host):
             continue
 
         if host in BLOCKED_HOSTS:
