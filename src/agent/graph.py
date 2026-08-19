@@ -22,7 +22,6 @@ tools = [test_rule, request_human_review, analyze_screenshot]
 tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = llm.bind_tools(tools)
 
-
 def tool_node(state: dict) -> dict:
     """
     Performs the automated execution sequence for intercepted LLM tool calls.
@@ -60,7 +59,6 @@ def tool_node(state: dict) -> dict:
         
         if tool_call["name"] == "test_rule":
             state_updates["test_rule_count"] = state.get("test_rule_count", 0) + 1
-            
             
             #only overwrite current_rule_draft if a json_string was actually provided
             submitted_json_string = tool_call["args"].get("json_string")
