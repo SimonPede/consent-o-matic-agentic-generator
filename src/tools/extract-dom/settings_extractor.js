@@ -19,10 +19,11 @@ const extractFromFrame = require("./frame_extractor");
  * because frame.evaluate() runs in browser context and cannot access Node.js scope.
  * 
  * @param {Frame} frame - Puppeteer frame to capture state from
+ * @param {string|null} rootSelector - Optional CSS selector to limit the snapshot scope
  * @returns {{ inputs: number, buttons: number, html: string }}
  */
-async function getFrameState(frame) {
-    return await frame.evaluate(() => {
+async function getFrameState(frame, rootSelector = null) {
+    return await frame.evaluate((rootSelector) => {
 
         /**
          * Recursively queries the DOM including all Shadow DOM trees.
@@ -164,12 +165,15 @@ async function getFrameState(frame) {
 				hasActiveAlphaChannel;
         }
 
+        const scopedRoot = rootSelector ? document.querySelector(rootSelector) : null;
+        const rootNode = scopedRoot || document.body;
+
         return {
-            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']").filter(isVisible).length, //Same false-positive risk as class-based toggle detection.
-            buttons: querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn").filter(isVisible).length,
-            html: getDeepInnerHTML(document.body)
+            inputs: querySelectorAllDeep("input[type='checkbox'], [role='switch'], .toggle, .switch, [class*='toggle']", rootNode).filter(isVisible).length, //Same false-positive risk as class-based toggle detection.
+            buttons: querySelectorAllDeep("button, a, [role='button'], [class*='__btn'], .btn", rootNode).filter(isVisible).length,
+            html: getDeepInnerHTML(rootNode)
         };
-    });
+    }, rootSelector);
 }
 
 /**
@@ -197,11 +201,14 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
     //CMP clicks may either mutate the current frame or spawn a new iframe.
     //Handle both paths and use DOM-diff heuristics as an additional signal.
     //TODO:Evaluate thresholds empirically (current defaults: >500 chars, >0 inputs, >=2 buttons).
-    const framesBefore = page.frames().map(f => f.url()); //Frame URL snapshot before click.
-    const oldState = await getFrameState(frame);
-
     const selector = settingsButton.selector ? settingsButton.selector : "";
     const textToMatch = settingsButton.text ? settingsButton.text : "";
+    const stateScopeSelector = selector.includes(" >>> ") ? selector.split(" >>> ")[0].trim() : null;
+
+    console.error(`State snapshot scope selector: ${stateScopeSelector || "<document.body>"}`);
+
+    const framesBefore = page.frames().map(f => f.url()); //Frame URL snapshot before click.
+    const oldState = await getFrameState(frame, stateScopeSelector);
 
     if (selector === "") {
         console.error(`clickAndExtractSettings did not get a selector for the settings button!`)
@@ -250,10 +257,13 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         return false;
     }, selector, textToMatch);
 
+    console.error(`settings click target result - clickSuccess: ${clickSuccess}`);
+
     if (!clickSuccess) {
         console.error("JS Click failed. Trying Puppeteer fallback...");
         try {
             await frame.click(selector);
+            console.error("Puppeteer fallback click succeeded.");
         } catch (err) {
             console.error("Puppeteer click also failed:", err.message);
             return null;
@@ -307,11 +317,15 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         }, stableTime, timeout);
     };
 
+    console.error("Waiting 3000ms after settings click before frame/diff inspection...");
     await new Promise(resolve => setTimeout(resolve, 3000));
+    console.error("Post-click wait finished. Collecting new frames...");
     const newFrames = page.frames().filter(f => !framesBefore.includes(f.url()));
+    console.error(`New frame candidates detected: ${newFrames.length}`);
 
     const stablePromises = new Map();
     for (const f of newFrames) {
+        console.error(`Scheduling DOM stability wait for frame: ${f.url()}`);
         stablePromises.set(f, waitForDOMStable(f, 800, 6000));
     }
 
@@ -343,14 +357,18 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
     }
 
     if (bestNewFrame) {
+        console.error(`Best new frame selected for settings extraction: ${bestNewFrame.url()}`);
+        console.error("Awaiting DOM stability for best new frame...");
         await stablePromises.get(bestNewFrame);
+        console.error("DOM stability wait for best new frame finished. Extracting settings...");
         const settings = await extractFromFrame(bestNewFrame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
         settings.isIframe = bestNewFrame !== page.mainFrame();
         await Promise.allSettled([...stablePromises.values()]);
 
         return settings;
     } else {
-        const newState = await getFrameState(frame);
+        console.error("No qualifying new frame selected. Falling back to same-frame DOM diff analysis...");
+        const newState = await getFrameState(frame, stateScopeSelector);
 
         const changes = diff.diffChars(oldState.html, newState.html);
         const addedChars = changes
@@ -373,7 +391,9 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         //TODO:Revisit heuristic quality; consider adding generic newly-rendered element counts.
         if (totalChange > 500 || addedInputs > 0 || addedButtons >= 2) {
             console.error(`Settings detected: ${addedChars} chars, ${addedInputs} inputs, ${addedButtons} buttons added.`);
+            console.error("Awaiting same-frame DOM stability before extraction...");
             await waitForDOMStable(frame);
+            console.error("Same-frame DOM stability wait finished. Extracting settings...");
             const settings = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
 
             if (settings.checkboxes.length > 0 || settings.toggles.length > 0 || settings.buttons.length > 2) {
