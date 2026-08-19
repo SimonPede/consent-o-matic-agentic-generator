@@ -3,7 +3,7 @@
 		"frameUrl": "https://cmp.example.com",
 		"isMainFrame": false,
 		"isCookieBannerFrame": true,
-		"cmpType": "Sourcepoint",
+		"cmpType": "Example",
 		"data": {
 		"buttons": [
 			{
@@ -21,7 +21,7 @@
 		"toggles": [],
 		"cmpFound": true,
 		"cmpSelector": ".message-container",
-		"cmpType": "Sourcepoint",
+		"cmpType": "Example",
 		"url": "https://cmp.example.com"
 		},
 		"settings": {
@@ -61,7 +61,7 @@
 		"toggles": [],
 		"cmpFound": true,
 		"cmpSelector": ".message-container",
-		"cmpType": "Sourcepoint",
+		"cmpType": "Example",
 		"url": "https://cmp.example.com",
 		"filteredHtml": "<div class=\"message-container\"><div class=\"stack-row\"><h2>Personalised advertising</h2><button class=\"btn-agree\">Agree</button><button class=\"btn-reject\">Reject</button></div></div>"
 		}

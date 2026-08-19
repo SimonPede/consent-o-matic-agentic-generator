@@ -144,6 +144,12 @@ When wanting to run the agent on multiple websites configure the `urls.txt` (one
 python batch_runner.py
 ```
 
+To persist the full terminal output of a batch run (including node transitions, tool output, and intermediate LLM responses) into a single log file, run:
+
+```bash
+python batch_runner.py 2>&1 | tee data/logs/batch_$(date +%Y%m%d_%H%M%S).log
+```
+
 ## Development: LangSmith Studio (Optional)
  
 [LangSmith Studio](https://smith.langchain.com/studio) is a visual interface for interacting with your agent in real-time. It shows each step the agent takes — prompts sent to the model, tool calls and their results, token counts, and latency per node. You can submit inputs directly from the UI, inspect intermediate states, and interact with `human_review` interrupts without using the console.
