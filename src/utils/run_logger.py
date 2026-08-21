@@ -22,6 +22,17 @@ def _has_non_empty_do_consent(final_rule_dict: dict) -> bool:
 
     return False
 
+def parse_abort_reason(abort_reason: str) -> tuple[str, str]:
+    """Splits a model abort into machine-friendly code and free-text explanation."""
+    if not abort_reason:
+        return "", ""
+
+    if ":" not in abort_reason:
+        return abort_reason.strip(), ""
+
+    abort_code, abort_explanation = abort_reason.split(":", 1)
+    return abort_code.strip(), abort_explanation.strip()
+
 def _derive_auto_success_failure_reasons(
     test_result: dict,
     final_test_error: str,
@@ -48,7 +59,6 @@ def _derive_auto_success_failure_reasons(
         reasons.append("model_aborted")
 
     return reasons
-
 
 def log_run(
     state: dict,
@@ -92,6 +102,8 @@ def log_run(
     error_history = state.get("error_history", [])
     final_test_error = test_result.get("error") or ""
     final_rule = state.get("final_result", None)
+    abort_reason = state.get("abort_reason", "")
+    abort_code, abort_explanation = parse_abort_reason(abort_reason)
     
     banner_dismissed = (
         (baseline.get("heuristicBannerFound") == True
@@ -191,7 +203,7 @@ def log_run(
         "overall_timeout_seconds": overall_timeout_seconds, #only set when using the `batch_runner.py`
         "strategy_type": strategy_type,
         "verified": None,  #Manual override placeholder for ground-truth audits
-        "cmp_type": state.get("cmp_type", ""),
+        "cmp_type": state.get("cmp_type", "UNDETECTED"),
         "settings_extracted": settings_extracted,
         "handled": test_result.get("handled"),
         "banner_dismissed": banner_dismissed,
@@ -203,7 +215,9 @@ def log_run(
         "analyze_screenshot_count": state.get("analyze_screenshot_count", 0),
         "current_rule_draft": state.get("current_rule_draft", ""),
         "last_error": state.get("last_error", ""),
-        "abort_reason": state.get("abort_reason", ""),
+        "abort_reason": abort_reason,
+        "abort_code": abort_code,
+        "abort_explanation": abort_explanation,
         "suspected_stuck_reason": state.get("suspected_stuck_reason", ""),
         "model_aborted": state.get("model_aborted", False),
         "final_test_error": final_test_error,
@@ -249,6 +263,10 @@ def log_run(
         "human_review_count",
         "test_rule_count",
         "analyze_screenshot_count",
+        "model_aborted",
+        "abort_reason",
+        "abort_code",
+        "abort_explanation",
         "last_error",
         "final_test_error",
         "error_history",
@@ -281,6 +299,10 @@ def log_run(
         log_entry["human_review_count"],
         log_entry["test_rule_count"],
         log_entry["analyze_screenshot_count"],
+        log_entry["model_aborted"],
+        log_entry["abort_reason"],
+        log_entry["abort_code"],
+        log_entry["abort_explanation"],
         log_entry["last_error"],
         log_entry["final_test_error"],
         json.dumps(log_entry["error_history"], default=str),
