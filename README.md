@@ -27,6 +27,7 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 - **LLM:** Gemma 4 31B via Ollama (SNET server) or Kimi K2.5 via LiteLLM (Aarhus University)
 - **Validation:** Pydantic (type-safe tool calling)
 - **Tracing & Observability:** LangSmith
+- **Evaluation & Visualization**: Pandas, Matplotlib and Seaborn
 
 ## Project Structure
 

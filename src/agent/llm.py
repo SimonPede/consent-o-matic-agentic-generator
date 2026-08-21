@@ -37,7 +37,8 @@ else:
         model=LITELLM_MODEL_NAME,
         api_base=os.getenv("LITELLM_BASE_URL"),
         api_key=os.getenv("LITELLM_API_KEY"),
-        temperature=0,
+        temperature=1.0,
+        top_p = 1.0,
         max_tokens=25000,
         streaming=False
     )
