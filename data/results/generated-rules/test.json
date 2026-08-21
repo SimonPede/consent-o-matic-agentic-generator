@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+	"Sourcepoint": {
+		"detectors": [
+			{
+			"presentMatcher": [
+				{
+				"type": "css",
+				"target": {
+					"selector": ".message-container",
+					"iframeFilter": true
+				}
+				}
+			],
+			"showingMatcher": [
+				{
+				"type": "css",
+				"target": {
+					"selector": ".message-container",
+					"iframeFilter": true
+				}
+				}
+			]
+			}
+		],
+		"methods": [
+			{
+			"name": "HIDE_CMP",
+			"action": {
+				"type": "hide",
+				"target": {
+				"selector": ".message-container",
+				"iframeFilter": true
+				}
+			}
+			},
+			{
+			"name": "SAVE_CONSENT",
+			"action": {
+				"type": "click",
+				"target": {
+				"selector": "button:not([class*='primary-btn'])",
+				"iframeFilter": true
+            	}
+          	}
+        }
+	]
+}
+}
