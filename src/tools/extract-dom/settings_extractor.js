@@ -370,16 +370,31 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         console.error("No qualifying new frame selected. Falling back to same-frame DOM diff analysis...");
         const newState = await getFrameState(frame, stateScopeSelector);
 
-        const changes = diff.diffChars(oldState.html, newState.html);
-        const addedChars = changes
-            .filter(c => c.added) //Count only newly added characters.
-            .reduce((sum, c) => sum + c.count, 0);
-        
-        const removedChars = changes
-            .filter(c => c.removed)
-            .reduce((sum, c) => sum + c.count, 0);
+        const combinedHtmlLength = oldState.html.length + newState.html.length;
+        let addedChars = 0;
+        let removedChars = 0;
+        let totalChange = 0;
 
-        const totalChange = addedChars + removedChars;
+        if (combinedHtmlLength > 120000) {
+            totalChange = Math.abs(newState.html.length - oldState.html.length);
+            if (newState.html.length >= oldState.html.length) {
+                addedChars = newState.html.length - oldState.html.length;
+            } else {
+                removedChars = oldState.html.length - newState.html.length;
+            }
+            console.error(`DOM diff shortcut used because combined snapshot size was ${combinedHtmlLength} chars.`);
+        } else {
+            const changes = diff.diffChars(oldState.html, newState.html);
+            addedChars = changes
+                .filter(c => c.added) //Count only newly added characters.
+                .reduce((sum, c) => sum + c.count, 0);
+            
+            removedChars = changes
+                .filter(c => c.removed)
+                .reduce((sum, c) => sum + c.count, 0);
+
+            totalChange = addedChars + removedChars;
+        }
         
         const addedInputs = newState.inputs - oldState.inputs;
         const addedButtons = newState.buttons - oldState.buttons;
