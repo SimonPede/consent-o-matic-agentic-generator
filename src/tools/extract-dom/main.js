@@ -14,6 +14,8 @@ const extractFromFrame = require("./frame_extractor");
 const clickAndExtractSettings = require("./settings_extractor");
 const findSettingsButtonViaLlm = require("./llm_fallback");
 
+const NON_SETTINGS_COMPLETION_TERMS_REGEX = /\b(save|submit|close|continue|finish|confirm|apply|accept|agree|consent|allow|okay|ok)\b/i;
+
 
 //---------------------------------------------------------------------------------
 //IMPORTANT!!!!
@@ -213,6 +215,11 @@ async function extractStructuredDom(url) {
                         //which contain short substrings from the settings word corpus.
                         if (SETTINGS_TERMS_REGEX.test(loweredButtonText) && normalizedBtnText.length < 30) {
                             console.error(`Settings match: "${btn.text}" --> lowered: "${loweredButtonText}"`);
+
+                            if (NON_SETTINGS_COMPLETION_TERMS_REGEX.test(btn.text)) {
+                                console.error("Settings match dismissed because it looks like a save/submit/close action instead of a settings opener.");
+                                continue;
+                            }
                             
                             let href = "";
                             if (btn.attributes) {
