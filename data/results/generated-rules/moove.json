@@ -1,0 +1,115 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+      "Moove": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#moove_gdpr_cookie_info_bar"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#moove_gdpr_cookie_info_bar",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#moove_gdpr_cookie_info_bar, #moove_gdpr_cookie_modal"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".moove-gdpr-infobar-settings-btn"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#moove_gdpr_strict_cookies"
+                  }
+                },
+                "toggleAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": ".moove-gdpr-tab-nav[aria-label='Necessary Cookies']"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "#moove_gdpr_strict_cookies"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#moove_gdpr_performance_cookies"
+                  }
+                },
+                "toggleAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": ".moove-gdpr-tab-nav[aria-label='Google Analytics']"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "#moove_gdpr_performance_cookies"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".moove-gdpr-modal-save-settings"
+            }
+          }
+        }
+      ]
+    }
+}

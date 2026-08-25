@@ -1,0 +1,183 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+  "TermsFeed": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#termsfeed_privacy_consent_banner_button_accept_all"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#termsfeed_privacy_consent_banner_button_accept_all",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#termsfeed-pc1-notice-banner, #termsfeed-pc1-preferences-center"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "ifcss",
+            "target": {
+              "selector": "#termsfeed_privacy_consent_notice_banner_open_privacy_preferences"
+            },
+            "trueAction": {
+              "type": "list",
+              "actions": [
+                {
+                  "type": "click",
+                  "target": {
+                    "selector": "#termsfeed_privacy_consent_notice_banner_open_privacy_preferences"
+                  }
+                },
+                {
+                  "type": "wait",
+                  "waitTime": 500
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "input#functionality"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "label[for='functionality']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "input#analytics"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "label[for='analytics']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "input#advertising"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "label[for='advertising']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "input#marketing"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "label[for='marketing']"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "input#tf-pc-auto-dnsmpi"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#termsfeed-pc1-preferences-center"
+                  },
+                  "target": {
+                    "selector": "label[for='tf-pc-auto-dnsmpi']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#termsfeed-pc1-preferences-center-save-selection-button, #termsfeed_privacy_consent_notice_banner_save_preferences_button"
+            }
+          }
+        }
+      ]
+    }
+}

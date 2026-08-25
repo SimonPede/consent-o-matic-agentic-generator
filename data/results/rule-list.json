@@ -1,14 +1,14 @@
 {
 	"references": [
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json",
-		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/test.json"
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/usercentrics.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/termsfeed.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/osano.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/onetrust.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/moove.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/inmobi.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/didomi.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/cookieyes.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/cookieinformation.json",
+		"https://github.com/SimonPede/consent-o-matic-agentic-generator/tree/main/data/results/generated-rules/cookie-script.json"
 	]
 }

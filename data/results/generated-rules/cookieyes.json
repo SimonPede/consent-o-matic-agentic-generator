@@ -1,0 +1,136 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+"CookieYes": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".cky-consent-container, #ckyPreferenceCenter"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".cky-consent-container, #ckyPreferenceCenter",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".cky-consent-container, #ckyPreferenceCenter"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-cky-tag=\"settings-button\"]"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "waitcss",
+                "target": {
+                  "selector": "#ckySwitchfunctional"
+                },
+                "retries": 10,
+                "waitTime": 250
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "A",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "#ckySwitchfunctional"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ckySwitchfunctional"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "#ckySwitchanalytics"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ckySwitchanalytics"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "#ckySwitchperformance"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ckySwitchperformance"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "#ckySwitchadvertisement"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ckySwitchadvertisement"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-cky-tag=\"detail-save-button\"]"
+            }
+          }
+        }
+      ]
+    }
+}
