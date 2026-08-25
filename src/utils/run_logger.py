@@ -80,8 +80,10 @@ def log_run(
     completion (handled), absence of selector errors in the final test run
     (final_test_error), presence of a valid LLM-generated rule (final_result),
     and confirmed banner dismissal via heuristic or TCF API signals (banner_dismissed).
-    It does NOT verify correct consent category assignment (A/B/F/X), that
-    requires manual annotation via the verified field.
+    A second field, auto_success_with_vision, keeps the same conditions but
+    also accepts the vision-based screenshot audit as a positive dismissal
+    signal. Neither metric verifies correct consent category assignment (A/B/F/X),
+    which requires manual annotation via the verified field.
 
     Args:
         state: The final LangGraph agent state after a completed run.
@@ -135,6 +137,12 @@ def log_run(
         and not final_test_error
         and state.get("final_result") is not None
         and banner_dismissed
+    )
+    auto_success_with_vision = (
+        test_result.get("handled") == True
+        and not final_test_error
+        and state.get("final_result") is not None
+        and (banner_dismissed or vision_banner_dismissed == True)
     )
     auto_success_failure_reasons = []
     if not auto_success:
@@ -198,6 +206,7 @@ def log_run(
         "model_used": model_name,
         "few_shot_config": few_shot_config,
         "auto_success": auto_success,
+        "auto_success_with_vision": auto_success_with_vision,
         "auto_success_failure_reasons": auto_success_failure_reasons,
         "aborted_max_resumes": aborted_max_resumes, #only set when using the `batch_runner.py`
         "overall_timeout_seconds": overall_timeout_seconds, #only set when using the `batch_runner.py`
@@ -249,6 +258,7 @@ def log_run(
         "model_used",
         "few_shot_config",
         "auto_success",
+        "auto_success_with_vision",
         "aborted_max_resumes",
         "overall_timeout_seconds",
         "strategy_type",
@@ -285,6 +295,7 @@ def log_run(
         log_entry["model_used"],
         log_entry["few_shot_config"],
         log_entry["auto_success"],
+        log_entry["auto_success_with_vision"],
         log_entry["aborted_max_resumes"],
         log_entry["overall_timeout_seconds"],
         log_entry["strategy_type"],

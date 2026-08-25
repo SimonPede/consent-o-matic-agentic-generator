@@ -338,7 +338,7 @@ def main() -> None:
     Iterates over evaluation_urls and runs the agent for each URL sequentially.
     All runs are logged to data/logs/runs/ (JSON) and data/logs/evaluation_summary.csv.
     """
-    url_file_path = "evaluation/test_urls.txt"
+    url_file_path = "evaluation/top_10_cmp_homepages.txt"
     evaluation_urls = load_urls_from_file(url_file_path)
     timeout_seconds = 1800 #30min
     
