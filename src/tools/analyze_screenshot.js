@@ -5,7 +5,7 @@ const waitForCmpUi = require("../utils/wait_for_cmp_ui");
 const url = process.argv[2];
 
 if (!url) {
-    console.log(JSON.stringify({ error: "Missing argument: url required" }));
+    console.log(JSON.stringify({ error: "Missing argument for analyze_screenshot: url required" }));
     process.exit(1);
 }
 
@@ -78,7 +78,7 @@ async function run() {
 
 	} catch (err) {
 		console.log(JSON.stringify({ 
-            error: `Puppeteer Error: ${err.message}` 
+            error: `Puppeteer Error in analyze_screenshot: ${err.message}` 
         }));
 	} finally {
 		await browser.close();

@@ -780,7 +780,7 @@ async function runTest(rule) {
             handled: false, 
             cmpName: null, 
             clicks: 0, 
-            error: `Puppeteer Error: ${err.message}` 
+            error: `Puppeteer Error in test_rule: ${err.message}` 
         }));
     } finally {
         await browser.close();
@@ -790,7 +790,7 @@ async function runTest(rule) {
 const url = process.argv[2];
 
 if (!url) {
-    console.log(JSON.stringify({ error: "Missing argument: url required" }));
+    console.log(JSON.stringify({ error: "Missing argument for test_rule: url required" }));
     process.exit(1);
 }
 
@@ -808,7 +808,7 @@ process.stdin.on("end", () => {
     try {
         rule = JSON.parse(ruleJson);
     } catch (e) {
-        console.log(JSON.stringify({ error: "Invalid JSON from Python: " + e.message }));
+        console.log(JSON.stringify({ error: "Invalid JSON from Python in test_rule: " + e.message }));
         process.exit(1);
     }
 

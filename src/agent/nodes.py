@@ -261,7 +261,7 @@ def extraction_node(state: AgentState) -> dict:
             "extraction_duration_seconds": extract_duration_seconds,
             "messages": [
                 HumanMessage(content=(
-                    "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked"
+                    "DOM extraction returned no results. The page may not have a cookie banner or the script was detected and blocked."
                 ))
             ]
         }
