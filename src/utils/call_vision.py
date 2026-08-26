@@ -18,28 +18,35 @@ def call_vision(base64_image: str) -> dict:
     
     prompt = """
     You are analyzing a screenshot of a website AFTER an automated script tried to interact with or dismiss a cookie consent banner.
-    Your task is to independently verify whether the banner was successfully dismissed or is still visible.
-    This verification is used to cross-check the heuristic banner detection and improve evaluation accuracy.
+    Your task is to independently verify whether the original consent interface is still active or has effectively been dismissed.
+    This verification is used to cross-check heuristic banner detection and improve evaluation accuracy.
 
     Analyze the screenshot and return ONLY a valid JSON object with exactly these fields, nothing else.
     No explanation, no markdown, no code blocks.
 
     {
-        "bannerVisible": true if a banner, overlay, or configuration sub-menu is still visible, false otherwise,
-        "bannerDismissed": true if no banner or menu is visible on screen,
-        "bannerPosition": "top", "bottom", "center", "full-screen" or null if no banner,
+        "bannerVisible": true if an active consent banner, overlay, wall, or configuration sub-menu is still visible and still asks the user to make or confirm privacy choices, false otherwise,
+        "bannerDismissed": true if the original consent interface is no longer active on screen, false otherwise,
+        "bannerPosition": "top", "bottom", "center", "full-screen" or null if no active banner,
         "cmpType": name of the CMP if recognizable (e.g. "OneTrust", "Cookiebot"), or null,
-        "settingsButtonVisible": true if a settings, preferences, or "Save/Confirm" button is visible,
+        "settingsButtonVisible": true only if a settings/preferences/save/confirm/reject control belonging to an active consent interface is currently visible,
         "buttons": [
             {
-                "text": visible button label (e.g., "Save Choices", "Confirm My Selection", "Back"),
+                "text": visible button label (e.g. "Save Choices", "Confirm My Selection", "Back"),
                 "color": dominant button color,
                 "position": "left", "center", "right"
             }
         ]
     }
 
-    If no banner/menu is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
+    Important classification rules:
+    - Distinguish an ACTIVE consent interface from a POST-CONSENT state.
+    - If the screenshot mainly shows a confirmation, success, or reassurance message such as "we respect your choice", "preferences saved", "your choices have been saved",
+        or a follow-up CTA to revisit choices later, treat the banner as dismissed.
+    - Do NOT classify small privacy shortcuts, floating fingerprint/privacy icons, reopen buttons, or "open settings again later" widgets as an active banner by themselves.
+    - Only return bannerVisible: true when the user is still being actively asked to accept, reject, save, confirm, or configure consent choices in the currently open interface.
+
+    If no active banner/menu is visible, return bannerVisible: false, bannerDismissed: true, bannerPosition: null, settingsButtonVisible: false, and an empty buttons array.
     """
     try:
         response_text = ""
