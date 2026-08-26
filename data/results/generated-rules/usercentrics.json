@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-      "Usercentrics": {
+    "Usercentrics": {
       "detectors": [
         {
           "presentMatcher": [
@@ -18,7 +18,8 @@
                 "selector": "#usercentrics-cmp-ui"
               },
               "target": {
-                "selector": "#deny"
+                "selector": "#accept",
+                "displayFilter": true
               }
             }
           ]
