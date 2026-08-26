@@ -40,15 +40,20 @@
               {
                 "type": "click",
                 "target": {
-                  "parent": {
-                    "selector": ".button-continer"
-                  },
-                  "selector": "button:nth-child(2)"
+                  "selector": ".accept-cookie button",
+                  "textFilter": [
+                    "Customize",
+                    "CUSTOMIZE"
+                  ]
                 }
               },
               {
-                "type": "wait",
-                "waitTime": 300
+                "type": "waitcss",
+                "target": {
+                  "selector": ".customize-cookie-popup"
+                },
+                "retries": 10,
+                "waitTime": 250
               }
             ]
           }
@@ -63,13 +68,13 @@
                 "matcher": {
                   "type": "checkbox",
                   "target": {
-                    "selector": ".customize-cookie-popup input[type=\"checkbox\"][value=\"adv\"]"
+                    "selector": ".customize-cookie-popup input[value='adv']"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
                   "target": {
-                    "selector": ".customize-cookie-popup input[type=\"checkbox\"][value=\"adv\"]"
+                    "selector": ".customize-cookie-popup input[value='adv']"
                   }
                 }
               }
@@ -81,10 +86,14 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".customize-cookie-popup button:last-child"
+              "selector": ".customize-cookie-popup button",
+              "textFilter": [
+                "Confirm",
+                "CONFIRM"
+              ]
             }
           }
         }
       ]
-  }
+    }
 }

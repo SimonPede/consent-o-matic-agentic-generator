@@ -1,21 +1,25 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-      "Cookie-Script": {
+  "Cookie-Script": {
       "detectors": [
         {
-          "presentMatcher": {
-            "type": "css",
-            "target": {
-              "selector": "#cookiescript_accept"
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cookiescript_injected"
+              }
             }
-          },
-          "showingMatcher": {
-            "type": "css",
-            "target": {
-              "selector": "#cookiescript_accept",
-              "displayFilter": true
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cookiescript_injected",
+                "displayFilter": true
+              }
             }
-          }
+          ]
         }
       ],
       "methods": [
@@ -24,17 +28,103 @@
           "action": {
             "type": "hide",
             "target": {
-              "selector": "#cookiescript_injected_wrapper, #cookiescript_injected"
+              "selector": "#cookiescript_injected"
             }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#cookiescript_manage_wrap"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_functionality"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_functionality"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_performance"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_performance"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_targeting"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_targeting"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_unclassified"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_unclassified"
+                  }
+                }
+              }
+            ]
           }
         },
         {
           "name": "SAVE_CONSENT",
           "action": {
-            "type": "click",
-            "target": {
-              "selector": "#cookiescript_reject"
-            }
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#cookiescript_close"
+                }
+              }
+            ]
           }
         }
       ]

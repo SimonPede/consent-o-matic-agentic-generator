@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-      "Moove": {
+  "Moove": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "#moove_gdpr_cookie_info_bar"
+                "selector": "#moove_gdpr_cookie_info_bar, #moove_gdpr_cookie_modal"
               }
             }
           ],
@@ -15,8 +15,7 @@
             {
               "type": "css",
               "target": {
-                "selector": "#moove_gdpr_cookie_info_bar",
-                "displayFilter": true
+                "selector": "#moove_gdpr_cookie_info_bar:not(.moove-gdpr-info-bar-hidden), #moove_gdpr_cookie_modal:not(.gdpr_lightbox-hide)"
               }
             }
           ]
@@ -28,7 +27,7 @@
           "action": {
             "type": "hide",
             "target": {
-              "selector": "#moove_gdpr_cookie_info_bar, #moove_gdpr_cookie_modal"
+              "selector": "#moove_gdpr_cookie_info_bar"
             }
           }
         },
@@ -37,7 +36,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".moove-gdpr-infobar-settings-btn"
+              "selector": ".moove-gdpr-infobar-settings-btn, #moove_gdpr_save_popup_settings_button"
             }
           }
         },
@@ -60,7 +59,7 @@
                     {
                       "type": "click",
                       "target": {
-                        "selector": ".moove-gdpr-tab-nav[aria-label='Necessary Cookies']"
+                        "selector": "[data-href=\"#strict-necessary-cookies\"].moove-gdpr-tab-nav"
                       }
                     },
                     {
@@ -86,7 +85,7 @@
                     {
                       "type": "click",
                       "target": {
-                        "selector": ".moove-gdpr-tab-nav[aria-label='Google Analytics']"
+                        "selector": "[data-href=\"#third_party_cookies\"].moove-gdpr-tab-nav"
                       }
                     },
                     {
@@ -106,7 +105,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".moove-gdpr-modal-save-settings"
+              "selector": "[aria-label=\"Save Changes\"]"
             }
           }
         }

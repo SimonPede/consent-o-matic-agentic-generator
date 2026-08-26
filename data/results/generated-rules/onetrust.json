@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "OneTrust": {
+"OneTrust": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "#onetrust-banner-sdk"
+                "selector": "#onetrust-consent-sdk"
               }
             }
           ],
@@ -15,7 +15,8 @@
             {
               "type": "css",
               "target": {
-                "selector": "#onetrust-banner-sdk"
+                "selector": "#onetrust-banner-sdk",
+                "displayFilter": true
               }
             }
           ]
