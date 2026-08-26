@@ -825,6 +825,10 @@ that does not invalidate the consent interaction itself.
 Only treat `scrollLocked: true` as a reason to revise the rule when it is accompanied by other failure evidence,
 such as a still-visible banner, failing matchers, click errors, or an obviously still-open modal.
 
+If `handled: true`, `error: null`, real clicks occurred, and `heuristicBannerFound` changes from true in the baseline to false in the audit,
+do NOT keep revising the rule solely because `showingMatcherFound` remains true. In that case, suspect a stale or overly broad showingMatcher
+before changing OPEN_OPTIONS, DO_CONSENT, or SAVE_CONSENT. Do NOT add speculative extra clicks.
+
 If after several revisions (5 or more) no working rule is found,
 explicitly state what you tried and why it failed -
 you MUST call request_human_review. Do not generate another rule attempt.

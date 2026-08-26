@@ -113,6 +113,7 @@ def analyze_screenshot(url: str) -> str:
 
     If no banner is visible, return bannerVisible: false, bannerDismissed: true, and an empty buttons array.
     """
+    
     try:
         response_text = ""
         if not vision_model:

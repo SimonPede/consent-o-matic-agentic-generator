@@ -20,6 +20,18 @@ def _has_non_empty_do_consent(final_rule_dict: dict) -> bool:
             if isinstance(consents, list) and len(consents) > 0:
                 return True
 
+            nested_actions = action.get("actions", [])
+            if isinstance(nested_actions, list):
+                for nested_action in nested_actions:
+                    if not isinstance(nested_action, dict):
+                        continue
+                    if nested_action.get("type") != "consent":
+                        continue
+
+                    nested_consents = nested_action.get("consents", [])
+                    if isinstance(nested_consents, list) and len(nested_consents) > 0:
+                        return True
+
     return False
 
 def parse_abort_reason(abort_reason: str) -> tuple[str, str]:

@@ -4,6 +4,7 @@ node_modules/
 __pycache__/
 *.db
 *.pckl
+*.csv
 =0.2.6
 .DS_Store
 debug.png
