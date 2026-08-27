@@ -37,7 +37,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": "[data-cky-tag=\"settings-button\"]"
+              "selector": "button[data-cky-tag=\"settings-button\"]"
             }
           }
         },
@@ -114,7 +114,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": "[data-cky-tag=\"detail-save-button\"]"
+              "selector": "button[data-cky-tag=\"detail-save-button\"]"
             }
           }
         }

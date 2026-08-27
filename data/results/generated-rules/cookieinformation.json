@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-    "Cookie Information": {
+  "Cookie Information": {
       "detectors": [
         {
           "presentMatcher": [
@@ -15,7 +15,7 @@
             {
               "type": "css",
               "target": {
-                "selector": "#coi-banner-wrapper",
+                "selector": "[id^=\"coi\"]",
                 "displayFilter": true
               }
             }
@@ -28,7 +28,7 @@
           "action": {
             "type": "hide",
             "target": {
-              "selector": "#coi-banner-wrapper"
+              "selector": "[id^=\"coi\"]"
             }
           }
         },

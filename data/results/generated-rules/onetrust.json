@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-"OneTrust": {
+  "OneTrust": {
       "detectors": [
         {
           "presentMatcher": [
@@ -55,10 +55,26 @@
                   }
                 },
                 "toggleAction": {
-                  "type": "click",
-                  "target": {
-                    "selector": "#ot-group-id-3"
-                  }
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": ".category-menu-switch-handler",
+                        "textFilter": "Functional Cookies"
+                      }
+                    },
+                    {
+                      "type": "wait",
+                      "waitTime": 300
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ot-group-id-3"
+                      }
+                    }
+                  ]
                 }
               },
               {
@@ -70,10 +86,26 @@
                   }
                 },
                 "toggleAction": {
-                  "type": "click",
-                  "target": {
-                    "selector": "#ot-group-id-2"
-                  }
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": ".category-menu-switch-handler",
+                        "textFilter": "Performance Cookies"
+                      }
+                    },
+                    {
+                      "type": "wait",
+                      "waitTime": 300
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ot-group-id-2"
+                      }
+                    }
+                  ]
                 }
               },
               {
@@ -85,10 +117,26 @@
                   }
                 },
                 "toggleAction": {
-                  "type": "click",
-                  "target": {
-                    "selector": "#ot-group-id-4"
-                  }
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": ".category-menu-switch-handler",
+                        "textFilter": "Targeting Cookies"
+                      }
+                    },
+                    {
+                      "type": "wait",
+                      "waitTime": 300
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "#ot-group-id-4"
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -97,10 +145,19 @@
         {
           "name": "SAVE_CONSENT",
           "action": {
-            "type": "click",
-            "target": {
-              "selector": ".save-preference-btn-handler"
-            }
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".save-preference-btn-handler"
+                }
+              }
+            ]
           }
         }
       ]

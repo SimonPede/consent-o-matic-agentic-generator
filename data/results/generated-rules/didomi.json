@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-	    "Didomi": {
+	"Didomi": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "#didomi-host"
+                "selector": "#didomi-popup, #didomi-consent-popup"
               }
             }
           ],
@@ -15,7 +15,8 @@
             {
               "type": "css",
               "target": {
-                "selector": "body.didomi-popup-open"
+                "selector": "#didomi-popup, #didomi-consent-popup",
+                "displayFilter": true
               }
             }
           ]
@@ -49,104 +50,66 @@
                 "type": "D",
                 "trueAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Storing and/or accessing information on a terminal"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-k8Kmth\"]:nth-of-type(2)"
                   }
                 },
                 "falseAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Storing and/or accessing information on a terminal"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-k8Kmth\"]:nth-of-type(1)"
                   }
                 }
               },
               {
                 "type": "F",
                 "trueAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
                       "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Personalised advertising and ad performance measurement"
+                        "selector": "button[aria-describedby=\"didomi-purpose-jJAmNW\"]:nth-of-type(2)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-marketing\"]:nth-of-type(2)"
                       }
                     }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
-                  }
+                  ]
                 },
                 "falseAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
                       "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Personalised advertising and ad performance measurement"
+                        "selector": "button[aria-describedby=\"didomi-purpose-jJAmNW\"]:nth-of-type(1)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-marketing\"]:nth-of-type(1)"
                       }
                     }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
-                  }
+                  ]
                 }
               },
               {
                 "type": "E",
                 "trueAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Personalised content, content performance measurement, audience data, and product development"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-ndPRXN\"]:nth-of-type(2)"
                   }
                 },
                 "falseAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-category",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".didomi-consent-popup-category__name",
-                        "textFilter": "Personalised content, content performance measurement, audience data, and product development"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-ndPRXN\"]:nth-of-type(1)"
                   }
                 }
               },
@@ -154,140 +117,52 @@
                 "type": "B",
                 "trueAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Analytics"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-analytics\"]:nth-of-type(2)"
                   }
                 },
                 "falseAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Analytics"
-                      }
-                    }
-                  },
                   "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
+                    "selector": "button[aria-describedby=\"didomi-purpose-analytics\"]:nth-of-type(1)"
                   }
                 }
               },
               {
                 "type": "X",
                 "trueAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
                       "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Actively scan device characteristics for identification"
+                        "selector": "button[aria-describedby=\"didomi-purpose-device_characteristics\"]:nth-of-type(2)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-geo_ads\"]:nth-of-type(2)"
                       }
                     }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
-                  }
+                  ]
                 },
                 "falseAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
                       "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Actively scan device characteristics for identification"
+                        "selector": "button[aria-describedby=\"didomi-purpose-device_characteristics\"]:nth-of-type(1)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-geo_ads\"]:nth-of-type(1)"
                       }
                     }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
-                  }
-                }
-              },
-              {
-                "type": "F",
-                "trueAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Storage and access to geolocation information for targeted advertising purposes"
-                      }
-                    }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
-                  }
-                },
-                "falseAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Storage and access to geolocation information for targeted advertising purposes"
-                      }
-                    }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
-                  }
-                }
-              },
-              {
-                "type": "F",
-                "trueAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Marketing"
-                      }
-                    }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Agree"
-                  }
-                },
-                "falseAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": ".didomi-consent-popup-data-processing",
-                    "childFilter": {
-                      "target": {
-                        "selector": ".label-click",
-                        "textFilter": "Marketing"
-                      }
-                    }
-                  },
-                  "target": {
-                    "selector": "button",
-                    "textFilter": "Disagree"
-                  }
+                  ]
                 }
               }
             ]
@@ -300,7 +175,7 @@
             "actions": [
               {
                 "type": "wait",
-                "waitTime": 500
+                "waitTime": 750
               },
               {
                 "type": "click",

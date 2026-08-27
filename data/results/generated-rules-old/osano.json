@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "Osano": {
+"Osano": {
       "detectors": [
         {
           "presentMatcher": [
@@ -15,25 +15,8 @@
             {
               "type": "css",
               "target": {
-                "selector": ".osano-cm-dialog:not(.osano-cm-dialog--hidden)"
-              }
-            }
-          ]
-        },
-        {
-          "presentMatcher": [
-            {
-              "type": "css",
-              "target": {
-                "selector": ".osano-cm-window"
-              }
-            }
-          ],
-          "showingMatcher": [
-            {
-              "type": "css",
-              "target": {
-                "selector": ".osano-cm-info-dialog:not(.osano-cm-info-dialog--hidden)"
+                "selector": ".osano-cm-manage, .osano-cm-save",
+                "displayFilter": true
               }
             }
           ]
@@ -63,6 +46,21 @@
           "action": {
             "type": "consent",
             "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ESSENTIAL"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ESSENTIAL"
+                  }
+                }
+              },
               {
                 "type": "F",
                 "matcher": {

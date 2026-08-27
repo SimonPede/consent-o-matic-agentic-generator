@@ -1,24 +1,21 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "Usercentrics": {
+  "Cookie-Script": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "#usercentrics-cmp-ui"
+                "selector": "#cookiescript_injected"
               }
             }
           ],
           "showingMatcher": [
             {
               "type": "css",
-              "parent": {
-                "selector": "#usercentrics-cmp-ui"
-              },
               "target": {
-                "selector": "#uc-main-dialog",
+                "selector": "#cookiescript_injected",
                 "displayFilter": true
               }
             }
@@ -31,7 +28,16 @@
           "action": {
             "type": "hide",
             "target": {
-              "selector": "#usercentrics-cmp-ui"
+              "selector": "#cookiescript_injected"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#cookiescript_manage_wrap"
             }
           }
         },
@@ -43,66 +49,60 @@
               {
                 "type": "A",
                 "matcher": {
-                  "type": "css",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
+                  "type": "checkbox",
                   "target": {
-                    "selector": "#uc-category-functional-toggle[aria-checked='true']"
+                    "selector": "#cookiescript_category_functionality"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
                   "target": {
-                    "selector": "#uc-category-functional-toggle",
-                    "displayFilter": true
-                  }
-                }
-              },
-              {
-                "type": "F",
-                "matcher": {
-                  "type": "css",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
-                  "target": {
-                    "selector": "#uc-category-marketing-toggle[aria-checked='true']"
-                  }
-                },
-                "toggleAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
-                  "target": {
-                    "selector": "#uc-category-marketing-toggle",
-                    "displayFilter": true
+                    "selector": "#cookiescript_category_functionality"
                   }
                 }
               },
               {
                 "type": "B",
                 "matcher": {
-                  "type": "css",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
+                  "type": "checkbox",
                   "target": {
-                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle[aria-checked='true']"
+                    "selector": "#cookiescript_category_performance"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
                   "target": {
-                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
-                    "displayFilter": true
+                    "selector": "#cookiescript_category_performance"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_targeting"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_targeting"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#cookiescript_category_unclassified"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#cookiescript_category_unclassified"
                   }
                 }
               }
@@ -116,16 +116,12 @@
             "actions": [
               {
                 "type": "wait",
-                "waitTime": 300
+                "waitTime": 500
               },
               {
                 "type": "click",
-                "parent": {
-                  "selector": "#usercentrics-cmp-ui"
-                },
                 "target": {
-                  "selector": "#save",
-                  "displayFilter": true
+                  "selector": "#cookiescript_close"
                 }
               }
             ]

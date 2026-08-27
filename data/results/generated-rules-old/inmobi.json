@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "InMobi": {
+    "InMobi": {
       "detectors": [
         {
           "presentMatcher": [
@@ -26,31 +26,36 @@
         {
           "name": "HIDE_CMP",
           "action": {
-            "type": "list",
-            "actions": [
-              {
-                "type": "hide",
-                "target": {
-                  "selector": ".accept-cookie"
-                }
-              },
-              {
-                "type": "hide",
-                "target": {
-                  "selector": "#hs-eu-cookie-confirmation"
-                }
-              }
-            ]
+            "type": "hide",
+            "target": {
+              "selector": ".accept-cookie"
+            }
           }
         },
         {
           "name": "OPEN_OPTIONS",
           "action": {
-            "type": "click",
-            "target": {
-              "selector": ".button-continer .buttonGradient",
-              "textFilter": "CUSTOMIZE"
-            }
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".accept-cookie button",
+                  "textFilter": [
+                    "Customize",
+                    "CUSTOMIZE"
+                  ]
+                }
+              },
+              {
+                "type": "waitcss",
+                "target": {
+                  "selector": ".customize-cookie-popup"
+                },
+                "retries": 10,
+                "waitTime": 250
+              }
+            ]
           }
         },
         {
@@ -62,20 +67,14 @@
                 "type": "F",
                 "matcher": {
                   "type": "checkbox",
-                  "parent": {
-                    "selector": ".customize-cookie-popup"
-                  },
                   "target": {
-                    "selector": "input[type='checkbox'][value='adv']"
+                    "selector": ".customize-cookie-popup input[value='adv']"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
-                  "parent": {
-                    "selector": ".customize-cookie-popup"
-                  },
                   "target": {
-                    "selector": "input[type='checkbox'][value='adv']"
+                    "selector": ".customize-cookie-popup input[value='adv']"
                   }
                 }
               }
@@ -87,8 +86,11 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".customize-cookie-popup .buttonGradient",
-              "textFilter": "CONFIRM"
+              "selector": ".customize-cookie-popup button",
+              "textFilter": [
+                "Confirm",
+                "CONFIRM"
+              ]
             }
           }
         }

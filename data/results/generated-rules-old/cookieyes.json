@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "Osano": {
+  "CookieYes": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": ".osano-cm-window"
+                "selector": ".cky-consent-container, #ckyPreferenceCenter"
               }
             }
           ],
@@ -15,25 +15,8 @@
             {
               "type": "css",
               "target": {
-                "selector": ".osano-cm-dialog:not(.osano-cm-dialog--hidden)"
-              }
-            }
-          ]
-        },
-        {
-          "presentMatcher": [
-            {
-              "type": "css",
-              "target": {
-                "selector": ".osano-cm-window"
-              }
-            }
-          ],
-          "showingMatcher": [
-            {
-              "type": "css",
-              "target": {
-                "selector": ".osano-cm-info-dialog:not(.osano-cm-info-dialog--hidden)"
+                "selector": ".cky-consent-container, #ckyPreferenceCenter",
+                "displayFilter": true
               }
             }
           ]
@@ -45,7 +28,7 @@
           "action": {
             "type": "hide",
             "target": {
-              "selector": ".osano-cm-window"
+              "selector": ".cky-consent-container, #ckyPreferenceCenter"
             }
           }
         },
@@ -54,7 +37,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".osano-cm-manage"
+              "selector": "[data-cky-tag=\"settings-button\"]"
             }
           }
         },
@@ -64,32 +47,17 @@
             "type": "consent",
             "consents": [
               {
-                "type": "F",
-                "matcher": {
-                  "type": "checkbox",
-                  "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
-                  }
-                },
-                "toggleAction": {
-                  "type": "click",
-                  "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
-                  }
-                }
-              },
-              {
                 "type": "A",
                 "matcher": {
                   "type": "checkbox",
                   "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                    "selector": "#ckySwitchfunctional"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
                   "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                    "selector": "#ckySwitchfunctional"
                   }
                 }
               },
@@ -98,13 +66,43 @@
                 "matcher": {
                   "type": "checkbox",
                   "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                    "selector": "#ckySwitchanalytics"
                   }
                 },
                 "toggleAction": {
                   "type": "click",
                   "target": {
-                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                    "selector": "#ckySwitchanalytics"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ckySwitchperformance"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ckySwitchperformance"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ckySwitchadvertisement"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ckySwitchadvertisement"
                   }
                 }
               }
@@ -116,7 +114,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".osano-cm-save"
+              "selector": "[data-cky-tag=\"detail-save-button\"]"
             }
           }
         }

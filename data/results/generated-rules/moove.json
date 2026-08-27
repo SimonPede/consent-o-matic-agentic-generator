@@ -7,7 +7,7 @@
             {
               "type": "css",
               "target": {
-                "selector": "#moove_gdpr_cookie_info_bar, #moove_gdpr_cookie_modal"
+                "selector": "#moove_gdpr_cookie_info_bar"
               }
             }
           ],
@@ -15,7 +15,25 @@
             {
               "type": "css",
               "target": {
-                "selector": "#moove_gdpr_cookie_info_bar:not(.moove-gdpr-info-bar-hidden), #moove_gdpr_cookie_modal:not(.gdpr_lightbox-hide)"
+                "selector": "#moove_gdpr_cookie_info_bar:not(.moove-gdpr-info-bar-hidden)"
+              }
+            }
+          ]
+        },
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#moove_gdpr_cookie_modal"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#moove_gdpr_cookie_modal:not(.gdpr_lightbox-hide)"
               }
             }
           ]
@@ -25,10 +43,21 @@
         {
           "name": "HIDE_CMP",
           "action": {
-            "type": "hide",
-            "target": {
-              "selector": "#moove_gdpr_cookie_info_bar"
-            }
+            "type": "list",
+            "actions": [
+              {
+                "type": "hide",
+                "target": {
+                  "selector": "#moove_gdpr_cookie_info_bar"
+                }
+              },
+              {
+                "type": "hide",
+                "target": {
+                  "selector": "#moove_gdpr_cookie_modal"
+                }
+              }
+            ]
           }
         },
         {
@@ -36,66 +65,53 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": ".moove-gdpr-infobar-settings-btn, #moove_gdpr_save_popup_settings_button"
+              "selector": ".moove-gdpr-infobar-settings-btn"
             }
           }
         },
         {
           "name": "DO_CONSENT",
           "action": {
-            "type": "consent",
-            "consents": [
+            "type": "list",
+            "actions": [
               {
-                "type": "D",
-                "matcher": {
-                  "type": "checkbox",
-                  "target": {
-                    "selector": "#moove_gdpr_strict_cookies"
-                  }
-                },
-                "toggleAction": {
-                  "type": "list",
-                  "actions": [
-                    {
-                      "type": "click",
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "D",
+                    "matcher": {
+                      "type": "checkbox",
                       "target": {
-                        "selector": "[data-href=\"#strict-necessary-cookies\"].moove-gdpr-tab-nav"
+                        "selector": "#moove_gdpr_strict_cookies"
                       }
                     },
-                    {
+                    "toggleAction": {
                       "type": "click",
                       "target": {
                         "selector": "#moove_gdpr_strict_cookies"
                       }
                     }
-                  ]
-                }
-              },
-              {
-                "type": "B",
-                "matcher": {
-                  "type": "checkbox",
-                  "target": {
-                    "selector": "#moove_gdpr_performance_cookies"
-                  }
-                },
-                "toggleAction": {
-                  "type": "list",
-                  "actions": [
-                    {
-                      "type": "click",
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
                       "target": {
-                        "selector": "[data-href=\"#third_party_cookies\"].moove-gdpr-tab-nav"
+                        "selector": "#moove_gdpr_performance_cookies"
                       }
                     },
-                    {
+                    "toggleAction": {
                       "type": "click",
                       "target": {
                         "selector": "#moove_gdpr_performance_cookies"
                       }
                     }
-                  ]
-                }
+                  }
+                ]
               }
             ]
           }
@@ -105,7 +121,7 @@
           "action": {
             "type": "click",
             "target": {
-              "selector": "[aria-label=\"Save Changes\"]"
+              "selector": ".moove-gdpr-modal-save-settings"
             }
           }
         }

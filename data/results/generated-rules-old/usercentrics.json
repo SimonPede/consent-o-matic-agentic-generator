@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "Usercentrics": {
+    "Usercentrics": {
       "detectors": [
         {
           "presentMatcher": [
@@ -18,7 +18,7 @@
                 "selector": "#usercentrics-cmp-ui"
               },
               "target": {
-                "selector": "#uc-main-dialog",
+                "selector": "#accept",
                 "displayFilter": true
               }
             }
@@ -32,6 +32,18 @@
             "type": "hide",
             "target": {
               "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#uc-more-link"
             }
           }
         },
@@ -57,8 +69,28 @@
                     "selector": "#usercentrics-cmp-ui"
                   },
                   "target": {
-                    "selector": "#uc-category-functional-toggle",
-                    "displayFilter": true
+                    "selector": "#uc-category-functional-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-46c19ef2-b8c3-4ca2-a8eb-93286568a1d1-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-46c19ef2-b8c3-4ca2-a8eb-93286568a1d1-toggle"
                   }
                 }
               },
@@ -79,30 +111,7 @@
                     "selector": "#usercentrics-cmp-ui"
                   },
                   "target": {
-                    "selector": "#uc-category-marketing-toggle",
-                    "displayFilter": true
-                  }
-                }
-              },
-              {
-                "type": "B",
-                "matcher": {
-                  "type": "css",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
-                  "target": {
-                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle[aria-checked='true']"
-                  }
-                },
-                "toggleAction": {
-                  "type": "click",
-                  "parent": {
-                    "selector": "#usercentrics-cmp-ui"
-                  },
-                  "target": {
-                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
-                    "displayFilter": true
+                    "selector": "#uc-category-marketing-toggle"
                   }
                 }
               }
@@ -112,23 +121,13 @@
         {
           "name": "SAVE_CONSENT",
           "action": {
-            "type": "list",
-            "actions": [
-              {
-                "type": "wait",
-                "waitTime": 300
-              },
-              {
-                "type": "click",
-                "parent": {
-                  "selector": "#usercentrics-cmp-ui"
-                },
-                "target": {
-                  "selector": "#save",
-                  "displayFilter": true
-                }
-              }
-            ]
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#save"
+            }
           }
         }
       ]

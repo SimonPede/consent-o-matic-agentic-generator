@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "TermsFeed": {
+    "TermsFeed": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "#termsfeed_privacy_consent_banner_button_accept_all"
+                "selector": "#termsfeed-pc1-notice-banner"
               }
             }
           ],
@@ -49,7 +49,8 @@
               {
                 "type": "waitcss",
                 "target": {
-                  "selector": "#termsfeed-pc1-preferences-center"
+                  "selector": "#termsfeed-pc1-preferences-center",
+                  "displayFilter": true
                 },
                 "retries": 10,
                 "waitTime": 250
@@ -65,7 +66,7 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#functionality"
+                        "selector": "#functionality"
                       }
                     },
                     "toggleAction": {
@@ -74,7 +75,7 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#functionality"
+                        "selector": "label[for='functionality']"
                       }
                     }
                   },
@@ -86,7 +87,7 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#analytics"
+                        "selector": "#analytics"
                       }
                     },
                     "toggleAction": {
@@ -95,7 +96,7 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#analytics"
+                        "selector": "label[for='analytics']"
                       }
                     }
                   },
@@ -107,7 +108,7 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#advertising"
+                        "selector": "#advertising"
                       }
                     },
                     "toggleAction": {
@@ -116,19 +117,19 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#advertising"
+                        "selector": "label[for='advertising']"
                       }
                     }
                   },
                   {
-                    "type": "E",
+                    "type": "F",
                     "matcher": {
                       "type": "checkbox",
                       "parent": {
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#marketing"
+                        "selector": "#marketing"
                       }
                     },
                     "toggleAction": {
@@ -137,7 +138,49 @@
                         "selector": "#termsfeed-pc1-preferences-center"
                       },
                       "target": {
-                        "selector": "input#marketing"
+                        "selector": "label[for='marketing']"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed_pc1_preferences_center_vendors_category_marketing"
+                      },
+                      "target": {
+                        "selector": ".termsfeed-pc1-preferences-center-content-vendors-item-toggler input.custom-toggle-input-tag"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed_pc1_preferences_center_vendors_category_marketing"
+                      },
+                      "target": {
+                        "selector": ".termsfeed-pc1-preferences-center-content-vendors-item-toggler label"
+                      }
+                    }
+                  },
+                  {
+                    "type": "X",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "#tf-pc-auto-dnsmpi"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "label[for='tf-pc-auto-dnsmpi']"
                       }
                     }
                   }
@@ -149,10 +192,19 @@
         {
           "name": "SAVE_CONSENT",
           "action": {
-            "type": "click",
-            "target": {
-              "selector": "#termsfeed-pc1-preferences-center-save-selection-button"
-            }
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#termsfeed-pc1-preferences-center-save-selection-button"
+                }
+              }
+            ]
           }
         }
       ]

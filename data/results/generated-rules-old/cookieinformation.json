@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-  "Cookie-Script": {
+    "Cookie Information": {
       "detectors": [
         {
           "presentMatcher": [
             {
               "type": "css",
               "target": {
-                "selector": "[id^='cookiescript_']"
+                "selector": "[id^=\"coi\"]"
               }
             }
           ],
@@ -15,7 +15,7 @@
             {
               "type": "css",
               "target": {
-                "selector": "#cookiescript_reject",
+                "selector": "#coi-banner-wrapper",
                 "displayFilter": true
               }
             }
@@ -24,11 +24,20 @@
       ],
       "methods": [
         {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#coi-banner-wrapper"
+            }
+          }
+        },
+        {
           "name": "SAVE_CONSENT",
           "action": {
             "type": "click",
             "target": {
-              "selector": "#cookiescript_reject"
+              "selector": "#declineButton"
             }
           }
         }
