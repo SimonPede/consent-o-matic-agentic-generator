@@ -7,6 +7,7 @@ N = 100
 
 BLOCKED_HOSTS = [
     "myprivacy.dpgmedia.nl", #not supported anymore
+    "myprivacy.dpgmedia.be", #not supported anymore
     "www.heise.de", #known dual-iframe pattern
     "www.spiegel.de", #known dual-iframe pattern
     "mdjildafknihdffpkfmmpnpoiajfjnjd"
