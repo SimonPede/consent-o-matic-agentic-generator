@@ -12,3 +12,5 @@ requests==2.6.3
 pandas
 matplotlib
 seaborn
+scipy
+statsmodels

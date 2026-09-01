@@ -35,7 +35,8 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 consent-o-matic-agentic-generator/
 ├── data/                        # Test URLs and generated results
 │   ├── logs/                    # Logging results
-│   ├── results/                 # Verified results
+│   └── results/                 # Verified results
+│       └── verified-rules/      # Folder for manually verified rules, intended for direct use with the CoM extension in the future
 ├── evaluation/                  # Evaluation scripts and urls to be evaluated
 ├── src/
 │   ├── agent/                   # LangGraph graph, nodes, and state definition
