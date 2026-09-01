@@ -1,0 +1,393 @@
+{
+  "timestamp": "2026-08-28T02:23:54.367959",
+  "url": "https://www.ibm.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.ibm.com"
+  ],
+  "duration_seconds": 10.88,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class^=\"truste\"]\" (TrustArc) in frame: https://www.ibm.com/us-en",
+      "waitForCmpUi detected CMP Type: TrustArc",
+      "I found 3 frames.",
+      "a frame was picked by score: https://www.ibm.com/us-en with Score: 31",
+      "Settings match: \"cookie preferences\" --> lowered: \"cookie preferences\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: a, textMatch: cookie preferences",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 36 for URL: https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+      "Best new frame selected for settings extraction: https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.ibm.com/us-en',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'TrustArc',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://www.ibm.com/us-en',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left\"> <div class=\"tc-verbiage\"> <div class=\"flex-container-ccm\"> <div class=\"col\"> <div class=\"text-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span class=\"truste-banner-headline\">About cookies on this site</span> <span class=\"truste-banner-description\"> <span>Our websites require some cookies to function properly (required). In addition, other cookies may be used with your consent to analyze site usage, improve the user experience and for advertising.</span> <span>For more information, please review your <a href=\"javascript:void(0)\">cookie&nbsp;preferences</a> <span>&nbsp;options. By visiting our website, you agree to our processing of information as described in IBM’s </span> <a href=\"https://www.ibm.com/privacy\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">privacy&nbsp;statement</a>.&nbsp; </span> <span class=\"truste-description-p2\">To provide a smooth navigation, your cookie preferences will be shared across the IBM web domains listed&nbsp;<a href=\"#truste_domain_list\" id=\"truste-cookie-link\">here</a>. </span> </span> </div> </div> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Accept All</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Required only</span> </button> </div> </div> </div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1681,",
+      "      cmpType: 'TrustArc'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left\"> <div class=\"tc-verbiage\"> <div class=\"flex-container-ccm\"> <div class=\"col\"> <div class=\"text-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span class=\"truste-banner-headline\">About cookies on this site</span> <span class=\"truste-banner-description\"> <span>Our websites require some cookies to function properly (required). In addition, other cookies may be used with your consent to analyze site usage, improve the user experience and for advertising.</span> <span>For more information, please review your <a href=\"javascript:void(0)\">cookie&nbsp;preferences</a> <span>&nbsp;options. By visiting our website, you agree to our processing of information as described in IBM’s </span> <a href=\"https://www.ibm.com/privacy\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">privacy&nbsp;statement</a>.&nbsp; </span> <span class=\"truste-description-p2\">To provide a smooth navigation, your cookie preferences will be shared across the IBM web domains listed&nbsp;<a href=\"#truste_domain_list\" id=\"truste-cookie-link\">here</a>. </span> </span> </div> </div> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Accept All</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Required only</span> </button> </div> </div> </div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1681,",
+      "      cmpType: 'TrustArc',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.ibm.com/us-en",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: TrustArc via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (5):",
+      "      [A] \"cookie preferences\" --> selector: a",
+      "      [A] \"privacy statement\" --> selector: #truste-privacy-button",
+      "      [A] \"here\" --> selector: #truste-cookie-link",
+      "      [BUTTON] \"Accept All\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Required only\" --> selector: #truste-consent-required",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (5):",
+      "      [A] \"cookie preferences\" --> selector: a",
+      "      [A] \"privacy statement\" --> selector: #truste-privacy-button",
+      "      [A] \"here\" --> selector: #truste-cookie-link",
+      "      [BUTTON] \"Accept All\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Required only\" --> selector: #truste-consent-required",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.ibm.com/us-en",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "TrustArc",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "cookie preferences",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:void(0)",
+              "onclick": "truste.eu.clickListener()"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy statement",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ibm.com/privacy",
+              "target": "_blank",
+              "id": "truste-privacy-button",
+              "class": "truste-cookie-link",
+              "style": "text-decoration: underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "#truste-privacy-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "here",
+            "tag": "A",
+            "attributes": {
+              "href": "#truste_domain_list",
+              "id": "truste-cookie-link"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "truste-description-p2",
+              "selector": ".truste-description-p2",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "#truste-cookie-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tc-verbiage",
+                "selector": ".tc-verbiage"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Required only",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tc-verbiage",
+                "selector": ".tc-verbiage"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://www.ibm.com/us-en",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left\"> <div class=\"tc-verbiage\"> <div class=\"flex-container-ccm\"> <div class=\"col\"> <div class=\"text-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span class=\"truste-banner-headline\">About cookies on this site</span> <span class=\"truste-banner-description\"> <span>Our websites require some cookies to function properly (required). In addition, other cookies may be used with your consent to analyze site usage, improve the user experience and for advertising.</span> <span>For more information, please review your <a href=\"javascript:void(0)\">cookie&nbsp;preferences</a> <span>&nbsp;options. By visiting our website, you agree to our processing of information as described in IBM’s </span> <a href=\"https://www.ibm.com/privacy\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">privacy&nbsp;statement</a>.&nbsp; </span> <span class=\"truste-description-p2\">To provide a smooth navigation, your cookie preferences will be shared across the IBM web domains listed&nbsp;<a href=\"#truste_domain_list\" id=\"truste-cookie-link\">here</a>. </span> </span> </div> </div> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Accept All</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Required only</span> </button> </div> </div> </div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1681,
+        "cmpType": "TrustArc"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "cookie preferences",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:void(0)",
+              "onclick": "truste.eu.clickListener()"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy statement",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ibm.com/privacy",
+              "target": "_blank",
+              "id": "truste-privacy-button",
+              "class": "truste-cookie-link",
+              "style": "text-decoration: underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "#truste-privacy-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "here",
+            "tag": "A",
+            "attributes": {
+              "href": "#truste_domain_list",
+              "id": "truste-cookie-link"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "truste-description-p2",
+              "selector": ".truste-description-p2",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "truste-banner-description",
+                "selector": ".truste-banner-description"
+              }
+            },
+            "selector": "#truste-cookie-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tc-verbiage",
+                "selector": ".tc-verbiage"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Required only",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tc-verbiage",
+                "selector": ".tc-verbiage"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left\"> <div class=\"tc-verbiage\"> <div class=\"flex-container-ccm\"> <div class=\"col\"> <div class=\"text-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span class=\"truste-banner-headline\">About cookies on this site</span> <span class=\"truste-banner-description\"> <span>Our websites require some cookies to function properly (required). In addition, other cookies may be used with your consent to analyze site usage, improve the user experience and for advertising.</span> <span>For more information, please review your <a href=\"javascript:void(0)\">cookie&nbsp;preferences</a> <span>&nbsp;options. By visiting our website, you agree to our processing of information as described in IBM’s </span> <a href=\"https://www.ibm.com/privacy\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">privacy&nbsp;statement</a>.&nbsp; </span> <span class=\"truste-description-p2\">To provide a smooth navigation, your cookie preferences will be shared across the IBM web domains listed&nbsp;<a href=\"#truste_domain_list\" id=\"truste-cookie-link\">here</a>. </span> </span> </div> </div> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Accept All</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <span>Required only</span> </button> </div> </div> </div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1681,
+        "cmpType": "TrustArc",
+        "isIframe": false
+      }
+    }
+  ]
+}

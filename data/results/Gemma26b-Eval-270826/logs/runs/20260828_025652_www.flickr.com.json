@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-08-28T02:56:52.891358",
+  "url": "https://www.flickr.com",
+  "structured_dom_chars": 19893,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 10,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"flickr\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class^='truste']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class^='truste']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".listItem\", \"childFilter\": {\"target\": {\"selector\": \"span\", \"textFilter\": \"Functional Cookies\"}}}, \"target\": {\"selector\": \"[aria-label='NO']\"}}}, {\"type\": \"B\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".listItem\", \"childFilter\": {\"target\": {\"selector\": \"span\", \"textFilter\": \"Develop and improve services\"}}}, \"target\": {\"selector\": \"[aria-label='NO']\"}}}, {\"type\": \"D\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".listItem\", \"childFilter\": {\"target\": {\"selector\": \"span\", \"textFilter\": \"Store and/or access information on a device\"}}}, \"target\": {\"selector\": \"[aria-label='NO']\"}}}, {\"type\": \"E\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".listItem\", \"childFilter\": {\"target\": {\"selector\": \"span\", \"textFilter\": \"Personalised advertising and content profile\"}}}, \"target\": {\"selector\": \"[aria-label='NO']\"}}}, {\"type\": \"F\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".listItem\", \"childFilter\": {\"target\": {\"selector\": \"span\", \"textFilter\": \"Advertising Cookies\"}}}, \"target\": {\"selector\": \"[aria-label='NO']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"a.saveAndExit\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class^='truste']\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Likely repeated selector failure without progress (possible inaccessible iframe/shadow DOM or wrong execution context).",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: a.saveAndExit",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .listItem | Selector Failed: ACTION_TARGET_NOT_FOUND: .listItem | Selector Failed: ACTION_TARGET_NOT_FOUND: a.saveAndExit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO']",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 902 (char 901)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .consentno | Selector Failed: ACTION_TARGET_NOT_FOUND: .consentno | Selector Failed: ACTION_TARGET_NOT_FOUND: .consentno | Selector Failed: ACTION_TARGET_NOT_FOUND: .consentno | Selector Failed: ACTION_TARGET_NOT_FOUND: .consentno | Selector Failed: ACTION_TARGET_NOT_FOUND: .saveAndExit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='NO'] | Selector Failed: ACTION_TARGET_NOT_FOUND: a.saveAndExit"
+  ],
+  "duration_seconds": 1800.11,
+  "extraction_duration_seconds": 17.73,
+  "extraction_share_percent": 0.98,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": null
+}

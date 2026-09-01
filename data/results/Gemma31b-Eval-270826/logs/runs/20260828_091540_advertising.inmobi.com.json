@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-08-28T09:15:40.536370",
+  "url": "https://advertising.inmobi.com/",
+  "structured_dom_chars": 50331,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "HubSpot",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"InMobi\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".accept-cookie\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".accept-cookie\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button.buttonGradient\", \"textFilter\": \"CUSTOMIZE\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[value='adv']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[value='adv']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button.buttonGradient\", \"textFilter\": \"CONFIRM\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".accept-cookie\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 290.33,
+  "extraction_duration_seconds": 13.38,
+  "extraction_share_percent": 4.61,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "InMobi": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".accept-cookie"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".accept-cookie",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button.buttonGradient",
+              "textFilter": "CUSTOMIZE"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[value='adv']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[value='adv']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button.buttonGradient",
+              "textFilter": "CONFIRM"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".accept-cookie"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

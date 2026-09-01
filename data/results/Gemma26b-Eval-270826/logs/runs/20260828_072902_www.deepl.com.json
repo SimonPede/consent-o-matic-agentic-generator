@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-08-28T07:29:02.125116",
+  "url": "https://www.deepl.com",
+  "structured_dom_chars": 63911,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "Usercentrics",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 7,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Usercentrics\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-more-link\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-functional-toggle\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-functional-toggle\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-performance-toggle\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-performance-toggle\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-marketing-toggle\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-marketing-toggle\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#save\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Likely repeated detector failure without progress (presentMatcher/showingMatcher did not match the live banner context).",
+  "model_aborted": false,
+  "final_test_error": "No CMP detected in 5 seconds, stopping engine...",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 327 (char 326)",
+    "No CMP detected in 5 seconds, stopping engine...",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 212 (char 211)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #uc-more-link | Selector Failed: ACTION_TARGET_NOT_FOUND: #save",
+    "No CMP detected in 5 seconds, stopping engine..."
+  ],
+  "duration_seconds": 1800.12,
+  "extraction_duration_seconds": 13.44,
+  "extraction_share_percent": 0.75,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    }
+  },
+  "final_rule": null
+}

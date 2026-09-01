@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-08-27T06:07:32.120892",
+  "url": "https://theconversation.com",
+  "structured_dom_chars": 324858,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "Didomi",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 19,
+  "human_review_count": 1,
+  "test_rule_count": 15,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"Didomi\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"body.didomi-popup-open\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"body.didomi-popup-open\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\".didomi-continue-without-agreeing\",\"displayFilter\":true}}}]\n}\n}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #nonexistent-button",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 1526.09,
+  "extraction_duration_seconds": 8.03,
+  "extraction_share_percent": 0.53,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "error": "API timeout",
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "error": "API timeout",
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Didomi": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "body.didomi-popup-open"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "body.didomi-popup-open",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#didomi-host"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".didomi-continue-without-agreeing",
+              "displayFilter": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "timestamp": "2026-08-27T18:44:24.879302",
+  "url": "https://arstechnica.com",
+  "structured_dom_chars": 299798,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 15,
+  "human_review_count": 0,
+  "test_rule_count": 13,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Fides\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#fides-manage-preferences-button\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#fides-manage-preferences-button\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#fides-manage-preferences-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label='Functional Cookies']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Functional Cookies']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label='Audience Measurement']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Audience Measurement']\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label='Targeted Advertising']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Targeted Advertising']\"}}}], \"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Save settings']\"}}]}}]}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1237 (char 1236)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1237 (char 1236)",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4028 (char 4027)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4919 (char 4918)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 5097 (char 5096)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 4924 (char 4923)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4786 (char 4785)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4964 (char 4963)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4964 (char 4963)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4964 (char 4963)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 4964 (char 4963)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1237 (char 1236)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1237 (char 1236)"
+  ],
+  "duration_seconds": 1488.46,
+  "extraction_duration_seconds": 16.55,
+  "extraction_share_percent": 1.11,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Fides": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#fides-manage-preferences-button, #fides-modal"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#fides-manage-preferences-button, #fides-modal",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#fides-manage-preferences-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Functional Cookies']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Functional Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Audience Measurement']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Audience Measurement']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Performance Cookies']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Performance Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Understand audiences through statistics or combinations of data from different sources']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Understand audiences through statistics or combinations of data from different sources']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Develop and improve services']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Develop and improve services']"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device']"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Use precise geolocation data']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use precise geolocation data']"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Identify devices based on information actively requested']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Identify devices based on information actively requested']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Create profiles to personalise content']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Create profiles to personalise content']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Use profiles to select personalised content']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use profiles to select personalised content']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Measure content performance']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Measure content performance']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select content']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select content']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Targeted Advertising']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Targeted Advertising']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select advertising']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select advertising']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Create profiles for personalised advertising']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Create profiles for personalised advertising']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Use profiles to select personalised advertising']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use profiles to select personalised advertising']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Measure advertising performance']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Measure advertising performance']"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Social Media Cookies']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Social Media Cookies']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[aria-label='Save settings']"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#fides-overlay, #fides-button-group"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T05:25:21.839091",
+  "url": "https://www.t-online.de",
+  "structured_dom_chars": 50286,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first layer on t-online.de only offers \"ZUSTIMMEN\" (Accept All), \"JETZT SICHERN\" (paid PUR subscription), and \"individuell anpassen\" (customize). There is no \"Reject All\" or \"Decline\" button on the first layer. Because this is Sourcepoint, the settings iframe is architecturally inaccessible, so a possible reject option behind it cannot be reached or verified.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first layer on t-online.de only offers \"ZUSTIMMEN\" (Accept All), \"JETZT SICHERN\" (paid PUR subscription), and \"individuell anpassen\" (customize). There is no \"Reject All\" or \"Decline\" button on the first layer. Because this is Sourcepoint, the settings iframe is architecturally inaccessible, so a possible reject option behind it cannot be reached or verified.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The visible first layer on t-online.de only offers \"ZUSTIMMEN\" (Accept All), \"JETZT SICHERN\" (paid PUR subscription), and \"individuell anpassen\" (customize). There is no \"Reject All\" or \"Decline\" button on the first layer. Because this is Sourcepoint, the settings iframe is architecturally inaccessible, so a possible reject option behind it cannot be reached or verified.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first layer on t-online.de only offers \"ZUSTIMMEN\" (Accept All), \"JETZT SICHERN\" (paid PUR subscription), and \"individuell anpassen\" (customize). There is no \"Reject All\" or \"Decline\" button on the first layer. Because this is Sourcepoint, the settings iframe is architecturally inaccessible, so a possible reject option behind it cannot be reached or verified."
+  ],
+  "duration_seconds": 26.85,
+  "extraction_duration_seconds": 7.92,
+  "extraction_share_percent": 29.5,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-08-28T03:30:14.322812",
+  "url": "https://www.leboncoin.fr",
+  "structured_dom_chars": 166515,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 16,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"leboncoin\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id^='didomi']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id^='didomi']\", \"displayFilter\": false}}}], \"methods\": [{\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#didomi-agree-to-all\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[data-qa-id='didomi_cta_continue_without_consent']\"}}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#didomi-host\"}}}]}}",
+  "last_error": "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+  "error_history": [
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 235 (char 234)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 235 (char 234)",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "leboncoin - Not showing | No CMP detected in 5 seconds, stopping engine... | leboncoin - Not showing | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "leboncoin - Not showing | No CMP detected in 5 seconds, stopping engine... | leboncoin - Not showing | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 207 (char 206)",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine..."
+  ],
+  "duration_seconds": 1266.51,
+  "extraction_duration_seconds": 52.3,
+  "extraction_share_percent": 4.13,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "leboncoin": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#didomi-host"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#didomi-host",
+              "displayFilter": false
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#didomi-agree-to-all"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[data-qa-id='didomi_cta_continue_without_consent']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#didomi-host"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

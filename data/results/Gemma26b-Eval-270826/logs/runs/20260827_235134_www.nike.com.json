@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-08-27T23:51:34.756464",
+  "url": "https://www.nike.com",
+  "structured_dom_chars": 197176,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Nike\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Accept All']\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Decline All']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Confirm Choices']\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Confirm Choices']",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 239 (char 238)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Confirm Choices']"
+  ],
+  "duration_seconds": 418.3,
+  "extraction_duration_seconds": 71.5,
+  "extraction_share_percent": 17.09,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Nike": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-testid='cookie-modal-root']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-testid='cookie-modal-root']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[data-testid='cookie-modal-root']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Accept All']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Decline All']"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

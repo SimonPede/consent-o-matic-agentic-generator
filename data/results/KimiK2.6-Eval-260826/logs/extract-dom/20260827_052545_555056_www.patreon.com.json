@@ -1,0 +1,1841 @@
+{
+  "timestamp": "2026-08-27T05:25:45.555126",
+  "url": "https://www.patreon.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.patreon.com"
+  ],
+  "duration_seconds": 23.57,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.patreon.com/ with Score: 18",
+      "Regex failed in frame https://www.patreon.com/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.patreon.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.patreon.com/',",
+      "      filteredHtml: '<body><div id=\"__next\"><header class=\"sc-d4d7fab6-2 WRWMd theme-dark\" tabindex=\"-1\"><div class=\"sc-d4d7fab6-0 fmBIbP backdrop\"></div><div><a href=\"#main-content\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-48e9475c-0 gLYHax primary button strapi-link\"><div data-label=\"Skip to content\" class=\"label-wrapper\"><span class=\"label\">Skip to content</span></div></a></div><div class=\"header-container\"><div class=\"left-wrapper desktop-only\"><div class=\"nav-wrapper\"><div class=\"sc-410c08-0 iZpELS\"><ul class=\"nav-list\"><li id=\"mega-nav-trigger-461\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Creators\"><span class=\"label\">Creators</span></div></button></li><li id=\"mega-nav-trigger-462\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Features\"><span class=\"label\">Features</span></div></button></li><li id=\"mega-nav-trigger-464\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Pricing\"><span class=\"label\">Pricing</span></div></button></li><li id=\"mega-nav-trigger-463\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Resources\"><span class=\"label\">Resources</span></div></button></li><li class=\"indicator\"></li><div class=\"sc-410c08-1 faAVUu\"><a href=\"https://www.patreon.com/collection/700928?view=condensed\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra secondary button strapi-link\" data-airgap-id=\"949\"><div data-label=\"Updates\" class=\"label-wrapper\"><span class=\"label\">Updates</span></div></a></div></ul></div></div></div><div class=\"center-wrapper\"><button class=\"sc-eef373fe-0 cysZml hamburger\"><span class=\"sr-only\">Open menu</span><span class=\"burger\"><span data-open=\"false\" class=\"bun\"></span><span data-open=\"false\" class=\"bun\"></span></span></button><a class=\"sc-b4b575fb-1 kxQaqS logo-link strapi-link\" href=\"/\"><span class=\"sr-only\">Patreon</span></a></div><div class=\"right-wrapper\"><div class=\"sc-25115571-0 hrfVTl desktop\"><div class=\"search-container\"><form class=\"input-container\"><label id=\"search-label\" class=\"sr-only\">Find a Creator</label><input class=\"search-input\" placeholder=\"Find a Creator\" data-results=\"false\" type=\"search\" inputmode=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" aria-labelledby=\"search-label\" value=\"\"><button tabindex=\"0\" type=\"button\" class=\"sc-1cf10e5c-0 biNDOa cancel-button icon-only primary md\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Close</span></button></form></div></div><a href=\"https://www.patreon.com/login\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra header-button secondary button strapi-link\"><div data-label=\"Log in\" class=\"label-wrapper\"><span class=\"label\">Log in</span></div></a><a href=\"https://www.patreon.com/create\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-d4d7fab6-1 ePVGId header-button primary button strapi-link\"><div data-label=\"Get Started\" class=\"label-wrapper\"><span class=\"label\">Get Started</span></div></a></div><div class=\"mobile-wrapper\"><a href=\"https://www.patreon.com/login\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra text-only button strapi-link\"><div data-label=\"Log in\" class=\"label-wrapper\"><span class=\"label\">Log in</span></div></a><a href=\"https://www.patreon.com/create\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-d4d7fab6-1 ePVGId primary button strapi-link\"><div data-label=\"Get Started\" class=\"label-wrapper\"><span class=\"label\">Get Started</span></div></a></div></div><div class=\"mobile-search\"><div class=\"sc-25115571-0 hrfVTl mobile\"><div class=\"search-container\"><form class=\"input-container\"><label id=\"search-label\" class=\"sr-only\">Find a Creator</label><input class=\"search-input\" placeholder=\"Find a Creator\" data-results=\"false\" type=\"search\" inputmode=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" aria-labelledby=\"search-label\" value=\"\"><button tabindex=\"0\" type=\"button\" class=\"sc-1cf10e5c-0 biNDOa cancel-button icon-only primary md\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Close</span></button></form></div></div></div><dialog class=\"sc-daa6486d-0 fLmhvS\" tabindex=\"-1\"></dialog></header><main id=\"main-content\" tabindex=\"-1\" class=\"sc-cc205c8b-0 hzUVIT\"><div class=\"sc-fc3e0d65-0 izRDca homepage.home-hero-39\" data-theme=\"dark\"><div class=\"container-inner\"><div data-hydra=\"{&quot;type&quot;:&quot;HomeHero&quot;}\" class=\"sc-d8bcfe4c-0 cwBIOt\"><button class=\"sc-d8bcfe4c-11 ekoJiA left ready\"></button><button class=\"sc-d8bcfe4c-12 dPqhAX right ready\"></button><div class=\"sc-d8bcfe4c-1 GGxDQ\"><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"auto\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/EEA_Header_Video_6383406b5f.mp4\" poster=\"https://c14.patreon.com/large_Header_Imagery_086301b56d.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"982\"></video></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"none\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/Ross_Draws_V4_No_Overlay_5mb_88c6c740c0.mp4\" poster=\"https://c14.patreon.com/large_hero_ross_draws_poster_7a57cbd891.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"985\"></video></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"none\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/Real_Ones_V1_Without_Overlay_5mb_1_7b4cb9fe23.mp4\" poster=\"https://c14.patreon.com/large_Patreon_Website_Hero_2_X_72dpi_jon_854d9d12c9.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"989\"></video></div></div><div class=\"sc-d8bcfe4c-2 jKmxZm\"><div class=\"sc-d8bcfe4c-3 duMxdf slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Where </span><span>podcasts grow</span></h1><a class=\"sc-b4b575fb-1 kxQaqS sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" href=\"/creators/podcasts\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Ellis Ever After is building a family podcasting empire\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Ellis</span> <span class=\"w\" aria-hidden=\"true\">Ever</span> <span class=\"w\" aria-hidden=\"true\">After</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">building</span> <span class=\"w\" aria-hidden=\"true\">a</span> <span class=\"w\" aria-hidden=\"true\">family</span> <span class=\"w\" aria-hidden=\"true\">podcasting</span> <span class=\"sc-19886acc-0 jikIFZ w\">empire</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbhb slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Your wildest </span><span>creative reality</span></h1><a href=\"https://www.patreon.com/jadenovah\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"991\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Jade Novah is fusing her loves of music, writing, and comedy\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Jade</span> <span class=\"w\" aria-hidden=\"true\">Novah</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">fusing</span> <span class=\"w\" aria-hidden=\"true\">her</span> <span class=\"w\" aria-hidden=\"true\">loves</span> <span class=\"w\" aria-hidden=\"true\">of</span> <span class=\"w\" aria-hidden=\"true\">music,</span> <span class=\"w\" aria-hidden=\"true\">writing,</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"sc-19886acc-0 jikIFZ w\">comedy</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbhI slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Your newsletter </span><span>Your rules</span></h1><a href=\"https://patreon.com/culturestudy\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"993\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Anne Helen Petersen is exploring how we shape — and are shaped by — culture.\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Anne</span> <span class=\"w\" aria-hidden=\"true\">Helen</span> <span class=\"w\" aria-hidden=\"true\">Petersen</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">exploring</span> <span class=\"w\" aria-hidden=\"true\">how</span> <span class=\"w\" aria-hidden=\"true\">we</span> <span class=\"w\" aria-hidden=\"true\">shape</span> <span class=\"w\" aria-hidden=\"true\">—</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"w\" aria-hidden=\"true\">are</span> <span class=\"w\" aria-hidden=\"true\">shaped</span> <span class=\"w\" aria-hidden=\"true\">by</span> <span class=\"w\" aria-hidden=\"true\">—</span> <span class=\"sc-19886acc-0 jikIFZ w\">culture.</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbip slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Make it </span><span>making a<span class=\"sc-5b0165f0-0 beZtii\">rt</span></span></h1><a href=\"https://www.patreon.com/Rossdraws\" target=\"_blank\" rel='... 37856 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 47856",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.patreon.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (65):",
+      "      [A] \"Skip to content\" --> selector: a",
+      "      [BUTTON] \"Creators\" --> selector: button",
+      "      [BUTTON] \"Features\" --> selector: button",
+      "      [BUTTON] \"Pricing\" --> selector: button",
+      "      [BUTTON] \"Resources\" --> selector: button",
+      "      [A] \"Updates\" --> selector: a",
+      "      [A] \"Patreon\" --> selector: a",
+      "      [A] \"Log in\" --> selector: a",
+      "      [A] \"Get Started\" --> selector: a",
+      "      [BUTTON] \"\" --> selector: .sc-d8bcfe4c-11",
+      "      [BUTTON] \"\" --> selector: .sc-d8bcfe4c-12",
+      "      [A] \"Jade Novah is fusing her loves of music, writing, and comedy\" --> selector: a",
+      "      [BUTTON] \"Scroll down to next section\" --> selector: [aria-label=\"Scroll down to next section\"]",
+      "      [A] \"Rachel Maksy\" --> selector: a",
+      "      [A] \"Tim Chantarangsu\" --> selector: a",
+      "      [A] \"Jade Novah\" --> selector: a",
+      "      [A] \"RossDraws\" --> selector: a",
+      "      [A] \"KAMAUU\" --> selector: a",
+      "      [A] \"Tina Yu\" --> selector: a",
+      "      [A] \"Kevin Woo\" --> selector: a",
+      "      [A] \"Create on your terms\" --> selector: a",
+      "      [A] \"Build real community\" --> selector: a",
+      "      [A] \"Set up shop\" --> selector: a",
+      "      [A] \"Get started\" --> selector: a",
+      "      [A] \"Log in\" --> selector: a",
+      "      [A] \"Get it on Google Play\" --> selector: a",
+      "      [A] \"Download on the App Store\" --> selector: a",
+      "      [A] \"Podcasters\" --> selector: a",
+      "      [A] \"Video creators\" --> selector: a",
+      "      [A] \"Musicians\" --> selector: a",
+      "      [A] \"Artists\" --> selector: a",
+      "      [A] \"Game devs\" --> selector: a",
+      "      [A] \"Create on your terms\" --> selector: a",
+      "      [A] \"Where real community thrives\" --> selector: a",
+      "      [A] \"Grow your community\" --> selector: a",
+      "      [A] \"Support for your business\" --> selector: a",
+      "      [A] \"Earning made easy\" --> selector: a",
+      "      [A] \"Start a membership\" --> selector: a",
+      "      [A] \"Set up a shop\" --> selector: a",
+      "      [A] \"Pricing\" --> selector: a",
+      "      [A] \"Starting a Patreon is free\" --> selector: a",
+      "      [A] \"Patreon for Creators\" --> selector: a",
+      "      [A] \"Newsroom\" --> selector: a",
+      "      [A] \"Help Center & FAQ\" --> selector: a",
+      "      [A] \"Partners & integrations\" --> selector: a",
+      "      [A] \"Mobile\" --> selector: a",
+      "      [A] \"About\" --> selector: a",
+      "      [A] \"Press\" --> selector: a",
+      "      [A] \"Careers\" --> selector: a",
+      "      [A] \"Terms of Use & policies\" --> selector: a",
+      "      [A] \"Privacy policy\" --> selector: a",
+      "      [A] \"Cookie policy\" --> selector: a",
+      "      [A] \"Accessibility\" --> selector: a",
+      "      [A] \"Impressum\" --> selector: a",
+      "      [A] \"Brand assets & guidelines\" --> selector: a",
+      "      [A] \"Get it on Google Play\" --> selector: a",
+      "      [A] \"Download on the App Store\" --> selector: a",
+      "      [BUTTON] \"English (United States) (en-US)\" --> selector: button",
+      "      [BUTTON] \"United States\" --> selector: button",
+      "      [BUTTON] \"USD\" --> selector: button",
+      "      [A] \"Twitter\" --> selector: a",
+      "      [A] \"Facebook\" --> selector: a",
+      "      [A] \"Instagram\" --> selector: a",
+      "      [A] \"YouTube\" --> selector: a",
+      "      [A] \"LinkedIn\" --> selector: a",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.patreon.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Skip to content",
+            "tag": "A",
+            "attributes": {
+              "href": "#main-content",
+              "target": "_self",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-48e9475c-0 gLYHax primary"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "sc-d4d7fab6-2 WRWMd theme-dark",
+                "selector": ".sc-d4d7fab6-2"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Creators",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "nav-link",
+              "aria-haspopup": "true",
+              "aria-controls": "mega-nav-list-461"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "mega-nav-trigger-461",
+              "className": "nav-item",
+              "selector": "#mega-nav-trigger-461",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Features",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "nav-link",
+              "aria-haspopup": "true",
+              "aria-controls": "mega-nav-list-462"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "mega-nav-trigger-462",
+              "className": "nav-item",
+              "selector": "#mega-nav-trigger-462",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pricing",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "nav-link",
+              "aria-haspopup": "true",
+              "aria-controls": "mega-nav-list-464"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "mega-nav-trigger-464",
+              "className": "nav-item",
+              "selector": "#mega-nav-trigger-464",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Resources",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "nav-link",
+              "aria-haspopup": "true",
+              "aria-controls": "mega-nav-list-463"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "mega-nav-trigger-463",
+              "className": "nav-item",
+              "selector": "#mega-nav-trigger-463",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Updates",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/collection/700928?view=condensed",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra secondary button strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-410c08-1 faAVUu",
+              "selector": ".sc-410c08-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Patreon",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS logo-link strapi-link",
+              "href": "/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "center-wrapper",
+              "selector": ".center-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "header-container",
+                "selector": ".header-container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/login",
+              "target": "_self",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra header-button secondary button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "right-wrapper",
+              "selector": ".right-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "header-container",
+                "selector": ".header-container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get Started",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/create",
+              "target": "_self",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-d4d7fab6-1 ePVGId header-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "right-wrapper",
+              "selector": ".right-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "header-container",
+                "selector": ".header-container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-d8bcfe4c-11 ekoJiA left ready",
+              "style": "opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, -137px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-d8bcfe4c-0 cwBIOt",
+              "selector": ".sc-d8bcfe4c-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container-inner",
+                "selector": ".container-inner"
+              }
+            },
+            "selector": ".sc-d8bcfe4c-11",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-d8bcfe4c-12 dPqhAX right ready",
+              "style": "opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, -137px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-d8bcfe4c-0 cwBIOt",
+              "selector": ".sc-d8bcfe4c-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container-inner",
+                "selector": ".container-inner"
+              }
+            },
+            "selector": ".sc-d8bcfe4c-12",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jade Novah is fusing her loves of music, writing, and comedy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/jadenovah",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link",
+              "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 94.5834px); opacity: 1; visibility: inherit;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-d8bcfe4c-3 gpTbhb slide-content",
+              "selector": ".sc-d8bcfe4c-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-d8bcfe4c-2 jKmxZm",
+                "selector": ".sc-d8bcfe4c-2"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Scroll down to next section",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-54a81f40-0 edvrwI home-arrow",
+              "aria-label": "Scroll down to next section",
+              "style": "translate: none; rotate: none; scale: none; transform: translate(0px, 0px); clip-path: inset(0%);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-d8bcfe4c-0 cwBIOt",
+              "selector": ".sc-d8bcfe4c-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container-inner",
+                "selector": ".container-inner"
+              }
+            },
+            "selector": "[aria-label=\"Scroll down to next section\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Rachel Maksy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/rachelmaksy",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tim Chantarangsu",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/timchantarangsu",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jade Novah",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/jadenovah",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "RossDraws",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/Rossdraws",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "KAMAUU",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/KAMAUUworld",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tina Yu",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/tinayuart",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kevin Woo",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/kevinwoo",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj creator-link strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "creator",
+              "selector": ".creator",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "creators-inner started",
+                "selector": ".creators-inner"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create on your terms",
+            "tag": "A",
+            "attributes": {
+              "href": "/product/create",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-42b34c08-0 odNiZ",
+              "selector": ".sc-42b34c08-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-13c2a112-0 iJcOzS block",
+                "selector": ".sc-13c2a112-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Build real community",
+            "tag": "A",
+            "attributes": {
+              "href": "/product/online-community",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-42b34c08-0 odNiZ",
+              "selector": ".sc-42b34c08-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-13c2a112-0 iJcOzS block",
+                "selector": ".sc-13c2a112-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Set up shop",
+            "tag": "A",
+            "attributes": {
+              "href": "/product/digital-products",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-42b34c08-0 odNiZ",
+              "selector": ".sc-42b34c08-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-13c2a112-0 iJcOzS block",
+                "selector": ".sc-13c2a112-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get started",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/create",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-42b34c08-0 hZMjsW",
+              "selector": ".sc-42b34c08-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-13c2a112-0 iJcOzS block",
+                "selector": ".sc-13c2a112-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "A",
+            "attributes": {
+              "href": "https://patreon.com/login",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "sc-4dda64df-0 dvxKPm text-center text-base",
+              "selector": ".sc-4dda64df-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-13c2a112-0 iJcOzS block",
+                "selector": ".sc-13c2a112-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get it on Google Play",
+            "tag": "A",
+            "attributes": {
+              "href": "https://play.google.com/store/apps/details?id=com.patreon.android",
+              "class": "app-store-button",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "title": "Get it on Google Play"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "app-store",
+              "selector": ".app-store",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-160e0401-2 eetbEc",
+                "selector": ".sc-160e0401-2"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Download on the App Store",
+            "tag": "A",
+            "attributes": {
+              "href": "https://apps.apple.com/us/app/patreon/id1044456188",
+              "class": "app-store-button",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "title": "Download on the App Store"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "app-store",
+              "selector": ".app-store",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-160e0401-2 eetbEc",
+                "selector": ".sc-160e0401-2"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Podcasters",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/creators/podcasts"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Video creators",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/creators/video"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Musicians",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/creators/music"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Artists",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/creators/visualartists"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Game devs",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/creators/gaming"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create on your terms",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/product/create"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Where real community thrives",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/product/online-community"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Grow your community",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/product/grow"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Support for your business",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/product/manage-business"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Earning made easy",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/product/digital-products"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Start a membership",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS sub-nav-link strapi-link",
+              "href": "/product/paid-membership"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sub-nav-list",
+                "selector": ".sub-nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Set up a shop",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS sub-nav-link strapi-link",
+              "href": "/product/digital-products"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sub-nav-list",
+                "selector": ".sub-nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pricing",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS nav-title-link strapi-link",
+              "href": "/pricing"
+            },
+            "parentInfo": {
+              "tag": "SUMMARY",
+              "id": "",
+              "className": "nav-summary",
+              "selector": ".nav-summary",
+              "grandparent": {
+                "tag": "DETAILS",
+                "id": null,
+                "className": "nav-details",
+                "selector": ".nav-details"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Starting a Patreon is free",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/pricing"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Patreon for Creators",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.patreon.com/cw/PatreonforCreators",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Newsroom",
+            "tag": "A",
+            "attributes": {
+              "href": "https://news.patreon.com",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Help Center & FAQ",
+            "tag": "A",
+            "attributes": {
+              "href": "https://support.patreon.com",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Partners & integrations",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/apps"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Mobile",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/mobile"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "About",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/about"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Press",
+            "tag": "A",
+            "attributes": {
+              "href": "https://news.patreon.com/",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Careers",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/careers"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of Use & policies",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/policy/legal"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://privacy.patreon.com/",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-b4b575fb-0 ijQMLj strapi-link"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie policy",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/policy/cookies"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accessibility",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/policy/accessibility"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/policy/impressum"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Brand assets & guidelines",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-b4b575fb-1 kxQaqS strapi-link",
+              "href": "/brand"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "nav-list",
+                "selector": ".nav-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get it on Google Play",
+            "tag": "A",
+            "attributes": {
+              "href": "https://play.google.com/store/apps/details?id=com.patreon.android",
+              "class": "app-store-button",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "title": "Get it on Google Play"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "apps-store-wrapper",
+              "selector": ".apps-store-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Download on the App Store",
+            "tag": "A",
+            "attributes": {
+              "href": "https://apps.apple.com/us/app/patreon/id1044456188",
+              "class": "app-store-button",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "title": "Download on the App Store"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "apps-store-wrapper",
+              "selector": ".apps-store-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "English (United States) (en-US)",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-1cf10e5c-0 biNDOa tertiary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "desktop-only",
+              "selector": ".desktop-only",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-358cec33-0 bePBxj pref",
+                "selector": ".sc-358cec33-0"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "United States",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-1cf10e5c-0 biNDOa tertiary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "desktop-only",
+              "selector": ".desktop-only",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b559e5a7-0 qnOHV pref",
+                "selector": ".sc-b559e5a7-0"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "USD",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "sc-1cf10e5c-0 biNDOa tertiary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "desktop-only",
+              "selector": ".desktop-only",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-9e7ac890-0 gWaWEU pref",
+                "selector": ".sc-9e7ac890-0"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Twitter",
+            "tag": "A",
+            "attributes": {
+              "href": "https://twitter.com/patreon",
+              "type": "tertiary",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-1cf10e5c-0 biNDOa icon-only primary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-bce3523b-0 hVurKh",
+              "selector": ".sc-bce3523b-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper site-meta",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Facebook",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.facebook.com/patreon",
+              "type": "tertiary",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-1cf10e5c-0 biNDOa icon-only primary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-bce3523b-0 hVurKh",
+              "selector": ".sc-bce3523b-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper site-meta",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Instagram",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.instagram.com/patreon",
+              "type": "tertiary",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-1cf10e5c-0 biNDOa icon-only primary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-bce3523b-0 hVurKh",
+              "selector": ".sc-bce3523b-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper site-meta",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YouTube",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.youtube.com/c/Patreon",
+              "type": "tertiary",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-1cf10e5c-0 biNDOa icon-only primary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-bce3523b-0 hVurKh",
+              "selector": ".sc-bce3523b-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper site-meta",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "LinkedIn",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.linkedin.com/company/patreon",
+              "type": "tertiary",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "sc-1cf10e5c-0 biNDOa icon-only primary md"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-bce3523b-0 hVurKh",
+              "selector": ".sc-bce3523b-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-wrapper site-meta",
+                "selector": ".nav-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.patreon.com/",
+        "filteredHtml": "<body><div id=\"__next\"><header class=\"sc-d4d7fab6-2 WRWMd theme-dark\" tabindex=\"-1\"><div class=\"sc-d4d7fab6-0 fmBIbP backdrop\"></div><div><a href=\"#main-content\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-48e9475c-0 gLYHax primary button strapi-link\"><div data-label=\"Skip to content\" class=\"label-wrapper\"><span class=\"label\">Skip to content</span></div></a></div><div class=\"header-container\"><div class=\"left-wrapper desktop-only\"><div class=\"nav-wrapper\"><div class=\"sc-410c08-0 iZpELS\"><ul class=\"nav-list\"><li id=\"mega-nav-trigger-461\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Creators\"><span class=\"label\">Creators</span></div></button></li><li id=\"mega-nav-trigger-462\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Features\"><span class=\"label\">Features</span></div></button></li><li id=\"mega-nav-trigger-464\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Pricing\"><span class=\"label\">Pricing</span></div></button></li><li id=\"mega-nav-trigger-463\" class=\"nav-item\"><button class=\"nav-link\" aria-haspopup=\"true\" aria-c><div class=\"sc-6763b786-0 cBrqaa\" data-label=\"Resources\"><span class=\"label\">Resources</span></div></button></li><li class=\"indicator\"></li><div class=\"sc-410c08-1 faAVUu\"><a href=\"https://www.patreon.com/collection/700928?view=condensed\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra secondary button strapi-link\" data-airgap-id=\"949\"><div data-label=\"Updates\" class=\"label-wrapper\"><span class=\"label\">Updates</span></div></a></div></ul></div></div></div><div class=\"center-wrapper\"><button class=\"sc-eef373fe-0 cysZml hamburger\"><span class=\"sr-only\">Open menu</span><span class=\"burger\"><span data-open=\"false\" class=\"bun\"></span><span data-open=\"false\" class=\"bun\"></span></span></button><a class=\"sc-b4b575fb-1 kxQaqS logo-link strapi-link\" href=\"/\"><span class=\"sr-only\">Patreon</span></a></div><div class=\"right-wrapper\"><div class=\"sc-25115571-0 hrfVTl desktop\"><div class=\"search-container\"><form class=\"input-container\"><label id=\"search-label\" class=\"sr-only\">Find a Creator</label><input class=\"search-input\" placeholder=\"Find a Creator\" data-results=\"false\" type=\"search\" inputmode=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" aria-labelledby=\"search-label\" value=\"\"><button tabindex=\"0\" type=\"button\" class=\"sc-1cf10e5c-0 biNDOa cancel-button icon-only primary md\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Close</span></button></form></div></div><a href=\"https://www.patreon.com/login\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra header-button secondary button strapi-link\"><div data-label=\"Log in\" class=\"label-wrapper\"><span class=\"label\">Log in</span></div></a><a href=\"https://www.patreon.com/create\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-d4d7fab6-1 ePVGId header-button primary button strapi-link\"><div data-label=\"Get Started\" class=\"label-wrapper\"><span class=\"label\">Get Started</span></div></a></div><div class=\"mobile-wrapper\"><a href=\"https://www.patreon.com/login\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra text-only button strapi-link\"><div data-label=\"Log in\" class=\"label-wrapper\"><span class=\"label\">Log in</span></div></a><a href=\"https://www.patreon.com/create\" target=\"_self\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra sc-d4d7fab6-1 ePVGId primary button strapi-link\"><div data-label=\"Get Started\" class=\"label-wrapper\"><span class=\"label\">Get Started</span></div></a></div></div><div class=\"mobile-search\"><div class=\"sc-25115571-0 hrfVTl mobile\"><div class=\"search-container\"><form class=\"input-container\"><label id=\"search-label\" class=\"sr-only\">Find a Creator</label><input class=\"search-input\" placeholder=\"Find a Creator\" data-results=\"false\" type=\"search\" inputmode=\"search\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" aria-labelledby=\"search-label\" value=\"\"><button tabindex=\"0\" type=\"button\" class=\"sc-1cf10e5c-0 biNDOa cancel-button icon-only primary md\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Close</span></button></form></div></div></div><dialog class=\"sc-daa6486d-0 fLmhvS\" tabindex=\"-1\"></dialog></header><main id=\"main-content\" tabindex=\"-1\" class=\"sc-cc205c8b-0 hzUVIT\"><div class=\"sc-fc3e0d65-0 izRDca homepage.home-hero-39\" data-theme=\"dark\"><div class=\"container-inner\"><div data-hydra=\"{&quot;type&quot;:&quot;HomeHero&quot;}\" class=\"sc-d8bcfe4c-0 cwBIOt\"><button class=\"sc-d8bcfe4c-11 ekoJiA left ready\"></button><button class=\"sc-d8bcfe4c-12 dPqhAX right ready\"></button><div class=\"sc-d8bcfe4c-1 GGxDQ\"><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"auto\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/EEA_Header_Video_6383406b5f.mp4\" poster=\"https://c14.patreon.com/large_Header_Imagery_086301b56d.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"982\"></video></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"none\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/Ross_Draws_V4_No_Overlay_5mb_88c6c740c0.mp4\" poster=\"https://c14.patreon.com/large_hero_ross_draws_poster_7a57cbd891.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"985\"></video></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"></div></div><div class=\"sc-d8bcfe4c-4 jvGqwN slide\"><div class=\"sc-d8bcfe4c-5 ePwhoC\"><video preload=\"none\" muted=\"\" crossorigin=\"anonymous\" src=\"https://c14.patreon.com/Real_Ones_V1_Without_Overlay_5mb_1_7b4cb9fe23.mp4\" poster=\"https://c14.patreon.com/large_Patreon_Website_Hero_2_X_72dpi_jon_854d9d12c9.jpg\" playsinline=\"\" loop=\"\" data-airgap-id=\"989\"></video></div></div><div class=\"sc-d8bcfe4c-2 jKmxZm\"><div class=\"sc-d8bcfe4c-3 duMxdf slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Where </span><span>podcasts grow</span></h1><a class=\"sc-b4b575fb-1 kxQaqS sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" href=\"/creators/podcasts\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Ellis Ever After is building a family podcasting empire\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Ellis</span> <span class=\"w\" aria-hidden=\"true\">Ever</span> <span class=\"w\" aria-hidden=\"true\">After</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">building</span> <span class=\"w\" aria-hidden=\"true\">a</span> <span class=\"w\" aria-hidden=\"true\">family</span> <span class=\"w\" aria-hidden=\"true\">podcasting</span> <span class=\"sc-19886acc-0 jikIFZ w\">empire</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbhb slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Your wildest </span><span>creative reality</span></h1><a href=\"https://www.patreon.com/jadenovah\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"991\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Jade Novah is fusing her loves of music, writing, and comedy\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Jade</span> <span class=\"w\" aria-hidden=\"true\">Novah</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">fusing</span> <span class=\"w\" aria-hidden=\"true\">her</span> <span class=\"w\" aria-hidden=\"true\">loves</span> <span class=\"w\" aria-hidden=\"true\">of</span> <span class=\"w\" aria-hidden=\"true\">music,</span> <span class=\"w\" aria-hidden=\"true\">writing,</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"sc-19886acc-0 jikIFZ w\">comedy</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbhI slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Your newsletter </span><span>Your rules</span></h1><a href=\"https://patreon.com/culturestudy\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"993\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Anne Helen Petersen is exploring how we shape — and are shaped by — culture.\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Anne</span> <span class=\"w\" aria-hidden=\"true\">Helen</span> <span class=\"w\" aria-hidden=\"true\">Petersen</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">exploring</span> <span class=\"w\" aria-hidden=\"true\">how</span> <span class=\"w\" aria-hidden=\"true\">we</span> <span class=\"w\" aria-hidden=\"true\">shape</span> <span class=\"w\" aria-hidden=\"true\">—</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"w\" aria-hidden=\"true\">are</span> <span class=\"w\" aria-hidden=\"true\">shaped</span> <span class=\"w\" aria-hidden=\"true\">by</span> <span class=\"w\" aria-hidden=\"true\">—</span> <span class=\"sc-19886acc-0 jikIFZ w\">culture.</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbip slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Make it </span><span>making a<span class=\"sc-5b0165f0-0 beZtii\">rt</span></span></h1><a href=\"https://www.patreon.com/Rossdraws\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"995\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"RossDraws is creating, sharing, and teaching the art of worldbuilding\" class=\"\"><span class=\"w\" aria-hidden=\"true\">RossDraws</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">creating,</span> <span class=\"w\" aria-hidden=\"true\">sharing,</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"w\" aria-hidden=\"true\">teaching</span> <span class=\"w\" aria-hidden=\"true\">the</span> <span class=\"w\" aria-hidden=\"true\">art</span> <span class=\"w\" aria-hidden=\"true\">of</span> <span class=\"sc-19886acc-0 jikIFZ w\">worldbuilding</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbiO slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>From you </span><span>to your crew</span></h1><a href=\"https://www.patreon.com/ElliottWilson\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"997\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Elliott Wilson is building community around hip-hop journalism\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Elliott</span> <span class=\"w\" aria-hidden=\"true\">Wilson</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">building</span> <span class=\"w\" aria-hidden=\"true\">community</span> <span class=\"w\" aria-hidden=\"true\">around</span> <span class=\"w\" aria-hidden=\"true\">hip-hop</span> <span class=\"sc-19886acc-0 jikIFZ w\">journalism</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbjv slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Your house </span><span>Your rules</span></h1><a href=\"https://www.patreon.com/rachelmaksy\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"999\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Rachel Maksy is creating a space for vlogs, makeup transformations, and whimsy\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Rachel</span> <span class=\"w\" aria-hidden=\"true\">Maksy</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">creating</span> <span class=\"w\" aria-hidden=\"true\">a</span> <span class=\"w\" aria-hidden=\"true\">space</span> <span class=\"w\" aria-hidden=\"true\">for</span> <span class=\"w\" aria-hidden=\"true\">vlogs,</span> <span class=\"w\" aria-hidden=\"true\">makeup</span> <span class=\"w\" aria-hidden=\"true\">transformations,</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"sc-19886acc-0 jikIFZ w\">whimsy</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbkc slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Creator </span><span>is now a career</span></h1><a href=\"https://www.patreon.com/timchantarangsu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"1001\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Tim Chantarangsu is dropping podcast episodes and spitting fire\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Tim</span> <span class=\"w\" aria-hidden=\"true\">Chantarangsu</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">dropping</span> <span class=\"w\" aria-hidden=\"true\">podcast</span> <span class=\"w\" aria-hidden=\"true\">episodes</span> <span class=\"w\" aria-hidden=\"true\">and</span> <span class=\"w\" aria-hidden=\"true\">spitting</span> <span class=\"sc-19886acc-0 jikIFZ w\">fire</span></h3></div></div></a></div><div class=\"sc-d8bcfe4c-3 gpTbkJ slide-content\"><h1 class=\"sc-e8472d59-0 beagET sc-ad8f3e3d-0 dwornO sc-d8bcfe4c-6 hkNCFe\"><span>Speak </span><span>volumes</span></h1><a href=\"https://www.patreon.com/realones\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-d8bcfe4c-7 bShgRr creator-info hoverable strapi-link\" data-airgap-id=\"1003\"><div class=\"sc-d8bcfe4c-8 VEoZO\"><div class=\"sc-d8bcfe4c-10 ilBBTx\"></div><div class=\"sc-d8bcfe4c-9 bKTHjj\"><h3 aria-label=\"Real Ones is diving deep into the biggest issues of our time\" class=\"\"><span class=\"w\" aria-hidden=\"true\">Real</span> <span class=\"w\" aria-hidden=\"true\">Ones</span> <span class=\"w\" aria-hidden=\"true\">is</span> <span class=\"w\" aria-hidden=\"true\">diving</span> <span class=\"w\" aria-hidden=\"true\">deep</span> <span class=\"w\" aria-hidden=\"true\">into</span> <span class=\"w\" aria-hidden=\"true\">the</span> <span class=\"w\" aria-hidden=\"true\">biggest</span> <span class=\"w\" aria-hidden=\"true\">issues</span> <span class=\"w\" aria-hidden=\"true\">of</span> <span class=\"w\" aria-hidden=\"true\">our</span> <span class=\"sc-19886acc-0 jikIFZ w\">time</span></h3></div></div></a></div></div></div><button class=\"sc-54a81f40-0 edvrwI home-arrow\" aria-label=\"Scroll down to next section\"></button></div></div></div><div class=\"sc-fc3e0d65-0 izRDca features.creator-grid-267\" data-theme=\"light\"><div class=\"container-inner\"><div><div class=\"sc-7819b9d2-0 iosXJG altlayout\"><div data-hydra=\"{&quot;type&quot;:&quot;GradientBackground&quot;,&quot;colors&quot;:[&quot;#7b92b0&quot;,&quot;#95adcb&quot;,&quot;#b0c8e7&quot;,&quot;#cce4ff&quot;]}\" class=\"sc-2cd14018-0 fSNFvf sc-7819b9d2-1 bcsUpD\"></div><div class=\"creators\"><div class=\"creators-inner started\"><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/rachelmaksy\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1006\"><div class=\"creator-name\"><span class=\"hoverable\">Rachel <span class=\"sc-19886acc-0 jikIFZ\">Maksy</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/timchantarangsu\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1008\"><div class=\"creator-name\"><span class=\"hoverable\">Tim <span class=\"sc-19886acc-0 jikIFZ\">Chantarangsu</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/jadenovah\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1010\"><div class=\"creator-name\"><span class=\"hoverable\">Jade <span class=\"sc-19886acc-0 jikIFZ\">Novah</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/Rossdraws\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1012\"><div class=\"creator-name\"><span class=\"hoverable\"><span class=\"sc-19886acc-0 jikIFZ\">RossDraws</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/KAMAUUworld\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1014\"><div class=\"creator-name\"><span class=\"hoverable\"><span class=\"sc-19886acc-0 jikIFZ\">KAMAUU</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/tinayuart\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1016\"><div class=\"creator-name\"><span class=\"hoverable\">Tina <span class=\"sc-19886acc-0 jikIFZ\">Yu</span></span></div></a></div><div class=\"creator\" aria-hidden=\"false\"><a href=\"https://www.patreon.com/kevinwoo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj creator-link strapi-link\" data-airgap-id=\"1018\"><div class=\"creator-name\"><span class=\"hoverable\">Kevin <span class=\"sc-19886acc-0 jikIFZ\">Woo</span></span></div></a></div></div></div><h2><span class=\"sc-e8472d59-0 eKZTa sc-ad8f3e3d-0 hiRGPg sc-7819b9d2-3 sc-7819b9d2-4 ebERYL hgaPec\"><span>Creativity </span><span>powered</span></span><span class=\"sc-e8472d59-0 eKZTa sc-ad8f3e3d-0 hiRGPg sc-7819b9d2-3 sc-7819b9d2-5 ebERYL cwGeXe\"><span>by </span><span>fandom</span></span></h2><div class=\"sc-7819b9d2-6 ljdxhk\"><div class=\"sc-13c2a112-0 iJcOzS block\"><p class=\"sc-4dda64df-0 dvxKPm text-left text-base text-lg\">Patreon is the best place to build community with your biggest fans, share exclusive work, and turn your passion into a lasting creative business.</p></div></div></div></div></div></div><div class=\"sc-fc3e0d65-0 izRDca homepage.large-quote-and-title-267\" data-theme=\"dark\"><div class=\"container-inner\"><div><div class=\"sc-a4630065-0 eTtDtQ light\"><div class=\"background\"></div><div class=\"title-spacer\"></div><div class=\"title-wrapper\"></div><p class=\"sc-a4630065-2 cBJKbr\"></p><h4 class=\"sc-e8472d59-0 ibYsKv sc-a4630065-3 keMbpL quotetext\">\"Patreon provides a space for a<span class=\"sc-5b0165f0-0 beZtii\">rt</span>ists to sustain ourselves by connecting us directly to our own communities.\"</h4><h3 class=\"sc-e8472d59-0 cBbSux sc-a4630065-4 cXqwIK\">KAMAUU</h3></div></div></div></div><div class=\"sc-fc3e0d65-0 izRDca homepage.image-grid-with-title-39\" data-theme=\"light\"><div class=\"container-inner\"><div class=\"sc-8b844c7a-0 InoWl short\"><div data-hydra=\"{&quot;type&quot;:&quot;GradientBackground&quot;,&quot;colors&quot;:[&quot;#71a0ff&quot;,&quot;#94bbff&quot;,&quot;#b4d7ff&quot;,&quot;#d4f3ff&quot;],&quot;targetLightness&quot;:85}\" class=\"sc-2cd14018-0 fSNFvf sc-8b844c7a-1 btGDBO\"></div><div class=\"images\"><div></div><div></div><div></div><div></div></div><h2 class=\"sc-e8472d59-0 gMiRJA sc-ad8f3e3d-0 jzekZo sc-8b844c7a-2 ejXKyJ\"><span>Complete </span><span>creative </span><span>control</span></h2><div class=\"sc-8b844c7a-3 fOyZtm\"><div class=\"sc-8b844c7a-4 kFHXTA\"><div class=\"sc-13c2a112-0 iJcOzS block\"><p class=\"sc-4dda64df-0 dvxKPm text-left text-base text-lg\">Patreon is your space to create what excites you most, rough or polished, big or small.&nbsp;Hundreds of thousands of creators use Patreon to share videos, podcasts, writing, art, music, recipes, and more with their most passionate fans.</p><div class=\"sc-42b34c08-0 odNiZ\"><a href=\"/product/create\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link\" data-airgap-id=\"1024\"><div data-label=\"Create on your terms\" class=\"label-wrapper\"><span class=\"label\">Create on your terms</span></div></a></div></div></div></div><div class=\"sc-8b844c7a-5 NRatJ\"><div class=\"sc-8b844c7a-4 kFHXTA\"></div></div></div></div></div><div class=\"sc-fc3e0d65-0 izRDca marketing.floating-product-ui-1557\" data-theme=\"light\"><div class=\"container-inner\"><div class=\"sc-6670baf3-0 hfbiBV\"><div data-hydra=\"{&quot;type&quot;:&quot;GradientBackground&quot;,&quot;colors&quot;:[&quot;#4a87ff&quot;,&quot;#71a0ff&quot;,&quot;#94bbff&quot;,&quot;#b4d7ff&quot;]}\" class=\"sc-2cd14018-0 fSNFvf sc-6670baf3-9 iGRNHw\"></div><div data-hydra=\"{&quot;type&quot;:&quot;FloatingProductUI&quot;,&quot;aspects&quot;:[null]}\" class=\"sc-6670baf3-1 cQKruj\"><div class=\"sc-6670baf3-2 kDplnG\"><div class=\"sc-6670baf3-8 LwTkF single\"><div class=\"sc-6670baf3-7 kWokbE single\"><video preload=\"metadata\" muted=\"\" src=\"https://c14.patreon.com/1_Chelsea_1161fe215b.mp4\" playsinline=\"\" loop=\"\" data-airgap-id=\"1025\"></video></div></div><h2 class=\"sc-e8472d59-0 gMiRJA sc-ad8f3e3d-0 hiRGPg sc-6670baf3-3 hSZiQp\"><span>Creators. Fans. </span><span>Nothing in </span><span>between.</span></h2><div class=\"sc-6670baf3-6 jlYNYG single\"><div class=\"sc-6670baf3-5 kchIKD\"><div class=\"sc-13c2a112-0 iJcOzS block\"><p class=\"sc-4dda64df-0 dvxKPm text-left text-base\">Patreon gives you a direct line of access to your fan community, with no ads or gatekeepers in the way.</p><p class=\"sc-4dda64df-0 dvxKPm text-left text-base\">Through real-time group chats, comments, DMs, and even directly over email, you can connect more deeply and directly with your community here than anywhere else.</p><div class=\"sc-42b34c08-0 odNiZ\"><a href=\"/product/online-community\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link\" data-airgap-id=\"1026\"><div data-label=\"Build real community\" class=\"label-wrapper\"><span class=\"label\">Build real community</span></div></a></div></div></div></div></div></div></div></div></div><div class=\"sc-fc3e0d65-0 izRDca marketing.floating-product-ui-1558\" data-theme=\"light\"><div class=\"container-inner\"><div class=\"sc-6670baf3-0 hfbiBV\"><div data-hydra=\"{&quot;type&quot;:&quot;GradientBackground&quot;,&quot;colors&quot;:[&quot;#4a87ff&quot;,&quot;#71a0ff&quot;,&quot;#94bbff&quot;,&quot;#b4d7ff&quot;]}\" class=\"sc-2cd14018-0 fSNFvf sc-6670baf3-9 iGRNHw\"></div><div data-hydra=\"{&quot;type&quot;:&quot;FloatingProductUI&quot;,&quot;aspects&quot;:[0.4612676056338028]}\" class=\"sc-6670baf3-1 cQKruj\"><div class=\"sc-6670baf3-2 fKamjj\"><div class=\"sc-6670baf3-8 gaxaVv single\"><div class=\"sc-6670baf3-7 kWokbE tall single transparent\"></div></div><h2 class=\"sc-e8472d59-0 gMiRJA sc-ad8f3e3d-0 hiRGPg sc-6670baf3-3 gGRvuy\"><span>Turning passions into </span><span>businesses</span></h2><div class=\"sc-6670baf3-6 kHEkGh single cols\"><div class=\"sc-6670baf3-5 kchIKD\"><div class=\"sc-13c2a112-0 iJcOzS block\"><h4 class=\"sc-e8472d59-0 ibYsKv sc-ca6b847b-0 izMWqc text-left heading\">More ways to earn</h4><p class=\"sc-4dda64df-0 dvxKPm text-left text-base\">On Patreon, you can build a lasting business outside of the ad-based ecosystem, with revenue streams ranging from membership for offering ongoing benefits, to online shops for selling individual videos, podcast episodes, and more.</p><div class=\"sc-42b34c08-0 odNiZ\"><a href=\"/product/digital-products\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link\" data-airgap-id=\"1028\"><div data-label=\"Set up shop\" class=\"label-wrapper\"><span class=\"label\">Set up shop</span></div></a></div></div></div><div class=\"sc-6670baf3-5 kchIKD\"><div class=\"sc-13c2a112-0 iJcOzS block\"><h4 class=\"sc-e8472d59-0 ibYsKv sc-ca6b847b-0 izMWqc text-left heading\">Unlock growth</h4><p class=\"sc-4dda64df-0 dvxKPm text-left text-base\">Patreon isn’t just for creative growth, it’s for professional growth too. Get in-depth analytics about your fans, dig into powerful relationship management tools, and tap into a growing creator community.</p></div></div></div></div></div></div></div></div><div class=\"sc-fc3e0d65-0 izRDca marketing.get-started-533\" data-theme=\"dark\"><div class=\"container-inner\"><div class=\"sc-160e0401-0 chrpwg\"><div class=\"video\"></div><div class=\"sc-160e0401-2 eetbEc\"><div class=\"text-editor\"><div class=\"sc-13c2a112-0 iJcOzS block\"><h4 class=\"sc-e8472d59-0 ibYsKv sc-ca6b847b-0 izMWqc text-center heading\">Your world to create</h4><div class=\"sc-42b34c08-0 hZMjsW\"><a href=\"https://www.patreon.com/create\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj sc-ee9de75f-0 hYVvra primary button strapi-link\" data-airgap-id=\"1031\"><div data-label=\"Get started\" class=\"label-wrapper\"><span class=\"label\">Get started</span></div></a></div><p class=\"sc-4dda64df-0 dvxKPm text-center text-base\">Already have an account? <a href=\"https://patreon.com/login\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1032\">Log in</a></p></div></div><div class=\"app-store\"><a href=\"https://play.google.com/store/apps/details?id=com.patreon.android\" class=\"app-store-button\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"Get it on Google Play\" data-airgap-id=\"1033\"></a><a href=\"https://apps.apple.com/us/app/patreon/id1044456188\" class=\"app-store-button\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"Download on the App Store\" data-airgap-id=\"1035\"></a></div></div></div></div></div></main><footer id=\"footer\" data-theme=\"dark\" class=\"sc-be77438a-2 kcSMRP\"><div class=\"nav-wrapper\"><div class=\"site-footer-nav\"><details class=\"nav-details\" open=\"\"><summary role=\"heading\" aria-level=\"4\" class=\"nav-summary\"><p class=\"nav-title\">Creators</p></summary><ul class=\"nav-list\"><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/creators/podcasts\">Podcasters</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/creators/video\">Video creators</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/creators/music\">Musicians</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/creators/visualartists\">Artists</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/creators/gaming\">Game devs</a></li></ul></details></div><div class=\"site-footer-nav\"><details class=\"nav-details\" open=\"\"><summary role=\"heading\" aria-level=\"4\" class=\"nav-summary\"><p class=\"nav-title\">Features</p></summary><ul class=\"nav-list\"><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/product/create\">Create on your terms</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/product/online-community\">Where real community thrives</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/product/grow\">Grow your community</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/product/manage-business\">Support for your business</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/product/digital-products\">Earning made easy</a><ul class=\"sub-nav-list\"><li><a class=\"sc-b4b575fb-1 kxQaqS sub-nav-link strapi-link\" href=\"/product/paid-membership\">Start a membership</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS sub-nav-link strapi-link\" href=\"/product/digital-products\">Set up a shop</a></li></ul></li></ul></details></div><div class=\"site-footer-nav\"><details class=\"nav-details\" open=\"\"><summary role=\"heading\" aria-level=\"4\" class=\"nav-summary\"><a class=\"sc-b4b575fb-1 kxQaqS nav-title-link strapi-link\" href=\"/pricing\">Pricing</a></summary><ul class=\"nav-list\"><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/pricing\">Starting a Patreon is free</a></li></ul></details></div><div class=\"site-footer-nav\"><details class=\"nav-details\" open=\"\"><summary role=\"heading\" aria-level=\"4\" class=\"nav-summary\"><p class=\"nav-title\">Resources</p></summary><ul class=\"nav-list\"><li><a href=\"https://www.patreon.com/cw/PatreonforCreators\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1037\">Patreon for Creators</a></li><li><a href=\"https://news.patreon.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1038\">Newsroom</a></li><li><a href=\"https://support.patreon.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1039\">Help Center &amp; FAQ</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/apps\">Partners &amp; integrations</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/mobile\">Mobile</a></li></ul></details></div><div class=\"site-footer-nav\"><details class=\"nav-details\" open=\"\"><summary role=\"heading\" aria-level=\"4\" class=\"nav-summary\"><p class=\"nav-title\">Company</p></summary><ul class=\"nav-list\"><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/about\">About</a></li><li><a href=\"https://news.patreon.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1040\">Press</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/careers\">Careers</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/policy/legal\">Terms of Use &amp; policies</a></li><li><a href=\"https://privacy.patreon.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-b4b575fb-0 ijQMLj strapi-link\" data-airgap-id=\"1041\">Privacy policy</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/policy/cookies\">Cookie policy</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/policy/accessibility\">Accessibility</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/policy/impressum\">Impressum</a></li><li><a class=\"sc-b4b575fb-1 kxQaqS strapi-link\" href=\"/brand\">Brand assets &amp; guidelines</a></li></ul></details></div></div><div class=\"nav-wrapper\"><div class=\"apps-store-wrapper\"><a href=\"https://play.google.com/store/apps/details?id=com.patreon.android\" class=\"app-store-button\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"Get it on Google Play\" data-airgap-id=\"1042\"></a><a href=\"https://apps.apple.com/us/app/patreon/id1044456188\" class=\"app-store-button\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"Download on the App Store\" data-airgap-id=\"1044\"></a></div></div><div class=\"nav-wrapper site-meta\"><div class=\"nav-inner-wrapper selectors\"><div class=\"sc-358cec33-0 bePBxj pref\"><div class=\"desktop-only\"><button class=\"sc-1cf10e5c-0 biNDOa tertiary md\"><div class=\"icon-wrapper\"></div><span class=\"label\">English (United States) (en-US)</span></button></div><div class=\"mobile-only\"><button class=\"sc-1cf10e5c-0 biNDOa full-width tertiary sm\"><div class=\"icon-wrapper\"></div><span class=\"label\">English (United States) (en-US)</span></button></div></div><div class=\"sc-b559e5a7-0 qnOHV pref\"><div class=\"desktop-only\"><button class=\"sc-1cf10e5c-0 biNDOa tertiary md\"><div class=\"icon-wrapper\"></div><span class=\"label\">United States</span></button></div><div class=\"mobile-only\"><button class=\"sc-1cf10e5c-0 biNDOa full-width tertiary sm\"><div class=\"icon-wrapper\"></div><span class=\"label\">United States</span></button></div></div><div class=\"sc-9e7ac890-0 gWaWEU pref\"><div class=\"desktop-only\"><button class=\"sc-1cf10e5c-0 biNDOa tertiary md\"><div class=\"icon-wrapper\"></div><span class=\"label\">USD</span></button></div><div class=\"mobile-only\"><button class=\"sc-1cf10e5c-0 biNDOa full-width tertiary sm\"><div class=\"icon-wrapper\"></div><span class=\"label\">US Dollars</span></button></div></div></div><div role=\"group\" class=\"sc-bce3523b-0 hVurKh\"><a href=\"https://twitter.com/patreon\" type=\"tertiary\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-1cf10e5c-0 biNDOa icon-only primary md\" data-airgap-id=\"1046\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Twitter</span></a><a href=\"https://www.facebook.com/patreon\" type=\"tertiary\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-1cf10e5c-0 biNDOa icon-only primary md\" data-airgap-id=\"1047\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Facebook</span></a><a href=\"https://www.instagram.com/patreon\" type=\"tertiary\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-1cf10e5c-0 biNDOa icon-only primary md\" data-airgap-id=\"1048\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">Instagram</span></a><a href=\"https://www.youtube.com/c/Patreon\" type=\"tertiary\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-1cf10e5c-0 biNDOa icon-only primary md\" data-airgap-id=\"1049\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">YouTube</span></a><a href=\"https://www.linkedin.com/company/patreon\" type=\"tertiary\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-1cf10e5c-0 biNDOa icon-only primary md\" data-airgap-id=\"1050\"><div class=\"icon-wrapper\"></div><span class=\"sr-only\">LinkedIn</span></a></div><address class=\"contact-meta\"><span class=\"mobile-line\">600 Townsend Street, Suite 500</span> <span class=\"pipe\">|</span> <span class=\"mobile-line\">San Francisco, CA 94103, USA</span> <span class=\"pipe\">|</span> <span class=\"mobile-line\">©️Patreon</span></address></div></footer></div><next-route-announcer><p aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\"></p></next-route-announcer><dialog class=\"sc-bee397b4-0 kkSrXB\"><div class=\"dialog-content\"><article class=\"modal-content\"><div class=\"sc-358cec33-1 fPUnSS\"><header class=\"header\"><h2 class=\"subheading-1\">Choose your language</h2></header><div class=\"content-wrapper\"><div class=\"sc-a85cff16-0 dlQoPL secondary lg full-width\"><select class=\"select-element\" aria-label=\"Select Language\"><option value=\"en-US\" selected=\"\">English (United States) (en-US)</option><option value=\"en-GB\">English (United Kingdom) (en-GB)</option><option value=\"es-419\">Spanish (Latin America) (es-419)</option><option value=\"pt-BR\">Portuguese (Brazil) (pt-BR)</option><option value=\"zh-CN\">Chinese (Simplified, China) (zh-CN)</option><option value=\"zh-Hant-HK\">Chinese (Traditional, Hong Kong)</option><option value=\"da-DK\">Danish (Denmark) (da-DK)</option><option value=\"de-DE\">German (Germany) (de-DE)</option><option value=\"es-ES\">Spanish (Spain) (es-ES)</option><option value=\"fr-FR\">French (France) (fr-FR)</option><option value=\"it-IT\">Italian (Italy) (it-IT)</option><option value=\"nl-NL\">Dutch (Netherlands) (nl-NL)</option><option value=\"nb-NO\">Norwegian Bokmål (Norway) (nb-NO)</option><option value=\"pl-PL\">Polish (Poland) (pl-PL)</option><option value=\"sv-SE\">Swedish (Sweden) (sv-SE)</option><option value=\"ru-RU\">Russian (Russia) (ru-RU)</option><option value=\"uk-UA\">Ukrainian (Ukraine) (uk-UA)</option><option value=\"ja-JP\">Japanese (Japan) (ja-JP)</option><option value=\"ko-KR\">Korean (South Korea) (ko-KR)</option></select></div><button class=\"sc-1cf10e5c-0 biNDOa full-width primary lg\">Save &amp; Update</button></div></div></article><footer class=\"modal-footer\"><form method=\"dialog\"><button class=\"text-button\">Cancel</button></form></footer></div></dialog><dialog class=\"sc-bee397b4-0 kkSrXB\"><div class=\"dialog-content\"><article class=\"modal-content\"><div class=\"sc-b559e5a7-1 kfnVKQ\"><header class=\"header\"><h2 class=\"subheading-1\">Choose your region</h2></header><div class=\"content-wrapper\"><div class=\"sc-a85cff16-0 fxwcm secondary lg full-width\"><select class=\"select-element\" aria-label=\"Select your region\"><option value=\"AF\">Afghanistan (‫افغانستان‬‎)</option><option value=\"AL\">Albania (Shqipëri)</option><option value=\"DZ\">Algeria (‫الجزائر‬‎)</option><option value=\"AS\">American Samoa</option><option value=\"AD\">Andorra</option><option value=\"AO\">Angola</option><option value=\"AI\">Anguilla</option><option value=\"AG\">Antigua and Barbuda</option><option value=\"AR\">Argentina</option><option value=\"AM\">Armenia (Հայաստան)</option><option value=\"AW\">Aruba</option><option value=\"AU\">Australia</option><option value=\"AT\">Austria (Österreich)</option><option value=\"AZ\">Azerbaijan (Azərbaycan)</option><option value=\"BS\">Bahamas</option><option value=\"BH\">Bahrain (‫البحرين‬‎)</option><option value=\"BD\">Bangladesh (বাংলাদেশ)</option><option value=\"BB\">Barbados</option><option value=\"BY\">Belarus (Беларусь)</option><option value=\"BE\">Belgium (België)</option><option value=\"BZ\">Belize</option><option value=\"BJ\">Benin (Bénin)</option><option value=\"BM\">Bermuda</option><option value=\"BT\">Bhutan (འབྲུག)</option><option value=\"BO\">Bolivia</option><option value=\"BA\">Bosnia and Herzegovina (Босна и Херцеговина)</option><option value=\"BW\">Botswana</option><option value=\"BV\">Bouvet Island</option><option value=\"BR\">Brazil (Brasil)</option><option value=\"IO\">British Indian Ocean Territory</option><option value=\"VG\">British Virgin Islands</option><option value=\"BN\">Brunei</option><option value=\"BG\">Bulgaria (България)</option><option value=\"BF\">Burkina Faso</option><option value=\"BI\">Burundi (Uburundi)</option><option value=\"KH\">Cambodia (កម្ពុជា)</option><option value=\"CM\">Cameroon (Cameroun)</option><option value=\"CA\">Canada</option><option value=\"CV\">Cape Verde (Kabu Verdi)</option><option value=\"BQ\">Caribbean Netherlands</option><option value=\"KY\">Cayman Islands</option><option value=\"CF\">Central African Republic (République centrafricaine)</option><option value=\"TD\">Chad (Tchad)</option><option value=\"CL\">Chile</option><option value=\"CN\">China (中国)</option><option value=\"CO\">Colombia</option><option value=\"KM\">Comoros (‫جزر القمر‬‎)</option><option value=\"CD\">Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)</option><option value=\"CG\">Congo (Republic) (Congo-Brazzaville)</option><option value=\"CK\">Cook Islands</option><option value=\"CR\">Costa Rica</option><option value=\"CI\">Côte d’Ivoire</option><option value=\"HR\">Croatia (Hrvatska)</option><option value=\"CW\">Curaçao</option><option value=\"CY\">Cyprus (Κύπρος)</option><option value=\"CZ\">Czech Republic (Česká republika)</option><option value=\"DK\">Denmark (Danmark)</option><option value=\"DJ\">Djibouti</option><option value=\"DM\">Dominica</option><option value=\"DO\">Dominican Republic (República Dominicana)</option><option value=\"EC\">Ecuador</option><option value=\"EG\">Egypt (‫مصر‬‎)</option><option value=\"SV\">El Salvador</option><option value=\"GQ\">Equatorial Guinea (Guinea Ecuatorial)</option><option value=\"ER\">Eritrea</option><option value=\"EE\">Estonia (Eesti)</option><option value=\"ET\">Ethiopia</option><option value=\"FK\">Falkland Islands (Islas Malvinas)</option><option value=\"FO\">Faroe Islands (Føroyar)</option><option value=\"FJ\">Fiji</option><option value=\"FI\">Finland (Suomi)</option><option value=\"FR\">France</option><option value=\"GF\">French Guiana (Guyane française)</option><option value=\"PF\">French Polynesia (Polynésie française)</option><option value=\"TF\">French Southern Territories</option><option value=\"GA\">Gabon</option><option value=\"GM\">Gambia</option><option value=\"GE\">Georgia (საქართველო)</option><option value=\"DE\">Germany (Deutschland)</option><option value=\"GH\">Ghana (Gaana)</option><option value=\"GI\">Gibraltar</option><option value=\"GR\">Greece (Ελλάδα)</option><option value=\"GL\">Greenland (Kalaallit Nunaat)</option><option value=\"GD\">Grenada</option><option value=\"GP\">Guadeloupe</option><option value=\"GU\">Guam</option><option value=\"GT\">Guatemala</option><option value=\"GG\">Guernsey</option><option value=\"GN\">Guinea (Guinée)</option><option value=\"GW\">Guinea-Bissau (Guiné Bissau)</option><option value=\"GY\">Guyana</option><option value=\"HT\">Haiti</option><option value=\"HM\">Heard Island and McDonald Islands</option><option value=\"HN\">Honduras</option><option value=\"HK\">Hong Kong (香港)</option><option value=\"HU\">Hungary (Magyarország)</option><option value=\"IS\">Iceland (Ísland)</option><option value=\"IN\">India (भारत)</option><option value=\"ID\">Indonesia</option><option value=\"IQ\">Iraq (‫العراق‬‎)</option><option value=\"IE\">Ireland</option><option value=\"IM\">Isle of Man</option><option value=\"IL\">Israel (‫ישראל‬‎)</option><option value=\"IT\">Italy (Italia)</option><option value=\"JM\">Jamaica</option><option value=\"JP\">Japan (日本)</option><option value=\"JE\">Jersey</option><option value=\"JO\">Jordan (‫الأردن‬‎)</option><option value=\"KZ\">Kazakhstan (Казахстан)</option><option value=\"KE\">Kenya</option><option value=\"KI\">Kiribati</option><option value=\"KW\">Kuwait (‫الكويت‬‎)</option><option value=\"KG\">Kyrgyzstan (Кыргызстан)</option><option value=\"LA\">Laos (ລາວ)</option><option value=\"LV\">Latvia (Latvija)</option><option value=\"LB\">Lebanon (‫لبنان‬‎)</option><option value=\"LS\">Lesotho</option><option value=\"LR\">Liberia</option><option value=\"LY\">Libya (‫ليبيا‬‎)</option><option value=\"LI\">Liechtenstein</option><option value=\"LT\">Lithuania (Lietuva)</option><option value=\"LU\">Luxembourg</option><option value=\"MO\">Macau (澳門)</option><option value=\"MK\">Macedonia (FYROM) (Македонија)</option><option value=\"MG\">Madagascar (Madagasikara)</option><option value=\"MW\">Malawi</option><option value=\"MY\">Malaysia</option><option value=\"MV\">Maldives</option><option value=\"ML\">Mali</option><option value=\"MT\">Malta</option><option value=\"MH\">Marshall Islands</option><option value=\"MQ\">Martinique</option><option value=\"MR\">Mauritania (‫موريتانيا‬‎)</option><option value=\"MU\">Mauritius (Moris)</option><option value=\"YT\">Mayotte</option><option value=\"MX\">Mexico (México)</option><option value=\"FM\">Micronesia</option><option value=\"MD\">Moldova (Republica Moldova)</option><option value=\"MC\">Monaco</option><option value=\"MN\">Mongolia (Монгол)</option><option value=\"ME\">Montenegro (Crna Gora)</option><option value=\"MS\">Montserrat</option><option value=\"MA\">Morocco (‫المغرب‬‎)</option><option value=\"MZ\">Mozambique (Moçambique)</option><option value=\"MM\">Myanmar (Burma) (မြန်မာ)</option><option value=\"NA\">Namibia (Namibië)</option><option value=\"NR\">Nauru</option><option value=\"NP\">Nepal (नेपाल)</option><option value=\"NL\">Netherlands (Nederland)</option><option value=\"NC\">New Caledonia (Nouvelle-Calédonie)</option><option value=\"NZ\">New Zealand</option><option value=\"NI\">Nicaragua</option><option value=\"NE\">Niger (Nijar)</option><option value=\"NG\">Nigeria</option><option value=\"NU\">Niue</option><option value=\"NF\">Norfolk Island</option><option value=\"MP\">Northern Mariana Islands</option><option value=\"NO\">Norway (Norge)</option><option value=\"OM\">Oman (‫عُمان‬‎)</option><option value=\"PK\">Pakistan (‫پاکستان‬‎)</option><option value=\"PW\">Palau</option><option value=\"PS\">Palestine (‫فلسطين‬‎)</option><option value=\"PA\">Panama (Panamá)</option><option value=\"PG\">Papua New Guinea</option><option value=\"PY\">Paraguay</option><option value=\"PE\">Peru (Perú)</option><option value=\"PH\">Philippines</option><option value=\"PL\">Poland (Polska)</option><option value=\"PT\">Portugal</option><option value=\"PR\">Puerto Rico</option><option value=\"QA\">Qatar (‫قطر‬‎)</option><option value=\"RE\">Réunion (La Réunion)</option><option value=\"RO\">Romania (România)</option><option value=\"RU\">Russia (Россия)</option><option value=\"RW\">Rwanda</option><option value=\"BL\">Saint Barthélemy (Saint-Barthélemy)</option><option value=\"SH\">Saint Helena</option><option value=\"KN\">Saint Kitts and Nevis</option><option value=\"LC\">Saint Lucia</option><option value=\"MF\">Saint Martin (Saint-Martin (partie française))</option><option value=\"PM\">Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)</option><option value=\"VC\">Saint Vincent and the Grenadines</option><option value=\"WS\">Samoa</option><option value=\"SM\">San Marino</option><option value=\"ST\">São Tomé and Príncipe (São Tomé e Príncipe)</option><option value=\"SA\">Saudi Arabia (‫المملكة العربية السعودية‬‎)</option><option value=\"SN\">Senegal (Sénégal)</option><option value=\"RS\">Serbia (Србија)</option><option value=\"SC\">Seychelles</option><option value=\"SL\">Sierra Leone</option><option value=\"SG\">Singapore</option><option value=\"SX\">Sint Maarten</option><option value=\"SK\">Slovakia (Slovensko)</option><option value=\"SI\">Slovenia (Slovenija)</option><option value=\"SB\">Solomon Islands</option><option value=\"SO\">Somalia (Soomaaliya)</option><option value=\"ZA\">South Africa</option><option value=\"KR\">South Korea (대한민국)</option><option value=\"SS\">South Sudan (‫جنوب السودان‬‎)</option><option value=\"ES\">Spain (España)</option><option value=\"LK\">Sri Lanka (ශ්‍රී ලංකාව)</option><option value=\"SD\">Sudan (‫السودان‬‎)</option><option value=\"SR\">Suriname</option><option value=\"SJ\">Svalbard and Jan Mayen</option><option value=\"SZ\">Swaziland</option><option value=\"SE\">Sweden (Sverige)</option><option value=\"CH\">Switzerland (Schweiz)</option><option value=\"TW\">Taiwan (台灣)</option><option value=\"TJ\">Tajikistan</option><option value=\"TZ\">Tanzania</option><option value=\"TH\">Thailand (ไทย)</option><option value=\"TL\">Timor-Leste</option><option value=\"TG\">Togo</option><option value=\"TK\">Tokelau</option><option value=\"TO\">Tonga</option><option value=\"TT\">Trinidad and Tobago</option><option value=\"TN\">Tunisia (‫تونس‬‎)</option><option value=\"TR\">Turkey (Türkiye)</option><option value=\"TM\">Turkmenistan</option><option value=\"TC\">Turks and Caicos Islands</option><option value=\"TV\">Tuvalu</option><option value=\"VI\">U.S. Virgin Islands</option><option value=\"UG\">Uganda</option><option value=\"UA\">Ukraine (Україна)</option><option value=\"AE\">United Arab Emirates (‫الإمارات العربية المتحدة‬‎)</option><option value=\"GB\">United Kingdom</option><option value=\"US\" selected=\"\">United States</option><option value=\"UM\">United States Minor Outlying Islands</option><option value=\"UY\">Uruguay</option><option value=\"UZ\">Uzbekistan (Oʻzbekiston)</option><option value=\"VU\">Vanuatu</option><option value=\"VA\">Vatican City (Città del Vaticano)</option><option value=\"VE\">Venezuela</option><option value=\"VN\">Vietnam (Việt Nam)</option><option value=\"WF\">Wallis and Futuna</option><option value=\"YE\">Yemen (‫اليمن‬‎)</option><option value=\"ZM\">Zambia</option><option value=\"ZW\">Zimbabwe</option></select></div><button class=\"sc-1cf10e5c-0 biNDOa full-width primary lg\">Save &amp; Update</button></div></div></article><footer class=\"modal-footer\"><form method=\"dialog\"><button class=\"text-button\">Cancel</button></form></footer></div></dialog><dialog class=\"sc-bee397b4-0 kkSrXB\"><div class=\"dialog-content\"><article class=\"modal-content\"><div class=\"sc-9e7ac890-1 gCfvUh\"><header class=\"header\"><h2 class=\"subheading-1\">Choose your currency</h2></header><div class=\"content-wrapper\"><div class=\"sc-a85cff16-0 fxwcm secondary lg full-width\"><select class=\"select-element\" aria-label=\"Select your region\"><option value=\"AUD\">Australian Dollars</option><option value=\"BRL\">Brazilian Real</option><option value=\"CAD\">Canadian Dollars</option><option value=\"CZK\">Czech Koruna</option><option value=\"DKK\">Danish Kroner</option><option value=\"EUR\">Euros</option><option value=\"GBP\">British Pounds Sterling</option><option value=\"HKD\">Hong Kong Dollar</option><option value=\"HUF\">Hungarian Forint</option><option value=\"MXN\">Mexican Peso</option><option value=\"NOK\">Norwegian Kroner</option><option value=\"NZD\">New Zealand Dollar</option><option value=\"PLN\">Polish Zloty</option><option value=\"SEK\">Swedish Kronor</option><option value=\"SGD\">Singapore Dollar</option><option value=\"USD\" selected=\"\">US Dollars</option></select></div><button class=\"sc-1cf10e5c-0 biNDOa full-width primary lg\">Save &amp; Update</button></div></div></article><footer class=\"modal-footer\"><form method=\"dialog\"><button class=\"text-button\">Cancel</button></form></footer></div></dialog><div id=\"Stage\"><div class=\"GLA11y\"></div></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 47856
+      },
+      "settings": null
+    }
+  ]
+}

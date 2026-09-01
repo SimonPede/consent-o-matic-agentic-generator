@@ -1,0 +1,803 @@
+{
+  "timestamp": "2026-08-27T04:01:40.360322",
+  "url": "https://www.perplexity.ai",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.perplexity.ai"
+  ],
+  "duration_seconds": 62.24,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 4 frames.",
+      "a frame was picked by score: https://www.perplexity.ai/ with Score: 14",
+      "Settings match: \"Customize\" --> lowered: \"customize\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Settings match: \"Apps and more\" --> lowered: \"apps and more\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Apps and more\"], textMatch: Apps and more",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 753763 chars.",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 26 buttons, 0 inputs.",
+      "New state: 26 buttons, 0 inputs.",
+      "Settings click seems to have had no effect",
+      "Regex click had no effect in frame https://www.perplexity.ai/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.perplexity.ai/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.perplexity.ai/',",
+      "      filteredHtml: `<body class=\"md:bg-base bg-transparent\" data-modality=\"mouse\"><div id=\"root\"><div class=\"border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"isolate flex h-dvh\"><div class=\"contents\"><div class=\"flex size-full flex-1\"><div class=\"flex h-full shrink-0\"><div class=\"w-sideBarWidth shrink-0 h-full z-[1] [contain:layout]\"></div></div><main class=\"erp-tab:p-0 erp-tab:gap-0 isolate flex h-auto max-h-screen min-w-0 grow flex-col\"><div data-upsell-slot=\"ask.shell.banner\"></div><div class=\"@container/main relative isolate min-h-0 flex-1 overflow-clip bg-clip-border border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"mx-auto flex w-full flex-col h-full\"><div class=\"pointer-events-none absolute inset-x-0 top-0 z-10 hidden h-24 bg-linear-to-b from-base to-transparent md:block\"></div><div class=\"pointer-events-none px-4 inset-x-0 z-20 absolute flex justify-center top-0\"></div><div class=\"top-0 h-headerHeight left-4 z-20 absolute hidden items-center gap-2 md:flex\"></div><div class=\"hidden items-center gap-2 md:flex top-0 h-headerHeight right-4 z-20 absolute\"><div class=\"inline-flex empty:hidden rounded-lg bg-base\"><button aria-label=\"Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle data-[state=open]:border-subtle border border-solid h-8 text-sm cursor-pointer inline-flex aspect-[9/8] text-primary border-subtle hover:border-subtle hover:bg-subtle rounded-lg\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div><div class=\"inline-flex empty:hidden rounded-lg bg-base\"><button aria-expanded=\"false\" aria-haspopup=\"menu\" data-state=\"closed\" aria-label=\"Apps and more\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle data-[state=open]:border-subtle border border-solid h-8 text-sm cursor-pointer inline-flex aspect-[9/8] text-primary border-subtle hover:border-subtle hover:bg-subtle rounded-lg\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div></div><div class=\"scrollable-container flex flex-1 basis-0 overflow-auto [scrollbar-gutter:stable] scrollbar-subtle\"><div class=\"mx-auto size-full max-w-screen-md px-4 md:px-8\"><div class=\"erp-sidecar:px-4 sm:px-4 md:px-8 isolate mx-auto size-full sm:max-w-screen-md\"><div class=\"relative flex h-full flex-col\"><div class=\"py-4 pr-4 pl-1 h-headerHeight flex items-center justify-between border-b -mx-4 md:hidden border-subtlest ring-subtlest divide-subtlest\"><div class=\"gap-x-1 flex items-center\"><span class=\"\"><button aria-expanded=\"false\" aria-label=\"Open sidebar\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] text-secondary hover:text-primary hover:bg-soft\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></span><div class=\"text-primary h-auto group w-24\"></div></div><div class=\"gap-x-2 flex items-center\"></div></div><div class=\"static w-full grow flex-col items-center pb-[10vh] md:mt-0 md:flex z-10 border-subtlest ring-subtlest divide-subtlest\"><div class=\"hidden shrink-0 md:block md:h-[40vh]\"></div><div class=\"px-4 relative flex size-full flex-col justify-center md:h-auto md:px-0\"><div class=\"mb-4 bottom-0 flex w-full items-center justify-center px-4 pb-3 text-center md:absolute md:items-start md:justify-start md:text-left\" aria-hidden=\"false\"><div class=\"flex w-full flex-col items-center gap-1 md:items-stretch\"><div class=\"font-sans text-base text-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\"><span class=\"relative hidden text-xs font-medium leading-none md:inline-block\"><span aria-hidden=\"true\" class=\"invisible inline-flex items-center gap-1\">Computer</span><span aria-hidden=\"true\" class=\"absolute inset-0 text-secondary\">Search</span><span aria-hidden=\"true\" class=\"absolute inset-0 inline-flex items-center gap-1 text-super-primary\">Computer</span></span></div><div class=\"flex w-full items-center justify-center gap-2 md:justify-start\"><div class=\"font-sans text-base text-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\"><span class=\"relative inline-block\"><span class=\"sr-only\">What do you want to know?</span><span aria-hidden=\"true\" class=\"font-sans invisible inline-block text-2xl\"><span class=\"inline-block\">What </span><span class=\"inline-block\">do </span><span class=\"inline-block\">you </span><span class=\"inline-block\">want </span><span class=\"inline-block\">to </span><span class=\"inline-block\">know?</span></span><span aria-hidden=\"true\" class=\"font-sans absolute inset-0 flex justify-center text-2xl md:justify-start\"><span class=\"inline-block\">What </span><span class=\"inline-block\">do </span><span class=\"inline-block\">you </span><span class=\"inline-block\">want </span><span class=\"inline-block\">to </span><span class=\"inline-block\">know?</span></span></span></div></div></div></div></div><div class=\"w-full relative z-30\"><div class=\"relative\"><div class=\"bg-base rounded-2xl\" data-ask-input-c><div class=\"relative rounded-2xl border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"\"><span class=\"grow block\" type=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-c data-state=\"closed\"><div class=\"relative isolate rounded-2xl\"><div class=\"w-full outline-none flex items-center border px-0 pb-0 duration-75 transition-[background-color,border-color,box-shadow] rounded-2xl border-focus bg-raised dark:bg-subtlest shadow-xs dark:shadow-md shadow-black/[0.08] !bg-subtle dark:!bg-base relative z-[1] grid items-center overflow-hidden [&amp;&gt;*+*]:mt-4 [&amp;&gt;*:last-child]:mt-0\"><div class=\"relative z-[1] grid bg-raised ring-1 ring-subtlest pt-3 gap-4 rounded-b-2xl\"><div class=\"min-w-0 px-3 grid grid-cols-[1fr_auto] grid-rows-1fr-auto pb-3\"><div class=\"overflow-hidden relative flex h-full min-w-0 col-start-1 col-end-3 pb-2 ml-2 mt-1\"><div class=\"relative min-w-0 w-full\"><div class=\"overflow-auto max-h-[45vh] lg:max-h-[40vh] sm:max-h-[25vh] outline-none font-sans resize-none caret-super-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary text-primary bg-transparent placeholder:select-none scrollbar-subtle size-full min-w-0\" c id=\"ask-input\" role=\"textbox\" spellcheck=\"true\" aria-placeholder=\"Type @ for connectors\" data-lexical-editor=\"true\"><p dir=\"auto\"><br></p></div><div aria-hidden=\"true\"><div class=\"absolute inset-0 pointer-events-none select-none text-tertiary line-clamp-2 overflow-hidden max-h-[3em]\"><div>Type @ for connectors</div></div></div></div></div><div class=\"gap-2 flex overflow-hidden min-w-0 col-start-1 row-start-2\"><div class=\"gap-2 flex items-center min-w-0\"><input multiple=\"\" accept=\".bash,.bat,.c,.coffee,.conf,.config,.cpp,.cs,.css,.csv,.cxx,.dart,.diff,.doc,.docx,.fish,.go,.h,.hpp,.htm,.html,.in,.ini,.ipynb,.java,.js,.json,.jsx,.ksh,.kt,.kts,.latex,.less,.log,.lua,.m,.markdown,.md,.pdf,.php,.pl,.pm,.pptx,.py,.r,.R,.rb,.rmd,.rs,.scala,.sh,.sql,.swift,.t,.tex,.text,.toml,.ts,.tsx,.txt,.xlsx,.xml,.yaml,.yml,.zsh,.jpeg,.jpg,.jpe,.jp2,.png,.gif,.bmp,.tiff,.tif,.svg,.webp,.ico,.avif,.heic,.heif,.mp3,.wav,.aiff,.ogg,.flac,.mp4,.mpeg,.mov,.avi,.flv,.mpg,.webm,.wmv,.3gp\" type=\"file\"><button aria-expanded=\"false\" aria-haspopup=\"menu\" data-state=\"closed\" aria-label=\"Add files or tools\" type=\"button\" class=\"reset interactable-alt select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] text-secondary hover:text-primary hover:bg-soft\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button><div class=\"relative flex items-center shrink-0 gap-0 rounded-full transition-colors duration-quick dark:bg-base bg-subtle\"><div aria-hidden=\"true\" data-testid=\"ask-input-mode-toggle-indicator\" class=\"pointer-events-none absolute top-0 z-0 h-full rounded-full border border-subtle bg-raised dark:bg-soft\"></div><span data-testid=\"ask-input-mode-toggle-width-wrapper\" class=\"relative z-[1] inline-flex flex-none overflow-hidden rounded-full\"><span class=\"inline-flex w-max\"><button aria-pressed=\"true\" id=\"radix-_r_u_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" type=\"button\" class=\"reset interactable-alt inline-flex select-none max-w-full items-center border transition-colors duration-150 cursor-pointe`... 14431 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 24431",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.perplexity.ai/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (25):",
+      "      [BUTTON] \"Collapse sidebar\" --> selector: [aria-label=\"Collapse sidebar\"]",
+      "      [A] \"New\" --> selector: [aria-label=\"New\"]",
+      "      [A] \"Computer\" --> selector: [aria-label=\"Computer\"]",
+      "      [A] \"Artifacts\" --> selector: [aria-label=\"Artifacts\"]",
+      "      [A] \"Customize\" --> selector: [aria-label=\"Customize\"]",
+      "      [A] \"Projects\" --> selector: [aria-label=\"Projects\"]",
+      "      [BUTTON] \"Create project\" --> selector: [aria-label=\"Create project\"]",
+      "      [BUTTON] \"Filter projects\" --> selector: [aria-label=\"Filter projects\"]",
+      "      [BUTTON] \"Collapse Projects\" --> selector: [aria-label=\"Collapse Projects\"]",
+      "      [A] \"Sessions\" --> selector: [aria-label=\"Sessions\"]",
+      "      [BUTTON] \"Collapse Sessions\" --> selector: [aria-label=\"Collapse Sessions\"]",
+      "      [BUTTON] \"Sign In\" --> selector: button",
+      "      [BUTTON] \"Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours\" --> selector: [aria-label=\"Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours\"]",
+      "      [BUTTON] \"Apps and more\" --> selector: [aria-label=\"Apps and more\"]",
+      "      [BUTTON] \"Add files or tools\" --> selector: [aria-label=\"Add files or tools\"]",
+      "      [BUTTON] \"Search\" --> selector: #radix-_r_u_",
+      "      [BUTTON] \"Computer\" --> selector: button",
+      "      [BUTTON] \"Model\" --> selector: [aria-label=\"Model\"]",
+      "      [BUTTON] \"Dictation\" --> selector: [aria-label=\"Dictation\"]",
+      "      [BUTTON] \"Use voice mode\" --> selector: [aria-label=\"Use voice mode\"]",
+      "      [BUTTON] \"Work in a project\" --> selector: button",
+      "      [BUTTON] \"Search anything",
+      "Get fast and accurate answers from the most trusted sources.\" --> selector: button",
+      "      [BUTTON] \"Get work done with Computer",
+      "NEW",
+      "Hand off your projects to get polished, reliable deliverables around the clock.\" --> selector: button",
+      "      [BUTTON] \"Allow all\" --> selector: button",
+      "      [BUTTON] \"Only necessary\" --> selector: button",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.perplexity.ai/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Collapse sidebar",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Collapse sidebar",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable flex items-center justify-center rounded-xl hover:bg-subtle"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex items-center gap-1 pr-1 visible group-hover/sidebar:visible font-sans",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex items-center justify-between p-2 h-headerHeight relative",
+                "selector": ".flex"
+              }
+            },
+            "selector": "[aria-label=\"Collapse sidebar\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "New",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "New",
+              "class": "reset interactable absolute inset-0 rounded-xl",
+              "href": "/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "group/sidebar-sub-menu group/alert-dot-hover-container relative block rounded-md select-none w-full",
+              "selector": ".group/sidebar-sub-menu",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"New\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Computer",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "Computer",
+              "class": "reset interactable absolute inset-0 rounded-xl",
+              "href": "/computer/tasks"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "group/sidebar-sub-menu group/alert-dot-hover-container relative block rounded-md select-none w-full",
+              "selector": ".group/sidebar-sub-menu",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Computer\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Artifacts",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "Artifacts",
+              "class": "reset interactable absolute inset-0 rounded-xl",
+              "href": "/computer/artifacts"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "group/sidebar-sub-menu group/alert-dot-hover-container relative block rounded-md select-none w-full",
+              "selector": ".group/sidebar-sub-menu",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Artifacts\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Customize",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "Customize",
+              "class": "reset interactable absolute inset-0 rounded-xl",
+              "href": "/computer/connectors"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "group/sidebar-sub-menu group/alert-dot-hover-container relative block rounded-md select-none w-full",
+              "selector": ".group/sidebar-sub-menu",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Customize\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Projects",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "Projects",
+              "class": "reset interactable absolute inset-0 rounded-lg",
+              "href": "/projects"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "relative block select-none w-full rounded-lg group/sidebar-list-row",
+              "selector": ".relative",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mt-2 pt-1 pb-2 w-full px-2 border-subtlest ring-subtlest",
+                "selector": ".mt-2"
+              }
+            },
+            "selector": "[aria-label=\"Projects\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create project",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Create project",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable-alt size-6 grid place-items-center rounded-md shrink-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "z-10 inline-flex items-center pointer-events-auto opacity-100 md:opacity-0 md:group-hover/sidebar-list-row:opacity-100",
+              "selector": ".z-10",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "relative flex w-[var(--sidebar-pinned-width)] flex-1 items-center overflow-hidden gap-1",
+                "selector": ".relative"
+              }
+            },
+            "selector": "[aria-label=\"Create project\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Filter projects",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Filter projects",
+              "data-state": "closed",
+              "aria-expanded": "false",
+              "aria-haspopup": "menu",
+              "type": "button",
+              "class": "reset interactable-alt size-6 grid place-items-center rounded-md shrink-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "hidden md:block",
+              "selector": ".hidden",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "z-10 inline-flex items-center pointer-events-auto opacity-100 md:opacity-0 md:group-hover/sidebar-list-row:opacity-100",
+                "selector": ".z-10"
+              }
+            },
+            "selector": "[aria-label=\"Filter projects\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Collapse Projects",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "true",
+              "aria-label": "Collapse Projects",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable-alt size-6 grid place-items-center rounded-md shrink-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "z-10 inline-flex items-center pointer-events-auto border-subtlest ring-subtlest divide-subtlest",
+              "selector": ".z-10",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "relative flex w-[var(--sidebar-pinned-width)] flex-1 items-center overflow-hidden gap-1",
+                "selector": ".relative"
+              }
+            },
+            "selector": "[aria-label=\"Collapse Projects\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sessions",
+            "tag": "A",
+            "attributes": {
+              "draggable": "false",
+              "aria-label": "Sessions",
+              "class": "reset interactable absolute inset-0 rounded-lg",
+              "href": "/library"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "relative block select-none w-full rounded-lg group/sidebar-list-row",
+              "selector": ".relative",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mt-2 pt-1 pb-2 w-full px-2 border-subtlest ring-subtlest",
+                "selector": ".mt-2"
+              }
+            },
+            "selector": "[aria-label=\"Sessions\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Collapse Sessions",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "true",
+              "aria-label": "Collapse Sessions",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable-alt size-6 grid place-items-center rounded-md shrink-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "z-10 inline-flex items-center pointer-events-auto border-subtlest ring-subtlest divide-subtlest",
+              "selector": ".z-10",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "relative flex w-[var(--sidebar-pinned-width)] flex-1 items-center overflow-hidden gap-1",
+                "selector": ".relative"
+              }
+            },
+            "selector": "[aria-label=\"Collapse Sessions\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign In",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "reset interactable-alt block w-full rounded-sm"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex-1 min-w-0 relative",
+              "selector": ".flex-1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex-1 min-w-0 relative flex group/wrapped-content",
+                "selector": ".flex-1"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "inline-flex empty:hidden rounded-lg bg-base",
+              "selector": ".inline-flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "hidden items-center gap-2 md:flex top-0 h-headerHeight right-4",
+                "selector": ".hidden"
+              }
+            },
+            "selector": "[aria-label=\"Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Apps and more",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-haspopup": "menu",
+              "data-state": "closed",
+              "aria-label": "Apps and more",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "inline-flex empty:hidden rounded-lg bg-base",
+              "selector": ".inline-flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "hidden items-center gap-2 md:flex top-0 h-headerHeight right-4",
+                "selector": ".hidden"
+              }
+            },
+            "selector": "[aria-label=\"Apps and more\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Add files or tools",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-haspopup": "menu",
+              "data-state": "closed",
+              "aria-label": "Add files or tools",
+              "type": "button",
+              "class": "reset interactable-alt select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "gap-2 flex items-center min-w-0",
+              "selector": ".gap-2",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gap-2 flex overflow-hidden min-w-0 col-start-1 row-start-2",
+                "selector": ".gap-2"
+              }
+            },
+            "selector": "[aria-label=\"Add files or tools\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-pressed": "true",
+              "id": "radix-_r_u_",
+              "aria-haspopup": "menu",
+              "aria-expanded": "false",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable-alt inline-flex select-none max-w-full items-center border",
+              "style": "min-width: 36px;"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "inline-flex w-max",
+              "selector": ".inline-flex",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "relative z-[1] inline-flex flex-none overflow-hidden rounded-full",
+                "selector": ".relative"
+              }
+            },
+            "selector": "#radix-_r_u_",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Computer",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-pressed": "false",
+              "type": "button",
+              "class": "reset interactable-alt inline-flex select-none max-w-full items-center border",
+              "style": "min-width: 36px;"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "inline-flex",
+              "selector": ".inline-flex",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "inline-flex w-max",
+                "selector": ".inline-flex"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Model",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-haspopup": "menu",
+              "data-state": "closed",
+              "aria-label": "Model",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "inline-flex -mr-2",
+              "selector": ".inline-flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex items-center justify-self-end gap-2 col-start-2 row-start-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "[aria-label=\"Model\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Dictation",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Dictation",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "relative",
+              "selector": ".relative",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex items-center justify-self-end gap-2 col-start-2 row-start-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "[aria-label=\"Dictation\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use voice mode",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Use voice mode",
+              "data-state": "closed",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex items-center justify-self-end gap-2 col-start-2 row-start-2",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "min-w-0 px-3 grid grid-cols-[1fr_auto] grid-rows-1fr-auto pb-3",
+                "selector": ".min-w-0"
+              }
+            },
+            "selector": "[aria-label=\"Use voice mode\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Work in a project",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "radix-_r_16_",
+              "className": "inline-flex",
+              "selector": "#radix-_r_16_",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "group/project-selector relative inline-flex [&:hover>[data-project-selector-trigger]>button]:bg-soft [&:hover>[data-project-selector-trigger]>button]:text-primary",
+                "selector": ".group/project-selector"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search anything\nGet fast and accurate answers from the most trusted sources.",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "reset interactable-alt group relative flex h-full w-full",
+              "style": "--education-card-light-background: radial-gradient(110.21% 173.1% at 0% -79.81%, rgba(61, 149, 149, 0.10) 0%, rgba(61, 149, 149, 0.00) 100%), var(--bg-subtle); --education-card-dark-background: radial-gradient(90% 130% at 100% 0%, rgba(100, 182, 186, 0.55) 0%, rgba(100, 182, 186, 0) 70%), #016a71;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex min-w-0 flex-1 rounded-xl border border-subtle transition-transform",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex w-full items-stretch gap-3",
+                "selector": ".flex"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get work done with Computer\nNEW\nHand off your projects to get polished, reliable deliverables around the clock.",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "reset interactable-alt group relative flex h-full w-full",
+              "style": "--education-card-light-background: radial-gradient(120.49% 162.23% at 150.32% -44.82%, rgba(61, 149, 149, 0.15) 0%, rgba(61, 149, 149, 0.00) 100%), var(--bg-subtle); --education-card-dark-background: radial-gradient(90% 120% at 100% 0%, rgba(20, 107, 116, 0.5) 0%, rgba(20, 107, 116, 0) 62%), #081F22;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex min-w-0 flex-1 rounded-xl border border-subtle transition-transform",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex w-full items-stretch gap-3",
+                "selector": ".flex"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Allow all",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "gap-x-2 flex w-full",
+              "selector": ".gap-x-2",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "border-subtlest ring-subtlest divide-subtlest",
+                "selector": ".border-subtlest"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Only necessary",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity]"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "gap-x-2 flex w-full",
+              "selector": ".gap-x-2",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "border-subtlest ring-subtlest divide-subtlest",
+                "selector": ".border-subtlest"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.perplexity.ai/",
+        "filteredHtml": "<body class=\"md:bg-base bg-transparent\" data-modality=\"mouse\"><div id=\"root\"><div class=\"border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"isolate flex h-dvh\"><div class=\"contents\"><div class=\"flex size-full flex-1\"><div class=\"flex h-full shrink-0\"><div class=\"w-sideBarWidth shrink-0 h-full z-[1] [contain:layout]\"></div></div><main class=\"erp-tab:p-0 erp-tab:gap-0 isolate flex h-auto max-h-screen min-w-0 grow flex-col\"><div data-upsell-slot=\"ask.shell.banner\"></div><div class=\"@container/main relative isolate min-h-0 flex-1 overflow-clip bg-clip-border border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"mx-auto flex w-full flex-col h-full\"><div class=\"pointer-events-none absolute inset-x-0 top-0 z-10 hidden h-24 bg-linear-to-b from-base to-transparent md:block\"></div><div class=\"pointer-events-none px-4 inset-x-0 z-20 absolute flex justify-center top-0\"></div><div class=\"top-0 h-headerHeight left-4 z-20 absolute hidden items-center gap-2 md:flex\"></div><div class=\"hidden items-center gap-2 md:flex top-0 h-headerHeight right-4 z-20 absolute\"><div class=\"inline-flex empty:hidden rounded-lg bg-base\"><button aria-label=\"Use incognito: create anonymous sessions that aren't saved to your history and expire after 24 hours\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle data-[state=open]:border-subtle border border-solid h-8 text-sm cursor-pointer inline-flex aspect-[9/8] text-primary border-subtle hover:border-subtle hover:bg-subtle rounded-lg\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div><div class=\"inline-flex empty:hidden rounded-lg bg-base\"><button aria-expanded=\"false\" aria-haspopup=\"menu\" data-state=\"closed\" aria-label=\"Apps and more\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle data-[state=open]:border-subtle border border-solid h-8 text-sm cursor-pointer inline-flex aspect-[9/8] text-primary border-subtle hover:border-subtle hover:bg-subtle rounded-lg\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div></div><div class=\"scrollable-container flex flex-1 basis-0 overflow-auto [scrollbar-gutter:stable] scrollbar-subtle\"><div class=\"mx-auto size-full max-w-screen-md px-4 md:px-8\"><div class=\"erp-sidecar:px-4 sm:px-4 md:px-8 isolate mx-auto size-full sm:max-w-screen-md\"><div class=\"relative flex h-full flex-col\"><div class=\"py-4 pr-4 pl-1 h-headerHeight flex items-center justify-between border-b -mx-4 md:hidden border-subtlest ring-subtlest divide-subtlest\"><div class=\"gap-x-1 flex items-center\"><span class=\"\"><button aria-expanded=\"false\" aria-label=\"Open sidebar\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] text-secondary hover:text-primary hover:bg-soft\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></span><div class=\"text-primary h-auto group w-24\"></div></div><div class=\"gap-x-2 flex items-center\"></div></div><div class=\"static w-full grow flex-col items-center pb-[10vh] md:mt-0 md:flex z-10 border-subtlest ring-subtlest divide-subtlest\"><div class=\"hidden shrink-0 md:block md:h-[40vh]\"></div><div class=\"px-4 relative flex size-full flex-col justify-center md:h-auto md:px-0\"><div class=\"mb-4 bottom-0 flex w-full items-center justify-center px-4 pb-3 text-center md:absolute md:items-start md:justify-start md:text-left\" aria-hidden=\"false\"><div class=\"flex w-full flex-col items-center gap-1 md:items-stretch\"><div class=\"font-sans text-base text-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\"><span class=\"relative hidden text-xs font-medium leading-none md:inline-block\"><span aria-hidden=\"true\" class=\"invisible inline-flex items-center gap-1\">Computer</span><span aria-hidden=\"true\" class=\"absolute inset-0 text-secondary\">Search</span><span aria-hidden=\"true\" class=\"absolute inset-0 inline-flex items-center gap-1 text-super-primary\">Computer</span></span></div><div class=\"flex w-full items-center justify-center gap-2 md:justify-start\"><div class=\"font-sans text-base text-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\"><span class=\"relative inline-block\"><span class=\"sr-only\">What do you want to know?</span><span aria-hidden=\"true\" class=\"font-sans invisible inline-block text-2xl\"><span class=\"inline-block\">What </span><span class=\"inline-block\">do </span><span class=\"inline-block\">you </span><span class=\"inline-block\">want </span><span class=\"inline-block\">to </span><span class=\"inline-block\">know?</span></span><span aria-hidden=\"true\" class=\"font-sans absolute inset-0 flex justify-center text-2xl md:justify-start\"><span class=\"inline-block\">What </span><span class=\"inline-block\">do </span><span class=\"inline-block\">you </span><span class=\"inline-block\">want </span><span class=\"inline-block\">to </span><span class=\"inline-block\">know?</span></span></span></div></div></div></div></div><div class=\"w-full relative z-30\"><div class=\"relative\"><div class=\"bg-base rounded-2xl\" data-ask-input-c><div class=\"relative rounded-2xl border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"\"><span class=\"grow block\" type=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-c data-state=\"closed\"><div class=\"relative isolate rounded-2xl\"><div class=\"w-full outline-none flex items-center border px-0 pb-0 duration-75 transition-[background-color,border-color,box-shadow] rounded-2xl border-focus bg-raised dark:bg-subtlest shadow-xs dark:shadow-md shadow-black/[0.08] !bg-subtle dark:!bg-base relative z-[1] grid items-center overflow-hidden [&amp;&gt;*+*]:mt-4 [&amp;&gt;*:last-child]:mt-0\"><div class=\"relative z-[1] grid bg-raised ring-1 ring-subtlest pt-3 gap-4 rounded-b-2xl\"><div class=\"min-w-0 px-3 grid grid-cols-[1fr_auto] grid-rows-1fr-auto pb-3\"><div class=\"overflow-hidden relative flex h-full min-w-0 col-start-1 col-end-3 pb-2 ml-2 mt-1\"><div class=\"relative min-w-0 w-full\"><div class=\"overflow-auto max-h-[45vh] lg:max-h-[40vh] sm:max-h-[25vh] outline-none font-sans resize-none caret-super-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary text-primary bg-transparent placeholder:select-none scrollbar-subtle size-full min-w-0\" c id=\"ask-input\" role=\"textbox\" spellcheck=\"true\" aria-placeholder=\"Type @ for connectors\" data-lexical-editor=\"true\"><p dir=\"auto\"><br></p></div><div aria-hidden=\"true\"><div class=\"absolute inset-0 pointer-events-none select-none text-tertiary line-clamp-2 overflow-hidden max-h-[3em]\"><div>Type @ for connectors</div></div></div></div></div><div class=\"gap-2 flex overflow-hidden min-w-0 col-start-1 row-start-2\"><div class=\"gap-2 flex items-center min-w-0\"><input multiple=\"\" accept=\".bash,.bat,.c,.coffee,.conf,.config,.cpp,.cs,.css,.csv,.cxx,.dart,.diff,.doc,.docx,.fish,.go,.h,.hpp,.htm,.html,.in,.ini,.ipynb,.java,.js,.json,.jsx,.ksh,.kt,.kts,.latex,.less,.log,.lua,.m,.markdown,.md,.pdf,.php,.pl,.pm,.pptx,.py,.r,.R,.rb,.rmd,.rs,.scala,.sh,.sql,.swift,.t,.tex,.text,.toml,.ts,.tsx,.txt,.xlsx,.xml,.yaml,.yml,.zsh,.jpeg,.jpg,.jpe,.jp2,.png,.gif,.bmp,.tiff,.tif,.svg,.webp,.ico,.avif,.heic,.heif,.mp3,.wav,.aiff,.ogg,.flac,.mp4,.mpeg,.mov,.avi,.flv,.mpg,.webm,.wmv,.3gp\" type=\"file\"><button aria-expanded=\"false\" aria-haspopup=\"menu\" data-state=\"closed\" aria-label=\"Add files or tools\" type=\"button\" class=\"reset interactable-alt select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] text-secondary hover:text-primary hover:bg-soft\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button><div class=\"relative flex items-center shrink-0 gap-0 rounded-full transition-colors duration-quick dark:bg-base bg-subtle\"><div aria-hidden=\"true\" data-testid=\"ask-input-mode-toggle-indicator\" class=\"pointer-events-none absolute top-0 z-0 h-full rounded-full border border-subtle bg-raised dark:bg-soft\"></div><span data-testid=\"ask-input-mode-toggle-width-wrapper\" class=\"relative z-[1] inline-flex flex-none overflow-hidden rounded-full\"><span class=\"inline-flex w-max\"><button aria-pressed=\"true\" id=\"radix-_r_u_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\" type=\"button\" class=\"reset interactable-alt inline-flex select-none max-w-full items-center border transition-colors duration-150 cursor-pointer rounded-full h-8 text-sm gap-1 pl-2 pr-3 bg-soft border-transparent text-primary relative gap-0 pr-2 overflow-visible !border-solid !border-transparent !bg-transparent hover:!bg-transparent !bg-transparent text-primary\"><span class=\"inline-flex items-center p-two\"></span><span class=\"inline-flex items-center whitespace-nowrap\">Search<span aria-hidden=\"true\" data-testid=\"ask-input-mode-toggle-chevron-slot\" class=\"inline-flex items-center justify-end overflow-hidden\"><span class=\"ml-1 inline-flex origin-right\"></span></span></span></button></span></span><span data-testid=\"ask-input-mode-toggle-width-wrapper\" class=\"relative z-[1] inline-flex flex-none overflow-hidden rounded-full\"><span class=\"inline-flex w-max\"><span class=\"inline-flex\" data-state=\"closed\"><button aria-pressed=\"false\" type=\"button\" class=\"reset interactable-alt inline-flex select-none max-w-full items-center border transition-colors duration-150 cursor-pointer rounded-full h-8 text-sm gap-1 pl-2 pr-3 border-dashed bg-transparent border-subtle hover:bg-subtle relative gap-0 pr-2 overflow-visible !border-solid !border-transparent !bg-transparent hover:!bg-transparent text-secondary hover:text-primary\"><span class=\"inline-flex items-center p-two\"></span><span class=\"inline-flex items-center whitespace-nowrap\">Computer<span aria-hidden=\"true\" data-testid=\"ask-input-mode-toggle-chevron-slot\" class=\"inline-flex items-center justify-end overflow-hidden\"><span class=\"ml-1 inline-flex origin-right\"></span></span></span></button></span></span></span></div></div></div><div class=\"flex items-center justify-self-end gap-2 col-start-2 row-start-2\"><div class=\"inline-flex -mr-2\"><button aria-expanded=\"false\" aria-haspopup=\"menu\" data-state=\"closed\" aria-label=\"Model\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full text-secondary hover:text-primary hover:bg-soft px-3 relative\"><span class=\"text-box-trim-both pr-1\">Model</span><div class=\"flex shrink-0 items-center -mr-0.5\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></button></div><div class=\"relative\"><button aria-label=\"Dictation\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] text-secondary hover:text-primary hover:bg-soft\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div><button aria-label=\"Use voice mode\" data-state=\"closed\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:opacity-80 text-inverse border border-transparent h-8 text-sm cursor-pointer inline-flex rounded-full aspect-square p-0 aspect-[9/8] bg-button-bg hover:opacity-80\"><div class=\"relative flex items-center justify-center\"><div class=\"inline-flex\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></div></button></div></div></div><div aria-hidden=\"true\" inert=\"\" class=\"min-w-0 overflow-hidden pointer-events-none\"><div><div class=\"dark:bg-base min-w-0\"><div class=\"px-3 py-1\"><div class=\"flex min-h-7 min-w-0 items-center justify-start gap-2\"><div class=\"flex min-w-0 items-center gap-1\"><div class=\"group/project-selector relative inline-flex [&amp;:hover&gt;[data-project-selector-trigger]&gt;button]:bg-soft [&amp;:hover&gt;[data-project-selector-trigger]&gt;button]:text-primary\"><div data-project-selector-trigger=\"true\" class=\"inline-flex\" type=\"button\" id=\"radix-_r_16_\" aria-haspopup=\"menu\" aria-expanded=\"false\" data-state=\"closed\"><button aria-expanded=\"false\" type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:text-primary data-[state=open]:bg-soft h-6 text-xs cursor-pointer inline-flex rounded-full text-secondary hover:text-primary hover:bg-soft px-2 relative\"><div class=\"flex shrink-0 items-center -ml-0.5\"></div><span class=\"text-box-trim-both pl-1 pr-1\"><span class=\"min-w-0 truncate\">Work in a project</span></span><div class=\"flex shrink-0 items-center -mr-0.5\"></div><div class=\"absolute inset-0 flex items-center justify-center\"></div></button></div></div></div></div></div></div></div></div></div><div aria-hidden=\"true\" class=\"pointer-events-none absolute inset-px z-0 dglow-shadow-idle rounded-[15px]\"></div></div></span></div></div></div></div></div><div class=\"relative mt-8 w-full\"><div class=\"flex w-full items-stretch gap-3\"><div class=\"flex min-w-0 flex-1 rounded-xl border border-subtle transition-transform hover:scale-[1.01] dark:border-0\"><button type=\"button\" class=\"reset interactable-alt group relative flex h-full w-full min-w-0 flex-col gap-1 overflow-hidden rounded-[11px] p-4 text-left [background:var(--education-card-light-background)] dark:[background:var(--education-card-dark-background)]\"><div class=\"flex items-center gap-1.5\"><div class=\"text-primary dark:text-white font-sans text-sm text-primary font-medium selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\">Search anything</div></div><div class=\"text-secondary dark:text-white/70 font-sans text-xs text-primary font-normal selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\">Get fast and accurate answers from the most trusted sources.</div></button></div><div class=\"flex min-w-0 flex-1 rounded-xl border border-subtle transition-transform hover:scale-[1.01] dark:border-0\"><button type=\"button\" class=\"reset interactable-alt group relative flex h-full w-full min-w-0 flex-col gap-1 overflow-hidden rounded-[11px] p-4 text-left [background:var(--education-card-light-background)] dark:[background:var(--education-card-dark-background)]\"><div class=\"flex items-center gap-1.5\"><div class=\"text-primary dark:text-white font-sans text-sm text-primary font-medium selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\">Get work done with Computer</div><span class=\"inline-flex items-center rounded-full px-1.5 py-three font-sans text-[11px] font-medium bg-super-soft text-super-primary\"><span class=\"inline-flex leading-none text-box-trim-both\">NEW</span></span></div><div class=\"text-secondary dark:text-white/70 font-sans text-xs text-primary font-normal selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\">Hand off your projects to get polished, reliable deliverables around the clock.</div></button></div></div></div><div class=\"pointer-events-none absolute inset-x-0 bottom-0 hidden min-h-14 items-center justify-center gap-2 pb-2 md:flex\"></div><div data-upsell-slot=\"ask.home.page_bottom\" class=\"bottom-4 absolute left-0 flex w-full items-center justify-center px-4 pointer-events-none\"></div></div></div></div></div></div></div><div class=\"rounded-inherit pointer-events-none absolute inset-0 z-20 hidden md:dark:block md:!border-y-0 md:!border-r-0 border-subtlest ring-subtlest divide-subtlest\"></div></div></main></div></div></div></div></div> <iframe sandbox=\"allow-scripts allow-same-origin\" aria-hidden=\"true\" tabindex=\"-1\" src=\"https://count.perplexity.ai/bs#0cdb03f6-eb0d-4218-8a8b-93e2075ce1f2\"></iframe><iframe height=\"1\" width=\"1\"></iframe><div id=\"pplx-icon-sprites\"> </div><div id=\"pplx-logo-sprites\"> </div><div class=\"right-toastHMargin top-toastVMargin fixed flex items-center justify-center\" aria-live=\"polite\" aria-atomic=\"false\"></div><div class=\"right-toastHMargin top-toastVMargin fixed flex items-center justify-center\" aria-live=\"polite\" aria-atomic=\"false\"></div><div class=\"right-toastHMargin top-toastVMargin fixed flex items-center justify-center\" aria-live=\"polite\" aria-atomic=\"false\"></div><div class=\"fixed right-0 flex w-[60vw] min-w-0 flex-1 flex-col overflow-hidden text-clip inset-y-0 pointer-events-none w-0 translate-x-full opacity-0\"><div class=\"absolute inset-y-0 left-0 z-10 block group cursor-col-resize\"><div class=\"absolute inset-y-0 left-0 h-full w-px\"><div class=\"bg-soft pointer-events-none absolute inset-0 origin-center group-hover:bg-inverse/15 group-hover:scale-x-[250%]\"></div></div><div class=\"left-half absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full p-px group-hover:!opacity-0 border-subtlest ring-subtlest divide-subtlest bg-base\"><div class=\"bg-inverse w-three h-5 rounded-full opacity-20\"></div></div><div class=\"absolute top-0 h-full w-5 -translate-x-1/2 cursor-col-resize\"></div></div><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"h-full bg-base\"><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-citations\" hidden=\"\" id=\"radix-_r_18_-content-citations\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-canvas\" hidden=\"\" id=\"radix-_r_18_-content-canvas\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-pdf\" hidden=\"\" id=\"radix-_r_18_-content-pdf\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-file_preview\" hidden=\"\" id=\"radix-_r_18_-content-file_preview\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-transcript\" hidden=\"\" id=\"radix-_r_18_-content-transcript\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-check_sources\" hidden=\"\" id=\"radix-_r_18_-content-check_sources\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-council_response\" hidden=\"\" id=\"radix-_r_18_-content-council_response\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-claims\" hidden=\"\" id=\"radix-_r_18_-content-claims\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-dataviz\" hidden=\"\" id=\"radix-_r_18_-content-dataviz\" tabindex=\"0\" class=\"h-full\"></div><div data-state=\"inactive\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-_r_18_-trigger-computer_artifact\" hidden=\"\" id=\"radix-_r_18_-content-computer_artifact\" tabindex=\"0\" class=\"h-full\"></div></div></div><div aria-label=\"Typeahead menu\" role=\"listbox\"></div><div class=\"bottom-2 inset-x-2 fixed z-[2000] max-w-md border shadow-xs pointer-events-auto md:left-auto border-subtlest ring-subtlest divide-subtlest bg-base rounded-lg p-4\" role=\"dialog\" aria-modal=\"false\" aria-labelledby=\"_r_1i_\" aria-describedby=\"_r_1j_\"><div class=\"border-subtlest ring-subtlest divide-subtlest\" data-testid=\"consent-dialog\"><span><h2 id=\"_r_1i_\">Cookie Policy</h2><p id=\"_r_1j_\">We use cookies, pixels, SDKs, APIs, and server-to-server integrations for the correct functioning of our website. You can choose to allow us to use these technologies to measure our ad performance on third party partner websites and to improve our services. Perplexity will not use these technologies to sell third party ads on our services.</p></span><div class=\"gap-x-2 flex items-center font-sans text-base font-medium text-primary selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\"><span>Cookie Policy</span></div><div class=\"mb-4 font-sans text-secondary text-sm selection:bg-super-selection selection:text-primary dark:selection:text-super-primary\">We use cookies, pixels, SDKs, APIs, and server-to-server integrations for the correct functioning of our website. You can choose to allow us to use these technologies to measure our ad performance on third party partner websites and to improve our services. Perplexity will not use these technologies to sell third party ads on our services.</div><div class=\"gap-x-2 flex w-full\"><button type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle border border-transparent h-8 text-sm cursor-pointer inline-flex bg-soft text-primary hover:bg-subtle px-3 rounded-lg relative\"><span class=\"text-box-trim-both\">Allow all</span><div class=\"absolute inset-0 flex items-center justify-center\"></div></button><button type=\"button\" class=\"reset interactable select-none [-webkit-user-drag:none] outline-hidden font-medium transition-[background-color,border-color,color,opacity] duration-300 ease-out font-sans text-center items-center justify-center leading-loose whitespace-nowrap disabled:cursor-default disabled:opacity-50 data-[state=open]:bg-subtle border border-transparent h-8 text-sm cursor-pointer inline-flex bg-soft text-primary hover:bg-subtle px-3 rounded-lg relative\"><span class=\"text-box-trim-both\">Only necessary</span><div class=\"absolute inset-0 flex items-center justify-center\"></div></button></div></div></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 24431
+      },
+      "settings": null
+    }
+  ]
+}

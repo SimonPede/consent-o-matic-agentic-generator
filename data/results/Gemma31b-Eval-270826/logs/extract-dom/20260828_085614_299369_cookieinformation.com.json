@@ -1,0 +1,1007 @@
+{
+  "timestamp": "2026-08-28T08:56:14.299431",
+  "url": "https://cookieinformation.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://cookieinformation.com/"
+  ],
+  "duration_seconds": 7.96,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"coi\"]\" (Cookie Information) in frame: https://cookieinformation.com/",
+      "waitForCmpUi detected CMP Type: Cookie Information",
+      "I found 2 frames.",
+      "a frame was picked by score: https://cookieinformation.com/ with Score: 94",
+      "Settings match: \"Show details\" --> lowered: \"show details\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #show_details, textMatch: Show details",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 3498271 chars.",
+      "DOM diff: 69 chars added, 0 inputs added.",
+      "Old state: 59 buttons, 12 inputs.",
+      "New state: 64 buttons, 12 inputs.",
+      "Settings detected: 69 chars, 0 inputs, 5 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 4 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cookieinformation.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Cookie Information',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"coi\"]',",
+      "      url: 'https://cookieinformation.com/',",
+      "      filteredHtml: '',",
+      "      filteredHtmlOmitted: true,",
+      "      filteredHtmlOriginalChars: 163229,",
+      "      cmpType: 'Cookie Information'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"coi\"]',",
+      "      url: 'https://cookieinformation.com/',",
+      "      filteredHtml: '',",
+      "      llmFallbackHtml: `<div id=\"coiOverlay\" class=\"coi-banner-properties\" role=\"banner\" data-testid=\"coi-banner__overlay\" aria-hidden=\"false\"> <div role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" id=\"coi-banner-wrapper\" class=\"coi-banner__wrapper\" data-testid=\"coi-banner__wrapper\" aria-label=\"Cookie Information banner\" lang=\"en\" dir=\"auto\" aria-hidden=\"false\"> <div id=\"coiPage-1\" class=\"coi-banner__page\"> <div class=\"coi-banner__summary\"> <div class=\"coi-banner__text\"> <h2 class=\"coi-banner__headline\" id=\"coiBannerHeadline\"> We use cookies </h2> <div class=\"coi-banner__maintext\" id=\"coi-banner-wrapper_label\"> <p>We use cookies to collect information about you. We use this information: <br>1. to give you a <b>better experience</b> of our website (functional) <br> 2. to <b>count</b> the pages you visit (statistics)<br> 3. to serve you <b>relevant</b> promotions (marketing)<br><br> Click “<b>Accept all</b>” to give us your consent to use cookies for all these purposes. You can also use the checkboxes to consent to specific purposes. Select purposes and “<b>Save settings</b>”.<br><br> Withdraw or change your consent at any time by clicking the icon in the bottom left corner of the screen. Change your settings. Read more about how we use cookies and other technologies to collect personal data: <a href=\"https://cookieinformation.com/cookie-and-privacy-policy/\">Privacy policy</a> and <a href=\"javascript:TogglePage(this, 'coiPage-3');\" class=\"coi-banner__policy\" id=\"coi-banner__policy_sameline\">Cookie policy</a>. In alignment with <a href=\"https://business.safety.google/privacy/\"> Google's Business Data Responsibility Site</a>, we ensure transparency and control over your data. </p> <button class=\"coi-banner__privacy-policy\" data-testid=\"coi-banner__privacy-policy-link\"> Cookie policy </button> <a class=\"coi-banner__google-privacy-policy\" href=\"https://business.safety.google/privacy/\" rel=\"noopener noreferrer\" target=\"_blank\" data-testid=\"coi-banner__google-privacy-policy-link\"> Google privacy policy <span class=\"screen-reader-only\">opens in new tab</span> </a> </div> <div class=\"coi-toggle-group\"> <button tabindex=\"-1\" aria-expanded=\"false\" aria-c id=\"show_details\" data-testid=\"coi-banner__show-details-button\"> Show details </button> <button tabindex=\"0\" aria-expanded=\"true\" aria-c id=\"hide_details\" data-testid=\"coi-banner__hide-details-button\"> Hide details </button> </div> </div> </div> <div class=\"coi-consent-banner__categories-wrapper\" aria-label=\"Cookie policy\" id=\"coiConsentBannerCategoriesWrapper\" aria-hidden=\"false\" tabindex=\"-1\"> <div class=\"coi-consent-banner__category-container\"> <div class=\"coi-consent-banner__category-controls\"> <button tabindex=\"0\" aria-c aria-expanded=\"false\" class=\"coi-consent-banner__category-name\" data-testid=\"coi-banner__category-name-button\"> <span aria-hidden=\"true\" class=\"ci-arrow\"></span> <span class=\"coi-consent-banner__category-name-label\">Strictly necessary</span> </button> <div class=\"coi-consent-banner__category-description\"> Strictly necessary cookies help make a website navigable by activating basic functions such as page navigation and access to secure website areas. Without these cookies, the website would not be able to work properly. </div> </div> <div class=\"coi-consent-banner__description-container\" id=\"description-container-cookie_cat_necessary\" aria-hidden=\"true\"> <div role=\"presentation\" class=\"coi-consent-banner__found-cookies\"> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> www.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> api.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> api.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener`... 60000 more characters,",
+      "      filteredHtmlOmitted: true,",
+      "      filteredHtmlOriginalChars: 163226,",
+      "      cmpType: 'Cookie Information',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cookieinformation.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Cookie Information via selector \"[id^=\"coi\"]\"",
+      "  Buttons found (9):",
+      "      [A] \"Privacy policy\" --> selector: a",
+      "      [A] \"Cookie policy\" --> selector: #coi-banner__policy_sameline",
+      "      [A] \"Google's Business Data Responsibility Site\" --> selector: a",
+      "      [BUTTON] \"Cookie policy\" --> selector: .coi-banner__privacy-policy",
+      "      [A] \"Google privacy policy ",
+      "opens in new tab\" --> selector: .coi-banner__google-privacy-policy",
+      "      [BUTTON] \"Show details\" --> selector: #show_details",
+      "      [BUTTON] \"Decline all\" --> selector: #declineButton",
+      "      [BUTTON] \"Accept all\" --> selector: .coi-banner__accept",
+      "      [A] \"Cookie Information",
+      "opens in new tab\" --> selector: .coi-external-link",
+      "   Checkboxes found (4):",
+      "      \"Strictly necessary\" | checked: true | disabled: true --> selector: #cookie_cat_necessary",
+      "      \"Functional\" | checked: false | disabled: false --> selector: #cookie_cat_functional",
+      "      \"Statistical\" | checked: false | disabled: false --> selector: #cookie_cat_statistic",
+      "      \"Marketing\" | checked: false | disabled: false --> selector: #cookie_cat_marketing",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (13):",
+      "      [A] \"Privacy policy\" --> selector: a",
+      "      [A] \"Cookie policy\" --> selector: #coi-banner__policy_sameline",
+      "      [A] \"Google's Business Data Responsibility Site\" --> selector: a",
+      "      [BUTTON] \"Cookie policy\" --> selector: .coi-banner__privacy-policy",
+      "      [A] \"Google privacy policy ",
+      "opens in new tab\" --> selector: .coi-banner__google-privacy-policy",
+      "      [BUTTON] \"Hide details\" --> selector: #hide_details",
+      "      [BUTTON] \"Strictly necessary\" --> selector: .coi-consent-banner__category-name",
+      "      [BUTTON] \"Functional\" --> selector: .coi-consent-banner__category-name",
+      "      [BUTTON] \"Statistical\" --> selector: .coi-consent-banner__category-name",
+      "      [BUTTON] \"Marketing\" --> selector: .coi-consent-banner__category-name",
+      "      [BUTTON] \"Decline all\" --> selector: #declineButton",
+      "      [BUTTON] \"Accept all\" --> selector: .coi-banner__accept",
+      "      [A] \"Cookie Information",
+      "opens in new tab\" --> selector: .coi-external-link",
+      "   Checkboxes found (4):",
+      "      \"Strictly necessary\" | checked: true | disabled: true --> selector: #cookie_cat_necessary",
+      "      \"Functional\" | checked: false | disabled: false --> selector: #cookie_cat_functional",
+      "      \"Statistical\" | checked: false | disabled: false --> selector: #cookie_cat_statistic",
+      "      \"Marketing\" | checked: false | disabled: false --> selector: #cookie_cat_marketing",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cookieinformation.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Cookie Information",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://cookieinformation.com/cookie-and-privacy-policy/"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie policy",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:TogglePage(this, 'coiPage-3');",
+              "class": "coi-banner__policy",
+              "id": "coi-banner__policy_sameline"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "#coi-banner__policy_sameline",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google's Business Data Responsibility Site",
+            "tag": "A",
+            "attributes": {
+              "href": "https://business.safety.google/privacy/"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie policy",
+            "tag": "BUTTON",
+            "attributes": {
+              "onclick": "javascript:TogglePage(this, 'coiPage-3');",
+              "class": "coi-banner__privacy-policy",
+              "data-testid": "coi-banner__privacy-policy-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "coi-banner-wrapper_label",
+              "className": "coi-banner__maintext",
+              "selector": "#coi-banner-wrapper_label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": ".coi-banner__privacy-policy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google privacy policy \nopens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "coi-banner__google-privacy-policy",
+              "href": "https://business.safety.google/privacy/",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "data-testid": "coi-banner__google-privacy-policy-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "coi-banner-wrapper_label",
+              "className": "coi-banner__maintext",
+              "selector": "#coi-banner-wrapper_label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": ".coi-banner__google-privacy-policy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Show details",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "toggleDetails(this.id)",
+              "aria-expanded": "false",
+              "aria-controls": "coiConsentBannerCategoriesWrapper",
+              "id": "show_details",
+              "data-testid": "coi-banner__show-details-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-toggle-group",
+              "selector": ".coi-toggle-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": "#show_details",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline all",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "CookieInformation.declineAllCategories()",
+              "id": "declineButton",
+              "class": "coi-banner__decline",
+              "data-testid": "coi-banner__decline-all-categories-button",
+              "style": "display: flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-button-group",
+              "selector": ".coi-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__page-footer",
+                "selector": ".coi-banner__page-footer"
+              }
+            },
+            "selector": "#declineButton",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "CookieInformation.submitAllCategories();",
+              "class": "coi-banner__accept",
+              "data-testid": "coi-banner__accept-all-categories-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-button-group",
+              "selector": ".coi-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__page-footer",
+                "selector": ".coi-banner__page-footer"
+              }
+            },
+            "selector": ".coi-banner__accept",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie Information\nopens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "coi-external-link",
+              "href": "https://cookieinformation.com/",
+              "target": "_blank",
+              "data-testid": "coi-banner__company-website-link"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "coi-banner__branding",
+              "selector": ".coi-banner__branding",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__branding-wrapper",
+                "selector": ".coi-banner__branding-wrapper"
+              }
+            },
+            "selector": ".coi-external-link",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Strictly necessary",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "-1",
+              "data-index": "-1",
+              "name": "cookie_cat_necessary",
+              "id": "cookie_cat_necessary",
+              "data-testid": "coi-banner__checkbox--cookie_cat_necessary-cookies",
+              "type": "checkbox",
+              "disabled": ""
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_necessary",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_necessary"
+              }
+            },
+            "selector": "#cookie_cat_necessary",
+            "selectorConfidence": "very high",
+            "isChecked": true,
+            "isDisabled": true
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Functional",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_functional",
+              "id": "cookie_cat_functional",
+              "data-testid": "coi-banner__checkbox--cookie_cat_functional-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_functional')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_functional",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_functional"
+              }
+            },
+            "selector": "#cookie_cat_functional",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Statistical",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_statistic",
+              "id": "cookie_cat_statistic",
+              "data-testid": "coi-banner__checkbox--cookie_cat_statistic-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_statistic')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_statistic",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_statistic"
+              }
+            },
+            "selector": "#cookie_cat_statistic",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Marketing",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_marketing",
+              "id": "cookie_cat_marketing",
+              "data-testid": "coi-banner__checkbox--cookie_cat_marketing-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_marketing')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_marketing",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_marketing"
+              }
+            },
+            "selector": "#cookie_cat_marketing",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"coi\"]",
+        "url": "https://cookieinformation.com/",
+        "filteredHtml": "",
+        "filteredHtmlOmitted": true,
+        "filteredHtmlOriginalChars": 163229,
+        "cmpType": "Cookie Information"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://cookieinformation.com/cookie-and-privacy-policy/"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie policy",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:TogglePage(this, 'coiPage-3');",
+              "class": "coi-banner__policy",
+              "id": "coi-banner__policy_sameline"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "#coi-banner__policy_sameline",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google's Business Data Responsibility Site",
+            "tag": "A",
+            "attributes": {
+              "href": "https://business.safety.google/privacy/"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "coi-banner-wrapper_label",
+                "className": "coi-banner__maintext",
+                "selector": "#coi-banner-wrapper_label"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie policy",
+            "tag": "BUTTON",
+            "attributes": {
+              "onclick": "javascript:TogglePage(this, 'coiPage-3');",
+              "class": "coi-banner__privacy-policy",
+              "data-testid": "coi-banner__privacy-policy-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "coi-banner-wrapper_label",
+              "className": "coi-banner__maintext",
+              "selector": "#coi-banner-wrapper_label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": ".coi-banner__privacy-policy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google privacy policy \nopens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "coi-banner__google-privacy-policy",
+              "href": "https://business.safety.google/privacy/",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "data-testid": "coi-banner__google-privacy-policy-link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "coi-banner-wrapper_label",
+              "className": "coi-banner__maintext",
+              "selector": "#coi-banner-wrapper_label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": ".coi-banner__google-privacy-policy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Hide details",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "toggleDetails(this.id)",
+              "aria-expanded": "true",
+              "aria-controls": "coiConsentBannerCategoriesWrapper",
+              "id": "hide_details",
+              "data-testid": "coi-banner__hide-details-button",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-toggle-group",
+              "selector": ".coi-toggle-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__text",
+                "selector": ".coi-banner__text"
+              }
+            },
+            "selector": "#hide_details",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Strictly necessary",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "aria-controls": "description-container-cookie_cat_necessary",
+              "aria-expanded": "false",
+              "onclick": "toggleCookieDetails(this,'description-container-cookie_cat_necessary')",
+              "class": "coi-consent-banner__category-name",
+              "data-testid": "coi-banner__category-name-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-consent-banner__category-controls",
+              "selector": ".coi-consent-banner__category-controls",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-consent-banner__category-container",
+                "selector": ".coi-consent-banner__category-container"
+              }
+            },
+            "selector": ".coi-consent-banner__category-name",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Functional",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "aria-controls": "description-container-cookie_cat_functional",
+              "aria-expanded": "false",
+              "onclick": "toggleCookieDetails(this,'description-container-cookie_cat_functional')",
+              "class": "coi-consent-banner__category-name",
+              "data-testid": "coi-banner__category-name-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-consent-banner__category-controls",
+              "selector": ".coi-consent-banner__category-controls",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-consent-banner__category-container",
+                "selector": ".coi-consent-banner__category-container"
+              }
+            },
+            "selector": ".coi-consent-banner__category-name",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Statistical",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "aria-controls": "description-container-cookie_cat_statistic",
+              "aria-expanded": "false",
+              "onclick": "toggleCookieDetails(this,'description-container-cookie_cat_statistic')",
+              "class": "coi-consent-banner__category-name",
+              "data-testid": "coi-banner__category-name-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-consent-banner__category-controls",
+              "selector": ".coi-consent-banner__category-controls",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-consent-banner__category-container",
+                "selector": ".coi-consent-banner__category-container"
+              }
+            },
+            "selector": ".coi-consent-banner__category-name",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "aria-controls": "description-container-cookie_cat_marketing",
+              "aria-expanded": "false",
+              "onclick": "toggleCookieDetails(this,'description-container-cookie_cat_marketing')",
+              "class": "coi-consent-banner__category-name",
+              "data-testid": "coi-banner__category-name-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-consent-banner__category-controls",
+              "selector": ".coi-consent-banner__category-controls",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-consent-banner__category-container",
+                "selector": ".coi-consent-banner__category-container"
+              }
+            },
+            "selector": ".coi-consent-banner__category-name",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline all",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "CookieInformation.declineAllCategories()",
+              "id": "declineButton",
+              "class": "coi-banner__decline",
+              "data-testid": "coi-banner__decline-all-categories-button",
+              "style": "display: flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-button-group",
+              "selector": ".coi-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__page-footer",
+                "selector": ".coi-banner__page-footer"
+              }
+            },
+            "selector": "#declineButton",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "onclick": "CookieInformation.submitAllCategories();",
+              "class": "coi-banner__accept",
+              "data-testid": "coi-banner__accept-all-categories-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "coi-button-group",
+              "selector": ".coi-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__page-footer",
+                "selector": ".coi-banner__page-footer"
+              }
+            },
+            "selector": ".coi-banner__accept",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie Information\nopens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "coi-external-link",
+              "href": "https://cookieinformation.com/",
+              "target": "_blank",
+              "data-testid": "coi-banner__company-website-link"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "coi-banner__branding",
+              "selector": ".coi-banner__branding",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "coi-banner__branding-wrapper",
+                "selector": ".coi-banner__branding-wrapper"
+              }
+            },
+            "selector": ".coi-external-link",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Strictly necessary",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "-1",
+              "data-index": "-1",
+              "name": "cookie_cat_necessary",
+              "id": "cookie_cat_necessary",
+              "data-testid": "coi-banner__checkbox--cookie_cat_necessary-cookies",
+              "type": "checkbox",
+              "disabled": ""
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_necessary",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_necessary"
+              }
+            },
+            "selector": "#cookie_cat_necessary",
+            "selectorConfidence": "very high",
+            "isChecked": true,
+            "isDisabled": true
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Functional",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_functional",
+              "id": "cookie_cat_functional",
+              "data-testid": "coi-banner__checkbox--cookie_cat_functional-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_functional')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_functional",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_functional"
+              }
+            },
+            "selector": "#cookie_cat_functional",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Statistical",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_statistic",
+              "id": "cookie_cat_statistic",
+              "data-testid": "coi-banner__checkbox--cookie_cat_statistic-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_statistic')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_statistic",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_statistic"
+              }
+            },
+            "selector": "#cookie_cat_statistic",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Marketing",
+            "tag": "INPUT",
+            "attributes": {
+              "class": "coi__checkbox",
+              "tabindex": "0",
+              "data-index": "0",
+              "name": "cookie_cat_marketing",
+              "id": "cookie_cat_marketing",
+              "data-testid": "coi-banner__checkbox--cookie_cat_marketing-cookies",
+              "type": "checkbox",
+              "onclick": "CookieInformation.changeCategoryConsentDecision('cookie_cat_marketing')"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "coi-checkboxes",
+              "selector": ".coi-checkboxes",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "switch-cookie_cat_marketing",
+                "className": "coi-consent-banner__switch-container",
+                "selector": "#switch-cookie_cat_marketing"
+              }
+            },
+            "selector": "#cookie_cat_marketing",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"coi\"]",
+        "url": "https://cookieinformation.com/",
+        "filteredHtml": "",
+        "llmFallbackHtml": "<div id=\"coiOverlay\" class=\"coi-banner-properties\" role=\"banner\" data-testid=\"coi-banner__overlay\" aria-hidden=\"false\"> <div role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" id=\"coi-banner-wrapper\" class=\"coi-banner__wrapper\" data-testid=\"coi-banner__wrapper\" aria-label=\"Cookie Information banner\" lang=\"en\" dir=\"auto\" aria-hidden=\"false\"> <div id=\"coiPage-1\" class=\"coi-banner__page\"> <div class=\"coi-banner__summary\"> <div class=\"coi-banner__text\"> <h2 class=\"coi-banner__headline\" id=\"coiBannerHeadline\"> We use cookies </h2> <div class=\"coi-banner__maintext\" id=\"coi-banner-wrapper_label\"> <p>We use cookies to collect information about you. We use this information: <br>1. to give you a <b>better experience</b> of our website (functional) <br> 2. to <b>count</b> the pages you visit (statistics)<br> 3. to serve you <b>relevant</b> promotions (marketing)<br><br> Click “<b>Accept all</b>” to give us your consent to use cookies for all these purposes. You can also use the checkboxes to consent to specific purposes. Select purposes and “<b>Save settings</b>”.<br><br> Withdraw or change your consent at any time by clicking the icon in the bottom left corner of the screen. Change your settings. Read more about how we use cookies and other technologies to collect personal data: <a href=\"https://cookieinformation.com/cookie-and-privacy-policy/\">Privacy policy</a> and <a href=\"javascript:TogglePage(this, 'coiPage-3');\" class=\"coi-banner__policy\" id=\"coi-banner__policy_sameline\">Cookie policy</a>. In alignment with <a href=\"https://business.safety.google/privacy/\"> Google's Business Data Responsibility Site</a>, we ensure transparency and control over your data. </p> <button class=\"coi-banner__privacy-policy\" data-testid=\"coi-banner__privacy-policy-link\"> Cookie policy </button> <a class=\"coi-banner__google-privacy-policy\" href=\"https://business.safety.google/privacy/\" rel=\"noopener noreferrer\" target=\"_blank\" data-testid=\"coi-banner__google-privacy-policy-link\"> Google privacy policy <span class=\"screen-reader-only\">opens in new tab</span> </a> </div> <div class=\"coi-toggle-group\"> <button tabindex=\"-1\" aria-expanded=\"false\" aria-c id=\"show_details\" data-testid=\"coi-banner__show-details-button\"> Show details </button> <button tabindex=\"0\" aria-expanded=\"true\" aria-c id=\"hide_details\" data-testid=\"coi-banner__hide-details-button\"> Hide details </button> </div> </div> </div> <div class=\"coi-consent-banner__categories-wrapper\" aria-label=\"Cookie policy\" id=\"coiConsentBannerCategoriesWrapper\" aria-hidden=\"false\" tabindex=\"-1\"> <div class=\"coi-consent-banner__category-container\"> <div class=\"coi-consent-banner__category-controls\"> <button tabindex=\"0\" aria-c aria-expanded=\"false\" class=\"coi-consent-banner__category-name\" data-testid=\"coi-banner__category-name-button\"> <span aria-hidden=\"true\" class=\"ci-arrow\"></span> <span class=\"coi-consent-banner__category-name-label\">Strictly necessary</span> </button> <div class=\"coi-consent-banner__category-description\"> Strictly necessary cookies help make a website navigable by activating basic functions such as page navigation and access to secure website areas. Without these cookies, the website would not be able to work properly. </div> </div> <div class=\"coi-consent-banner__description-container\" id=\"description-container-cookie_cat_necessary\" aria-hidden=\"true\"> <div role=\"presentation\" class=\"coi-consent-banner__found-cookies\"> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> www.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> api.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> api.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ppms_privacy_* </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> www.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Collects information about the users and their activity on the website for analytics and reporting purposes. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 30 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> _pk_idxxx </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Collects information about the users and their activity on the website for analytics and reporting purposes. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 30 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> _pk_sesxxx </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> i18next </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> go.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinityCORS </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> go.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> CookieInformationConsent_GxZVL2Bo7n </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> policy.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ppms_privacy_* </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> go.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> CookieInformationConsent </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> go.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ApplicationGatewayAffinity </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> go.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> CookieInformationConfig </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> policy.app.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Wordpress.com </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the functions of a \"Content Management System\" to ensure that the website works properly. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://automattic.com/privacy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Wordpress.com - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> wordpress_google_apps_login </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> CookieInformationConsent </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ppms_privacy_* </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> ppms_privacy_* </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> webinar.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cookie Information </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://cookieinformation.com/cookie-and-privacy-policy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cookie Information - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a year </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> CookieInformationConsent </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> webinar.cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Piwik PRO </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://piwik.pro/privacy-policy\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Piwik PRO - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Permanent </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> pp_split_testing </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> https://cookieinformation.com/ </span> </li> </ul> </div> </div> </div> <div class=\"coi-consent-banner__category-container\"> <div class=\"coi-consent-banner__category-controls\"> <button tabindex=\"0\" aria-c aria-expanded=\"false\" class=\"coi-consent-banner__category-name\" data-testid=\"coi-banner__category-name-button\"> <span aria-hidden=\"true\" class=\"ci-arrow\"></span> <span class=\"coi-consent-banner__category-name-label\">Functional</span> </button> <div class=\"coi-consent-banner__category-description\"> Functional cookies make it possible to save information that changes the way the website appears or acts. For instance your preferred language or region. </div> </div> <div class=\"coi-consent-banner__description-container\" id=\"description-container-cookie_cat_functional\" aria-hidden=\"true\"> <div role=\"presentation\" class=\"coi-consent-banner__found-cookies\"> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a few seconds </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .vimeo.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 24 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hs-analytics.net </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Pending </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> cookietest </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> cookieinformation.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 10 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .usemessages.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Essential Addons for Elementor </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Required for the website to perform properly. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://essential-addons.com/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Essential Addons for Elementor - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> PHPSESSID </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> www.interactivecalculator.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a minute </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hsappstatic.net </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> a minute </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hsforms.net </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 18 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .linkedin.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 19 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hubspot.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 19 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hsforms.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 22 minutes </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> __cf_bm </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .hs-banner.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://www.cloudflare.com/privacypolicy/\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Cloudflare - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> Session </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> _cfuvid </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> .bamboohr.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Google </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Ensures the website and application security. </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-data-processor-privacy-policy\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__privacy-policy\"> <span class=\"cookie-details__detail-title\"> Privacy policy: </span> <a title=\"Privacy policy\" rel=\"noopener noreferrer\" tabindex=\"-1\" target=\"_blank\" href=\"https://policies.google.com/technologies/partner-sites?hl=en\" data-testid=\"coi-banner__cookie-details__privacy-policy-link\"> Google - Privacy policy <span class=\"screen-reader-only\"></span> </a> </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-expiry\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__expiry\"> <span class=\"cookie-details__detail-title\"> Expiry: </span> 6 months </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-name\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__name\"> <span class=\"cookie-details__detail-title\"> Name: </span> _GRECAPTCHA </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-provider\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__provider\"> <span class=\"cookie-details__detail-title\"> Vendor: </span> www.google.com </span> </li> </ul> <ul class=\"coi-consent-banner__cookie-details\" data-testid=\"coi-banner__cookie-details\"> <li class=\"cookie-details__detail-container\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__data-processor\"> <span class=\"cookie-details__detail-title\"> Service: </span> Cloudflare </span> </li> <li class=\"cookie-details__detail-container cookie-details__detail-container-purpose\"> <span class=\"cookie-details__detail-content\" data-testid=\"coi-banner__cookie-details__purpose-description\"> <span class=\"cookie-details__detail-title\"> Purpose: </span> Supports the website's technical functions. </span> </li> <li class=\"cook",
+        "filteredHtmlOmitted": true,
+        "filteredHtmlOriginalChars": 163226,
+        "cmpType": "Cookie Information",
+        "isIframe": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-08-27T21:03:24.258193",
+  "url": "https://www.aliexpress.com",
+  "structured_dom_chars": 317429,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 347.28,
+  "extraction_duration_seconds": 17.64,
+  "extraction_share_percent": 5.08,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "AliExpress": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "._38thn, #__gdpr_v1"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "._38thn, #__gdpr_v1",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "._38thn, #__gdpr_v1"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Reject cookies"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-08-28T07:46:31.981043",
+  "url": "https://www.ryanair.com",
+  "structured_dom_chars": 160825,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Ryanair\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".cookie-popup-with-overlay__box\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".cookie-popup-with-overlay__box\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".cookie-popup-with-overlay__box\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[data-ref='cookie.view-settings']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Functional cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Functional cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Performance Cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Performance Cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Pixel Tracking Cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"cookies-group\", \"textFilter\": \"Pixel Tracking Cookies\", \"iframeFilter\": true}, \"target\": {\"selector\": \"input\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[data-ref='cookies-details__done-button']\", \"iframeFilter\": true}}]}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [data-ref='cookies-details__done-button']",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [data-ref='cookies-details__done-button']",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [data-ref='cookies-details__done-button']"
+  ],
+  "duration_seconds": 1800.07,
+  "extraction_duration_seconds": 15.49,
+  "extraction_share_percent": 0.86,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

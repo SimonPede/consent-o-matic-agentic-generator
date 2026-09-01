@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-08-27T22:58:44.289780",
+  "url": "https://www.microsoft.com",
+  "structured_dom_chars": 233159,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 22,
+  "human_review_count": 1,
+  "test_rule_count": 16,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"microsoft\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"body\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"body\"}}}], \"methods\": []}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1135 (char 1134)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1108 (char 1107)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\ntest.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...: {'selector': 'body'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1132 (char 1131)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1093 (char 1092)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 145 (char 144)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "Ruleset structure invalid: 2 validation errors for CoMRule\nm.detectors\n  Field required [type=missing, input_value={'d': [{'p': {'type': 'cs...': {'selector': 'a'}}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nm.methods\n  Field required [type=missing, input_value={'d': [{'p': {'type': 'cs...': {'selector': 'a'}}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)"
+  ],
+  "duration_seconds": 1699.77,
+  "extraction_duration_seconds": 16.84,
+  "extraction_share_percent": 0.99,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "microsoft": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "uhf-cookie-banner"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "uhf-cookie-banner"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "uhf-cookie-banner"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Administrer cookies"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c1'][value='accept']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c1'][value='reject']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c2'][value='accept']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c2'][value='reject']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c3'][value='accept']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[name='c3'][value='reject']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "button[aria-label='Gem ændringer']"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

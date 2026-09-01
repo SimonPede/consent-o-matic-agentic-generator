@@ -1,0 +1,200 @@
+{
+  "timestamp": "2026-08-28T01:21:13.902105",
+  "url": "https://www.dw.com",
+  "structured_dom_chars": 290874,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"dw.com\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \".cmptxt_btn_custom\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Store and/or access information on a device'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Store and/or access information on a device']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Measurement & development'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Measurement & development']\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Ad & content personalization'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Ad & content personalization']\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='External content & special features'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='External content & special features']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \".cmpboxbtnyescustomchoices\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 1495.82,
+  "extraction_duration_seconds": 15.52,
+  "extraction_share_percent": 1.04,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": null
+    }
+  },
+  "final_rule": {
+    "dw.com": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmptxt_btn_custom"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Measurement & development'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Measurement & development']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Ad & content personalization'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Ad & content personalization']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='External content & special features'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='External content & special features']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtnyescustomchoices"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T02:16:57.241196",
+  "url": "https://www.n-tv.de",
+  "structured_dom_chars": 46513,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint CMP only provides an \"Accept all\" option (\"Einwilligen und weiter\"), subscription/login options, and a settings button. No \"Reject All\" or \"Decline\" button is present on the first layer, and the settings menu is inaccessible per the Sourcepoint architecture limitation.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint CMP only provides an \"Accept all\" option (\"Einwilligen und weiter\"), subscription/login options, and a settings button. No \"Reject All\" or \"Decline\" button is present on the first layer, and the settings menu is inaccessible per the Sourcepoint architecture limitation.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The first layer of the Sourcepoint CMP only provides an \"Accept all\" option (\"Einwilligen und weiter\"), subscription/login options, and a settings button. No \"Reject All\" or \"Decline\" button is present on the first layer, and the settings menu is inaccessible per the Sourcepoint architecture limitation.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint CMP only provides an \"Accept all\" option (\"Einwilligen und weiter\"), subscription/login options, and a settings button. No \"Reject All\" or \"Decline\" button is present on the first layer, and the settings menu is inaccessible per the Sourcepoint architecture limitation."
+  ],
+  "duration_seconds": 83.14,
+  "extraction_duration_seconds": 7.77,
+  "extraction_share_percent": 9.35,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

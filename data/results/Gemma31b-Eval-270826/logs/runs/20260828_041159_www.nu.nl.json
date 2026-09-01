@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-08-28T04:11:59.081456",
+  "url": "https://www.nu.nl",
+  "structured_dom_chars": 8556,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK_OR_BINARY",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 11,
+  "human_review_count": 0,
+  "test_rule_count": 9,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"DPG Media\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#pg-shadow-host-dom\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#pg-shadow-host-dom\", \"childFilter\": {\"target\": {\"selector\": \"#pg-first-layer\"}}}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-configure-btn\"}}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 1000}, {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"button\", \"textFilter\": \"Alles weigeren\"}}]}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nDPG Media.methods\n  Field required [type=missing, input_value={'detectors': [{'presentM...g-shadow-host-dom'}}]}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nDPG Privacy Gate.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': [{'typ...#pg-shadow-host-dom'}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Banner not found or matchers failed.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation."
+  ],
+  "duration_seconds": 554.07,
+  "extraction_duration_seconds": 20.4,
+  "extraction_share_percent": 3.68,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "DPG Media": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#pg-shadow-host-dom"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#pg-shadow-host-dom"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#pg-shadow-host-dom"
+            },
+            "target": {
+              "selector": "#pg-configure-btn"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 1000
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#pg-shadow-host-dom"
+                },
+                "target": {
+                  "selector": "button",
+                  "textFilter": "Alles weigeren"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

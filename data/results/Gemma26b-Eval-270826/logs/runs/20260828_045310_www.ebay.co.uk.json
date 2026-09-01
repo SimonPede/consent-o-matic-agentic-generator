@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T04:53:10.254393",
+  "url": "https://www.ebay.co.uk",
+  "structured_dom_chars": 1386,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The provided DOM shows an error page (\"Something went wrong on our end\") rather than a website landing page, and no cookie consent interface or CMP elements were detected in the document.",
+  "abort_reason": "NO_BANNER_DETECTED: The provided DOM shows an error page (\"Something went wrong on our end\") rather than a website landing page, and no cookie consent interface or CMP elements were detected in the document.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The provided DOM shows an error page (\"Something went wrong on our end\") rather than a website landing page, and no cookie consent interface or CMP elements were detected in the document.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The provided DOM shows an error page (\"Something went wrong on our end\") rather than a website landing page, and no cookie consent interface or CMP elements were detected in the document."
+  ],
+  "duration_seconds": 67.93,
+  "extraction_duration_seconds": 63.75,
+  "extraction_share_percent": 93.85,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

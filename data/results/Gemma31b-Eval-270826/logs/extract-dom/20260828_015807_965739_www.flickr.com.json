@@ -1,0 +1,712 @@
+{
+  "timestamp": "2026-08-28T01:58:07.965796",
+  "url": "https://www.flickr.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.flickr.com"
+  ],
+  "duration_seconds": 23.48,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 3 frames.",
+      "a frame was picked by score: https://www.flickr.com/ with Score: 74",
+      "Settings match: \"Submit Preferences\" --> lowered: \"submit preferences\"",
+      "Settings match dismissed because it looks like a save/submit/close action instead of a settings opener.",
+      "Regex failed in frame https://www.flickr.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \".manageSettings\", text: \"Manage Settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .manageSettings, textMatch: Manage Settings",
+      "settings click target result - clickSuccess: false",
+      "JS Click failed. Trying Puppeteer fallback...",
+      "Puppeteer click also failed: No element found for selector: .manageSettings",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.flickr.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://www.flickr.com/',",
+      "      filteredHtml: '<div id=\"pop-div2038337841199675393\" class=\"truste_box_overlay\"><div id=\"pop-div306103443471644397\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame08394041821431586\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-750=\"true\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"en\"><div class=\"mainContent\"><div role=\"heading\" aria-level=\"1\" class=\"iab\"><div class=\"header\"><div tabindex=\"0\" translate=\"no\"><span class=\"title\">Your Choices Regarding Cookies on This Site</span><span class=\"logo\"></span></div></div><div aria-hidden=\"true\" tabindex=\"0\"></div><div aria-hidden=\"false\"><div><div tabindex=\"0\" class=\"descriptionTextFirst\" translate=\"no\">You must select YES or NO for each category before submitting choices</div><div tabindex=\"0\" class=\"descriptionTextSecond\" translate=\"no\">Please choose whether this site may use cookies or related technologies such as web beacons, pixel tags, and Flash objects (“Cookies”) as described below. You can learn more about how this site uses cookies and related technologies by reading our privacy policy linked to below.</div><div aria-hidden=\"true\" class=\"warningMessage warningMessageHttps\"></div><div class=\"stacksAndPurposes\"><div tabindex=\"0\"><div class=\"categories\"><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Required Cookies</span><span tabindex=\"0\" class=\"activeLabel\" translate=\"no\">ACTIVE</span></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Functional Cookies</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno \" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes activeConsent\" translate=\"no\">YES</span></div></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Advertising Cookies</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno \" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes activeConsent\" translate=\"no\">YES</span></div></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Purposes</span><span tabindex=\"0\" class=\"gwt-InlineHTML manageSettings\" translate=\"no\">Manage Settings</span></li><div></div></div></div></div><div tabindex=\"0\"><div class=\"primaryPurposeContainer\"><div class=\"panelDescription\" translate=\"no\">We and <a id=\"partners\" tabindex=\"0\" role=\"button\"> our partners: </a> (160)</div><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Store and/or access information on a device</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><div></div></div></div></div><div tabindex=\"0\"><div class=\"stacksAndPurposesContainer\"><div class=\"panelDescription\" translate=\"no\">We and <a id=\"partners\" tabindex=\"0\" role=\"button\"> our partners </a> process personal data such as IP Address, Unique ID, browsing data for:</div><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Personalised advertising and content profile</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Use profiles to select personalised content</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Use profiles to select personalised advertising</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Develop and improve services</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><div></div></div></div></div></div><div class=\"consentInfoContainer\"><div class=\"consentInfo\"><span tabindex=\"0\" translate=\"no\"><span tabindex=\"0\">Some partners do not ask for your consent to process your data, instead, they rely on their legitimate business interest. View our list of partners to see the purposes they believe they have a legitimate interest for and how you can object to it.</span></span></div><div class=\"settingsInfo\"><span tabindex=\"0\" translate=\"no\"><span tabindex=\"0\">You can change your mind and revisit your preferences at any time by accessing the “Cookie Preferences” link in the footer of this site.</span></span></div></div></div></div><div aria-hidden=\"true\"></div><div class=\"bottom\"><a tabindex=\"0\" aria-disabled=\"false\" class=\"saveAndExit\" translate=\"no\">Submit Preferences</a> <a tabindex=\"0\" class=\"rejectAll\" translate=\"no\">Reject All</a> <a tabindex=\"0\" class=\"acceptAll\" translate=\"no\">Accept All</a></div></div></div><div aria-hidden=\"true\" class=\"warningMessage\"></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a href=\"https://www.flickr.com/help/privacy\" tabindex=\"0\"> Privacy Policy </a></div><div class=\"right\" translate=\"no\"><label tabindex=\"0\">Powered by</label>: <a tabindex=\"0\" href=\"https://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 7502,",
+      "      cmpType: null",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.flickr.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: unknown via selector \"[class^=\"truste\"]\"",
+      "  Buttons found (20):",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [A] \"our partners:\" --> selector: #pop-frame08394041821431586 >>> #partners",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [A] \"our partners\" --> selector: #pop-frame08394041821431586 >>> #partners",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+      "      [A] \"Submit Preferences\" --> selector: #pop-frame08394041821431586 >>> .saveAndExit",
+      "      [A] \"Reject All\" --> selector: #pop-frame08394041821431586 >>> .rejectAll",
+      "      [A] \"Accept All\" --> selector: #pop-frame08394041821431586 >>> .acceptAll",
+      "      [A] \"Privacy Policy\" --> selector: #pop-frame08394041821431586 >>> a",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.flickr.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "our partners:",
+            "tag": "A",
+            "attributes": {
+              "id": "partners",
+              "tabindex": "0",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "panelDescription",
+              "selector": ".panelDescription",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "primaryPurposeContainer",
+                "selector": ".primaryPurposeContainer"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> #partners",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "our partners",
+            "tag": "A",
+            "attributes": {
+              "id": "partners",
+              "tabindex": "0",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "panelDescription",
+              "selector": ".panelDescription",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stacksAndPurposesContainer",
+                "selector": ".stacksAndPurposesContainer"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> #partners",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "true",
+              "tabindex": "0",
+              "aria-label": "NO",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentno activeConsent",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"NO\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "aria-pressed": "false",
+              "tabindex": "0",
+              "aria-label": "YES",
+              "aria-disabled": "false",
+              "aria-hidden": "false",
+              "class": "consentyes",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switchContainerLayerOne",
+              "selector": ".switchContainerLayerOne",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "listItem",
+                "selector": ".listItem"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> [aria-label=\"YES\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Submit Preferences",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "aria-disabled": "false",
+              "class": "saveAndExit",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "bottom",
+              "selector": ".bottom",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "iab",
+                "selector": ".iab"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> .saveAndExit",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject All",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "class": "rejectAll",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "bottom",
+              "selector": ".bottom",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "iab",
+                "selector": ".iab"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> .rejectAll",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "class": "acceptAll",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "bottom",
+              "selector": ".bottom",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "iab",
+                "selector": ".iab"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> .acceptAll",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.flickr.com/help/privacy",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "left",
+              "selector": ".left",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer",
+                "selector": ".footer"
+              }
+            },
+            "selector": "#pop-frame08394041821431586 >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://www.flickr.com/",
+        "filteredHtml": "<div id=\"pop-div2038337841199675393\" class=\"truste_box_overlay\"><div id=\"pop-div306103443471644397\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame08394041821431586\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-750=\"true\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"en\"><div class=\"mainContent\"><div role=\"heading\" aria-level=\"1\" class=\"iab\"><div class=\"header\"><div tabindex=\"0\" translate=\"no\"><span class=\"title\">Your Choices Regarding Cookies on This Site</span><span class=\"logo\"></span></div></div><div aria-hidden=\"true\" tabindex=\"0\"></div><div aria-hidden=\"false\"><div><div tabindex=\"0\" class=\"descriptionTextFirst\" translate=\"no\">You must select YES or NO for each category before submitting choices</div><div tabindex=\"0\" class=\"descriptionTextSecond\" translate=\"no\">Please choose whether this site may use cookies or related technologies such as web beacons, pixel tags, and Flash objects (“Cookies”) as described below. You can learn more about how this site uses cookies and related technologies by reading our privacy policy linked to below.</div><div aria-hidden=\"true\" class=\"warningMessage warningMessageHttps\"></div><div class=\"stacksAndPurposes\"><div tabindex=\"0\"><div class=\"categories\"><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Required Cookies</span><span tabindex=\"0\" class=\"activeLabel\" translate=\"no\">ACTIVE</span></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Functional Cookies</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno \" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes activeConsent\" translate=\"no\">YES</span></div></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Advertising Cookies</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno \" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes activeConsent\" translate=\"no\">YES</span></div></li><div></div><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML\">→</span><span class=\"gwt-InlineHTML\" translate=\"no\">Purposes</span><span tabindex=\"0\" class=\"gwt-InlineHTML manageSettings\" translate=\"no\">Manage Settings</span></li><div></div></div></div></div><div tabindex=\"0\"><div class=\"primaryPurposeContainer\"><div class=\"panelDescription\" translate=\"no\">We and <a id=\"partners\" tabindex=\"0\" role=\"button\"> our partners: </a> (160)</div><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Store and/or access information on a device</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><div></div></div></div></div><div tabindex=\"0\"><div class=\"stacksAndPurposesContainer\"><div class=\"panelDescription\" translate=\"no\">We and <a id=\"partners\" tabindex=\"0\" role=\"button\"> our partners </a> process personal data such as IP Address, Unique ID, browsing data for:</div><div class=\"purposeContainer\"><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Personalised advertising and content profile</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Use profiles to select personalised content</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Use profiles to select personalised advertising</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><li tabindex=\"0\" class=\"listItem\"><span class=\"gwt-InlineHTML purposesListText\">Develop and improve services</span><div class=\"switchContainerLayerOne\"><span role=\"button\" aria-pressed=\"true\" tabindex=\"0\" aria-label=\"NO\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentno activeConsent\" translate=\"no\">NO</span><span role=\"button\" aria-pressed=\"false\" tabindex=\"0\" aria-label=\"YES\" aria-disabled=\"false\" aria-hidden=\"false\" class=\"consentyes \" translate=\"no\">YES</span></div></li><div></div></div></div></div></div><div class=\"consentInfoContainer\"><div class=\"consentInfo\"><span tabindex=\"0\" translate=\"no\"><span tabindex=\"0\">Some partners do not ask for your consent to process your data, instead, they rely on their legitimate business interest. View our list of partners to see the purposes they believe they have a legitimate interest for and how you can object to it.</span></span></div><div class=\"settingsInfo\"><span tabindex=\"0\" translate=\"no\"><span tabindex=\"0\">You can change your mind and revisit your preferences at any time by accessing the “Cookie Preferences” link in the footer of this site.</span></span></div></div></div></div><div aria-hidden=\"true\"></div><div class=\"bottom\"><a tabindex=\"0\" aria-disabled=\"false\" class=\"saveAndExit\" translate=\"no\">Submit Preferences</a> <a tabindex=\"0\" class=\"rejectAll\" translate=\"no\">Reject All</a> <a tabindex=\"0\" class=\"acceptAll\" translate=\"no\">Accept All</a></div></div></div><div aria-hidden=\"true\" class=\"warningMessage\"></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a href=\"https://www.flickr.com/help/privacy\" tabindex=\"0\"> Privacy Policy </a></div><div class=\"right\" translate=\"no\"><label tabindex=\"0\">Powered by</label>: <a tabindex=\"0\" href=\"https://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 7502,
+        "cmpType": null
+      },
+      "settings": null
+    }
+  ]
+}

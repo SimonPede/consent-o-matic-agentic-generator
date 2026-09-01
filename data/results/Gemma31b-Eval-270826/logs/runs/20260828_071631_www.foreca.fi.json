@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-08-28T07:16:31.655251",
+  "url": "https://www.foreca.fi",
+  "structured_dom_chars": 378950,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Gravito\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#gravitoCMPRoot\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#gravitoCMP-tab-container-id\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#gravitoCMPRoot\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#gravitoTCFCMP-layer1-settings\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-0\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-0\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-1\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-1\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-9\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-9\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-2\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-2\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-3\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-3\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-4\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-4\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-7\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-7\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-5\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-5\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-6\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-6\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-8\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-8\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-purposes-10\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-purposes-10\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}, {\"type\": \"X\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"#accordion-content-specialPurposes-0, #accordion-content-specialPurposes-1, #accordion-content-specialPurposes-2, #accordion-content-features-0, #accordion-content-features-1, #accordion-content-features-2, #accordion-content-specialFeatures-0, #accordion-content-specialFeatures-1, #accordion-content-specialFeatures-2\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#accordion-content-specialPurposes-0, #accordion-content-specialPurposes-1, #accordion-content-specialPurposes-2, #accordion-content-features-0, #accordion-content-features-1, #accordion-content-features-2, #accordion-content-specialFeatures-0, #accordion-content-specialFeatures-1, #accordion-content-specialFeatures-2\"}, \"target\": {\"selector\": \"input.gravitoCMP-consent-input-checkbox\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#gravitoTCFCMP-layer2-accept-selected\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input.gravitoCMP-consent-input-checkbox"
+  ],
+  "duration_seconds": 1800.11,
+  "extraction_duration_seconds": 18.0,
+  "extraction_share_percent": 1.0,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

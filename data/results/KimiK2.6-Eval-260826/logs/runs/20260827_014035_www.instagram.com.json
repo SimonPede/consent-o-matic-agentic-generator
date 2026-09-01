@@ -1,0 +1,188 @@
+{
+  "timestamp": "2026-08-27T01:40:35.365085",
+  "url": "https://www.instagram.com",
+  "structured_dom_chars": 182930,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Instagram\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Cookies from other companies\\\"]\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Cookies from other companies\\\"]\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".x1n2onr6.xzkaem6\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Choose cookies by category\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Productivity\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Productivity\\\"]\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Analytics\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Analytics\\\"]\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Content and media\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Content and media\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Advertising\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Advertising\\\"]\"}}}]}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button[class*=\\\"_a9_1\\\"]\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Productivity\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Analytics\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Content and media\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Advertising\"]"
+  ],
+  "duration_seconds": 290.37,
+  "extraction_duration_seconds": 15.84,
+  "extraction_share_percent": 5.46,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Instagram": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[aria-label=\"Cookies from other companies\"]"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[aria-label=\"Cookies from other companies\"]",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".x1n2onr6.xzkaem6"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Choose cookies by category"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "A",
+                    "matcher": {
+                      "type": "css",
+                      "target": {
+                        "selector": "[aria-label=\"Productivity\"][aria-checked=\"true\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Productivity\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "css",
+                      "target": {
+                        "selector": "[aria-label=\"Analytics\"][aria-checked=\"true\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Analytics\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "E",
+                    "matcher": {
+                      "type": "css",
+                      "target": {
+                        "selector": "[aria-label=\"Content and media\"][aria-checked=\"true\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Content and media\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "matcher": {
+                      "type": "css",
+                      "target": {
+                        "selector": "[aria-label=\"Advertising\"][aria-checked=\"true\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Advertising\"]"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button[class*=\"_a9_1\"]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1639 @@
+{
+  "timestamp": "2026-08-28T02:51:32.089799",
+  "url": "https://account.microsoft.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://account.microsoft.com"
+  ],
+  "duration_seconds": 17.29,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account with Score: 35",
+      "Settings match: \"Manage cookies\" --> lowered: \"manage cookies\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: ._1XuCi2WhiqeWRUVp3pnFG3, textMatch: Manage cookies",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 218823 chars.",
+      "DOM diff: 6185 chars added, 0 inputs added.",
+      "Old state: 25 buttons, 0 inputs.",
+      "New state: 29 buttons, 0 inputs.",
+      "Settings detected: 6185 chars, 0 inputs, 4 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 0 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account',",
+      "      filteredHtml: '<body> <div id=\"page-wrapper-react\"> <div id=\"no-cookies\"> <div class=\"alert alert-info alert-banner\"> <div class=\"container\"> <p>To use everything on this website, turn on cookies in your browser settings. <a href=\"https://go.microsoft.com/fwlink/?LinkId=313221\">Read why and how we use cookies.</a></p> <p><a class=\"btn btn-primary pull-right\" href=\"https://go.microsoft.com/fwlink/p/?LinkId=616796\">Learn how</a></p> </div> </div> </div> <div id=\"site-header\"> <div id=\"sharedshell-header\"> <uhf-header locale=\"en-us\" partnerid=\"amc\" headerid=\"amc-L0-header\" theme=\"light\"> <a slot=\"skip-link\" class=\"uhf-skip-link\" href=\"#main-content-landing\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;SkipToMain&quot;, &quot;cN&quot;: &quot;Skip to content_nonnav&quot;, &quot;ecn&quot;: &quot;Skip to content_nonnav&quot;, &quot;ehn&quot;: &quot;SkipToMain&quot;}\">Skip to main content</a> <uhf-cookie-banner> <div id=\"msccBannerV2\"><div id=\"wcpConsentBannerCtrl\" class=\"_23tra1HsiiP6cT-Cka-ycB\" dir=\"ltr\" role=\"alert\"><div class=\"_1Upc2NjY8AlDn177YoVj0y\"><span class=\"_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu\"></span><p class=\"f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu\">We use optional cookies to improve your experience on our websites, such as through social media connections, and to display personalized advertising based on your online activity. If you reject optional cookies, only cookies necessary to provide you the services will be used. You may change your selection by clicking “Manage Cookies” at the bottom of the page. <a href=\"https://go.microsoft.com/fwlink/?LinkId=521839\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a> <a href=\"https://aka.ms/3rdpartycookies\" target=\"_blank\" rel=\"noopener noreferrer\">Third-Party Cookies</a></p></div><div class=\"_2j0fmugLb1FgYz6KPuB91w\"><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Accept</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Reject</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Manage cookies</button></div></div></div> </uhf-cookie-banner> <header itemscope=\"\" itemtype=\"https://schema.org/WPHeader\" class=\"uhf-header uhf-breakpoint--mobile uhf-theme--light\"> <div class=\"uhf-header-l0\"> <div class=\"uhf-header-l0__actions\"> <uhf-search slot=\"search\" placeholder=\"Search Microsoft.com\" search-label=\"Search\" cancel-label=\"Cancel\" suggestions-available-text=\"{0} suggestions available\" searchurl=\"https://www.microsoft.com/en-us/search/explore\" autosuggesturl=\"https://www.microsoft.com/msstoreapiprod/api/autosuggest\"> <div class=\"uhf-search-container hidden\"> <button aria-label=\"Back\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Close Search&quot;,&quot;ecn&quot;:&quot;Close Search&quot;}\" class=\"uhf-search-cancel uhf-breakpoint--mobile\"> <uhf-icon ic size=\"15\"> <i class=\"ms-Icon ms-Icon--Back\"></i> </uhf-icon> </button> <form class=\"uhf-search-form\" itemscope=\"\" itemtype=\"https://schema.org/SearchAction\"> <meta itemprop=\"target\" c> <input type=\"search\" autocomplete=\"off\" role=\"combobox\" tabindex=\"0\" aria-c itemprop=\"query-input\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;SearchBox&quot;, &quot;ecn&quot;:&quot;SearchBox&quot;}\" name=\"q\" class=\"uhf-search-input uhf-breakpoint--mobile\" placeholder=\"Search Microsoft.com\" title=\"Search Microsoft.com\" aria-expanded=\"false\" data-bi-srchq=\"\"> <button type=\"submit\" class=\"uhf-search-submit-button\" aria-label=\"Search\" title=\"Search\" data-bi-srchq=\"\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Search_nav&quot;,&quot;ecn&quot;:&quot;Search_nav&quot;,&quot;bhvr&quot;:61,&quot;srchq&quot;:&quot;&quot;,&quot;srchtype&quot;:&quot;manual&quot;}\"> <uhf-icon ic size=\"16\"> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> </form> </div> <button class=\"uhf-nav-item uhf-nav-button uhf-search-button\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;Search_nav&quot;, &quot;ecn&quot;:&quot;Search_nav&quot;, &quot;bhvr&quot;: 62}\" aria-label=\"Search Microsoft.com\" title=\"Search Microsoft.com\"> <span class=\"uhf-search-text\">Search</span> <uhf-icon ic> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> <uhf-popout class=\"uhf-autosuggest hidden\" targetselector=\"input.uhf-search-input\" positi id=\"uhf-autosuggest-popout\" role=\"listbox\" disablemobilepositi> </uhf-popout> <div class=\"uhf-search-status\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"> </div> </uhf-search> </div> <uhf-brand slot=\"brand\" class=\"uhf-breakpoint--mobile\"> <div itemscope=\"\" itemtype=\"https://schema.org/Organization\"> <meta itemprop=\"url\" c> <div itemprop=\"logo\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"> <a href=\"https://www.microsoft.com\" class=\"uhf-microsoft-logo\" slot=\"microsoft-logo\" aria-label=\"Microsoft\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> </a> </div> <div class=\"uhf-site-logo-container show-pipe\"> <a href=\"https://account.microsoft.com\" class=\"uhf-site-logo\" slot=\"brand-logo\" aria-label=\"Account\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;CatNav_Account_nav&quot;, &quot;ecn&quot;: &quot;CatNav_Account_nav&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> <span>Account</span> </a> </div> </div> </uhf-brand> <div class=\"uhf-header-l0__actions\"> <uhf-mecontrol slot=\"mecontrol\" sign-in-label=\"Sign in\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Account&quot;, &quot;cN&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ehn&quot;: &quot;Account&quot;}\"><span class=\"uhf-mecontrol-signin-label\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalHeader&quot;,&quot;cN&quot;:&quot;GlobalNav_Account_SignIn&quot;,&quot;bhvr&quot;:82}\">Sign in</span><div><button type=\"button\"><span>ME</span></button></div></uhf-mecontrol> </div> </div> <div class=\"uhf-header-l1\"> <uhf-contextual-nav slot=\"contextual-nav\" overflowtext=\"More\" brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" data-nav-label=\"Contextual menu\" theme=\"cat-theme-blue\"> <uhf-contextual-nav-mobile brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" logoimageurl=\"\" logoalt=\"\" data-nav-label=\"Contextual menu\"> <button class=\"uhf-contextual-nav-trigger\"> Account <uhf-icon ic size=\"12\"> <i class=\"ms-Icon ms-Icon--ChevronDown\"></i> </uhf-icon> </button> </uhf-contextual-nav-mobile> </uhf-contextual-nav> </div> </header> </uhf-header> </div> </div> <div id=\"main-content-landing\" data-is-scrollable=\"true\"> <div id=\"SignedOut-signedOutPage\" class=\"content-container context-amc signedout-container\"> <div id=\"signedout-root\" data-envir data-cms-c data-area-c data-area-c data-left-navigation-header=\"null\"><div class=\"body-154\"><div dir=\"ltr\" class=\"fui-FluentProvider signedoutfui-FluentProvider1 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi\"><div class=\"body-155\"><div class=\"ms-Stack css-156\"><main id=\"main-content-landing-react\" tabindex=\"-1\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h1 class=\"fui-Text ___4cxpo00 fiqtrsq fpyltcb f1ivgwrt fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">It’s all here with Microsoft account</h1><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your Microsoft account connects all your Microsoft apps and services.</span><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Sign in to manage your account.</span></div><button type=\"button\" aria-label=\"Sign in to your Microsoft account\" class=\"fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23\" data-bi-id=\"signedout.hero.signIn\">Sign in</button></div></div><div class=\"ms-Stack css-157\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div><div class=\"ms-Stack css-158\"><div class=\"ms-Stack css-159\"><div class=\"ms-Stack css-160\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 '... 23648 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 33648",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account',",
+      "      filteredHtml: `<body> <div id=\"page-wrapper-react\"> <div id=\"no-cookies\"> <div class=\"alert alert-info alert-banner\"> <div class=\"container\"> <p>To use everything on this website, turn on cookies in your browser settings. <a href=\"https://go.microsoft.com/fwlink/?LinkId=313221\">Read why and how we use cookies.</a></p> <p><a class=\"btn btn-primary pull-right\" href=\"https://go.microsoft.com/fwlink/p/?LinkId=616796\">Learn how</a></p> </div> </div> </div> <div id=\"site-header\"> <div id=\"sharedshell-header\"> <uhf-header locale=\"en-us\" partnerid=\"amc\" headerid=\"amc-L0-header\" theme=\"light\"> <a slot=\"skip-link\" class=\"uhf-skip-link\" href=\"#main-content-landing\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;SkipToMain&quot;, &quot;cN&quot;: &quot;Skip to content_nonnav&quot;, &quot;ecn&quot;: &quot;Skip to content_nonnav&quot;, &quot;ehn&quot;: &quot;SkipToMain&quot;}\">Skip to main content</a> <uhf-cookie-banner> <div id=\"msccBannerV2\"><div id=\"wcpConsentBannerCtrl\" class=\"_23tra1HsiiP6cT-Cka-ycB\" dir=\"ltr\" role=\"alert\"><div class=\"_1Upc2NjY8AlDn177YoVj0y\"><span class=\"_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu\"></span><p class=\"f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu\">We use optional cookies to improve your experience on our websites, such as through social media connections, and to display personalized advertising based on your online activity. If you reject optional cookies, only cookies necessary to provide you the services will be used. You may change your selection by clicking “Manage Cookies” at the bottom of the page. <a href=\"https://go.microsoft.com/fwlink/?LinkId=521839\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a> <a href=\"https://aka.ms/3rdpartycookies\" target=\"_blank\" rel=\"noopener noreferrer\">Third-Party Cookies</a></p></div><div class=\"_2j0fmugLb1FgYz6KPuB91w\"><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Accept</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Reject</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Manage cookies</button></div></div><div id=\"wcpCookiePreferenceCtrl\" class=\"_2bvsb3ubApyZ0UGoQA9O9T\" dir=\"ltr\"><div role=\"presentation\" tabindex=\"-1\"></div><div role=\"dialog\" aria-modal=\"true\" aria-label=\"Manage cookie preferences\" class=\"AFsJE948muYyzCMktdzuk\" tabindex=\"-1\"><button aria-label=\"Close\" class=\"_3kWyBRbW_dgnMiEyx06Fu4\" tabindex=\"0\">✕</button><div role=\"document\" class=\"uCYvKvHXrhjNgflv1VqdD\"><div><h1 class=\"_17pX1m9O_W--iZbDt3Ta5r w8hcgFksdo30C8w-bygqu\">Manage cookie preferences</h1></div><form class=\"_1kBkHQ1V1wu3kl-YcLgUr6 ydkKdaztSS0AeHWIeIHsQ\"><p class=\"_20_nXDf6uFs9Q6wxRXG-I- w8hcgFksdo30C8w-bygqu\">Most Microsoft websites use cookies. Cookies are small text files placed on your device to store data so web servers can use it later. Microsoft and our third-party partners use cookies to remember your preferences and settings, help you sign in, show you personalized ads, and analyze how well our websites are working. For more info, see the Cookies and similar technologies section of the <a href=\"https://go.microsoft.com/fwlink/?linkid=845480\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a>.</p><dl class=\"_2a0NH_GDQEQe5Ynfo7suVH\"><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Required\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\">Required</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We use required cookies to perform essential website functions. For example, they're used to log you in, save your language preferences, provide a shopping cart experience, improve performance, route traffic between web servers, detect the size of your screen, determine page load times, improve user experience, and for audience measurement. These cookies are necessary for our websites to work.</p></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Analytics\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c1_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c1_title\">Analytics</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We allow third parties to use analytics cookies to understand how you use our websites so we can make them better and the third parties can develop and improve their products, which they may use on websites that are not owned or operated by Microsoft. For example, they're used to gather information about the pages you visit and how many clicks you need to accomplish a task. We use some analytics cookies for advertising.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c1\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c1\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_reject\">Reject</label></div></div></div></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Social Media\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c2_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c2_title\">Social Media</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We and third parties use social media cookies to show you ads and content based on your social media profiles and activity on our websites. They’re used to connect your activity on our websites to your social media profiles so the ads and content you see on our websites and on social media will better reflect your interests.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c2\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c2\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_reject\">Reject</label></div></div></div></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Advertising\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c3_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c3_title\">Advertising</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We and third parties use advertising cookies to show you new ads by recording which ads you've already seen. They're also used to track which ads you click on or purchases you make after clicking on an ad for payment purposes, and to show you ads that are more relevant to you. For example, they're used to detect when you click on an ad and show you ads based on your social media interests and website browsing history.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c3\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c3\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_reject\">Reject</label></div></div></div></dt></dl></form><div class=\"nohp3sIG12ZBhzcMnPala\"><button type=\"button\" aria-label=\"Save changes\" class=\"_3tOu1FJ59c_xz_PmI1lKV5 _1zNQOqxpBFSokeCLGi_hGr\" disabled=\"\">Save changes</button><button type=\"button\" aria-label=\"Reset all\" class=\"_2uhaEsmeotZ3P-M0AXo2kF erL690_8JwUW-R4bJRcfl\" disabled=\"\">Reset all</button></div></div></div></div></div> </uhf-cookie-banner> <header itemscope=\"\" itemtype=\"https://schema.org/WPHeader\" class=\"uhf-header uhf-breakpoint--mobile uhf-theme--light\"> <div class=\"uhf-header-l0\"> <div class=\"uhf-header-l0__actions\"> <uhf-search slot=\"search\" placeholder=\"Search Microsoft.com\" search-label=\"Search\" cancel-label=\"Cancel\" suggestions-available-text=\"{0} suggestions available\" searchurl=\"https://www.microsoft.com/en-us/search/explore\" autosuggesturl=\"https://www.microsoft.com/msstoreapiprod/api/autosuggest\"> <div class=\"uhf-search-container hidden\"> <button aria-label=\"Back\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Close Search&quot;,&quot;ecn&quot;:&quot;Close Search&quot;}\" class=\"uhf-search-cancel uhf-breakpoint--mobile\"> <uhf-icon ic size=\"15\"> <i class=\"ms-Icon ms-Icon--Back\"></i> </uhf-icon> </button> <form class=\"uhf-search-form\" itemscope=\"\" itemtype=\"https://schema.org/SearchAction\"> <meta itemprop=\"target\" c> <input type=\"search\" autocomplete=\"off\" role=\"combobox\" tabindex=\"0\" aria-c itemprop=\"query-input\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;SearchBox&quot;, &quot;ecn&quot;:&quot;SearchBox&quot;}\" name=\"q\" class=\"uhf-search-input uhf-breakpoint--mobile\" placeholder=\"Search Microsoft.com\" title=\"Search Microsoft.com\" aria-expanded=\"false\" data-bi-srchq=\"\"> <button type=\"submit\" class=\"uhf-search-submit-button\" aria-label=\"Search\" title=\"Search\" data-bi-srchq=\"\" data-m=\"{&quot;compnm&quot;:&quot`... 29804 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 39804,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (25):",
+      "      [A] \"Skip to main content\" --> selector: .uhf-skip-link",
+      "      [A] \"Privacy Statement\" --> selector: a",
+      "      [A] \"Third-Party Cookies\" --> selector: a",
+      "      [BUTTON] \"Accept\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"Reject\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"Manage cookies\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"Search Microsoft.com\" --> selector: [aria-label=\"Search Microsoft.com\"]",
+      "      [A] \"Microsoft\" --> selector: [aria-label=\"Microsoft\"]",
+      "      [BUTTON] \"ME\" --> selector: button",
+      "      [BUTTON] \"Account\" --> selector: .uhf-contextual-nav-trigger",
+      "      [BUTTON] \"Sign in\" --> selector: [aria-label=\"Sign in to your Microsoft account\"]",
+      "      [BUTTON] \"Sign in\" --> selector: [aria-label=\"Sign in to your Microsoft account\"]",
+      "      [BUTTON] \"Create an account\" --> selector: [aria-label=\"Create an account\"]",
+      "      [A] \"Create a Microsoft Account\" --> selector: [aria-label=\"Create a Microsoft account\"]",
+      "      [A] \"Check if I have a Microsoft account\" --> selector: [aria-label=\"Check if I have a Microsoft account\"]",
+      "      [A] \"Get help\" --> selector: [aria-label=\"Get help with your Microsoft account\"]",
+      "      [BUTTON] \"Feedback\" --> selector: #feedback-button",
+      "      [A] \"English (United States)\" --> selector: [aria-label=\"Content Language Selector. Currently set to English (United States)\"]",
+      "      [A] \"Your Privacy Choices\" --> selector: a",
+      "      [A] \"Consumer Health Privacy\" --> selector: a",
+      "      [A] \"Privacy & cookies\" --> selector: #uhf-footer-privacycookies",
+      "      [A] \"Terms of use\" --> selector: #uhf-footer-terms",
+      "      [A] \"Contact us\" --> selector: #uhf-footer-contactus",
+      "      [A] \"Feedback\" --> selector: #footerFbBtn",
+      "      [A] \"Manage cookies\" --> selector: #uhf-Footer_ManageCookies",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (29):",
+      "      [A] \"Skip to main content\" --> selector: .uhf-skip-link",
+      "      [A] \"Privacy Statement\" --> selector: a",
+      "      [A] \"Third-Party Cookies\" --> selector: a",
+      "      [BUTTON] \"Accept\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"Reject\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"Manage cookies\" --> selector: ._1XuCi2WhiqeWRUVp3pnFG3",
+      "      [BUTTON] \"✕\" --> selector: [aria-label=\"Close\"]",
+      "      [A] \"Privacy Statement\" --> selector: a",
+      "      [BUTTON] \"Save changes\" --> selector: [aria-label=\"Save changes\"]",
+      "      [BUTTON] \"Reset all\" --> selector: [aria-label=\"Reset all\"]",
+      "      [BUTTON] \"Search Microsoft.com\" --> selector: [aria-label=\"Search Microsoft.com\"]",
+      "      [A] \"Microsoft\" --> selector: [aria-label=\"Microsoft\"]",
+      "      [BUTTON] \"ME\" --> selector: button",
+      "      [BUTTON] \"Account\" --> selector: .uhf-contextual-nav-trigger",
+      "      [BUTTON] \"Sign in\" --> selector: [aria-label=\"Sign in to your Microsoft account\"]",
+      "      [BUTTON] \"Sign in\" --> selector: [aria-label=\"Sign in to your Microsoft account\"]",
+      "      [BUTTON] \"Create an account\" --> selector: [aria-label=\"Create an account\"]",
+      "      [A] \"Create a Microsoft Account\" --> selector: [aria-label=\"Create a Microsoft account\"]",
+      "      [A] \"Check if I have a Microsoft account\" --> selector: [aria-label=\"Check if I have a Microsoft account\"]",
+      "      [A] \"Get help\" --> selector: [aria-label=\"Get help with your Microsoft account\"]",
+      "      [BUTTON] \"Feedback\" --> selector: #feedback-button",
+      "      [A] \"English (United States)\" --> selector: [aria-label=\"Content Language Selector. Currently set to English (United States)\"]",
+      "      [A] \"Your Privacy Choices\" --> selector: a",
+      "      [A] \"Consumer Health Privacy\" --> selector: a",
+      "      [A] \"Privacy & cookies\" --> selector: #uhf-footer-privacycookies",
+      "      [A] \"Terms of use\" --> selector: #uhf-footer-terms",
+      "      [A] \"Contact us\" --> selector: #uhf-footer-contactus",
+      "      [A] \"Feedback\" --> selector: #footerFbBtn",
+      "      [A] \"Manage cookies\" --> selector: #uhf-Footer_ManageCookies",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Skip to main content",
+            "tag": "A",
+            "attributes": {
+              "slot": "skip-link",
+              "class": "uhf-skip-link",
+              "href": "#main-content-landing",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalHeader\", \"hn\": \"SkipToMain\", \"cN\": \"Skip to content_nonnav\", \"ecn\": \"Skip to content_nonnav\", \"ehn\": \"SkipToMain\"}"
+            },
+            "parentInfo": {
+              "tag": "UHF-HEADER",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "sharedshell-header",
+                "className": null,
+                "selector": "#sharedshell-header"
+              }
+            },
+            "selector": ".uhf-skip-link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Statement",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?LinkId=521839",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu",
+              "selector": ".f6QKJD7fhSbnJLarTL-W-",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_1Upc2NjY8AlDn177YoVj0y",
+                "selector": "._1Upc2NjY8AlDn177YoVj0y"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Third-Party Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "https://aka.ms/3rdpartycookies",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu",
+              "selector": ".f6QKJD7fhSbnJLarTL-W-",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_1Upc2NjY8AlDn177YoVj0y",
+                "selector": "._1Upc2NjY8AlDn177YoVj0y"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search Microsoft.com",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "uhf-nav-item uhf-nav-button uhf-search-button",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalSearch\", \"cN\":\"Search_nav\", \"ecn\":\"Search_nav\", \"bhvr\": 62}",
+              "aria-label": "Search Microsoft.com",
+              "title": "Search Microsoft.com"
+            },
+            "parentInfo": {
+              "tag": "UHF-SEARCH",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-header-l0__actions",
+                "selector": ".uhf-header-l0__actions"
+              }
+            },
+            "selector": "[aria-label=\"Search Microsoft.com\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Microsoft",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.microsoft.com",
+              "class": "uhf-microsoft-logo",
+              "slot": "microsoft-logo",
+              "aria-label": "Microsoft",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalHeader\", \"hn\": \"Anchor\", \"cN\": \"GlobalNav_Logo_cont\", \"ecn\": \"GlobalNav_Logo_cont\", \"ehn\": \"Anchor\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Microsoft\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ME",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "style": "height: 36px; width: 36px; background-color: transparent; border-color: white; border-radius: 50%; border-style: solid; border-width: 1px; display: flex; font-size: 14px; cursor: pointer; color: white; align-items: center; justify-content: center;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UHF-MECONTROL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Account",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "uhf-contextual-nav-trigger"
+            },
+            "parentInfo": {
+              "tag": "UHF-CONTEXTUAL-NAV-MOBILE",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UHF-CONTEXTUAL-NAV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": ".uhf-contextual-nav-trigger",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Sign in to your Microsoft account",
+              "class": "fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev",
+              "data-bi-id": "signedout.hero.signIn"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1afv8yc",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Sign in to your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Sign in to your Microsoft account",
+              "class": "fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev",
+              "data-bi-id": "signedout.end-hero.sign-in"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1fga9f1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Sign in to your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create an account",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Create an account",
+              "class": "fui-Button r1alrhcs",
+              "data-bi-id": "signedout.end-hero.create-account"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1fga9f1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Create an account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create a Microsoft Account",
+            "tag": "A",
+            "attributes": {
+              "href": "https://signup.live.com:443/signup?lcid=1033&wa=wsignin1.0&rpsnv=202&ct=1787878276&rver=7.5.2234.0&wp=MBI_SSL&wreply=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253A%252F%252Faccount.microsoft.com%252F%253Fru%253Dhttps%25253A%25252F%25252Faccount.microsoft.com%25252F%2526destrt%253Dhome.landing%2526pageName%253DAccount%2526refd%253Daccount.microsoft.com%2526refp%253Dsignedout-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US",
+              "title": "Create a Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card1",
+              "aria-label": "Create a Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Create a Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Check if I have a Microsoft account",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?linkid=2215203",
+              "title": "Check if I have a Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card2",
+              "aria-label": "Check if I have a Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Check if I have a Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get help",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?linkid=2214846",
+              "title": "Get help with your Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card3",
+              "aria-label": "Get help with your Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Get help with your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Feedback",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-bi-id": "feedback-button",
+              "id": "feedback-button",
+              "class": "ms-Button ms-Button--primary root-163",
+              "aria-label": "Feedback",
+              "data-is-focusable": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "ms-Stack css-156",
+                "selector": ".ms-Stack"
+              }
+            },
+            "selector": "#feedback-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "English (United States)",
+            "tag": "A",
+            "attributes": {
+              "slot": "uhf-footer-locale-picker",
+              "class": "uhf-footer-link",
+              "href": "/languages?lang=en-us",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_English (United States)_nav\", \"ecn\": \"LegalNav_LocalePicker_nav\", \"ehn\": \"LegalNav\"}",
+              "aria-label": "Content Language Selector. Currently set to English (United States)"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uhf-footer-locale-picker-container",
+              "selector": ".uhf-footer-locale-picker-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-legal-links",
+                "selector": ".uhf-footer-legal-links"
+              }
+            },
+            "selector": "[aria-label=\"Content Language Selector. Currently set to English (United States)\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Your Privacy Choices",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://aka.ms/yourcaliforniaprivacychoices",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_California Privacy_nav\", \"ecn\": \"LegalNav_CaliforniaPrivacy_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-legal-links",
+                "selector": ".uhf-footer-legal-links"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Consumer Health Privacy",
+            "tag": "A",
+            "attributes": {
+              "slot": "uhf-footer-consumer-health-privacy-link",
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?linkid=2259814",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Consumer Health Privacy_nav\", \"ecn\": \"LegalNav_ConsumerHealthPrivacy_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uhf-footer-legal-links",
+              "selector": ".uhf-footer-legal-links",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-base",
+                "selector": ".uhf-footer-base"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy & cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?LinkID=521839",
+              "id": "uhf-footer-privacycookies",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Privacy & cookies_nav\", \"ecn\": \"LegalNav_footer-privacycookies_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-privacycookies",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of use",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?LinkID=530144&clcid={CLCID_HEX}",
+              "id": "uhf-footer-terms",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Terms of use_nav\", \"ecn\": \"LegalNav_footer-terms_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-terms",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Contact us",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://support.microsoft.com/contactus",
+              "id": "uhf-footer-contactus",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Contact us_nav\", \"ecn\": \"LegalNav_footer-contactus_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-contactus",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Feedback",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "#",
+              "id": "footerFbBtn",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Feedback_nav\", \"ecn\": \"LegalNav_feedback-button_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#footerFbBtn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "#",
+              "id": "uhf-Footer_ManageCookies",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Manage cookies_nav\", \"ecn\": \"LegalNav_Footer_ManageCookies_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-Footer_ManageCookies",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account",
+        "filteredHtml": "<body> <div id=\"page-wrapper-react\"> <div id=\"no-cookies\"> <div class=\"alert alert-info alert-banner\"> <div class=\"container\"> <p>To use everything on this website, turn on cookies in your browser settings. <a href=\"https://go.microsoft.com/fwlink/?LinkId=313221\">Read why and how we use cookies.</a></p> <p><a class=\"btn btn-primary pull-right\" href=\"https://go.microsoft.com/fwlink/p/?LinkId=616796\">Learn how</a></p> </div> </div> </div> <div id=\"site-header\"> <div id=\"sharedshell-header\"> <uhf-header locale=\"en-us\" partnerid=\"amc\" headerid=\"amc-L0-header\" theme=\"light\"> <a slot=\"skip-link\" class=\"uhf-skip-link\" href=\"#main-content-landing\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;SkipToMain&quot;, &quot;cN&quot;: &quot;Skip to content_nonnav&quot;, &quot;ecn&quot;: &quot;Skip to content_nonnav&quot;, &quot;ehn&quot;: &quot;SkipToMain&quot;}\">Skip to main content</a> <uhf-cookie-banner> <div id=\"msccBannerV2\"><div id=\"wcpConsentBannerCtrl\" class=\"_23tra1HsiiP6cT-Cka-ycB\" dir=\"ltr\" role=\"alert\"><div class=\"_1Upc2NjY8AlDn177YoVj0y\"><span class=\"_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu\"></span><p class=\"f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu\">We use optional cookies to improve your experience on our websites, such as through social media connections, and to display personalized advertising based on your online activity. If you reject optional cookies, only cookies necessary to provide you the services will be used. You may change your selection by clicking “Manage Cookies” at the bottom of the page. <a href=\"https://go.microsoft.com/fwlink/?LinkId=521839\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a> <a href=\"https://aka.ms/3rdpartycookies\" target=\"_blank\" rel=\"noopener noreferrer\">Third-Party Cookies</a></p></div><div class=\"_2j0fmugLb1FgYz6KPuB91w\"><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Accept</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Reject</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Manage cookies</button></div></div></div> </uhf-cookie-banner> <header itemscope=\"\" itemtype=\"https://schema.org/WPHeader\" class=\"uhf-header uhf-breakpoint--mobile uhf-theme--light\"> <div class=\"uhf-header-l0\"> <div class=\"uhf-header-l0__actions\"> <uhf-search slot=\"search\" placeholder=\"Search Microsoft.com\" search-label=\"Search\" cancel-label=\"Cancel\" suggestions-available-text=\"{0} suggestions available\" searchurl=\"https://www.microsoft.com/en-us/search/explore\" autosuggesturl=\"https://www.microsoft.com/msstoreapiprod/api/autosuggest\"> <div class=\"uhf-search-container hidden\"> <button aria-label=\"Back\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Close Search&quot;,&quot;ecn&quot;:&quot;Close Search&quot;}\" class=\"uhf-search-cancel uhf-breakpoint--mobile\"> <uhf-icon ic size=\"15\"> <i class=\"ms-Icon ms-Icon--Back\"></i> </uhf-icon> </button> <form class=\"uhf-search-form\" itemscope=\"\" itemtype=\"https://schema.org/SearchAction\"> <meta itemprop=\"target\" c> <input type=\"search\" autocomplete=\"off\" role=\"combobox\" tabindex=\"0\" aria-c itemprop=\"query-input\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;SearchBox&quot;, &quot;ecn&quot;:&quot;SearchBox&quot;}\" name=\"q\" class=\"uhf-search-input uhf-breakpoint--mobile\" placeholder=\"Search Microsoft.com\" title=\"Search Microsoft.com\" aria-expanded=\"false\" data-bi-srchq=\"\"> <button type=\"submit\" class=\"uhf-search-submit-button\" aria-label=\"Search\" title=\"Search\" data-bi-srchq=\"\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Search_nav&quot;,&quot;ecn&quot;:&quot;Search_nav&quot;,&quot;bhvr&quot;:61,&quot;srchq&quot;:&quot;&quot;,&quot;srchtype&quot;:&quot;manual&quot;}\"> <uhf-icon ic size=\"16\"> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> </form> </div> <button class=\"uhf-nav-item uhf-nav-button uhf-search-button\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;Search_nav&quot;, &quot;ecn&quot;:&quot;Search_nav&quot;, &quot;bhvr&quot;: 62}\" aria-label=\"Search Microsoft.com\" title=\"Search Microsoft.com\"> <span class=\"uhf-search-text\">Search</span> <uhf-icon ic> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> <uhf-popout class=\"uhf-autosuggest hidden\" targetselector=\"input.uhf-search-input\" positi id=\"uhf-autosuggest-popout\" role=\"listbox\" disablemobilepositi> </uhf-popout> <div class=\"uhf-search-status\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"> </div> </uhf-search> </div> <uhf-brand slot=\"brand\" class=\"uhf-breakpoint--mobile\"> <div itemscope=\"\" itemtype=\"https://schema.org/Organization\"> <meta itemprop=\"url\" c> <div itemprop=\"logo\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"> <a href=\"https://www.microsoft.com\" class=\"uhf-microsoft-logo\" slot=\"microsoft-logo\" aria-label=\"Microsoft\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> </a> </div> <div class=\"uhf-site-logo-container show-pipe\"> <a href=\"https://account.microsoft.com\" class=\"uhf-site-logo\" slot=\"brand-logo\" aria-label=\"Account\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;CatNav_Account_nav&quot;, &quot;ecn&quot;: &quot;CatNav_Account_nav&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> <span>Account</span> </a> </div> </div> </uhf-brand> <div class=\"uhf-header-l0__actions\"> <uhf-mecontrol slot=\"mecontrol\" sign-in-label=\"Sign in\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Account&quot;, &quot;cN&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ehn&quot;: &quot;Account&quot;}\"><span class=\"uhf-mecontrol-signin-label\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalHeader&quot;,&quot;cN&quot;:&quot;GlobalNav_Account_SignIn&quot;,&quot;bhvr&quot;:82}\">Sign in</span><div><button type=\"button\"><span>ME</span></button></div></uhf-mecontrol> </div> </div> <div class=\"uhf-header-l1\"> <uhf-contextual-nav slot=\"contextual-nav\" overflowtext=\"More\" brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" data-nav-label=\"Contextual menu\" theme=\"cat-theme-blue\"> <uhf-contextual-nav-mobile brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" logoimageurl=\"\" logoalt=\"\" data-nav-label=\"Contextual menu\"> <button class=\"uhf-contextual-nav-trigger\"> Account <uhf-icon ic size=\"12\"> <i class=\"ms-Icon ms-Icon--ChevronDown\"></i> </uhf-icon> </button> </uhf-contextual-nav-mobile> </uhf-contextual-nav> </div> </header> </uhf-header> </div> </div> <div id=\"main-content-landing\" data-is-scrollable=\"true\"> <div id=\"SignedOut-signedOutPage\" class=\"content-container context-amc signedout-container\"> <div id=\"signedout-root\" data-envir data-cms-c data-area-c data-area-c data-left-navigation-header=\"null\"><div class=\"body-154\"><div dir=\"ltr\" class=\"fui-FluentProvider signedoutfui-FluentProvider1 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi\"><div class=\"body-155\"><div class=\"ms-Stack css-156\"><main id=\"main-content-landing-react\" tabindex=\"-1\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h1 class=\"fui-Text ___4cxpo00 fiqtrsq fpyltcb f1ivgwrt fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">It’s all here with Microsoft account</h1><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your Microsoft account connects all your Microsoft apps and services.</span><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Sign in to manage your account.</span></div><button type=\"button\" aria-label=\"Sign in to your Microsoft account\" class=\"fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23\" data-bi-id=\"signedout.hero.signIn\">Sign in</button></div></div><div class=\"ms-Stack css-157\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div><div class=\"ms-Stack css-158\"><div class=\"ms-Stack css-159\"><div class=\"ms-Stack css-160\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">The best of Microsoft</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">You get more for free when you sign in with your Microsoft account.</span></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___12bc7le f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d f4d9j23\" horiz><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/09b044c3-712b-44e7-b95c-12d97113289b.png?n=398x450_m365apps.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Microsoft 365 apps</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Get access to free online versions of Outlook, Word, Excel, and PowerPoint.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/f209382f-b378-4a1a-976f-a7cdcf5ba1b6.png?n=398x450_cloud.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">5 GB of cloud storage</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Save your files and photos and access them from any device, anywhere.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div><div class=\"___12bc7le f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d f4d9j23\" horiz><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/c44a2e03-db6b-4c70-9d15-1af4b9066acf.png?n=398x450_rewards.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Microsoft Rewards</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Earn points that can be redeemed for gift cards, nonprofit donations, and sweepstakes entries.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/293f9839-1628-4dc5-af6e-971ebdefacb3.png?n=398x450_xbox.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Xbox network</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your account gives you access to the Xbox network and community.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Uniquely yours</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Take control of your data with privacy settings you can customize, and get personalized recommendations from your account checkup.</span></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/M365apps-refresh.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Security your way</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Choose security and privacy settings that work best for you and rest easy with automatic alerts for unusual or suspicious account activity.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/Cloud-refresh.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Break free from passwords</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Make your account even more secure with optional passwordless sign-in.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/e498939c-8a39-42e7-83da-3292d4249dcd.png?n=592x540_management_v2.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">One place to manage it all</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Manage your account from a single dashboard, including payment information, purchases, subscriptions, and more.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Simplify your day</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Access all your Microsoft apps, services, and games with one account.</span><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Whatever you’re doing, wherever you are, just go.</span></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/28d21a82-c65f-4dcc-9acc-33dd16c1ca8e.png?n=592x540_signin.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Sign in and go</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your account profile and preferences sync across all your devices. Wherever you are, it’s all here.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/5de86244-0a3a-41e5-bb6b-5b5e62b732c7.png?n=592x540_pickup.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Pick up where you left off</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your data is automatically synced to the cloud, so contacts, calendar, and files are always backed up, no matter what device you’re on.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/295f4081-bbc8-4f38-a5ce-1b2b586573c7.png?n=592x540_family.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Keep it in the family</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Easily create a family group and set parental controls like screen time limits and app filters for free with Microsoft Family Safety.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___lewn880 f1fxy1vj f1x0m3f5 fb86gi6 figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your Microsoft account connects all your Microsoft apps and services.</span></div><div class=\"___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d fhsg9lc\"><button type=\"button\" aria-label=\"Sign in to your Microsoft account\" class=\"fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23\" data-bi-id=\"signedout.end-hero.sign-in\">Sign in</button><button type=\"button\" aria-label=\"Create an account\" class=\"fui-Button r1alrhcs\" data-bi-id=\"signedout.end-hero.create-account\">Create an account</button></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Questions? We have answers</h2></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">A Microsoft account does not need a Microsoft email</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">The email address used to sign into your Microsoft account can be from Outlook.com, Hotmail.com, Gmail, Yahoo, or other providers.</span><a href=\"https://signup.live.com:443/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=202&amp;ct=1787878276&amp;rver=7.5.2234.0&amp;wp=MBI_SSL&amp;wreply=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253A%252F%252Faccount.microsoft.com%252F%253Fru%253Dhttps%25253A%25252F%25252Faccount.microsoft.com%25252F%2526destrt%253Dhome.landing%2526pageName%253DAccount%2526refd%253Daccount.microsoft.com%2526refp%253Dsignedout-index&amp;lc=1033&amp;id=292666&amp;lw=1&amp;fl=easi2&amp;mkt=en-US\" title=\"Create a Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card1\" aria-label=\"Create a Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Create a Microsoft Account</a></div><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">You may already have an account</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">You can use an email address, Skype ID, or phone number to sign into your Windows PC, Xbox, or Microsoft services like Microsoft 365.</span><a href=\"https://go.microsoft.com/fwlink/?linkid=2215203\" title=\"Check if I have a Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card2\" aria-label=\"Check if I have a Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Check if I have a Microsoft account</a></div><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Get help with your account</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">Forgot your username or password? Visit Microsoft Support for account help and guidance.</span><a href=\"https://go.microsoft.com/fwlink/?linkid=2214846\" title=\"Get help with your Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card3\" aria-label=\"Get help with your Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Get help</a></div></div></div></main></div></div></div></div></div> <input name=\"__RequestVerificationToken\" type=\"hidden\" value=\"O78BX9oPo1tkl1EFTS9DiDu1EeJMKGMlgXiSS3IJ73BscvdSrnk85SCTNT8wHKeLvaAasbzQlI25NCW5hmN0gbEu0Aea2wv2jdw5U_3CoXY1:pYsLbe5k2WiJD_HjEi19lSocZXp-zdzSb4aY3_pOYXwhPmzwGAfKuHVQ7Pa4dIKLCITyEpl4EH1QhEyaMQIWbsGThE9l_BOll3POsoSXK3Q1\"> <div id=\"feedback-root\" data-envir data-cms-c data-area-c data-area-c data-left-navigation-header=\"null\"><div class=\"body-154\"><div dir=\"ltr\" class=\"fui-FluentProvider feedbackfui-FluentProvider1 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi\"><div class=\"body-155\"><div class=\"ms-Stack css-156\"><div><span id=\"inAppFeedbackRef-id\"></span><button type=\"button\" data-bi-id=\"feedback-button\" id=\"feedback-button\" class=\"ms-Button ms-Button--primary root-163\" aria-label=\"Feedback\" data-is-focusable=\"true\"><span class=\"ms-Button-flexContainer flexContainer-164\" data-automati><span role=\"presentation\" aria-hidden=\"true\" data-icon-name=\"Message\" class=\"Message\"></span><span class=\"ms-Button-textContainer textContainer-165\"><span class=\"ms-Button-label label-167\" id=\"id__9\">Feedback</span></span></span></button></div></div></div></div></div></div> </div> <div id=\"site-footer\"> <uhf-footer locale=\"en-us\" partnerid=\"amc\" footerid=\"amc-L0-footer\" theme=\"light\"> <footer id=\"uhf-footer\" itemscope=\"\" itemtype=\"https://schema.org/WPFooter\" class=\"uhf-footer c-uhff uhf-theme--light\"> <uhf-footer-nav slot=\"uhf-footer-nav\"> </uhf-footer-nav> <div class=\"uhf-footer-base\"> <div class=\"uhf-footer-legal-links\"> <div class=\"uhf-footer-locale-picker-container\"> <uhf-icon ic size=\"20\"> <i class=\"ms-Icon ms-Icon--World\"></i> </uhf-icon> <a slot=\"uhf-footer-locale-picker\" class=\"uhf-footer-link\" href=\"/languages?lang=en-us\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_English (United States)_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_LocalePicker_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\" aria-label=\"Content Language Selector. Currently set to English (United States)\">English (United States)</a> </div> <div slot=\"uhf-footer-california-privacy-link\"> <a class=\"uhf-footer-link\" href=\"https://aka.ms/yourcaliforniaprivacychoices\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_California Privacy_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_CaliforniaPrivacy_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\"> <span>Your Privacy Choices</span> </a> </div> <a slot=\"uhf-footer-consumer-health-privacy-link\" class=\"uhf-footer-link\" href=\"https://go.microsoft.com/fwlink/?linkid=2259814\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_Consumer Health Privacy_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_ConsumerHealthPrivacy_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\">Consumer Health Privacy</a> </div> <uhf-footer-menu slot=\"uhf-footer-menu\" data-nav-label=\"Microsoft corporate links\"> </uhf-footer-menu> </div> </footer> </uhf-footer> </div> </div> </div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 33648
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Skip to main content",
+            "tag": "A",
+            "attributes": {
+              "slot": "skip-link",
+              "class": "uhf-skip-link",
+              "href": "#main-content-landing",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalHeader\", \"hn\": \"SkipToMain\", \"cN\": \"Skip to content_nonnav\", \"ecn\": \"Skip to content_nonnav\", \"ehn\": \"SkipToMain\"}"
+            },
+            "parentInfo": {
+              "tag": "UHF-HEADER",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "sharedshell-header",
+                "className": null,
+                "selector": "#sharedshell-header"
+              }
+            },
+            "selector": ".uhf-skip-link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Statement",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?LinkId=521839",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu",
+              "selector": ".f6QKJD7fhSbnJLarTL-W-",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_1Upc2NjY8AlDn177YoVj0y",
+                "selector": "._1Upc2NjY8AlDn177YoVj0y"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Third-Party Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "https://aka.ms/3rdpartycookies",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu",
+              "selector": ".f6QKJD7fhSbnJLarTL-W-",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_1Upc2NjY8AlDn177YoVj0y",
+                "selector": "._1Upc2NjY8AlDn177YoVj0y"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_2j0fmugLb1FgYz6KPuB91w",
+              "selector": "._2j0fmugLb1FgYz6KPuB91w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpConsentBannerCtrl",
+                "className": "_23tra1HsiiP6cT-Cka-ycB",
+                "selector": "#wcpConsentBannerCtrl"
+              }
+            },
+            "selector": "._1XuCi2WhiqeWRUVp3pnFG3",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "✕",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Close",
+              "class": "_3kWyBRbW_dgnMiEyx06Fu4",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "AFsJE948muYyzCMktdzuk",
+              "selector": ".AFsJE948muYyzCMktdzuk",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "wcpCookiePreferenceCtrl",
+                "className": "_2bvsb3ubApyZ0UGoQA9O9T",
+                "selector": "#wcpCookiePreferenceCtrl"
+              }
+            },
+            "selector": "[aria-label=\"Close\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Statement",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?linkid=845480",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "_20_nXDf6uFs9Q6wxRXG-I- w8hcgFksdo30C8w-bygqu",
+              "selector": "._20_nXDf6uFs9Q6wxRXG-I-",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "_1kBkHQ1V1wu3kl-YcLgUr6 ydkKdaztSS0AeHWIeIHsQ",
+                "selector": "._1kBkHQ1V1wu3kl-YcLgUr6"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save changes",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Save changes",
+              "class": "_3tOu1FJ59c_xz_PmI1lKV5 _1zNQOqxpBFSokeCLGi_hGr",
+              "disabled": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nohp3sIG12ZBhzcMnPala",
+              "selector": ".nohp3sIG12ZBhzcMnPala",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uCYvKvHXrhjNgflv1VqdD",
+                "selector": ".uCYvKvHXrhjNgflv1VqdD"
+              }
+            },
+            "selector": "[aria-label=\"Save changes\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reset all",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Reset all",
+              "class": "_2uhaEsmeotZ3P-M0AXo2kF erL690_8JwUW-R4bJRcfl",
+              "disabled": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nohp3sIG12ZBhzcMnPala",
+              "selector": ".nohp3sIG12ZBhzcMnPala",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uCYvKvHXrhjNgflv1VqdD",
+                "selector": ".uCYvKvHXrhjNgflv1VqdD"
+              }
+            },
+            "selector": "[aria-label=\"Reset all\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search Microsoft.com",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "uhf-nav-item uhf-nav-button uhf-search-button",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalSearch\", \"cN\":\"Search_nav\", \"ecn\":\"Search_nav\", \"bhvr\": 62}",
+              "aria-label": "Search Microsoft.com",
+              "title": "Search Microsoft.com"
+            },
+            "parentInfo": {
+              "tag": "UHF-SEARCH",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-header-l0__actions",
+                "selector": ".uhf-header-l0__actions"
+              }
+            },
+            "selector": "[aria-label=\"Search Microsoft.com\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Microsoft",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.microsoft.com",
+              "class": "uhf-microsoft-logo",
+              "slot": "microsoft-logo",
+              "aria-label": "Microsoft",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalHeader\", \"hn\": \"Anchor\", \"cN\": \"GlobalNav_Logo_cont\", \"ecn\": \"GlobalNav_Logo_cont\", \"ehn\": \"Anchor\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Microsoft\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ME",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "style": "height: 36px; width: 36px; background-color: transparent; border-color: white; border-radius: 50%; border-style: solid; border-width: 1px; display: flex; font-size: 14px; cursor: pointer; color: white; align-items: center; justify-content: center;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UHF-MECONTROL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Account",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "uhf-contextual-nav-trigger"
+            },
+            "parentInfo": {
+              "tag": "UHF-CONTEXTUAL-NAV-MOBILE",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UHF-CONTEXTUAL-NAV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": ".uhf-contextual-nav-trigger",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Sign in to your Microsoft account",
+              "class": "fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev",
+              "data-bi-id": "signedout.hero.signIn"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1afv8yc",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Sign in to your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Sign in to your Microsoft account",
+              "class": "fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev",
+              "data-bi-id": "signedout.end-hero.sign-in"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1fga9f1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Sign in to your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create an account",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "Create an account",
+              "class": "fui-Button r1alrhcs",
+              "data-bi-id": "signedout.end-hero.create-account"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___1fga9f1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___1afv8yc"
+              }
+            },
+            "selector": "[aria-label=\"Create an account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create a Microsoft Account",
+            "tag": "A",
+            "attributes": {
+              "href": "https://signup.live.com:443/signup?lcid=1033&wa=wsignin1.0&rpsnv=202&ct=1787878276&rver=7.5.2234.0&wp=MBI_SSL&wreply=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253A%252F%252Faccount.microsoft.com%252F%253Fru%253Dhttps%25253A%25252F%25252Faccount.microsoft.com%25252F%2526destrt%253Dhome.landing%2526pageName%253DAccount%2526refd%253Daccount.microsoft.com%2526refp%253Dsignedout-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US",
+              "title": "Create a Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card1",
+              "aria-label": "Create a Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Create a Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Check if I have a Microsoft account",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?linkid=2215203",
+              "title": "Check if I have a Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card2",
+              "aria-label": "Check if I have a Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Check if I have a Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get help",
+            "tag": "A",
+            "attributes": {
+              "href": "https://go.microsoft.com/fwlink/?linkid=2214846",
+              "title": "Get help with your Microsoft account",
+              "class": "fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh",
+              "data-bi-id": "signedout.faq.card3",
+              "aria-label": "Get help with your Microsoft account",
+              "target": "_blank",
+              "rel": "noreferrer noopener",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+              "selector": ".___bykvjn0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm",
+                "selector": ".___tffa400"
+              }
+            },
+            "selector": "[aria-label=\"Get help with your Microsoft account\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Feedback",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-bi-id": "feedback-button",
+              "id": "feedback-button",
+              "class": "ms-Button ms-Button--primary root-163",
+              "aria-label": "Feedback",
+              "data-is-focusable": "true",
+              "tabindex": "0",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "ms-Stack css-156",
+                "selector": ".ms-Stack"
+              }
+            },
+            "selector": "#feedback-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "English (United States)",
+            "tag": "A",
+            "attributes": {
+              "slot": "uhf-footer-locale-picker",
+              "class": "uhf-footer-link",
+              "href": "/languages?lang=en-us",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_English (United States)_nav\", \"ecn\": \"LegalNav_LocalePicker_nav\", \"ehn\": \"LegalNav\"}",
+              "aria-label": "Content Language Selector. Currently set to English (United States)"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uhf-footer-locale-picker-container",
+              "selector": ".uhf-footer-locale-picker-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-legal-links",
+                "selector": ".uhf-footer-legal-links"
+              }
+            },
+            "selector": "[aria-label=\"Content Language Selector. Currently set to English (United States)\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Your Privacy Choices",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://aka.ms/yourcaliforniaprivacychoices",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_California Privacy_nav\", \"ecn\": \"LegalNav_CaliforniaPrivacy_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-legal-links",
+                "selector": ".uhf-footer-legal-links"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Consumer Health Privacy",
+            "tag": "A",
+            "attributes": {
+              "slot": "uhf-footer-consumer-health-privacy-link",
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?linkid=2259814",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Consumer Health Privacy_nav\", \"ecn\": \"LegalNav_ConsumerHealthPrivacy_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uhf-footer-legal-links",
+              "selector": ".uhf-footer-legal-links",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "uhf-footer-base",
+                "selector": ".uhf-footer-base"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy & cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?LinkID=521839",
+              "id": "uhf-footer-privacycookies",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Privacy & cookies_nav\", \"ecn\": \"LegalNav_footer-privacycookies_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-privacycookies",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of use",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://go.microsoft.com/fwlink/?LinkID=530144&clcid={CLCID_HEX}",
+              "id": "uhf-footer-terms",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Terms of use_nav\", \"ecn\": \"LegalNav_footer-terms_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-terms",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Contact us",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "https://support.microsoft.com/contactus",
+              "id": "uhf-footer-contactus",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Contact us_nav\", \"ecn\": \"LegalNav_footer-contactus_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-footer-contactus",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Feedback",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "#",
+              "id": "footerFbBtn",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Feedback_nav\", \"ecn\": \"LegalNav_feedback-button_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#footerFbBtn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "uhf-footer-link",
+              "href": "#",
+              "id": "uhf-Footer_ManageCookies",
+              "data-m": "{\"compnm\": \"UHF\", \"view\": \"UHF\", \"pa\": \"UniversalFooter\", \"hn\": \"LegalNav\", \"cN\": \"LegalNav_Manage cookies_nav\", \"ecn\": \"LegalNav_Footer_ManageCookies_nav\", \"ehn\": \"LegalNav\"}"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#uhf-Footer_ManageCookies",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://account.microsoft.com/account?ru=https%3A%2F%2Faccount.microsoft.com%2F&destrt=home.landing&pageName=Account",
+        "filteredHtml": "<body> <div id=\"page-wrapper-react\"> <div id=\"no-cookies\"> <div class=\"alert alert-info alert-banner\"> <div class=\"container\"> <p>To use everything on this website, turn on cookies in your browser settings. <a href=\"https://go.microsoft.com/fwlink/?LinkId=313221\">Read why and how we use cookies.</a></p> <p><a class=\"btn btn-primary pull-right\" href=\"https://go.microsoft.com/fwlink/p/?LinkId=616796\">Learn how</a></p> </div> </div> </div> <div id=\"site-header\"> <div id=\"sharedshell-header\"> <uhf-header locale=\"en-us\" partnerid=\"amc\" headerid=\"amc-L0-header\" theme=\"light\"> <a slot=\"skip-link\" class=\"uhf-skip-link\" href=\"#main-content-landing\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;SkipToMain&quot;, &quot;cN&quot;: &quot;Skip to content_nonnav&quot;, &quot;ecn&quot;: &quot;Skip to content_nonnav&quot;, &quot;ehn&quot;: &quot;SkipToMain&quot;}\">Skip to main content</a> <uhf-cookie-banner> <div id=\"msccBannerV2\"><div id=\"wcpConsentBannerCtrl\" class=\"_23tra1HsiiP6cT-Cka-ycB\" dir=\"ltr\" role=\"alert\"><div class=\"_1Upc2NjY8AlDn177YoVj0y\"><span class=\"_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu\"></span><p class=\"f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu\">We use optional cookies to improve your experience on our websites, such as through social media connections, and to display personalized advertising based on your online activity. If you reject optional cookies, only cookies necessary to provide you the services will be used. You may change your selection by clicking “Manage Cookies” at the bottom of the page. <a href=\"https://go.microsoft.com/fwlink/?LinkId=521839\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a> <a href=\"https://aka.ms/3rdpartycookies\" target=\"_blank\" rel=\"noopener noreferrer\">Third-Party Cookies</a></p></div><div class=\"_2j0fmugLb1FgYz6KPuB91w\"><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Accept</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Reject</button><button type=\"button\" class=\"_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl\">Manage cookies</button></div></div><div id=\"wcpCookiePreferenceCtrl\" class=\"_2bvsb3ubApyZ0UGoQA9O9T\" dir=\"ltr\"><div role=\"presentation\" tabindex=\"-1\"></div><div role=\"dialog\" aria-modal=\"true\" aria-label=\"Manage cookie preferences\" class=\"AFsJE948muYyzCMktdzuk\" tabindex=\"-1\"><button aria-label=\"Close\" class=\"_3kWyBRbW_dgnMiEyx06Fu4\" tabindex=\"0\">✕</button><div role=\"document\" class=\"uCYvKvHXrhjNgflv1VqdD\"><div><h1 class=\"_17pX1m9O_W--iZbDt3Ta5r w8hcgFksdo30C8w-bygqu\">Manage cookie preferences</h1></div><form class=\"_1kBkHQ1V1wu3kl-YcLgUr6 ydkKdaztSS0AeHWIeIHsQ\"><p class=\"_20_nXDf6uFs9Q6wxRXG-I- w8hcgFksdo30C8w-bygqu\">Most Microsoft websites use cookies. Cookies are small text files placed on your device to store data so web servers can use it later. Microsoft and our third-party partners use cookies to remember your preferences and settings, help you sign in, show you personalized ads, and analyze how well our websites are working. For more info, see the Cookies and similar technologies section of the <a href=\"https://go.microsoft.com/fwlink/?linkid=845480\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Statement</a>.</p><dl class=\"_2a0NH_GDQEQe5Ynfo7suVH\"><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Required\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\">Required</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We use required cookies to perform essential website functions. For example, they're used to log you in, save your language preferences, provide a shopping cart experience, improve performance, route traffic between web servers, detect the size of your screen, determine page load times, improve user experience, and for audience measurement. These cookies are necessary for our websites to work.</p></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Analytics\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c1_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c1_title\">Analytics</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We allow third parties to use analytics cookies to understand how you use our websites so we can make them better and the third parties can develop and improve their products, which they may use on websites that are not owned or operated by Microsoft. For example, they're used to gather information about the pages you visit and how many clicks you need to accomplish a task. We use some analytics cookies for advertising.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c1\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c1\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c1_reject\">Reject</label></div></div></div></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Social Media\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c2_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c2_title\">Social Media</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We and third parties use social media cookies to show you ads and content based on your social media profiles and activity on our websites. They’re used to connect your activity on our websites to your social media profiles so the ads and content you see on our websites and on social media will better reflect your interests.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c2\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c2\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c2_reject\">Reject</label></div></div></div></dt><dt class=\"_3j_LCPv7fyXv3A8FIXVwZ4 w8hcgFksdo30C8w-bygqu\" aria-label=\"Advertising\"><div class=\"k-vxTGFbdq1aOZB2HHpjh\" role=\"radiogroup\" aria-labelledby=\"_2Bucyy75c_ogoU1g-liB5R_c3_title\"><h2 class=\"_2Bucyy75c_ogoU1g-liB5R w8hcgFksdo30C8w-bygqu\" id=\"_2Bucyy75c_ogoU1g-liB5R_c3_title\">Advertising</h2><p class=\"_63gwfzV8dclrsl2cfd90r w8hcgFksdo30C8w-bygqu\">We and third parties use advertising cookies to show you new ads by recording which ads you've already seen. They're also used to track which ads you click on or purchases you make after clicking on an ad for payment purposes, and to show you ads that are more relevant to you. For example, they're used to detect when you click on an ad and show you ads based on your social media interests and website browsing history.</p><div class=\"_1l8wM_4mRYGz3Iu7l3BZR7\"><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c3\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_accept\" value=\"accept\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_accept\">Accept</label></div><div class=\"_2UE03QS02aZGkslegN_F-i\"><input type=\"radio\" class=\"_1dp8Vp5m3HwAqGx8qBmFV2\" name=\"c3\" id=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_reject\" value=\"reject\"><label class=\"_3RJzeL3l9Rl_lAQEm6VwdX w8hcgFksdo30C8w-bygqu\" for=\"_1dp8Vp5m3HwAqGx8qBmFV2_c3_reject\">Reject</label></div></div></div></dt></dl></form><div class=\"nohp3sIG12ZBhzcMnPala\"><button type=\"button\" aria-label=\"Save changes\" class=\"_3tOu1FJ59c_xz_PmI1lKV5 _1zNQOqxpBFSokeCLGi_hGr\" disabled=\"\">Save changes</button><button type=\"button\" aria-label=\"Reset all\" class=\"_2uhaEsmeotZ3P-M0AXo2kF erL690_8JwUW-R4bJRcfl\" disabled=\"\">Reset all</button></div></div></div></div></div> </uhf-cookie-banner> <header itemscope=\"\" itemtype=\"https://schema.org/WPHeader\" class=\"uhf-header uhf-breakpoint--mobile uhf-theme--light\"> <div class=\"uhf-header-l0\"> <div class=\"uhf-header-l0__actions\"> <uhf-search slot=\"search\" placeholder=\"Search Microsoft.com\" search-label=\"Search\" cancel-label=\"Cancel\" suggestions-available-text=\"{0} suggestions available\" searchurl=\"https://www.microsoft.com/en-us/search/explore\" autosuggesturl=\"https://www.microsoft.com/msstoreapiprod/api/autosuggest\"> <div class=\"uhf-search-container hidden\"> <button aria-label=\"Back\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Close Search&quot;,&quot;ecn&quot;:&quot;Close Search&quot;}\" class=\"uhf-search-cancel uhf-breakpoint--mobile\"> <uhf-icon ic size=\"15\"> <i class=\"ms-Icon ms-Icon--Back\"></i> </uhf-icon> </button> <form class=\"uhf-search-form\" itemscope=\"\" itemtype=\"https://schema.org/SearchAction\"> <meta itemprop=\"target\" c> <input type=\"search\" autocomplete=\"off\" role=\"combobox\" tabindex=\"0\" aria-c itemprop=\"query-input\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;SearchBox&quot;, &quot;ecn&quot;:&quot;SearchBox&quot;}\" name=\"q\" class=\"uhf-search-input uhf-breakpoint--mobile\" placeholder=\"Search Microsoft.com\" title=\"Search Microsoft.com\" aria-expanded=\"false\" data-bi-srchq=\"\"> <button type=\"submit\" class=\"uhf-search-submit-button\" aria-label=\"Search\" title=\"Search\" data-bi-srchq=\"\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalSearch&quot;,&quot;cN&quot;:&quot;Search_nav&quot;,&quot;ecn&quot;:&quot;Search_nav&quot;,&quot;bhvr&quot;:61,&quot;srchq&quot;:&quot;&quot;,&quot;srchtype&quot;:&quot;manual&quot;}\"> <uhf-icon ic size=\"16\"> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> </form> </div> <button class=\"uhf-nav-item uhf-nav-button uhf-search-button\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalSearch&quot;, &quot;cN&quot;:&quot;Search_nav&quot;, &quot;ecn&quot;:&quot;Search_nav&quot;, &quot;bhvr&quot;: 62}\" aria-label=\"Search Microsoft.com\" title=\"Search Microsoft.com\"> <span class=\"uhf-search-text\">Search</span> <uhf-icon ic> <i class=\"ms-Icon ms-Icon--Search\"></i> </uhf-icon> </button> <uhf-popout class=\"uhf-autosuggest hidden\" targetselector=\"input.uhf-search-input\" positi id=\"uhf-autosuggest-popout\" role=\"listbox\" disablemobilepositi> </uhf-popout> <div class=\"uhf-search-status\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"> </div> </uhf-search> </div> <uhf-brand slot=\"brand\" class=\"uhf-breakpoint--mobile\"> <div itemscope=\"\" itemtype=\"https://schema.org/Organization\"> <meta itemprop=\"url\" c> <div itemprop=\"logo\" itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"> <a href=\"https://www.microsoft.com\" class=\"uhf-microsoft-logo\" slot=\"microsoft-logo\" aria-label=\"Microsoft\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Logo_cont&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> </a> </div> <div class=\"uhf-site-logo-container show-pipe\"> <a href=\"https://account.microsoft.com\" class=\"uhf-site-logo\" slot=\"brand-logo\" aria-label=\"Account\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Anchor&quot;, &quot;cN&quot;: &quot;CatNav_Account_nav&quot;, &quot;ecn&quot;: &quot;CatNav_Account_nav&quot;, &quot;ehn&quot;: &quot;Anchor&quot;}\"> <span>Account</span> </a> </div> </div> </uhf-brand> <div class=\"uhf-header-l0__actions\"> <uhf-mecontrol slot=\"mecontrol\" sign-in-label=\"Sign in\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalHeader&quot;, &quot;hn&quot;: &quot;Account&quot;, &quot;cN&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ecn&quot;: &quot;GlobalNav_Account_cont&quot;, &quot;ehn&quot;: &quot;Account&quot;}\"><span class=\"uhf-mecontrol-signin-label\" data-m=\"{&quot;compnm&quot;:&quot;UHF&quot;,&quot;view&quot;:&quot;UHF&quot;,&quot;pa&quot;:&quot;UniversalHeader&quot;,&quot;cN&quot;:&quot;GlobalNav_Account_SignIn&quot;,&quot;bhvr&quot;:82}\">Sign in</span><div><button type=\"button\"><span>ME</span></button></div></uhf-mecontrol> </div> </div> <div class=\"uhf-header-l1\"> <uhf-contextual-nav slot=\"contextual-nav\" overflowtext=\"More\" brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" data-nav-label=\"Contextual menu\" theme=\"cat-theme-blue\"> <uhf-contextual-nav-mobile brand=\"Account\" homeurl=\"https://account.microsoft.com\" hometext=\"Home\" logoimageurl=\"\" logoalt=\"\" data-nav-label=\"Contextual menu\"> <button class=\"uhf-contextual-nav-trigger\"> Account <uhf-icon ic size=\"12\"> <i class=\"ms-Icon ms-Icon--ChevronDown\"></i> </uhf-icon> </button> </uhf-contextual-nav-mobile> </uhf-contextual-nav> </div> </header> </uhf-header> </div> </div> <div id=\"main-content-landing\" data-is-scrollable=\"true\"> <div id=\"SignedOut-signedOutPage\" class=\"content-container context-amc signedout-container\"> <div id=\"signedout-root\" data-envir data-cms-c data-area-c data-area-c data-left-navigation-header=\"null\"><div class=\"body-154\"><div dir=\"ltr\" class=\"fui-FluentProvider signedoutfui-FluentProvider1 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi\"><div class=\"body-155\"><div class=\"ms-Stack css-156\"><main id=\"main-content-landing-react\" tabindex=\"-1\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h1 class=\"fui-Text ___4cxpo00 fiqtrsq fpyltcb f1ivgwrt fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">It’s all here with Microsoft account</h1><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your Microsoft account connects all your Microsoft apps and services.</span><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Sign in to manage your account.</span></div><button type=\"button\" aria-label=\"Sign in to your Microsoft account\" class=\"fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23\" data-bi-id=\"signedout.hero.signIn\">Sign in</button></div></div><div class=\"ms-Stack css-157\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div><div class=\"ms-Stack css-158\"><div class=\"ms-Stack css-159\"><div class=\"ms-Stack css-160\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">The best of Microsoft</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">You get more for free when you sign in with your Microsoft account.</span></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___12bc7le f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d f4d9j23\" horiz><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/09b044c3-712b-44e7-b95c-12d97113289b.png?n=398x450_m365apps.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Microsoft 365 apps</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Get access to free online versions of Outlook, Word, Excel, and PowerPoint.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/f209382f-b378-4a1a-976f-a7cdcf5ba1b6.png?n=398x450_cloud.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">5 GB of cloud storage</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Save your files and photos and access them from any device, anywhere.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div><div class=\"___12bc7le f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d f4d9j23\" horiz><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/c44a2e03-db6b-4c70-9d15-1af4b9066acf.png?n=398x450_rewards.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Microsoft Rewards</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Earn points that can be redeemed for gift cards, nonprofit donations, and sweepstakes entries.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"ms-Stack css-161\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/293f9839-1628-4dc5-af6e-971ebdefacb3.png?n=398x450_xbox.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___163h8s6 f1fxy1vj f1pp30po f106mvju fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Xbox network</h2></div><div><span class=\"fui-Text ___8e15530 f1fxy1vj fkhj508 f1i3iumi figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your account gives you access to the Xbox network and community.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Uniquely yours</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Take control of your data with privacy settings you can customize, and get personalized recommendations from your account checkup.</span></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/M365apps-refresh.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Security your way</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Choose security and privacy settings that work best for you and rest easy with automatic alerts for unusual or suspicious account activity.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/Cloud-refresh.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Break free from passwords</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Make your account even more secure with optional passwordless sign-in.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/e498939c-8a39-42e7-83da-3292d4249dcd.png?n=592x540_management_v2.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">One place to manage it all</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Manage your account from a single dashboard, including payment information, purchases, subscriptions, and more.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Simplify your day</h2><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Access all your Microsoft apps, services, and games with one account.</span><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Whatever you’re doing, wherever you are, just go.</span></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/28d21a82-c65f-4dcc-9acc-33dd16c1ca8e.png?n=592x540_signin.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Sign in and go</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your account profile and preferences sync across all your devices. Wherever you are, it’s all here.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/5de86244-0a3a-41e5-bb6b-5b5e62b732c7.png?n=592x540_pickup.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Pick up where you left off</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your data is automatically synced to the cloud, so contacts, calendar, and files are always backed up, no matter what device you’re on.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div><div class=\"___gf9ajr0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d f4d9j23\" verticalalign=\"center\"><div class=\"ms-Stack css-162\"><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><div data-testid=\"layer-0\" imagesrc=\"https://assets.account.microsoft.com/signedout/compassassets/295f4081-bbc8-4f38-a5ce-1b2b586573c7.png?n=592x540_family.png\"><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div></div></div></div></div><div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div><h2 class=\"fui-Text ___1q2zr1q f1fxy1vj fojgt09 fcen8rp fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Keep it in the family</h2></div><div><span class=\"fui-Text ___91wzwc0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Easily create a family group and set parental controls like screen time limits and app filters for free with Microsoft Family Safety.</span></div><div class=\"___1lxphpa f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f1guyajx fhsg9lc\" verticalalign=\"baseline\"></div></div></div></div></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___8uwzd00 f10pi13n f1a3p1vp\"></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><span class=\"fui-Text ___lewn880 f1fxy1vj f1x0m3f5 fb86gi6 figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 fkfq4zb\">Your Microsoft account connects all your Microsoft apps and services.</span></div><div class=\"___1fga9f1 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1063pyq f17gxg2d fhsg9lc\"><button type=\"button\" aria-label=\"Sign in to your Microsoft account\" class=\"fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23\" data-bi-id=\"signedout.end-hero.sign-in\">Sign in</button><button type=\"button\" aria-label=\"Create an account\" class=\"fui-Button r1alrhcs\" data-bi-id=\"signedout.end-hero.create-account\">Create an account</button></div></div></div><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><div class=\"___1afv8yc f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f122n59 fhsg9lc\" horiz><h2 class=\"fui-Text ___mlt5pc0 fiqtrsq fccw675 f1ebx5kk fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Questions? We have answers</h2></div><div class=\"___tffa400 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc\"><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">A Microsoft account does not need a Microsoft email</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">The email address used to sign into your Microsoft account can be from Outlook.com, Hotmail.com, Gmail, Yahoo, or other providers.</span><a href=\"https://signup.live.com:443/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=202&amp;ct=1787878276&amp;rver=7.5.2234.0&amp;wp=MBI_SSL&amp;wreply=https%3A%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253A%252F%252Faccount.microsoft.com%252F%253Fru%253Dhttps%25253A%25252F%25252Faccount.microsoft.com%25252F%2526destrt%253Dhome.landing%2526pageName%253DAccount%2526refd%253Daccount.microsoft.com%2526refp%253Dsignedout-index&amp;lc=1033&amp;id=292666&amp;lw=1&amp;fl=easi2&amp;mkt=en-US\" title=\"Create a Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card1\" aria-label=\"Create a Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Create a Microsoft Account</a></div><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">You may already have an account</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">You can use an email address, Skype ID, or phone number to sign into your Windows PC, Xbox, or Microsoft services like Microsoft 365.</span><a href=\"https://go.microsoft.com/fwlink/?linkid=2215203\" title=\"Check if I have a Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card2\" aria-label=\"Check if I have a Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Check if I have a Microsoft account</a></div><div class=\"___bykvjn0 f22iagw flvyvdh f1ewtqcl f4sjk8j fi0ij8y f1d54kgm f1vx9l62 f17gxg2d fhsg9lc f1fteu7\"><span class=\"fui-Text ___gv7n2x0 f1fxy1vj f1x0m3f5 fb86gi6 fl43uef fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f19n0e5\">Get help with your account</span><span class=\"fui-Text ___7192dz0 f1fxy1vj fod5ikn faaz57k figsok6 fpgzoln f1w7gpdv f6juhto f1gl81tg f2jf649 f11d4kpn\">Forgot your username or password? Visit Microsoft Support for account help and guidance.</span><a href=\"https://go.microsoft.com/fwlink/?linkid=2214846\" title=\"Get help with your Microsoft account\" class=\"fui-Link ___17f0f9z f1u8i3ug f3rmtva f1ewtqcl f16muhyy f1k6fduh f1w7gpdv f1fxy1vj fod5ikn figsok6 f1s184ao f1mk8lai fnbmjn9 f6sp5hn f1iuv45f f1p20n7f f9n3di6 f1ids18y f1tx3yz7 f1f1pb61 f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a fubsjo4 f1bn96b2 fmulfsv f177e3oa f1u5sdlw fvi4nxw f1ha8yiu faaz57k\" data-bi-id=\"signedout.faq.card3\" aria-label=\"Get help with your Microsoft account\" target=\"_blank\" rel=\"noreferrer noopener\" tabindex=\"0\">Get help</a></div></div></div></main></div></div></div></div></div> <input name=\"__RequestVerificationToken\" type=\"hidden\" value=\"O78BX9oPo1tkl1EFTS9DiDu1EeJMKGMlgXiSS3IJ73BscvdSrnk85SCTNT8wHKeLvaAasbzQlI25NCW5hmN0gbEu0Aea2wv2jdw5U_3CoXY1:pYsLbe5k2WiJD_HjEi19lSocZXp-zdzSb4aY3_pOYXwhPmzwGAfKuHVQ7Pa4dIKLCITyEpl4EH1QhEyaMQIWbsGThE9l_BOll3POsoSXK3Q1\"> <div id=\"feedback-root\" data-envir data-cms-c data-area-c data-area-c data-left-navigation-header=\"null\"><div class=\"body-154\"><div dir=\"ltr\" class=\"fui-FluentProvider feedbackfui-FluentProvider1 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi\"><div class=\"body-155\"><div class=\"ms-Stack css-156\"><div><span id=\"inAppFeedbackRef-id\"></span><button type=\"button\" data-bi-id=\"feedback-button\" id=\"feedback-button\" class=\"ms-Button ms-Button--primary root-163\" aria-label=\"Feedback\" data-is-focusable=\"true\" tabindex=\"0\"><span class=\"ms-Button-flexContainer flexContainer-164\" data-automati><span role=\"presentation\" aria-hidden=\"true\" data-icon-name=\"Message\" class=\"Message\"></span><span class=\"ms-Button-textContainer textContainer-165\"><span class=\"ms-Button-label label-167\" id=\"id__9\">Feedback</span></span></span></button></div></div></div></div></div></div> </div> <div id=\"site-footer\"> <uhf-footer locale=\"en-us\" partnerid=\"amc\" footerid=\"amc-L0-footer\" theme=\"light\"> <footer id=\"uhf-footer\" itemscope=\"\" itemtype=\"https://schema.org/WPFooter\" class=\"uhf-footer c-uhff uhf-theme--light\"> <uhf-footer-nav slot=\"uhf-footer-nav\"> </uhf-footer-nav> <div class=\"uhf-footer-base\"> <div class=\"uhf-footer-legal-links\"> <div class=\"uhf-footer-locale-picker-container\"> <uhf-icon ic size=\"20\"> <i class=\"ms-Icon ms-Icon--World\"></i> </uhf-icon> <a slot=\"uhf-footer-locale-picker\" class=\"uhf-footer-link\" href=\"/languages?lang=en-us\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_English (United States)_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_LocalePicker_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\" aria-label=\"Content Language Selector. Currently set to English (United States)\">English (United States)</a> </div> <div slot=\"uhf-footer-california-privacy-link\"> <a class=\"uhf-footer-link\" href=\"https://aka.ms/yourcaliforniaprivacychoices\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_California Privacy_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_CaliforniaPrivacy_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\"> <span>Your Privacy Choices</span> </a> </div> <a slot=\"uhf-footer-consumer-health-privacy-link\" class=\"uhf-footer-link\" href=\"https://go.microsoft.com/fwlink/?linkid=2259814\" data-m=\"{&quot;compnm&quot;: &quot;UHF&quot;, &quot;view&quot;: &quot;UHF&quot;, &quot;pa&quot;: &quot;UniversalFooter&quot;, &quot;hn&quot;: &quot;LegalNav&quot;, &quot;cN&quot;: &quot;LegalNav_Consumer Health Privacy_nav&quot;, &quot;ecn&quot;: &quot;LegalNav_ConsumerHealthPrivacy_nav&quot;, &quot;ehn&quot;: &quot;LegalNav&quot;}\">Consumer Health Privacy</a> </div> <uhf-footer-menu slot=\"uhf-footer-menu\" data-nav-label=\"Microsoft corporate links\"> </uhf-footer-menu> </div> </footer> </uhf-footer> </div> </div> </div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 39804,
+        "isIframe": false
+      }
+    }
+  ]
+}

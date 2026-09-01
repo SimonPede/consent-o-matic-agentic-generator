@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T07:43:45.637420",
+  "url": "https://www.xda-developers.com",
+  "structured_dom_chars": 22755,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary banner for Sourcepoint only presents 'Accept All' and 'More Options' without an explicit 'Reject All' or 'Decline' button; a reject option may exist within the inaccessible nested settings iframe.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary banner for Sourcepoint only presents 'Accept All' and 'More Options' without an explicit 'Reject All' or 'Decline' button; a reject option may exist within the inaccessible nested settings iframe.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The primary banner for Sourcepoint only presents 'Accept All' and 'More Options' without an explicit 'Reject All' or 'Decline' button; a reject option may exist within the inaccessible nested settings iframe.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary banner for Sourcepoint only presents 'Accept All' and 'More Options' without an explicit 'Reject All' or 'Decline' button; a reject option may exist within the inaccessible nested settings iframe."
+  ],
+  "duration_seconds": 26.3,
+  "extraction_duration_seconds": 9.06,
+  "extraction_share_percent": 34.45,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

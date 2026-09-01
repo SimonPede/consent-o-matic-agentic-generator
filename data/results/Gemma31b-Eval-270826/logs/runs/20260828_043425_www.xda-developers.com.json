@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T04:34:25.577117",
+  "url": "https://www.xda-developers.com",
+  "structured_dom_chars": 22755,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint banner only provides \"Accept All\" and \"More Options\" buttons. Because the settings are in nested iframes, a reject option may exist behind the \"More Options\" menu but is inaccessible to the engine.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint banner only provides \"Accept All\" and \"More Options\" buttons. Because the settings are in nested iframes, a reject option may exist behind the \"More Options\" menu but is inaccessible to the engine.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The first layer of the Sourcepoint banner only provides \"Accept All\" and \"More Options\" buttons. Because the settings are in nested iframes, a reject option may exist behind the \"More Options\" menu but is inaccessible to the engine.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint banner only provides \"Accept All\" and \"More Options\" buttons. Because the settings are in nested iframes, a reject option may exist behind the \"More Options\" menu but is inaccessible to the engine."
+  ],
+  "duration_seconds": 74.91,
+  "extraction_duration_seconds": 8.48,
+  "extraction_share_percent": 11.32,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

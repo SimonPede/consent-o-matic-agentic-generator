@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-08-28T06:12:36.419628",
+  "url": "https://www.mediamarkt.de",
+  "structured_dom_chars": 295663,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 352.6,
+  "extraction_duration_seconds": 178.23,
+  "extraction_share_percent": 50.55,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "mediamarkt": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#pwa-consent-layer-form"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#pwa-consent-layer-form",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#pwa-consent-layer-form"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-category-Marketing[aria-checked='true']"
+                  }
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#pwa-consent-layer-accept-all-button"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#pwa-consent-layer-deny-all-button"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

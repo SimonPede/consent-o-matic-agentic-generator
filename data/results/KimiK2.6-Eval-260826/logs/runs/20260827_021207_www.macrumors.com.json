@@ -1,0 +1,134 @@
+{
+  "timestamp": "2026-08-27T02:12:07.950437",
+  "url": "https://www.macrumors.com",
+  "structured_dom_chars": 525230,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Consentmanager\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#cmpwrapper\"}}],\"showingMatcher\":[{\"type\":\"css\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\"#cmpbox\"}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#cmpwrapper\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\".cmpboxbtncustom\"}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"wait\",\"waitTime\":500},{\"type\":\"click\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\".cmpboxbtnreject\"}}]}}]}}",
+  "last_error": "Ruleset structure invalid: 2 validation errors for CoMRule\nConsentmanager.detectors.0.showingMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...selector': '#cmpbox'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nConsentmanager.detectors.0.showingMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...{'selector': '#cmpbox'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Ruleset structure invalid: 2 validation errors for CoMRule\nConsentmanager.detectors.0.showingMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...selector': '#cmpbox'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nConsentmanager.detectors.0.showingMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...{'selector': '#cmpbox'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing"
+  ],
+  "duration_seconds": 256.39,
+  "extraction_duration_seconds": 15.8,
+  "extraction_share_percent": 6.16,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Consentmanager": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#cmpwrapper"
+              },
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtncustom"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": []
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": ".cmpboxbtnreject"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

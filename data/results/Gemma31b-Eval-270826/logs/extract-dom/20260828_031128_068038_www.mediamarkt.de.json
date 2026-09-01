@@ -1,0 +1,4578 @@
+{
+  "timestamp": "2026-08-28T03:11:28.068128",
+  "url": "https://www.mediamarkt.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.mediamarkt.de"
+  ],
+  "duration_seconds": 142.71,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.mediamarkt.de/ with Score: 43",
+      "Settings match: \"Weitere Informationen\" --> lowered: \"weitere informationen\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: button, textMatch: Weitere Informationen",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 1935718 chars.",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 172 buttons, 3 inputs.",
+      "New state: 172 buttons, 3 inputs.",
+      "Settings click seems to have had no effect",
+      "Regex click had no effect in frame https://www.mediamarkt.de/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.mediamarkt.de/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.mediamarkt.de/',",
+      "      filteredHtml: '',",
+      "      filteredHtmlOmitted: true,",
+      "      filteredHtmlOriginalChars: 240816",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.mediamarkt.de/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (151):",
+      "      [BUTTON] \"Alle Kategorien\" --> selector: #mms-app-header-category-button",
+      "      [A] \"Gehe zur Homepage\" --> selector: [aria-label=\"Gehe zur Homepage\"]",
+      "      [BUTTON] \"Suche zurücksetzen\" --> selector: [aria-label=\"Suche zurücksetzen\"]",
+      "      [BUTTON] \"Mein Konto\" --> selector: [aria-label=\"Mein Konto\"]",
+      "      [A] \"Preisalarm stellen\" --> selector: [aria-label=\"Preisalarm stellen\"]",
+      "      [A] \"Warenkorb\" --> selector: [aria-label=\"Warenkorb\"]",
+      "      [A] \"Exklusive App-Coupons¹⁰\" --> selector: a",
+      "      [A] \"Punkte sammeln\" --> selector: a",
+      "      [A] \"Termin im Markt für Beratung und Services\" --> selector: a",
+      "      [A] \"19-20 Uhr: 10% Extra-Rabatt² auf viele Artikel\" --> selector: a",
+      "      [BUTTON] \"Vorheriges Element\" --> selector: [aria-label=\"Vorheriges Element\"]",
+      "      [BUTTON] \"Nächstes Element\" --> selector: [aria-label=\"Nächstes Element\"]",
+      "      [A] \"Wir feiern die IFA!\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"gamescom\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [BUTTON] \"Slide  1\" --> selector: [aria-label=\"Slide  1\"]",
+      "      [BUTTON] \"Slide  2\" --> selector: [aria-label=\"Slide  2\"]",
+      "      [BUTTON] \"Vorheriges Element\" --> selector: [aria-label=\"Vorheriges Element\"]",
+      "      [BUTTON] \"Nächstes Element\" --> selector: [aria-label=\"Nächstes Element\"]",
+      "      [A] \"iPad Air. Entwickelt für Apple Intelligence.\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"Samsung DealDays\" --> selector: a",
+      "      [A] \"Zur Aktion\" --> selector: a",
+      "      [A] \"Der richtige PC. Der richtige Preis.\" --> selector: a",
+      "      [A] \"Zur Aktion\" --> selector: a",
+      "      [A] \"Entdecke eine neue Ära der Rasur\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"Rundum optimiert, sauber reduziert\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"HAMMER MARKEN - HAMMER PREISE\" --> selector: a",
+      "      [A] \"Zur Aktion\" --> selector: a",
+      "      [A] \"Entdecke das neue Google Pixel 11 Pro XL\" --> selector: a",
+      "      [A] \"Jetzt entdecken\" --> selector: a",
+      "      [A] \"TV & Sound zum Bundesliga-Start\" --> selector: a",
+      "      [A] \"Zur Aktion\" --> selector: a",
+      "      [A] \"Weil jede Sekunde zählt\" --> selector: a",
+      "      [A] \"Jetzt entdecken\" --> selector: a",
+      "      [BUTTON] \"Slide  1\" --> selector: [aria-label=\"Slide  1\"]",
+      "      [BUTTON] \"Slide  2\" --> selector: [aria-label=\"Slide  2\"]",
+      "      [BUTTON] \"Slide  3\" --> selector: [aria-label=\"Slide  3\"]",
+      "      [BUTTON] \"Slide  4\" --> selector: [aria-label=\"Slide  4\"]",
+      "      [BUTTON] \"Slide  5\" --> selector: [aria-label=\"Slide  5\"]",
+      "      [A] \"Grand Theft Auto VI\" --> selector: a",
+      "      [A] \"Jetzt vorbestellen\" --> selector: [aria-label=\"Jetzt vorbestellen\"]",
+      "      [A] \"Angebote\" --> selector: a",
+      "      [A] \"Radikal reduziert\" --> selector: a",
+      "      [A] \"Handyverträge\" --> selector: a",
+      "      [A] \"Wochendeals\" --> selector: a",
+      "      [A] \"myMediaMarkt\" --> selector: a",
+      "      [A] \"Dein Bildungs-Equipment\" --> selector: a",
+      "      [BUTTON] \"Vorheriges Element\" --> selector: [aria-label=\"Vorheriges Element\"]",
+      "      [BUTTON] \"Nächstes Element\" --> selector: [aria-label=\"Nächstes Element\"]",
+      "      [A] \"NordVPN Basis für nur 24,99€\" --> selector: a",
+      "      [A] \"Zum Produkt\" --> selector: a",
+      "      [A] \"Alles, was du am Fairphone liebst. Und noch mehr.\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"iPhone 17 Pro erleben, Unlimited genießen",
+      "(Link führt auf eine externe Website.)\" --> selector: a",
+      "      [A] \"Zum Angebot",
+      "(Link führt auf eine externe Website.)\" --> selector: a",
+      "      [A] \"Platz für 15 Maßgedecke\" --> selector: a",
+      "      [A] \"Zu den Produkten\" --> selector: a",
+      "      [A] \"Sicher im Internet - egal wo du bist\" --> selector: a",
+      "      [A] \"Zum Produkt\" --> selector: a",
+      "      [BUTTON] \"Der hier angezeigte Preis ist die unverbindliche Preisempfehlung des Herstellers\" --> selector: [aria-label=\"Der hier angezeigte Preis ist die unverbindliche Preisempfehlung des Herstellers\"]",
+      "      [A] \"Level up mit deiner Energie",
+      "(Link führt auf eine externe Website.)\" --> selector: a",
+      "      [A] \"Zum Angebot",
+      "(Link führt auf eine externe Website.)\" --> selector: a",
+      "      [BUTTON] \"Slide  1\" --> selector: [aria-label=\"Slide  1\"]",
+      "      [BUTTON] \"Slide  2\" --> selector: [aria-label=\"Slide  2\"]",
+      "      [BUTTON] \"Slide  3\" --> selector: [aria-label=\"Slide  3\"]",
+      "      [A] \"Smartphones\" --> selector: a",
+      "      [A] \"Laptops & Notebooks\" --> selector: a",
+      "      [A] \"Gaming & VR\" --> selector: a",
+      "      [A] \"Smart TVs\" --> selector: a",
+      "      [A] \"Kühlen & Gefrieren\" --> selector: a",
+      "      [A] \"Waschen\" --> selector: a",
+      "      [BUTTON] \"Vorheriges Element\" --> selector: [aria-label=\"Vorheriges Element\"]",
+      "      [BUTTON] \"Nächstes Element\" --> selector: [aria-label=\"Nächstes Element\"]",
+      "      [A] \"Kühlen + Gefrieren\" --> selector: a",
+      "      [A] \"Ventilatoren\" --> selector: a",
+      "      [A] \"Solaranlagen\" --> selector: a",
+      "      [A] \"Grillen\" --> selector: a",
+      "      [A] \"Pools\" --> selector: a",
+      "      [A] \"Eismaschinen & Eisbereiter\" --> selector: a",
+      "      [A] \"Markt Terminvereinbarung\" --> selector: a",
+      "      [A] \"Live-Beratung\" --> selector: a",
+      "      [A] \"Lieferung\" --> selector: a",
+      "      [A] \"Reparatur & Wartung\" --> selector: a",
+      "      [A] \"Umtausch & Rückgabe\" --> selector: a",
+      "      [A] \"Alle Services\" --> selector: a",
+      "      [BUTTON] \"Vorheriges Element\" --> selector: [aria-label=\"Vorheriges Element\"]",
+      "      [BUTTON] \"Nächstes Element\" --> selector: [aria-label=\"Nächstes Element\"]",
+      "      [A] \"Laptops mit Touchscreen\" --> selector: a",
+      "      [A] \"Zur Übersicht\" --> selector: a",
+      "      [A] \"Gaming-Hauptstädte Deutschlands\" --> selector: a",
+      "      [A] \"Ergebnisse entdecken\" --> selector: a",
+      "      [A] \"Getestet: Fitbit Air\" --> selector: a",
+      "      [A] \"Zum Testbericht\" --> selector: a",
+      "      [BUTTON] \"Slide  1\" --> selector: [aria-label=\"Slide  1\"]",
+      "      [BUTTON] \"Slide  2\" --> selector: [aria-label=\"Slide  2\"]",
+      "      [BUTTON] \"Weitere Informationen\" --> selector: button",
+      "      [BUTTON] \"Aktivieren\" --> selector: button",
+      "      [A] \"Jetzt anmelden\" --> selector: a",
+      "      [A] \"findest du hier\" --> selector: [aria-label=\"findest du hier\"]",
+      "      [A] \"Kontaktformular\" --> selector: [aria-label=\"Kontaktformular\"]",
+      "      [A] \"Facebook\" --> selector: [aria-label=\"Facebook\"]",
+      "      [A] \"YouTube\" --> selector: [aria-label=\"YouTube\"]",
+      "      [A] \"Instagram\" --> selector: [aria-label=\"Instagram\"]",
+      "      [BUTTON] \"Service\" --> selector: .sc-d0585d86-0",
+      "      [BUTTON] \"Über uns\" --> selector: .sc-d0585d86-0",
+      "      [BUTTON] \"Top Kategorien\" --> selector: .sc-d0585d86-0",
+      "      [BUTTON] \"Häufig gesucht\" --> selector: .sc-d0585d86-0",
+      "      [BUTTON] \"Turn On Magazin\" --> selector: .sc-d0585d86-0",
+      "      [A] \"DHL\" --> selector: [aria-label=\"DHL\"]",
+      "      [A] \"Hermes\" --> selector: [aria-label=\"Hermes\"]",
+      "      [A] \"DPD\" --> selector: [aria-label=\"DPD\"]",
+      "      [A] \"Consors\" --> selector: [aria-label=\"Consors\"]",
+      "      [A] \"Apple Pay\" --> selector: [aria-label=\"Apple Pay\"]",
+      "      [A] \"Paypal\" --> selector: [aria-label=\"Paypal\"]",
+      "      [A] \"Amex\" --> selector: [aria-label=\"Amex\"]",
+      "      [A] \"Mastercard\" --> selector: [aria-label=\"Mastercard\"]",
+      "      [A] \"VISA\" --> selector: [aria-label=\"VISA\"]",
+      "      [A] \"Vorkasse\" --> selector: [aria-label=\"Vorkasse\"]",
+      "      [A] \"Bezahlung im Markt\" --> selector: [aria-label=\"Bezahlung im Markt\"]",
+      "      [A] \"Diners\" --> selector: [aria-label=\"Diners\"]",
+      "      [A] \"Amazon Pay\" --> selector: [aria-label=\"Amazon Pay\"]",
+      "      [A] \"Klarna\" --> selector: [aria-label=\"Klarna\"]",
+      "      [A] \"Discover\" --> selector: [aria-label=\"Discover\"]",
+      "      [A] \"Apple\" --> selector: [aria-label=\"Apple\"]",
+      "      [A] \"Google\" --> selector: [aria-label=\"Google\"]",
+      "      [A] \"Huawei\" --> selector: [aria-label=\"Huawei\"]",
+      "      [A] \"AGB\" --> selector: [aria-label=\"AGB\"]",
+      "      [A] \"Teilnahmebedingungen myMediaMarkt\" --> selector: [aria-label=\"Teilnahmebedingungen myMediaMarkt\"]",
+      "      [A] \"Teilnahmebedingungen myMediaMarkt+\" --> selector: [aria-label=\"Teilnahmebedingungen myMediaMarkt+\"]",
+      "      [A] \"Datenschutzhinweise myMediaMarkt/myMediaMarkt+\" --> selector: [aria-label=\"Datenschutzhinweise myMediaMarkt/myMediaMarkt+\"]",
+      "      [A] \"Datenschutzhinweise Shop\" --> selector: [aria-label=\"Datenschutzhinweise Shop\"]",
+      "      [A] \"Nutzungsbedingungen\" --> selector: [aria-label=\"Nutzungsbedingungen\"]",
+      "      [A] \"Informationen zu smarten Geräten\" --> selector: [aria-label=\"Informationen zu smarten Geräten\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "      [A] \"Barrierefreiheit\" --> selector: [aria-label=\"Barrierefreiheit\"]",
+      "      [A] \"B2B Rechtstexte\" --> selector: [aria-label=\"B2B Rechtstexte\"]",
+      "      [A] \"Datenschutzhinweise Terminvereinbarung\" --> selector: [aria-label=\"Datenschutzhinweise Terminvereinbarung\"]",
+      "      [BUTTON] \"Datenschutzeinstellungen\" --> selector: button",
+      "      [A] \"Vertrag widerrufen\" --> selector: a",
+      "      [A] \"Datenschutzhinweise\" --> selector: a",
+      "      [A] \"Impressum\" --> selector: a",
+      "      [A] \"Cookieübersicht\" --> selector: a",
+      "      [BUTTON] \"Notwendig\" --> selector: #required",
+      "      [BUTTON] \"Komfort\" --> selector: #comfort",
+      "      [BUTTON] \"Marketing\" --> selector: #marketing",
+      "      [BUTTON] \"Alle ablehnen\" --> selector: #pwa-consent-layer-deny-all-button",
+      "      [BUTTON] \"Alle zulassen\" --> selector: #pwa-consent-layer-accept-all-button",
+      "   Checkboxes found (0):",
+      "  Toggles found (3):",
+      "      \"\" | aria-checked: false --> selector: #ai-mode-toggle",
+      "      \"\" | aria-checked: false --> selector: #toggle-category-Komfort",
+      "      \"\" | aria-checked: false --> selector: #toggle-category-Marketing",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.mediamarkt.de/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Alle Kategorien",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 OUSxv sc-e22296bd-1 dQSvMZ",
+              "translate": "no",
+              "id": "mms-app-header-category-button",
+              "data-ignore-a11y": "true",
+              "aria-label": "Alle Kategorien",
+              "aria-haspopup": "true",
+              "aria-expanded": "false"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-e22296bd-0 inxCSK",
+              "selector": ".sc-e22296bd-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-coifPd mms-ui-hUDQIC mms-ui-cYGLoS mms-ui-dddXVi mms-ui-irEZiH",
+                "selector": ".mms-ui-coifPd"
+              }
+            },
+            "selector": "#mms-app-header-category-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Gehe zur Homepage",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-6df08520-1 GJzFx",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "/",
+              "aria-label": "Gehe zur Homepage"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-bYPztT mms-ui-BFcRM mms-ui-dDWCpe mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+              "selector": ".mms-ui-bYPztT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-f08d1cb8-0 bBWKVb",
+                "selector": ".sc-f08d1cb8-0"
+              }
+            },
+            "selector": "[aria-label=\"Gehe zur Homepage\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Suche zurücksetzen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 fTYigF sc-7ea96dce-0 hfkcAM sc-78b6edb6-1 iUAlTf",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Suche zurücksetzen"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-78b6edb6-0 ciwjoY",
+              "selector": ".sc-78b6edb6-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-a32fae6a-0 etcMlP",
+                "selector": ".sc-a32fae6a-0"
+              }
+            },
+            "selector": "[aria-label=\"Suche zurücksetzen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Mein Konto",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 ieZijk",
+              "translate": "no",
+              "data-test": "myaccount-dropdown-button",
+              "data-ignore-a11y": "true",
+              "aria-label": "Mein Konto",
+              "data-loggedin": "false"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-coifPd mms-ui-hUDQIC mms-ui-fHfqut",
+              "selector": ".mms-ui-coifPd",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-jlOfqx mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-fIXqzZ",
+                "selector": ".mms-ui-jlOfqx"
+              }
+            },
+            "selector": "[aria-label=\"Mein Konto\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Preisalarm stellen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-a19466a1-0 itylHB",
+              "aria-disabled": "false",
+              "href": "/de/myaccount/wishlist",
+              "data-test": "mini-wishlist",
+              "data-ignore-a11y": "true",
+              "aria-label": "Preisalarm stellen"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-jlOfqx mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-fIXqzZ",
+              "selector": ".mms-ui-jlOfqx",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-BFcRM mms-ui-dDWCpe mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "[aria-label=\"Preisalarm stellen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Warenkorb",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-a19466a1-0 itylHB",
+              "aria-disabled": "false",
+              "href": "/de/checkout",
+              "data-ignore-a11y": "true",
+              "aria-label": "Warenkorb"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-e3e59850-0 cogXty",
+              "selector": ".sc-e3e59850-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-jlOfqx mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-fIXqzZ",
+                "selector": ".mms-ui-jlOfqx"
+              }
+            },
+            "selector": "[aria-label=\"Warenkorb\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Exklusive App-Coupons¹⁰",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/about-us/app"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "mms-ui-fvKGdu mms-ui-eAZrpM mms-ui-wzdZp mms-ui-jHIOMu mms-ui-gbLMxF mms-ui-cbkwRf mms-ui-jutHam",
+              "selector": ".mms-ui-fvKGdu",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-bYPznK mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Punkte sammeln",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/myaccount/loyalty-benefits"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "mms-ui-fvKGdu mms-ui-eAZrpM mms-ui-wzdZp mms-ui-jHIOMu mms-ui-gbLMxF mms-ui-cbkwRf mms-ui-jutHam",
+              "selector": ".mms-ui-fvKGdu",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-bYPznK mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Termin im Markt für Beratung und Services",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/markt-terminvereinbarung"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "mms-ui-fvKGdu mms-ui-eAZrpM mms-ui-wzdZp mms-ui-jHIOMu mms-ui-gbLMxF mms-ui-cbkwRf mms-ui-jutHam",
+              "selector": ".mms-ui-fvKGdu",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-bYPznK mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "19-20 Uhr: 10% Extra-Rabatt² auf viele Artikel",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/campaign/raus-hau-stunde"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "sc-59b6826e-0 gEpSDU",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-25c9a306-4 btvMNM",
+                "selector": ".sc-25c9a306-4"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorheriges Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "true",
+              "class": "sc-a19466a1-1 fUsnHh sc-905d8d13-0 hXjdzr sc-bbe0368f-1 sc-bbe0368f-2 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "-1",
+              "aria-label": "Vorheriges Element",
+              "style": "display: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Vorheriges Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nächstes Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iFsELF sc-905d8d13-0 dhvnvg sc-bbe0368f-1 sc-bbe0368f-3 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "0",
+              "aria-label": "Nächstes Element",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Nächstes Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Wir feiern die IFA!",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/lets-go-deals",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/lets-go-deals",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "gamescom",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/specials/gamescom",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/specials/gamescom",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  1",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 gJVuyU",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  1",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  1\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  2",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  2",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  2\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorheriges Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "true",
+              "class": "sc-a19466a1-1 fUsnHh sc-905d8d13-0 hXjdzr sc-bbe0368f-1 sc-bbe0368f-2 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "-1",
+              "aria-label": "Vorheriges Element",
+              "style": "display: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Vorheriges Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nächstes Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iFsELF sc-905d8d13-0 dhvnvg sc-bbe0368f-1 sc-bbe0368f-3 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "0",
+              "aria-label": "Nächstes Element",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Nächstes Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "iPad Air. Entwickelt für Apple Intelligence.",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/promo-list/gsm_loa_apple_ipad_air",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/promo-list/gsm_loa_apple_ipad_air",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Samsung DealDays",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/samsung-dealdays",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zur Aktion",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/samsung-dealdays",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Der richtige PC. Der richtige Preis.",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/windows-back-to-school",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zur Aktion",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/windows-back-to-school",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Entdecke eine neue Ära der Rasur",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/braun-nevo",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/braun-nevo",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Rundum optimiert, sauber reduziert",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/promo-list/mda_dpl_warenbereichsaktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/promo-list/mda_dpl_warenbereichsaktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "HAMMER MARKEN - HAMMER PREISE",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/delonghi-aktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zur Aktion",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/delonghi-aktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Entdecke das neue Google Pixel 11 Pro XL",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/google-neuheiten",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt entdecken",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/google-neuheiten",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "TV & Sound zum Bundesliga-Start",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/tv-aktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zur Aktion",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/tv-aktion",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Weil jede Sekunde zählt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/campaign/sandisk-wd",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt entdecken",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/campaign/sandisk-wd",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  1",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 gJVuyU",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  1",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  1\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  2",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  2",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  2\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  3",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  3",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  3\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  4",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  4",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  4\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  5",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  5",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  5\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Grand Theft Auto VI",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-fPtRw mms-ui-hWRGrD",
+              "data-test": "mms-router-link",
+              "href": "/de/campaign/gta6",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-gnlqYH",
+              "selector": ".mms-ui-gnlqYH",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-jTWvec mms-ui-dMMuNs mms-ui-dMMuMP mms-ui-fPSBzf mms-ui-dDWCpe mms-ui-fzzxGt mms-ui-cMGtQw",
+                "selector": ".mms-ui-jTWvec"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt vorbestellen",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-fWbguu mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-fPtRw",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "aria-label": "Jetzt vorbestellen",
+              "href": "/de/campaign/gta6",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-felzTP",
+              "selector": ".mms-ui-felzTP",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-jTWvec mms-ui-dMMuNs mms-ui-dMMuMP mms-ui-fPSBzf mms-ui-dDWCpe mms-ui-fzzxGt mms-ui-cMGtQw",
+                "selector": ".mms-ui-jTWvec"
+              }
+            },
+            "selector": "[aria-label=\"Jetzt vorbestellen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Angebote",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/campaign/angebote-aktionen",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Radikal reduziert",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/campaign/restposten",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Handyverträge",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://tarife.mediamarkt.de/?utm_source=mediamarkt.de&utm_medium=own-internal%20teaser%20ad&utm_term=categorymodule_home_special_taskforce"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Wochendeals",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/campaign/angebote-aktionen#product-grid-7EGOGy6iZGuN89tZ4U1K9Y"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "myMediaMarkt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/myaccount/loyalty-benefits",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Dein Bildungs-Equipment",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/specials/neue-kategorien-marketplace",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorheriges Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "true",
+              "class": "sc-a19466a1-1 fUsnHh sc-905d8d13-0 hXjdzr sc-bbe0368f-1 sc-bbe0368f-2 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "-1",
+              "aria-label": "Vorheriges Element",
+              "style": "display: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Vorheriges Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nächstes Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iFsELF sc-905d8d13-0 dhvnvg sc-bbe0368f-1 sc-bbe0368f-3 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "0",
+              "aria-label": "Nächstes Element",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Nächstes Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NordVPN Basis für nur 24,99€",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/product/_nordvpn-basis-1-jahr-premium-vpn-dienst-fur-bis-zu-10-gerate-2985473.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zum Produkt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/product/_nordvpn-basis-1-jahr-premium-vpn-dienst-fur-bis-zu-10-gerate-2985473.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alles, was du am Fairphone liebst. Und noch mehr.",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/promo-list/GSM_LoA_Fairphone__Launch",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/promo-list/GSM_LoA_Fairphone__Launch",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "iPhone 17 Pro erleben, Unlimited genießen\n(Link führt auf eine externe Website.)",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-a95fa178-1 bGugeR",
+              "data-test": "base-teaser-link",
+              "target": "_self",
+              "href": "https://tarife.mediamarkt.de/smartphones/apple/iphone-17-pro/?carrier=o2&farbe=cosmic-orange&speicher=256&tarif=doppelkarte%3A-2x-mobile-unlimited-m-&ogi=68c3d37880961cc4ff281dea&ofi=6a82d643875da425eac56e5a&tfi=6a2168dcd5e1373da8b6c172"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zum Angebot\n(Link führt auf eine externe Website.)",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-7abb9d5b-0 gBhuii",
+              "data-test": "teaser-cta-link",
+              "target": "_self",
+              "href": "https://tarife.mediamarkt.de/smartphones/apple/iphone-17-pro/?carrier=o2&farbe=cosmic-orange&speicher=256&tarif=doppelkarte%3A-2x-mobile-unlimited-m-&ogi=68c3d37880961cc4ff281dea&ofi=6a82d643875da425eac56e5a&tfi=6a2168dcd5e1373da8b6c172"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Platz für 15 Maßgedecke",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/promo-list/mda_loa_bauknecht_bksv_ubm",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zu den Produkten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/promo-list/mda_loa_bauknecht_bksv_ubm",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sicher im Internet - egal wo du bist",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/product/_esd-livesafe-device-attach-2767961.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zum Produkt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/product/_esd-livesafe-device-attach-2767961.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Der hier angezeigte Preis ist die unverbindliche Preisempfehlung des Herstellers",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-f931e0c-0 kBLyCw sc-442d4f02-0 kuTcve",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Der hier angezeigte Preis ist die unverbindliche Preisempfehlung des Herstellers",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "data-state": "closed"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-bYPztT mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+              "selector": ".mms-ui-bYPztT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-felzIp mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-iRgpoQ mms-ui-eZrwE",
+                "selector": ".mms-ui-felzIp"
+              }
+            },
+            "selector": "[aria-label=\"Der hier angezeigte Preis ist die unverbindliche Preisempfehlung des Herstellers\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Level up mit deiner Energie\n(Link führt auf eine externe Website.)",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-a95fa178-1 bGugeR",
+              "data-test": "base-teaser-link",
+              "target": "_self",
+              "href": "https://tarife.mediamarkt.de/strom-gas/?utm_source=mediamarkt.de&utm_medium=own-internal%20teaser%20ad&utm_term=teaser&utm_content=lp_energie&utm_campaign=energie_geburtstag_aktion"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zum Angebot\n(Link führt auf eine externe Website.)",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-7abb9d5b-0 gBhuii",
+              "data-test": "teaser-cta-link",
+              "target": "_self",
+              "href": "https://tarife.mediamarkt.de/strom-gas/?utm_source=mediamarkt.de&utm_medium=own-internal%20teaser%20ad&utm_term=teaser&utm_content=lp_energie&utm_campaign=energie_geburtstag_aktion"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  1",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 gJVuyU",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  1",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  1\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  2",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  2",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  2\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  3",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  3",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  3\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Smartphones",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/smartphones-579.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Laptops & Notebooks",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/laptops-notebooks-362.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Gaming & VR",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/specials/gaming-welt",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Smart TVs",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/smart-tvs-817.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kühlen & Gefrieren",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/k%C3%BChlen-gefrieren-32.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Waschen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/waschen-2.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorheriges Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "true",
+              "class": "sc-a19466a1-1 fUsnHh sc-905d8d13-0 hMQtHi",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "-1",
+              "aria-label": "Vorheriges Element",
+              "style": "display: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 idvTJt",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Vorheriges Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nächstes Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iFsELF sc-905d8d13-0 hxOsAf",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "0",
+              "aria-label": "Nächstes Element",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 idvTJt",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Nächstes Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kühlen + Gefrieren",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/k%C3%BChlen-gefrieren-32.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ventilatoren",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/ventilatoren-101.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Solaranlagen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/specials/new-categories-solaranlagen",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Grillen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/grills-116.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pools",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/pools-11500.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eismaschinen & Eisbereiter",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/category/eisbereiter-5844.html",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Markt Terminvereinbarung",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service/markt-terminvereinbarung",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Live-Beratung",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service/kaufberatung/live-beratung",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Lieferung",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service/lieferung/standardlieferung",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reparatur & Wartung",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service/reparatur-wartung/",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Umtausch & Rückgabe",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service/umtausch-rueckgabe",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle Services",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-75f330e0-1 hHXJbM",
+              "data-test": "mms-router-link",
+              "href": "/de/service",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-dMMuNs mms-ui-ALMfU mms-ui-hjIMiB mms-ui-dUUCXq mms-ui-kfNvda",
+              "selector": ".mms-ui-dMMuNs",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-33b140cf-0 duRcxE",
+                "selector": ".sc-33b140cf-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorheriges Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "true",
+              "class": "sc-a19466a1-1 fUsnHh sc-905d8d13-0 hXjdzr sc-bbe0368f-1 sc-bbe0368f-2 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "-1",
+              "aria-label": "Vorheriges Element",
+              "style": "display: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Vorheriges Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nächstes Element",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iFsELF sc-905d8d13-0 dhvnvg sc-bbe0368f-1 sc-bbe0368f-3 elejot",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "tabindex": "0",
+              "aria-label": "Nächstes Element",
+              "style": "display: block;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-hLBbgP jiMjNS",
+              "selector": ".sc-hLBbgP",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "sc-2799f8ae-0 gkgBfP sc-bbe0368f-4 hizbEK",
+                "selector": ".sc-2799f8ae-0"
+              }
+            },
+            "selector": "[aria-label=\"Nächstes Element\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Laptops mit Touchscreen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/content/it-informatik/notebooks/laptops-mit-touchscreen-in-tests",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zur Übersicht",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/content/it-informatik/notebooks/laptops-mit-touchscreen-in-tests",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Gaming-Hauptstädte Deutschlands",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/content/themen-specials/aus-aktuellem-anlass/gaming-hauptstadt-deutschland-2026",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ergebnisse entdecken",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/content/themen-specials/aus-aktuellem-anlass/gaming-hauptstadt-deutschland-2026",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Getestet: Fitbit Air",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-a95fa178-1 bGugeR",
+              "data-test": "mms-router-link-base-teaser-link",
+              "href": "/de/content/fit-gesund/fitnesstracker/fitbit-air-getestet-erfahrung",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-3 nmAVo",
+              "selector": ".sc-80c1f20f-3",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-0 hkvKO",
+                "selector": ".sc-80c1f20f-0"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zum Testbericht",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-1 cevLqa sc-7abb9d5b-0 gBhuii",
+              "data-test": "mms-router-link-teaser-cta-link",
+              "href": "/de/content/fit-gesund/fitnesstracker/fitbit-air-getestet-erfahrung",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-80c1f20f-7 dqSELW",
+              "selector": ".sc-80c1f20f-7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-80c1f20f-3 nmAVo",
+                "selector": ".sc-80c1f20f-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  1",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 gJVuyU",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  1",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  1\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Slide  2",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-5fd61555-2 ceImuO",
+              "translate": "no",
+              "data-ignore-a11y": "true",
+              "aria-label": "Slide  2",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-5fd61555-1 fbtcKJ",
+              "selector": ".sc-5fd61555-1",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-5fd61555-0 feUYEb",
+                "selector": ".sc-5fd61555-0"
+              }
+            },
+            "selector": "[aria-label=\"Slide  2\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Weitere Informationen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 kVtApN",
+              "translate": "no",
+              "data-ignore-a11y": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-bYPztT mms-ui-bYPznK mms-ui-zFjGt mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-jaeBJZ mms-ui-eluWnz",
+              "selector": ".mms-ui-bYPztT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-dDWCpe mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-iRgpoQ mms-ui-eZrwE mms-ui-dMMuMP",
+                "selector": ".mms-ui-dDWCpe"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Aktivieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 wovBt sc-a65c1829-0 eNgXpr",
+              "translate": "no",
+              "data-ignore-a11y": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-bYPztT mms-ui-bYPznK mms-ui-zFjGt mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-jaeBJZ mms-ui-eluWnz",
+              "selector": ".mms-ui-bYPztT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-dDWCpe mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-iRgpoQ mms-ui-eZrwE mms-ui-dMMuMP",
+                "selector": ".mms-ui-dDWCpe"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt anmelden",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/myaccount/guest-newsletter"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-coifPd mms-ui-hUDQIC mms-ui-fHfqut",
+              "selector": ".mms-ui-coifPd",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-iRgpoQ mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "findest du hier",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz sc-df79bf44-1 ktSlEO",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/kundenservice",
+              "aria-label": "findest du hier"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"findest du hier\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kontaktformular",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz sc-df79bf44-1 ktSlEO",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://faq.mediamarkt.de/app/contact",
+              "aria-label": "Kontaktformular"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Kontaktformular\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Facebook",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://www.facebook.com/mediamarktsaturn/",
+              "aria-label": "Facebook"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Facebook\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YouTube",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://www.youtube.com/c/mediamarkt",
+              "aria-label": "YouTube"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"YouTube\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Instagram",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://www.instagram.com/mediamarktsaturn/",
+              "aria-label": "Instagram"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Instagram\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Service",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-controls": ":rg:",
+              "type": "button",
+              "class": "sc-d0585d86-0 bpcTbk"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-33b140cf-0 eNSzAo sc-8ad0e9df-4 gexlqN",
+              "selector": ".sc-33b140cf-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b5e502cb-0 jBBWqk sc-8ad0e9df-2 gSmlss",
+                "selector": ".sc-b5e502cb-0"
+              }
+            },
+            "selector": ".sc-d0585d86-0",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Über uns",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-controls": ":ri:",
+              "type": "button",
+              "class": "sc-d0585d86-0 bpcTbk"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-33b140cf-0 eNSzAo sc-8ad0e9df-4 gexlqN",
+              "selector": ".sc-33b140cf-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b5e502cb-0 jBBWqk sc-8ad0e9df-2 gSmlss",
+                "selector": ".sc-b5e502cb-0"
+              }
+            },
+            "selector": ".sc-d0585d86-0",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Top Kategorien",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-controls": ":rk:",
+              "type": "button",
+              "class": "sc-d0585d86-0 bpcTbk"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-33b140cf-0 eNSzAo sc-8ad0e9df-4 gexlqN",
+              "selector": ".sc-33b140cf-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b5e502cb-0 jBBWqk sc-8ad0e9df-2 gSmlss",
+                "selector": ".sc-b5e502cb-0"
+              }
+            },
+            "selector": ".sc-d0585d86-0",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Häufig gesucht",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-controls": ":rm:",
+              "type": "button",
+              "class": "sc-d0585d86-0 bpcTbk"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-33b140cf-0 eNSzAo sc-8ad0e9df-4 gexlqN",
+              "selector": ".sc-33b140cf-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b5e502cb-0 jBBWqk sc-8ad0e9df-2 gSmlss",
+                "selector": ".sc-b5e502cb-0"
+              }
+            },
+            "selector": ".sc-d0585d86-0",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Turn On Magazin",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-expanded": "false",
+              "aria-controls": ":ro:",
+              "type": "button",
+              "class": "sc-d0585d86-0 bpcTbk"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-33b140cf-0 eNSzAo sc-8ad0e9df-4 gexlqN",
+              "selector": ".sc-33b140cf-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-b5e502cb-0 jBBWqk sc-8ad0e9df-2 gSmlss",
+                "selector": ".sc-b5e502cb-0"
+              }
+            },
+            "selector": ".sc-d0585d86-0",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DHL",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "/",
+              "aria-label": "DHL"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"DHL\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Hermes",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "/",
+              "aria-label": "Hermes"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Hermes\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DPD",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "/",
+              "aria-label": "DPD"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"DPD\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Consors",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#finanzierung",
+              "aria-label": "Consors"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Consors\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Apple Pay",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#applepay",
+              "aria-label": "Apple Pay"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Apple Pay\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Paypal",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#paypal",
+              "aria-label": "Paypal"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Paypal\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Amex",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#kreditkarte",
+              "aria-label": "Amex"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Amex\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Mastercard",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#kreditkarte",
+              "aria-label": "Mastercard"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Mastercard\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "VISA",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#kreditkarte",
+              "aria-label": "VISA"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"VISA\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vorkasse",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#vorkasse",
+              "aria-label": "Vorkasse"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Vorkasse\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Bezahlung im Markt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#bezahlenimmarkt",
+              "aria-label": "Bezahlung im Markt"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Bezahlung im Markt\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Diners",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#kreditkarte",
+              "aria-label": "Diners"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Diners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Amazon Pay",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#amazonpay",
+              "aria-label": "Amazon Pay"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Amazon Pay\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Klarna",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#klarna",
+              "aria-label": "Klarna"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Klarna\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Discover",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/service/zahlung/zahlungsmoeglichkeiten#kreditkarte",
+              "aria-label": "Discover"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-e530fb8f-0 dYRSQK",
+              "selector": ".sc-e530fb8f-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-eZrwE",
+                "selector": ".mms-ui-fPSBzf"
+              }
+            },
+            "selector": "[aria-label=\"Discover\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Apple",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://apps.apple.com/de/app/mediamarkt-deutschland/id386304604",
+              "aria-label": "Apple"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Apple\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://play.google.com/store/apps/details?id=com.media.markt&hl=de",
+              "aria-label": "Google"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Google\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Huawei",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT",
+              "data-test": "mms-anchor-link",
+              "rel": "noopener noreferrer",
+              "target": "_blank",
+              "href": "https://consumer.huawei.com/en/mobileservices/appgallery/?fromConsumer=en_homepage_AppGallery",
+              "aria-label": "Huawei"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-gasSYy mms-ui-cMGtQw mms-ui-dVzwSc",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Huawei\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "AGB",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/terms",
+              "aria-label": "AGB"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"AGB\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Teilnahmebedingungen myMediaMarkt",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/teilnahmebedingungen-my-mediamarkt",
+              "aria-label": "Teilnahmebedingungen myMediaMarkt"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Teilnahmebedingungen myMediaMarkt\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Teilnahmebedingungen myMediaMarkt+",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/teilnahmebedingungen-my-mediamarkt+",
+              "aria-label": "Teilnahmebedingungen myMediaMarkt+"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Teilnahmebedingungen myMediaMarkt+\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzhinweise myMediaMarkt/myMediaMarkt+",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/datenschutzhinweise/mymediamarkt-mysaturn",
+              "aria-label": "Datenschutzhinweise myMediaMarkt/myMediaMarkt+"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzhinweise myMediaMarkt/myMediaMarkt+\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzhinweise Shop",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/datenschutzhinweise/shop",
+              "aria-label": "Datenschutzhinweise Shop"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzhinweise Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nutzungsbedingungen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/nutzungsbedingungen",
+              "aria-label": "Nutzungsbedingungen"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Nutzungsbedingungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Informationen zu smarten Geräten",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "/de/legal/digitale-inhalte",
+              "aria-label": "Informationen zu smarten Geräten"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Informationen zu smarten Geräten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/impressum",
+              "aria-label": "Impressum"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Barrierefreiheit",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/barrierefreiheit",
+              "aria-label": "Barrierefreiheit"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Barrierefreiheit\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "B2B Rechtstexte",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/b2b-rechtstexte",
+              "aria-label": "B2B Rechtstexte"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"B2B Rechtstexte\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzhinweise Terminvereinbarung",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 cwhatz",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/datenschutz-terminvereinbarung",
+              "aria-label": "Datenschutzhinweise Terminvereinbarung"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-2 fMyTVX",
+              "selector": ".sc-fe5d44f1-2",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-1 gNoYZW",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzhinweise Terminvereinbarung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzeinstellungen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 MFupc sc-fe5d44f1-7 cwIGkE",
+              "translate": "no",
+              "data-ignore-a11y": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "sc-fe5d44f1-3 cBtokI",
+              "selector": ".sc-fe5d44f1-3",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "sc-3db98a6e-0 bozFaZ sc-fe5d44f1-4 dLPAoF",
+                "selector": ".sc-3db98a6e-0"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vertrag widerrufen",
+            "tag": "A",
+            "attributes": {
+              "class": "sc-66506eb5-0 fFkljT sc-2ed2da9f-1 iZMqwF",
+              "data-test": "mms-link-emphasized",
+              "target": "_self",
+              "href": "https://faq.mediamarkt.de/app/vertrag-widerrufen"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "sc-fe5d44f1-10 eyZmeJ",
+              "selector": ".sc-fe5d44f1-10",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "sc-fe5d44f1-3 cBtokI",
+                "selector": ".sc-fe5d44f1-3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzhinweise",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/datenschutzhinweise"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "sc-59b6826e-0 hnHtWQ",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-coifMe mms-ui-wzdQz mms-ui-hrhmke mms-ui-cYmEFv mms-ui-dShurO",
+                "selector": ".mms-ui-coifMe"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/legal/impressum"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "sc-59b6826e-0 hnHtWQ",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-coifMe mms-ui-wzdQz mms-ui-hrhmke mms-ui-cYmEFv mms-ui-dShurO",
+                "selector": ".mms-ui-coifMe"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookieübersicht",
+            "tag": "A",
+            "attributes": {
+              "class": "mms-ui-cJiGkM mms-ui-eTbxZq mms-ui-bYPztT mms-ui-jYoXvO mms-ui-jtwrIW mms-ui-bgFnIv mms-ui-gSAgEM",
+              "data-test": "mms-anchor-link",
+              "target": "_self",
+              "href": "https://www.mediamarkt.de/de/privacy/cookies"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "sc-59b6826e-0 hnHtWQ",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-coifMe mms-ui-wzdQz mms-ui-hrhmke mms-ui-cYmEFv mms-ui-dShurO",
+                "selector": ".mms-ui-coifMe"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Notwendig",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-703b2898-7 cQLLx",
+              "translate": "no",
+              "id": "required",
+              "data-ignore-a11y": "true",
+              "aria-expanded": "false",
+              "aria-controls": "acc-content-id-required"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "sc-59b6826e-0 gVECfg sc-703b2898-6 bQiLVH",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE sc-703b2898-5 dCCKgj",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "#required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Komfort",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-703b2898-7 cQLLx",
+              "translate": "no",
+              "id": "comfort",
+              "data-ignore-a11y": "true",
+              "aria-expanded": "false",
+              "aria-controls": "acc-content-id-comfort"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "sc-59b6826e-0 gVECfg sc-703b2898-6 bQiLVH",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE sc-703b2898-5 dCCKgj",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "#comfort",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 iDqtxR sc-703b2898-7 cQLLx",
+              "translate": "no",
+              "id": "marketing",
+              "data-ignore-a11y": "true",
+              "aria-expanded": "false",
+              "aria-controls": "acc-content-id-marketing"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "sc-59b6826e-0 gVECfg sc-703b2898-6 bQiLVH",
+              "selector": ".sc-59b6826e-0",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-bYPztT mms-ui-fPSBzf mms-ui-ZWNVL mms-ui-cMGtQw mms-ui-eZrwE sc-703b2898-5 dCCKgj",
+                "selector": ".mms-ui-bYPztT"
+              }
+            },
+            "selector": "#marketing",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 gqJlND",
+              "translate": "no",
+              "id": "pwa-consent-layer-deny-all-button",
+              "data-test": "pwa-consent-layer-deny-all",
+              "data-ignore-a11y": "true",
+              "form": "pwa-consent-layer-form",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-jaeBJZ mms-ui-eluWqF mms-ui-bYPztT mms-ui-dDWCpe mms-ui-hmWpeQ mms-ui-AMuCf",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "FORM",
+                "id": "pwa-consent-layer-form",
+                "className": null,
+                "selector": "#pwa-consent-layer-form"
+              }
+            },
+            "selector": "#pwa-consent-layer-deny-all-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle zulassen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-disabled": "false",
+              "class": "sc-a19466a1-1 gXazQq",
+              "translate": "no",
+              "id": "pwa-consent-layer-accept-all-button",
+              "data-test": "pwa-consent-layer-accept-all",
+              "data-ignore-a11y": "true",
+              "form": "pwa-consent-layer-form",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mms-ui-fPSBzf mms-ui-jaeBJZ mms-ui-eluWqF mms-ui-bYPztT mms-ui-dDWCpe mms-ui-hmWpeQ mms-ui-AMuCf",
+              "selector": ".mms-ui-fPSBzf",
+              "grandparent": {
+                "tag": "FORM",
+                "id": "pwa-consent-layer-form",
+                "className": null,
+                "selector": "#pwa-consent-layer-form"
+              }
+            },
+            "selector": "#pwa-consent-layer-accept-all-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "mms-ui-jTWvec mms-ui-bUyOMB mms-ui-ppYUx mms-ui-haSGNB mms-ui-xMUtt mms-ui-fzBkGz mms-ui-jBncSs",
+              "id": "ai-mode-toggle",
+              "tabindex": "0",
+              "role": "switch",
+              "aria-label": "KI-Modus aktivieren",
+              "aria-checked": "false"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "ai-mode-toggle__label",
+              "className": "mms-ui-hSLVqa mms-ui-fPSBzf mms-ui-bYPznF mms-ui-bYPztT mms-ui-fIXqzZ",
+              "selector": "#ai-mode-toggle__label",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "mms-ui-fEVEmD",
+                "selector": ".mms-ui-fEVEmD"
+              }
+            },
+            "selector": "#ai-mode-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "mms-ui-jTWvec mms-ui-bUyOMB mms-ui-ppYUx mms-ui-haSGNB mms-ui-xMUtt mms-ui-fzBkGz mms-ui-jBncSs",
+              "id": "toggle-category-Komfort",
+              "tabindex": "0",
+              "role": "switch",
+              "aria-label": "All cookies for Komfort category",
+              "aria-checked": "false"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "toggle-category-Komfort__label",
+              "className": "mms-ui-hSLVqa mms-ui-fPSBzf mms-ui-bYPznF mms-ui-bYPztT mms-ui-fIXqzZ",
+              "selector": "#toggle-category-Komfort__label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-gEYCfo mms-ui-hUDQIC mms-ui-fHfqut sc-703b2898-8 iytkwX",
+                "selector": ".mms-ui-gEYCfo"
+              }
+            },
+            "selector": "#toggle-category-Komfort",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "mms-ui-jTWvec mms-ui-bUyOMB mms-ui-ppYUx mms-ui-haSGNB mms-ui-xMUtt mms-ui-fzBkGz mms-ui-jBncSs",
+              "id": "toggle-category-Marketing",
+              "tabindex": "0",
+              "role": "switch",
+              "aria-label": "All cookies for Marketing category",
+              "aria-checked": "false"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "toggle-category-Marketing__label",
+              "className": "mms-ui-hSLVqa mms-ui-fPSBzf mms-ui-bYPznF mms-ui-bYPztT mms-ui-fIXqzZ",
+              "selector": "#toggle-category-Marketing__label",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mms-ui-gEYCfo mms-ui-hUDQIC mms-ui-fHfqut sc-703b2898-8 iytkwX",
+                "selector": ".mms-ui-gEYCfo"
+              }
+            },
+            "selector": "#toggle-category-Marketing",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.mediamarkt.de/",
+        "filteredHtml": "",
+        "filteredHtmlOmitted": true,
+        "filteredHtmlOriginalChars": 240816
+      },
+      "settings": null
+    }
+  ]
+}

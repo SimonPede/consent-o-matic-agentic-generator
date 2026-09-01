@@ -1,0 +1,227 @@
+{
+  "timestamp": "2026-08-28T06:04:07.615841",
+  "url": "https://www.doctolib.fr",
+  "structured_dom_chars": 250237,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Didomi",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Didomi\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[class*='didomi']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[class*='didomi']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#didomi-notice-learn-more-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-mesureda-DETQz67A']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-mesureda-DETQz67A']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics-NGqxWbmn']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics-NGqxWbmn']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics-P8YGj7DH']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics-P8YGj7DH']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"E\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-displayta-V8kMenYa']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-displayta-V8kMenYa']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"E\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-displayta-VrPPVnHh']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-displayta-VrPPVnHh']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-adsperfor-zxYrhLTd']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-adsperfor-zxYrhLTd']\", \"textFilter\": \"Disagree\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"#btn-toggle-save\"}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class*='didomi']\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 448.22,
+  "extraction_duration_seconds": 8.3,
+  "extraction_share_percent": 1.85,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Didomi": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[class*='didomi']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[class*='didomi']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#didomi-notice-learn-more-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-mesureda-DETQz67A']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-mesureda-DETQz67A']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-analytics-NGqxWbmn']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-analytics-NGqxWbmn']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-analytics-P8YGj7DH']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-analytics-P8YGj7DH']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-displayta-V8kMenYa']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-displayta-V8kMenYa']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-displayta-VrPPVnHh']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-displayta-VrPPVnHh']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-adsperfor-zxYrhLTd']",
+                    "textFilter": "Agree"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby='didomi-purpose-adsperfor-zxYrhLTd']",
+                    "textFilter": "Disagree"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#btn-toggle-save"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class*='didomi']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

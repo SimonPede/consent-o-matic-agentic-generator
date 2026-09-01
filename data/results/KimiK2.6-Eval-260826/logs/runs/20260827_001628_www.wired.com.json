@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-08-27T00:16:28.903147",
+  "url": "https://www.wired.com",
+  "structured_dom_chars": 178930,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Fides\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#fides-button-group\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#fides-button-group\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#fides-button-group\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"#fides-manage-preferences-button\"}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"waitcss\",\"target\":{\"selector\":\"[aria-label=\\\"Functional Cookies\\\"]\",\"displayFilter\":true},\"retries\":10,\"waitTime\":300},{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label=\\\"Functional Cookies\\\"]\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label=\\\"Functional Cookies\\\"]\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label=\\\"Audience Measurement\\\"]\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label=\\\"Audience Measurement\\\"]\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label=\\\"Performance Cookies\\\"]\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label=\\\"Performance Cookies\\\"]\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label=\\\"Targeted Advertising\\\"]\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label=\\\"Targeted Advertising\\\"]\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label=\\\"Social Media Cookies\\\"]\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label=\\\"Social Media Cookies\\\"]\"}}}]}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"wait\",\"waitTime\":500},{\"type\":\"click\",\"target\":{\"selector\":\".fides-banner-button\",\"textFilter\":[\"Save\",\"Confirm\",\"Apply\"]}}]}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 308.24,
+  "extraction_duration_seconds": 95.16,
+  "extraction_share_percent": 30.87,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Fides": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#fides-button-group"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#fides-button-group",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#fides-button-group"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#fides-manage-preferences-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "waitcss",
+                "target": {
+                  "selector": "[aria-label=\"Functional Cookies\"]",
+                  "displayFilter": true
+                },
+                "retries": 10,
+                "waitTime": 300
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "A",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "[aria-label=\"Functional Cookies\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Functional Cookies\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "[aria-label=\"Audience Measurement\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Audience Measurement\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "[aria-label=\"Performance Cookies\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Performance Cookies\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "[aria-label=\"Targeted Advertising\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Targeted Advertising\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "E",
+                    "matcher": {
+                      "type": "checkbox",
+                      "target": {
+                        "selector": "[aria-label=\"Social Media Cookies\"]"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label=\"Social Media Cookies\"]"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".fides-banner-button",
+                  "textFilter": [
+                    "Save",
+                    "Confirm",
+                    "Apply"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

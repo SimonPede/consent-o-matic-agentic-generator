@@ -1,0 +1,651 @@
+{
+  "timestamp": "2026-08-28T08:23:13.532485",
+  "url": "https://connect.garmin.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://connect.garmin.com"
+  ],
+  "duration_seconds": 6.72,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"truste\"]\" (TrustArc) in frame: https://connect.garmin.com/",
+      "waitForCmpUi detected CMP Type: TrustArc",
+      "I found 1 frames.",
+      "a frame was picked by score: https://connect.garmin.com/ with Score: 48",
+      "Settings match: \"Manage Settings\" --> lowered: \"manage settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #truste-show-consent, textMatch: Manage Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff: 53015 chars added, 2 inputs added.",
+      "Old state: 34 buttons, 0 inputs.",
+      "New state: 47 buttons, 2 inputs.",
+      "Settings detected: 53015 chars, 2 inputs, 13 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 2 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://connect.garmin.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'TrustArc',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://connect.garmin.com/',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"ta-show ta-display-block\"> <div id=\"truste-consent-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\">This site uses cookies and related technologies for site operation, analytics, and third party advertising purposes. You may choose to consent to our use of these technologies, reject non-essential technologies, or further manage your preferences.</div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <span id=\"truste-repop-msg\"></span> <a href=\"https://www.garmin.com/privacy/cookies/policy/\" target=\"_blank\" class=\"truste-pp-text\">Privacy Policy</a> <button id=\"truste-consent-button\">Accept</button> <button id=\"truste-consent-required\">Decline</button> <button id=\"truste-show-consent\" aria-haspopup=\"dialog\">Manage Settings</button> </div> </div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 831,",
+      "      cmpType: 'TrustArc'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://connect.garmin.com/',",
+      "      filteredHtml: '<div id=\"pop-div208778302139486561\" class=\"truste_box_overlay\"><div id=\"pop-div309084151706669076\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame06159689925329871\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1><span>Cookies and Related Technologies on This Site</span><div class=\"logo\"></div> <p class=\"yestoAllow\">You must select YES or NO for each category before submitting choices</p> </h1> <p>Please select whether you consent to our use of cookies and related technologies (“Cookies”), as described in our privacy policy. Expand each section below for more information. You can return at any time from the same web browser to update your preferences. Please note that resetting your browser’s cookies will reset your preferences.</p></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Required Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies are required for the site to perform basic functions such as recognising your login credentials, protecting your information or updating your shopping cart. We must place these cookies in order to provide the functionality of this site to you and they remain in use even if you select \"Decline.\"</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Required Cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Provide secure log-in</span><span class=\"gwt-InlineHTML\">Remember how far you are through an order</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Functional Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies help improve site performance with analytics and other basic functions such as remembering your location or language preference. You can provide or revoke your consent to the use of these cookies here.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Functional Cookies</a><div role=\"listbox\" aria-label=\"Functional Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">No</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Yes</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Advertising Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies are used to personalise your experience on our website. You can provide or revoke your consent to the use of these cookies here.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Advertising Cookies</a><div role=\"listbox\" aria-label=\"Advertising Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">No</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Yes</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"submit\" translate=\"no\">Submit Preferences</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"acceptAllButtonLower\" translate=\"no\">Accept All</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"declineAllButtonLower\" translate=\"no\">Decline All</a></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"https://www.garmin.com/privacy/cookies/policy/\" target=\"_blank\">Privacy Policy</a></div><div class=\"right\" translate=\"no\">Powered by: <a href=\"http://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.41010155251662783\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"1\" id=\"trustarc-internal-close-button\"></a></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 5709,",
+      "      cmpType: 'TrustArc',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://connect.garmin.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: TrustArc via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"Privacy Policy\" --> selector: .truste-pp-text",
+      "      [BUTTON] \"Accept\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Decline\" --> selector: #truste-consent-required",
+      "      [BUTTON] \"Manage Settings\" --> selector: #truste-show-consent",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (12):",
+      "      [A] \"close\" --> selector: #trustarc-internal-close-button",
+      "      [A] \"Required Cookies\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+      "      [A] \"Functional Cookies\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Refuse Functional Cookies\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Accept Functional Cookies\"]",
+      "      [A] \"Advertising Cookies\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"NO\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Refuse Advertising Cookies\"]",
+      "      [SPAN] \"YES\" --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Accept Advertising Cookies\"]",
+      "      [A] \"SUBMIT PREFERENCES\" --> selector: #pop-frame06159689925329871 >>> .submit",
+      "      [A] \"ACCEPT ALL\" --> selector: #pop-frame06159689925329871 >>> .acceptAllButtonLower",
+      "      [A] \"DECLINE ALL\" --> selector: #pop-frame06159689925329871 >>> .declineAllButtonLower",
+      "      [A] \"Privacy Policy\" --> selector: #pop-frame06159689925329871 >>> #privacyPolicyAnchor",
+      "   Checkboxes found (0):",
+      "  Toggles found (2):",
+      "      \"NO",
+      "YES\" | aria-checked: null --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Functional Cookies choice\"]",
+      "      \"NO",
+      "YES\" | aria-checked: null --> selector: #pop-frame06159689925329871 >>> [aria-label=\"Advertising Cookies choice\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://connect.garmin.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "TrustArc",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.garmin.com/privacy/cookies/policy/",
+              "target": "_blank",
+              "class": "truste-pp-text"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": null,
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": ".truste-pp-text",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": null,
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": null,
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-show-consent",
+              "aria-haspopup": "dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": null,
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-show-consent",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://connect.garmin.com/",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"ta-show ta-display-block\"> <div id=\"truste-consent-content\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\">This site uses cookies and related technologies for site operation, analytics, and third party advertising purposes. You may choose to consent to our use of these technologies, reject non-essential technologies, or further manage your preferences.</div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <span id=\"truste-repop-msg\"></span> <a href=\"https://www.garmin.com/privacy/cookies/policy/\" target=\"_blank\" class=\"truste-pp-text\">Privacy Policy</a> <button id=\"truste-consent-button\">Accept</button> <button id=\"truste-consent-required\">Decline</button> <button id=\"truste-show-consent\" aria-haspopup=\"dialog\">Manage Settings</button> </div> </div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 831,
+        "cmpType": "TrustArc"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "close",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "close",
+              "role": "button",
+              "class": "truste-close-button",
+              "tabindex": "1",
+              "id": "trustarc-internal-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "closebtn-id0.41010155251662783",
+              "className": "truste-close-button-container",
+              "selector": "#closebtn-id0.41010155251662783",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "pop-div309084151706669076",
+                "className": "truste_box_overlay_inner",
+                "selector": "#pop-div309084151706669076"
+              }
+            },
+            "selector": "#trustarc-internal-close-button",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Required Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Functional Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Functional Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML on active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Refuse Functional Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Functional Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML off",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Accept Functional Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Advertising Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NO",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Advertising Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML on active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Refuse Advertising Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YES",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Advertising Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML off",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Accept Advertising Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SUBMIT PREFERENCES",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "submit",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> .submit",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACCEPT ALL",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "acceptAllButtonLower",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> .acceptAllButtonLower",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DECLINE ALL",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "declineAllButtonLower",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> .declineAllButtonLower",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "id": "privacyPolicyAnchor",
+              "href": "https://www.garmin.com/privacy/cookies/policy/",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "left",
+              "selector": ".left",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer",
+                "selector": ".footer"
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> #privacyPolicyAnchor",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "NO\nYES",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Functional Cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Functional Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "NO\nYES",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Advertising Cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06159689925329871 >>> [aria-label=\"Advertising Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://connect.garmin.com/",
+        "filteredHtml": "<div id=\"pop-div208778302139486561\" class=\"truste_box_overlay\"><div id=\"pop-div309084151706669076\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame06159689925329871\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1><span>Cookies and Related Technologies on This Site</span><div class=\"logo\"></div> <p class=\"yestoAllow\">You must select YES or NO for each category before submitting choices</p> </h1> <p>Please select whether you consent to our use of cookies and related technologies (“Cookies”), as described in our privacy policy. Expand each section below for more information. You can return at any time from the same web browser to update your preferences. Please note that resetting your browser’s cookies will reset your preferences.</p></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Required Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies are required for the site to perform basic functions such as recognising your login credentials, protecting your information or updating your shopping cart. We must place these cookies in order to provide the functionality of this site to you and they remain in use even if you select \"Decline.\"</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Required Cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Provide secure log-in</span><span class=\"gwt-InlineHTML\">Remember how far you are through an order</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Functional Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies help improve site performance with analytics and other basic functions such as remembering your location or language preference. You can provide or revoke your consent to the use of these cookies here.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Functional Cookies</a><div role=\"listbox\" aria-label=\"Functional Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">No</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Yes</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Advertising Cookies</h3></span><span class=\"gwt-InlineHTML\">These cookies are used to personalise your experience on our website. You can provide or revoke your consent to the use of these cookies here.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Advertising Cookies</a><div role=\"listbox\" aria-label=\"Advertising Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">No</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Yes</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"submit\" translate=\"no\">Submit Preferences</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"acceptAllButtonLower\" translate=\"no\">Accept All</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"declineAllButtonLower\" translate=\"no\">Decline All</a></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"https://www.garmin.com/privacy/cookies/policy/\" target=\"_blank\">Privacy Policy</a></div><div class=\"right\" translate=\"no\">Powered by: <a href=\"http://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.41010155251662783\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"1\" id=\"trustarc-internal-close-button\"></a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 5709,
+        "cmpType": "TrustArc",
+        "isIframe": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://store.steampowered.com",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "No rule found in agent message",
+  "rule_draft": {
+    "Steam": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".cookieMessage"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".cookieMessage",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".cookieMessage"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button, a",
+                    "textFilter": "Accept All"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button, a",
+                    "textFilter": "Reject All"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

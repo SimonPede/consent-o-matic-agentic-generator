@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-08-27T19:41:03.736567",
+  "url": "https://www.bbc.co.uk",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.bbc.co.uk"
+  ],
+  "duration_seconds": 40.59,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Regex failed in frame https://www.bbc.co.uk/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.bbc.co.uk/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.bbc.co.uk/',",
+      "      filteredHtml: '<body>Access denied</body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 26",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.bbc.co.uk/",
+      "   isMainFrame: true | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (0):",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.bbc.co.uk/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.bbc.co.uk/",
+        "filteredHtml": "<body>Access denied</body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 26
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,1152 @@
+{
+  "timestamp": "2026-08-27T07:06:03.867546",
+  "url": "https://www.faz.net",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.faz.net"
+  ],
+  "duration_seconds": 247.14,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 6 frames.",
+      "frame could not be scored!",
+      "frame could not be scored!",
+      "a frame was picked by score: https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2 with Score: 57",
+      "Settings match: \"Cookie-Manager\" --> lowered: \"cookie-manager\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Cookie-Manager\"], textMatch: Cookie-Manager",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://consent.faz.net/privacy-manager/index.html?message_id=1080459&pmTab=purposes&site_id=10860&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=1&sendPVData=true&includeCustomVendorsRes=1&consentUUID=8e8a747f-2659-466e-9bd4-e2e91273b50f&secure=undefined&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 52 for URL: https://consent.faz.net/privacy-manager/index.html?message_id=1080459&pmTab=purposes&site_id=10860&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=1&sendPVData=true&includeCustomVendorsRes=1&consentUUID=8e8a747f-2659-466e-9bd4-e2e91273b50f&secure=undefined&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+      "Best new frame selected for settings extraction: https://consent.faz.net/privacy-manager/index.html?message_id=1080459&pmTab=purposes&site_id=10860&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=1&sendPVData=true&includeCustomVendorsRes=1&consentUUID=8e8a747f-2659-466e-9bd4-e2e91273b50f&secure=undefined&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2',",
+      "      filteredHtml: '<div class=\"message-container cl-layer\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row cl-inner\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children cl-headline cl-mb-48 cl-mt-zero cl-mr-zero cl-ml-zero first-focusable-el\">Wie möchten Sie FAZ.NET nutzen?</h1><div class=\"message-component message-column cl-column cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24\"><div class=\"message-component message-row cl-row\"><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Mit Tracking und Cookies nutzen&nbsp;</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-desktop-only\">Nutzen Sie FAZ.NET mit personalisierter (auch politischer) Werbung, Werbetracking, Nutzungsanalyse und externen Multimedia-Inhalten. Als FAZ+ Premium Abonnent nutzen Sie FAZ.NET ohne klassische Werbung jedoch mit Tracking zu eigenen Zwecken und mit externen Multimedia-Inhalten. Details zu Cookies und Verarbeitungszwecken sowie zu Ihrer jederzeitigen Widerrufsmöglichkeit finden Sie unten im <a data-choice=\"1757585165309\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Cookie-Manager\" tabindex=\"0\">Cookie-Manager</a> sowie in unserer <a target=\"_blank\" href=\"https://www.faz-datenschutz.de/faz\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.* Für diese Nutzung gelten unsere <a target=\"_blank\" href=\"https://agb.faz.net/agb#agb_bereitstellungsbedingungen\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Bereitstellungsbedingungen\" tabindex=\"0\">Bereitstellungsbedingungen</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-mobile-only\">Nutzen Sie FAZ.NET mit personalisierter (auch politischer) Werbung, Werbetracking, Nutzungsanalyse und externen Multimedia-Inhalten. Als FAZ+ Premium Abonnent nutzen Sie FAZ.NET ohne klassische Werbung. Details zu Cookies und Verarbeitungszwecken sowie zu Ihrer jederzeitigen Widerrufsmöglichkeit finden Sie unten im <a data-choice=\"1757585165309\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Cookie-Manager\" tabindex=\"0\">Cookie-Manager</a> sowie in unserer <a target=\"_blank\" href=\"https://www.faz-datenschutz.de/faz\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.* Für diese Nutzung gelten unsere <a target=\"_blank\" href=\"https://agb.faz.net/agb#agb_bereitstellungsbedingungen\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Bereitstellungsbedingungen\" tabindex=\"0\">Bereitstellungsbedingungen</a>.</p></div><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><button title=\"Einverstanden\" aria-label=\"Einverstanden\" class=\"message-component message-button no-children focusable cl-first-level-button cl-mt-zero cl-mb-zero cl-button-green sp_choice_type_11\">Einverstanden</button><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-8 cl-mr-zero cl-ml-zero cl-mb-zero cl-height-40\">Erfahren Sie mehr in den FAQs. Zugriff auf gekennzeichnete Artikel nur mit entsprechendem Bezahlabo.</p></div></div><div class=\"message-component message-row cl-line cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero cl-desktop-only\"></div><div class=\"message-component message-row cl-row \"><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Ohne Werbung mit Pur-Abo</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-mobile-only\">Lesen Sie ohne Werbetracking, ohne Werbebanner und ohne Videowerbung.</p><p></p><p><br></p><p>Zusätzlich erhalten Sie mit FAZ+ Zugriff auf mehr als 1.000 zahlungspflichtige Artikel im Monat, die mit einem F+ Logo gekennzeichnet sind.</p><p></p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-desktop-only\">Lesen Sie ohne Werbetracking, ohne Werbebanner und ohne Videowerbung.</p><p></p><p><br></p><p>Zusätzlich erhalten Sie mit FAZ+ Zugriff auf mehr als 1.000 zahlungspflichtige Artikel im Monat, die mit einem F+ Logo gekennzeichnet sind.</p><p></p></div><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><a href=\"https://www.faz.net/faz-net-services/faz-pur-abo-artikel-werbefrei-und-ohne-werbetracking-lesen-200429726.html?campID=INT-IPa2600004934\" title=\"Kostenfrei testen\" aria-label=\"Kostenfrei testen\" class=\"message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero cl-mb-zero cl-optimized-third-level-button cl-opt-text-button sp_choice_type_link\" target=\"_blank\">Kostenfrei testen</a><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-8 cl-mr-zero cl-ml-zero cl-mb-zero cl-height-40\"><a target=\"_blank\" href=\"https://www.faz.net/mein-faz-net/?action=login\" class=\"text-link-0-0-2-2-1-1 focusable\" aria-label=\"F.A.Z. Pur-Abonnent? Hier anmelden\" tabindex=\"0\">F.A.Z. Pur-Abonnent? Hier anmelden</a></p></div></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy-jur cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-mb-48\">* Für die Nutzung mit Werbung und Cookies: Wir, die Frankfurter Allgemeine Zeitung GmbH, und unsere 198 <a data-choice=\"1687962377031\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-3 focusable\" aria-label=\"Partner\" tabindex=\"0\">Partner</a>, verarbeiten Daten (Informationen wie Cookies, Geräte-Kennungen, IPAdresse) für unten näher beschriebene Zwecke. Es werden Informationen auf Ihrem Gerät gespeichert und abgerufen. Durch das Klicken des „Einverstanden“-Buttons stimmen Sie dieser Verarbeitung zu. Darüber hinaus willigen Sie gemäß Art. 49 Abs. 1 DSGVO ein, dass die Partner die Daten gegebenenfalls auch in Drittländern verarbeiten, in denen kein vergleichbares Datenschutzniveau vorherrscht (z.B. in den USA). In solchen Fällen ist es etwa möglich, dass Behörden dieser Drittländer auf die Daten Zugriff nehmen. Sie willigen außerdem ein, dass Ihre personenbezogenen Daten auch zum Zweck der Anzeige personalisierter politischer Werbung verarbeitet werden können. Diese Werbung kann sich auf Wahlen, Referenden oder politische Entscheidungsprozesse beziehen und wird z. B. auf Grundlage Ihres Standorts und Nutzungsverhaltens auf FAZ.NET angezeigt.</p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy-left cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Verarbeitungszwecke</p><div class=\"message-component message-stacks no-children cl-pt-zero cl-mb-48\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\">Speichern von oder Zugriff auf Informationen auf einem Endgerät<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, Endgeräte- oder ähnliche Online-Kennungen (z. B. login-basierte Kennungen, zufällig generierte Kennungen, netzwerkbasierte Kennungen) können zusammen mit anderen Informationen (z. B. Browsertyp und Browserinformationen, Sprache, Bildschirmgröße, unterstützte Technologien usw.) auf Ihrem Endgerät gespeichert oder von dort ausgelesen werden, um es jedes Mal wiederzuerkennen, wenn es eine App oder einer Webseite aufruft. Dies geschieht für einen oder mehrere der hier aufgeführten Verarbeitungszwecke.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\">Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Anzeigen und Werbung können basierend auf Ihrem Profil personalisiert werden. Ihre Aktivitäten auf diesem Dienst können verwendet werden, um ein Profil über Sie für personalisierte Werbung zu erstellen oder zu ergänzen. Die Werbeleistung und die Performance von Inhalten können gemessen werden. Basierend auf Ihrer Aktivität und den Aktivitäten anderer können Berichte erstellt werden. Ihre Aktivitäten auf diesem Dienst können helfen, Produkte und Dienstleistungen zu entwickeln und zu verbessern</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Einbindung von externen Multimedia-Inhalten\">Einbindung von externen Multimedia-Inhalten<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Für eine umfassendere Informationsdarstellung nutzen wir auf unseren Websites Inhalte von <a aria-label=\"message-link\" target=\"_blank\" href=\"https://www.faz.net/faz-net-services/externe-medieninhalte-17435813.html\">Dritten</a>, wie z.B. Soc'... 3714 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 13714,",
+      "      cmpType: null",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent.faz.net/privacy-manager/index.html?message_id=1080459&pmTab=purposes&site_id=10860&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=1&sendPVData=true&includeCustomVendorsRes=1&consentUUID=8e8a747f-2659-466e-9bd4-e2e91273b50f&secure=undefined&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container cl-layer\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row cl-inner cl-mb-24 cl-pb-48\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children cl-headline cl-mb-32 cl-mt-zero cl-mr-zero cl-ml-zero first-focusable-el\">Cookie Manager</h1><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24\">Falls Sie sich nicht für unser Pur-Abo entscheiden, benötigen wir (Frankfurter Allgemeine Zeitung GmbH) und unsere Partner vor Ihrer Nutzung unserer Website Ihr jederzeit widerrufliches Einverständnis, um Daten (Informationen wie Cookies, Geräte-Kennung, IPAdresse) für unten jeweils beschriebene Zwecke zu verarbeiten. Es werden Informationen auf Ihrem Gerät gespeichert und abgerufen. Funktionale Zwecke werden auch ohne Ihr Einverständnis auf Grundlage unserer und Ihrer berechtigten Interessen verfolgt. Ihr Einverständnis umfasst die Verarbeitung Ihrer Daten durch Partner gegebenenfalls auch in Drittländern (Art. 49 Abs. 1 DSGVO), in denen kein vergleichbares Datenschutzniveau vorherrscht (z.B. in den USA).Details, insbesondere zu Partnern („Anbieter“), jeweils verwendeten Cookies und verfolgten Verarbeitungszwecken finden Sie nachfolgend. Weitere Informationen, insbesondere zu stattfindenden Datenverarbeitungen, berechtigte Interessen und die jederzeitige Widerrufsmöglichkeit Ihres Einverständnisses stellen wir Ihnen außerdem in unserer Datenschutzerklärung zur Verfügung.</p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children cl-pur-pm\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90a06\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa9063c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstellung von Profilen für personalisierte Werbung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Erstellung von Profilen für personalisierte Werbung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90816\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Profilen zur Auswahl personalisierter Werbung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung von Profilen zur Auswahl personalisierter Werbung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa905e9\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstellung von Profilen zur Personalisierung von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Erstellung von Profilen zur Personalisierung von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90870\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Profilen zur Auswahl personalisierter Inhalte</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung von Profilen zur Auswahl personalisierter Inhalte\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa905c8\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung der Werbeleistung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung der Werbeleistung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90892\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung der Performance von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung der Performance von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90901\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa9096b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Entwicklung und Verbesserung der Angebote</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Entwicklung und Verbesserung der Angebote\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa909a7\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung reduzierter Daten zur Auswahl von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung reduzierter Daten zur Auswahl von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"6527a838c508b006bde6a16f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Einbindung von externen Multimedia-Inhalten<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Einbindung von externen Multimedia-Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90a7b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Politische Werbung\"><span class=\"slider round\"></span></button></div><div id=\"699841812f3fd94e3dc9ec0c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung Erweiterte Conversions<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung Erweiterte Conversions\"><span class=\"slider round\"></span></button></div><div id=\"659eb076774902059fcac645\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expa'... 1815 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 11815,",
+      "      cmpType: null,",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: unknown via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (16):",
+      "      [A] \"Cookie-Manager\" --> selector: [aria-label=\"Cookie-Manager\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [A] \"Bereitstellungsbedingungen\" --> selector: [aria-label=\"Bereitstellungsbedingungen\"]",
+      "      [BUTTON] \"Einverstanden\" --> selector: [aria-label=\"Einverstanden\"]",
+      "      [A] \"Kostenfrei testen\" --> selector: [aria-label=\"Kostenfrei testen\"]",
+      "      [A] \"F.A.Z. Pur-Abonnent? Hier anmelden\" --> selector: [aria-label=\"F.A.Z. Pur-Abonnent? Hier anmelden\"]",
+      "      [A] \"Partner\" --> selector: [aria-label=\"Partner\"]",
+      "      [BUTTON] \"Speichern von oder Zugriff auf Informationen auf einem Endgerät\" --> selector: [aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"]",
+      "      [BUTTON] \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" --> selector: [aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+      "      [BUTTON] \"Einbindung von externen Multimedia-Inhalten\" --> selector: [aria-label=\"Einbindung von externen Multimedia-Inhalten\"]",
+      "      [BUTTON] \"Politische Werbung\" --> selector: [aria-label=\"Politische Werbung\"]",
+      "      [BUTTON] \"Messung Erweiterte Conversions\" --> selector: [aria-label=\"Messung Erweiterte Conversions\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>\"]",
+      "      [A] \"Barrierefreiheit\" --> selector: [aria-label=\"Barrierefreiheit\"]",
+      "      [A] \"Abo\" --> selector: [aria-label=\"Abo\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (18):",
+      "      [H2] \"Speichern von oder Zugriff auf Informationen auf einem Endgerät\" --> selector: h2",
+      "      [H2] \"Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen\" --> selector: h2",
+      "      [H2] \"Erstellung von Profilen für personalisierte Werbung\" --> selector: h2",
+      "      [H2] \"Verwendung von Profilen zur Auswahl personalisierter Werbung\" --> selector: h2",
+      "      [H2] \"Erstellung von Profilen zur Personalisierung von Inhalten\" --> selector: h2",
+      "      [H2] \"Verwendung von Profilen zur Auswahl personalisierter Inhalte\" --> selector: h2",
+      "      [H2] \"Messung der Werbeleistung\" --> selector: h2",
+      "      [H2] \"Messung der Performance von Inhalten\" --> selector: h2",
+      "      [H2] \"Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen\" --> selector: h2",
+      "      [H2] \"Entwicklung und Verbesserung der Angebote\" --> selector: h2",
+      "      [H2] \"Verwendung reduzierter Daten zur Auswahl von Inhalten\" --> selector: h2",
+      "      [H2] \"Einbindung von externen Multimedia-Inhalten*\" --> selector: h2",
+      "      [H2] \"Politische Werbung*\" --> selector: h2",
+      "      [H2] \"Messung Erweiterte Conversions*\" --> selector: h2",
+      "      [H2] \"Funktionale Verwendungszwecke\" --> selector: h2",
+      "      [H2] \"Zusatzfunktionen\" --> selector: h2",
+      "      [BUTTON] \"Einverstanden\" --> selector: [aria-label=\"Einverstanden\"]",
+      "      [BUTTON] \"Button\" --> selector: [aria-label=\"Button\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookie-Manager",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1757585165309",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-2-0-0-1 focusable",
+              "aria-label": "Cookie-Manager",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Cookie-Manager\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.faz-datenschutz.de/faz",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-2-0-0-1 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Bereitstellungsbedingungen",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://agb.faz.net/agb#agb_bereitstellungsbedingungen",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-2-0-0-1 focusable",
+              "aria-label": "Bereitstellungsbedingungen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Bereitstellungsbedingungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einverstanden",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Einverstanden",
+              "aria-label": "Einverstanden",
+              "class": "message-component message-button no-children focusable cl-first-level-button cl-mt-zero cl-mb-zero",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row cl-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Einverstanden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kostenfrei testen",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.faz.net/faz-net-services/faz-pur-abo-artikel-werbefrei-und-ohne-werbetracking-lesen-200429726.html?campID=INT-IPa2600004934",
+              "title": "Kostenfrei testen",
+              "aria-label": "Kostenfrei testen",
+              "class": "message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero",
+              "target": "_blank",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row cl-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Kostenfrei testen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "F.A.Z. Pur-Abonnent? Hier anmelden",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.faz.net/mein-faz-net/?action=login",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-2-2-1-1 focusable",
+              "aria-label": "F.A.Z. Pur-Abonnent? Hier anmelden",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-copy cl-mt-8 cl-mr-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"F.A.Z. Pur-Abonnent? Hier anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Partner",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1687962377031",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-3 focusable",
+              "aria-label": "Partner",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-copy-jur cl-mt-zero cl-mr-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row cl-inner",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Partner\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Speichern von oder Zugriff auf Informationen auf einem Endgerät",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Speichern von oder Zugriff auf Informationen auf einem Endgerät",
+              "style": "padding: 20px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+              "style": "padding: 20px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einbindung von externen Multimedia-Inhalten",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Einbindung von externen Multimedia-Inhalten",
+              "style": "padding: 20px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Einbindung von externen Multimedia-Inhalten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Politische Werbung",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Politische Werbung",
+              "style": "padding: 20px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Politische Werbung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Messung Erweiterte Conversions",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Messung Erweiterte Conversions",
+              "style": "padding: 20px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Messung Erweiterte Conversions\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.faz.net/faz/faz-net-impressum-112096.html",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-0 focusable",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-column-bottom-links cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.faz-datenschutz.de/faz",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-1 focusable",
+              "aria-label": "<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-column-bottom-links cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Barrierefreiheit",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://agb.faz.net/barrierefreiheit",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-2 focusable",
+              "aria-label": "Barrierefreiheit",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-column-bottom-links cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Barrierefreiheit\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Abo",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://mein.faz.net/",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-3 focusable last-focusable-el",
+              "aria-label": "Abo",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cl-column-bottom-links cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Abo\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent.faz.net/index.html?message_id=1493925&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+        "filteredHtml": "<div class=\"message-container cl-layer\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row cl-inner\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children cl-headline cl-mb-48 cl-mt-zero cl-mr-zero cl-ml-zero first-focusable-el\">Wie möchten Sie FAZ.NET nutzen?</h1><div class=\"message-component message-column cl-column cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24\"><div class=\"message-component message-row cl-row\"><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Mit Tracking und Cookies nutzen&nbsp;</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-desktop-only\">Nutzen Sie FAZ.NET mit personalisierter (auch politischer) Werbung, Werbetracking, Nutzungsanalyse und externen Multimedia-Inhalten. Als FAZ+ Premium Abonnent nutzen Sie FAZ.NET ohne klassische Werbung jedoch mit Tracking zu eigenen Zwecken und mit externen Multimedia-Inhalten. Details zu Cookies und Verarbeitungszwecken sowie zu Ihrer jederzeitigen Widerrufsmöglichkeit finden Sie unten im <a data-choice=\"1757585165309\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Cookie-Manager\" tabindex=\"0\">Cookie-Manager</a> sowie in unserer <a target=\"_blank\" href=\"https://www.faz-datenschutz.de/faz\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.* Für diese Nutzung gelten unsere <a target=\"_blank\" href=\"https://agb.faz.net/agb#agb_bereitstellungsbedingungen\" class=\"text-link-0-0-2-0-0-1 focusable\" aria-label=\"Bereitstellungsbedingungen\" tabindex=\"0\">Bereitstellungsbedingungen</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-mobile-only\">Nutzen Sie FAZ.NET mit personalisierter (auch politischer) Werbung, Werbetracking, Nutzungsanalyse und externen Multimedia-Inhalten. Als FAZ+ Premium Abonnent nutzen Sie FAZ.NET ohne klassische Werbung. Details zu Cookies und Verarbeitungszwecken sowie zu Ihrer jederzeitigen Widerrufsmöglichkeit finden Sie unten im <a data-choice=\"1757585165309\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Cookie-Manager\" tabindex=\"0\">Cookie-Manager</a> sowie in unserer <a target=\"_blank\" href=\"https://www.faz-datenschutz.de/faz\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.* Für diese Nutzung gelten unsere <a target=\"_blank\" href=\"https://agb.faz.net/agb#agb_bereitstellungsbedingungen\" class=\"text-link-0-0-2-0-0-2 focusable\" aria-label=\"Bereitstellungsbedingungen\" tabindex=\"0\">Bereitstellungsbedingungen</a>.</p></div><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><button title=\"Einverstanden\" aria-label=\"Einverstanden\" class=\"message-component message-button no-children focusable cl-first-level-button cl-mt-zero cl-mb-zero cl-button-green sp_choice_type_11\">Einverstanden</button><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-8 cl-mr-zero cl-ml-zero cl-mb-zero cl-height-40\">Erfahren Sie mehr in den FAQs. Zugriff auf gekennzeichnete Artikel nur mit entsprechendem Bezahlabo.</p></div></div><div class=\"message-component message-row cl-line cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero cl-desktop-only\"></div><div class=\"message-component message-row cl-row \"><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Ohne Werbung mit Pur-Abo</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-mobile-only\">Lesen Sie ohne Werbetracking, ohne Werbebanner und ohne Videowerbung.</p><p></p><p><br></p><p>Zusätzlich erhalten Sie mit FAZ+ Zugriff auf mehr als 1.000 zahlungspflichtige Artikel im Monat, die mit einem F+ Logo gekennzeichnet sind.</p><p></p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24 cl-desktop-only\">Lesen Sie ohne Werbetracking, ohne Werbebanner und ohne Videowerbung.</p><p></p><p><br></p><p>Zusätzlich erhalten Sie mit FAZ+ Zugriff auf mehr als 1.000 zahlungspflichtige Artikel im Monat, die mit einem F+ Logo gekennzeichnet sind.</p><p></p></div><div class=\"message-component message-column cl-section cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-pt-zero cl-pr-zero cl-pb-zero cl-pl-zero\"><a href=\"https://www.faz.net/faz-net-services/faz-pur-abo-artikel-werbefrei-und-ohne-werbetracking-lesen-200429726.html?campID=INT-IPa2600004934\" title=\"Kostenfrei testen\" aria-label=\"Kostenfrei testen\" class=\"message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero cl-mb-zero cl-optimized-third-level-button cl-opt-text-button sp_choice_type_link\" target=\"_blank\">Kostenfrei testen</a><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-8 cl-mr-zero cl-ml-zero cl-mb-zero cl-height-40\"><a target=\"_blank\" href=\"https://www.faz.net/mein-faz-net/?action=login\" class=\"text-link-0-0-2-2-1-1 focusable\" aria-label=\"F.A.Z. Pur-Abonnent? Hier anmelden\" tabindex=\"0\">F.A.Z. Pur-Abonnent? Hier anmelden</a></p></div></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy-jur cl-mt-zero cl-mr-zero cl-mb-zero cl-ml-zero cl-mb-48\">* Für die Nutzung mit Werbung und Cookies: Wir, die Frankfurter Allgemeine Zeitung GmbH, und unsere 198 <a data-choice=\"1687962377031\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-3 focusable\" aria-label=\"Partner\" tabindex=\"0\">Partner</a>, verarbeiten Daten (Informationen wie Cookies, Geräte-Kennungen, IPAdresse) für unten näher beschriebene Zwecke. Es werden Informationen auf Ihrem Gerät gespeichert und abgerufen. Durch das Klicken des „Einverstanden“-Buttons stimmen Sie dieser Verarbeitung zu. Darüber hinaus willigen Sie gemäß Art. 49 Abs. 1 DSGVO ein, dass die Partner die Daten gegebenenfalls auch in Drittländern verarbeiten, in denen kein vergleichbares Datenschutzniveau vorherrscht (z.B. in den USA). In solchen Fällen ist es etwa möglich, dass Behörden dieser Drittländer auf die Daten Zugriff nehmen. Sie willigen außerdem ein, dass Ihre personenbezogenen Daten auch zum Zweck der Anzeige personalisierter politischer Werbung verarbeitet werden können. Diese Werbung kann sich auf Wahlen, Referenden oder politische Entscheidungsprozesse beziehen und wird z. B. auf Grundlage Ihres Standorts und Nutzungsverhaltens auf FAZ.NET angezeigt.</p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy-left cl-bold cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-8\">Verarbeitungszwecke</p><div class=\"message-component message-stacks no-children cl-pt-zero cl-mb-48\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\">Speichern von oder Zugriff auf Informationen auf einem Endgerät<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, Endgeräte- oder ähnliche Online-Kennungen (z. B. login-basierte Kennungen, zufällig generierte Kennungen, netzwerkbasierte Kennungen) können zusammen mit anderen Informationen (z. B. Browsertyp und Browserinformationen, Sprache, Bildschirmgröße, unterstützte Technologien usw.) auf Ihrem Endgerät gespeichert oder von dort ausgelesen werden, um es jedes Mal wiederzuerkennen, wenn es eine App oder einer Webseite aufruft. Dies geschieht für einen oder mehrere der hier aufgeführten Verarbeitungszwecke.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\">Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Anzeigen und Werbung können basierend auf Ihrem Profil personalisiert werden. Ihre Aktivitäten auf diesem Dienst können verwendet werden, um ein Profil über Sie für personalisierte Werbung zu erstellen oder zu ergänzen. Die Werbeleistung und die Performance von Inhalten können gemessen werden. Basierend auf Ihrer Aktivität und den Aktivitäten anderer können Berichte erstellt werden. Ihre Aktivitäten auf diesem Dienst können helfen, Produkte und Dienstleistungen zu entwickeln und zu verbessern</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Einbindung von externen Multimedia-Inhalten\">Einbindung von externen Multimedia-Inhalten<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Für eine umfassendere Informationsdarstellung nutzen wir auf unseren Websites Inhalte von <a aria-label=\"message-link\" target=\"_blank\" href=\"https://www.faz.net/faz-net-services/externe-medieninhalte-17435813.html\">Dritten</a>, wie z.B. Social Media- oder Video-Plattformen, angezeigt. Dabei werden durch diese Dritten, die auch zu den oben genannten Partnern zählen, Daten verarbeitet.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Politische Werbung\">Politische Werbung<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p>Sie willigen ein, dass personenbezogene Daten zum Zweck der Anzeige personalisierter politischer Werbung verarbeitet werden. Diese Werbung kann sich auf Wahlen, Referenden oder politische Entscheidungsprozesse beziehen und wird Ihnen beispielsweise auf Grundlage Ihres Standorts und Ihres Nutzungsverhaltens auf diesem Angebot angezeigt.</p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Messung Erweiterte Conversions\">Messung Erweiterte Conversions<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Um zu erfahren, ob und wie wirksam unsere Werbung ist, setzen wir mit Ihrer jederzeitig widerruflichen, ausdrücklichen Einwilligung sog. erweiterte Konversionsmessung ein (Art. 6 Abs. 1 a DSGVO). Hierfür greifen wir auf die Dienste von Google und Meta zurück und können auch Ihre E-Mail-Adresse in gehashter Form an Google oder Meta übermitteln, um bestimmte Ereignisse auf unserer Seite zuzuordnen und damit die Wirkung der von uns bei Google oder Meta geschalteten Anzeigen und Werbekampagnen messen zu können. Es werden keine Klardaten übermittelt. Mehr Informationen finden Sie unter <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://support.google.com/google-ads/answer/9888656?hl=de\">https://support.google.com/google-ads/answer/9888656?hl=de</a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"> für Google und unter </span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://de-de.facebook.com/business/help/611774685654668?id=1205376682832142\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">https://de-de.facebook.com/business/help/611774685654668?id=1205376682832142</span></a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"> für Facebook (Meta), sowie in unserer Datenschutzerklärung.</span></p><p></p></div></div></div></div><div class=\"message-component message-column cl-column-bottom-links cl-mb-zero cl-mt-zero cl-mr-zero cl-ml-zero\"><p tabindex=\"0\" class=\"focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero\"><a target=\"_blank\" href=\"https://www.faz.net/faz/faz-net-impressum-112096.html\" class=\"text-link-0-0-6-0 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.faz-datenschutz.de/faz\" class=\"text-link-0-0-6-1 focusable\" aria-label=\"&lt;span href=&quot;true&quot; target=&quot;_blank&quot; aria-label=&quot;message-link&quot;&gt;Datenschutz&lt;/span&gt;\" tabindex=\"0\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Datenschutz</span></a></p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero\"><a target=\"_blank\" href=\"https://agb.faz.net/barrierefreiheit\" class=\"text-link-0-0-6-2 focusable\" aria-label=\"Barrierefreiheit\" tabindex=\"0\">Barrierefreiheit</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children cl-bottom-links cl-mt-zero cl-mb-zero\"><a target=\"_blank\" href=\"https://mein.faz.net/\" class=\"text-link-0-0-6-3 focusable last-focusable-el\" aria-label=\"Abo\" tabindex=\"0\">Abo</a></p></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 13714,
+        "cmpType": null
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Speichern von oder Zugriff auf Informationen auf einem Endgerät",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90a06",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa9063c",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erstellung von Profilen für personalisierte Werbung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90816",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung von Profilen zur Auswahl personalisierter Werbung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa905e9",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erstellung von Profilen zur Personalisierung von Inhalten",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90870",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung von Profilen zur Auswahl personalisierter Inhalte",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa905c8",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Messung der Werbeleistung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90892",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Messung der Performance von Inhalten",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90901",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa9096b",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Entwicklung und Verbesserung der Angebote",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa909a7",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung reduzierter Daten zur Auswahl von Inhalten",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6527a838c508b006bde6a16f",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einbindung von externen Multimedia-Inhalten*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "603fad792c5727274aa90a7b",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Politische Werbung*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "699841812f3fd94e3dc9ec0c",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Messung Erweiterte Conversions*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "659eb076774902059fcac645",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Funktionale Verwendungszwecke",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Funktionale Verwendungszwecke",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zusatzfunktionen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Zusatzfunktionen",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einverstanden",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Einverstanden",
+              "aria-label": "Einverstanden",
+              "class": "message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row cl-column cl-mb-24 cl-mt-zero cl-mr-zero cl-ml-zero",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Einverstanden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Button",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Button",
+              "aria-label": "Button",
+              "class": "message-component message-button no-children focusable cl-button-close sp_choice_type_CANCEL last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message type-modal",
+              "selector": ".message",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-container cl-layer",
+                "selector": ".message-container"
+              }
+            },
+            "selector": "[aria-label=\"Button\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent.faz.net/privacy-manager/index.html?message_id=1080459&pmTab=purposes&site_id=10860&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=1&sendPVData=true&includeCustomVendorsRes=1&consentUUID=8e8a747f-2659-466e-9bd4-e2e91273b50f&secure=undefined&consent_origin=https%3A%2F%2Fconsent.faz.net%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent.faz.net%2Fmms%2Fv2",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container cl-layer\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row cl-inner cl-mb-24 cl-pb-48\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children cl-headline cl-mb-32 cl-mt-zero cl-mr-zero cl-ml-zero first-focusable-el\">Cookie Manager</h1><p tabindex=\"0\" class=\"focusable message-component text no-children cl-copy cl-mt-zero cl-mr-zero cl-ml-zero cl-mb-24\">Falls Sie sich nicht für unser Pur-Abo entscheiden, benötigen wir (Frankfurter Allgemeine Zeitung GmbH) und unsere Partner vor Ihrer Nutzung unserer Website Ihr jederzeit widerrufliches Einverständnis, um Daten (Informationen wie Cookies, Geräte-Kennung, IPAdresse) für unten jeweils beschriebene Zwecke zu verarbeiten. Es werden Informationen auf Ihrem Gerät gespeichert und abgerufen. Funktionale Zwecke werden auch ohne Ihr Einverständnis auf Grundlage unserer und Ihrer berechtigten Interessen verfolgt. Ihr Einverständnis umfasst die Verarbeitung Ihrer Daten durch Partner gegebenenfalls auch in Drittländern (Art. 49 Abs. 1 DSGVO), in denen kein vergleichbares Datenschutzniveau vorherrscht (z.B. in den USA).Details, insbesondere zu Partnern („Anbieter“), jeweils verwendeten Cookies und verfolgten Verarbeitungszwecken finden Sie nachfolgend. Weitere Informationen, insbesondere zu stattfindenden Datenverarbeitungen, berechtigte Interessen und die jederzeitige Widerrufsmöglichkeit Ihres Einverständnisses stellen wir Ihnen außerdem in unserer Datenschutzerklärung zur Verfügung.</p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children cl-pur-pm\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90a06\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung reduzierter Daten zur Auswahl von Werbeanzeigen\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa9063c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstellung von Profilen für personalisierte Werbung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Erstellung von Profilen für personalisierte Werbung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90816\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Profilen zur Auswahl personalisierter Werbung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung von Profilen zur Auswahl personalisierter Werbung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa905e9\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstellung von Profilen zur Personalisierung von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Erstellung von Profilen zur Personalisierung von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90870\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Profilen zur Auswahl personalisierter Inhalte</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung von Profilen zur Auswahl personalisierter Inhalte\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa905c8\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung der Werbeleistung</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung der Werbeleistung\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90892\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung der Performance von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung der Performance von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90901\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Analyse von Zielgruppen durch Statistiken oder Kombinationen von Daten aus verschiedenen Quellen\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa9096b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Entwicklung und Verbesserung der Angebote</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Entwicklung und Verbesserung der Angebote\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa909a7\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung reduzierter Daten zur Auswahl von Inhalten</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Verwendung reduzierter Daten zur Auswahl von Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"6527a838c508b006bde6a16f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Einbindung von externen Multimedia-Inhalten<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Einbindung von externen Multimedia-Inhalten\"><span class=\"slider round\"></span></button></div><div id=\"603fad792c5727274aa90a7b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Politische Werbung\"><span class=\"slider round\"></span></button></div><div id=\"699841812f3fd94e3dc9ec0c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Messung Erweiterte Conversions<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span></span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Messung Erweiterte Conversions\"><span class=\"slider round\"></span></button></div><div id=\"659eb076774902059fcac645\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen wir zusammenarbeiten.</div><div tabindex=\"0\" class=\"page-action\">Anbieterübersicht</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Nicht-IAB Verwendungszwecke\">*</span><h2 class=\"custom-header\">Nicht-IAB Verwendungszwecke</h2></div></div></div><div class=\"message-component message-row cl-column cl-mb-24 cl-mt-zero cl-mr-zero cl-ml-zero cl-no-mobile\"><button title=\"Einverstanden\" aria-label=\"Einverstanden\" class=\"message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero cl-mob-mb-48 sp_choice_type_ACCEPT_ALL\">Einverstanden</button></div><div class=\"message-component message-row cl-fixed-section cl-no-desktop\"><button title=\"Einverstanden\" aria-label=\"Einverstanden\" class=\"message-component message-button no-children focusable cl-third-level-button cl-mt-zero cl-mb-zero sp_choice_type_ACCEPT_ALL\">Einverstanden</button></div><button title=\"Button\" aria-label=\"Button\" class=\"message-component message-button no-children focusable cl-button-close sp_choice_type_CANCEL last-focusable-el\">Button</button></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 11815,
+        "cmpType": null,
+        "isIframe": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "timestamp": "2026-08-27T04:12:12.247385",
+  "url": "https://account.microsoft.com",
+  "structured_dom_chars": 112684,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\n  \"Microsoft\": {\n    \"detectors\": [\n      {\n        \"presentMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl\"\n            }\n          }\n        ],\n        \"showingMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl\",\n              \"displayFilter\": true\n            }\n          }\n        ]\n      }\n    ],\n    \"methods\": [\n      {\n        \"name\": \"HIDE_CMP\",\n        \"action\": {\n          \"type\": \"hide\",\n          \"target\": {\n            \"selector\": \"#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl\"\n          }\n        }\n      },\n      {\n        \"name\": \"OPEN_OPTIONS\",\n        \"action\": {\n          \"type\": \"click\",\n          \"parent\": {\n            \"selector\": \"#wcpConsentBannerCtrl\"\n          },\n          \"target\": {\n            \"selector\": \"button\",\n            \"textFilter\": \"Manage cookies\"\n          }\n        }\n      },\n      {\n        \"name\": \"DO_CONSENT\",\n        \"action\": {\n          \"type\": \"list\",\n          \"actions\": [\n            {\n              \"type\": \"waitcss\",\n              \"target\": {\n                \"selector\": \"#wcpCookiePreferenceCtrl dt[aria-label=\\\"Analytics\\\"]\"\n              },\n              \"retries\": 10,\n              \"waitTime\": 250\n            },\n            {\n              \"type\": \"consent\",\n              \"consents\": [\n                {\n                  \"type\": \"B\",\n                  \"trueAction\": {\n                    \"type\": \"click\",\n                    \"parent\": {\n                      \"selector\": \"#wcpCookiePreferenceCtrl\"\n                    },\n                    \"target\": {\n                      \"selector\": \"dt[aria-label=\\\"Analytics\\\"] input[value=\\\"accept\\\"]\"\n                    }\n                  },\n                  \"falseAction\": {\n                    \"type\": \"click\",\n                    \"parent\": {\n                      \"selector\": \"#wcpCookiePreferenceCtrl\"\n                    },\n                    \"target\": {\n                      \"selector\": \"dt[aria-label=\\\"Analytics\\\"] input[value=\\\"reject\\\"]\"\n                    }\n                  }\n                },\n                {\n                  \"type\": \"F\",\n                  \"trueAction\": {\n                    \"type\": \"list\",\n                    \"actions\": [\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \"#wcpCookiePreferenceCtrl\"\n                        },\n                        \"target\": {\n                          \"selector\": \"dt[aria-label=\\\"Social Media\\\"] input[value=\\\"accept\\\"]\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \"#wcpCookiePreferenceCtrl\"\n                        },\n                        \"target\": {\n                          \"selector\": \"dt[aria-label=\\\"Advertising\\\"] input[value=\\\"accept\\\"]\"\n                        }\n                      }\n                    ]\n                  },\n                  \"falseAction\": {\n                    \"type\": \"list\",\n                    \"actions\": [\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \"#wcpCookiePreferenceCtrl\"\n                        },\n                        \"target\": {\n                          \"selector\": \"dt[aria-label=\\\"Social Media\\\"] input[value=\\\"reject\\\"]\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \"#wcpCookiePreferenceCtrl\"\n                        },\n                        \"target\": {\n                          \"selector\": \"dt[aria-label=\\\"Advertising\\\"] input[value=\\\"reject\\\"]\"\n                        }\n                      }\n                    ]\n                  }\n                }\n              ]\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"SAVE_CONSENT\",\n        \"action\": {\n          \"type\": \"list\",\n          \"actions\": [\n            {\n              \"type\": \"wait\",\n              \"waitTime\": 500\n            },\n            {\n              \"type\": \"click\",\n              \"parent\": {\n                \"selector\": \"#wcpCookiePreferenceCtrl\"\n              },\n              \"target\": {\n                \"selector\": \"[aria-label=\\\"Save changes\\\"]\"\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1765 (char 1764)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1882 (char 1881)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1765 (char 1764)"
+  ],
+  "duration_seconds": 348.47,
+  "extraction_duration_seconds": 17.3,
+  "extraction_share_percent": 4.96,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Microsoft": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#wcpConsentBannerCtrl, #wcpCookiePreferenceCtrl"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#wcpConsentBannerCtrl"
+            },
+            "target": {
+              "selector": "button",
+              "textFilter": "Manage cookies"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "waitcss",
+                "target": {
+                  "selector": "#wcpCookiePreferenceCtrl dt[aria-label=\"Analytics\"]"
+                },
+                "retries": 10,
+                "waitTime": 250
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "B",
+                    "trueAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#wcpCookiePreferenceCtrl"
+                      },
+                      "target": {
+                        "selector": "dt[aria-label=\"Analytics\"] input[value=\"accept\"]"
+                      }
+                    },
+                    "falseAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#wcpCookiePreferenceCtrl"
+                      },
+                      "target": {
+                        "selector": "dt[aria-label=\"Analytics\"] input[value=\"reject\"]"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "trueAction": {
+                      "type": "list",
+                      "actions": [
+                        {
+                          "type": "click",
+                          "parent": {
+                            "selector": "#wcpCookiePreferenceCtrl"
+                          },
+                          "target": {
+                            "selector": "dt[aria-label=\"Social Media\"] input[value=\"accept\"]"
+                          }
+                        },
+                        {
+                          "type": "click",
+                          "parent": {
+                            "selector": "#wcpCookiePreferenceCtrl"
+                          },
+                          "target": {
+                            "selector": "dt[aria-label=\"Advertising\"] input[value=\"accept\"]"
+                          }
+                        }
+                      ]
+                    },
+                    "falseAction": {
+                      "type": "list",
+                      "actions": [
+                        {
+                          "type": "click",
+                          "parent": {
+                            "selector": "#wcpCookiePreferenceCtrl"
+                          },
+                          "target": {
+                            "selector": "dt[aria-label=\"Social Media\"] input[value=\"reject\"]"
+                          }
+                        },
+                        {
+                          "type": "click",
+                          "parent": {
+                            "selector": "#wcpCookiePreferenceCtrl"
+                          },
+                          "target": {
+                            "selector": "dt[aria-label=\"Advertising\"] input[value=\"reject\"]"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#wcpCookiePreferenceCtrl"
+                },
+                "target": {
+                  "selector": "[aria-label=\"Save changes\"]"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-08-28T08:29:55.975317",
+  "url": "https://connect.garmin.com",
+  "structured_dom_chars": 17530,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 14,
+  "human_review_count": 0,
+  "test_rule_count": 13,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id^='truste']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id^='truste']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id^='truste']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\", \"iframeFilter\": true}, \"target\": {\"selector\": \"[aria-label='Accept Functional Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\", \"iframeFilter\": true}, \"target\": {\"selector\": \"[aria-label='Refuse Functional Cookies']\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\", \"iframeFilter\": true}, \"target\": {\"selector\": \"[aria-label='Accept Advertising Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\", \"iframeFilter\": true}, \"target\": {\"selector\": \"[aria-label='Refuse Advertising Cookies']\"}}}], \"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\", \"iframeFilter\": true}, \"target\": {\"selector\": \".submit\"}}]}}}}\", \"url\": \"https://connect.garmin.com\"}",
+  "last_error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1471 (char 1470)",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both"
+  ],
+  "duration_seconds": 409.18,
+  "extraction_duration_seconds": 6.72,
+  "extraction_share_percent": 1.64,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id^='truste']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Functional Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Functional Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Advertising Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Advertising Cookies']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": ".trustarc_newcm_container",
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".submit"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

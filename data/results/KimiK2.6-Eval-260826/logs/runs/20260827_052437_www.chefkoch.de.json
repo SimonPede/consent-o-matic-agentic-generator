@@ -1,0 +1,257 @@
+{
+  "timestamp": "2026-08-27T05:24:37.071595",
+  "url": "https://www.chefkoch.de",
+  "structured_dom_chars": 193806,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "consentmanager.net",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\n  \"consentmanager\": {\n    \"detectors\": [\n      {\n        \"presentMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"[id*='cmpbox']\"\n            }\n          }\n        ],\n        \"showingMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"[id*='cmpbox']\",\n              \"displayFilter\": true\n            }\n          }\n        ]\n      }\n    ],\n    \"methods\": [\n      {\n        \"name\": \"HIDE_CMP\",\n        \"action\": {\n          \"type\": \"hide\",\n          \"target\": {\n            \"selector\": \"[id*='cmpbox']\"\n          }\n        }\n      },\n      {\n        \"name\": \"OPEN_OPTIONS\",\n        \"action\": {\n          \"type\": \"click\",\n          \"target\": {\n            \"selector\": \"#cmpwelcomebtncustom a\"\n          }\n        }\n      },\n      {\n        \"name\": \"DO_CONSENT\",\n        \"action\": {\n          \"type\": \"consent\",\n          \"consents\": [\n            {\n              \"type\": \"D\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät']\"\n                }\n              }\n            },\n            {\n              \"type\": \"D\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Verwendung und Weitergabe von Identifiern'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Verwendung und Weitergabe von Identifiern']\"\n                }\n              }\n            },\n            {\n              \"type\": \"A\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Ausspielung von Push-Benachrichtigungen'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Ausspielung von Push-Benachrichtigungen']\"\n                }\n              }\n            },\n            {\n              \"type\": \"A\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Funktionale Verwendungszwecke'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Funktionale Verwendungszwecke']\"\n                }\n              }\n            },\n            {\n              \"type\": \"B\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse, Analytics-Storage und Nutzeransprache'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse, Analytics-Storage und Nutzeransprache']\"\n                }\n              }\n            },\n            {\n              \"type\": \"E\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Anzeige von Drittinhalten (z.B. YouTube-Videos)'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Anzeige von Drittinhalten (z.B. YouTube-Videos)']\"\n                }\n              }\n            },\n            {\n              \"type\": \"F\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten '][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten ']\"\n                }\n              }\n            },\n            {\n              \"type\": \"X\",\n              \"matcher\": {\n                \"type\": \"css\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Generierung einer User-ID auf Basis Ihrer E-Mail Adresse'][aria-checked='true']\"\n                }\n              },\n              \"toggleAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \"[aria-label='Generierung einer User-ID auf Basis Ihrer E-Mail Adresse']\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"SAVE_CONSENT\",\n        \"action\": {\n          \"type\": \"list\",\n          \"actions\": [\n            {\n              \"type\": \"wait\",\n              \"waitTime\": 500\n            },\n            {\n              \"type\": \"ifcss\",\n              \"target\": {\n                \"selector\": \".cmpboxbtnyescustomdisabled\"\n              },\n              \"trueAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \".cmpboxbtnrejectcustomchoices\"\n                }\n              },\n              \"falseAction\": {\n                \"type\": \"click\",\n                \"target\": {\n                  \"selector\": \".cmpboxbtnyescustom\"\n                }\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 278.32,
+  "extraction_duration_seconds": 8.26,
+  "extraction_share_percent": 2.97,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "consentmanager": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cmpbox']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cmpbox']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='cmpbox']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#cmpwelcomebtncustom a"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät']"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Verwendung und Weitergabe von Identifiern'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Verwendung und Weitergabe von Identifiern']"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Ausspielung von Push-Benachrichtigungen'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Ausspielung von Push-Benachrichtigungen']"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Funktionale Verwendungszwecke'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Funktionale Verwendungszwecke']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse, Analytics-Storage und Nutzeransprache'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse, Analytics-Storage und Nutzeransprache']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Anzeige von Drittinhalten (z.B. YouTube-Videos)'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Anzeige von Drittinhalten (z.B. YouTube-Videos)']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten '][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten ']"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Generierung einer User-ID auf Basis Ihrer E-Mail Adresse'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Generierung einer User-ID auf Basis Ihrer E-Mail Adresse']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "ifcss",
+                "target": {
+                  "selector": ".cmpboxbtnyescustomdisabled"
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": ".cmpboxbtnrejectcustomchoices"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": ".cmpboxbtnyescustom"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

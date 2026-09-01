@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-08-27T07:16:17.484892",
+  "url": "https://usercentrics.com/",
+  "structured_dom_chars": 100172,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Usercentrics",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Usercentrics\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#usercentrics-cmp-ui\"}}],\"showingMatcher\":[{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-main-dialog\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-functional-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-functional-toggle\",\"displayFilter\":true}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-marketing-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-marketing-toggle\",\"displayFilter\":true}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle\",\"displayFilter\":true}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"wait\",\"waitTime\":500},{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#save\",\"displayFilter\":true}},{\"type\":\"wait\",\"waitTime\":1000}]}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 447.33,
+  "extraction_duration_seconds": 7.57,
+  "extraction_share_percent": 1.69,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "Usercentrics": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#usercentrics-cmp-ui"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#usercentrics-cmp-ui"
+              },
+              "target": {
+                "selector": "#uc-main-dialog",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-functional-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-functional-toggle",
+                    "displayFilter": true
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-marketing-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-marketing-toggle",
+                    "displayFilter": true
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+                    "displayFilter": true
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 300
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#usercentrics-cmp-ui"
+                },
+                "target": {
+                  "selector": "#save",
+                  "displayFilter": true
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-08-28T07:48:35.148098",
+  "url": "https://www.twitch.tv",
+  "structured_dom_chars": 248028,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 157.1,
+  "extraction_duration_seconds": 15.9,
+  "extraction_share_percent": 10.12,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Twitch": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-a-target='consent-banner']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-a-target='consent-banner']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[data-a-target='consent-banner']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "target": {
+                    "selector": "button[data-a-target='consent-banner-accept']"
+                  }
+                },
+                "falseAction": {
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Reject"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-08-27T16:33:26.951528",
+  "url": "https://www.ea.com/",
+  "structured_dom_chars": 23317,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#truste-consent-content, .truste_box_overlay\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#truste-consent-content, .truste_box_overlay\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#truste-consent-track\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"target\":{\"selector\":\"#truste-show-consent\"}},{\"type\":\"wait\",\"waitTime\":500}]}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Functional Cookies choice'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Functional Cookies choice']\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Targeted Advertising / Do Not Sell or Share My Personal Information choice'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Targeted Advertising / Do Not Sell or Share My Personal Information choice']\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Multimedia Player choice'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label='Multimedia Player choice']\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".submit\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1768 (char 1767)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Extra data: line 1 column 1769 (char 1768)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1768 (char 1767)"
+  ],
+  "duration_seconds": 194.02,
+  "extraction_duration_seconds": 19.68,
+  "extraction_share_percent": 10.14,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-content, .truste_box_overlay"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-content, .truste_box_overlay",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#truste-consent-track"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#truste-show-consent"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Functional Cookies choice'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Functional Cookies choice']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Targeted Advertising / Do Not Sell or Share My Personal Information choice'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Targeted Advertising / Do Not Sell or Share My Personal Information choice']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Multimedia Player choice'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Multimedia Player choice']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": ".trustarc_newcm_container"
+            },
+            "target": {
+              "selector": ".submit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

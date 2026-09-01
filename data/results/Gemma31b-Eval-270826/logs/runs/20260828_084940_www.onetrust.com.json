@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-08-28T08:49:40.597566",
+  "url": "https://www.onetrust.com/",
+  "structured_dom_chars": 187360,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "OneTrust",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"OneTrust\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id*='onetrust']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id*='onetrust']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*='onetrust']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#onetrust-pc-btn-handler\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-3\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-3\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-2\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-2\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-4\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-4\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \".save-preference-btn-handler\"}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 319.87,
+  "extraction_duration_seconds": 7.88,
+  "extraction_share_percent": 2.46,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "OneTrust": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='onetrust']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='onetrust']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='onetrust']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#onetrust-pc-btn-handler"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-3"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-3"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-2"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-2"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-4"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-4"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".save-preference-btn-handler"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-26T23:56:31.961468",
+  "url": "https://www.bbc.co.uk",
+  "structured_dom_chars": 383,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The DOM extraction for https://www.bbc.co.uk returned only `<body>Access denied</body>`, and the visual screenshot analysis also detected no visible cookie banner or interactive consent elements on the initial page load, so no consent interface is detectable.",
+  "abort_reason": "NO_BANNER_DETECTED: The DOM extraction for https://www.bbc.co.uk returned only `<body>Access denied</body>`, and the visual screenshot analysis also detected no visible cookie banner or interactive consent elements on the initial page load, so no consent interface is detectable.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The DOM extraction for https://www.bbc.co.uk returned only `<body>Access denied</body>`, and the visual screenshot analysis also detected no visible cookie banner or interactive consent elements on the initial page load, so no consent interface is detectable.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The DOM extraction for https://www.bbc.co.uk returned only `<body>Access denied</body>`, and the visual screenshot analysis also detected no visible cookie banner or interactive consent elements on the initial page load, so no consent interface is detectable."
+  ],
+  "duration_seconds": 51.46,
+  "extraction_duration_seconds": 18.6,
+  "extraction_share_percent": 36.14,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

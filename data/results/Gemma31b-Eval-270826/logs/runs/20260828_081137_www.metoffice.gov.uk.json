@@ -1,0 +1,631 @@
+{
+  "timestamp": "2026-08-28T08:11:37.609340",
+  "url": "https://www.metoffice.gov.uk",
+  "structured_dom_chars": 308444,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"MetOffice\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#ccc\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#ccc-module\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Store and/or access information on a device\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Store and/or access information on a device\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use limited data to select advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use limited data to select advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Create profiles for personalised advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Create profiles for personalised advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use profiles to select personalised advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use profiles to select personalised advertising\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Measure advertising performance\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Measure advertising performance\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-1\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-1\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-6\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-6\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use precise geolocation data\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use precise geolocation data\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Identify devices based on information actively requested\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Identify devices based on information actively requested\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Create profiles to personalise content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Create profiles to personalise content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use profiles to select personalised content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use profiles to select personalised content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use limited data to select content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Use limited data to select content\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-10\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-10\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Measure content performance\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Measure content performance\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Understand audiences through statistics or combinations of data from different sources\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Understand audiences through statistics or combinations of data from different sources\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Develop and improve services\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".optional-cookie\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Develop and improve services\"}}}, \"target\": {\"selector\": \"input.checkbox-toggle-input\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-7\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-7\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-8\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-8\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#object-purpose-9\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#object-purpose-9\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#ccc-dismiss-button\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#ccc\"}}}]}}",
+  "last_error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+    "Banner not found or matchers failed.",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both"
+  ],
+  "duration_seconds": 1505.6,
+  "extraction_duration_seconds": 15.26,
+  "extraction_share_percent": 1.01,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "MetOffice": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#ccc"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#ccc-module",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Store and/or access information on a device"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Store and/or access information on a device"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use limited data to select advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use limited data to select advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Create profiles for personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Create profiles for personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use profiles to select personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use profiles to select personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Measure advertising performance"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Measure advertising performance"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-1"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-1"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-6"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-6"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use precise geolocation data"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use precise geolocation data"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Identify devices based on information actively requested"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Identify devices based on information actively requested"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Create profiles to personalise content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Create profiles to personalise content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use profiles to select personalised content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use profiles to select personalised content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use limited data to select content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Use limited data to select content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-10"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-10"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Measure content performance"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Measure content performance"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Understand audiences through statistics or combinations of data from different sources"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Understand audiences through statistics or combinations of data from different sources"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Develop and improve services"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".optional-cookie",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Develop and improve services"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input.checkbox-toggle-input"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-7"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-7"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-8"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-8"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#object-purpose-9"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#object-purpose-9"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#ccc-dismiss-button"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#ccc"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

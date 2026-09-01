@@ -1,0 +1,192 @@
+{
+  "timestamp": "2026-08-28T11:36:59.587033",
+  "url": "https://www.termsfeed.com/",
+  "structured_dom_chars": 207859,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TermsFeed\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#termsfeed-pc1-notice-banner\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#termsfeed-pc1-notice-banner\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#termsfeed-pc1-notice-banner\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#termsfeed_privacy_consent_notice_banner_open_privacy_preferences\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#functionality\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"label[for=\\\"functionality\\\"]\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#analytics\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"label[for=\\\"analytics\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#advertising\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"label[for=\\\"advertising\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#marketing\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"label[for=\\\"marketing\\\"]\"}}}, {\"type\": \"X\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tf-pc-auto-dnsmpi\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"label[for=\\\"tf-pc-auto-dnsmpi\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#termsfeed_pc1_preferences_center_save_selection_button\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 284.85,
+  "extraction_duration_seconds": 15.34,
+  "extraction_share_percent": 5.39,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TermsFeed": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#termsfeed_privacy_consent_banner_button_accept_all"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#termsfeed_privacy_consent_banner_button_accept_all"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#termsfeed-pc1-notice-banner"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#termsfeed_privacy_consent_notice_banner_open_privacy_preferences"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#functionality"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "label[for=\"functionality\"]"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#analytics"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "label[for=\"analytics\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#advertising"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "label[for=\"advertising\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#marketing"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "label[for=\"marketing\"]"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tf-pc-auto-dnsmpi"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "label[for=\"tf-pc-auto-dnsmpi\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#termsfeed_pc1_preferences_center_save_selection_button"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-08-27T03:20:52.330214",
+  "url": "https://www.bahn.de",
+  "structured_dom_chars": 192326,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"bahn\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"body > div:first-of-type\"}, \"target\": {\"selector\": \"#consent-layer\"}}], \"showingMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"body > div:first-of-type\"}, \"target\": {\"selector\": \"#consent-layer\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"parent\": {\"selector\": \"body > div:first-of-type\"}, \"target\": {\"selector\": \"#consent-layer\"}}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"body > div:first-of-type\"}, \"target\": {\"selector\": \"button.js-accept-essential-cookies\"}}}]}}",
+  "last_error": "Ruleset structure invalid: 4 validation errors for CoMRule\nbahn.detectors.0.presentMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...r': '#consent-layer'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nbahn.detectors.0.presentMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...tor': '#consent-layer'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nbahn.detectors.0.showingMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...r': '#consent-layer'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nbahn.detectors.0.showingMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...tor': '#consent-layer'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Ruleset structure invalid: 4 validation errors for CoMRule\nbahn.detectors.0.presentMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...r': '#consent-layer'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nbahn.detectors.0.presentMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...tor': '#consent-layer'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nbahn.detectors.0.showingMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...r': '#consent-layer'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nbahn.detectors.0.showingMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...tor': '#consent-layer'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing"
+  ],
+  "duration_seconds": 608.51,
+  "extraction_duration_seconds": 15.5,
+  "extraction_share_percent": 2.55,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "bahn": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "body > div:first-of-type"
+              },
+              "target": {
+                "selector": "#consent-layer"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "body > div:first-of-type"
+              },
+              "target": {
+                "selector": "#consent-layer"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "parent": {
+              "selector": "body > div:first-of-type"
+            },
+            "target": {
+              "selector": "#consent-layer"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "body > div:first-of-type"
+            },
+            "target": {
+              "selector": "button.js-accept-essential-cookies"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

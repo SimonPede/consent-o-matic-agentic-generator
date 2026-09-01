@@ -1,0 +1,160 @@
+{
+  "timestamp": "2026-08-27T05:38:01.265216",
+  "url": "https://kb.synology.com",
+  "structured_dom_chars": 201928,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 1,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"synology\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".syno_cookie_element\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".syno_cookie_element\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".syno_cookie_element\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".scb_btn.btn_option\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": []}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 1000}, {\"type\": \"ifcss\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Reject All\"}}, \"trueAction\": {\"type\": \"click\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Reject All\"}}}, \"falseAction\": {\"type\": \"ifcss\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Reject\"}}, \"trueAction\": {\"type\": \"click\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Reject\"}}}, \"falseAction\": {\"type\": \"ifcss\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Save\"}}, \"trueAction\": {\"type\": \"click\", \"target\": {\"parent\": {\"selector\": \".syno_cookie_element\"}, \"target\": {\"selector\": \"button, a, s-btn, [role='button']\", \"textFilter\": \"Save\"}}}, \"falseAction\": {\"type\": \"wait\", \"waitTime\": 100}}}}]}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: *",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn.btn_reject",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn | Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: *"
+  ],
+  "duration_seconds": 572.14,
+  "extraction_duration_seconds": 20.65,
+  "extraction_share_percent": 3.61,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "synology": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".syno_cookie_element"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".syno_cookie_element",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".syno_cookie_element"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".scb_btn.btn_option"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": []
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 1000
+              },
+              {
+                "type": "ifcss",
+                "target": {
+                  "selector": "button, a, s-btn, [class*='btn']",
+                  "textFilter": "Reject All"
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button, a, s-btn, [class*='btn']",
+                    "textFilter": "Reject All"
+                  }
+                },
+                "falseAction": {
+                  "type": "ifcss",
+                  "target": {
+                    "selector": "button, a, s-btn, [class*='btn']",
+                    "textFilter": "Reject"
+                  },
+                  "trueAction": {
+                    "type": "click",
+                    "target": {
+                      "selector": "button, a, s-btn, [class*='btn']",
+                      "textFilter": "Reject"
+                    }
+                  },
+                  "falseAction": {
+                    "type": "click",
+                    "target": {
+                      "selector": "button, a, s-btn, [class*='btn']",
+                      "textFilter": "Save"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

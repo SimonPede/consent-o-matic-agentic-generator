@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-08-28T04:22:01.025385",
+  "url": "https://www.perplexity.ai",
+  "structured_dom_chars": 42604,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Perplexity\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"div[data-testid='consent-dialog']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"div[data-testid='consent-dialog']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"div[data-testid='consent-dialog']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div.gap-x-2.flex.w-full\"}, \"target\": {\"selector\": \"button\", \"textFilter\": \"Allow all\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div.gap-x-2.flex.w-full\"}, \"target\": {\"selector\": \"button\", \"textFilter\": \"Only necessary\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div.gap-x-2.flex.w-full\"}, \"target\": {\"selector\": \"button\", \"textFilter\": \"Allow all\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div.gap-x-2.flex.w-full\"}, \"target\": {\"selector\": \"button\", \"textFilter\": \"Only necessary\"}}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+  "error_history": [
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 932 (char 931)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button"
+  ],
+  "duration_seconds": 971.6,
+  "extraction_duration_seconds": 94.9,
+  "extraction_share_percent": 9.77,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Perplexity": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "div[data-testid='consent-dialog']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "div[data-testid='consent-dialog']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "div[data-testid='consent-dialog']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div.gap-x-2.flex.w-full"
+                  },
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Allow all"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div.gap-x-2.flex.w-full"
+                  },
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Only necessary"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div.gap-x-2.flex.w-full"
+                  },
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Allow all"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div.gap-x-2.flex.w-full"
+                  },
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Only necessary"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

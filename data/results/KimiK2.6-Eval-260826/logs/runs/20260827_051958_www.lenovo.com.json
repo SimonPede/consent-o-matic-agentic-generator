@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-08-27T05:19:58.716486",
+  "url": "https://www.lenovo.com",
+  "structured_dom_chars": 263177,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Evidon\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#_evidon-barrier-wrapper\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#_evidon-barrier-wrapper\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#_evidon-barrier-wrapper\"}}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"#_evidon-barrier-declinebutton\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #evidon-prefdiag-decline"
+  ],
+  "duration_seconds": 333.51,
+  "extraction_duration_seconds": 16.94,
+  "extraction_share_percent": 5.08,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Evidon": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#_evidon-barrier-wrapper"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#_evidon-barrier-wrapper",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#_evidon-barrier-wrapper"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#_evidon-barrier-declinebutton"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

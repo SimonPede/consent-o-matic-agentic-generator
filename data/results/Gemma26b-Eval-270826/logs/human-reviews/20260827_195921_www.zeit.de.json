@@ -1,0 +1,48 @@
+{
+  "question": "The Agent asks for help. Please give Feedback:",
+  "url": "https://www.zeit.de",
+  "llm_calls": 9,
+  "last_ai_message": "",
+  "last_error": "No rule found in agent message",
+  "rule_draft": {
+    "Sourcepoint": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class*=\"message-container\"]"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".sp_choice_type_REJECT_ALL",
+              "iframeFilter": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

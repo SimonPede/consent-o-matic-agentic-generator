@@ -1,0 +1,533 @@
+{
+  "timestamp": "2026-08-27T06:16:03.385104",
+  "url": "https://www.royalmail.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.royalmail.com"
+  ],
+  "duration_seconds": 15.86,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 7 frames.",
+      "a frame was picked by score: https://www.royalmail.com/ with Score: 49",
+      "Settings match: \"Let me choose\" --> lowered: \"let me choose\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #truste-show-consent, textMatch: Let me choose",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 784748 chars.",
+      "DOM diff: 156626 chars added, 3 inputs added.",
+      "Old state: 100 buttons, 13 inputs.",
+      "New state: 108 buttons, 16 inputs.",
+      "Settings detected: 156626 chars, 3 inputs, 8 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 3 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.royalmail.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://www.royalmail.com/',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div id=\"trustarc-banner-overlay\" class=\"tc-overlay\"></div> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left-2\"> <div class=\"tc-repop-msg tc-hide\"> <i class=\"tc-warning\"></i> <p id=\"truste-repop-msg\"></p> </div> <div id=\"tc-verbiage\"> <p>We use cookies to help give you the best possible experience on our site:<br> 1. “Strictly necessary” cookies are essential in supporting the website and are always on<br> 2. “Functional” cookies boost the website’s performance<br> 3. “Performance” cookies support site performance analysis.<br> 4. “Targeting” cookies help us personalise content and tailor ads for you.</p> <p>By clicking “Accept all” you agree to our use of cookies as detailed in our&nbsp;<a href=\"https://www.royalmail.com/cookies-policy\" target=\"_blank\" id=\"truste-cookie-button\" class=\"truste-cookie-link\">Cookies policy</a>. To enable or disable specific types of cookie, click “Let me choose”.</p> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <i class=\"tc-icon tc-icon-accept\"></i> <span>Accept all</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <i class=\"tc-icon tc-icon-decline\"></i> <span>Decline all</span> </button> <button id=\"truste-show-consent\" class=\"tc-btn-secondary tc-btn-icon\" aria-haspopup=\"dialog\" type=\"button\"> <i class=\"tc-icon tc-icon-more-info\"></i> <span>Let me choose</span> </button> <div id=\"truste-powered-by\" class=\"tc-powered-by\"> <span>Powered by</span> <i class=\"tc-icon tc-ta-icon\" role=\"img\" aria-label=\"TrustArc\"></i> </div> </div> </div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1797,",
+      "      cmpType: null",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://www.royalmail.com/',",
+      "      filteredHtml: '<div id=\"pop-div20758696006366694\" class=\"truste_box_overlay\"><div id=\"pop-div308652868387838571\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame05844559085574906\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-768=\"true\" data-breakpoint-max-width-780=\"true\" data-breakpoint-max-width-991=\"true\" data-breakpoint-min-width-1=\"true\" data-breakpoint-min-width-576=\"true\"><div lang=\"en\"><div role=\"main\" aria-labelledby=\"cookieMainHeader\" class=\"accessibleMainContent\"><div class=\"gdpr_accessible\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader accessibleHeader\" translate=\"no\"><div class=\"title\"><h2><span>Set preferences</span></h2></div><div class=\"mainHeaderContainer\"><div class=\"logo\"></div> <p>We use cookies to help give you the best possible experience on our site. These support site navigation, login, analysis of site performance, personalisation of content and ads, live chat, and shopping baskets features. Some are necessary for our site to function, others are optional but could impact the features we offer.</p> <p>By clicking on the below selectors you can set consent preferences for each category of cookies. Choosing not to enable cookies may impact your experience of the site and the services we are able to offer. To find out more about how we use cookies, visit our&nbsp;<a href=\"https://www.royalmail.com/cookies-policy\" id=\"privacyPolicyAnchor\" target=\"blank\">Cookies policy</a>.</p> </div><button id=\"accept_all_button\">Accept All</button><button id=\"decline_all_button\">Decline All</button></div><div class=\"ta-feedbackMessageContainer\"><div aria-hidden=\"true\" class=\"tc-repop-msg\"></div></div><div class=\"divider\"><hr></div><div class=\"prefPanel gdprAccessiblePrefPanel\"><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Strictly necessary</h2></div><div class=\"gwt-HTML\"><p>Strictly necessary cookies are used to enable the basic functions of this website like security. As these cookies are essential, they cannot be switched off.</p></div></div><div class=\"required-active\"><div class=\"gwt-HTML\"><p>Active</p></div></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Provide secure log-in</p></div><div class=\"gwt-HTML\"><p>Remember how far you are through an order</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Functional</h2></div><div class=\"gwt-HTML\"><p>Functional cookies allow this website to remember the choices you make e.g., your username, log in details, language preferences and any customisations you make to website pages during your visit. They are used to provide features and services specific to individual users.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Functional choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Remember your log-in details</p></div><div class=\"gwt-HTML\"><p>Remember what is in your shopping cart</p></div><div class=\"gwt-HTML\"><p>Make sure the website looks consistent</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable withoptout\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Performance</h2></div><div class=\"gwt-HTML\"><p>Performance cookies allow us to update this website to cater for user preferences and improve performance. They collect information about how this website is used, e.g. which pages users visit most often and where error messages are delivered. These typically collect and process information at an aggregated and often anonymous level.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Performance choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"p-semibold noCookiesTable gdprAccessibleTable\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Targeting or advertising cookies</h2></div><div class=\"gwt-HTML\"><p>These cookies do things like show you content and promotions that are relevant to you while browsing the Royal Mail Group and other websites, allow us to track sites you’ve visited beforehand, and help us assess the effectiveness of our marketing on other websites. It helps to limit the number of times those adverts are served to you and measure the effectiveness of campaigns. Switching off these cookies won’t reduce the number of promotions you see but will mean they are less personalised.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Targeting or advertising cookies choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Allow you to share pages with social networks</p></div><div class=\"gwt-HTML\"><p>Allow you to post comments</p></div><div class=\"gwt-HTML\"><p>Serve ads relevant to your interests</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable withoptout\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div id=\"accessibleDynamicButtons\" class=\"accessibleDynamicButtons\"><div class=\"accessibleGsOptedOutMsg\"></div><div id=\"button-warning-messages\" role=\"alert\" class=\"disabledSubmitMessageAccessible\"><div aria-hidden=\"true\" class=\"warningIconContainer\"></div><div class=\"gwt-HTML\" translate=\"no\"><span class=\"disableSubmitMessage\">Please complete your choices before submitting</span></div></div><button disabled=\"\" class=\"ta-modal-primary-btn accessibleButtonPrimary submitPreferencesButtonLower disable\" translate=\"no\">Saves preferences</button><button class=\"ta-modal-primary-btn accessibleButtonPrimary acceptAllButtonLower\" translate=\"no\">Accept all</button><button class=\"ta-modal-primary-btn accessibleButtonPrimary declineAllButtonLower\" translate=\"no\">Decline all</button></div></div></div><div class=\"footerAccessibleContainer\"><div role=\"contentinfo\" class=\"footerAccessible\"><div class=\"footerLeft\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\">Read our Privacy Policy</a></div><div class=\"footerDivider\"></div><div class=\"footerRight\" translate=\"no\"><div class=\"acccessiblePoweredBy\"> <label>Powered by</label> </div></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 9399,",
+      "      cmpType: null,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.royalmail.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: unknown via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"Cookies policy\" --> selector: #truste-cookie-button",
+      "      [BUTTON] \"Accept all\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Decline all\" --> selector: #truste-consent-required",
+      "      [BUTTON] \"Let me choose\" --> selector: #truste-show-consent",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (8):",
+      "      [A] \"Cookies policy\" --> selector: #pop-frame05844559085574906 >>> #privacyPolicyAnchor",
+      "      [BUTTON] \"View\" --> selector: #pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+      "      [BUTTON] \"View\" --> selector: #pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+      "      [BUTTON] \"View\" --> selector: #pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+      "      [BUTTON] \"View\" --> selector: #pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+      "      [BUTTON] \"Saves preferences\" --> selector: #pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+      "      [BUTTON] \"Accept all\" --> selector: #pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+      "      [BUTTON] \"Decline all\" --> selector: #pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+      "   Checkboxes found (3):",
+      "      \"\" | checked: false | disabled: false --> selector: #pop-frame05844559085574906 >>> input",
+      "      \"\" | checked: false | disabled: false --> selector: #pop-frame05844559085574906 >>> input",
+      "      \"\" | checked: false | disabled: false --> selector: #pop-frame05844559085574906 >>> input",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.royalmail.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookies policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.royalmail.com/cookies-policy",
+              "target": "_blank",
+              "id": "truste-cookie-button",
+              "style": "cursor:pointer;",
+              "class": "truste-cookie-link"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "tc-verbiage",
+                "className": null,
+                "selector": "#tc-verbiage"
+              }
+            },
+            "selector": "#truste-cookie-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "tc-content",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required",
+              "class": "tc-btn-primary tc-btn-icon",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "tc-content",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Let me choose",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-show-consent",
+              "class": "tc-btn-secondary tc-btn-icon",
+              "aria-haspopup": "dialog",
+              "type": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "tc-right",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "tc-content",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-show-consent",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://www.royalmail.com/",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"tc-track tc-hide ta-show ta-display-block\" role=\"banner\"> <div id=\"trustarc-banner-overlay\" class=\"tc-overlay\"></div> <div id=\"truste-consent-content\" class=\"tc-content\"> <div id=\"truste-consent-text\" class=\"tc-left-2\"> <div class=\"tc-repop-msg tc-hide\"> <i class=\"tc-warning\"></i> <p id=\"truste-repop-msg\"></p> </div> <div id=\"tc-verbiage\"> <p>We use cookies to help give you the best possible experience on our site:<br> 1. “Strictly necessary” cookies are essential in supporting the website and are always on<br> 2. “Functional” cookies boost the website’s performance<br> 3. “Performance” cookies support site performance analysis.<br> 4. “Targeting” cookies help us personalise content and tailor ads for you.</p> <p>By clicking “Accept all” you agree to our use of cookies as detailed in our&nbsp;<a href=\"https://www.royalmail.com/cookies-policy\" target=\"_blank\" id=\"truste-cookie-button\" class=\"truste-cookie-link\">Cookies policy</a>. To enable or disable specific types of cookie, click “Let me choose”.</p> </div> </div> <div id=\"truste-consent-buttons\" class=\"tc-right\"> <button id=\"truste-consent-button\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <i class=\"tc-icon tc-icon-accept\"></i> <span>Accept all</span> </button> <button id=\"truste-consent-required\" class=\"tc-btn-primary tc-btn-icon\" type=\"button\"> <i class=\"tc-icon tc-icon-decline\"></i> <span>Decline all</span> </button> <button id=\"truste-show-consent\" class=\"tc-btn-secondary tc-btn-icon\" aria-haspopup=\"dialog\" type=\"button\"> <i class=\"tc-icon tc-icon-more-info\"></i> <span>Let me choose</span> </button> <div id=\"truste-powered-by\" class=\"tc-powered-by\"> <span>Powered by</span> <i class=\"tc-icon tc-ta-icon\" role=\"img\" aria-label=\"TrustArc\"></i> </div> </div> </div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1797,
+        "cmpType": null
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookies policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.royalmail.com/cookies-policy",
+              "id": "privacyPolicyAnchor",
+              "target": "blank"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mainHeaderContainer",
+                "selector": ".mainHeaderContainer"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> #privacyPolicyAnchor",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "accordion",
+              "style": "pointer-events: auto; visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "categoryPanelAccessible",
+              "selector": ".categoryPanelAccessible",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "prefPanel gdprAccessiblePrefPanel",
+                "selector": ".prefPanel"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "accordion",
+              "style": "pointer-events: auto; visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "categoryPanelAccessible",
+              "selector": ".categoryPanelAccessible",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "prefPanel gdprAccessiblePrefPanel",
+                "selector": ".prefPanel"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "accordion",
+              "style": "pointer-events: auto; visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "categoryPanelAccessible",
+              "selector": ".categoryPanelAccessible",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "prefPanel gdprAccessiblePrefPanel",
+                "selector": ".prefPanel"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "accordion",
+              "style": "pointer-events: auto; visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "categoryPanelAccessible",
+              "selector": ".categoryPanelAccessible",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "prefPanel gdprAccessiblePrefPanel",
+                "selector": ".prefPanel"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Saves preferences",
+            "tag": "BUTTON",
+            "attributes": {
+              "disabled": "",
+              "class": "ta-modal-primary-btn accessibleButtonPrimary submitPreferencesButtonLower disable",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "accessibleDynamicButtons",
+              "className": "accessibleDynamicButtons",
+              "selector": "#accessibleDynamicButtons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr_accessible",
+                "selector": ".gdpr_accessible"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "ta-modal-primary-btn accessibleButtonPrimary acceptAllButtonLower",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "accessibleDynamicButtons",
+              "className": "accessibleDynamicButtons",
+              "selector": "#accessibleDynamicButtons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr_accessible",
+                "selector": ".gdpr_accessible"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline all",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "ta-modal-primary-btn accessibleButtonPrimary declineAllButtonLower",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "accessibleDynamicButtons",
+              "className": "accessibleDynamicButtons",
+              "selector": "#accessibleDynamicButtons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr_accessible",
+                "selector": ".gdpr_accessible"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> .ta-modal-primary-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "truste-switch",
+              "selector": ".truste-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-switch-wrapper",
+                "selector": ".truste-switch-wrapper"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> input",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "truste-switch",
+              "selector": ".truste-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-switch-wrapper",
+                "selector": ".truste-switch-wrapper"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> input",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "truste-switch",
+              "selector": ".truste-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-switch-wrapper",
+                "selector": ".truste-switch-wrapper"
+              }
+            },
+            "selector": "#pop-frame05844559085574906 >>> input",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://www.royalmail.com/",
+        "filteredHtml": "<div id=\"pop-div20758696006366694\" class=\"truste_box_overlay\"><div id=\"pop-div308652868387838571\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame05844559085574906\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-768=\"true\" data-breakpoint-max-width-780=\"true\" data-breakpoint-max-width-991=\"true\" data-breakpoint-min-width-1=\"true\" data-breakpoint-min-width-576=\"true\"><div lang=\"en\"><div role=\"main\" aria-labelledby=\"cookieMainHeader\" class=\"accessibleMainContent\"><div class=\"gdpr_accessible\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader accessibleHeader\" translate=\"no\"><div class=\"title\"><h2><span>Set preferences</span></h2></div><div class=\"mainHeaderContainer\"><div class=\"logo\"></div> <p>We use cookies to help give you the best possible experience on our site. These support site navigation, login, analysis of site performance, personalisation of content and ads, live chat, and shopping baskets features. Some are necessary for our site to function, others are optional but could impact the features we offer.</p> <p>By clicking on the below selectors you can set consent preferences for each category of cookies. Choosing not to enable cookies may impact your experience of the site and the services we are able to offer. To find out more about how we use cookies, visit our&nbsp;<a href=\"https://www.royalmail.com/cookies-policy\" id=\"privacyPolicyAnchor\" target=\"blank\">Cookies policy</a>.</p> </div><button id=\"accept_all_button\">Accept All</button><button id=\"decline_all_button\">Decline All</button></div><div class=\"ta-feedbackMessageContainer\"><div aria-hidden=\"true\" class=\"tc-repop-msg\"></div></div><div class=\"divider\"><hr></div><div class=\"prefPanel gdprAccessiblePrefPanel\"><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Strictly necessary</h2></div><div class=\"gwt-HTML\"><p>Strictly necessary cookies are used to enable the basic functions of this website like security. As these cookies are essential, they cannot be switched off.</p></div></div><div class=\"required-active\"><div class=\"gwt-HTML\"><p>Active</p></div></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Provide secure log-in</p></div><div class=\"gwt-HTML\"><p>Remember how far you are through an order</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Functional</h2></div><div class=\"gwt-HTML\"><p>Functional cookies allow this website to remember the choices you make e.g., your username, log in details, language preferences and any customisations you make to website pages during your visit. They are used to provide features and services specific to individual users.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Functional choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Remember your log-in details</p></div><div class=\"gwt-HTML\"><p>Remember what is in your shopping cart</p></div><div class=\"gwt-HTML\"><p>Make sure the website looks consistent</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable withoptout\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Performance</h2></div><div class=\"gwt-HTML\"><p>Performance cookies allow us to update this website to cater for user preferences and improve performance. They collect information about how this website is used, e.g. which pages users visit most often and where error messages are delivered. These typically collect and process information at an aggregated and often anonymous level.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Performance choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"p-semibold noCookiesTable gdprAccessibleTable\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"divider\"><hr></div><div class=\"categoryPanelAccessible\"><div class=\"catDivContainer\"><div class=\"categoryDivContent\"><div class=\"gwt-HTML accessibleCategoryHeadingName\"><h2 translate=\"no\">Targeting or advertising cookies</h2></div><div class=\"gwt-HTML\"><p>These cookies do things like show you content and promotions that are relevant to you while browsing the Royal Mail Group and other websites, allow us to track sites you’ve visited beforehand, and help us assess the effectiveness of our marketing on other websites. It helps to limit the number of times those adverts are served to you and measure the effectiveness of campaigns. Switching off these cookies won’t reduce the number of promotions you see but will mean they are less personalised.</p></div></div><div class=\"truste-switch-wrapper\"><span class=\"truste-switch-label\" translate=\"no\"><div class=\"ta-switch\"></div></span><label aria-label=\"Targeting or advertising cookies choice\" class=\"truste-switch\"><input type=\"checkbox\"><span class=\"truste-slider round\"></span></label></div></div><button type=\"button\" aria-label=\"View\" aria-expanded=\"false\" class=\"accordion\"><div class=\"gwt-HTML\" translate=\"no\">See more detailed preferences</div></button><div aria-hidden=\"true\" class=\"accordionContentContainer\"><div class=\"prefPanel\"><div class=\"examplePurposes pbold\"><div class=\"gwt-HTML\"><p>Example Purposes</p></div></div><div class=\"categoryDetailsList\"><div class=\"gwt-HTML\"><p>Allow you to share pages with social networks</p></div><div class=\"gwt-HTML\"><p>Allow you to post comments</p></div><div class=\"gwt-HTML\"><p>Serve ads relevant to your interests</p></div></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table init=\"true\" class=\"gdprAccessibleTable withoptout\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div id=\"accessibleDynamicButtons\" class=\"accessibleDynamicButtons\"><div class=\"accessibleGsOptedOutMsg\"></div><div id=\"button-warning-messages\" role=\"alert\" class=\"disabledSubmitMessageAccessible\"><div aria-hidden=\"true\" class=\"warningIconContainer\"></div><div class=\"gwt-HTML\" translate=\"no\"><span class=\"disableSubmitMessage\">Please complete your choices before submitting</span></div></div><button disabled=\"\" class=\"ta-modal-primary-btn accessibleButtonPrimary submitPreferencesButtonLower disable\" translate=\"no\">Saves preferences</button><button class=\"ta-modal-primary-btn accessibleButtonPrimary acceptAllButtonLower\" translate=\"no\">Accept all</button><button class=\"ta-modal-primary-btn accessibleButtonPrimary declineAllButtonLower\" translate=\"no\">Decline all</button></div></div></div><div class=\"footerAccessibleContainer\"><div role=\"contentinfo\" class=\"footerAccessible\"><div class=\"footerLeft\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\">Read our Privacy Policy</a></div><div class=\"footerDivider\"></div><div class=\"footerRight\" translate=\"no\"><div class=\"acccessiblePoweredBy\"> <label>Powered by</label> </div></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 9399,
+        "cmpType": null,
+        "isIframe": false
+      }
+    }
+  ]
+}

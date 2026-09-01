@@ -1,0 +1,248 @@
+{
+  "timestamp": "2026-08-28T00:27:14.851542",
+  "url": "https://www.nike.com",
+  "structured_dom_chars": 200709,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Nike\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[data-testid='cookie-modal-root']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Performance & analytics\"}}}, \"target\": {\"selector\": \"input[value='true']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Performance & analytics\"}}}, \"target\": {\"selector\": \"input[value='false']\"}}}, {\"type\": \"E\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Personalised experiences\"}}}, \"target\": {\"selector\": \"input[value='true']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Personalised experiences\"}}}, \"target\": {\"selector\": \"input[value='false']\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Personalised advertising\"}}}, \"target\": {\"selector\": \"input[value='true']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Personalised advertising\"}}}, \"target\": {\"selector\": \"input[value='false']\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Profile-based personalised advertising\"}}}, \"target\": {\"selector\": \"input[value='true']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"fieldset\", \"childFilter\": {\"target\": {\"selector\": \"h3\", \"textFilter\": \"Profile-based personalised advertising\"}}}, \"target\": {\"selector\": \"input[value='false']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[data-testid='confirm-choice-button']\"}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 719.84,
+  "extraction_duration_seconds": 182.2,
+  "extraction_share_percent": 25.31,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Nike": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[data-testid='cookie-modal-root']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[data-testid='cookie-modal-root']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[data-testid='cookie-modal-root']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Performance & analytics"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='true']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Performance & analytics"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='false']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Personalised experiences"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='true']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Personalised experiences"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='false']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='true']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='false']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Profile-based personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='true']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "fieldset",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h3",
+                        "textFilter": "Profile-based personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "input[value='false']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[data-testid='confirm-choice-button']"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

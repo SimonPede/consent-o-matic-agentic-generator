@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-08-28T04:52:02.300142",
+  "url": "https://www.svtplay.se",
+  "structured_dom_chars": 5232,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 11,
+  "human_review_count": 0,
+  "test_rule_count": 7,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Sourcepoint\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[role='dialog']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[role='dialog']\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[role='dialog']\"}}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"TILL \\u00c5T N\\u00d6VD\\u00c4NIGA\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Likely repeated selector failure without progress (possible inaccessible iframe/shadow DOM or wrong execution context).",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 181 (char 180)",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .ch2-deny-all-btn",
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button"
+  ],
+  "duration_seconds": 1800.1,
+  "extraction_duration_seconds": 71.2,
+  "extraction_share_percent": 3.96,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

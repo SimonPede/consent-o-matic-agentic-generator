@@ -1,0 +1,150 @@
+{
+  "timestamp": "2026-08-27T04:20:14.798497",
+  "url": "https://www.mediamarkt.de",
+  "structured_dom_chars": 94638,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"MediaMarkt\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#pwa-consent-layer-form\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#pwa-consent-layer-form\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"target\":{\"selector\":\"#comfort\"}},{\"type\":\"click\",\"target\":{\"selector\":\"#marketing\"}}]}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-category-Komfort[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-category-Komfort\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-category-Marketing[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-category-Marketing\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"#pwa-consent-layer-deny-all-button\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 902 (char 901)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 902 (char 901)"
+  ],
+  "duration_seconds": 249.77,
+  "extraction_duration_seconds": 26.28,
+  "extraction_share_percent": 10.52,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "MediaMarkt": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#pwa-consent-layer-form"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#pwa-consent-layer-form",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#comfort"
+                }
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#marketing"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-category-Komfort[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-category-Komfort"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-category-Marketing[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-category-Marketing"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#pwa-consent-layer-deny-all-button"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

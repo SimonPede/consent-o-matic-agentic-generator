@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T05:25:53.420806",
+  "url": "https://www.patreon.com",
+  "structured_dom_chars": 84268,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The extracted DOM for patreon.com contains no cookie consent buttons, checkboxes, toggles, or CMP container in either the structured elements or the filtered HTML.",
+  "abort_reason": "NO_BANNER_DETECTED: The extracted DOM for patreon.com contains no cookie consent buttons, checkboxes, toggles, or CMP container in either the structured elements or the filtered HTML.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The extracted DOM for patreon.com contains no cookie consent buttons, checkboxes, toggles, or CMP container in either the structured elements or the filtered HTML.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The extracted DOM for patreon.com contains no cookie consent buttons, checkboxes, toggles, or CMP container in either the structured elements or the filtered HTML."
+  ],
+  "duration_seconds": 31.44,
+  "extraction_duration_seconds": 23.57,
+  "extraction_share_percent": 74.97,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

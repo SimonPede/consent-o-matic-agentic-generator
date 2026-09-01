@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-08-28T07:56:57.705167",
+  "url": "https://kb.synology.com",
+  "structured_dom_chars": 201928,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"synology\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".scb_header\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".scb_header\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".scb_header\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \".scb_btn_accept\"}}}]}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn_reject",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .scb_btn"
+  ],
+  "duration_seconds": 501.99,
+  "extraction_duration_seconds": 20.68,
+  "extraction_share_percent": 4.12,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "synology": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".scb_header"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".scb_header"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".scb_header"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": ".scb_btn_accept"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

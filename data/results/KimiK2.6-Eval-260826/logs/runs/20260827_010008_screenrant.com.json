@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-08-27T01:00:08.468626",
+  "url": "https://screenrant.com",
+  "structured_dom_chars": 308178,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 6,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\n  \"Consentmanager\": {\n    \"detectors\": [\n      {\n        \"presentMatcher\": [\n          {\n            \"type\": \"css\",\n            \"parent\": {\n              \"selector\": \"#cmpwrapper\"\n            },\n            \"target\": {\n              \"selector\": \"#cmpbox\"\n            }\n          }\n        ],\n        \"showingMatcher\": [\n          {\n            \"type\": \"css\",\n            \"parent\": {\n              \"selector\": \"#cmpwrapper\"\n            },\n            \"target\": {\n              \"selector\": \"#cmpbox\",\n              \"displayFilter\": true\n            }\n          }\n        ]\n      }\n    ],\n    \"methods\": [\n      {\n        \"name\": \"HIDE_CMP\",\n        \"action\": {\n          \"type\": \"hide\",\n          \"target\": {\n            \"selector\": \"#cmpwrapper\"\n          }\n        }\n      },\n      {\n        \"name\": \"OPEN_OPTIONS\",\n        \"action\": {\n          \"type\": \"click\",\n          \"parent\": {\n            \"selector\": \"#cmpwrapper\"\n          },\n          \"target\": {\n            \"selector\": \".cmpboxbtncustom\",\n            \"textFilter\": \"Settings\"\n          }\n        }\n      },\n      {\n        \"name\": \"SAVE_CONSENT\",\n        \"action\": {\n          \"type\": \"list\",\n          \"actions\": [\n            {\n              \"type\": \"wait\",\n              \"waitTime\": 500\n            },\n            {\n              \"type\": \"click\",\n              \"parent\": {\n                \"selector\": \"#cmpwrapper\"\n              },\n              \"target\": {\n                \"selector\": \".cmpboxbtn\",\n                \"textFilter\": \"Save + Exit\"\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnsave",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 536 (char 535)",
+    "Ruleset structure invalid: 4 validation errors for CoMRule\nConsentmanager.detectors.0.presentMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...selector': '#cmpbox'}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nConsentmanager.detectors.0.presentMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '...{'selector': '#cmpbox'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nConsentmanager.detectors.0.showingMatcher.Matcher\n  Input should be a valid dictionary or instance of Matcher [type=model_type, input_value=[{'type': 'css', 'target'...displayFilter': True}}}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nConsentmanager.detectors.0.showingMatcher.list[Matcher].0.target.selector\n  Field required [type=missing, input_value={'parent': {'selector': '... 'displayFilter': True}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnsave"
+  ],
+  "duration_seconds": 688.48,
+  "extraction_duration_seconds": 16.16,
+  "extraction_share_percent": 2.35,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Consentmanager": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#cmpwrapper"
+              },
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#cmpwrapper"
+              },
+              "target": {
+                "selector": "#cmpbox",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtncustom",
+              "textFilter": "Settings"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": ".cmpboxbtn",
+                  "textFilter": "Save + Exit"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

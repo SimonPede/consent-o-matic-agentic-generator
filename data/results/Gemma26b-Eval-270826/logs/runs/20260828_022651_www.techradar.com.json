@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-08-28T02:26:51.982061",
+  "url": "https://www.techradar.com",
+  "structured_dom_chars": 70373,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Sourcepoint\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\"}}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"REJECT ALL\\\"]\", \"iframeFilter\": true}}}]}}",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint interface only presents \"Agree\" and \"More Options\" buttons, and lacks an explicit \"Reject All\" or \"Decline\" action; although a \"REJECT ALL\" button exists in the settings view, the Sourcepoint-specific rule prohibits navigating to the nested settings if the first layer lacks a reject option.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint interface only presents \"Agree\" and \"More Options\" buttons, and lacks an explicit \"Reject All\" or \"Decline\" action; although a \"REJECT ALL\" button exists in the settings view, the Sourcepoint-specific rule prohibits navigating to the nested settings if the first layer lacks a reject option.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The primary layer of the Sourcepoint interface only presents \"Agree\" and \"More Options\" buttons, and lacks an explicit \"Reject All\" or \"Decline\" action; although a \"REJECT ALL\" button exists in the settings view, the Sourcepoint-specific rule prohibits navigating to the nested settings if the first layer lacks a reject option.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"REJECT ALL\"]",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"REJECT ALL\"]",
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint interface only presents \"Agree\" and \"More Options\" buttons, and lacks an explicit \"Reject All\" or \"Decline\" action; although a \"REJECT ALL\" button exists in the settings view, the Sourcepoint-specific rule prohibits navigating to the nested settings if the first layer lacks a reject option."
+  ],
+  "duration_seconds": 124.4,
+  "extraction_duration_seconds": 7.82,
+  "extraction_share_percent": 6.29,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

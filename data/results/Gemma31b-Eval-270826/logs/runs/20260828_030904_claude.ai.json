@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-08-28T03:09:04.925278",
+  "url": "https://claude.ai",
+  "structured_dom_chars": 20536,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Anthropic_Custom",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 16,
+  "human_review_count": 0,
+  "test_rule_count": 15,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Anthropic_Custom\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"[data-testid='consent-banner']\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"[data-testid='consent-banner']\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"[data-testid='consent-customize']\"}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"[data-testid='consent-option-analytics']\"},\"target\":{\"selector\":\"[role='switch'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"[data-testid='consent-option-analytics']\"},\"target\":{\"selector\":\"[role='switch']\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"[data-testid='consent-option-marketing']\"},\"target\":{\"selector\":\"[role='switch'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"[data-testid='consent-option-marketing']\"},\"target\":{\"selector\":\"[role='switch']\"}}}], \"name\":\"SAVE_CONSENT\", \"action\":{\"type\":\"click\",\"target\":{\"selector\":\"[data-testid='consent-save']\"}}}, {\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"[data-testid='consent-banner']\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1124 (char 1123)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1124 (char 1123)",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1336 (char 1335)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1200 (char 1199)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1124 (char 1123)"
+  ],
+  "duration_seconds": 543.67,
+  "extraction_duration_seconds": 130.32,
+  "extraction_share_percent": 23.97,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Anthropic_Custom": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[data-testid='consent-banner']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[data-testid='consent-banner']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-testid='consent-customize']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "[data-testid='consent-option-analytics']"
+                  },
+                  "target": {
+                    "selector": "[role='switch'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "[data-testid='consent-option-analytics']"
+                  },
+                  "target": {
+                    "selector": "[role='switch']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "[data-testid='consent-option-marketing']"
+                  },
+                  "target": {
+                    "selector": "[role='switch'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "[data-testid='consent-option-marketing']"
+                  },
+                  "target": {
+                    "selector": "[role='switch']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-testid='consent-save']"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[data-testid='consent-banner']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

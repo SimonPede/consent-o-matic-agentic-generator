@@ -1,0 +1,368 @@
+{
+  "timestamp": "2026-08-27T03:42:26.788902",
+  "url": "https://www.etsy.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.etsy.com"
+  ],
+  "duration_seconds": 32.95,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 3 frames.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Regex failed in frame https://www.etsy.com/, trying LLM fallback...",
+      "Regex failed in frame https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd, trying LLM fallback...",
+      "Regex failed in frame about:srcdoc, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.etsy.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.etsy.com/',",
+      "      filteredHtml: '<body><iframe src=\"https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&amp;hash=D013AA612AB2224D03B2318D0F5B19&amp;cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&amp;t=fe&amp;referer=https%3A%2F%2Fwww.etsy.com%2F&amp;s=45225&amp;e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&amp;dm=cd\" sandbox=\"allow-scripts allow-same-origin allow-forms\" allow=\"accelerometer; gyroscope; magnetometer\" title=\"DataDome CAPTCHA\" width=\"100%\" height=\"100%\" frameborder=\"0\" border=\"0\" scrolling=\"yes\"></iframe></body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 675",
+      "    },",
+      "    settings: null",
+      "  },",
+      "  {",
+      "    frameUrl: 'https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd',",
+      "      filteredHtml: '<body class=\"dd-response-page--captcha\" data-dd-response-page=\"captcha\"> <div id=\"captcha-container\" class=\"captcha\" data-dd-captcha-c> <div id=\"analyticsCaptchaPassed\" data-analytics-captcha-passed=\"false\"></div> <div class=\"captcha__header\" data-dd-captcha-header=\"\"> <div class=\"captcha__header__container\" data-dd-captcha-header-c> <div class=\"captcha__header__logo-wrapper\" data-dd-captcha-header-logo-wrapper=\"\"> </div> </div> </div> <div class=\"captcha__human\" data-dd-captcha-human=\"\"> <div class=\"captcha__human__container\" data-dd-captcha-human-c> <p class=\"captcha__human__title\" data-dd-captcha-human-title=\"\"> Verification Required </p> <p class=\"captcha__human__not_accessible_text visually-hidden\" tabindex=\"0\" data-dd-captcha-not-accessible=\"\">The visual verification might not be accessible to you. We recommend you to use the audio verification instead. Important: after clicking play, you will hear 6 digits. Please wait until the audio finishes before typing or interacting with the page.</p> <div class=\"captcha__human__captcha-container\" data-dd-captcha-human-captcha-c> </div> </div> </div> <div id=\"ddv1-captcha-container\" class=\"captcha__ddv1\" data-dd-ddv1-captcha-c> <div id=\"captcha__frame\" class=\"simple\"><div id=\"captcha__frame__top\"><div id=\"captcha__switch\"><button id=\"captcha__puzzle__button\" class=\"captcha-buttons captcha-toggle push-button toggled\" aria-expanded=\"true\" title=\"Switch to the visual verification\"></button><button id=\"captcha__audio__button\" class=\"captcha-buttons captcha-toggle push-button\" title=\"Switch to the audio verification\"></button></div><button id=\"captcha__reload__button\" class=\"captcha-buttons\" title=\"Reload the verification\"></button></div><div id=\"captcha__element\"><div id=\"captcha__puzzle\" class=\"toggled\"><canvas width=\"280\" height=\"0\" aria-hidden=\"true\"></canvas><canvas width=\"280\" height=\"0\" aria-hidden=\"true\" class=\"block\"></canvas><div class=\"toast\" role=\"status\"></div><div class=\"toast-mask\"></div></div><div class=\"toggled\" id=\"captcha__frame__bottom\"><div class=\"sliderText\"><p class=\"no-margin\">Slide right to secure your access</p></div><div class=\"sliderContainer\"><div class=\"sliderbg\"></div><div class=\"sliderMask\"></div><div class=\"sliderTarget\"><i class=\"sliderTargetIcon\" aria-hidden=\"true\"></i></div><div class=\"slider\"><i class=\"sliderIcon\" aria-hidden=\"true\"></i></div></div></div><div id=\"captcha__audio\"><p class=\"audio-captcha-instructions no-margin\">Please type the numbers you hear.</p><div class=\"audio-captcha-play-container\"><button class=\"audio-captcha-play-button push-button\" name=\"Listen to the numbers to write\" title=\"Listen to the numbers to write\"><div class=\"audio-captcha-play-background\"></div><span class=\"audio-captcha-play-button-content\"></span></button></div><audio class=\"audio-captcha-track\" src=\"https://dd.prod.captcha-delivery.com/audio/2026-08-27/en/f023e72ad822a9d68e066a1da3c4b112.wav\" preload=\"none\"></audio><div class=\"audio-captcha-input-container\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"0\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 1 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"1\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 2 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"2\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 3 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"3\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 4 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"4\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 5 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"5\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 6 out of 6\"></div><div class=\"audio-captcha-verify-button-container\"><p class=\"audio-captcha-verify-button\" role=\"status\"></p></div><div class=\"audio-captcha-submit-container\"><button class=\"audio-captcha-submit-button push-button no-margin\" disabled=\"disabled\" role=\"button\">Verify</button></div></div></div><div id=\"captcha__offline\">No Internet access</div></div></div> <div class=\"captcha__robot\" data-dd-captcha-robot=\"\"> <div class=\"captcha__robot__container\" data-dd-captcha-robot-c> <div class=\"captcha__robot__warning\" data-dd-captcha-robot-warning=\"\"> <p class=\"captcha__robot__warning__why\"> Why is this step needed? </p> <p class=\"captcha__robot__warning__explain\"> We detected unusual activity from your device or network. Reasons may include: </p> <ul> <li> Rapid taps or clicks </li> <li> JavaScript disabled or not working</li> <li> Automated (bot) activity on your network (IP 87.104.43.11)</li> <li> Use of developer or inspection tools </li> </ul> </div> <div class=\"captcha__robot__contact_support\" data-dd-captcha-robot-contact-support=\"\"> <p class=\"captcha__robot__contact_support_desc no-margin\" data-dd-captcha-robot-contact-support-desc=\"\"> Need help? <button type=\"button\" id=\"show-human-auth\" class=\"captcha__contact_support__submit\" aria-expanded=\"false\" aria-c data-dd-captcha-contact-support-submit=\"\"> Submit feedback. </button> </p> <p id=\"show-human-requestId\" class=\"captcha__robot__contact_support_request_id\" data-dd-request-id=\"\">ID: 07a6dd18-f085-fa3e-fdc4-3e90fd0fe252</p> </div> <div id=\"human-contact-form-wrapper\" class=\"captcha__contact_support hidden not-displayed\" data-dd-captcha-contact-support=\"\"> <form id=\"human-contact-form\" class=\"captcha__contact_form\" method=\"post\" data-dd-captcha-contact-form=\"\" action=\"/contact-human?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&amp;hash=D013AA612AB2224D03B2318D0F5B19&amp;cid=fAFFEPIGpxTAXL5kzemn1ZN_bDPV5fJ9qwMegFreZDEgy_9RV%7Edkkp592wgy6pVvBl5mdmOYn9bY16XXXSyBp51fG3lrjShqmCnt_usRr3_3cLBKuH3dGJMV3umz4C_i\"> <input data-dd-input-document-referer=\"\" type=\"hidden\" id=\"document_referer\" class=\"captcha__contact_form_input\" name=\"document_referer\" value=\" https://www.etsy.com/ \"> <input data-dd-input-captcha-hash=\"\" type=\"hidden\" id=\"captcha_hash\" class=\"captcha__contact_form_input\" name=\"captcha_hash\" value=\"m0WNSnNbxMRJNlXHetRJoXxCv5hehwWhtNJBqNmFkIqwvryVdYuQyRMYT74drF6pjkuUFyUnviaG+TdqeU+czz6B/FpJjIuRW4Pww2k8G7DIsYo5WNanL8nYzarb5JZQV5RfYaUPjyGno6SlVBR4AuSGYwreC5UmscuTT4w9HrKrwgOptT7JDptpfzafUGF+\"> <input data-dd-input-tpl-version=\"\" type=\"hidden\" id=\"tpl_version\" class=\"captcha__contact_form_input\" name=\"tpl_version\" value=\"3\"> <input data-dd-input-captcha-request-id=\"\" type=\"hidden\" id=\"captcha_request_id\" class=\"captcha__contact_form_input\" name=\"captcha_request_id\" value=\"07a6dd18-f085-fa3e-fdc4-3e90fd0fe252\"> <input data-dd-input-user-env=\"\" type=\"hidden\" id=\"user_env\" class=\"captcha__contact_form_input\" name=\"user_env\" value=\"2608a96ff1eec3537e9c71555c05a9cb983853191563e8849d0f8d08d0cc0e522cb4c461c2ae7f9a7f0d5cf77f09cf8f\"> <input data-dd-input-dm=\"\" type=\"hidden\" id=\"dm\" class=\"captcha__contact_form_input\" name=\"dm\" value=\"cd\"> <fieldset class=\"captcha_contact__radio-container\" data-dd-captcha-contact-radio-c> <legend data-dd-c class=\"contact__label\">Reason for contacting us (required):</legend> <div class=\"captcha__contact__radio\" data-dd-captcha-contact-radio=\"\"> <label class=\"captcha__contact__radio__label\" for=\"input_recaptcha_cannot_pass_challenge\" data-dd-captcha-contact-radio-label=\"\"> <input class=\"captcha__contact__radio__input\" data-dd-captcha-contact-radio-input=\"\" required=\"\" id=\"input_recaptcha_cannot_pass_challenge\" name=\"human-reason\" type=\"radio\" value=\"recaptcha_cannot_pass_challenge\"> No success after multiple attempts </label> </div> <div class=\"captcha__contact__radio\" data-dd-captcha-contact-radio=\"\"> <label class=\"captcha__contact__radio__label\" for=\"input_other\" data-dd-captcha-contact-radio-label=\"\"> <input class=\"captcha__contact__radio__input\" data-dd-captcha-contact-radio-input=\"\" required=\"\" id=\"input_other\" name=\"human-reason\" type=\"radio\" value=\"other\"> Other </label> </div> <div class=\"captcha__contact__input-container\" data-dd-captcha-contact-input-c> <textarea data-dd-captcha-contact-input=\"\" rows=\"4\" id=\"human-comment\" name=\"human-comment\" class=\"captcha__contact__input\" placeholder=\"Comment\" title=\"Comment \"></textarea> </div> </fieldset> <button id=\"human-contact-form-submit\" type=\"submit\" class=\"captcha__contact__submit\" data-dd-captcha-contact-submit=\"\"> Send </button> </form> <div data-dd-human-contact-form-submit-success=\"\" id=\"human-contact-form-submit-success\" class=\"captcha__contact_support_success\" role=\"status\"><p class=\"no-margin\">Your message has been sent.</p></div> <div data-dd-human-contact-form-submit-failure=\"\" id=\"human-contact-form-submit-failure\" class=\"captcha__contact_support_failure\" role=\"alert\"><p class=\"no-margin\">An error has occurred...</p></div> </div> </div> </div> <div class=\"captcha__footer\" data-dd-captcha-footer=\"\"> <div class=\"captcha__footer__container\" data-dd-captcha-footer-c> </div> </div> </div> </body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 9169",
+      "    },",
+      "    settings: null",
+      "  },",
+      "  {",
+      "    frameUrl: 'about:srcdoc',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'about:srcdoc',",
+      "      filteredHtml: '<body>/**/</body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 17",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.etsy.com/",
+      "   isMainFrame: true | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (0):",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "Frame: https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd",
+      "   isMainFrame: false | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (4):",
+      "      [BUTTON] \"Switch to the visual verification\" --> selector: #captcha__puzzle__button",
+      "      [BUTTON] \"Switch to the audio verification\" --> selector: #captcha__audio__button",
+      "      [BUTTON] \"Reload the verification\" --> selector: #captcha__reload__button",
+      "      [BUTTON] \"Submit feedback.\" --> selector: #show-human-auth",
+      "   Checkboxes found (0):",
+      "  Toggles found (3):",
+      "      \"\" | aria-checked: null --> selector: #captcha__puzzle__button",
+      "      \"\" | aria-checked: null --> selector: #captcha__audio__button",
+      "      \"Slide right to secure your access\" | aria-checked: null --> selector: #captcha__frame__bottom",
+      "   No settings page found",
+      "Frame: about:srcdoc",
+      "   isMainFrame: false | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (0):",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.etsy.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.etsy.com/",
+        "filteredHtml": "<body><iframe src=\"https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&amp;hash=D013AA612AB2224D03B2318D0F5B19&amp;cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&amp;t=fe&amp;referer=https%3A%2F%2Fwww.etsy.com%2F&amp;s=45225&amp;e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&amp;dm=cd\" sandbox=\"allow-scripts allow-same-origin allow-forms\" allow=\"accelerometer; gyroscope; magnetometer\" title=\"DataDome CAPTCHA\" width=\"100%\" height=\"100%\" frameborder=\"0\" border=\"0\" scrolling=\"yes\"></iframe></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 675
+      },
+      "settings": null
+    },
+    {
+      "frameUrl": "https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd",
+      "isMainFrame": false,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Switch to the visual verification",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "captcha__puzzle__button",
+              "class": "captcha-buttons captcha-toggle push-button toggled",
+              "aria-expanded": "true",
+              "title": "Switch to the visual verification"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__switch",
+              "className": null,
+              "selector": "#captcha__switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame__top",
+                "className": null,
+                "selector": "#captcha__frame__top"
+              }
+            },
+            "selector": "#captcha__puzzle__button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Switch to the audio verification",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "captcha__audio__button",
+              "class": "captcha-buttons captcha-toggle push-button",
+              "title": "Switch to the audio verification"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__switch",
+              "className": null,
+              "selector": "#captcha__switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame__top",
+                "className": null,
+                "selector": "#captcha__frame__top"
+              }
+            },
+            "selector": "#captcha__audio__button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reload the verification",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "captcha__reload__button",
+              "class": "captcha-buttons",
+              "title": "Reload the verification"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__frame__top",
+              "className": null,
+              "selector": "#captcha__frame__top",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame",
+                "className": "simple",
+                "selector": "#captcha__frame"
+              }
+            },
+            "selector": "#captcha__reload__button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Submit feedback.",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "show-human-auth",
+              "class": "captcha__contact_support__submit",
+              "aria-expanded": "false",
+              "aria-controls": "human-contact-form-wrapper",
+              "data-dd-captcha-contact-support-submit": ""
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "captcha__robot__contact_support_desc no-margin",
+              "selector": ".captcha__robot__contact_support_desc",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "captcha__robot__contact_support",
+                "selector": ".captcha__robot__contact_support"
+              }
+            },
+            "selector": "#show-human-auth",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "captcha__puzzle__button",
+              "class": "captcha-buttons captcha-toggle push-button toggled",
+              "aria-expanded": "true",
+              "title": "Switch to the visual verification"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__switch",
+              "className": null,
+              "selector": "#captcha__switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame__top",
+                "className": null,
+                "selector": "#captcha__frame__top"
+              }
+            },
+            "selector": "#captcha__puzzle__button",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "captcha__audio__button",
+              "class": "captcha-buttons captcha-toggle push-button",
+              "title": "Switch to the audio verification"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__switch",
+              "className": null,
+              "selector": "#captcha__switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame__top",
+                "className": null,
+                "selector": "#captcha__frame__top"
+              }
+            },
+            "selector": "#captcha__audio__button",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Slide right to secure your access",
+            "tag": "DIV",
+            "attributes": {
+              "class": "toggled",
+              "id": "captcha__frame__bottom"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "captcha__element",
+              "className": null,
+              "selector": "#captcha__element",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "captcha__frame",
+                "className": "simple",
+                "selector": "#captcha__frame"
+              }
+            },
+            "selector": "#captcha__frame__bottom",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&hash=D013AA612AB2224D03B2318D0F5B19&cid=zN23lJlXF1MMUI2SpObscGPWGULX9y9U8pCgGIcSrEJ_u7q9U69KaQMPkrape1iOfAoQ5QMYEB5ckHc3bcRl0uVsKvXpDa2~FkZeJQkMag7Kl1ACQueLh1gqRIuA_~M9&t=fe&referer=https%3A%2F%2Fwww.etsy.com%2F&s=45225&e=d9478aa16622090dc359d8ffea6a07b242684ab9cdc70140f705b29dda6e5b78c0caf38671e2859ed4b0136bdce59374&dm=cd",
+        "filteredHtml": "<body class=\"dd-response-page--captcha\" data-dd-response-page=\"captcha\"> <div id=\"captcha-container\" class=\"captcha\" data-dd-captcha-c> <div id=\"analyticsCaptchaPassed\" data-analytics-captcha-passed=\"false\"></div> <div class=\"captcha__header\" data-dd-captcha-header=\"\"> <div class=\"captcha__header__container\" data-dd-captcha-header-c> <div class=\"captcha__header__logo-wrapper\" data-dd-captcha-header-logo-wrapper=\"\"> </div> </div> </div> <div class=\"captcha__human\" data-dd-captcha-human=\"\"> <div class=\"captcha__human__container\" data-dd-captcha-human-c> <p class=\"captcha__human__title\" data-dd-captcha-human-title=\"\"> Verification Required </p> <p class=\"captcha__human__not_accessible_text visually-hidden\" tabindex=\"0\" data-dd-captcha-not-accessible=\"\">The visual verification might not be accessible to you. We recommend you to use the audio verification instead. Important: after clicking play, you will hear 6 digits. Please wait until the audio finishes before typing or interacting with the page.</p> <div class=\"captcha__human__captcha-container\" data-dd-captcha-human-captcha-c> </div> </div> </div> <div id=\"ddv1-captcha-container\" class=\"captcha__ddv1\" data-dd-ddv1-captcha-c> <div id=\"captcha__frame\" class=\"simple\"><div id=\"captcha__frame__top\"><div id=\"captcha__switch\"><button id=\"captcha__puzzle__button\" class=\"captcha-buttons captcha-toggle push-button toggled\" aria-expanded=\"true\" title=\"Switch to the visual verification\"></button><button id=\"captcha__audio__button\" class=\"captcha-buttons captcha-toggle push-button\" title=\"Switch to the audio verification\"></button></div><button id=\"captcha__reload__button\" class=\"captcha-buttons\" title=\"Reload the verification\"></button></div><div id=\"captcha__element\"><div id=\"captcha__puzzle\" class=\"toggled\"><canvas width=\"280\" height=\"0\" aria-hidden=\"true\"></canvas><canvas width=\"280\" height=\"0\" aria-hidden=\"true\" class=\"block\"></canvas><div class=\"toast\" role=\"status\"></div><div class=\"toast-mask\"></div></div><div class=\"toggled\" id=\"captcha__frame__bottom\"><div class=\"sliderText\"><p class=\"no-margin\">Slide right to secure your access</p></div><div class=\"sliderContainer\"><div class=\"sliderbg\"></div><div class=\"sliderMask\"></div><div class=\"sliderTarget\"><i class=\"sliderTargetIcon\" aria-hidden=\"true\"></i></div><div class=\"slider\"><i class=\"sliderIcon\" aria-hidden=\"true\"></i></div></div></div><div id=\"captcha__audio\"><p class=\"audio-captcha-instructions no-margin\">Please type the numbers you hear.</p><div class=\"audio-captcha-play-container\"><button class=\"audio-captcha-play-button push-button\" name=\"Listen to the numbers to write\" title=\"Listen to the numbers to write\"><div class=\"audio-captcha-play-background\"></div><span class=\"audio-captcha-play-button-content\"></span></button></div><audio class=\"audio-captcha-track\" src=\"https://dd.prod.captcha-delivery.com/audio/2026-08-27/en/f023e72ad822a9d68e066a1da3c4b112.wav\" preload=\"none\"></audio><div class=\"audio-captcha-input-container\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"0\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 1 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"1\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 2 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"2\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 3 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"3\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 4 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"4\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 5 out of 6\"><input class=\"audio-captcha-inputs\" maxlength=\"1\" data-index=\"5\" inputmode=\"numeric\" data-form-type=\"other\" data-lpignore=\"true\" autocomplete=\"off\" aria-label=\"Input 6 out of 6\"></div><div class=\"audio-captcha-verify-button-container\"><p class=\"audio-captcha-verify-button\" role=\"status\"></p></div><div class=\"audio-captcha-submit-container\"><button class=\"audio-captcha-submit-button push-button no-margin\" disabled=\"disabled\" role=\"button\">Verify</button></div></div></div><div id=\"captcha__offline\">No Internet access</div></div></div> <div class=\"captcha__robot\" data-dd-captcha-robot=\"\"> <div class=\"captcha__robot__container\" data-dd-captcha-robot-c> <div class=\"captcha__robot__warning\" data-dd-captcha-robot-warning=\"\"> <p class=\"captcha__robot__warning__why\"> Why is this step needed? </p> <p class=\"captcha__robot__warning__explain\"> We detected unusual activity from your device or network. Reasons may include: </p> <ul> <li> Rapid taps or clicks </li> <li> JavaScript disabled or not working</li> <li> Automated (bot) activity on your network (IP 87.104.43.11)</li> <li> Use of developer or inspection tools </li> </ul> </div> <div class=\"captcha__robot__contact_support\" data-dd-captcha-robot-contact-support=\"\"> <p class=\"captcha__robot__contact_support_desc no-margin\" data-dd-captcha-robot-contact-support-desc=\"\"> Need help? <button type=\"button\" id=\"show-human-auth\" class=\"captcha__contact_support__submit\" aria-expanded=\"false\" aria-c data-dd-captcha-contact-support-submit=\"\"> Submit feedback. </button> </p> <p id=\"show-human-requestId\" class=\"captcha__robot__contact_support_request_id\" data-dd-request-id=\"\">ID: 07a6dd18-f085-fa3e-fdc4-3e90fd0fe252</p> </div> <div id=\"human-contact-form-wrapper\" class=\"captcha__contact_support hidden not-displayed\" data-dd-captcha-contact-support=\"\"> <form id=\"human-contact-form\" class=\"captcha__contact_form\" method=\"post\" data-dd-captcha-contact-form=\"\" action=\"/contact-human?initialCid=AHrlqAAAAAMAqsLFrsgJXmYAV2grCw%3D%3D&amp;hash=D013AA612AB2224D03B2318D0F5B19&amp;cid=fAFFEPIGpxTAXL5kzemn1ZN_bDPV5fJ9qwMegFreZDEgy_9RV%7Edkkp592wgy6pVvBl5mdmOYn9bY16XXXSyBp51fG3lrjShqmCnt_usRr3_3cLBKuH3dGJMV3umz4C_i\"> <input data-dd-input-document-referer=\"\" type=\"hidden\" id=\"document_referer\" class=\"captcha__contact_form_input\" name=\"document_referer\" value=\" https://www.etsy.com/ \"> <input data-dd-input-captcha-hash=\"\" type=\"hidden\" id=\"captcha_hash\" class=\"captcha__contact_form_input\" name=\"captcha_hash\" value=\"m0WNSnNbxMRJNlXHetRJoXxCv5hehwWhtNJBqNmFkIqwvryVdYuQyRMYT74drF6pjkuUFyUnviaG+TdqeU+czz6B/FpJjIuRW4Pww2k8G7DIsYo5WNanL8nYzarb5JZQV5RfYaUPjyGno6SlVBR4AuSGYwreC5UmscuTT4w9HrKrwgOptT7JDptpfzafUGF+\"> <input data-dd-input-tpl-version=\"\" type=\"hidden\" id=\"tpl_version\" class=\"captcha__contact_form_input\" name=\"tpl_version\" value=\"3\"> <input data-dd-input-captcha-request-id=\"\" type=\"hidden\" id=\"captcha_request_id\" class=\"captcha__contact_form_input\" name=\"captcha_request_id\" value=\"07a6dd18-f085-fa3e-fdc4-3e90fd0fe252\"> <input data-dd-input-user-env=\"\" type=\"hidden\" id=\"user_env\" class=\"captcha__contact_form_input\" name=\"user_env\" value=\"2608a96ff1eec3537e9c71555c05a9cb983853191563e8849d0f8d08d0cc0e522cb4c461c2ae7f9a7f0d5cf77f09cf8f\"> <input data-dd-input-dm=\"\" type=\"hidden\" id=\"dm\" class=\"captcha__contact_form_input\" name=\"dm\" value=\"cd\"> <fieldset class=\"captcha_contact__radio-container\" data-dd-captcha-contact-radio-c> <legend data-dd-c class=\"contact__label\">Reason for contacting us (required):</legend> <div class=\"captcha__contact__radio\" data-dd-captcha-contact-radio=\"\"> <label class=\"captcha__contact__radio__label\" for=\"input_recaptcha_cannot_pass_challenge\" data-dd-captcha-contact-radio-label=\"\"> <input class=\"captcha__contact__radio__input\" data-dd-captcha-contact-radio-input=\"\" required=\"\" id=\"input_recaptcha_cannot_pass_challenge\" name=\"human-reason\" type=\"radio\" value=\"recaptcha_cannot_pass_challenge\"> No success after multiple attempts </label> </div> <div class=\"captcha__contact__radio\" data-dd-captcha-contact-radio=\"\"> <label class=\"captcha__contact__radio__label\" for=\"input_other\" data-dd-captcha-contact-radio-label=\"\"> <input class=\"captcha__contact__radio__input\" data-dd-captcha-contact-radio-input=\"\" required=\"\" id=\"input_other\" name=\"human-reason\" type=\"radio\" value=\"other\"> Other </label> </div> <div class=\"captcha__contact__input-container\" data-dd-captcha-contact-input-c> <textarea data-dd-captcha-contact-input=\"\" rows=\"4\" id=\"human-comment\" name=\"human-comment\" class=\"captcha__contact__input\" placeholder=\"Comment\" title=\"Comment \"></textarea> </div> </fieldset> <button id=\"human-contact-form-submit\" type=\"submit\" class=\"captcha__contact__submit\" data-dd-captcha-contact-submit=\"\"> Send </button> </form> <div data-dd-human-contact-form-submit-success=\"\" id=\"human-contact-form-submit-success\" class=\"captcha__contact_support_success\" role=\"status\"><p class=\"no-margin\">Your message has been sent.</p></div> <div data-dd-human-contact-form-submit-failure=\"\" id=\"human-contact-form-submit-failure\" class=\"captcha__contact_support_failure\" role=\"alert\"><p class=\"no-margin\">An error has occurred...</p></div> </div> </div> </div> <div class=\"captcha__footer\" data-dd-captcha-footer=\"\"> <div class=\"captcha__footer__container\" data-dd-captcha-footer-c> </div> </div> </div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 9169
+      },
+      "settings": null
+    },
+    {
+      "frameUrl": "about:srcdoc",
+      "isMainFrame": false,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "about:srcdoc",
+        "filteredHtml": "<body>/**/</body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 17
+      },
+      "settings": null
+    }
+  ]
+}

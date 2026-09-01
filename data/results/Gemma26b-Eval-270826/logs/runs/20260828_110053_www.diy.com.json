@@ -1,0 +1,210 @@
+{
+  "timestamp": "2026-08-28T11:00:53.666038",
+  "url": "https://www.diy.com",
+  "structured_dom_chars": 34232,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 6,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*='truste']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*='truste']\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*='truste']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"parent\": {\"selector\": \"#pop-frame06147879416119968\", \"iframeFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Accept Functional Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Refuse Functional Cookies']\"}}}, {\"type\": \"B\", \"parent\": {\"selector\": \"#pop-frame06147879416119968\", \"iframeFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Accept Performance & Analytics']\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Refuse Performance & Analytics']\"}}}, {\"type\": \"F\", \"parent\": {\"selector\": \"#pop-frame06147879416119968\", \"iframeFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Accept B&Q's marketing and advertising cookies\\\"]\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Refuse B&Q's marketing and advertising cookies\\\"]\"}}}, {\"type\": \"F\", \"parent\": {\"selector\": \"#pop-frame06147879416119968\", \"iframeFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Accept B&Q Partners' Marketing and Advertising Cookies\\\"]\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Refuse B&Q Partners' Marketing and Advertising Cookies\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"parent\": {\"selector\": \"#pop-frame06147879416119968\", \"iframeFilter\": true}, \"target\": {\"selector\": \".submit\"}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Performance & Analytics'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q's marketing and advertising cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+  "error_history": [
+    "Invalid JSON: Invalid \\escape: line 1 column 1267 (char 1266)",
+    "Invalid JSON: Invalid \\escape: line 1 column 1267 (char 1266)",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 1627 (char 1626)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Performance & Analytics'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q's marketing and advertising cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Performance & Analytics'] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Performance & Analytics'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q's marketing and advertising cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit"
+  ],
+  "duration_seconds": 1356.38,
+  "extraction_duration_seconds": 8.02,
+  "extraction_share_percent": 0.59,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 1000
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "A",
+                    "parent": {
+                      "selector": "#pop-frame06147879416119968",
+                      "iframeFilter": true
+                    },
+                    "trueAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label='Accept Functional Cookies']"
+                      }
+                    },
+                    "falseAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label='Refuse Functional Cookies']"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "parent": {
+                      "selector": "#pop-frame06147879416119968",
+                      "iframeFilter": true
+                    },
+                    "trueAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label='Accept Performance & Analytics']"
+                      }
+                    },
+                    "falseAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": "[aria-label='Refuse Performance & Analytics']"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "parent": {
+                      "selector": "#pop-frame06147879416119968",
+                      "iframeFilter": true
+                    },
+                    "trueAction": {
+                      "target": {
+                        "selector": "[aria-label=\"Accept B&Q's marketing and advertising cookies\"]"
+                      },
+                      "type": "click"
+                    },
+                    "falseAction": {
+                      "target": {
+                        "selector": "[aria-label=\"Refuse B&Q's marketing and advertising cookies\"]"
+                      },
+                      "type": "click"
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "parent": {
+                      "selector": "#pop-frame06147879416119968",
+                      "iframeFilter": true
+                    },
+                    "trueAction": {
+                      "target": {
+                        "selector": "[aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]"
+                      },
+                      "type": "click"
+                    },
+                    "falseAction": {
+                      "target": {
+                        "selector": "[aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]"
+                      },
+                      "type": "click"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#pop-frame0614787<0xC2>19968",
+              "iframeFilter": true
+            },
+            "target": {
+              "selector": ".submit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

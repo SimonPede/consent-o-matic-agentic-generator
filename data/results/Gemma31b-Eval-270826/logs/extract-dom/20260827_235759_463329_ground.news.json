@@ -1,0 +1,1002 @@
+{
+  "timestamp": "2026-08-27T23:57:59.463410",
+  "url": "https://ground.news",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://ground.news"
+  ],
+  "duration_seconds": 17.21,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"osano\"]\" (Osano) in frame: https://ground.news/",
+      "waitForCmpUi detected CMP Type: Osano",
+      "I found 5 frames.",
+      "a frame was picked by score: https://ground.news/ with Score: 43",
+      "Settings match: \"Storage Preferences\" --> lowered: \"storage preferences\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .osano-cm-drawer-links__link, textMatch: Storage Preferences",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://ground.news/#bb003db7-d687-46a9-9492-9a6237251d34",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 55 for URL: https://ground.news/#bb003db7-d687-46a9-9492-9a6237251d34",
+      "Best new frame selected for settings extraction: https://ground.news/#bb003db7-d687-46a9-9492-9a6237251d34",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://ground.news/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Osano',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"osano\"]',",
+      "      url: 'https://ground.news/',",
+      "      filteredHtml: '<div data-nosnippet=\"\" class=\"osano-cm-window\" dir=\"ltr\"> <div hidden=\"\" class=\"osano-visually-hidden\"> <span id=\"osano-cm-aria.newWindow\">Opens in a new window</span> <span id=\"osano-cm-aria.external\">Opens an external website</span> <span id=\"osano-cm-aria.externalNewWindow\">Opens an external website in a new window</span> </div> <div role=\"dialog\" id=\"6cf8d60a-4427-45f1-be91-50565fe83189\" aria-label=\"Cookie Consent Banner\" aria-describedby=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\"osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar\"> <button class=\" osano-cm-dialog__close osano-cm-close \"> </button> <div class=\" osano-cm-dialog__content osano-cm-content \"> <span id=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\" osano-cm-content__message osano-cm-message \"> This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. You may change your settings at any time or accept the default settings. You may close this banner to continue with only essential cookies. </span> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \" aria-describedby=\"osano-cm-aria.newWindow\">Privacy Policy</a> <p class=\" osano-cm-content__drawer-links osano-cm-drawer-links \"> <a rel=\"noopener\" tabindex=\"0\" href=\"#bb003db7-d687-46a9-9492-9a6237251d34\" class=\" osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage \">Storage Preferences</a> </p> <div role=\"group\" aria-labelledby=\"osano-cm-dialog-toggle-group\"> <ul id=\"osano-cm-dialog-toggle-group\" class=\"osano-cm-dialog__list osano-cm-list\" aria-label=\"Storage Preferences\"> <li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_ANALYTICS\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_ANALYTICS\" data-category=\"ANALYTICS\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Analytics</span></label> </li> </ul> </div> </div> <div class=\"osano-cm-dialog__buttons osano-cm-buttons\"> <button class=\" osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save \" tabindex=\"0\"> Save </button> <button class=\" osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept \" tabindex=\"0\"> Accept All </button> <button class=\" osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll \" tabindex=\"0\"> Reject Non-Essential </button> </div> </div> <button id=\"8aab96bb-2a61-44de-a0e3-8770ae8956de\" class=\" osano-cm-window__widget osano-cm-widget osano-cm-widget--hidden osano-cm-widget--position_left \" title=\"Cookie Preferences\" aria-label=\"Cookie Preferences\"> </button> <div role=\"dialog\" aria-modal=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34\" aria-labelledby=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" aria-hidden=\"true\" class=\" osano-cm-window__info-dialog osano-cm-info-dialog osano-cm-info-dialog--hidden \"> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"first\"></span> <div role=\"presentation\" class=\" osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_right \"> <div role=\"presentation\" class=\" osano-cm-info__info-dialog-header osano-cm-info-dialog-header \"> <p role=\"heading\" aria-level=\"1\" aria-hidden=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" class=\" osano-cm-info-dialog-header__header osano-cm-header \"> </p> <button class=\" osano-cm-info-dialog-header__close osano-cm-close \"> </button> </div> <div role=\"presentation\" class=\" osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--hidden osano-cm-info-views--position_0 \"> </div> </div> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"last\"></span> </div> </div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 5022,",
+      "      cmpType: 'Osano'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"osano\"]',",
+      "      url: 'https://ground.news/#bb003db7-d687-46a9-9492-9a6237251d34',",
+      "      filteredHtml: '<div data-nosnippet=\"\" class=\"osano-cm-window\" dir=\"ltr\"> <div hidden=\"\" class=\"osano-visually-hidden\"> <span id=\"osano-cm-aria.newWindow\">Opens in a new window</span> <span id=\"osano-cm-aria.external\">Opens an external website</span> <span id=\"osano-cm-aria.externalNewWindow\">Opens an external website in a new window</span> </div> <div role=\"dialog\" id=\"6cf8d60a-4427-45f1-be91-50565fe83189\" aria-label=\"Cookie Consent Banner\" aria-describedby=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\"osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar osano-cm-dialog--hidden\"> <button class=\" osano-cm-dialog__close osano-cm-close \"> </button> <div class=\" osano-cm-dialog__content osano-cm-content \"> <span id=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\" osano-cm-content__message osano-cm-message \"> This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. You may change your settings at any time or accept the default settings. You may close this banner to continue with only essential cookies. </span> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \" aria-describedby=\"osano-cm-aria.newWindow\">Privacy Policy</a> <p class=\" osano-cm-content__drawer-links osano-cm-drawer-links \"> <a rel=\"noopener\" tabindex=\"0\" href=\"#bb003db7-d687-46a9-9492-9a6237251d34\" class=\" osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage \">Storage Preferences</a> </p> <div role=\"group\" aria-labelledby=\"osano-cm-dialog-toggle-group\"> <ul id=\"osano-cm-dialog-toggle-group\" class=\"osano-cm-dialog__list osano-cm-list\" aria-label=\"Storage Preferences\"> <li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_MARKETING--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_PERSONALIZATION--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_ANALYTICS\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_ANALYTICS\" data-category=\"ANALYTICS\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_ANALYTICS--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Analytics</span></label> </li> </ul> </div> </div> <div class=\"osano-cm-dialog__buttons osano-cm-buttons osano-cm-buttons--disabled\"> <button class=\" osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save \" tabindex=\"0\"> Save </button> <button class=\" osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept \" tabindex=\"0\"> Accept All </button> <button class=\" osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll \" tabindex=\"0\"> Reject Non-Essential </button> </div> </div> <button id=\"8aab96bb-2a61-44de-a0e3-8770ae8956de\" class=\" osano-cm-window__widget osano-cm-widget osano-cm-widget--hidden osano-cm-widget--position_left \" title=\"Cookie Preferences\" aria-label=\"Cookie Preferences\"> </button> <div role=\"dialog\" aria-modal=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34\" aria-labelledby=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" aria-hidden=\"false\" class=\"osano-cm-window__info-dialog osano-cm-info-dialog\" aria-describedby=\"osano-cm-consent--view\"> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"first\"></span> <div role=\"presentation\" class=\"osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_right osano-cm-info--open\"> <div role=\"presentation\" class=\" osano-cm-info__info-dialog-header osano-cm-info-dialog-header \"> <p role=\"heading\" aria-level=\"1\" aria-hidden=\"false\" id=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" class=\" osano-cm-info-dialog-header__header osano-cm-header \"> Storage Preferences </p> <button class=\" osano-cm-info-dialog-header__close osano-cm-close \"> </button> </div> <div role=\"presentation\" class=\"osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--position_0\"> <div class=\" osano-cm-info-views__view osano-cm-view osano-cm-view--active osano-cm-view--type_consent \"> <p tabindex=\"-1\" id=\"osano-cm-consent--view\" class=\" osano-cm-view__description osano-cm-description \"> When you visit websites, they may store or retrieve data about you using cookies and similar technologies (\"cookies\"). Cookies may be necessary for the basic functionality of the website as well as other purposes. You have the option of disabling certain types of cookies, though doing so may impact your experience on the website. </p> <p class=\" osano-cm-view__description osano-cm-description \"> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \">Privacy Policy</a> </p> <ul class=\"osano-cm-view__list osano-cm-list\"> <li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle osano-cm-toggle--checked osano-cm-toggle--disabled \" for=\"osano-cm-drawer-toggle--category_ESSENTIAL\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input osano-cm-input--checked osano-cm-input--disabled \" id=\"osano-cm-drawer-toggle--category_ESSENTIAL\" disabled=\"\" data-category=\"ESSENTIAL\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_ESSENTIAL--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Essential</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_ESSENTIAL--description\"> Required to enable basic website functionality. You may not disable essential cookies. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Essential View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-ESSENTIAL_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li><li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-drawer-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-drawer-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_MARKETING--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_MARKETING--description\"> Used to deliver advertising that is more relevant to you and your interests. May also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns. Advertising networks usually place them with the website operator’s permission. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Targeted Advertising View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-MARKETING_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li><li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-drawer-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-drawer-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_PERSONALIZATION--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> <div class=\" osano-cm-list-item__description'... 2942 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 12942,",
+      "      cmpType: 'Osano',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://ground.news/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Osano via selector \"[class*=\"osano\"]\"",
+      "  Buttons found (6):",
+      "      [BUTTON] \"\" --> selector: .osano-cm-dialog__close",
+      "      [A] \"Privacy Policy\" --> selector: .osano-cm-storage-policy",
+      "      [A] \"Storage Preferences\" --> selector: .osano-cm-drawer-links__link",
+      "      [BUTTON] \"Save\" --> selector: .osano-cm-save",
+      "      [BUTTON] \"Accept All\" --> selector: .osano-cm-accept-all",
+      "      [BUTTON] \"Reject Non-Essential\" --> selector: .osano-cm-denyAll",
+      "   Checkboxes found (3):",
+      "      \"Targeted Advertising\" | checked: false | disabled: false --> selector: #osano-cm-dialog-toggle--category_MARKETING",
+      "      \"Personalization\" | checked: false | disabled: false --> selector: #osano-cm-dialog-toggle--category_PERSONALIZATION",
+      "      \"Analytics\" | checked: false | disabled: false --> selector: #osano-cm-dialog-toggle--category_ANALYTICS",
+      "  Toggles found (6):",
+      "      \"Targeted Advertising\" | aria-checked: false --> selector: #osano-cm-dialog-toggle--category_MARKETING",
+      "      \"Targeted Advertising\" | aria-checked: null --> selector: .osano-cm-toggle__switch",
+      "      \"Personalization\" | aria-checked: false --> selector: #osano-cm-dialog-toggle--category_PERSONALIZATION",
+      "      \"Personalization\" | aria-checked: null --> selector: .osano-cm-toggle__switch",
+      "      \"Analytics\" | aria-checked: false --> selector: #osano-cm-dialog-toggle--category_ANALYTICS",
+      "      \"Analytics\" | aria-checked: null --> selector: .osano-cm-toggle__switch",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (4):",
+      "      [BUTTON] \"\" --> selector: .osano-cm-info-dialog-header__close",
+      "      [A] \"Privacy Policy\" --> selector: .osano-cm-storage-policy",
+      "      [BUTTON] \"Save\" --> selector: .osano-cm-save",
+      "      [A] \"Powered by Osano\" --> selector: .osano-cm-powered-by__link",
+      "   Checkboxes found (4):",
+      "      \"Essential\" | checked: true | disabled: true --> selector: #osano-cm-drawer-toggle--category_ESSENTIAL",
+      "      \"Targeted Advertising\" | checked: false | disabled: false --> selector: #osano-cm-drawer-toggle--category_MARKETING",
+      "      \"Personalization\" | checked: false | disabled: false --> selector: #osano-cm-drawer-toggle--category_PERSONALIZATION",
+      "      \"Analytics\" | checked: false | disabled: false --> selector: #osano-cm-drawer-toggle--category_ANALYTICS",
+      "  Toggles found (8):",
+      "      \"Essential\" | aria-checked: true --> selector: #osano-cm-drawer-toggle--category_ESSENTIAL",
+      "      \"Essential\" | aria-checked: null --> selector: span",
+      "      \"Targeted Advertising\" | aria-checked: false --> selector: #osano-cm-drawer-toggle--category_MARKETING",
+      "      \"Targeted Advertising\" | aria-checked: null --> selector: span",
+      "      \"Personalization\" | aria-checked: false --> selector: #osano-cm-drawer-toggle--category_PERSONALIZATION",
+      "      \"Personalization\" | aria-checked: null --> selector: span",
+      "      \"Analytics\" | aria-checked: false --> selector: #osano-cm-drawer-toggle--category_ANALYTICS",
+      "      \"Analytics\" | aria-checked: null --> selector: span",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://ground.news/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Osano",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-dialog__close osano-cm-close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "6cf8d60a-4427-45f1-be91-50565fe83189",
+              "className": "osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar",
+              "selector": "#6cf8d60a-4427-45f1-be91-50565fe83189",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-window",
+                "selector": ".osano-cm-window"
+              }
+            },
+            "selector": ".osano-cm-dialog__close",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "rel": "noopener",
+              "tabindex": "0",
+              "href": "/privacy-policy",
+              "target": "_blank",
+              "class": "osano-cm-storage-policy osano-cm-content__link osano-cm-link",
+              "aria-describedby": "osano-cm-aria.newWindow"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-dialog__content osano-cm-content",
+              "selector": ".osano-cm-dialog__content",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "6cf8d60a-4427-45f1-be91-50565fe83189",
+                "className": "osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar",
+                "selector": "#6cf8d60a-4427-45f1-be91-50565fe83189"
+              }
+            },
+            "selector": ".osano-cm-storage-policy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Storage Preferences",
+            "tag": "A",
+            "attributes": {
+              "rel": "noopener",
+              "tabindex": "0",
+              "href": "#bb003db7-d687-46a9-9492-9a6237251d34",
+              "class": "osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "osano-cm-content__drawer-links osano-cm-drawer-links",
+              "selector": ".osano-cm-content__drawer-links",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-dialog__content osano-cm-content",
+                "selector": ".osano-cm-dialog__content"
+              }
+            },
+            "selector": ".osano-cm-drawer-links__link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-dialog__buttons osano-cm-buttons",
+              "selector": ".osano-cm-dialog__buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "6cf8d60a-4427-45f1-be91-50565fe83189",
+                "className": "osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar",
+                "selector": "#6cf8d60a-4427-45f1-be91-50565fe83189"
+              }
+            },
+            "selector": ".osano-cm-save",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-dialog__buttons osano-cm-buttons",
+              "selector": ".osano-cm-dialog__buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "6cf8d60a-4427-45f1-be91-50565fe83189",
+                "className": "osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar",
+                "selector": "#6cf8d60a-4427-45f1-be91-50565fe83189"
+              }
+            },
+            "selector": ".osano-cm-accept-all",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject Non-Essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-dialog__buttons osano-cm-buttons",
+              "selector": ".osano-cm-dialog__buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "6cf8d60a-4427-45f1-be91-50565fe83189",
+                "className": "osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar",
+                "selector": "#6cf8d60a-4427-45f1-be91-50565fe83189"
+              }
+            },
+            "selector": ".osano-cm-denyAll",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Targeted Advertising",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_MARKETING",
+              "data-category": "MARKETING",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_MARKETING",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Personalization",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_PERSONALIZATION",
+              "data-category": "PERSONALIZATION",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_PERSONALIZATION",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_ANALYTICS",
+              "data-category": "ANALYTICS",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_ANALYTICS",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Targeted Advertising",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_MARKETING",
+              "data-category": "MARKETING",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_MARKETING",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Targeted Advertising",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": ".osano-cm-toggle__switch",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalization",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_PERSONALIZATION",
+              "data-category": "PERSONALIZATION",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_PERSONALIZATION",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalization",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": ".osano-cm-toggle__switch",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-dialog-toggle--category_ANALYTICS",
+              "data-category": "ANALYTICS",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": "#osano-cm-dialog-toggle--category_ANALYTICS",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-list__list-item"
+              }
+            },
+            "selector": ".osano-cm-toggle__switch",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"osano\"]",
+        "url": "https://ground.news/",
+        "filteredHtml": "<div data-nosnippet=\"\" class=\"osano-cm-window\" dir=\"ltr\"> <div hidden=\"\" class=\"osano-visually-hidden\"> <span id=\"osano-cm-aria.newWindow\">Opens in a new window</span> <span id=\"osano-cm-aria.external\">Opens an external website</span> <span id=\"osano-cm-aria.externalNewWindow\">Opens an external website in a new window</span> </div> <div role=\"dialog\" id=\"6cf8d60a-4427-45f1-be91-50565fe83189\" aria-label=\"Cookie Consent Banner\" aria-describedby=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\"osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar\"> <button class=\" osano-cm-dialog__close osano-cm-close \"> </button> <div class=\" osano-cm-dialog__content osano-cm-content \"> <span id=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\" osano-cm-content__message osano-cm-message \"> This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. You may change your settings at any time or accept the default settings. You may close this banner to continue with only essential cookies. </span> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \" aria-describedby=\"osano-cm-aria.newWindow\">Privacy Policy</a> <p class=\" osano-cm-content__drawer-links osano-cm-drawer-links \"> <a rel=\"noopener\" tabindex=\"0\" href=\"#bb003db7-d687-46a9-9492-9a6237251d34\" class=\" osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage \">Storage Preferences</a> </p> <div role=\"group\" aria-labelledby=\"osano-cm-dialog-toggle-group\"> <ul id=\"osano-cm-dialog-toggle-group\" class=\"osano-cm-dialog__list osano-cm-list\" aria-label=\"Storage Preferences\"> <li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_ANALYTICS\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_ANALYTICS\" data-category=\"ANALYTICS\" tabindex=\"0\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Analytics</span></label> </li> </ul> </div> </div> <div class=\"osano-cm-dialog__buttons osano-cm-buttons\"> <button class=\" osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save \" tabindex=\"0\"> Save </button> <button class=\" osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept \" tabindex=\"0\"> Accept All </button> <button class=\" osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll \" tabindex=\"0\"> Reject Non-Essential </button> </div> </div> <button id=\"8aab96bb-2a61-44de-a0e3-8770ae8956de\" class=\" osano-cm-window__widget osano-cm-widget osano-cm-widget--hidden osano-cm-widget--position_left \" title=\"Cookie Preferences\" aria-label=\"Cookie Preferences\"> </button> <div role=\"dialog\" aria-modal=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34\" aria-labelledby=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" aria-hidden=\"true\" class=\" osano-cm-window__info-dialog osano-cm-info-dialog osano-cm-info-dialog--hidden \"> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"first\"></span> <div role=\"presentation\" class=\" osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_right \"> <div role=\"presentation\" class=\" osano-cm-info__info-dialog-header osano-cm-info-dialog-header \"> <p role=\"heading\" aria-level=\"1\" aria-hidden=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" class=\" osano-cm-info-dialog-header__header osano-cm-header \"> </p> <button class=\" osano-cm-info-dialog-header__close osano-cm-close \"> </button> </div> <div role=\"presentation\" class=\" osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--hidden osano-cm-info-views--position_0 \"> </div> </div> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"last\"></span> </div> </div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 5022,
+        "cmpType": "Osano"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-info-dialog-header__close osano-cm-close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-info__info-dialog-header osano-cm-info-dialog-header",
+              "selector": ".osano-cm-info__info-dialog-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_right osano-cm-info--open",
+                "selector": ".osano-cm-info-dialog__info"
+              }
+            },
+            "selector": ".osano-cm-info-dialog-header__close",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "rel": "noopener",
+              "tabindex": "0",
+              "href": "/privacy-policy",
+              "target": "_blank",
+              "class": "osano-cm-storage-policy osano-cm-content__link osano-cm-link"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "osano-cm-view__description osano-cm-description",
+              "selector": ".osano-cm-view__description",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-info-views__view osano-cm-view osano-cm-view--active osano-cm-view--type_consent",
+                "selector": ".osano-cm-info-views__view"
+              }
+            },
+            "selector": ".osano-cm-storage-policy",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "osano-cm-save osano-cm-view__button osano-cm-button",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-info-views__view osano-cm-view osano-cm-view--active osano-cm-view--type_consent",
+              "selector": ".osano-cm-info-views__view",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--position_0",
+                "selector": ".osano-cm-info__info-views"
+              }
+            },
+            "selector": ".osano-cm-save",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Powered by Osano",
+            "tag": "A",
+            "attributes": {
+              "rel": "noopener",
+              "tabindex": "0",
+              "href": "https://www.osano.com/?utm_campaign=cmp&utm_source=cmp-dialog&utm_medium=drawer",
+              "class": "osano-cm-powered-by__link osano-cm-link",
+              "aria-describedby": "osano-cm-aria.external"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "osano-cm-view__powered-by osano-cm-powered-by",
+              "selector": ".osano-cm-view__powered-by",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "osano-cm-info-views__view osano-cm-view osano-cm-view--active osano-cm-view--type_consent",
+                "selector": ".osano-cm-info-views__view"
+              }
+            },
+            "selector": ".osano-cm-powered-by__link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Essential",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input osano-cm-input--checked osano-cm-input--disabled",
+              "id": "osano-cm-drawer-toggle--category_ESSENTIAL",
+              "disabled": "",
+              "data-category": "ESSENTIAL",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_ESSENTIAL--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle osano-cm-toggle--checked osano-cm-toggle--disabled",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_ESSENTIAL",
+            "selectorConfidence": "very high",
+            "isChecked": true,
+            "isDisabled": true
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Targeted Advertising",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_MARKETING",
+              "data-category": "MARKETING",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_MARKETING--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_MARKETING",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Personalization",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_PERSONALIZATION",
+              "data-category": "PERSONALIZATION",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_PERSONALIZATION--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_ANALYTICS",
+              "data-category": "ANALYTICS",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_ANALYTICS--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_ANALYTICS",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Essential",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input osano-cm-input--checked osano-cm-input--disabled",
+              "id": "osano-cm-drawer-toggle--category_ESSENTIAL",
+              "disabled": "",
+              "data-category": "ESSENTIAL",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_ESSENTIAL--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle osano-cm-toggle--checked osano-cm-toggle--disabled",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_ESSENTIAL",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          },
+          {
+            "type": "toggle",
+            "text": "Essential",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle osano-cm-toggle--checked osano-cm-toggle--disabled",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Targeted Advertising",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_MARKETING",
+              "data-category": "MARKETING",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_MARKETING--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_MARKETING",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Targeted Advertising",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalization",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_PERSONALIZATION",
+              "data-category": "PERSONALIZATION",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_PERSONALIZATION--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalization",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "class": "osano-cm-toggle__input osano-cm-input",
+              "id": "osano-cm-drawer-toggle--category_ANALYTICS",
+              "data-category": "ANALYTICS",
+              "tabindex": "0",
+              "aria-describedby": "osano-cm-drawer-toggle--category_ANALYTICS--description"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "#osano-cm-drawer-toggle--category_ANALYTICS",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "osano-cm-toggle__switch osano-cm-switch"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle",
+              "selector": ".osano-cm-list-item__drawer-toggle",
+              "grandparent": {
+                "tag": "LI",
+                "id": null,
+                "className": "osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item",
+                "selector": ".osano-cm-drawer-item"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"osano\"]",
+        "url": "https://ground.news/#bb003db7-d687-46a9-9492-9a6237251d34",
+        "filteredHtml": "<div data-nosnippet=\"\" class=\"osano-cm-window\" dir=\"ltr\"> <div hidden=\"\" class=\"osano-visually-hidden\"> <span id=\"osano-cm-aria.newWindow\">Opens in a new window</span> <span id=\"osano-cm-aria.external\">Opens an external website</span> <span id=\"osano-cm-aria.externalNewWindow\">Opens an external website in a new window</span> </div> <div role=\"dialog\" id=\"6cf8d60a-4427-45f1-be91-50565fe83189\" aria-label=\"Cookie Consent Banner\" aria-describedby=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\"osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar osano-cm-dialog--hidden\"> <button class=\" osano-cm-dialog__close osano-cm-close \"> </button> <div class=\" osano-cm-dialog__content osano-cm-content \"> <span id=\"6cf8d60a-4427-45f1-be91-50565fe83189__label\" class=\" osano-cm-content__message osano-cm-message \"> This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. You may change your settings at any time or accept the default settings. You may close this banner to continue with only essential cookies. </span> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \" aria-describedby=\"osano-cm-aria.newWindow\">Privacy Policy</a> <p class=\" osano-cm-content__drawer-links osano-cm-drawer-links \"> <a rel=\"noopener\" tabindex=\"0\" href=\"#bb003db7-d687-46a9-9492-9a6237251d34\" class=\" osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage \">Storage Preferences</a> </p> <div role=\"group\" aria-labelledby=\"osano-cm-dialog-toggle-group\"> <ul id=\"osano-cm-dialog-toggle-group\" class=\"osano-cm-dialog__list osano-cm-list\" aria-label=\"Storage Preferences\"> <li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_MARKETING--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_PERSONALIZATION--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> </li><li class=\" osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-dialog-toggle--category_ANALYTICS\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-dialog-toggle--category_ANALYTICS\" data-category=\"ANALYTICS\" tabindex=\"-1\" aria-describedby=\"osano-cm-drawer-toggle--category_ANALYTICS--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span class=\" osano-cm-toggle__label osano-cm-label \">Analytics</span></label> </li> </ul> </div> </div> <div class=\"osano-cm-dialog__buttons osano-cm-buttons osano-cm-buttons--disabled\"> <button class=\" osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save \" tabindex=\"0\"> Save </button> <button class=\" osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept \" tabindex=\"0\"> Accept All </button> <button class=\" osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll \" tabindex=\"0\"> Reject Non-Essential </button> </div> </div> <button id=\"8aab96bb-2a61-44de-a0e3-8770ae8956de\" class=\" osano-cm-window__widget osano-cm-widget osano-cm-widget--hidden osano-cm-widget--position_left \" title=\"Cookie Preferences\" aria-label=\"Cookie Preferences\"> </button> <div role=\"dialog\" aria-modal=\"true\" id=\"bb003db7-d687-46a9-9492-9a6237251d34\" aria-labelledby=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" aria-hidden=\"false\" class=\"osano-cm-window__info-dialog osano-cm-info-dialog\" aria-describedby=\"osano-cm-consent--view\"> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"first\"></span> <div role=\"presentation\" class=\"osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_right osano-cm-info--open\"> <div role=\"presentation\" class=\" osano-cm-info__info-dialog-header osano-cm-info-dialog-header \"> <p role=\"heading\" aria-level=\"1\" aria-hidden=\"false\" id=\"bb003db7-d687-46a9-9492-9a6237251d34__label\" class=\" osano-cm-info-dialog-header__header osano-cm-header \"> Storage Preferences </p> <button class=\" osano-cm-info-dialog-header__close osano-cm-close \"> </button> </div> <div role=\"presentation\" class=\"osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--position_0\"> <div class=\" osano-cm-info-views__view osano-cm-view osano-cm-view--active osano-cm-view--type_consent \"> <p tabindex=\"-1\" id=\"osano-cm-consent--view\" class=\" osano-cm-view__description osano-cm-description \"> When you visit websites, they may store or retrieve data about you using cookies and similar technologies (\"cookies\"). Cookies may be necessary for the basic functionality of the website as well as other purposes. You have the option of disabling certain types of cookies, though doing so may impact your experience on the website. </p> <p class=\" osano-cm-view__description osano-cm-description \"> <a rel=\"noopener\" tabindex=\"0\" href=\"/privacy-policy\" target=\"_blank\" class=\" osano-cm-storage-policy osano-cm-content__link osano-cm-link \">Privacy Policy</a> </p> <ul class=\"osano-cm-view__list osano-cm-list\"> <li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle osano-cm-toggle--checked osano-cm-toggle--disabled \" for=\"osano-cm-drawer-toggle--category_ESSENTIAL\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input osano-cm-input--checked osano-cm-input--disabled \" id=\"osano-cm-drawer-toggle--category_ESSENTIAL\" disabled=\"\" data-category=\"ESSENTIAL\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_ESSENTIAL--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Essential</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_ESSENTIAL--description\"> Required to enable basic website functionality. You may not disable essential cookies. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Essential View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-ESSENTIAL_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li><li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-drawer-toggle--category_MARKETING\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-drawer-toggle--category_MARKETING\" data-category=\"MARKETING\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_MARKETING--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Targeted Advertising</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_MARKETING--description\"> Used to deliver advertising that is more relevant to you and your interests. May also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns. Advertising networks usually place them with the website operator’s permission. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Targeted Advertising View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-MARKETING_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li><li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-drawer-toggle--category_PERSONALIZATION\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-drawer-toggle--category_PERSONALIZATION\" data-category=\"PERSONALIZATION\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_PERSONALIZATION--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Personalization</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_PERSONALIZATION--description\"> Allow the website to remember choices you make (such as your username, language, or the region you are in) and provide enhanced, more personal features. For example, a website may provide you with local weather reports or traffic news by storing data about your general location. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Personalization View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-PERSONALIZATION_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li><li class=\" osano-cm-drawer-item osano-cm-list__list-item osano-cm-list-item \"> <label class=\" osano-cm-list-item__drawer-toggle osano-cm-drawer-toggle osano-cm-list-item__toggle osano-cm-toggle \" for=\"osano-cm-drawer-toggle--category_ANALYTICS\"><input type=\"checkbox\" role=\"switch\" class=\" osano-cm-toggle__input osano-cm-input \" id=\"osano-cm-drawer-toggle--category_ANALYTICS\" data-category=\"ANALYTICS\" tabindex=\"0\" aria-describedby=\"osano-cm-drawer-toggle--category_ANALYTICS--description\"><span class=\" osano-cm-toggle__switch osano-cm-switch \"></span><span role=\"heading\" aria-level=\"2\" class=\" osano-cm-toggle__label osano-cm-label \">Analytics</span></label> <div class=\" osano-cm-list-item__description osano-cm-description \"> <p id=\"osano-cm-drawer-toggle--category_ANALYTICS--description\"> Help the website operator understand how its website performs, how visitors interact with the site, and whether there may be technical issues. </p> </div> <div class=\" osano-cm-drawer-item osano-cm-list-item__disclosure osano-cm-disclosure osano-cm-disclosure--collapse \"> <div role=\"link\" class=\" osano-cm-disclosure__toggle osano-cm-toggle \" tabindex=\"0\" aria-expanded=\"false\" aria-c aria-label=\"Analytics View Disclosures\"> View Disclosures </div> <ul id=\"osano-cm-ANALYTICS_disclosures\" class=\"osano-cm-disclosure__list osano-cm-list\" aria-live=\"none\"> <li class=\" osano-cm-list__list-item osano-cm-list-item osano-cm-list-item--type_no-results \"> No Storage Items </li> </ul> </div> </li> </ul> <button class=\" osano-cm-save osano-cm-view__button osano-cm-button \" tabindex=\"0\"> Save </button> <div class=\" osano-cm-view__powered-by osano-cm-powered-by \"> <a rel=\"noopener\" tabindex=\"0\" href=\"https://www.osano.com/?utm_campaign=cmp&amp;utm_source=cmp-dialog&amp;utm_medium=drawer\" class=\" osano-cm-powered-by__link osano-cm-link \" aria-describedby=\"osano-cm-aria.external\">Powered by Osano</a> </div> </div> </div> </div> <span tabindex=\"0\" aria-hidden=\"true\" data-focus=\"last\"></span> </div> </div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 12942,
+        "cmpType": "Osano",
+        "isIframe": false
+      }
+    }
+  ]
+}

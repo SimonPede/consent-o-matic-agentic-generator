@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-08-27T05:14:25.066079",
+  "url": "https://www.nu.nl",
+  "structured_dom_chars": 8556,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 9,
+  "human_review_count": 1,
+  "test_rule_count": 6,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"DPGMedia\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-modal\"}}], \"showingMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-modal\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-modal\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-configure-btn\"}}, {\"type\": \"wait\", \"waitTime\": 1500}]}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}, {\"type\": \"A\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}, {\"type\": \"B\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}, {\"type\": \"E\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}, {\"type\": \"F\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}, {\"type\": \"X\", \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Alles weigeren\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"parent\": {\"selector\": \"#pg-shadow-host-dom\"}, \"target\": {\"selector\": \"#pg-footer-content button\", \"textFilter\": \"Voorkeuren opslaan\"}}]}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation."
+  ],
+  "duration_seconds": 606.57,
+  "extraction_duration_seconds": 13.25,
+  "extraction_share_percent": 2.18,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "DPGMedia": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#pg-shadow-host-dom"
+              },
+              "target": {
+                "selector": "#pg-modal"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#pg-shadow-host-dom"
+              },
+              "target": {
+                "selector": "#pg-modal"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "parent": {
+              "selector": "#pg-shadow-host-dom"
+            },
+            "target": {
+              "selector": "#pg-modal"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#pg-shadow-host-dom"
+                },
+                "target": {
+                  "selector": "#pg-configure-btn"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 1500
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#pg-shadow-host-dom"
+                  },
+                  "target": {
+                    "selector": "#pg-footer-content .pg-btn-secondary:last-of-type"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#pg-shadow-host-dom"
+                },
+                "target": {
+                  "selector": "#pg-footer-content .pg-btn-primary"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

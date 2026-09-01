@@ -1,0 +1,463 @@
+{
+  "timestamp": "2026-08-27T19:23:37.459675",
+  "url": "https://www.kleinanzeigen.de",
+  "structured_dom_chars": 266345,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"Kleinanzeigen\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"button[id*='gdpr-banner'], #ConsentManagementPage\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"button[id*='gdpr-banner'], #ConsentManagementPage\"}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#gdpr-banner-cmp-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-1[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-1\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-7[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-7\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-7[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-7\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-11[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-11\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-5[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-5\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-6[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-6\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-2[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-2\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-2[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-2\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-3[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-3\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-4[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-4\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-8[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-8\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-9[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-9\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-9[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-9\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-10[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-10\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-10[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-10\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-google-ac-1[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-google-ac-1\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-custom-2[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-custom-2\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-custom-4[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-custom-4\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-custom-5[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-custom-5\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-custom-7[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-custom-7\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-custom-8[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-custom-8\"}}}, {\"type\": \"X\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-legitimate-interest-all[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-legitimate-interest-all\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Speichern - Datenschutzbestimmungen und Einstellungen speichern\\\"]\"}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#gdpr-consent-management\"}}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: #gdpr-banner-cmp-button",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: #gdpr-banner-cmp-button",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nKleinanzeigen.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': [{'typ...nsentManagementPage\"}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #gdpr-banner-cmp-button"
+  ],
+  "duration_seconds": 1238.53,
+  "extraction_duration_seconds": 16.21,
+  "extraction_share_percent": 1.31,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Kleinanzeigen": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "button[id*='gdpr-banner'], #ConsentManagementPage"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "button[id*='gdpr-banner'], #ConsentManagementPage"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#gdpr-banner-cmp-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-1[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-1"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-7[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-7"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-7[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-7"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-11[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-11"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-5[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-5"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-6[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-6"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-2[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-2"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-2[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-2"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-3[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-3"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-4[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-4"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-8[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-8"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-9[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-9"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-9[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-9"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-10[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-10"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-10[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#leg-int-toggle-purpose-10"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-google-ac-1[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-google-ac-1"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-2[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-2"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-4[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-4"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-5[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-5"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-7[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-7"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-8[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-purpose-custom-8"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#toggle-legitimate-interest-all[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#toggle-legitimate-interest-all"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[aria-label=\"Speichern - Datenschutzbestimmungen und Einstellungen speichern\"]"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#gdpr-consent-management"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

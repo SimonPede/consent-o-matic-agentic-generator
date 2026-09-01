@@ -1,0 +1,181 @@
+{
+  "timestamp": "2026-08-28T00:51:39.492715",
+  "url": "https://www.test.de",
+  "structured_dom_chars": 145805,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"test.de\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpwrapper\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"#cmpwelcomebtncustom a\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Zweck: Marketing'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Zweck: Marketing']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Zweck: Statistik'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label='Zweck: Statistik']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 300}, {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"#cmpwelcomebtnsave a\"}}]}}]}}",
+  "last_error": "Banner not found or matchers failed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1331 (char 1330)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1105 (char 1104)",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 1021.63,
+  "extraction_duration_seconds": 16.39,
+  "extraction_share_percent": 1.6,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "test.de": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper, .cmpwrapper"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper, #cmpwelcomebtncustom"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": "#cmpwelcomebtncustom a"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Marketing'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Marketing']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Statistik'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Statistik']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 300
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": "#cmpwelcomebtnsave a"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

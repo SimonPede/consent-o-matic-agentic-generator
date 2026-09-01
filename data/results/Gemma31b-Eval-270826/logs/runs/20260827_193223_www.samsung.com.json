@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-08-27T19:32:23.750373",
+  "url": "https://www.samsung.com",
+  "structured_dom_chars": 23944,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 203.1,
+  "extraction_duration_seconds": 8.02,
+  "extraction_share_percent": 3.95,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id^='truste']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Funktionalitets- og profilcookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Funktionalitets- og profilcookies']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Analytiske / performance cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Analytiske / performance cookies']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Reklame- og Targetingcookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Reklame- og Targetingcookies']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "div[name='trustarc_cm']"
+            },
+            "target": {
+              "selector": ".submit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

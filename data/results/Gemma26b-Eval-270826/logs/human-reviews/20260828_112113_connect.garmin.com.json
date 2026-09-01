@@ -1,0 +1,109 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://connect.garmin.com",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "Banner not found or matchers failed.",
+  "rule_draft": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class^='truste']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class^='truste']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Accept Functional Cookies\"]",
+                    "iframeFilter": true
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Refuse Functional Cookies\"]",
+                    "iframeFilter": true
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Accept Advertising Cookies\"]",
+                    "iframeFilter": true
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Refuse Advertising Cookies\"]",
+                    "iframeFilter": true
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".submit",
+                  "iframeFilter": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class^='truste']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

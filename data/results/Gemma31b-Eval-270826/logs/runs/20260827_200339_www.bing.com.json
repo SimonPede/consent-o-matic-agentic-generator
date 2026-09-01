@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-08-27T20:03:39.200187",
+  "url": "https://www.bing.com",
+  "structured_dom_chars": 440373,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Bing\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#bnp_cookie_banner, .bnp_cookie_banner, [id*='bnp_cookie'], [id*='bnp_btn']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#bnp_cookie_banner, .bnp_cookie_banner, [id*='bnp_cookie'], [id*='bnp_btn']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#bnp_btn_reject a\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#bnp_cookie_banner\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "ABORTED: overall timeout reached (1800s)",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "No CMP detected in 5 seconds, stopping engine...",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1224 (char 1223)",
+    "No CMP detected in 5 seconds, stopping engine..."
+  ],
+  "duration_seconds": 1800.03,
+  "extraction_duration_seconds": 15.22,
+  "extraction_share_percent": 0.85,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

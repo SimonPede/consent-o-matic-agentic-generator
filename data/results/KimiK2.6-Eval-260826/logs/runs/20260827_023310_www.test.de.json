@@ -1,0 +1,162 @@
+{
+  "timestamp": "2026-08-27T02:33:10.737771",
+  "url": "https://www.test.de",
+  "structured_dom_chars": 146609,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 10,
+  "human_review_count": 1,
+  "test_rule_count": 6,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"test.de\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#cmpbox\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#cmpbox\"}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#cmpwrapper\"}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\"[aria-label='Zweck: Statistik'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\"[aria-label='Zweck: Statistik']\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\"[aria-label='Zweck: Marketing'][aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\"[aria-label='Zweck: Marketing']\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\"#cmpwrapper\"},\"target\":{\"selector\":\".cmpboxbtnsave\"}}}]}}",
+  "last_error": "Banner not found or matchers failed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 893 (char 892)",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 510.16,
+  "extraction_duration_seconds": 16.52,
+  "extraction_share_percent": 3.24,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "test.de": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Statistik'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Statistik']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Marketing'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Zweck: Marketing']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtnsave"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

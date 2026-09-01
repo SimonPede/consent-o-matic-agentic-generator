@@ -1,0 +1,918 @@
+{
+  "timestamp": "2026-08-28T11:42:18.707665",
+  "url": "https://www.mooveagency.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.mooveagency.com/"
+  ],
+  "duration_seconds": 16.8,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"moove-gdpr\"]\" (Moove) in frame: https://www.mooveagency.com/",
+      "waitForCmpUi detected CMP Type: Moove",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.mooveagency.com/ with Score: 61",
+      "Regex failed in frame https://www.mooveagency.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \".moove-gdpr-infobar-settings-btn\", text: \"Settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .moove-gdpr-infobar-settings-btn, textMatch: Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 152423 chars.",
+      "DOM diff: 3269 chars added, 0 inputs added.",
+      "Old state: 27 buttons, 6 inputs.",
+      "New state: 27 buttons, 6 inputs.",
+      "Settings detected: 3269 chars, 0 inputs, 0 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 0 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.mooveagency.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Moove',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: 'Moove',",
+      "      cmpSelector: null,",
+      "      url: 'https://www.mooveagency.com/',",
+      "      filteredHtml: '<body class=\"home wp-singular page-template page-template-page-templates page-template-home-2022 page-template-page-templateshome-2022-php page page-id-243 wp-theme-moove-2 home-page enquiry-scroll desktop\" data-pb=\"null\"> <div class=\"fixed-container\"> <div id=\"header\"> <div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col-sm-12\"> <a href=\"https://www.mooveagency.com\" class=\"home\" aria-label=\"London WordPress Agency\" title=\"London WordPress Agency\"> <span class=\"screen-reader-text\">London WordPress Agency</span> </a> <ul id=\"menu-primary-menu\" class=\"nav navbar-nav navbar-right\"><li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-427\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item\"><a aria-label=\"Our Work\" href=\"https://www.mooveagency.com/case-studies/\" class=\"dropdown-toggle\"><span>Our Work</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-3122\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item\"><a aria-label=\"Services\" href=\"https://www.mooveagency.com/services/\" class=\"dropdown-toggle\"><span>Services</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7716\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7716 nav-item\"><a aria-label=\"WordPress Development\" href=\"https://www.mooveagency.com/services/wordpress-development/\" class=\"dropdown-item\"><span>WordPress Development</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7715\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7715 nav-item\"><a aria-label=\"WordPress Support Packages\" href=\"https://www.mooveagency.com/services/wordpress-support/\" class=\"dropdown-item\"><span>WordPress Support Packages</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7714\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7714 nav-item\"><a aria-label=\"WordPress API Integrations\" href=\"https://www.mooveagency.com/services/api-integrations-development/\" class=\"dropdown-item\"><span>WordPress API Integrations</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7717\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 nav-item\"><a aria-label=\"WordPress Code Reviews\" href=\"https://www.mooveagency.com/services/wordpress-code-review/\" class=\"dropdown-item\"><span>WordPress Code Reviews</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7713\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7713 nav-item\"><a aria-label=\"WordPress Web Design\" href=\"https://www.mooveagency.com/services/web-design/\" class=\"dropdown-item\"><span>WordPress Web Design</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-126926\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-126926 nav-item\"><a aria-label=\"WordPress AI Solutions\" href=\"https://www.mooveagency.com/wordpress/ai-changing-websites/\" class=\"dropdown-item\"><span>WordPress AI Solutions</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-8484\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-8484 nav-item\"><a aria-label=\"Plugins\" href=\"https://www.mooveagency.com/wordpress-plugins/\" class=\"dropdown-toggle\"><span>Plugins</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-87708\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87708 nav-item\"><a aria-label=\"GDPR Cookie Compliance\" href=\"https://www.mooveagency.com/wordpress-plugins/gdpr-cookie-compliance/\" class=\"dropdown-item\"><span>GDPR Cookie Compliance</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-87794\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87794 nav-item\"><a aria-label=\"User Activity Tracking and Log\" href=\"https://www.mooveagency.com/wordpress-plugins/user-activity-tracking-and-log/\" class=\"dropdown-item\"><span>User Activity Tracking and Log</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-58567\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-58567 nav-item\"><a aria-label=\"Support\" target=\"_blank\" href=\"https://support.mooveagency.com/forums/\" class=\"dropdown-item\"><span>Support</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-84859\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-84859 nav-item\"><a aria-label=\"My Account\" target=\"_blank\" href=\"https://shop.mooveagency.com/my-account/\" class=\"dropdown-item\"><span>My Account</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-60\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-60 nav-item\"><a aria-label=\"About\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-toggle\"><span>About</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7719\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7719 nav-item\"><a aria-label=\"Our Agency\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-item\"><span>Our Agency</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7733\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7733 nav-item\"><a aria-label=\"Selected Clients\" href=\"https://www.mooveagency.com/selected-clients/\" class=\"dropdown-item\"><span>Selected Clients</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7718\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7718 nav-item\"><a aria-label=\"Careers\" href=\"https://www.mooveagency.com/hiring/\" class=\"dropdown-item\"><span>Careers</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7740\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7740 nav-item\"><a aria-label=\"Press Kit\" href=\"https://www.mooveagency.com/press-kit/\" class=\"dropdown-item\"><span>Press Kit</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-59\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item\"><a aria-label=\"News\" href=\"https://www.mooveagency.com/blog/\" class=\"dropdown-toggle\"><span>News</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-61\" class=\"nav-highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item\"><a aria-label=\"Contact\" href=\"https://www.mooveagency.com/contact/\" class=\"dropdown-toggle\"><span>Contact</span></a></li> </ul> <button class=\"navigation-button\" aria-label=\"Open mobile menu\"> <span class=\"screen-reader-text\">Open mobile menu</span> <span class=\"nb-span\"></span> </button> </div> </div> </div> </div> </div> <div class=\"main-nav\"> <div class=\"container-fluid\"> <div class=\"row\"> <div class=\"navigation hidden\"> <div class=\"col-xs-12 col-md-5\"> <ul id=\"menu-primary-menu-1\" class=\"nav nav-main\"><li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item\"><a aria-label=\"Our Work\" href=\"https://www.mooveagency.com/case-studies/\" class=\"dropdown-toggle\">Our Work</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item\"><a aria-label=\"Services\" href=\"https://www.mooveagency.com/services/\" class=\"dropdown-toggle\">Services</a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7716 nav-item\"><a aria-label=\"WordPress Development\" href=\"https://www.mooveagency.com/services/wordpress-development/\" class=\"dropdown-item\">WordPress Development</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7715 nav-item\"><a aria-label=\"WordPress Support Packages\" href=\"https://www.mooveagency.com/services/wordpress-support/\" class=\"dropdown-item\">WordPress Support Packages</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7714 nav-item\"><a aria-label=\"WordPress API Integrations\" href=\"https://www.mooveagency.com/services/api-integrations-development/\" class=\"dropdown-item\">WordPress API Integrations</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 nav-item\"><a aria-label=\"WordPress Code Reviews\" href=\"https://www.mooveagency.com/services/wordpress-code-review/\" class=\"dropdown-item\">WordPress Code Reviews</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.o'... 26054 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 36054",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"moove-gdpr\"]',",
+      "      url: 'https://www.mooveagency.com/',",
+      "      filteredHtml: '<aside id=\"moove_gdpr_cookie_info_bar\" class=\"moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom\" aria-label=\"GDPR Cookie Banner\"> <div class=\"moove-gdpr-info-bar-container\"> <div class=\"moove-gdpr-info-bar-content\"> <div class=\"moove-gdpr-cookie-notice\"> <p>This website uses cookies to provide you with the best browsing experience.</p> </div> <div class=\"moove-gdpr-button-holder\"> <button class=\"mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0\" aria-label=\"Accept\">Accept</button> <button class=\"mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 \" aria-label=\"Reject\">Reject</button> <button class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button gdpr-fbo-2 gdpr-settings-btn-style-2\" aria-haspopup=\"true\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Settings\">Settings</button> </div> </div> </div> </aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 857,",
+      "      cmpType: 'Moove',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.mooveagency.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (20):",
+      "      [A] \"OUR WORK\" --> selector: [aria-label=\"Our Work\"]",
+      "      [A] \"SERVICES\" --> selector: [aria-label=\"Services\"]",
+      "      [A] \"PLUGINS\" --> selector: [aria-label=\"Plugins\"]",
+      "      [A] \"ABOUT\" --> selector: [aria-label=\"About\"]",
+      "      [A] \"NEWS\" --> selector: [aria-label=\"News\"]",
+      "      [A] \"CONTACT\" --> selector: [aria-label=\"Contact\"]",
+      "      [A] \"ASK AI ABOUT MOOVE\" --> selector: a",
+      "      [A] \"CASE STUDIES\" --> selector: a",
+      "      [A] \"WORDPRESS DEVELOPMENT",
+      "We know that WordPress has no limits and how to make the most out of it",
+      "LEARN MORE\" --> selector: .mbr-service-item",
+      "      [A] \"WORDPRESS DESIGN",
+      "We design extraordinary WordPress websites that deliver meaningful results",
+      "LEARN MORE\" --> selector: .mbr-service-item",
+      "      [A] \"WORDPRESS SUPPORT",
+      "Our elite team of experts will take the best care of your existing WordPress site",
+      "LEARN MORE\" --> selector: .mbr-service-item",
+      "      [A] \"GDPR & CCPA Cookie Compliance",
+      "An easy-to-use WordPress plugin that can help you prepare your website for cookie consent regulations.",
+      "LEARN MORE\" --> selector: .mbr-plugin-box",
+      "      [A] \"User Activity Tracking & Log",
+      "Track user activity and time duration on your website with this incredibly powerful WordPress plugin.",
+      "LEARN MORE\" --> selector: .mbr-plugin-box",
+      "      [A] \"JLL\" --> selector: a",
+      "      [A] \"OUR ACCREDITATIONS",
+      "We are a WordPress VIP Agency\" --> selector: .mbr-accreditations",
+      "      [A] \"16TH JUL 2026",
+      "Fauna & Flora Case Study: Supporting Global Conservation\" --> selector: a",
+      "      [A] \"18TH JUN 2026",
+      "Why AI Matters for Marketing Teams Using WordPress\" --> selector: a",
+      "      [A] \"25TH MAY 2026",
+      "WordPress 7.0: Enterprise-Grade by Default\" --> selector: a",
+      "      [A] \"INFO@MOOVEAGENCY.COM\" --> selector: .email-us",
+      "      [A] \"0203 372 5696\" --> selector: .call-us",
+      "   Checkboxes found (0):",
+      "  Toggles found (6):",
+      "      \"OUR WORK\" | aria-checked: null --> selector: [aria-label=\"Our Work\"]",
+      "      \"SERVICES\" | aria-checked: null --> selector: [aria-label=\"Services\"]",
+      "      \"PLUGINS\" | aria-checked: null --> selector: [aria-label=\"Plugins\"]",
+      "      \"ABOUT\" | aria-checked: null --> selector: [aria-label=\"About\"]",
+      "      \"NEWS\" | aria-checked: null --> selector: [aria-label=\"News\"]",
+      "      \"CONTACT\" | aria-checked: null --> selector: [aria-label=\"Contact\"]",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (3):",
+      "      [BUTTON] \"Accept\" --> selector: [aria-label=\"Accept\"]",
+      "      [BUTTON] \"Reject\" --> selector: [aria-label=\"Reject\"]",
+      "      [BUTTON] \"Settings\" --> selector: [aria-label=\"Settings\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.mooveagency.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Moove",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "OUR WORK",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Our Work",
+              "href": "https://www.mooveagency.com/case-studies/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-427",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item",
+              "selector": "#menu-item-427",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Our Work\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SERVICES",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Services",
+              "href": "https://www.mooveagency.com/services/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-3122",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item",
+              "selector": "#menu-item-3122",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Services\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "PLUGINS",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Plugins",
+              "href": "https://www.mooveagency.com/wordpress-plugins/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-8484",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-8484 nav-item",
+              "selector": "#menu-item-8484",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Plugins\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ABOUT",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "About",
+              "href": "https://www.mooveagency.com/about/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-60",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-60 nav-item",
+              "selector": "#menu-item-60",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"About\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NEWS",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "News",
+              "href": "https://www.mooveagency.com/blog/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-59",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item",
+              "selector": "#menu-item-59",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"News\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CONTACT",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Contact",
+              "href": "https://www.mooveagency.com/contact/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-61",
+              "className": "nav-highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item",
+              "selector": "#menu-item-61",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Contact\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ASK AI ABOUT MOOVE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://chat.openai.com/?q=As%20a%20marketer%20for%20a%20global%20organisation%2C%20I%20want%20to%20know%20what%20makes%20Moove%20Agency%20the%20best%20WordPress%20agency%20to%20handle%20our%20website%20needs.%20Summarise%20the%20highlights%20from%20Moove%20Agency%27s%20website%3A%20https%3A%2F%2Fwww.mooveagency.com%2F",
+              "target": "_blank",
+              "class": "moove-rounded-button button-orange btn-first"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "header-cta-wrap",
+              "selector": ".header-cta-wrap",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container",
+                "selector": ".container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CASE STUDIES",
+            "tag": "A",
+            "attributes": {
+              "class": "moove-rounded-button button-orange",
+              "href": "/case-studies/",
+              "data-text": "Case Studies"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "text-center view-cs",
+              "selector": ".text-center",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mbr-cta-wrap text-center",
+                "selector": ".mbr-cta-wrap"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "WORDPRESS DEVELOPMENT\nWe know that WordPress has no limits and how to make the most out of it\nLEARN MORE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/services/wordpress-development/",
+              "class": "mbr-service-item",
+              "data-m-aos": "fade-up",
+              "data-aos-anchor-placement": "center-bottom",
+              "data-aos-delay": "200",
+              "data-aos-duration": "600"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-service-wrap",
+              "selector": ".mbr-service-wrap",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container",
+                "selector": ".container"
+              }
+            },
+            "selector": ".mbr-service-item",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "WORDPRESS DESIGN\nWe design extraordinary WordPress websites that deliver meaningful results\nLEARN MORE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/services/web-design/",
+              "class": "mbr-service-item",
+              "data-m-aos": "fade-up",
+              "data-aos-anchor-placement": "center-bottom",
+              "data-aos-delay": "400",
+              "data-aos-duration": "600"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-service-wrap",
+              "selector": ".mbr-service-wrap",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container",
+                "selector": ".container"
+              }
+            },
+            "selector": ".mbr-service-item",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "WORDPRESS SUPPORT\nOur elite team of experts will take the best care of your existing WordPress site\nLEARN MORE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/services/wordpress-support/",
+              "class": "mbr-service-item",
+              "data-m-aos": "fade-up",
+              "data-aos-anchor-placement": "center-bottom",
+              "data-aos-delay": "600",
+              "data-aos-duration": "600"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-service-wrap",
+              "selector": ".mbr-service-wrap",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "container",
+                "selector": ".container"
+              }
+            },
+            "selector": ".mbr-service-item",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "GDPR & CCPA Cookie Compliance\nAn easy-to-use WordPress plugin that can help you prepare your website for cookie consent regulations.\nLEARN MORE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/wordpress-plugins/gdpr-cookie-compliance/",
+              "class": "mbr-plugin-box mbr-plugin-box-light"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-plugin-item",
+              "selector": ".mbr-plugin-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "plugin-box-container",
+                "selector": ".plugin-box-container"
+              }
+            },
+            "selector": ".mbr-plugin-box",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "User Activity Tracking & Log\nTrack user activity and time duration on your website with this incredibly powerful WordPress plugin.\nLEARN MORE",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/wordpress-plugins/user-activity-tracking-and-log/",
+              "class": "mbr-plugin-box mbr-plugin-box-dark"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-plugin-item",
+              "selector": ".mbr-plugin-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "plugin-box-container",
+                "selector": ".plugin-box-container"
+              }
+            },
+            "selector": ".mbr-plugin-box",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "JLL",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/case-study/wordpress-development-services/"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "quote-org",
+              "selector": ".quote-org",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "qf-details",
+                "selector": ".qf-details"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "OUR ACCREDITATIONS\nWe are a WordPress VIP Agency",
+            "tag": "A",
+            "attributes": {
+              "href": "/wordpress/wordpress-vip/",
+              "class": "mbr-accreditations"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "fwcontainer",
+              "selector": ".fwcontainer",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "mbr-testimonials-and-acc",
+                "selector": ".mbr-testimonials-and-acc"
+              }
+            },
+            "selector": ".mbr-accreditations",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "16TH JUL 2026\nFauna & Flora Case Study: Supporting Global Conservation",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/wordpress/supporting-global-platform/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-blog-card",
+              "selector": ".mbr-blog-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mbr-blog-listing-w",
+                "selector": ".mbr-blog-listing-w"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "18TH JUN 2026\nWhy AI Matters for Marketing Teams Using WordPress",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/wordpress/ai-marketing/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-blog-card",
+              "selector": ".mbr-blog-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mbr-blog-listing-w",
+                "selector": ".mbr-blog-listing-w"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "25TH MAY 2026\nWordPress 7.0: Enterprise-Grade by Default",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.mooveagency.com/wordpress/7/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mbr-blog-card",
+              "selector": ".mbr-blog-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "mbr-blog-listing-w",
+                "selector": ".mbr-blog-listing-w"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "INFO@MOOVEAGENCY.COM",
+            "tag": "A",
+            "attributes": {
+              "href": "mailto:info@mooveagency.com?subject=Website%20Enquiry",
+              "class": "email-us moove-rounded-button button-dark"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "lwt-cta-col-w",
+              "selector": ".lwt-cta-col-w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "lwt-row-w",
+                "selector": ".lwt-row-w"
+              }
+            },
+            "selector": ".email-us",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "0203 372 5696",
+            "tag": "A",
+            "attributes": {
+              "href": "tel:02033725696",
+              "class": "call-us moove-rounded-button button-dark"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "lwt-cta-col-w",
+              "selector": ".lwt-cta-col-w",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "lwt-row-w",
+                "selector": ".lwt-row-w"
+              }
+            },
+            "selector": ".call-us",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "OUR WORK",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Our Work",
+              "href": "https://www.mooveagency.com/case-studies/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-427",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item",
+              "selector": "#menu-item-427",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Our Work\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "SERVICES",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Services",
+              "href": "https://www.mooveagency.com/services/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-3122",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item",
+              "selector": "#menu-item-3122",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Services\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "PLUGINS",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Plugins",
+              "href": "https://www.mooveagency.com/wordpress-plugins/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-8484",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-8484 nav-item",
+              "selector": "#menu-item-8484",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Plugins\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "ABOUT",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "About",
+              "href": "https://www.mooveagency.com/about/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-60",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-60 nav-item",
+              "selector": "#menu-item-60",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"About\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "NEWS",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "News",
+              "href": "https://www.mooveagency.com/blog/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-59",
+              "className": "menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item",
+              "selector": "#menu-item-59",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"News\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "CONTACT",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Contact",
+              "href": "https://www.mooveagency.com/contact/",
+              "class": "dropdown-toggle"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "menu-item-61",
+              "className": "nav-highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item",
+              "selector": "#menu-item-61",
+              "grandparent": {
+                "tag": "UL",
+                "id": "menu-primary-menu",
+                "className": "nav navbar-nav navbar-right",
+                "selector": "#menu-primary-menu"
+              }
+            },
+            "selector": "[aria-label=\"Contact\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": "Moove",
+        "cmpSelector": null,
+        "url": "https://www.mooveagency.com/",
+        "filteredHtml": "<body class=\"home wp-singular page-template page-template-page-templates page-template-home-2022 page-template-page-templateshome-2022-php page page-id-243 wp-theme-moove-2 home-page enquiry-scroll desktop\" data-pb=\"null\"> <div class=\"fixed-container\"> <div id=\"header\"> <div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col-sm-12\"> <a href=\"https://www.mooveagency.com\" class=\"home\" aria-label=\"London WordPress Agency\" title=\"London WordPress Agency\"> <span class=\"screen-reader-text\">London WordPress Agency</span> </a> <ul id=\"menu-primary-menu\" class=\"nav navbar-nav navbar-right\"><li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-427\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item\"><a aria-label=\"Our Work\" href=\"https://www.mooveagency.com/case-studies/\" class=\"dropdown-toggle\"><span>Our Work</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-3122\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item\"><a aria-label=\"Services\" href=\"https://www.mooveagency.com/services/\" class=\"dropdown-toggle\"><span>Services</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7716\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7716 nav-item\"><a aria-label=\"WordPress Development\" href=\"https://www.mooveagency.com/services/wordpress-development/\" class=\"dropdown-item\"><span>WordPress Development</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7715\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7715 nav-item\"><a aria-label=\"WordPress Support Packages\" href=\"https://www.mooveagency.com/services/wordpress-support/\" class=\"dropdown-item\"><span>WordPress Support Packages</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7714\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7714 nav-item\"><a aria-label=\"WordPress API Integrations\" href=\"https://www.mooveagency.com/services/api-integrations-development/\" class=\"dropdown-item\"><span>WordPress API Integrations</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7717\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 nav-item\"><a aria-label=\"WordPress Code Reviews\" href=\"https://www.mooveagency.com/services/wordpress-code-review/\" class=\"dropdown-item\"><span>WordPress Code Reviews</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7713\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7713 nav-item\"><a aria-label=\"WordPress Web Design\" href=\"https://www.mooveagency.com/services/web-design/\" class=\"dropdown-item\"><span>WordPress Web Design</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-126926\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-126926 nav-item\"><a aria-label=\"WordPress AI Solutions\" href=\"https://www.mooveagency.com/wordpress/ai-changing-websites/\" class=\"dropdown-item\"><span>WordPress AI Solutions</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-8484\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-8484 nav-item\"><a aria-label=\"Plugins\" href=\"https://www.mooveagency.com/wordpress-plugins/\" class=\"dropdown-toggle\"><span>Plugins</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-87708\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87708 nav-item\"><a aria-label=\"GDPR Cookie Compliance\" href=\"https://www.mooveagency.com/wordpress-plugins/gdpr-cookie-compliance/\" class=\"dropdown-item\"><span>GDPR Cookie Compliance</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-87794\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87794 nav-item\"><a aria-label=\"User Activity Tracking and Log\" href=\"https://www.mooveagency.com/wordpress-plugins/user-activity-tracking-and-log/\" class=\"dropdown-item\"><span>User Activity Tracking and Log</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-58567\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-58567 nav-item\"><a aria-label=\"Support\" target=\"_blank\" href=\"https://support.mooveagency.com/forums/\" class=\"dropdown-item\"><span>Support</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-84859\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-84859 nav-item\"><a aria-label=\"My Account\" target=\"_blank\" href=\"https://shop.mooveagency.com/my-account/\" class=\"dropdown-item\"><span>My Account</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-60\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-60 nav-item\"><a aria-label=\"About\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-toggle\"><span>About</span></a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7719\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7719 nav-item\"><a aria-label=\"Our Agency\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-item\"><span>Our Agency</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7733\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7733 nav-item\"><a aria-label=\"Selected Clients\" href=\"https://www.mooveagency.com/selected-clients/\" class=\"dropdown-item\"><span>Selected Clients</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7718\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7718 nav-item\"><a aria-label=\"Careers\" href=\"https://www.mooveagency.com/hiring/\" class=\"dropdown-item\"><span>Careers</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-7740\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7740 nav-item\"><a aria-label=\"Press Kit\" href=\"https://www.mooveagency.com/press-kit/\" class=\"dropdown-item\"><span>Press Kit</span></a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-59\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item\"><a aria-label=\"News\" href=\"https://www.mooveagency.com/blog/\" class=\"dropdown-toggle\"><span>News</span></a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" id=\"menu-item-61\" class=\"nav-highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item\"><a aria-label=\"Contact\" href=\"https://www.mooveagency.com/contact/\" class=\"dropdown-toggle\"><span>Contact</span></a></li> </ul> <button class=\"navigation-button\" aria-label=\"Open mobile menu\"> <span class=\"screen-reader-text\">Open mobile menu</span> <span class=\"nb-span\"></span> </button> </div> </div> </div> </div> </div> <div class=\"main-nav\"> <div class=\"container-fluid\"> <div class=\"row\"> <div class=\"navigation hidden\"> <div class=\"col-xs-12 col-md-5\"> <ul id=\"menu-primary-menu-1\" class=\"nav nav-main\"><li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-427 nav-item\"><a aria-label=\"Our Work\" href=\"https://www.mooveagency.com/case-studies/\" class=\"dropdown-toggle\">Our Work</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3122 nav-item\"><a aria-label=\"Services\" href=\"https://www.mooveagency.com/services/\" class=\"dropdown-toggle\">Services</a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7716 nav-item\"><a aria-label=\"WordPress Development\" href=\"https://www.mooveagency.com/services/wordpress-development/\" class=\"dropdown-item\">WordPress Development</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7715 nav-item\"><a aria-label=\"WordPress Support Packages\" href=\"https://www.mooveagency.com/services/wordpress-support/\" class=\"dropdown-item\">WordPress Support Packages</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7714 nav-item\"><a aria-label=\"WordPress API Integrations\" href=\"https://www.mooveagency.com/services/api-integrations-development/\" class=\"dropdown-item\">WordPress API Integrations</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 nav-item\"><a aria-label=\"WordPress Code Reviews\" href=\"https://www.mooveagency.com/services/wordpress-code-review/\" class=\"dropdown-item\">WordPress Code Reviews</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7713 nav-item\"><a aria-label=\"WordPress Web Design\" href=\"https://www.mooveagency.com/services/web-design/\" class=\"dropdown-item\">WordPress Web Design</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-126926 nav-item\"><a aria-label=\"WordPress AI Solutions\" href=\"https://www.mooveagency.com/wordpress/ai-changing-websites/\" class=\"dropdown-item\">WordPress AI Solutions</a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-8484 nav-item\"><a aria-label=\"Plugins\" href=\"https://www.mooveagency.com/wordpress-plugins/\" class=\"dropdown-toggle\">Plugins</a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87708 nav-item\"><a aria-label=\"GDPR Cookie Compliance\" href=\"https://www.mooveagency.com/wordpress-plugins/gdpr-cookie-compliance/\" class=\"dropdown-item\">GDPR Cookie Compliance</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-87794 nav-item\"><a aria-label=\"User Activity Tracking and Log\" href=\"https://www.mooveagency.com/wordpress-plugins/user-activity-tracking-and-log/\" class=\"dropdown-item\">User Activity Tracking and Log</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-58567 nav-item\"><a aria-label=\"Support\" target=\"_blank\" href=\"https://support.mooveagency.com/forums/\" class=\"dropdown-item\">Support</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-84859 nav-item\"><a aria-label=\"My Account\" target=\"_blank\" href=\"https://shop.mooveagency.com/my-account/\" class=\"dropdown-item\">My Account</a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-60 nav-item\"><a aria-label=\"About\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-toggle\">About</a> <ul class=\"dropdown-menu\"> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7719 nav-item\"><a aria-label=\"Our Agency\" href=\"https://www.mooveagency.com/about/\" class=\"dropdown-item\">Our Agency</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7733 nav-item\"><a aria-label=\"Selected Clients\" href=\"https://www.mooveagency.com/selected-clients/\" class=\"dropdown-item\">Selected Clients</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7718 nav-item\"><a aria-label=\"Careers\" href=\"https://www.mooveagency.com/hiring/\" class=\"dropdown-item\">Careers</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-7740 nav-item\"><a aria-label=\"Press Kit\" href=\"https://www.mooveagency.com/press-kit/\" class=\"dropdown-item\">Press Kit</a></li> </ul> </li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item\"><a aria-label=\"News\" href=\"https://www.mooveagency.com/blog/\" class=\"dropdown-toggle\">News</a></li> <li itemscope=\"itemscope\" itemtype=\"https://www.schema.org/SiteNavigationElement\" class=\"nav-highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-61 nav-item\"><a aria-label=\"Contact\" href=\"https://www.mooveagency.com/contact/\" class=\"dropdown-toggle\">Contact</a></li> </ul> </div> <div class=\"col-xs-12 col-md-5 col-md-offset-2 contacts\"> <div class=\"col-sm-6 col-md-12\"> <div class=\"contact-cont\"> <span class=\"clbl\">Email us</span> <a href=\"mailto:info@mooveagency.com\"> <span class=\"icon-email\"></span> info@mooveagency.com </a> </div> </div> <div class=\"col-sm-6 col-md-12\"> <div class=\"contact-cont\"> <span class=\"clbl\">Call us</span> <a href=\"tel:+02033725696\"> <span class=\"icon-phone\"></span> 0203 372 5696 </a> </div> </div> <div class=\"col-sm-6 col-md-12 location\"> <div class=\"contact-cont\"> <span class=\"clbl\">Office address</span> <a href=\"https://www.google.com/maps/place/20+Wenlock+Rd,+London+N1+7GU/@51.530579,-0.0962586,17z/data=!3m1!4b1!4m6!3m5!1s0x48761ca0ab293773:0x2fa1c7e51036d3a1!8m2!3d51.530579!4d-0.0936837!16s%2Fg%2F11csmw9qgy?entry=ttu\" target=\"_blank\"> <span class=\"icon-pin\"></span> 20 Wenlock Road, London, N1 7GU </a> </div> </div> <div class=\"col-sm-6 col-md-12 social-media\"> <div class=\"contact-cont\"> <div class=\"media-center\"> <span class=\"clbl\">Follow us</span> <span> <a href=\"https://www.instagram.com/mooveagency/\" target=\"_blank\"> <span class=\"icon-facebook\"></span> <span class=\"icon-facebook\"></span> </a> </span> <span> <a href=\"https://twitter.com/mooveagency\" target=\"_blank\"> <span class=\"icon-Twitter\"></span> <span class=\"icon-Twitter\"></span> </a> </span> <span> <a href=\"https://www.linkedin.com/company/moove-agency/\" target=\"_blank\"> <span class=\"icon-Linkedin\"></span> <span class=\"icon-Linkedin\"></span> </a> </span> </div> </div> </div> </div> </div> </div> </div> </div> <div class=\"moove-rb-content-wrap\"> <section class=\"mrb-page-header\"> <div class=\"container\"> <div class=\"header-title\"> <h1>London WordPress Agency</h1> </div> <div class=\"header-subtitle\"> <p class=\"p1\">We are a leading WordPress development agency helping global brands<br> succeed in today’s fast-moving digital world</p> </div> <div class=\"header-cta-wrap\"> <a href=\"https://chat.openai.com/?q=As%20a%20marketer%20for%20a%20global%20organisation%2C%20I%20want%20to%20know%20what%20makes%20Moove%20Agency%20the%20best%20WordPress%20agency%20to%20handle%20our%20website%20needs.%20Summarise%20the%20highlights%20from%20Moove%20Agency%27s%20website%3A%20https%3A%2F%2Fwww.mooveagency.com%2F\" target=\"_blank\" class=\"moove-rounded-button button-orange btn-first\"> <span>Ask AI About Moove</span> </a> </div> </div> <span class=\"mrb-background-wrap\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/London-WordPress-VIP-Agency.jpg\" class=\"mrb-bg rocket-lazyload entered lazyloaded\" data-ll-status=\"loaded\"></span> </span> <span class=\"mrb-waves\"> </span> </section> <section class=\"mrb-case-studies\"> <span class=\"section-bg\"> </span> <div class=\"container\"> <div class=\"section-title\"> <span data-m-aos=\"fade-up\" data-aos-duration=\"600\">our work</span> <h2 data-m-aos=\"fade-up\" data-aos-duration=\"600\">We work with some of the biggest brands to deliver meaningful results</h2> </div> <div class=\"mbr-case-studies-wrap\"> <div class=\"mbr-case-study-item\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"200\"> <div class=\"item\" data-img=\"https://www.mooveagency.com/wp-content/uploads/sony-300x300.png\" data-colour=\" #000000 \"> <div class=\"item-content\"> </div> <a href=\"https://www.mooveagency.com/case-study/wordpress-global-blog-sony-mobile/\" aria-label=\"Read our Sony Mobile case study\" title=\"Read our Sony Mobile case study\"><span class=\"screen-reader-text\">Read our Sony Mobile case study</span></a> </div> </div> <div class=\"mbr-case-study-item\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"400\"> <div class=\"item\" data-img=\"https://www.mooveagency.com/wp-content/uploads/Which-300x300.png\" data-colour=\" #da121c \"> <div class=\"item-content\"> </div> <a href=\"https://www.mooveagency.com/case-study/which-wordpress-website/\" aria-label=\"Read our Which case study\" title=\"Read our Which case study\"><span class=\"screen-reader-text\">Read our Which case study</span></a> </div> </div> <div class=\"mbr-case-study-item\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"600\"> <div class=\"item\" data-img=\"https://www.mooveagency.com/wp-content/uploads/JLL-300x300.png\" data-colour=\" #000000 \"> <div class=\"item-content\"> </div> <a href=\"https://www.mooveagency.com/case-study/wordpress-development-services/\" aria-label=\"Read our JLL case study\" title=\"Read our JLL case study\"><span class=\"screen-reader-text\">Read our JLL case study</span></a> </div> </div> </div> <div class=\"mbr-cta-wrap text-center\" data-m-aos=\"fade-up\" data-aos-duration=\"600\"> <div class=\"text-center view-cs\"> <a class=\"moove-rounded-button button-orange\" href=\"/case-studies/\" data-text=\"Case Studies\"> <span>Case Studies</span> </a> </div> </div> </div> <span class=\"mrb-waves\"> </span> </section> <section class=\"mbr-services\"> <div class=\"particles-wrapper\" data-number=\"30\" data-shape=\"circle\" data-size=\"4\" data-colors=\"['#F08300', '#B8B8B8']\"> <div id=\"particles-mbr_s_d5e976acae179272af4fce3589d12023\"></div> </div> <div class=\"container\"> <div class=\"section-title\"> <span data-m-aos=\"fade-up\" data-aos-duration=\"600\">our services</span> <h2 data-m-aos=\"fade-up\" data-aos-duration=\"600\">We combine technical and creative expertise with our dedicated support to bring you simply outstanding web development services</h2> </div> <div class=\"mbr-service-wrap\"> <a href=\"https://www.mooveagency.com/services/wordpress-development/\" class=\"mbr-service-item\" data-m-aos=\"fade-up\" data-aos-anchor-placement=\"center-bottom\" data-aos-delay=\"200\" data-aos-duration=\"600\"> <div class=\"mbr-service-box\"> <span class=\"mbr-service-icon\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/icon-development.svg\" class=\"rocket-lazyload\"></span> </span> <div class=\"mbr-service-title\"> <h3>WordPress Development</h3> </div> <div class=\"mbr-service-excerpt\"> We know that WordPress has no limits and how to make the most out of it </div> <div class=\"mbr-link-w\"> <span>Learn more</span> </div> </div> </a> <a href=\"https://www.mooveagency.com/services/web-design/\" class=\"mbr-service-item\" data-m-aos=\"fade-up\" data-aos-anchor-placement=\"center-bottom\" data-aos-delay=\"400\" data-aos-duration=\"600\"> <div class=\"mbr-service-box\"> <span class=\"mbr-service-icon\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/icon-design.svg\" class=\"rocket-lazyload\"></span> </span> <div class=\"mbr-service-title\"> <h3>WordPress Design</h3> </div> <div class=\"mbr-service-excerpt\"> We design extraordinary WordPress websites that deliver meaningful results </div> <div class=\"mbr-link-w\"> <span>Learn more</span> </div> </div> </a> <a href=\"https://www.mooveagency.com/services/wordpress-support/\" class=\"mbr-service-item\" data-m-aos=\"fade-up\" data-aos-anchor-placement=\"center-bottom\" data-aos-delay=\"600\" data-aos-duration=\"600\"> <div class=\"mbr-service-box\"> <span class=\"mbr-service-icon\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/icon-support.svg\" class=\"rocket-lazyload\"></span> </span> <div class=\"mbr-service-title\"> <h3>WordPress Support</h3> </div> <div class=\"mbr-service-excerpt\"> Our elite team of experts will take the best care of your existing WordPress site </div> <div class=\"mbr-link-w\"> <span>Learn More</span> </div> </div> </a> </div> </div> </section> <section class=\"mbr-premium-plugins\"> <div class=\"section-pattern\"> <div class=\"container\"> </div> </div> <div class=\"container\"> <div class=\"section-title\"> <span data-m-aos=\"fade-up\" data-aos-duration=\"600\">Our Premium Plugins</span> <h2 data-m-aos=\"fade-up\" data-aos-duration=\"600\">Our WordPress plugins are used on over<br> 300,000 websites</h2> </div> <div class=\"plugin-box-container\"> <div class=\"mbr-plugin-item\" data-m-aos=\"fade-up\" data-aos-anchor-placement=\"center-bottom\" data-aos-delay=\"0\" data-aos-duration=\"600\"> <a href=\"https://www.mooveagency.com/wordpress-plugins/gdpr-cookie-compliance/\" class=\"mbr-plugin-box mbr-plugin-box-light\"> <span class=\"mbr-plugin-icon\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/gdpr-hpn-150x150.png\" class=\"rocket-lazyload\"></span> </span> <div class=\"mbr-plugin-title\"> <h3>GDPR &amp; CCPA Cookie Compliance</h3> </div> <div class=\"mbr-plugin-excerpt\"> An easy-to-use WordPress plugin that can help you prepare your website for cookie consent regulations. </div> <div class=\"mbr-link-w\"> <span class=\"moove-rounded-button button-orange\" data-text=\"Learn More\"> <span>Learn More</span> </span> </div> </a> </div> <div class=\"mbr-plugin-item\" data-m-aos=\"fade-up\" data-aos-anchor-placement=\"center-bottom\" data-aos-delay=\"200\" data-aos-duration=\"600\"> <a href=\"https://www.mooveagency.com/wordpress-plugins/user-activity-tracking-and-log/\" class=\"mbr-plugin-box mbr-plugin-box-dark\"> <span class=\"mbr-plugin-icon\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/uat-hpn-150x150.png\" class=\"rocket-lazyload\"></span> </span> <div class=\"mbr-plugin-title\"> <h3>User Activity Tracking &amp; Log</h3> </div> <div class=\"mbr-plugin-excerpt\"> Track user activity and time duration on your website with this incredibly powerful WordPress plugin. </div> <div class=\"mbr-link-w\"> <span class=\"moove-rounded-button button-orange\" data-text=\"Learn More\"> <span>Learn More</span> </span> </div> </a> </div> </div> </div> </section> <section class=\"mbr-testimonials-and-acc\" data-m-aos=\"fade-up\" data-aos-duration=\"1000\"> <div class=\"fwcontainer\"> <div class=\"mbr-testimonials\"> <div class=\"container\"> <div class=\"testimonial-slider-wrap\"> <div class=\"testimonial-slider\"> <div class=\"item\"> <blockquote><span>Fantastic, hard working, talented WordPress agency</span></blockquote> <div class=\"quote-footer\"> <div class=\"qf-logo\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/jll-logo.png\" class=\"rocket-lazyload\" id=\"mbr_757f141f3be3a77286fd681a14346126\"></span> </div> <div class=\"qf-details\"> <span class=\"quote-author\">Sara Hill</span> <span class=\"quote-jobtitle\">Senior Director, Global Digital Marketing</span> <span class=\"quote-org\"> <a href=\"https://www.mooveagency.com/case-study/wordpress-development-services/\">JLL</a> </span> </div> </div> </div> </div> </div> </div> </div> <a href=\"/wordpress/wordpress-vip/\" class=\"mbr-accreditations\"> <div class=\"particles-wrapper\" data-number=\"30\" data-shape=\"circle\" data-size=\"4\" data-colors=\"['#F08300', '#B8B8B8']\"> <div id=\"particles-tacc\"></div> </div> <div class=\"container\"> <div class=\"section-title\"> <span>Our Accreditations</span> <h2>We are a WordPress VIP Agency</h2> </div> <div class=\"mbr-acc-logo\"> </div> </div> </a> </div> </section> <section class=\"mbr-blog\"> <div class=\"container\"> <div class=\"section-title\"> <span data-m-aos=\"fade-up\" data-aos-duration=\"600\">Our Blog</span> <h2 data-m-aos=\"fade-up\" data-aos-duration=\"600\">News &amp; Insights</h2> </div> <div class=\"mbr-blog-listing-w\"> <div class=\"mbr-blog-card\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"200\"> <a href=\"https://www.mooveagency.com/wordpress/supporting-global-platform/\"> <span class=\"article-thumbnail\"> </span> <span class=\"post-details\"> <span class=\"date\">16th Jul 2026</span> <span class=\"h3\">Fauna &amp; Flora Case Study: Supporting Global Conservation</span> </span> </a> </div> <div class=\"mbr-blog-card\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"400\"> <a href=\"https://www.mooveagency.com/wordpress/ai-marketing/\"> <span class=\"article-thumbnail\"> </span> <span class=\"post-details\"> <span class=\"date\">18th Jun 2026</span> <span class=\"h3\">Why AI Matters for Marketing Teams Using WordPress</span> </span> </a> </div> <div class=\"mbr-blog-card\" data-m-aos=\"fade-up\" data-aos-duration=\"600\" data-aos-delay=\"600\"> <a href=\"https://www.mooveagency.com/wordpress/7/\"> <span class=\"article-thumbnail\"> </span> <span class=\"post-details\"> <span class=\"date\">25th May 2026</span> <span class=\"h3\">WordPress 7.0: Enterprise-Grade by Default</span> </span> </a> </div> </div> </div> </section> </div> <section class=\"mrb-lets-work-tohether\"> <div class=\"container\"> <div class=\"lwt-row-w\"> <div class=\"lwt-title-col-w\" data-aos=\"fade-up\" data-aos-duration=\"2000\"> <h2>Let's work together!</h2> </div> <div class=\"lwt-cta-col-w\" data-aos=\"fade-up\" data-aos-duration=\"1000\" data-aos-delay=\"300\"> <a href=\"mailto:info@mooveagency.com?subject=Website%20Enquiry\" class=\"email-us moove-rounded-button button-dark\"> <span> <i class=\"icon-email\"></i> INFO@MOOVEAGENCY.COM </span> </a> <a href=\"tel:02033725696\" class=\"call-us moove-rounded-button button-dark\"> <span> <i class=\"icon-phone\"></i> 0203 372 5696 </span> </a> </div> </div> </div> <div class=\"section-background\"> <span data-bg=\"https://www.mooveagency.com/wp-content/uploads/london_wide-1.jpg\" class=\"rocket-lazyload\"></span> </div> </section> <div data-wpr-lazyrender=\"1\" class=\"container-full footer\"> <div class=\"container-fluid \"> <div class=\"row\"> <div class=\"col-sm-2 col-sm-push-5 col-xs-12 text-center\"> <div class=\"moove-footer-logo-holder\"> <a href=\"https://www.mooveagency.com\" aria-label=\"London WordPress Agency\" title=\"London WordPress Agency\"> <span class=\"screen-reader-text\">London WordPress Agency</span> </a> <div class=\"moove-footer-review agency-review\"> <a href=\"https://www.google.com/search?q=Moove+Agency&amp;sca_esv=d884997e81249e58&amp;ei=eu0haKCvNeevhbIPpNjFqA0&amp;ved=0ahUKEwig1KCP-52NAxXnV0EAHSRsEdUQ4dUDCBA&amp;uact=5&amp;oq=Moove+Agency&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiDE1vb3ZlIEFnZW5jeTIQEC4YgAQYQxjHARiKBRivATIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgsQABiABBiGAxiKBTIIEAAYogQYiQUyBRAAGO8FMggQABiABBiiBDIfEC4YgAQYQxjHARiKBRivARiXBRjcBBjeBBjgBNgBAUj4A1AAWABwAHgBkAEAmAGFAaABhQGqAQMwLjG4AQPIAQD4AQGYAgGgAo0BmAMAugYGCAEQARgUkgcDMC4xoAf3B7IHAzAuMbgHjQE&amp;sclient=gws-wiz-serp#lrd=0x48761cbbb8ccc2a9:0xf246c3fc8e272f77,1,,,,\" target=\"_blank\"> <span class=\"stars\"> <span class=\"star\"> <i class=\"glyphicon glyphicon-star\"></i> </span> <span class=\"star\"> <i class=\"glyphicon glyphicon-star\"></i> </span> <span class=\"star\"> <i class=\"glyphicon glyphicon-star\"></i> </span> <span class=\"star\"> <i class=\"glyphicon glyphicon-star\"></i> </span> <span class=\"star\"> <i class=\"glyphicon glyphicon-star\"></i> </span> </span> <span class=\"reviews\"> 30 reviews </span> </a> </div> </div> </div> <div class=\"col-sm-5 col-sm-push-5 col-xs-12\"> <div class=\"social-buttons\"> <br> </div> <div class=\"footer-right-cnt\"> <span class=\"wordpress\"><a href=\"https://www.mooveagency.com/wordpress/wordpress-vip/\" target=\"_blank\">WordPress VIP Agency <i class=\"icon-wpvip\"></i></a></span> </div> </div> <div class=\"col-sm-5 col-sm-pull-7 col-xs-12\"> <div class=\"footer-menu\"> <a href=\"https://www.mooveagency.com/terms-conditions/\" target=\"_blank\">Terms &amp; Conditions</a> | <a href=\"https://www.mooveagency.com/cookie-policy/\" target=\"_blank\">Cookie Policy</a> | <a href=\"https://www.mooveagency.com/privacy-policy/\" target=\"_blank\">Privacy Policy</a> | <a href=\"https://www.mooveagency.com/#gdpr_cookie_modal\" target=\"_blank\">Cookie Settings</a> </div> <div class=\"copyright\"> <strong>© 2026 Moove Agency Ltd, London, United Kingdom, Reg. 07291892</strong> </div> </div> <div class=\"clearfix\"></div> </div> </div> </div> <aside id=\"moove_gdpr_cookie_info_bar\" class=\"moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom\" aria-label=\"GDPR Cookie Banner\"> <div class=\"moove-gdpr-info-bar-container\"> <div class=\"moove-gdpr-info-bar-content\"> <div class=\"moove-gdpr-cookie-notice\"> <p>This website uses cookies to provide you with the best browsing experience.</p> </div> <div class=\"moove-gdpr-button-holder\"> <button class=\"mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0\" aria-label=\"Accept\">Accept</button> <button class=\"mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 \" aria-label=\"Reject\">Reject</button> <button class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button gdpr-fbo-2 gdpr-settings-btn-style-2\" aria-haspopup=\"true\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Settings\">Settings</button> </div> </div> </div> </aside> <button data-href=\"#moove_gdpr_cookie_modal\" aria-haspopup=\"true\" id=\"moove_gdpr_save_popup_settings_button\" class=\" gdpr-fb-hide-mobile\" aria-label=\"Cookie settings\"> <span class=\"moove_gdpr_icon\"> </span> <span class=\"moove_gdpr_text\">Cookie settings</span> </button> <dialog id=\"moove_gdpr_cookie_modal\" class=\"gdpr_lightbox-hide\" open=\"\" aria-modal=\"true\" aria-label=\"GDPR Settings Screen\"> <div class=\"moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v2\"> <button class=\"moove-gdpr-modal-close\" autofocus=\"\" aria-label=\"Close GDPR Cookie Settings\"> <span class=\"gdpr-sr-only\">Close GDPR Cookie Settings</span> <span class=\"gdpr-icon moovegdpr-arrow-close\"> </span> </button> <div class=\"moove-gdpr-modal-left-content\"> <ul id=\"moove-gdpr-menu\"> <li class=\"menu-item-on menu-item-privacy_overview menu-item-selected\"> <button data-href=\"#privacy_overview\" class=\"moove-gdpr-tab-nav\" aria-label=\"Overview\"> <span class=\"gdpr-nav-tab-title\">Overview</span> </button> </li> <li class=\"menu-item-strict-necessary-cookies menu-item-off\"> <button data-href=\"#strict-necessary-cookies\" class=\"moove-gdpr-tab-nav\" aria-label=\"Necessary Cookies\"> <span class=\"gdpr-nav-tab-title\">Necessary Cookies</span> </button> </li> <li class=\"menu-item-off menu-item-third_party_cookies\"> <button data-href=\"#third_party_cookies\" class=\"moove-gdpr-tab-nav\" aria-label=\"Google Analytics\"> <span class=\"gdpr-nav-tab-title\">Google Analytics</span> </button> </li> <li class=\"menu-item-moreinfo menu-item-off\"> <button data-href=\"#cookie_policy_modal\" class=\"moove-gdpr-tab-nav\" aria-label=\"Cookie Policy\"> <span class=\"gdpr-nav-tab-title\">Cookie Policy</span> </button> </li> </ul> </div> <div class=\"moove-gdpr-modal-right-content\"> <div class=\"moove-gdpr-modal-title\"> <div> <span class=\"tab-title\">Overview</span> </div> <div class=\"moove-gdpr-company-logo-holder\"> </div> </div> <div class=\"main-modal-content\"> <div class=\"moove-gdpr-tab-content\"> <div id=\"privacy_overview\" class=\"moove-gdpr-tab-main\"> <div class=\"moove-gdpr-tab-main-content\"> <p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p> <p>You can adjust your preferences below.</p> </div> </div> <div id=\"strict-necessary-cookies\" class=\"moove-gdpr-tab-main\"> <span class=\"tab-title\">Necessary Cookies</span> <div class=\"moove-gdpr-tab-main-content\"> <p>Essential Cookie should be enabled at all times so that we can save your preferences for cookie settings. If you disable this cookie, we will not be able to save your preferences. This means that every time you visit this website you will need to enable or disable cookies again.</p> <div class=\"moove-gdpr-status-bar \"> <div class=\"gdpr-cc-form-wrap\"> <div class=\"gdpr-cc-form-fieldset\"> <label class=\"cookie-switch\" for=\"moove_gdpr_strict_cookies\"> <span class=\"gdpr-sr-only\">Enable or Disable Cookies</span> <input type=\"checkbox\" aria-label=\"Necessary Cookies\" value=\"check\" name=\"moove_gdpr_strict_cookies\" id=\"moove_gdpr_strict_cookies\"> <span class=\"cookie-slider cookie-round gdpr-sr\" data-text-enable=\"Enabled\" data-text-disabled=\"Disabled\"> <span class=\"gdpr-sr-label\"> <span class=\"gdpr-sr-enable\">Enabled</span> <span class=\"gdpr-sr-disable\">Disabled</span> </span> </span> </label> </div> </div> </div> </div> </div> <div id=\"third_party_cookies\" class=\"moove-gdpr-tab-main\"> <span class=\"tab-title\">Google Analytics</span> <div class=\"moove-gdpr-tab-main-content\"> <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. Keeping this cookie enabled helps us to improve our website.</p> <div class=\"moove-gdpr-status-bar\"> <div class=\"gdpr-cc-form-wrap\"> <div class=\"gdpr-cc-form-fieldset\"> <label class=\"cookie-switch\" for=\"moove_gdpr_performance_cookies\"> <span class=\"gdpr-sr-only\">Enable or Disable Cookies</span> <input type=\"checkbox\" aria-label=\"Google Analytics\" value=\"check\" name=\"moove_gdpr_performance_cookies\" id=\"moove_gdpr_performance_cookies\" disabled=\"\"> <span class=\"cookie-slider cookie-round gdpr-sr\" data-text-enable=\"Enabled\" data-text-disabled=\"Disabled\"> <span class=\"gdpr-sr-label\"> <span class=\"gdpr-sr-enable\">Enabled</span> <span class=\"gdpr-sr-disable\">Disabled</span> </span> </span> </label> </div> </div> </div> </div> </div> <div id=\"cookie_policy_modal\" class=\"moove-gdpr-tab-main\"> <span class=\"tab-title\">Cookie Policy</span> <div class=\"moove-gdpr-tab-main-content\"> <p>You can find more information about our <a href=\"https://www.mooveagency.com/cookie-policy/\" target=\"_blank\" rel=\"noopener\">Cookie Policy</a> and <a href=\"https://www.mooveagency.com/privacy-policy/\">Privacy Policy</a>.</p> </div> </div> </div> </div> <div class=\"moove-gdpr-modal-footer-content\"> <div class=\"moove-gdpr-button-holder\"> <button class=\"mgbutton moove-gdpr-modal-allow-all button-visible\" aria-label=\"Enable All\">Enable All</button> <button class=\"mgbutton moove-gdpr-modal-reject-all button-visible\" aria-label=\"Reject All\">Reject All</button> <button class=\"mgbutton moove-gdpr-modal-save-settings button-visible\" aria-label=\"Save Changes\">Save Changes</button> </div> <div class=\"moove-gdpr-branding-cnt\"> <a href=\"https://wordpress.org/plugins/gdpr-cookie-compliance/\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"moove-gdpr-branding\">Powered by&nbsp; <span>GDPR Cookie Compliance</span></a> </div> </div> </div> <div class=\"moove-clearfix\"></div> </div> </dialog> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 36054
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0",
+              "aria-label": "Accept"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "moove-gdpr-button-holder",
+              "selector": ".moove-gdpr-button-holder",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "moove-gdpr-info-bar-content",
+                "selector": ".moove-gdpr-info-bar-content"
+              }
+            },
+            "selector": "[aria-label=\"Accept\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1",
+              "aria-label": "Reject"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "moove-gdpr-button-holder",
+              "selector": ".moove-gdpr-button-holder",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "moove-gdpr-info-bar-content",
+                "selector": ".moove-gdpr-info-bar-content"
+              }
+            },
+            "selector": "[aria-label=\"Reject\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "mgbutton moove-gdpr-infobar-settings-btn change-settings-button gdpr-fbo-2 gdpr-settings-btn-style-2",
+              "aria-haspopup": "true",
+              "data-href": "#moove_gdpr_cookie_modal",
+              "aria-label": "Settings"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "moove-gdpr-button-holder",
+              "selector": ".moove-gdpr-button-holder",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "moove-gdpr-info-bar-content",
+                "selector": ".moove-gdpr-info-bar-content"
+              }
+            },
+            "selector": "[aria-label=\"Settings\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"moove-gdpr\"]",
+        "url": "https://www.mooveagency.com/",
+        "filteredHtml": "<aside id=\"moove_gdpr_cookie_info_bar\" class=\"moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom\" aria-label=\"GDPR Cookie Banner\"> <div class=\"moove-gdpr-info-bar-container\"> <div class=\"moove-gdpr-info-bar-content\"> <div class=\"moove-gdpr-cookie-notice\"> <p>This website uses cookies to provide you with the best browsing experience.</p> </div> <div class=\"moove-gdpr-button-holder\"> <button class=\"mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0\" aria-label=\"Accept\">Accept</button> <button class=\"mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 \" aria-label=\"Reject\">Reject</button> <button class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button gdpr-fbo-2 gdpr-settings-btn-style-2\" aria-haspopup=\"true\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Settings\">Settings</button> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 857,
+        "cmpType": "Moove",
+        "isIframe": false
+      }
+    }
+  ]
+}

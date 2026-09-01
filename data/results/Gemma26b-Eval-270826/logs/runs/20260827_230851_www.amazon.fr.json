@@ -1,0 +1,204 @@
+{
+  "timestamp": "2026-08-27T23:08:51.381808",
+  "url": "https://www.amazon.fr",
+  "structured_dom_chars": 160831,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Unidentified CMP",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 384.59,
+  "extraction_duration_seconds": 210.06,
+  "extraction_share_percent": 54.62,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Amazon": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='cos-banner']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='cos-banner']"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='cos-banner']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#sp-cc-customize"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "parent": {
+                  "selector": ".customize-container",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h1",
+                      "textFilter": "Amazon advertising cookies"
+                    }
+                  }
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "On"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Off"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "parent": {
+                  "selector": ".customize-container",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h1",
+                      "textFilter": "Third party advertising cookies"
+                    }
+                  }
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "On"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Off"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "parent": {
+                  "selector": ".customize-container",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h1",
+                      "textFilter": "Personal information from Amazon services"
+                    }
+                  }
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "On"
+                  }
+                },
+                "false:": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Off"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "parent": {
+                  "selector": ".customize-container",
+                  "childFilter": {
+                    "target": {
+                      "selector": "h1",
+                      "textFilter": "Personal information from third party advertisers"
+                    }
+                  }
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "On"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Off"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#saveSelectedPrefs"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

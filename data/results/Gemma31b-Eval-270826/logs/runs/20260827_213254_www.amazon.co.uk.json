@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-08-27T21:32:54.783405",
+  "url": "https://www.amazon.co.uk",
+  "structured_dom_chars": 145941,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "Unidentified CMP",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Amazon\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id*='cos-banner']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id*='cos-banner']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#sp-cc-rejectall-link\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*='cos-banner']\"}}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: #ADVERTISING-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: input[name='rejectOrSave']",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #ADVERTISING-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: input[name='rejectOrSave']"
+  ],
+  "duration_seconds": 687.15,
+  "extraction_duration_seconds": 187.52,
+  "extraction_share_percent": 27.29,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Amazon": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cos-banner']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cos-banner']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#sp-cc-rejectall-link"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='cos-banner']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

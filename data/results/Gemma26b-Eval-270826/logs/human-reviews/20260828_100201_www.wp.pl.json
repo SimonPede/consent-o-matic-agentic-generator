@@ -1,0 +1,82 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.wp.pl",
+  "llm_calls": 20,
+  "last_ai_message": "Your previous response was cut off because it exceeded the maximum output length. Please provide a more concise analysis, or continue directly with your next action, without repeating what you already covered.",
+  "last_error": "No rule found in agent message",
+  "rule_draft": {
+    "wp.pl": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[role='dialog']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[role='dialog']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[role='dialog']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Odrzucam i chcę dowiedzieę się wiƙcej"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label*='reklam']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label*='reklam']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Zapisuję"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

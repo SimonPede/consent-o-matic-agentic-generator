@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T04:38:57.392046",
+  "url": "https://www.ebay.de",
+  "structured_dom_chars": 1379,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The page loaded an error state instead of the actual eBay.de homepage. Both the structured extraction and screenshot audit found zero consent interface elements, buttons, or CMP containers, making a consent rule impossible to generate.",
+  "abort_reason": "NO_BANNER_DETECTED: The page loaded an error state instead of the actual eBay.de homepage. Both the structured extraction and screenshot audit found zero consent interface elements, buttons, or CMP containers, making a consent rule impossible to generate.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The page loaded an error state instead of the actual eBay.de homepage. Both the structured extraction and screenshot audit found zero consent interface elements, buttons, or CMP containers, making a consent rule impossible to generate.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The page loaded an error state instead of the actual eBay.de homepage. Both the structured extraction and screenshot audit found zero consent interface elements, buttons, or CMP containers, making a consent rule impossible to generate."
+  ],
+  "duration_seconds": 41.19,
+  "extraction_duration_seconds": 17.05,
+  "extraction_share_percent": 41.39,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

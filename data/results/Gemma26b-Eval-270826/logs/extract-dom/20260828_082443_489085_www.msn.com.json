@@ -1,0 +1,1734 @@
+{
+  "timestamp": "2026-08-28T08:24:43.489213",
+  "url": "https://www.msn.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.msn.com"
+  ],
+  "duration_seconds": 9.56,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id*=\"cmp-banner\"]\" (Sourcepoint) in frame: https://www.msn.com/da-dk",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 4 frames.",
+      "frame could not be scored!",
+      "a frame was picked by score: https://www.msn.com/da-dk with Score: 22",
+      "Settings match: \"Administrer indstillinger\" --> lowered: \"administrer indstillinger\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #cmp-pc-btn-handler, textMatch: Administrer indstillinger",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff: 19924 chars added, 7 inputs added.",
+      "Old state: 177 buttons, 0 inputs.",
+      "New state: 215 buttons, 7 inputs.",
+      "Settings detected: 19924 chars, 7 inputs, 38 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 7 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.msn.com/da-dk',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id*=\"cmp-banner\"]',",
+      "      url: 'https://www.msn.com/da-dk',",
+      "      filteredHtml: '<div id=\"mscmp-banner-container\"><div aria-hidden=\"true\" class=\"css-19hu0wb\"></div><div id=\"cmp-banner-sdk\" role=\"dialog\" aria-hidden=\"false\" aria-labelledby=\"cmp-policy-title\" aria-describedby=\"cmp-policy-text\" tabindex=\"0\" class=\"css-p30qmo\"><div class=\"css-ybrhvy\"><div class=\"cmp-sdk-container\"><div class=\"css-64029u\"><div class=\"css-cqo1v8\"><section class=\"css-tm9rhp\"><h1 id=\"cmp-policy-title\" class=\"css-1hablec\">Microsoft bekymrer sig om dit privatliv</h1><div id=\"cmp-policy-text\" class=\"css-loi6om\">Microsoft og vores tredjepartsleverandører bruger cookies til at gemme og få adgang til oplysninger som unikke identifikationer og personlige oplysninger for at levere, vedligeholde og forbedre vores tjenester og annoncer. Hvis du accepterer, vil MSN og Microsoft Bing tilpasse det indhold og de reklamer, du ser. Du kan vælge \"Jeg accepterer\" for at give samtykke til disse anvendelser, eller klikke på \"Administrer indstillinger\" for at gennemgå dine indstillinger og gøre brug af din ret til at gøre indsigelse mod legitime interesser, hvor disse anvendes. Du kan ændre dit valg eller trække dit samtykke tilbage under \"Administrer indstillinger\" nederst på denne side. <a href=\"https://privacy.microsoft.com/da-dk/privacystatement\" target=\"_blank\" class=\"css-q5hrjy\">Erklæring om beskyttelse af personlige oplysninger</a><br>Antal partnere (leverandører): <strong><span id=\"total-partner-count\">960</span>.</strong></div></section><section class=\"css-kz32fe\"><div class=\"css-loi6om\"><h2 class=\"css-1y4cthx\">Vi og vores partnere behandler data for at</h2><p class=\"css-l91r4s\">Brug præcise geoplaceringsdata, og scan aktivt enhedskarakteristika for identifikation. Dette gøres for at gemme og få adgang til oplysninger på en enhed samt for at levere tilpassede reklamer og indhold, måling af reklamer og indhold, målgruppeindsigt og serviceudvikling.<br><button id=\"vendor-list-button\" aria-label=\"Liste over partnere (leverandører)\" class=\"css-13uk0wf\">Liste over partnere (leverandører)</button></p></div></section></div><section id=\"cmp-banner-buttons\" class=\"css-4lj8m\"><button id=\"cmp-accept-btn-handler\" type=\"button\" class=\"css-1gbl98p\">Jeg accepterer</button><button id=\"cmp-reject-all-handler\" type=\"button\" class=\"css-1gbl98p\">Afvis alle</button><button id=\"cmp-pc-btn-handler\" type=\"button\" class=\"css-130do4z\">Administrer indstillinger</button></section></div></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 2409,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id*=\"cmp-banner\"]',",
+      "      url: 'https://www.msn.com/da-dk',",
+      "      filteredHtml: `<div id=\"mscmp-banner-container\"><div aria-hidden=\"true\" class=\"css-19hu0wb\"></div><div id=\"cmp-banner-sdk\" role=\"dialog\" aria-hidden=\"true\" aria-labelledby=\"cmp-policy-title\" aria-describedby=\"cmp-policy-text\" class=\"css-p30qmo\" inert=\"\"><div class=\"css-ybrhvy\"><div class=\"cmp-sdk-container\"><div class=\"css-64029u\"><div class=\"css-cqo1v8\"><section class=\"css-tm9rhp\"><h1 id=\"cmp-policy-title\" class=\"css-1hablec\">Microsoft bekymrer sig om dit privatliv</h1><div id=\"cmp-policy-text\" class=\"css-loi6om\">Microsoft og vores tredjepartsleverandører bruger cookies til at gemme og få adgang til oplysninger som unikke identifikationer og personlige oplysninger for at levere, vedligeholde og forbedre vores tjenester og annoncer. Hvis du accepterer, vil MSN og Microsoft Bing tilpasse det indhold og de reklamer, du ser. Du kan vælge \"Jeg accepterer\" for at give samtykke til disse anvendelser, eller klikke på \"Administrer indstillinger\" for at gennemgå dine indstillinger og gøre brug af din ret til at gøre indsigelse mod legitime interesser, hvor disse anvendes. Du kan ændre dit valg eller trække dit samtykke tilbage under \"Administrer indstillinger\" nederst på denne side. <a href=\"https://privacy.microsoft.com/da-dk/privacystatement\" target=\"_blank\" class=\"css-q5hrjy\">Erklæring om beskyttelse af personlige oplysninger</a><br>Antal partnere (leverandører): <strong><span id=\"total-partner-count\">960</span>.</strong></div></section><section class=\"css-kz32fe\"><div class=\"css-loi6om\"><h2 class=\"css-1y4cthx\">Vi og vores partnere behandler data for at</h2><p class=\"css-l91r4s\">Brug præcise geoplaceringsdata, og scan aktivt enhedskarakteristika for identifikation. Dette gøres for at gemme og få adgang til oplysninger på en enhed samt for at levere tilpassede reklamer og indhold, måling af reklamer og indhold, målgruppeindsigt og serviceudvikling.<br><button id=\"vendor-list-button\" aria-label=\"Liste over partnere (leverandører)\" class=\"css-13uk0wf\">Liste over partnere (leverandører)</button></p></div></section></div><section id=\"cmp-banner-buttons\" class=\"css-4lj8m\"><button id=\"cmp-accept-btn-handler\" type=\"button\" class=\"css-1gbl98p\">Jeg accepterer</button><button id=\"cmp-reject-all-handler\" type=\"button\" class=\"css-1gbl98p\">Afvis alle</button><button id=\"cmp-pc-btn-handler\" type=\"button\" class=\"css-130do4z\">Administrer indstillinger</button></section></div></div></div></div><div class=\"css-32nx85\"></div><div role=\"dialog\" id=\"manage-preferences-popup\" aria-modal=\"true\" aria-labelledby=\"manage-pref-title\" tabindex=\"-1\" class=\"css-16i5tpz\"><div class=\"css-lnrznh\"><div class=\"css-194s094\"><div class=\"css-162l27e\"><h1 id=\"manage-pref-title\" class=\"css-bee4fe\">Om dit privatliv</h1><button id=\"close-button\" aria-labelledby=\"manage-pref-title close-button-label\" class=\"css-6a2q1q\"><span id=\"close-button-label\" class=\"css-12eujkk\">Luk</span>×</button></div><p id=\"manage-pref-description\" class=\"css-1lt97kd\">Vi behandler dine data for at levere indhold eller reklamer og måle leveringen af sådant indhold eller sådanne reklamer for at få indsigt om vores websted. Vi deler disse oplysninger med vores partnere på baggrund af samtykke og legitim interesse. Du kan udnytte din ret til at give samtykke eller gøre indsigelse mod en legitim interesse baseret på et specifikt formål nedenfor eller på partnerniveau i linket under hvert formål. Disse valg vil blive signaleret til vores leverandører, der deltager i gennemsigtigheds- og samtykkestrukturen. De valg, du foretager vedrørende de formål og enheder, der er angivet i denne meddelelse, gemmes i en cookie med navnet 'eupubconsent-v2' i en maksimal varighed på 13 måneder.</p><div class=\"css-sbrphx\"><h2 id=\"manage-consent-heading\" class=\"css-xnz4i4\">Administrer indstillinger for samtykke</h2><button id=\"select-all-button\" aria-label=\"Administrer indstillinger for samtykke, Markér alle\" class=\"css-1i6h6g5\">Markér alle</button></div><div role=\"status\" aria-live=\"polite\" class=\"css-12eujkk\"></div><div role=\"list\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-strictly-necessary\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Absolut nødvendige cookies</h3></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"category-content-strictly-necessary\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Påkrævede cookies for at udføre vigtige webstedsfunktioner. Disse cookies er nødvendige, for at vores websteder kan fungere. Funktionerne omfatter logon, lagring af sprogindstillinger, måling og forbedring af ydeevnen, routingtrafik mellem webservere, registrering af størrelsen på skærmen, måling af sideindlæsningstider, forbedring af brugeroplevelsen, herunder relevans, målgruppemåling, registrering af svindel og misbrug, sikring af vores produkt, tilpasning af brugeroplevelsen, førstepartsmåling og analyse af webstedsbrug.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-social-media\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Cookies er målrettet sociale medier</h3></div></div><button type=\"button\" id=\"category-toggle-social-media\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Cookies er målrettet sociale medier\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-social-media\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Disse cookies er angivet af en række sociale medietjenester, som vi har føjet til webstedet for at give dig mulighed for at dele vores indhold med dine venner og netværk. De er i stand til at spore din browser på tværs af andre websteder og opbygge en profil af dine interesser. Dette kan påvirke det indhold og de meddelelser, som du ser på andre websteder, som du besøger. Hvis du ikke tillader disse cookies, kan du muligvis ikke bruge eller se disse delingsværktøjer.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-advertising\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Reklamecookies</h3></div></div><button type=\"button\" id=\"category-toggle-advertising\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Reklamecookies\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-advertising\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Disse cookies kan angives via vores websted og bruges til at opbygge en profil over dine interesser og vise dig relevante reklamer på andre websteder. De gemmer ikke direkte personlige oplysninger, men er baseret på entydig identifikation af din browser og internetenhed. Hvis du ikke tillader disse cookies, vil du opleve mindre målrettede reklamer.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-third-party-analytics\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Tredjepartsanalyse</h3></div></div><button type=\"button\" id=\"category-toggle-third-party-analytics\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Tredjepartsanalyse\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-third-party-analytics\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Cookie for tredjepartsanalyse til at forstå, hvordan besøgende bruger vores websteder, så vi kan gøre dem bedre, og tredjeparterne kan udvikle og forbedre deres produkter, som de kan bruge på websteder, der ikke ejes eller drives af Microsoft. De bruges f.eks. til at indsamle oplysninger om de sider, som du besøger, og hvor mange klik du skal bruge for at udføre en opgave.</p></div></div></div><div role=\"list\" aria-label=\"purpose\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"purpose-header-1\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Opbevare og/eller tilgå oplysninger på en enhed</h3><p id=\"purpose-vendorCount-1\" class=\"css-jzwgpg\">777 partnere kan bruge dette formål</p></div></div><button type=\"button\" id=\"purpose-toggle-1\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Opbevare og/eller tilgå oplysninger på en enhed\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"purpose-content-1\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Cookies, enheder eller lignende onlineidentifikatorer (f.eks. login-baserede identifikatorer, tilfældigt tildelte identifikatorer, netværksbaserede identifikatorer) sammen med andre oplysninger (f.eks. browsertype og -oplysninger, sprog, skærmstørrelse, understøttede teknologier, osv.) kan opbevares eller læses på din enhed for at genkende den, hver gang den opretter forbindelse til en app eller til et websted, til et eller flere af de formål, der angives her.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"purpose-view-vendors-1\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button><button id=\"view-illustrations-1\" tabindex=\"-1\" aria-label=\"Få vist illus`... 11297 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 21297,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.msn.com/da-dk",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[id*=\"cmp-banner\"]\"",
+      "  Buttons found (5):",
+      "      [A] \"Erklæring om beskyttelse af personlige oplysninger\" --> selector: .css-q5hrjy",
+      "      [BUTTON] \"Liste over partnere (leverandører)\" --> selector: #vendor-list-button",
+      "      [BUTTON] \"Jeg accepterer\" --> selector: #cmp-accept-btn-handler",
+      "      [BUTTON] \"Afvis alle\" --> selector: #cmp-reject-all-handler",
+      "      [BUTTON] \"Administrer indstillinger\" --> selector: #cmp-pc-btn-handler",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (43):",
+      "      [A] \"Erklæring om beskyttelse af personlige oplysninger\" --> selector: .css-q5hrjy",
+      "      [BUTTON] \"Liste over partnere (leverandører)\" --> selector: #vendor-list-button",
+      "      [BUTTON] \"Jeg accepterer\" --> selector: #cmp-accept-btn-handler",
+      "      [BUTTON] \"Afvis alle\" --> selector: #cmp-reject-all-handler",
+      "      [BUTTON] \"Administrer indstillinger\" --> selector: #cmp-pc-btn-handler",
+      "      [BUTTON] \"Luk",
+      "×\" --> selector: #close-button",
+      "      [BUTTON] \"Markér alle\" --> selector: #select-all-button",
+      "      [DIV] \"›",
+      "Absolut nødvendige cookies",
+      "Altid aktiv\" --> selector: div",
+      "      [DIV] \"›",
+      "Cookies er målrettet sociale medier\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #category-toggle-social-media",
+      "      [DIV] \"›",
+      "Reklamecookies\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #category-toggle-advertising",
+      "      [DIV] \"›",
+      "Tredjepartsanalyse\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #category-toggle-third-party-analytics",
+      "      [DIV] \"›",
+      "Opbevare og/eller tilgå oplysninger på en enhed",
+      "777 partnere kan bruge dette formål\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #purpose-toggle-1",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #purpose-view-vendors-1",
+      "      [BUTTON] \"Få vist illustrationer\" --> selector: #view-illustrations-1",
+      "      [DIV] \"›",
+      "Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester",
+      "820 partnere kan bruge dette formål\" --> selector: #purpose-stack-header-42",
+      "      [DIV] \"›",
+      "Bruge præcise geografiske placeringsoplysninger",
+      "280 partnere kan bruge dette formål\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #specialFeature-toggle-1",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #specialFeature-view-vendors-1",
+      "      [DIV] \"›",
+      "Aktivt scanne enhedskarakteristika til identifikation",
+      "157 partnere kan bruge dette formål\" --> selector: div",
+      "      [BUTTON] \"Deaktiveret\" --> selector: #specialFeature-toggle-2",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #specialFeature-view-vendors-2",
+      "      [DIV] \"›",
+      "Sikre sikkerhed, forebygge og påvise svig, samt rette fejl",
+      "595 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #specialPurpose-view-vendors-1",
+      "      [BUTTON] \"Få vist illustrationer\" --> selector: #view-illustrations-1",
+      "      [DIV] \"›",
+      "Levere og præsentere annoncering og indhold",
+      "594 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #specialPurpose-view-vendors-2",
+      "      [BUTTON] \"Få vist illustrationer\" --> selector: #view-illustrations-2",
+      "      [DIV] \"›",
+      "Gem og kommunikér databeskyttelsesvalg",
+      "445 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #specialPurpose-view-vendors-3",
+      "      [BUTTON] \"Få vist illustrationer\" --> selector: #view-illustrations-3",
+      "      [DIV] \"›",
+      "Matche og kombinere data fra andre datakilder",
+      "436 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #feature-view-vendors-1",
+      "      [DIV] \"›",
+      "Tilknytte forskellige enheder",
+      "369 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #feature-view-vendors-2",
+      "      [DIV] \"›",
+      "Identificere enheder baseret på oplysninger, der sendes automatisk",
+      "558 partnere kan bruge dette formål",
+      "Altid aktiv\" --> selector: div",
+      "      [BUTTON] \"Liste over IAB-leverandører\" --> selector: #feature-view-vendors-3",
+      "      [BUTTON] \"Jeg accepterer\" --> selector: #preferences-accept-all",
+      "      [BUTTON] \"Afvis alle\" --> selector: #preferences-reject-all",
+      "      [BUTTON] \"Bekræft mine valg\" --> selector: #confirm-choices-button",
+      "   Checkboxes found (0):",
+      "  Toggles found (7):",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #category-toggle-social-media",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #category-toggle-advertising",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #category-toggle-third-party-analytics",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #purpose-toggle-1",
+      "      \"Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester\" | aria-checked: false --> selector: [aria-label=\"Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester\"]",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #specialFeature-toggle-1",
+      "      \"Deaktiveret\" | aria-checked: false --> selector: #specialFeature-toggle-2",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.msn.com/da-dk",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Erklæring om beskyttelse af personlige oplysninger",
+            "tag": "A",
+            "attributes": {
+              "href": "https://privacy.microsoft.com/da-dk/privacystatement",
+              "target": "_blank",
+              "class": "css-q5hrjy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cmp-policy-text",
+              "className": "css-loi6om",
+              "selector": "#cmp-policy-text",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "css-tm9rhp",
+                "selector": ".css-tm9rhp"
+              }
+            },
+            "selector": ".css-q5hrjy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over partnere (leverandører)",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "vendor-list-button",
+              "aria-label": "Liste over partnere (leverandører)",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "css-l91r4s",
+              "selector": ".css-l91r4s",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-loi6om",
+                "selector": ".css-loi6om"
+              }
+            },
+            "selector": "#vendor-list-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jeg accepterer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-accept-btn-handler",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-accept-btn-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Afvis alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-reject-all-handler",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-reject-all-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Administrer indstillinger",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-pc-btn-handler",
+              "type": "button",
+              "class": "css-130do4z"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-pc-btn-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id*=\"cmp-banner\"]",
+        "url": "https://www.msn.com/da-dk",
+        "filteredHtml": "<div id=\"mscmp-banner-container\"><div aria-hidden=\"true\" class=\"css-19hu0wb\"></div><div id=\"cmp-banner-sdk\" role=\"dialog\" aria-hidden=\"false\" aria-labelledby=\"cmp-policy-title\" aria-describedby=\"cmp-policy-text\" tabindex=\"0\" class=\"css-p30qmo\"><div class=\"css-ybrhvy\"><div class=\"cmp-sdk-container\"><div class=\"css-64029u\"><div class=\"css-cqo1v8\"><section class=\"css-tm9rhp\"><h1 id=\"cmp-policy-title\" class=\"css-1hablec\">Microsoft bekymrer sig om dit privatliv</h1><div id=\"cmp-policy-text\" class=\"css-loi6om\">Microsoft og vores tredjepartsleverandører bruger cookies til at gemme og få adgang til oplysninger som unikke identifikationer og personlige oplysninger for at levere, vedligeholde og forbedre vores tjenester og annoncer. Hvis du accepterer, vil MSN og Microsoft Bing tilpasse det indhold og de reklamer, du ser. Du kan vælge \"Jeg accepterer\" for at give samtykke til disse anvendelser, eller klikke på \"Administrer indstillinger\" for at gennemgå dine indstillinger og gøre brug af din ret til at gøre indsigelse mod legitime interesser, hvor disse anvendes. Du kan ændre dit valg eller trække dit samtykke tilbage under \"Administrer indstillinger\" nederst på denne side. <a href=\"https://privacy.microsoft.com/da-dk/privacystatement\" target=\"_blank\" class=\"css-q5hrjy\">Erklæring om beskyttelse af personlige oplysninger</a><br>Antal partnere (leverandører): <strong><span id=\"total-partner-count\">960</span>.</strong></div></section><section class=\"css-kz32fe\"><div class=\"css-loi6om\"><h2 class=\"css-1y4cthx\">Vi og vores partnere behandler data for at</h2><p class=\"css-l91r4s\">Brug præcise geoplaceringsdata, og scan aktivt enhedskarakteristika for identifikation. Dette gøres for at gemme og få adgang til oplysninger på en enhed samt for at levere tilpassede reklamer og indhold, måling af reklamer og indhold, målgruppeindsigt og serviceudvikling.<br><button id=\"vendor-list-button\" aria-label=\"Liste over partnere (leverandører)\" class=\"css-13uk0wf\">Liste over partnere (leverandører)</button></p></div></section></div><section id=\"cmp-banner-buttons\" class=\"css-4lj8m\"><button id=\"cmp-accept-btn-handler\" type=\"button\" class=\"css-1gbl98p\">Jeg accepterer</button><button id=\"cmp-reject-all-handler\" type=\"button\" class=\"css-1gbl98p\">Afvis alle</button><button id=\"cmp-pc-btn-handler\" type=\"button\" class=\"css-130do4z\">Administrer indstillinger</button></section></div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 2409,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Erklæring om beskyttelse af personlige oplysninger",
+            "tag": "A",
+            "attributes": {
+              "href": "https://privacy.microsoft.com/da-dk/privacystatement",
+              "target": "_blank",
+              "class": "css-q5hrjy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cmp-policy-text",
+              "className": "css-loi6om",
+              "selector": "#cmp-policy-text",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": null,
+                "className": "css-tm9rhp",
+                "selector": ".css-tm9rhp"
+              }
+            },
+            "selector": ".css-q5hrjy",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over partnere (leverandører)",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "vendor-list-button",
+              "aria-label": "Liste over partnere (leverandører)",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "css-l91r4s",
+              "selector": ".css-l91r4s",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-loi6om",
+                "selector": ".css-loi6om"
+              }
+            },
+            "selector": "#vendor-list-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jeg accepterer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-accept-btn-handler",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-accept-btn-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Afvis alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-reject-all-handler",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-reject-all-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Administrer indstillinger",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "cmp-pc-btn-handler",
+              "type": "button",
+              "class": "css-130do4z"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "cmp-banner-buttons",
+              "className": "css-4lj8m",
+              "selector": "#cmp-banner-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-64029u",
+                "selector": ".css-64029u"
+              }
+            },
+            "selector": "#cmp-pc-btn-handler",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Luk\n×",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "close-button",
+              "aria-labelledby": "manage-pref-title close-button-label",
+              "class": "css-6a2q1q"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-162l27e",
+              "selector": ".css-162l27e",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-194s094",
+                "selector": ".css-194s094"
+              }
+            },
+            "selector": "#close-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Markér alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "select-all-button",
+              "aria-label": "Administrer indstillinger for samtykke, Markér alle",
+              "class": "css-1i6h6g5"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-sbrphx",
+              "selector": ".css-sbrphx",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-194s094",
+                "selector": ".css-194s094"
+              }
+            },
+            "selector": "#select-all-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nAbsolut nødvendige cookies\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nCookies er målrettet sociale medier",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-social-media",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Cookies er målrettet sociale medier",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-social-media",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nReklamecookies",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-advertising",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Reklamecookies",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-advertising",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nTredjepartsanalyse",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-third-party-analytics",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Tredjepartsanalyse",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-third-party-analytics",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nOpbevare og/eller tilgå oplysninger på en enhed\n\n777 partnere kan bruge dette formål",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "purpose-toggle-1",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Opbevare og/eller tilgå oplysninger på en enhed",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#purpose-toggle-1",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "purpose-view-vendors-1",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#purpose-view-vendors-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Få vist illustrationer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "view-illustrations-1",
+              "tabindex": "-1",
+              "aria-label": "Få vist illustrationer",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#view-illustrations-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nTilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester\n\n820 partnere kan bruge dette formål",
+            "tag": "DIV",
+            "attributes": {
+              "id": "purpose-stack-header-42",
+              "role": "button",
+              "tabindex": "0",
+              "aria-expanded": "false",
+              "class": "css-1y8mti6",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "purpose-stack-42",
+                "className": "css-6pdy4g",
+                "selector": "#purpose-stack-42"
+              }
+            },
+            "selector": "#purpose-stack-header-42",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nBruge præcise geografiske placeringsoplysninger\n\n280 partnere kan bruge dette formål",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "specialFeature-toggle-1",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Bruge præcise geografiske placeringsoplysninger",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#specialFeature-toggle-1",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "specialFeature-view-vendors-1",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#specialFeature-view-vendors-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nAktivt scanne enhedskarakteristika til identifikation\n\n157 partnere kan bruge dette formål",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "specialFeature-toggle-2",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Aktivt scanne enhedskarakteristika til identifikation",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#specialFeature-toggle-2",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "specialFeature-view-vendors-2",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#specialFeature-view-vendors-2",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nSikre sikkerhed, forebygge og påvise svig, samt rette fejl\n\n595 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "specialPurpose-view-vendors-1",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#specialPurpose-view-vendors-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Få vist illustrationer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "view-illustrations-1",
+              "tabindex": "-1",
+              "aria-label": "Få vist illustrationer",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#view-illustrations-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nLevere og præsentere annoncering og indhold\n\n594 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "specialPurpose-view-vendors-2",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#specialPurpose-view-vendors-2",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Få vist illustrationer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "view-illustrations-2",
+              "tabindex": "-1",
+              "aria-label": "Få vist illustrationer",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#view-illustrations-2",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nGem og kommunikér databeskyttelsesvalg\n\n445 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "specialPurpose-view-vendors-3",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#specialPurpose-view-vendors-3",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Få vist illustrationer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "view-illustrations-3",
+              "tabindex": "-1",
+              "aria-label": "Få vist illustrationer",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#view-illustrations-3",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nMatche og kombinere data fra andre datakilder\n\n436 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "feature-view-vendors-1",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#feature-view-vendors-1",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nTilknytte forskellige enheder\n\n369 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "feature-view-vendors-2",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#feature-view-vendors-2",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "›\nIdentificere enheder baseret på oplysninger, der sendes automatisk\n\n558 partnere kan bruge dette formål\n\nAltid aktiv",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "class": "css-oobs1g",
+              "style": "flex: 1 1 0%; cursor: pointer;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Liste over IAB-leverandører",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "feature-view-vendors-3",
+              "tabindex": "-1",
+              "aria-label": "Liste over IAB-leverandører",
+              "class": "css-13uk0wf"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1rtqghj",
+              "selector": ".css-1rtqghj",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-c3egqi",
+                "selector": ".css-c3egqi"
+              }
+            },
+            "selector": "#feature-view-vendors-3",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jeg accepterer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "preferences-accept-all",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1h1vkj9",
+              "selector": ".css-1h1vkj9",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-lnrznh",
+                "selector": ".css-lnrznh"
+              }
+            },
+            "selector": "#preferences-accept-all",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Afvis alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "preferences-reject-all",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1h1vkj9",
+              "selector": ".css-1h1vkj9",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-lnrznh",
+                "selector": ".css-lnrznh"
+              }
+            },
+            "selector": "#preferences-reject-all",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Bekræft mine valg",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "confirm-choices-button",
+              "type": "button",
+              "class": "css-1gbl98p"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1h1vkj9",
+              "selector": ".css-1h1vkj9",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-lnrznh",
+                "selector": ".css-lnrznh"
+              }
+            },
+            "selector": "#confirm-choices-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-social-media",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Cookies er målrettet sociale medier",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-social-media",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-advertising",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Reklamecookies",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-advertising",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "category-toggle-third-party-analytics",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Tredjepartsanalyse",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#category-toggle-third-party-analytics",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "purpose-toggle-1",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Opbevare og/eller tilgå oplysninger på en enhed",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#purpose-toggle-1",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester",
+            "tag": "DIV",
+            "attributes": {
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester",
+              "tabindex": "0",
+              "class": "css-c43yyi"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "purpose-stack-42",
+                "className": "css-6pdy4g",
+                "selector": "#purpose-stack-42"
+              }
+            },
+            "selector": "[aria-label=\"Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "specialFeature-toggle-1",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Bruge præcise geografiske placeringsoplysninger",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#specialFeature-toggle-1",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Deaktiveret",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "id": "specialFeature-toggle-2",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Slå til/fra Aktivt scanne enhedskarakteristika til identifikation",
+              "class": "css-c43yyi",
+              "style": "background: none; border: none; padding: 0px; margin: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-1x00dcl",
+              "selector": ".css-1x00dcl",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-6pdy4g",
+                "selector": ".css-6pdy4g"
+              }
+            },
+            "selector": "#specialFeature-toggle-2",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[id*=\"cmp-banner\"]",
+        "url": "https://www.msn.com/da-dk",
+        "filteredHtml": "<div id=\"mscmp-banner-container\"><div aria-hidden=\"true\" class=\"css-19hu0wb\"></div><div id=\"cmp-banner-sdk\" role=\"dialog\" aria-hidden=\"true\" aria-labelledby=\"cmp-policy-title\" aria-describedby=\"cmp-policy-text\" class=\"css-p30qmo\" inert=\"\"><div class=\"css-ybrhvy\"><div class=\"cmp-sdk-container\"><div class=\"css-64029u\"><div class=\"css-cqo1v8\"><section class=\"css-tm9rhp\"><h1 id=\"cmp-policy-title\" class=\"css-1hablec\">Microsoft bekymrer sig om dit privatliv</h1><div id=\"cmp-policy-text\" class=\"css-loi6om\">Microsoft og vores tredjepartsleverandører bruger cookies til at gemme og få adgang til oplysninger som unikke identifikationer og personlige oplysninger for at levere, vedligeholde og forbedre vores tjenester og annoncer. Hvis du accepterer, vil MSN og Microsoft Bing tilpasse det indhold og de reklamer, du ser. Du kan vælge \"Jeg accepterer\" for at give samtykke til disse anvendelser, eller klikke på \"Administrer indstillinger\" for at gennemgå dine indstillinger og gøre brug af din ret til at gøre indsigelse mod legitime interesser, hvor disse anvendes. Du kan ændre dit valg eller trække dit samtykke tilbage under \"Administrer indstillinger\" nederst på denne side. <a href=\"https://privacy.microsoft.com/da-dk/privacystatement\" target=\"_blank\" class=\"css-q5hrjy\">Erklæring om beskyttelse af personlige oplysninger</a><br>Antal partnere (leverandører): <strong><span id=\"total-partner-count\">960</span>.</strong></div></section><section class=\"css-kz32fe\"><div class=\"css-loi6om\"><h2 class=\"css-1y4cthx\">Vi og vores partnere behandler data for at</h2><p class=\"css-l91r4s\">Brug præcise geoplaceringsdata, og scan aktivt enhedskarakteristika for identifikation. Dette gøres for at gemme og få adgang til oplysninger på en enhed samt for at levere tilpassede reklamer og indhold, måling af reklamer og indhold, målgruppeindsigt og serviceudvikling.<br><button id=\"vendor-list-button\" aria-label=\"Liste over partnere (leverandører)\" class=\"css-13uk0wf\">Liste over partnere (leverandører)</button></p></div></section></div><section id=\"cmp-banner-buttons\" class=\"css-4lj8m\"><button id=\"cmp-accept-btn-handler\" type=\"button\" class=\"css-1gbl98p\">Jeg accepterer</button><button id=\"cmp-reject-all-handler\" type=\"button\" class=\"css-1gbl98p\">Afvis alle</button><button id=\"cmp-pc-btn-handler\" type=\"button\" class=\"css-130do4z\">Administrer indstillinger</button></section></div></div></div></div><div class=\"css-32nx85\"></div><div role=\"dialog\" id=\"manage-preferences-popup\" aria-modal=\"true\" aria-labelledby=\"manage-pref-title\" tabindex=\"-1\" class=\"css-16i5tpz\"><div class=\"css-lnrznh\"><div class=\"css-194s094\"><div class=\"css-162l27e\"><h1 id=\"manage-pref-title\" class=\"css-bee4fe\">Om dit privatliv</h1><button id=\"close-button\" aria-labelledby=\"manage-pref-title close-button-label\" class=\"css-6a2q1q\"><span id=\"close-button-label\" class=\"css-12eujkk\">Luk</span>×</button></div><p id=\"manage-pref-description\" class=\"css-1lt97kd\">Vi behandler dine data for at levere indhold eller reklamer og måle leveringen af sådant indhold eller sådanne reklamer for at få indsigt om vores websted. Vi deler disse oplysninger med vores partnere på baggrund af samtykke og legitim interesse. Du kan udnytte din ret til at give samtykke eller gøre indsigelse mod en legitim interesse baseret på et specifikt formål nedenfor eller på partnerniveau i linket under hvert formål. Disse valg vil blive signaleret til vores leverandører, der deltager i gennemsigtigheds- og samtykkestrukturen. De valg, du foretager vedrørende de formål og enheder, der er angivet i denne meddelelse, gemmes i en cookie med navnet 'eupubconsent-v2' i en maksimal varighed på 13 måneder.</p><div class=\"css-sbrphx\"><h2 id=\"manage-consent-heading\" class=\"css-xnz4i4\">Administrer indstillinger for samtykke</h2><button id=\"select-all-button\" aria-label=\"Administrer indstillinger for samtykke, Markér alle\" class=\"css-1i6h6g5\">Markér alle</button></div><div role=\"status\" aria-live=\"polite\" class=\"css-12eujkk\"></div><div role=\"list\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-strictly-necessary\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Absolut nødvendige cookies</h3></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"category-content-strictly-necessary\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Påkrævede cookies for at udføre vigtige webstedsfunktioner. Disse cookies er nødvendige, for at vores websteder kan fungere. Funktionerne omfatter logon, lagring af sprogindstillinger, måling og forbedring af ydeevnen, routingtrafik mellem webservere, registrering af størrelsen på skærmen, måling af sideindlæsningstider, forbedring af brugeroplevelsen, herunder relevans, målgruppemåling, registrering af svindel og misbrug, sikring af vores produkt, tilpasning af brugeroplevelsen, førstepartsmåling og analyse af webstedsbrug.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-social-media\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Cookies er målrettet sociale medier</h3></div></div><button type=\"button\" id=\"category-toggle-social-media\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Cookies er målrettet sociale medier\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-social-media\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Disse cookies er angivet af en række sociale medietjenester, som vi har føjet til webstedet for at give dig mulighed for at dele vores indhold med dine venner og netværk. De er i stand til at spore din browser på tværs af andre websteder og opbygge en profil af dine interesser. Dette kan påvirke det indhold og de meddelelser, som du ser på andre websteder, som du besøger. Hvis du ikke tillader disse cookies, kan du muligvis ikke bruge eller se disse delingsværktøjer.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-advertising\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Reklamecookies</h3></div></div><button type=\"button\" id=\"category-toggle-advertising\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Reklamecookies\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-advertising\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Disse cookies kan angives via vores websted og bruges til at opbygge en profil over dine interesser og vise dig relevante reklamer på andre websteder. De gemmer ikke direkte personlige oplysninger, men er baseret på entydig identifikation af din browser og internetenhed. Hvis du ikke tillader disse cookies, vil du opleve mindre målrettede reklamer.</p></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"category-header-third-party-analytics\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Tredjepartsanalyse</h3></div></div><button type=\"button\" id=\"category-toggle-third-party-analytics\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Tredjepartsanalyse\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"category-content-third-party-analytics\" aria-hidden=\"true\" class=\"css-1xvejb6\"><p class=\"css-slcqua\">Cookie for tredjepartsanalyse til at forstå, hvordan besøgende bruger vores websteder, så vi kan gøre dem bedre, og tredjeparterne kan udvikle og forbedre deres produkter, som de kan bruge på websteder, der ikke ejes eller drives af Microsoft. De bruges f.eks. til at indsamle oplysninger om de sider, som du besøger, og hvor mange klik du skal bruge for at udføre en opgave.</p></div></div></div><div role=\"list\" aria-label=\"purpose\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"purpose-header-1\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Opbevare og/eller tilgå oplysninger på en enhed</h3><p id=\"purpose-vendorCount-1\" class=\"css-jzwgpg\">777 partnere kan bruge dette formål</p></div></div><button type=\"button\" id=\"purpose-toggle-1\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Opbevare og/eller tilgå oplysninger på en enhed\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"purpose-content-1\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Cookies, enheder eller lignende onlineidentifikatorer (f.eks. login-baserede identifikatorer, tilfældigt tildelte identifikatorer, netværksbaserede identifikatorer) sammen med andre oplysninger (f.eks. browsertype og -oplysninger, sprog, skærmstørrelse, understøttede teknologier, osv.) kan opbevares eller læses på din enhed for at genkende den, hver gang den opretter forbindelse til en app eller til et websted, til et eller flere af de formål, der angives her.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"purpose-view-vendors-1\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button><button id=\"view-illustrations-1\" tabindex=\"-1\" aria-label=\"Få vist illustrationer\" class=\"css-13uk0wf\">Få vist illustrationer</button></div></div></div></div></div><div id=\"purpose-stack-42\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div id=\"purpose-stack-header-42\" role=\"button\" tabindex=\"0\" aria-expanded=\"false\" class=\"css-1y8mti6\"><span class=\"css-di8mle\">›</span><div class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester</h3><p class=\"css-jzwgpg\">820 partnere kan bruge dette formål</p></div></div><div role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Tilpasset annoncering og indhold, annoncerings- og indholdsmåling, målgruppeundersøgelser og udvikling af tjenester\" tabindex=\"0\" class=\"css-c43yyi\"><input id=\"stack-toggle-42\" type=\"checkbox\" aria-hidden=\"true\" tabindex=\"-1\" class=\"css-19tb95y\"><span class=\"css-dhpjcj\"><span class=\"css-18aeay3\"></span></span></div></div><div aria-hidden=\"true\" class=\"css-162d7ya\"><p class=\"css-slcqua\">Annoncering og indhold kan tilpasses baseret på din profil. Din aktivitet på denne tjeneste kan bruges til at opbygge eller forbedre en profil om dig til tilpasset annoncering og indhold. Annoncerings- og indholdseffektivitet kan måles. Rapporter kan genereres baseret på din og andres aktivitet. Din aktivitet på denne tjeneste kan hjælpe med at udvikle og forbedre produkter og tjenester.</p><div role=\"list\" aria-label=\"Stablede formål\" class=\"css-e0ki6b\"></div></div></div><div role=\"list\" aria-label=\"specialFeature\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"specialFeature-header-1\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Bruge præcise geografiske placeringsoplysninger</h3><p id=\"specialFeature-vendorCount-1\" class=\"css-jzwgpg\">280 partnere kan bruge dette formål</p></div></div><button type=\"button\" id=\"specialFeature-toggle-1\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Bruge præcise geografiske placeringsoplysninger\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"purpose-content-1\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Med din accept kan din præcise placering (inden for en radius på mindre end 500 meter) bruges til at understøtte de formål, der er forklaret i denne erklæring.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"specialFeature-view-vendors-1\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button></div></div></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"specialFeature-header-2\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Aktivt scanne enhedskarakteristika til identifikation</h3><p id=\"specialFeature-vendorCount-2\" class=\"css-jzwgpg\">157 partnere kan bruge dette formål</p></div></div><button type=\"button\" id=\"specialFeature-toggle-2\" role=\"switch\" aria-checked=\"false\" aria-label=\"Slå til/fra Aktivt scanne enhedskarakteristika til identifikation\" class=\"css-c43yyi\"><span aria-hidden=\"true\" class=\"css-dhpjcj\"><span aria-hidden=\"true\" class=\"css-18aeay3\"></span></span><span class=\"css-12eujkk\">Deaktiveret</span></button></div><div id=\"purpose-content-2\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Med din accept kan der anmodes om visse karakteristika, der er specifikke for din enhed, og som bruges til at skelne den fra andre enheder (såsom de installerede skrifttyper eller plugins, din skærmopløsning) for at understøtte de formål, der er forklaret i denne erklæring.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"specialFeature-view-vendors-2\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button></div></div></div></div></div><div role=\"list\" aria-label=\"specialPurpose\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"specialPurpose-header-1\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Sikre sikkerhed, forebygge og påvise svig, samt rette fejl</h3><p id=\"specialPurpose-vendorCount-1\" class=\"css-jzwgpg\">595 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-1\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Dine oplysninger kan bruges til at overvåge og forebygge usædvanlig og muligvis svigagtig aktivitet (f.eks. vedrørende annoncering, annonceklik fra bots), og sikre, at systemer og processer fungerer korrekt og sikkert. De kan også bruges til at rette eventuelle problemer, som du, udgiveren eller annoncøren måtte støde på under leveringen af indhold og annoncer og i din interaktion med dem.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"specialPurpose-view-vendors-1\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button><button id=\"view-illustrations-1\" tabindex=\"-1\" aria-label=\"Få vist illustrationer\" class=\"css-13uk0wf\">Få vist illustrationer</button></div></div></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"specialPurpose-header-2\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Levere og præsentere annoncering og indhold</h3><p id=\"specialPurpose-vendorCount-2\" class=\"css-jzwgpg\">594 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-2\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Visse oplysninger (f.eks. en IP-adresse eller enhedsfunktioner) bruges til at sikre indholdet eller annonceringens tekniske kompatibilitet og til at formidle overførslen af indholdet eller annoncen til din enhed.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"specialPurpose-view-vendors-2\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button><button id=\"view-illustrations-2\" tabindex=\"-1\" aria-label=\"Få vist illustrationer\" class=\"css-13uk0wf\">Få vist illustrationer</button></div></div></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"specialPurpose-header-3\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Gem og kommunikér databeskyttelsesvalg</h3><p id=\"specialPurpose-vendorCount-3\" class=\"css-jzwgpg\">445 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-3\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">De valg, du træffer om de formål og enheder, der er nævnt i denne erklæring, gemmes og deles digitalt med de pågældende enheder, f.eks. som en streng af tegn. Dette sikrer, at både denne tjeneste og enhederne kan følge dine valg.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"specialPurpose-view-vendors-3\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button><button id=\"view-illustrations-3\" tabindex=\"-1\" aria-label=\"Få vist illustrationer\" class=\"css-13uk0wf\">Få vist illustrationer</button></div></div></div></div></div><div role=\"list\" aria-label=\"feature\"><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"feature-header-1\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Matche og kombinere data fra andre datakilder</h3><p id=\"feature-vendorCount-1\" class=\"css-jzwgpg\">436 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-1\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Oplysninger om din aktivitet på denne tjeneste kan matches og kombineres med andre oplysninger vedrørende dig, som stammer fra forskellige kilder (f.eks. din aktivitet på en separat onlinetjeneste, din brug af et loyalitetskort i butikken eller dine svar på en spørgeundersøgelse), for at understøtte de formål, der er forklaret i denne erklæring.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"feature-view-vendors-1\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button></div></div></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"feature-header-2\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Tilknytte forskellige enheder</h3><p id=\"feature-vendorCount-2\" class=\"css-jzwgpg\">369 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-2\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">For at understøtte de formål, der er forklaret i denne erklæring, kan din enhed anses for sandsynligvis at være forbundet med andre enheder, der tilhører dig eller din husstand (for eksempel, fordi du er logget ind på den samme tjeneste på både din telefon og din computer, eller fordi du kan bruge den samme internetforbindelse på begge enheder).</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"feature-view-vendors-2\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button></div></div></div></div><div role=\"listitem\" class=\"css-6pdy4g\"><div class=\"css-1x00dcl\"><div tabindex=\"0\" role=\"button\" aria-expanded=\"false\" class=\"css-oobs1g\"><span class=\"css-di8mle\">›</span><div id=\"feature-header-3\" class=\"css-x5lawr\"><h3 class=\"css-oazt3x\">Identificere enheder baseret på oplysninger, der sendes automatisk</h3><p id=\"feature-vendorCount-3\" class=\"css-jzwgpg\">558 partnere kan bruge dette formål</p></div><span class=\"css-bgmh6l\">Altid aktiv</span></div></div><div id=\"purpose-content-3\" aria-hidden=\"true\" class=\"css-mhe6ig\"><p class=\"css-slcqua\">Din enhed kan skelnes fra andre enheder baseret på oplysninger, som den automatisk sender, når du tilgår internettet (f.eks. IP-adressen på din internetforbindelse eller den type browser, du bruger) for at understøtte de formål, der er forklaret i denne erklæring.</p><div class=\"css-c3egqi\"><div class=\"css-1rtqghj\"><button id=\"feature-view-vendors-3\" tabindex=\"-1\" aria-label=\"Liste over IAB-leverandører\" class=\"css-13uk0wf\">Liste over IAB-leverandører</button></div></div></div></div></div></div><div class=\"css-1h1vkj9\"><button id=\"preferences-accept-all\" type=\"button\" class=\"css-1gbl98p\">Jeg accepterer</button><button id=\"preferences-reject-all\" type=\"button\" class=\"css-1gbl98p\">Afvis alle</button><button id=\"confirm-choices-button\" type=\"button\" class=\"css-1gbl98p\">Bekræft mine valg</button></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 21297,
+        "cmpType": "Sourcepoint",
+        "isIframe": false
+      }
+    }
+  ]
+}

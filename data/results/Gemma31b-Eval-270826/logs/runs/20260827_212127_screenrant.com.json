@@ -1,0 +1,134 @@
+{
+  "timestamp": "2026-08-27T21:21:27.189266",
+  "url": "https://screenrant.com",
+  "structured_dom_chars": 308413,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"ConsentManager\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpwrapper\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \".cmpboxbtncustom\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": []}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \".cmpboxbtn\", \"textFilter\": \"Reject all\"}}]}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnno",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnsave",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 728 (char 727)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnno"
+  ],
+  "duration_seconds": 1082.13,
+  "extraction_duration_seconds": 16.38,
+  "extraction_share_percent": 1.51,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": null
+    }
+  },
+  "final_rule": {
+    "ConsentManager": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cmpwrapper"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtncustom"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": []
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": ".cmpboxbtn",
+                  "textFilter": "Reject all"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

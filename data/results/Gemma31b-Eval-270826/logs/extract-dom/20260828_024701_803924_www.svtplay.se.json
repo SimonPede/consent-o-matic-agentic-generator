@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-08-28T02:47:01.803968",
+  "url": "https://www.svtplay.se",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.svtplay.se"
+  ],
+  "duration_seconds": 28.72,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id*=\"message-container\"]\" (Sourcepoint) in frame: https://www.svtplay.se/",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.svtplay.se/ with Score: 38",
+      "Regex failed in frame https://www.svtplay.se/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.svtplay.se/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id*=\"message-container\"]',",
+      "      url: 'https://www.svtplay.se/',",
+      "      filteredHtml: '<aside id=\"geoblock-message-container\" class=\"cc5cf98fc c1629b344 c84cdc56f c6487e8f9\"><div class=\"ca3473c30 ce90da61e\"><span class=\"c646c81e3\"><span class=\"c8325f62f\" data-rt=\"geoblock-message\">Visar endast program som går att se utanför Sverige. <a href=\"https://www.svt.se/kontakt/anvand-svt-play-utomlands\" class=\"cd8af48e2 cd800983d\" target=\"_self\">Lär mer om att använda SVT Play utomlands<span class=\"c781d103f\">, öppnar annan webbplats</span></a></span></span></div></aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 482,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.svtplay.se/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[id*=\"message-container\"]\"",
+      "  Buttons found (1):",
+      "      [A] \"Lär mer om att använda SVT Play utomlands",
+      ", öppnar annan webbplats\" --> selector: .cd8af48e2",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.svtplay.se/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Lär mer om att använda SVT Play utomlands\n, öppnar annan webbplats",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+              "class": "cd8af48e2 cd800983d",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "c8325f62f",
+              "selector": ".c8325f62f",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "c646c81e3",
+                "selector": ".c646c81e3"
+              }
+            },
+            "selector": ".cd8af48e2",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id*=\"message-container\"]",
+        "url": "https://www.svtplay.se/",
+        "filteredHtml": "<aside id=\"geoblock-message-container\" class=\"cc5cf98fc c1629b344 c84cdc56f c6487e8f9\"><div class=\"ca3473c30 ce90da61e\"><span class=\"c646c81e3\"><span class=\"c8325f62f\" data-rt=\"geoblock-message\">Visar endast program som går att se utanför Sverige. <a href=\"https://www.svt.se/kontakt/anvand-svt-play-utomlands\" class=\"cd8af48e2 cd800983d\" target=\"_self\">Lär mer om att använda SVT Play utomlands<span class=\"c781d103f\">, öppnar annan webbplats</span></a></span></span></div></aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 482,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "timestamp": "2026-08-27T02:19:29.201446",
+  "url": "https://find-and-update.company-information.service.gov.uk",
+  "structured_dom_chars": 50961,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"CompaniesHouse\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cookie-banner\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#accept-cookies-button\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cookie-banner\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#accept-cookies-button\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#reject-cookies-button\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"ifcss\", \"target\": {\"selector\": \"#rejected-cookies-message\", \"displayFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#hide-rejected-message-button\"}}, \"falseAction\": {\"type\": \"ifcss\", \"target\": {\"selector\": \"#accepted-cookies-message\", \"displayFilter\": true}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#hide-accepted-message-button\"}}}}]}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 208.44,
+  "extraction_duration_seconds": 33.0,
+  "extraction_share_percent": 15.83,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "CompaniesHouse": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#cookie-banner"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#accept-cookies-button"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cookie-banner"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#accept-cookies-button"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#reject-cookies-button"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "ifcss",
+                "target": {
+                  "selector": "#rejected-cookies-message",
+                  "displayFilter": true
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#hide-rejected-message-button"
+                  }
+                },
+                "falseAction": {
+                  "type": "ifcss",
+                  "target": {
+                    "selector": "#accepted-cookies-message",
+                    "displayFilter": true
+                  },
+                  "trueAction": {
+                    "type": "click",
+                    "target": {
+                      "selector": "#hide-accepted-message-button"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

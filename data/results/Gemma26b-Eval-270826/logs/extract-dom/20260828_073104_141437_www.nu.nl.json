@@ -1,0 +1,321 @@
+{
+  "timestamp": "2026-08-28T07:31:04.141486",
+  "url": "https://www.nu.nl",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.nu.nl"
+  ],
+  "duration_seconds": 27.1,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 2 frames.",
+      "a frame was picked by score: https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false with Score: 29",
+      "Regex failed in frame https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"#pg-configure-btn\", text: \"Instellen\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #pg-configure-btn, textMatch: Instellen",
+      "settings click target result - clickSuccess: false",
+      "JS Click failed. Trying Puppeteer fallback...",
+      "Puppeteer click also failed: No element found for selector: #pg-configure-btn",
+      "[",
+      "  {",
+      "    frameUrl: 'https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false',",
+      "      filteredHtml: '<body> <div class=\"container\"> <div id=\"message\" class=\"modal\"> <div class=\"modal__header\"> <div class=\"modal__header__logo\"> </div> </div> <div class=\"modal__body\"> <div class=\"modal__body__text\"> <div class=\"dpg-loader\"> <div aria-busy=\"true\" class=\"wrapper inline-block\" data-testid=\"dpg-loader\"> </div> </div> </div> </div> </div> </div> <div id=\"pg-shadow-host-dom\"><div><div id=\"pg-wrapper\" class=\"svelte-1hjru9r\"></div> <div id=\"pg-modal\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"layer-title\" tabindex=\"-1\" class=\"svelte-1hjru9r\"><div id=\"pg-first-layer\" class=\"svelte-157vc5b\"><header id=\"pg-header\" class=\"svelte-14rnlnm\"> <div id=\"pg-header-content\" class=\"pg-side-padding svelte-14rnlnm\"> <div id=\"login-btn-container\" class=\"login-container svelte-14rnlnm\"><button id=\"pg-login-btn\" class=\"pg-btn pg-btn-primary svelte-14rnlnm\" aria-label=\"login\">Inloggen</button></div></div></header> <main id=\"pg-body\" class=\"pg-side-padding svelte-157vc5b\"><h1 id=\"layer-title\" class=\"svelte-157vc5b\">Jouw privacy-instellingen</h1> <div><p class=\"svelte-157vc5b\">NU.nl en DPG Media gebruiken cookies om informatie over je apparaat, locatie, browser en surfgedrag te verzamelen. Deze informatie combineren we met de gegevens die je zelf deelt met ons, zoals wanneer je een account aanmaakt. Dit doen we om het gebruik van onze media te analyseren en onze websites en apps te verbeteren.</p> <p class=\"svelte-157vc5b\">Door hierboven in te loggen worden jouw eerdere privacy-instellingen gebruikt.</p> <p class=\"svelte-157vc5b\">Daarnaast kunnen we, als je hier toestemming voor geeft, je gegevens gebruiken om onze content, communicatie en aanbod te personaliseren en je relevante advertenties te tonen, en voor marketingdoeleinden delen met <a class=\"marketing-vendors-link\" tabindex=\"0\">4 mediapartners</a>. Ook content van <a class=\"social-media-vendors-link\" tabindex=\"0\">13 externe platformen</a> wordt enkel getoond met jouw toestemming. Onze <a class=\"advertising-vendors-link\" tabindex=\"0\">101 advertentiepartners</a> gebruiken cookies voor gepersonaliseerde advertenties, advertentiemetingen, doelgroepenonderzoek en ontwikkeling van diensten. Sommige advertentiepartners kunnen ook je precieze geolocatie hiervoor gebruiken.</p> <h3>Geef toestemming of stel je eigen keuze in</h3> <p class=\"last-paragraph svelte-157vc5b\">Door op \"Akkoord\" te klikken, geef je toestemming voor bovenstaande doeleinden. Wil je niet alles toestaan, klik dan op \"Instellen\". Jouw keuze geldt voor al <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/brands-permissions\">deze media</a>. Je kan je keuze aanpassen en je toestemming intrekken via \"Privacy-instellingen\" onderaan onze websites of in de menu’s van onze apps. Lees meer in ons <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/privacy-policy\">privacy</a>- en <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/cookie-policy\">cookiebeleid</a>.</p></div></main> <footer id=\"pg-footer\" class=\"svelte-j0tow0\"><fieldset id=\"pg-footer-content\" class=\"pg-side-padding svelte-j0tow0\"><button id=\"pg-accept-btn\" class=\"pg-btn pg-btn-primary svelte-157vc5b\">Akkoord</button> <button class=\"pg-btn pg-btn-secondary svelte-157vc5b\" id=\"pg-configure-btn\">Instellen</button></fieldset></footer></div></div></div></div><iframe name=\"__tcfapiLocator\"></iframe></body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 3350",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (9):",
+      "      [BUTTON] \"Inloggen\" --> selector: #pg-shadow-host-dom >>> #pg-login-btn",
+      "      [A] \"4 mediapartners\" --> selector: #pg-shadow-host-dom >>> .marketing-vendors-link",
+      "      [A] \"13 externe platformen\" --> selector: #pg-shadow-host-dom >>> .social-media-vendors-link",
+      "      [A] \"101 advertentiepartners\" --> selector: #pg-shadow-host-dom >>> .advertising-vendors-link",
+      "      [A] \"deze media\" --> selector: #pg-shadow-host-dom >>> a",
+      "      [A] \"privacy\" --> selector: #pg-shadow-host-dom >>> a",
+      "      [A] \"cookiebeleid\" --> selector: #pg-shadow-host-dom >>> a",
+      "      [BUTTON] \"Akkoord\" --> selector: #pg-shadow-host-dom >>> #pg-accept-btn",
+      "      [BUTTON] \"Instellen\" --> selector: #pg-shadow-host-dom >>> #pg-configure-btn",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Inloggen",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "pg-login-btn",
+              "class": "pg-btn pg-btn-primary svelte-14rnlnm",
+              "aria-label": "login"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "login-btn-container",
+              "className": "login-container svelte-14rnlnm",
+              "selector": "#login-btn-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "pg-header-content",
+                "className": "pg-side-padding svelte-14rnlnm",
+                "selector": "#pg-header-content"
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> #pg-login-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "4 mediapartners",
+            "tag": "A",
+            "attributes": {
+              "class": "marketing-vendors-link",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "svelte-157vc5b",
+              "selector": ".svelte-157vc5b",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> .marketing-vendors-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "13 externe platformen",
+            "tag": "A",
+            "attributes": {
+              "class": "social-media-vendors-link",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "svelte-157vc5b",
+              "selector": ".svelte-157vc5b",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> .social-media-vendors-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "101 advertentiepartners",
+            "tag": "A",
+            "attributes": {
+              "class": "advertising-vendors-link",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "svelte-157vc5b",
+              "selector": ".svelte-157vc5b",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> .advertising-vendors-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "deze media",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://privacy.dpgmedia.nl/nl/document/brands-permissions"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "last-paragraph svelte-157vc5b",
+              "selector": ".last-paragraph",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://privacy.dpgmedia.nl/nl/document/privacy-policy"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "last-paragraph svelte-157vc5b",
+              "selector": ".last-paragraph",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "cookiebeleid",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://privacy.dpgmedia.nl/nl/document/cookie-policy"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "last-paragraph svelte-157vc5b",
+              "selector": ".last-paragraph",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Akkoord",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "pg-accept-btn",
+              "class": "pg-btn pg-btn-primary svelte-157vc5b"
+            },
+            "parentInfo": {
+              "tag": "FIELDSET",
+              "id": "pg-footer-content",
+              "className": "pg-side-padding svelte-j0tow0",
+              "selector": "#pg-footer-content",
+              "grandparent": {
+                "tag": "FOOTER",
+                "id": "pg-footer",
+                "className": "svelte-j0tow0",
+                "selector": "#pg-footer"
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> #pg-accept-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Instellen",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pg-btn pg-btn-secondary svelte-157vc5b",
+              "id": "pg-configure-btn"
+            },
+            "parentInfo": {
+              "tag": "FIELDSET",
+              "id": "pg-footer-content",
+              "className": "pg-side-padding svelte-j0tow0",
+              "selector": "#pg-footer-content",
+              "grandparent": {
+                "tag": "FOOTER",
+                "id": "pg-footer",
+                "className": "svelte-j0tow0",
+                "selector": "#pg-footer"
+              }
+            },
+            "selector": "#pg-shadow-host-dom >>> #pg-configure-btn",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://myprivacy.dpgmedia.nl/consent?siteKey=ucf98legs1caotgh&callbackUrl=https%3A%2F%2Fwww.nu.nl%2Fprivacy-gate%2Faccept%3FredirectUri%3D%252F&isLoggedIn=false",
+        "filteredHtml": "<body> <div class=\"container\"> <div id=\"message\" class=\"modal\"> <div class=\"modal__header\"> <div class=\"modal__header__logo\"> </div> </div> <div class=\"modal__body\"> <div class=\"modal__body__text\"> <div class=\"dpg-loader\"> <div aria-busy=\"true\" class=\"wrapper inline-block\" data-testid=\"dpg-loader\"> </div> </div> </div> </div> </div> </div> <div id=\"pg-shadow-host-dom\"><div><div id=\"pg-wrapper\" class=\"svelte-1hjru9r\"></div> <div id=\"pg-modal\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"layer-title\" tabindex=\"-1\" class=\"svelte-1hjru9r\"><div id=\"pg-first-layer\" class=\"svelte-157vc5b\"><header id=\"pg-header\" class=\"svelte-14rnlnm\"> <div id=\"pg-header-content\" class=\"pg-side-padding svelte-14rnlnm\"> <div id=\"login-btn-container\" class=\"login-container svelte-14rnlnm\"><button id=\"pg-login-btn\" class=\"pg-btn pg-btn-primary svelte-14rnlnm\" aria-label=\"login\">Inloggen</button></div></div></header> <main id=\"pg-body\" class=\"pg-side-padding svelte-157vc5b\"><h1 id=\"layer-title\" class=\"svelte-157vc5b\">Jouw privacy-instellingen</h1> <div><p class=\"svelte-157vc5b\">NU.nl en DPG Media gebruiken cookies om informatie over je apparaat, locatie, browser en surfgedrag te verzamelen. Deze informatie combineren we met de gegevens die je zelf deelt met ons, zoals wanneer je een account aanmaakt. Dit doen we om het gebruik van onze media te analyseren en onze websites en apps te verbeteren.</p> <p class=\"svelte-157vc5b\">Door hierboven in te loggen worden jouw eerdere privacy-instellingen gebruikt.</p> <p class=\"svelte-157vc5b\">Daarnaast kunnen we, als je hier toestemming voor geeft, je gegevens gebruiken om onze content, communicatie en aanbod te personaliseren en je relevante advertenties te tonen, en voor marketingdoeleinden delen met <a class=\"marketing-vendors-link\" tabindex=\"0\">4 mediapartners</a>. Ook content van <a class=\"social-media-vendors-link\" tabindex=\"0\">13 externe platformen</a> wordt enkel getoond met jouw toestemming. Onze <a class=\"advertising-vendors-link\" tabindex=\"0\">101 advertentiepartners</a> gebruiken cookies voor gepersonaliseerde advertenties, advertentiemetingen, doelgroepenonderzoek en ontwikkeling van diensten. Sommige advertentiepartners kunnen ook je precieze geolocatie hiervoor gebruiken.</p> <h3>Geef toestemming of stel je eigen keuze in</h3> <p class=\"last-paragraph svelte-157vc5b\">Door op \"Akkoord\" te klikken, geef je toestemming voor bovenstaande doeleinden. Wil je niet alles toestaan, klik dan op \"Instellen\". Jouw keuze geldt voor al <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/brands-permissions\">deze media</a>. Je kan je keuze aanpassen en je toestemming intrekken via \"Privacy-instellingen\" onderaan onze websites of in de menu’s van onze apps. Lees meer in ons <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/privacy-policy\">privacy</a>- en <a target=\"_blank\" href=\"https://privacy.dpgmedia.nl/nl/document/cookie-policy\">cookiebeleid</a>.</p></div></main> <footer id=\"pg-footer\" class=\"svelte-j0tow0\"><fieldset id=\"pg-footer-content\" class=\"pg-side-padding svelte-j0tow0\"><button id=\"pg-accept-btn\" class=\"pg-btn pg-btn-primary svelte-157vc5b\">Akkoord</button> <button class=\"pg-btn pg-btn-secondary svelte-157vc5b\" id=\"pg-configure-btn\">Instellen</button></fieldset></footer></div></div></div></div><iframe name=\"__tcfapiLocator\"></iframe></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 3350
+      },
+      "settings": null
+    }
+  ]
+}

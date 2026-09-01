@@ -1,0 +1,348 @@
+{
+  "timestamp": "2026-08-28T02:15:33.500190",
+  "url": "https://www.flickr.com",
+  "structured_dom_chars": 19893,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 17,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".truste_box_overlay\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".truste_box_overlay\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Functional Cookies\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Functional Cookies\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Advertising Cookies\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Advertising Cookies\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"D\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Store and/or access information on a device\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Store and/or access information on a device\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Personalised advertising and content profile\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Personalised advertising and content profile\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"E\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Use profiles to select personalised content\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Use profiles to select personalised content\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Use profiles to select personalised advertising\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Use profiles to select personalised advertising\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}, {\"type\":\"B\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Develop and improve services\"}}},\"target\":{\"selector\":\"span[aria-label='YES']\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\",\"childFilter\":{\"target\":{\"selector\":\"li\",\"textFilter\":\"Develop and improve services\"}}},\"target\":{\"selector\":\"span[aria-label='NO']\"}}}]]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\".truste_popframe\"},\"target\":{\"selector\":\".saveAndExit\"}}},{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\".truste_box_overlay\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 3337 (char 3336)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 3337 (char 3336)",
+  "error_history": [
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3573 (char 3572)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3573 (char 3572)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3334 (char 3333)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 675 (char 674)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nTest.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': [{'typ... {'selector': 'body'}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3573 (char 3572)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3333 (char 3332)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 675 (char 674)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nTrustArc.methods\n  Field required [type=missing, input_value={'detectors': [{'presentM...splayFilter': True}}]}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3423 (char 3422)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3423 (char 3422)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3423 (char 3422)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3423 (char 3422)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3337 (char 3336)"
+  ],
+  "duration_seconds": 1069.03,
+  "extraction_duration_seconds": 23.48,
+  "extraction_share_percent": 2.2,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".truste_box_overlay"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".truste_box_overlay",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Functional Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Functional Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Advertising Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Advertising Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Store and/or access information on a device"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Store and/or access information on a device"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Personalised advertising and content profile"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Personalised advertising and content profile"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Use profiles to select personalised content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Use profiles to select personalised content"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Use profiles to select personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Use profiles to select personalised advertising"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Develop and improve services"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='YES']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".truste_popframe",
+                    "childFilter": {
+                      "target": {
+                        "selector": "li",
+                        "textFilter": "Develop and improve services"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "span[aria-label='NO']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": ".truste_popframe"
+            },
+            "target": {
+              "selector": ".saveAndExit"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".truste_box_overlay"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

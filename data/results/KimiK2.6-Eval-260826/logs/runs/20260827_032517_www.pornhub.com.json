@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-08-27T03:25:17.455411",
+  "url": "https://www.pornhub.com",
+  "structured_dom_chars": 359921,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 7,
+  "human_review_count": 1,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Pornhub\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cookieBanner\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#cookieBanner\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cookieBanner\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[data-label=\\\"customize\\\"]\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#functionalCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#functionalCookies\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#analyticsCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#analyticsCookies\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#advertisingCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#advertisingCookies\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".saveChangesBtn\"}}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 228.86,
+  "extraction_duration_seconds": 16.95,
+  "extraction_share_percent": 7.41,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Pornhub": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cookieBanner"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#cookieBanner",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cookieBanner"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-label=\"customize\"]"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#functionalCookies"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#functionalCookies"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#analyticsCookies"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#analyticsCookies"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#advertisingCookies"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#advertisingCookies"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".saveChangesBtn"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

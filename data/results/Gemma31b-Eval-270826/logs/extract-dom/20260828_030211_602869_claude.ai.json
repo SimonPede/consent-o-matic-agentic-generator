@@ -1,0 +1,474 @@
+{
+  "timestamp": "2026-08-28T03:02:11.602929",
+  "url": "https://claude.ai",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://claude.ai"
+  ],
+  "duration_seconds": 130.32,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[data-testid='consent-banner']\" (Anthropic_Custom) in frame: https://claude.ai/login",
+      "waitForCmpUi detected CMP Type: Anthropic_Custom",
+      "I found 6 frames.",
+      "a frame was picked by score: https://claude.ai/login with Score: 64",
+      "Settings match: \"Customize Cookie Settings\" --> lowered: \"customize cookie settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .cds-reset, textMatch: Customize Cookie Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 588018 chars.",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 97 buttons, 0 inputs.",
+      "New state: 97 buttons, 0 inputs.",
+      "Settings click seems to have had no effect",
+      "Regex click had no effect in frame https://claude.ai/login, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"[data-testid='consent-customize']\", text: \"Customize Cookie Settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [data-testid='consent-customize'], textMatch: Customize Cookie Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 589815 chars.",
+      "DOM diff: 1797 chars added, 6 inputs added.",
+      "Old state: 97 buttons, 0 inputs.",
+      "New state: 94 buttons, 6 inputs.",
+      "Settings detected: 1797 chars, 6 inputs, -3 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 6 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://claude.ai/login',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Anthropic_Custom',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: \"[data-testid='consent-banner']\",",
+      "      url: 'https://claude.ai/login',",
+      "      filteredHtml: '<div data-theme=\"claude\" data-testid=\"consent-banner\" class=\"cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)] sm:max-w-sm rounded-3xl sm:rounded-2xl font-ui bg-bg-500 p-4 sm:p-5 overflow-auto\" data-density=\"comfortable\" data-mode=\"dark\" data-platform=\"web\" data-f><h3 class=\"text-xl sm:text-lg col-span-2 mb-2 text-text-000\">Cookie settings</h3><p class=\"text-sm text-text-300 mb-4\">We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy <a href=\"https://www.anthropic.com/legal/cookies\" class=\"underline\">here</a>.</p><div class=\"flex gap-2 pb-1 sm:flex-wrap sm:pb-0\"><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-primary font-normal aria-pressed:text-accent focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-full\" data-testid=\"consent-customize\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-0 cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-secondary group-hover/btn:bg-fill-secondary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-secondary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent shadow-field group-aria-pressed/btn:shadow-field-pressed group-focus-visible/btn:group-aria-pressed/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)]\"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"text-center\"><span class=\"sm:hidden\">Customize</span><span class=\"hidden sm:inline\">Customize Cookie Settings</span></span></span></button><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-primary font-normal aria-pressed:text-accent focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-0\" data-testid=\"consent-reject\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-0 cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-secondary group-hover/btn:bg-fill-secondary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-secondary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent shadow-field group-aria-pressed/btn:shadow-field-pressed group-focus-visible/btn:group-aria-pressed/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)]\"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"sm:hidden\">Reject</span><span class=\"hidden sm:inline\">Reject All Cookies</span></span></button><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-on-primary font-medium [--cds-shortcut-cap-ink:currentColor] focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-0\" data-testid=\"consent-accept\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-[0.5px] cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-primary group-hover/btn:bg-fill-primary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-primary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent \"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"sm:hidden\">Accept</span><span class=\"hidden sm:inline\">Accept All Cookies</span></span></button></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 5532,",
+      "      cmpType: 'Anthropic_Custom'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: \"[data-testid='consent-banner']\",",
+      "      url: 'https://claude.ai/login',",
+      "      filteredHtml: '<div data-theme=\"claude\" data-testid=\"consent-banner\" class=\"cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)] sm:max-w-sm rounded-3xl sm:rounded-2xl font-ui bg-bg-500 p-4 sm:p-5 overflow-auto\" data-density=\"comfortable\" data-mode=\"dark\" data-platform=\"web\" data-f><h3 class=\"text-xl sm:text-lg col-span-2 mb-2 text-text-000\">Cookie settings</h3><p class=\"text-sm text-text-300 mb-4\">Our website uses cookies to distinguish you from other users of our website. This helps us provide you with a more personalized experience when you browse our website and also allows us to improve our site. Cookies may collect information that is used to tailor ads shown to you on our website and other websites. The information might be about you, your preferences or your device. The information does not usually directly identify you, but it can give you a more personalized web experience. You can choose not to allow some types of cookies.</p><ul class=\"mb-8 sm:mb-4 flex flex-col gap-2\"><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-necessary\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2a_\" class=\"text-text-000 text-xs\">Necessary</h6><p id=\"_r_2b_\" class=\"text-text-500 text-xs\">Enables security and basic functionality.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Required</span><span data-disabled=\"\" data-checked=\"\" role=\"switch\" tabindex=\"-1\" aria-disabled=\"true\" id=\"base-ui-_r_2c_\" aria-checked=\"true\" aria-labelledby=\"_r_2a_\" data-cds=\"Switch\" aria-describedby=\"_r_2b_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-disabled=\"\" data-checked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input disabled=\"\" id=\"base-ui-_r_2d_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\" checked=\"\"></div></label></li><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-analytics\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2f_\" class=\"text-text-000 text-xs\">Analytics</h6><p id=\"_r_2g_\" class=\"text-text-500 text-xs\">Enables tracking of site performance.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Off</span><span data-unchecked=\"\" role=\"switch\" tabindex=\"0\" id=\"base-ui-_r_2h_\" aria-checked=\"false\" aria-labelledby=\"_r_2f_\" data-cds=\"Switch\" aria-describedby=\"_r_2g_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-unchecked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input id=\"base-ui-_r_2i_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\"></div></label></li><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-marketing\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2k_\" class=\"text-text-000 text-xs\">Marketing</h6><p id=\"_r_2l_\" class=\"text-text-500 text-xs\">Enables ads personalization and tracking.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Off</span><span data-unchecked=\"\" role=\"switch\" tabindex=\"0\" id=\"base-ui-_r_2m_\" aria-checked=\"false\" aria-labelledby=\"_r_2k_\" data-cds=\"Switch\" aria-describedby=\"_r_2l_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-unchecked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input id=\"base-ui-_r_2n_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\"></div></label></li></ul><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-on-primary font-medium [--cds-shortcut-cap-ink:currentColor] focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md w-full\" data-testid=\"consent-save\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-[0.5px] cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-primary group-hover/btn:bg-fill-primary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-primary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent \"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \">Save preferences</span></button></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 6807,",
+      "      cmpType: 'Anthropic_Custom',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://claude.ai/login",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Anthropic_Custom via selector \"[data-testid='consent-banner']\"",
+      "  Buttons found (4):",
+      "      [A] \"here\" --> selector: .underline",
+      "      [BUTTON] \"Customize Cookie Settings\" --> selector: .cds-reset",
+      "      [BUTTON] \"Reject All Cookies\" --> selector: .cds-reset",
+      "      [BUTTON] \"Accept All Cookies\" --> selector: .cds-reset",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (1):",
+      "      [BUTTON] \"Save preferences\" --> selector: .cds-reset",
+      "   Checkboxes found (3):",
+      "      \"Necessary",
+      "Enables security and basic functionality.",
+      "Required\" | checked: true | disabled: true --> selector: #base-ui-_r_2d_",
+      "      \"Analytics",
+      "Enables tracking of site performance.",
+      "Off\" | checked: false | disabled: false --> selector: #base-ui-_r_2i_",
+      "      \"Marketing",
+      "Enables ads personalization and tracking.",
+      "Off\" | checked: false | disabled: false --> selector: #base-ui-_r_2n_",
+      "  Toggles found (3):",
+      "      \"Necessary\" | aria-checked: true --> selector: #base-ui-_r_2c_",
+      "      \"Analytics\" | aria-checked: false --> selector: #base-ui-_r_2h_",
+      "      \"Marketing\" | aria-checked: false --> selector: #base-ui-_r_2m_",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://claude.ai/login",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Anthropic_Custom",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "here",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.anthropic.com/legal/cookies",
+              "class": "underline"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "text-sm text-text-300 mb-4",
+              "selector": ".text-sm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)]",
+                "selector": ".cds-root"
+              }
+            },
+            "selector": ".underline",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Customize Cookie Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-cds": "Button",
+              "class": "cds-reset group/btn relative isolate inline-flex shrink-0 items-center",
+              "data-testid": "consent-customize"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 pb-1 sm:flex-wrap sm:pb-0",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)]",
+                "selector": ".cds-root"
+              }
+            },
+            "selector": ".cds-reset",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject All Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-cds": "Button",
+              "class": "cds-reset group/btn relative isolate inline-flex shrink-0 items-center",
+              "data-testid": "consent-reject"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 pb-1 sm:flex-wrap sm:pb-0",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)]",
+                "selector": ".cds-root"
+              }
+            },
+            "selector": ".cds-reset",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-cds": "Button",
+              "class": "cds-reset group/btn relative isolate inline-flex shrink-0 items-center",
+              "data-testid": "consent-accept"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 pb-1 sm:flex-wrap sm:pb-0",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)]",
+                "selector": ".cds-root"
+              }
+            },
+            "selector": ".cds-reset",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[data-testid='consent-banner']",
+        "url": "https://claude.ai/login",
+        "filteredHtml": "<div data-theme=\"claude\" data-testid=\"consent-banner\" class=\"cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)] sm:max-w-sm rounded-3xl sm:rounded-2xl font-ui bg-bg-500 p-4 sm:p-5 overflow-auto\" data-density=\"comfortable\" data-mode=\"dark\" data-platform=\"web\" data-f><h3 class=\"text-xl sm:text-lg col-span-2 mb-2 text-text-000\">Cookie settings</h3><p class=\"text-sm text-text-300 mb-4\">We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy <a href=\"https://www.anthropic.com/legal/cookies\" class=\"underline\">here</a>.</p><div class=\"flex gap-2 pb-1 sm:flex-wrap sm:pb-0\"><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-primary font-normal aria-pressed:text-accent focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-full\" data-testid=\"consent-customize\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-0 cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-secondary group-hover/btn:bg-fill-secondary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-secondary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent shadow-field group-aria-pressed/btn:shadow-field-pressed group-focus-visible/btn:group-aria-pressed/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)]\"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"text-center\"><span class=\"sm:hidden\">Customize</span><span class=\"hidden sm:inline\">Customize Cookie Settings</span></span></span></button><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-primary font-normal aria-pressed:text-accent focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-0\" data-testid=\"consent-reject\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-0 cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-secondary group-hover/btn:bg-fill-secondary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-secondary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent shadow-field group-aria-pressed/btn:shadow-field-pressed group-focus-visible/btn:group-aria-pressed/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)]\"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"sm:hidden\">Reject</span><span class=\"hidden sm:inline\">Reject All Cookies</span></span></button><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-on-primary font-medium [--cds-shortcut-cap-ink:currentColor] focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md grow sm:basis-0\" data-testid=\"consent-accept\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-[0.5px] cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-primary group-hover/btn:bg-fill-primary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-primary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent \"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \"><span class=\"sm:hidden\">Accept</span><span class=\"hidden sm:inline\">Accept All Cookies</span></span></button></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 5532,
+        "cmpType": "Anthropic_Custom"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Save preferences",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-cds": "Button",
+              "class": "cds-reset group/btn relative isolate inline-flex shrink-0 items-center",
+              "data-testid": "consent-save"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)]",
+              "selector": ".cds-root",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": ".cds-reset",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Necessary\n\nEnables security and basic functionality.\n\nRequired",
+            "tag": "INPUT",
+            "attributes": {
+              "disabled": "",
+              "id": "base-ui-_r_2d_",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "type": "checkbox",
+              "checked": "",
+              "style": "clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2d_",
+            "selectorConfidence": "very high",
+            "isChecked": true,
+            "isDisabled": true
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Analytics\n\nEnables tracking of site performance.\n\nOff",
+            "tag": "INPUT",
+            "attributes": {
+              "id": "base-ui-_r_2i_",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "type": "checkbox",
+              "style": "clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2i_",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Marketing\n\nEnables ads personalization and tracking.\n\nOff",
+            "tag": "INPUT",
+            "attributes": {
+              "id": "base-ui-_r_2n_",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "type": "checkbox",
+              "style": "clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2n_",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Necessary",
+            "tag": "SPAN",
+            "attributes": {
+              "data-disabled": "",
+              "data-checked": "",
+              "role": "switch",
+              "tabindex": "-1",
+              "aria-disabled": "true",
+              "id": "base-ui-_r_2c_",
+              "aria-checked": "true",
+              "aria-labelledby": "_r_2a_",
+              "data-cds": "Switch",
+              "aria-describedby": "_r_2b_",
+              "class": "cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2c_",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "SPAN",
+            "attributes": {
+              "data-unchecked": "",
+              "role": "switch",
+              "tabindex": "0",
+              "id": "base-ui-_r_2h_",
+              "aria-checked": "false",
+              "aria-labelledby": "_r_2f_",
+              "data-cds": "Switch",
+              "aria-describedby": "_r_2g_",
+              "class": "cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2h_",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Marketing",
+            "tag": "SPAN",
+            "attributes": {
+              "data-unchecked": "",
+              "role": "switch",
+              "tabindex": "0",
+              "id": "base-ui-_r_2m_",
+              "aria-checked": "false",
+              "aria-labelledby": "_r_2k_",
+              "data-cds": "Switch",
+              "aria-describedby": "_r_2l_",
+              "class": "cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "flex gap-2 self-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "LABEL",
+                "id": null,
+                "className": "flex justify-between gap-2",
+                "selector": ".flex"
+              }
+            },
+            "selector": "#base-ui-_r_2m_",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[data-testid='consent-banner']",
+        "url": "https://claude.ai/login",
+        "filteredHtml": "<div data-theme=\"claude\" data-testid=\"consent-banner\" class=\"cds-root text-primary fixed right-2 bottom-2 max-h-[calc(100vh-1rem)] max-w-[calc(100vw-1rem)] sm:max-w-sm rounded-3xl sm:rounded-2xl font-ui bg-bg-500 p-4 sm:p-5 overflow-auto\" data-density=\"comfortable\" data-mode=\"dark\" data-platform=\"web\" data-f><h3 class=\"text-xl sm:text-lg col-span-2 mb-2 text-text-000\">Cookie settings</h3><p class=\"text-sm text-text-300 mb-4\">Our website uses cookies to distinguish you from other users of our website. This helps us provide you with a more personalized experience when you browse our website and also allows us to improve our site. Cookies may collect information that is used to tailor ads shown to you on our website and other websites. The information might be about you, your preferences or your device. The information does not usually directly identify you, but it can give you a more personalized web experience. You can choose not to allow some types of cookies.</p><ul class=\"mb-8 sm:mb-4 flex flex-col gap-2\"><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-necessary\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2a_\" class=\"text-text-000 text-xs\">Necessary</h6><p id=\"_r_2b_\" class=\"text-text-500 text-xs\">Enables security and basic functionality.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Required</span><span data-disabled=\"\" data-checked=\"\" role=\"switch\" tabindex=\"-1\" aria-disabled=\"true\" id=\"base-ui-_r_2c_\" aria-checked=\"true\" aria-labelledby=\"_r_2a_\" data-cds=\"Switch\" aria-describedby=\"_r_2b_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-disabled=\"\" data-checked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input disabled=\"\" id=\"base-ui-_r_2d_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\" checked=\"\"></div></label></li><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-analytics\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2f_\" class=\"text-text-000 text-xs\">Analytics</h6><p id=\"_r_2g_\" class=\"text-text-500 text-xs\">Enables tracking of site performance.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Off</span><span data-unchecked=\"\" role=\"switch\" tabindex=\"0\" id=\"base-ui-_r_2h_\" aria-checked=\"false\" aria-labelledby=\"_r_2f_\" data-cds=\"Switch\" aria-describedby=\"_r_2g_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-unchecked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input id=\"base-ui-_r_2i_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\"></div></label></li><li class=\"bg-bg-300 rounded-lg p-3\" data-testid=\"consent-option-marketing\"><label class=\"flex justify-between gap-2\"><div class=\"flex flex-col gap-1\"><h6 id=\"_r_2k_\" class=\"text-text-000 text-xs\">Marketing</h6><p id=\"_r_2l_\" class=\"text-text-500 text-xs\">Enables ads personalization and tracking.</p></div><div class=\"flex gap-2 self-center\"><span class=\"text-text-000 self-center text-xs\">Off</span><span data-unchecked=\"\" role=\"switch\" tabindex=\"0\" id=\"base-ui-_r_2m_\" aria-checked=\"false\" aria-labelledby=\"_r_2k_\" data-cds=\"Switch\" aria-describedby=\"_r_2l_\" class=\"cds-reset relative inline-flex shrink-0 rounded-full border-0 outline-none focus-visible:outline-hidden bg-[var(--cds-switch-track)] hover:bg-[var(--cds-switch-track-hover)] data-[checked]:bg-fill-accent data-[checked]:hover:bg-fill-accent-hover data-[disabled]:opacity-disabled data-[disabled]:hover:bg-[var(--cds-switch-track)] data-[checked]:data-[disabled]:hover:bg-fill-accent focus-visible:shadow-focus h-[var(--cds-switch-h)] w-[calc(var(--cds-switch-h,20px)*1.8)] p-[2px]\"><span data-unchecked=\"\" class=\"block rounded-full bg-[var(--cds-switch-knob)] shadow-sm transition-transform duration-snap ease-overshoot motion-reduce:transition-none size-[calc(var(--cds-switch-h,20px)-4px)] data-[checked]:translate-x-[calc(var(--cds-switch-h,20px)*0.8)]\"></span></span><input id=\"base-ui-_r_2n_\" tabindex=\"-1\" aria-hidden=\"true\" type=\"checkbox\"></div></label></li></ul><button type=\"button\" data-cds=\"Button\" class=\"cds-reset group/btn relative isolate inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap select-none cursor-[var(--cds-cursor-interactive)] aria-disabled:cursor-default data-[disabled]:cursor-default border-0 outline-none focus-visible:outline-hidden [&amp;[data-initial-focus]:focus]:outline-hidden rounded h-control font-sans text-body [&amp;:disabled:not([aria-busy])]:opacity-disabled disabled:pointer-events-none transition-shadow duration-fast text-on-primary font-medium [--cds-shortcut-cap-ink:currentColor] focus-visible:shadow-focus [&amp;[data-initial-focus]:focus]:shadow-focus px-md w-full\" data-testid=\"consent-save\"><span aria-hidden=\"true\" class=\"absolute -z-[1] rounded-[inherit] inset-[0.5px] cds-btn-squish\"><span data-cds-part=\"paint\" class=\"absolute inset-0 rounded-[inherit] transition-[background-color,box-shadow,color] duration-fast ease-out group-focus-visible/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] group-[[data-initial-focus]:focus]/btn:shadow-[inset_0_0_0_1px_var(--cds-page-bg)] bg-fill-primary group-hover/btn:bg-fill-primary-hover group-[[aria-haspopup][aria-expanded=true]]/btn:bg-fill-primary-hover group-aria-pressed/btn:bg-accent group-hover/btn:group-aria-pressed/btn:bg-accent \"></span></span><span class=\"inline-flex min-w-0 items-center gap-1 \">Save preferences</span></button></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 6807,
+        "cmpType": "Anthropic_Custom",
+        "isIframe": false
+      }
+    }
+  ]
+}

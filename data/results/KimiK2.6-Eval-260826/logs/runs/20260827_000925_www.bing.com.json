@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-08-27T00:09:25.568412",
+  "url": "https://www.bing.com",
+  "structured_dom_chars": 458482,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"bing\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#bnp_cookie_banner, #bnp_btn_preference, [data-viewname='BottomBanner_NoTitleRejectBtn']\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#bnp_cookie_banner, #bnp_btn_preference, [data-viewname='BottomBanner_NoTitleRejectBtn']\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#bnp_cookie_banner\"}}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"#bnp_btn_reject a\"}}}]}}",
+  "last_error": "No CMP detected in 5 seconds, stopping engine...",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine..."
+  ],
+  "duration_seconds": 460.84,
+  "extraction_duration_seconds": 15.65,
+  "extraction_share_percent": 3.4,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "bing": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#bnp_cookie_banner, #bnp_btn_preference, [data-viewname='BottomBanner_NoTitleRejectBtn']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#bnp_cookie_banner, #bnp_btn_preference, [data-viewname='BottomBanner_NoTitleRejectBtn']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#bnp_cookie_banner"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#bnp_btn_reject a"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,995 @@
+{
+  "timestamp": "2026-08-28T07:57:05.374613",
+  "url": "https://t3n.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://t3n.de"
+  ],
+  "duration_seconds": 7.0,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 3 frames.",
+      "a frame was picked by score: https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1 with Score: 79",
+      "Settings match: \"Einstellungen\" --> lowered: \"einstellungen\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Einstellungen\"], textMatch: Einstellungen",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://cmp.t3n.de/privacy-manager/index.html?message_id=1457869&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.t3n.de%2Fmms%2Fv2&site_id=40623&concatenatedUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977~~~&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&consentUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977&includeCustomVendorsRes=1",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 58 for URL: https://cmp.t3n.de/privacy-manager/index.html?message_id=1457869&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.t3n.de%2Fmms%2Fv2&site_id=40623&concatenatedUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977~~~&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&consentUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977&includeCustomVendorsRes=1",
+      "Best new frame selected for settings extraction: https://cmp.t3n.de/privacy-manager/index.html?message_id=1457869&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.t3n.de%2Fmms%2Fv2&site_id=40623&concatenatedUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977~~~&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&consentUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977&includeCustomVendorsRes=1",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "      filteredHtml: '<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column is-message\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children headline first-focusable-el\">t3n mit Cookies nutzen</h1><div class=\"message-component message-row\"><div class=\"message-component message-column scrollable-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Wir verwenden Cookies oder ähnliche Informationen (z.B. deine IP-Adresse, Zählpixel), sowie Funktionen von 333 Drittanbietern.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Einige Cookies und Datenverarbeitungen sind technisch notwendig, andere helfen unser Angebot zu verbessern und wirtschaftlich zu betreiben. (etwa Consent Management Plattform Sourcepoint, Zensusmessung von INFOnline, Zählpixel der VG Wort oder ein Cookie von Plenigo, wenn du ein Abo bei uns kaufst).</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Die Verarbeitungszwecke sind: <a data-choice=\"1709652640583\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-1-0-2 focusable\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" tabindex=\"0\">Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten</a>; externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz), Empfehlungen von eigenen Produkten und Inhalten, A/B-Testing, Push-Benachrichtigungen/Kommunikation, technisch erforderliche Cookies (Sicherheit, Anmeldung, Forum).</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Durch das Klicken des<strong> „Zustimmen“</strong>-Buttons stimmst du der Verarbeitung der auf deinem Gerät bzw. deiner Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit. a DSGVO zu. Darüber hinaus willigst du gem. Art. 49 Abs. 1 DSGVO ein, dass auch Anbieter in den USA deine Daten verarbeiten. In diesem Fall ist es möglich, dass die übermittelten Daten durch lokale Behörden verarbeitet werden.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Alternativ zu deiner Einwilligung zu Zwecken einer derartigen Profilbildung nutzt du t3n mit Pur-Abo ohne Werbetracking, externe Banner- und Videowerbung für 4,90 € / Monat, als Pro-Member für 1,90 € / Monat (siehe Button „Pur-Abo abschließen”). Informationen zur Datenverarbeitung im Pur-Abo findest du unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-1-0-4 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a> und in den <a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-0-0-1-0-4 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Über den Button <strong>„Einstellungen”</strong> oder den Link „Cookies &amp; Tracking” am Seitenende kannst du alternativ die von dir individuell gewünschten Einstellungen vornehmen, einzelne Einwilligungen erteilen oder ablehnen und mehr über die eingesetzten Technologien und Partner erfahren. Weitere Informationen findest du außerdem unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-1-0-5 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Am einfachsten ist es, wenn du dazu über den Button „Einstellungen” oder den Link „Cookies &amp; Tracking” deine getroffene Auswahl anpasst. Durch den Widerruf der Einwilligung wird die vorherige Verarbeitung nicht berührt.</p></div></div><div class=\"message-component message-row fixed-footer\"><div class=\"message-component message-column bottom-box\"><div class=\"message-component message-row is-overlay\"></div><div class=\"message-component message-row\"><div class=\"message-component message-column button-container\"><button title=\"Zustimmen\" aria-label=\"Zustimmen\" class=\"message-component message-button no-children focusable is-consent sp_choice_type_11\">Zustimmen</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable is-settings sp_choice_type_12\">Einstellungen</button><button title=\"Pur-Abo abschließen\" aria-label=\"Pur-Abo abschließen\" class=\"message-component message-button no-children focusable is-pur sp_choice_type_9\">Pur-Abo abschließen</button></div></div><div class=\"message-component message-row\"><div class=\"message-component message-column footer\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Bereits Pur-Abonnent:in?</p><p tabindex=\"0\" class=\"focusable message-component text no-children is-login\"><a target=\"_blank\" href=\"https://t3n.de/account/login\" class=\"text-link-0-0-0-2-0-2-0-0-1 focusable\" aria-label=\"Hier anmelden\" tabindex=\"0\">Hier anmelden</a></p></div><div class=\"message-component message-row footer-links\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-0-0-2-0-2-0-1-0 focusable\" aria-label=\"Pur-FAQ\" tabindex=\"0\">Pur-FAQ</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-2-0-2-0-1-1 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/impressum/\" class=\"text-link-0-0-0-2-0-2-0-1-2 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/kontakt/\" class=\"text-link-0-0-0-2-0-2-0-1-3 focusable last-focusable-el\" aria-label=\"Kontakt\" tabindex=\"0\">Kontakt</a></p></div></div></div></div></div></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 6662,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp.t3n.de/privacy-manager/index.html?message_id=1457869&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.t3n.de%2Fmms%2Fv2&site_id=40623&concatenatedUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977~~~&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&consentUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977&includeCustomVendorsRes=1',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\"><strong>Einstellungen</strong></h1></div><div class=\"message-component message-column\"><button title=\"&lt; Zurück\" aria-label=\"&lt; Zurück\" class=\"message-component message-button no-children focusable text-link sp_choice_type_CANCEL\">&lt; Zurück</button></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children\">Die notwendigen Cookies (Consent Management Plattform Sourcepoint, Zensusmessung von INFOnline, Zählpixel der VG Wort oder ein Cookie von Plenigo, wenn du ein Abo bei uns kaufst) sind unten im Einzelnen genannt, wenn du den diesbezüglichen Menüpunkt aufklappst. Rechtsgrundlage sind hier § 25 Abs. 2 TTDSG und unser berechtigtes Interesse gemäß Art. 6 Abs. 1 lit f DSGVO zur Erbringung unseres Dienstes, zu statistischen Zwecken und zur Messung der aufgerufenen Inhalte zu Abrechnungszwecken.</p><p></p><p>Falls du dich nicht für unser Pur-Abo entscheidest, speichern und verarbeiten wir und unsere Partner mit deiner Einwilligung Cookies und andere Technologien auf deinem Gerät. Durch das Klicken des „Auswahl zustimmen”-Buttons stimmst du der Verarbeitung der auf deinem Gerät bzw. deiner Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gemäß § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit a DSGVO zu. Darüber hinaus willigst du gem. Art. 49 Abs. 1 DSGVO ein, dass auch Anbieter in den USA deine Daten verarbeiten. In diesem Fall ist es möglich, dass die übermittelten Daten durch lokale Behörden verarbeitet werden. Nachfolgend findest du jeweils gruppiert nach Verarbeitungszwecken die Cookies, Geräte-Kennungen und anderen Informationen, die auf deinem Gerät gespeichert oder abgerufen werden. Es sind jeweils auch die Drittanbieter genannt, denen Daten offengelegt werden. Weitere Informationen findest du in der <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> von der yeebase media GmbH.</p><p></p><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400a4463810d6b4c3b28\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Datenverarbeitungen von Werbeanbietern einschl. personalisierter Werbung mit Profilbildung</h3></div></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400d4463810d6b4c88f3\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz)<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400b4463810d6b4c5521\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen eine Zusammenarbeit möglich ist.</div><div tabindex=\"0\" class=\"page-action\">Alle Anbieter anzeigen</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Raus\">Zustimmung erforderlich</span><h2 class=\"custom-header\">Raus</h2></div></div></div><button title=\"Auswahl zustimmen\" aria-label=\"Auswahl zustimmen\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Auswahl zustimmen</button><button title=\"&lt; Zurück\" aria-label=\"&lt; Zurück\" class=\"message-component message-button no-children focusable sp_choice_type_CANCEL\">&lt; Zurück</button><div class=\"message-component message-row\"><div class=\"message-component message-column\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>t3n.de mit Pur-Abo nutzen</strong></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Nutze t3n.de ohne Werbetracking, externe Banner- und Videowerbung für 4,90€&nbsp;/&nbsp;Monat. Informationen zur Datenverarbeitung im Pur-Abo findest du unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-5-0-1-0 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a> und in den <a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-5-0-1-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p></div><div class=\"message-component message-row\"><button title=\"Jetzt abonnieren\" aria-label=\"Jetzt abonnieren\" class=\"message-component message-button no-children focusable sp_choice_type_[object Object]\">Jetzt abonnieren</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Bereits Pur-Abonnent:in?</p></div><div class=\"message-component message-column\"><button title=\"Hier anmelden\" aria-label=\"Hier anmelden\" class=\"message-component message-button no-children focusable is-login text-link sp_choice_type_[object Object]\">Hier anmelden</button></div></div></div></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-6-0-0 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a></p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://t3n.de/impressum/\" class=\"text-link-0-6-1-0 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p></div><div class=\"message-component message-column\"><button title=\"Zustimmung widerrufen\" aria-label=\"Zustimmung widerrufen\" class=\"message-component message-button no-children focusable revoke-consent text-link sp_choice_type_[object Object] last-focusable-el\">Zustimmung widerrufen</button></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 8138,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (12):",
+      "      [A] \"Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" --> selector: [aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"Datenschutz\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"Datenschutz\"]",
+      "      [BUTTON] \"Zustimmen\" --> selector: [aria-label=\"Zustimmen\"]",
+      "      [BUTTON] \"Einstellungen\" --> selector: [aria-label=\"Einstellungen\"]",
+      "      [BUTTON] \"Pur-Abo abschließen\" --> selector: [aria-label=\"Pur-Abo abschließen\"]",
+      "      [A] \"Hier anmelden\" --> selector: [aria-label=\"Hier anmelden\"]",
+      "      [A] \"Pur-FAQ\" --> selector: [aria-label=\"Pur-FAQ\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"Datenschutz\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "      [A] \"Kontakt\" --> selector: [aria-label=\"Kontakt\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (18):",
+      "      [BUTTON] \"< Zurück\" --> selector: [aria-label=\"< Zurück\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [H2] \"Datenverarbeitungen von Werbeanbietern einschl. personalisierter Werbung mit Profilbildung\" --> selector: .accordion",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [H2] \"Externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz)\" --> selector: .accordion",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Funktionale Verwendungszwecke\" --> selector: .accordion",
+      "      [H2] \"Zusatzfunktionen\" --> selector: .accordion",
+      "      [BUTTON] \"Auswahl zustimmen\" --> selector: [aria-label=\"Auswahl zustimmen\"]",
+      "      [BUTTON] \"< Zurück\" --> selector: [aria-label=\"<  Zurück\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"Datenschutz\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [BUTTON] \"Jetzt abonnieren\" --> selector: [aria-label=\"Jetzt abonnieren\"]",
+      "      [BUTTON] \"Hier anmelden\" --> selector: [aria-label=\"Hier anmelden\"]",
+      "      [A] \"Datenschutz\" --> selector: [aria-label=\"Datenschutz\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "      [BUTTON] \"Zustimmung widerrufen\" --> selector: [aria-label=\"Zustimmung widerrufen\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1709652640583",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#2a2a2a;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-1-0-2 focusable",
+              "aria-label": "Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children text-elements",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column scrollable-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#2a2a2a;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-1-0-4 focusable",
+              "aria-label": "Datenschutz",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children text-elements",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column scrollable-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutz\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/pur#faq",
+              "style": "color:#2a2a2a;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-1-0-4 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children text-elements",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column scrollable-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#2a2a2a;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-1-0-5 focusable",
+              "aria-label": "Datenschutz",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children text-elements",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column scrollable-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutz\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zustimmen",
+              "aria-label": "Zustimmen",
+              "class": "message-component message-button no-children focusable is-consent sp_choice_type_11",
+              "style": "opacity: 1; padding: 8px 13px; margin: 0px 0px 8px; border-width: 2px; border-color: rgb(42, 42, 42); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(42, 42, 42); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zustimmen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einstellungen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Einstellungen",
+              "aria-label": "Einstellungen",
+              "class": "message-component message-button no-children focusable is-settings sp_choice_type_12",
+              "style": "opacity: 1; padding: 8px; margin: 0px 0px 8px; border-width: 2px; border-color: rgb(244, 244, 244); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; background: rgb(244, 244, 244); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Einstellungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pur-Abo abschließen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Pur-Abo abschließen",
+              "aria-label": "Pur-Abo abschließen",
+              "class": "message-component message-button no-children focusable is-pur sp_choice_type_9",
+              "style": "opacity: 1; padding: 8px; margin: 0px; border-width: 2px; border-color: rgb(0, 0, 0); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Pur-Abo abschließen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Hier anmelden",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/account/login",
+              "style": "color:#2a2a2a;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-2-0-2-0-0-1 focusable",
+              "aria-label": "Hier anmelden",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children is-login",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Hier anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pur-FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/pur#faq",
+              "style": "color:#5f5f5f;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-2-0-2-0-1-0 focusable",
+              "aria-label": "Pur-FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children footer-link",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Pur-FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#5f5f5f;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-2-0-2-0-1-1 focusable",
+              "aria-label": "Datenschutz",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children footer-link",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutz\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/impressum/",
+              "style": "color:#5f5f5f;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-2-0-2-0-1-2 focusable",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children footer-link",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kontakt",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/kontakt/",
+              "style": "color:#5f5f5f;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-2-0-2-0-1-3 focusable last-focusable-el",
+              "aria-label": "Kontakt",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children footer-link",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Kontakt\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp.t3n.de/index.html?hasCsp=true&message_id=1461983&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+        "filteredHtml": "<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column is-message\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children headline first-focusable-el\">t3n mit Cookies nutzen</h1><div class=\"message-component message-row\"><div class=\"message-component message-column scrollable-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Wir verwenden Cookies oder ähnliche Informationen (z.B. deine IP-Adresse, Zählpixel), sowie Funktionen von 333 Drittanbietern.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Einige Cookies und Datenverarbeitungen sind technisch notwendig, andere helfen unser Angebot zu verbessern und wirtschaftlich zu betreiben. (etwa Consent Management Plattform Sourcepoint, Zensusmessung von INFOnline, Zählpixel der VG Wort oder ein Cookie von Plenigo, wenn du ein Abo bei uns kaufst).</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Die Verarbeitungszwecke sind: <a data-choice=\"1709652640583\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-1-0-2 focusable\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" tabindex=\"0\">Speichern von oder Zugriff auf Informationen auf einem Endgerät; personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten</a>; externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz), Empfehlungen von eigenen Produkten und Inhalten, A/B-Testing, Push-Benachrichtigungen/Kommunikation, technisch erforderliche Cookies (Sicherheit, Anmeldung, Forum).</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Durch das Klicken des<strong> „Zustimmen“</strong>-Buttons stimmst du der Verarbeitung der auf deinem Gerät bzw. deiner Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit. a DSGVO zu. Darüber hinaus willigst du gem. Art. 49 Abs. 1 DSGVO ein, dass auch Anbieter in den USA deine Daten verarbeiten. In diesem Fall ist es möglich, dass die übermittelten Daten durch lokale Behörden verarbeitet werden.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Alternativ zu deiner Einwilligung zu Zwecken einer derartigen Profilbildung nutzt du t3n mit Pur-Abo ohne Werbetracking, externe Banner- und Videowerbung für 4,90 € / Monat, als Pro-Member für 1,90 € / Monat (siehe Button „Pur-Abo abschließen”). Informationen zur Datenverarbeitung im Pur-Abo findest du unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-1-0-4 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a> und in den <a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-0-0-1-0-4 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Über den Button <strong>„Einstellungen”</strong> oder den Link „Cookies &amp; Tracking” am Seitenende kannst du alternativ die von dir individuell gewünschten Einstellungen vornehmen, einzelne Einwilligungen erteilen oder ablehnen und mehr über die eingesetzten Technologien und Partner erfahren. Weitere Informationen findest du außerdem unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-1-0-5 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a>.</p><p tabindex=\"0\" class=\"focusable message-component text no-children text-elements\">Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Am einfachsten ist es, wenn du dazu über den Button „Einstellungen” oder den Link „Cookies &amp; Tracking” deine getroffene Auswahl anpasst. Durch den Widerruf der Einwilligung wird die vorherige Verarbeitung nicht berührt.</p></div></div><div class=\"message-component message-row fixed-footer\"><div class=\"message-component message-column bottom-box\"><div class=\"message-component message-row is-overlay\"></div><div class=\"message-component message-row\"><div class=\"message-component message-column button-container\"><button title=\"Zustimmen\" aria-label=\"Zustimmen\" class=\"message-component message-button no-children focusable is-consent sp_choice_type_11\">Zustimmen</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable is-settings sp_choice_type_12\">Einstellungen</button><button title=\"Pur-Abo abschließen\" aria-label=\"Pur-Abo abschließen\" class=\"message-component message-button no-children focusable is-pur sp_choice_type_9\">Pur-Abo abschließen</button></div></div><div class=\"message-component message-row\"><div class=\"message-component message-column footer\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Bereits Pur-Abonnent:in?</p><p tabindex=\"0\" class=\"focusable message-component text no-children is-login\"><a target=\"_blank\" href=\"https://t3n.de/account/login\" class=\"text-link-0-0-0-2-0-2-0-0-1 focusable\" aria-label=\"Hier anmelden\" tabindex=\"0\">Hier anmelden</a></p></div><div class=\"message-component message-row footer-links\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-0-0-2-0-2-0-1-0 focusable\" aria-label=\"Pur-FAQ\" tabindex=\"0\">Pur-FAQ</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-0-0-2-0-2-0-1-1 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/impressum/\" class=\"text-link-0-0-0-2-0-2-0-1-2 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://t3n.de/kontakt/\" class=\"text-link-0-0-0-2-0-2-0-1-3 focusable last-focusable-el\" aria-label=\"Kontakt\" tabindex=\"0\">Kontakt</a></p></div></div></div></div></div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 6662,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "< Zurück",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "< Zurück",
+              "aria-label": "< Zurück",
+              "class": "message-component message-button no-children focusable text-link sp_choice_type_CANCEL",
+              "style": "opacity: 1; padding: 0px; margin: 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"< Zurück\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#2a2a2a;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenverarbeitungen von Werbeanbietern einschl. personalisierter Werbung mit Profilbildung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "69ca400d4463810d6b4c88f3",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz)",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "69ca400b4463810d6b4c5521",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Funktionale Verwendungszwecke",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Funktionale Verwendungszwecke",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zusatzfunktionen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Zusatzfunktionen",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Auswahl zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Auswahl zustimmen",
+              "aria-label": "Auswahl zustimmen",
+              "class": "message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT",
+              "aria-disabled": "true",
+              "disabled": "",
+              "style": "opacity: 0.5; padding: 8px; margin: 8px; border-width: 2px; border-color: rgb(42, 42, 42); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(42, 42, 42);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message type-modal",
+              "selector": ".message",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-container",
+                "selector": ".message-container"
+              }
+            },
+            "selector": "[aria-label=\"Auswahl zustimmen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "< Zurück",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "<  Zurück",
+              "aria-label": "<  Zurück",
+              "class": "message-component message-button no-children focusable sp_choice_type_CANCEL",
+              "style": "opacity: 1; padding: 8px 0px; margin: 8px; border-width: 2px; border-color: rgb(42, 42, 42); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message type-modal",
+              "selector": ".message",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-container",
+                "selector": ".message-container"
+              }
+            },
+            "selector": "[aria-label=\"<  Zurück\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#2a2a2a;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-5-0-1-0 focusable",
+              "aria-label": "Datenschutz",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutz\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/pur#faq",
+              "style": "color:#2a2a2a;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-5-0-1-0 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt abonnieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Jetzt abonnieren",
+              "aria-label": "Jetzt abonnieren",
+              "class": "message-component message-button no-children focusable sp_choice_type_[object Object]",
+              "style": "opacity: 1; padding: 8px; margin: 4px 0px; border-width: 2px; border-color: rgb(42, 42, 42); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; width: calc(100% - 16px); background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Jetzt abonnieren\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Hier anmelden",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Hier anmelden",
+              "aria-label": "Hier anmelden",
+              "class": "message-component message-button no-children focusable is-login text-link sp_choice_type_[object",
+              "style": "opacity: 1; padding: 0px; margin: 0px 0px 0px 4px; border-width: 0px; border-color: rgb(42, 42, 42); border-radius: 5px; border-style: solid; font-size: 12px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Hier anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutz",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/datenschutz/",
+              "style": "color:#2a2a2a;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-6-0-0 focusable",
+              "aria-label": "Datenschutz",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutz\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://t3n.de/impressum/",
+              "style": "color:#2a2a2a;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-6-1-0 focusable",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmung widerrufen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zustimmung widerrufen",
+              "aria-label": "Zustimmung widerrufen",
+              "class": "message-component message-button no-children focusable revoke-consent text-link sp_choice_type_[object",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(42, 42, 42); border-radius: 5px; border-style: solid; font-size: 12px; font-weight: 400; color: rgb(42, 42, 42); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zustimmung widerrufen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp.t3n.de/privacy-manager/index.html?message_id=1457869&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.t3n.de%2Fmms%2Fv2&site_id=40623&concatenatedUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977~~~&consent_origin=https%3A%2F%2Fcmp.t3n.de%2Fconsent%2Ftcfv2&consentUUID=39ab42b3-bbdd-4ee4-9779-9e4eeb686977&includeCustomVendorsRes=1",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\"><strong>Einstellungen</strong></h1></div><div class=\"message-component message-column\"><button title=\"&lt; Zurück\" aria-label=\"&lt; Zurück\" class=\"message-component message-button no-children focusable text-link sp_choice_type_CANCEL\">&lt; Zurück</button></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children\">Die notwendigen Cookies (Consent Management Plattform Sourcepoint, Zensusmessung von INFOnline, Zählpixel der VG Wort oder ein Cookie von Plenigo, wenn du ein Abo bei uns kaufst) sind unten im Einzelnen genannt, wenn du den diesbezüglichen Menüpunkt aufklappst. Rechtsgrundlage sind hier § 25 Abs. 2 TTDSG und unser berechtigtes Interesse gemäß Art. 6 Abs. 1 lit f DSGVO zur Erbringung unseres Dienstes, zu statistischen Zwecken und zur Messung der aufgerufenen Inhalte zu Abrechnungszwecken.</p><p></p><p>Falls du dich nicht für unser Pur-Abo entscheidest, speichern und verarbeiten wir und unsere Partner mit deiner Einwilligung Cookies und andere Technologien auf deinem Gerät. Durch das Klicken des „Auswahl zustimmen”-Buttons stimmst du der Verarbeitung der auf deinem Gerät bzw. deiner Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gemäß § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit a DSGVO zu. Darüber hinaus willigst du gem. Art. 49 Abs. 1 DSGVO ein, dass auch Anbieter in den USA deine Daten verarbeiten. In diesem Fall ist es möglich, dass die übermittelten Daten durch lokale Behörden verarbeitet werden. Nachfolgend findest du jeweils gruppiert nach Verarbeitungszwecken die Cookies, Geräte-Kennungen und anderen Informationen, die auf deinem Gerät gespeichert oder abgerufen werden. Es sind jeweils auch die Drittanbieter genannt, denen Daten offengelegt werden. Weitere Informationen findest du in der <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> von der yeebase media GmbH.</p><p></p><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400a4463810d6b4c3b28\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Datenverarbeitungen von Werbeanbietern einschl. personalisierter Werbung mit Profilbildung</h3></div></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400d4463810d6b4c88f3\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Externe Inhalte anzeigen (z.B. YouTube Videos, Podcasts, Twitter, Quiz)<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"69ca400b4463810d6b4c5521\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen eine Zusammenarbeit möglich ist.</div><div tabindex=\"0\" class=\"page-action\">Alle Anbieter anzeigen</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Raus\">Zustimmung erforderlich</span><h2 class=\"custom-header\">Raus</h2></div></div></div><button title=\"Auswahl zustimmen\" aria-label=\"Auswahl zustimmen\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Auswahl zustimmen</button><button title=\"&lt; Zurück\" aria-label=\"&lt; Zurück\" class=\"message-component message-button no-children focusable sp_choice_type_CANCEL\">&lt; Zurück</button><div class=\"message-component message-row\"><div class=\"message-component message-column\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>t3n.de mit Pur-Abo nutzen</strong></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Nutze t3n.de ohne Werbetracking, externe Banner- und Videowerbung für 4,90€&nbsp;/&nbsp;Monat. Informationen zur Datenverarbeitung im Pur-Abo findest du unter <a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-5-0-1-0 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a> und in den <a target=\"_blank\" href=\"https://t3n.de/pur#faq\" class=\"text-link-0-5-0-1-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p></div><div class=\"message-component message-row\"><button title=\"Jetzt abonnieren\" aria-label=\"Jetzt abonnieren\" class=\"message-component message-button no-children focusable sp_choice_type_[object Object]\">Jetzt abonnieren</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Bereits Pur-Abonnent:in?</p></div><div class=\"message-component message-column\"><button title=\"Hier anmelden\" aria-label=\"Hier anmelden\" class=\"message-component message-button no-children focusable is-login text-link sp_choice_type_[object Object]\">Hier anmelden</button></div></div></div></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://t3n.de/datenschutz/\" class=\"text-link-0-6-0-0 focusable\" aria-label=\"Datenschutz\" tabindex=\"0\">Datenschutz</a></p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://t3n.de/impressum/\" class=\"text-link-0-6-1-0 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p></div><div class=\"message-component message-column\"><button title=\"Zustimmung widerrufen\" aria-label=\"Zustimmung widerrufen\" class=\"message-component message-button no-children focusable revoke-consent text-link sp_choice_type_[object Object] last-focusable-el\">Zustimmung widerrufen</button></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 8138,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

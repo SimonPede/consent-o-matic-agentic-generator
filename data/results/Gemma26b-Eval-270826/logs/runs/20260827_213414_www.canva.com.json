@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-08-27T21:34:14.253775",
+  "url": "https://www.canva.com",
+  "structured_dom_chars": 193837,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"canva\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Accept all cookies\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Accept all cookies\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Accept all cookies\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Manage cookies\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-labelledby='_r_sj_'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-labelledby='_r_sj_']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-labelledby='_r_ss_'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-labelledby='_r_ss_']\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-labelledby='_r_t5_'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-labelledby='_r_t5_']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Save & Close\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 1083 (char 1082)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 980 (char 979)",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 1083 (char 1082)"
+  ],
+  "duration_seconds": 657.31,
+  "extraction_duration_seconds": 16.91,
+  "extraction_share_percent": 2.57,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "canva": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "button",
+              "textFilter": "Accept all cookies"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "button",
+              "textFilter": "Accept all cookies",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "button",
+              "textFilter": "Accept all</em> all cookies"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Manage cookies"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-labelledby='_r_sj_'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-labelledby='_r_sj_']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-labelledby='_r_ss_'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-labelledby='_r_ss_']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria:labelledby='_r_t5_'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-labelledby='_r_t5_']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Save & Close"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

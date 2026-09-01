@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-08-28T01:31:59.028194",
+  "url": "https://www.tumblr.com",
+  "structured_dom_chars": 0,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK_OR_BINARY",
+  "verified": null,
+  "cmp_type": "UNDETECTED",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 1,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "",
+  "last_error": "extract_dom.js timed out after 450s for URL: https://www.tumblr.com",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 644.43,
+  "extraction_duration_seconds": 450.1,
+  "extraction_share_percent": 69.84,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Tumblr": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "button, a",
+                "textFilter": "Decline Non-Essential Cookies"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "button, a",
+                "textFilter": "Decline Non-Essential Cookies"
+              },
+              "displayFilter": true
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button, a",
+              "textFilter": "Decline Non-Essential Cookies"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

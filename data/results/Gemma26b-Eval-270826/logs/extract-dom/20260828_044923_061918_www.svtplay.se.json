@@ -1,0 +1,254 @@
+{
+  "timestamp": "2026-08-28T04:49:23.061978",
+  "url": "https://www.svtplay.se",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.svtplay.se"
+  ],
+  "duration_seconds": 71.2,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id*=\"message-container\"]\" (Sourcepoint) in frame: https://www.svtplay.se/",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.svtplay.se/ with Score: 38",
+      "Regex failed in frame https://www.svtplay.se/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"a.cd8af48e2\", text: \"Lär mer om att använda SVT Play utomlands, öppnar annan webbplats\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: a.cd8af48e2, textMatch: Lär mer om att använda SVT Play utomlands, öppnar annan webbplats",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 42 for URL: https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+      "Best new frame selected for settings extraction: https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.svtplay.se/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id*=\"message-container\"]',",
+      "      url: 'https://www.svtplay.se/',",
+      "      filteredHtml: '<aside id=\"geoblock-message-container\" class=\"cc5cf98fc c1629b344 c84cdc56f c6487e8f9\"><div class=\"ca3473c30 ce90da61e\"><span class=\"c646c81e3\"><span class=\"c8325f62f\" data-rt=\"geoblock-message\">Visar endast program som går att se utanför Sverige. <a href=\"https://www.svt.se/kontakt/anvand-svt-play-utomlands\" class=\"cd8af48e2 cd800983d\" target=\"_self\">Lär mer om att använda SVT Play utomlands<span class=\"c781d103f\">, öppnar annan webbplats</span></a></span></span></div></aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 482,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"ch2-\"]',",
+      "      url: 'https://www.svt.se/kontakt/anvand-svt-play-utomlands',",
+      "      filteredHtml: '<div id=\"ch2-dialog\" class=\"ch2-dialog ch2-dialog-center ch2-visible\" role=\"dialog\" tabindex=\"-1\" aria-labelledby=\"ch2-dialog-title\" aria-describedby=\"ch2-dialog-description\" aria-modal=\"true\"><div class=\"ch2-dialog-content h2-dialog-content-morespace\"><p aria-level=\"2\" role=\"heading\" id=\"ch2-dialog-title\"><strong>Vi använder cookies</strong></p><div id=\"ch2-dialog-description\">Vissa cookies är nödvändiga för att tjänsten ska fungera. Det som du kan välja används för att: <div><i></i><span>Utveckla och förbättra svt.se/kontakt</span></div> <div><i></i><span>Anpassa innehåll och funktioner för dig</span></div> <div><p>Vissa cookies kommer från företag vi samarbetar med. Du kan när som helst ändra eller återkalla ditt medgivande. </p> <a class=\"c-settings\" href=\"https://www.svt.se/kontakt/cookies-och-personuppgifter\">Om cookies och personuppgifter</a></div></div></div><div class=\"ch2-dialog-actions ch2-dialog-actions-vertical\"><button class=\"ch2-btn ch2-open-settings-btn ch2-btn-transparent ch2-btn-text-sm\" tabindex=\"0\">COOKIE-INSTÄLLNINGAR</button><button class=\"ch2-btn ch2-deny-all-btn ch2-btn-primary\" tabindex=\"0\">AVVISA ALLA</button><button class=\"ch2-btn ch2-allow-all-btn ch2-btn-primary\" tabindex=\"0\">ACCEPTERA ALLA</button></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1259,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.svtplay.se/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[id*=\"message-container\"]\"",
+      "  Buttons found (1):",
+      "      [A] \"Lär mer om att använda SVT Play utomlands",
+      ", öppnar annan webbplats\" --> selector: .cd8af48e2",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (4):",
+      "      [A] \"Om cookies och personuppgifter\" --> selector: .c-settings",
+      "      [BUTTON] \"COOKIE-INSTÄLLNINGAR\" --> selector: .ch2-btn",
+      "      [BUTTON] \"AVVISA ALLA\" --> selector: .ch2-btn",
+      "      [BUTTON] \"ACCEPTERA ALLA\" --> selector: .ch2-btn",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.svtplay.se/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Lär mer om att använda SVT Play utomlands\n, öppnar annan webbplats",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+              "class": "cd8af48e2 cd800983d",
+              "target": "_self"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "c8325f62f",
+              "selector": ".c8325f62f",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "c646c81e3",
+                "selector": ".c646c81e3"
+              }
+            },
+            "selector": ".cd8af48e2",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id*=\"message-container\"]",
+        "url": "https://www.svtplay.se/",
+        "filteredHtml": "<aside id=\"geoblock-message-container\" class=\"cc5cf98fc c1629b344 c84cdc56f c6487e8f9\"><div class=\"ca3473c30 ce90da61e\"><span class=\"c646c81e3\"><span class=\"c8325f62f\" data-rt=\"geoblock-message\">Visar endast program som går att se utanför Sverige. <a href=\"https://www.svt.se/kontakt/anvand-svt-play-utomlands\" class=\"cd8af48e2 cd800983d\" target=\"_self\">Lär mer om att använda SVT Play utomlands<span class=\"c781d103f\">, öppnar annan webbplats</span></a></span></span></div></aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 482,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Om cookies och personuppgifter",
+            "tag": "A",
+            "attributes": {
+              "class": "c-settings",
+              "href": "https://www.svt.se/kontakt/cookies-och-personuppgifter"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ch2-dialog-description",
+                "className": null,
+                "selector": "#ch2-dialog-description"
+              }
+            },
+            "selector": ".c-settings",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "COOKIE-INSTÄLLNINGAR",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "ch2-btn ch2-open-settings-btn ch2-btn-transparent ch2-btn-text-sm",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "ch2-dialog-actions ch2-dialog-actions-vertical",
+              "selector": ".ch2-dialog-actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ch2-dialog",
+                "className": "ch2-dialog ch2-dialog-center ch2-visible",
+                "selector": "#ch2-dialog"
+              }
+            },
+            "selector": ".ch2-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "AVVISA ALLA",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "ch2-btn ch2-deny-all-btn ch2-btn-primary",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "ch2-dialog-actions ch2-dialog-actions-vertical",
+              "selector": ".ch2-dialog-actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ch2-dialog",
+                "className": "ch2-dialog ch2-dialog-center ch2-visible",
+                "selector": "#ch2-dialog"
+              }
+            },
+            "selector": ".ch2-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACCEPTERA ALLA",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "ch2-btn ch2-allow-all-btn ch2-btn-primary",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "ch2-dialog-actions ch2-dialog-actions-vertical",
+              "selector": ".ch2-dialog-actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ch2-dialog",
+                "className": "ch2-dialog ch2-dialog-center ch2-visible",
+                "selector": "#ch2-dialog"
+              }
+            },
+            "selector": ".ch2-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"ch2-\"]",
+        "url": "https://www.svt.se/kontakt/anvand-svt-play-utomlands",
+        "filteredHtml": "<div id=\"ch2-dialog\" class=\"ch2-dialog ch2-dialog-center ch2-visible\" role=\"dialog\" tabindex=\"-1\" aria-labelledby=\"ch2-dialog-title\" aria-describedby=\"ch2-dialog-description\" aria-modal=\"true\"><div class=\"ch2-dialog-content h2-dialog-content-morespace\"><p aria-level=\"2\" role=\"heading\" id=\"ch2-dialog-title\"><strong>Vi använder cookies</strong></p><div id=\"ch2-dialog-description\">Vissa cookies är nödvändiga för att tjänsten ska fungera. Det som du kan välja används för att: <div><i></i><span>Utveckla och förbättra svt.se/kontakt</span></div> <div><i></i><span>Anpassa innehåll och funktioner för dig</span></div> <div><p>Vissa cookies kommer från företag vi samarbetar med. Du kan när som helst ändra eller återkalla ditt medgivande. </p> <a class=\"c-settings\" href=\"https://www.svt.se/kontakt/cookies-och-personuppgifter\">Om cookies och personuppgifter</a></div></div></div><div class=\"ch2-dialog-actions ch2-dialog-actions-vertical\"><button class=\"ch2-btn ch2-open-settings-btn ch2-btn-transparent ch2-btn-text-sm\" tabindex=\"0\">COOKIE-INSTÄLLNINGAR</button><button class=\"ch2-btn ch2-deny-all-btn ch2-btn-primary\" tabindex=\"0\">AVVISA ALLA</button><button class=\"ch2-btn ch2-allow-all-btn ch2-btn-primary\" tabindex=\"0\">ACCEPTERA ALLA</button></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1259,
+        "cmpType": "Sourcepoint",
+        "isIframe": false
+      }
+    }
+  ]
+}

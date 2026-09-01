@@ -1,0 +1,631 @@
+{
+  "timestamp": "2026-08-27T16:30:26.818947",
+  "url": "https://www.ea.com/",
+  "command": [
+    "node",
+    "/mnt/c/Users/simon/programming stuff/github Projekte/Bachelorarbeit/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.ea.com/"
+  ],
+  "duration_seconds": 19.68,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class^=\"truste\"]\" (TrustArc) in frame: https://www.ea.com/",
+      "waitForCmpUi detected CMP Type: TrustArc",
+      "I found 2 frames.",
+      "a frame was picked by score: https://www.ea.com/ with Score: 30",
+      "Regex failed in frame https://www.ea.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"#truste-show-consent\", text: \"Your Privacy Choices\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #truste-show-consent, textMatch: Your Privacy Choices",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 1086888 chars.",
+      "DOM diff: 132000 chars added, 3 inputs added.",
+      "Old state: 78 buttons, 0 inputs.",
+      "New state: 89 buttons, 3 inputs.",
+      "Settings detected: 132000 chars, 3 inputs, 11 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 3 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.ea.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'TrustArc',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://www.ea.com/',",
+      "      filteredHtml: '<div class=\"trustetrack ta-show ta-display-block\" id=\"truste-consent-track\"> <div id=\"truste-consent-content\" class=\"truste-banner\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <p><span class=\"no-gpc-detected\"> <strong>This site uses cookies and other online tracking technologies</strong> (“Cookies”) to help the site function, improve your experience, analyze usage, and enable targeted advertising that may appear on other sites or platforms. <br><br> By choosing <strong>Accept</strong>, you consent to the use of Cookies for <strong>targeted advertising</strong> by EA and its third-party advertising partners, and for <strong>functional</strong> purposes, like analytics. Certain required Cookies necessary for our site to operate remain enabled regardless of your choice. For more details and to manage your preferences, please review our&nbsp;<a href=\"https://privacy.ea.com/\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">Privacy and Cookie Policy</a>&nbsp;and <strong>Your Privacy Choices</strong>. </span> </p> </div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <button id=\"truste-consent-button\" type=\"button\" class=\"truste-button2 no-gpc-detected\">Accept</button> <button id=\"truste-consent-required\" type=\"button\" class=\"truste-button1 no-gpc-detected\">Decline</button> <button id=\"truste-show-consent\" type=\"button\" class=\"truste-button1\" aria-haspopup=\"dialog\">Your Privacy Choices</button> </div> </div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1485,",
+      "      cmpType: 'TrustArc'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://www.ea.com/',",
+      "      filteredHtml: '<div id=\"pop-div206757601660350214\" class=\"truste_box_overlay\"><div id=\"pop-div30966082139718255\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame033697140470632403\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-650=\"true\" data-breakpoint-max-width-730=\"true\" data-breakpoint-max-width-760=\"true\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-768=\"true\" data-breakpoint-max-width-780=\"true\" data-breakpoint-min-width-1=\"true\" data-breakpoint-min-width-482=\"true\" data-breakpoint-min-width-500=\"true\" data-breakpoint-min-width-632=\"true\" data-breakpoint-max-height-720=\"true\" data-breakpoint-max-height-768=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1><span>Your Privacy Choices</span></h1> <p id=\"collapse-description\"></p> <span>This site uses cookies and other online tracking technologies, including beacons and pixels (“Cookies”) to help EA websites function, improve your experience, analyze usage, and enable targeted advertising that may appear on other sites or platforms.<br><br>Depending on your location, you may have the right to opt-out of “targeted advertising,” which some privacy laws refer to as the “sharing” or “sale” of personal information. You may use the controls below to adjust your preferences with respect to targeted advertising on EA websites. If you play our PC, console, or mobile games, you have additional privacy settings available as described in our guidance on&nbsp;<a href=\"https://www.ea.com/legal/privacy-portal?modal-id=targetedAdvertisingProvidedByThirdParties\" target=\"_blank\">third-party targeted advertising</a>.&nbsp;&nbsp;</span> <input type=\"checkbox\" id=\"readMore\" class=\"read-more-state\"> <label for=\"readMore\" class=\"read-more-trigger\"></label> <div class=\"extra-text\"> <p><br>If you clear your cookies or use a different browser or device, you will need to make these selections again. You may also manage Cookies through your browser or device settings, though this could impact the operation of this site.<br><br>These settings may also be disabled if your web browser sends an opt-out preference signal (sometimes referred to as the Global Privacy Control or \"GPC\"). Please review our&nbsp;<a href=\"https://www.ea.com/legal/privacy-and-cookie-policy#your-choices-and-controls\" id=\"privacyPolicyAnchor\" target=\"_blank\">Privacy and Cookie Policy</a>&nbsp;for more information.</p> </div> <div class=\"cookiecat-title\">Manage Consent</div></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Required Cookies</h2></div><div class=\"gwt-HTML\"><p>Required Cookies are necessary for our website to operate, including delivering our content and providing security. These Cookies cannot be disabled.</p></div></div><button aria-label=\"View Required Cookies\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Functional Cookies</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Additional functions are enabled. </p> <p>Off: Additional functions that require optional Cookies are disabled. </p> <p> Functional Cookies enable additional site functionality like saving your preferences, supporting social features, and analyzing use and visits to our site. If you enable these Cookies, we may share limited data with third-parties for these purposes. If you disable them, some features and functionalities (such as social logins) may not work properly. </p><p></p></div></div><button aria-label=\"View Functional Cookies\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Functional Cookies choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Functional Cookies\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Functional Cookies\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Additional functions are enabled.</span><span class=\"gwt-InlineHTML\">Off: Additional functions that require optional Cookies are disabled.</span><span class=\"gwt-InlineHTML\">Off: Additional functions that require optional Cookies are disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Targeted Advertising / Do Not Sell or Share My Personal Information</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Targeted advertising / selling or sharing of your personal information is enabled.</p> <p>Off: Targeted advertising / selling or sharing of your personal information is disabled.</p> <p> Targeted advertising Cookies are used by us and third parties to show ads that are relevant to your interests based on your visit to EA websites. If you disable advertising cookies, you may still see ads, but they will not be tailored to your interests based on your visit to EA websites. </p><p></p></div></div><button aria-label=\"View Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Targeted advertising / selling or sharing of your personal information is enabled.</span><span class=\"gwt-InlineHTML\">Off: Targeted advertising / selling or sharing of your personal information is disabled.</span><span class=\"gwt-InlineHTML\">Off: Targeted advertising / selling or sharing of your personal information is disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"truste-anti-vppa1\"><b>IMPORTANT:</b> If you wish to withdraw your consent to share and record your website activity (including game browsing, video viewing, and purchase history) with Electronic Arts’ third-party partners, switch this setting to OFF.</div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Multimedia Player</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Watching video content hosted by our partners (e.g., YouTube) is enabled.</p> <p>Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</p> <p> Watching video content hosted by our partners may involve their use of Cookies for advertising and functional/analytics purposes.</p><p></p></div></div><button aria-label=\"View Multimedia Player\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Multimedia Player choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Multimedia Player\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Multimedia Player\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Watching video content hosted by our partners (e.g., YouTube) is enabled.</span><span class=\"gwt-InlineHTML\">Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</span><span class=\"gwt-InlineHTML\">Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><button class=\"submit\" translate=\"no\">Submit Preferences</button><button class=\"declineAllButtonLower\" translate=\"no\">Decline All</button><button class=\"acceptAllButtonLower\" translate=\"no\">Accept All</button></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\">Privacy Policy</a></div><div class=\"right\" translate=\"no\">Powered by: <a href=\"http://tr'... 327 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 10327,",
+      "      cmpType: 'TrustArc',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.ea.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: TrustArc via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"Privacy and Cookie Policy\" --> selector: #truste-privacy-button",
+      "      [BUTTON] \"Accept\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Decline\" --> selector: #truste-consent-required",
+      "      [BUTTON] \"Your Privacy Choices\" --> selector: #truste-show-consent",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (11):",
+      "      [A] \"third-party targeted advertising\" --> selector: #pop-frame033697140470632403 >>> a",
+      "      [BUTTON] \"View Required Cookies\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"View Required Cookies\"]",
+      "      [BUTTON] \"View Functional Cookies\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"View Functional Cookies\"]",
+      "      [BUTTON] \"Functional Cookies choice\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Functional Cookies choice\"]",
+      "      [BUTTON] \"View Targeted Advertising / Do Not Sell or Share My Personal Information\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"View Targeted Advertising / Do Not Sell or Share My Personal Information\"]",
+      "      [BUTTON] \"Targeted Advertising / Do Not Sell or Share My Personal Information choice\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"]",
+      "      [BUTTON] \"View Multimedia Player\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"View Multimedia Player\"]",
+      "      [BUTTON] \"Multimedia Player choice\" --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Multimedia Player choice\"]",
+      "      [BUTTON] \"Submit Preferences\" --> selector: #pop-frame033697140470632403 >>> .submit",
+      "      [BUTTON] \"Decline All\" --> selector: #pop-frame033697140470632403 >>> .declineAllButtonLower",
+      "      [BUTTON] \"Accept All\" --> selector: #pop-frame033697140470632403 >>> .acceptAllButtonLower",
+      "   Checkboxes found (0):",
+      "  Toggles found (3):",
+      "      \"Functional Cookies choice\" | aria-checked: false --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Functional Cookies choice\"]",
+      "      \"Targeted Advertising / Do Not Sell or Share My Personal Information choice\" | aria-checked: false --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"]",
+      "      \"Multimedia Player choice\" | aria-checked: false --> selector: #pop-frame033697140470632403 >>> [aria-label=\"Multimedia Player choice\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.ea.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "TrustArc",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy and Cookie Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://privacy.ea.com/",
+              "target": "_blank",
+              "id": "truste-privacy-button",
+              "class": "truste-cookie-link"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "no-gpc-detected",
+              "selector": ".no-gpc-detected",
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#truste-privacy-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button",
+              "type": "button",
+              "class": "truste-button2 no-gpc-detected"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "truste-banner",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required",
+              "type": "button",
+              "class": "truste-button1 no-gpc-detected"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "truste-banner",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Your Privacy Choices",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-show-consent",
+              "type": "button",
+              "class": "truste-button1",
+              "aria-haspopup": "dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "truste-consent-content",
+                "className": "truste-banner",
+                "selector": "#truste-consent-content"
+              }
+            },
+            "selector": "#truste-show-consent",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://www.ea.com/",
+        "filteredHtml": "<div class=\"trustetrack ta-show ta-display-block\" id=\"truste-consent-track\"> <div id=\"truste-consent-content\" class=\"truste-banner\"> <div id=\"truste-consent-text\" class=\"truste-messageColumn\"> <p><span class=\"no-gpc-detected\"> <strong>This site uses cookies and other online tracking technologies</strong> (“Cookies”) to help the site function, improve your experience, analyze usage, and enable targeted advertising that may appear on other sites or platforms. <br><br> By choosing <strong>Accept</strong>, you consent to the use of Cookies for <strong>targeted advertising</strong> by EA and its third-party advertising partners, and for <strong>functional</strong> purposes, like analytics. Certain required Cookies necessary for our site to operate remain enabled regardless of your choice. For more details and to manage your preferences, please review our&nbsp;<a href=\"https://privacy.ea.com/\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-cookie-link\">Privacy and Cookie Policy</a>&nbsp;and <strong>Your Privacy Choices</strong>. </span> </p> </div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <button id=\"truste-consent-button\" type=\"button\" class=\"truste-button2 no-gpc-detected\">Accept</button> <button id=\"truste-consent-required\" type=\"button\" class=\"truste-button1 no-gpc-detected\">Decline</button> <button id=\"truste-show-consent\" type=\"button\" class=\"truste-button1\" aria-haspopup=\"dialog\">Your Privacy Choices</button> </div> </div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1485,
+        "cmpType": "TrustArc"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "third-party targeted advertising",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ea.com/legal/privacy-portal?modal-id=targetedAdvertisingProvidedByThirdParties",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookieMainHeader",
+                "className": "mainHeader consentHeader",
+                "selector": "#cookieMainHeader"
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View Required Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "View Required Cookies",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "style": "visibility: visible;",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"View Required Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View Functional Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "View Functional Cookies",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "style": "visibility: visible;",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"View Functional Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Functional Cookies choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Functional Cookies choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Functional Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View Targeted Advertising / Do Not Sell or Share My Personal Information",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "View Targeted Advertising / Do Not Sell or Share My Personal Information",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "style": "visibility: visible;",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"View Targeted Advertising / Do Not Sell or Share My Personal Information\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Targeted Advertising / Do Not Sell or Share My Personal Information choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Targeted Advertising / Do Not Sell or Share My Personal Information choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"]",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View Multimedia Player",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "View Multimedia Player",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "style": "visibility: visible;",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"View Multimedia Player\"]",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Multimedia Player choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Multimedia Player choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Multimedia Player choice\"]",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Submit Preferences",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "submit",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> .submit",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline All",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "declineAllButtonLower",
+              "style": "",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> .declineAllButtonLower",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "acceptAllButtonLower",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> .acceptAllButtonLower",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Functional Cookies choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Functional Cookies choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Functional Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Targeted Advertising / Do Not Sell or Share My Personal Information choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Targeted Advertising / Do Not Sell or Share My Personal Information choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Multimedia Player choice",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "switch",
+              "aria-label": "Multimedia Player choice",
+              "aria-checked": "false",
+              "class": "switch",
+              "style": "transform: translateX(-77.0156px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame033697140470632403 >>> [aria-label=\"Multimedia Player choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://www.ea.com/",
+        "filteredHtml": "<div id=\"pop-div206757601660350214\" class=\"truste_box_overlay\"><div id=\"pop-div30966082139718255\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame033697140470632403\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-650=\"true\" data-breakpoint-max-width-730=\"true\" data-breakpoint-max-width-760=\"true\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-768=\"true\" data-breakpoint-max-width-780=\"true\" data-breakpoint-min-width-1=\"true\" data-breakpoint-min-width-482=\"true\" data-breakpoint-min-width-500=\"true\" data-breakpoint-min-width-632=\"true\" data-breakpoint-max-height-720=\"true\" data-breakpoint-max-height-768=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1><span>Your Privacy Choices</span></h1> <p id=\"collapse-description\"></p> <span>This site uses cookies and other online tracking technologies, including beacons and pixels (“Cookies”) to help EA websites function, improve your experience, analyze usage, and enable targeted advertising that may appear on other sites or platforms.<br><br>Depending on your location, you may have the right to opt-out of “targeted advertising,” which some privacy laws refer to as the “sharing” or “sale” of personal information. You may use the controls below to adjust your preferences with respect to targeted advertising on EA websites. If you play our PC, console, or mobile games, you have additional privacy settings available as described in our guidance on&nbsp;<a href=\"https://www.ea.com/legal/privacy-portal?modal-id=targetedAdvertisingProvidedByThirdParties\" target=\"_blank\">third-party targeted advertising</a>.&nbsp;&nbsp;</span> <input type=\"checkbox\" id=\"readMore\" class=\"read-more-state\"> <label for=\"readMore\" class=\"read-more-trigger\"></label> <div class=\"extra-text\"> <p><br>If you clear your cookies or use a different browser or device, you will need to make these selections again. You may also manage Cookies through your browser or device settings, though this could impact the operation of this site.<br><br>These settings may also be disabled if your web browser sends an opt-out preference signal (sometimes referred to as the Global Privacy Control or \"GPC\"). Please review our&nbsp;<a href=\"https://www.ea.com/legal/privacy-and-cookie-policy#your-choices-and-controls\" id=\"privacyPolicyAnchor\" target=\"_blank\">Privacy and Cookie Policy</a>&nbsp;for more information.</p> </div> <div class=\"cookiecat-title\">Manage Consent</div></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Required Cookies</h2></div><div class=\"gwt-HTML\"><p>Required Cookies are necessary for our website to operate, including delivering our content and providing security. These Cookies cannot be disabled.</p></div></div><button aria-label=\"View Required Cookies\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Functional Cookies</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Additional functions are enabled. </p> <p>Off: Additional functions that require optional Cookies are disabled. </p> <p> Functional Cookies enable additional site functionality like saving your preferences, supporting social features, and analyzing use and visits to our site. If you enable these Cookies, we may share limited data with third-parties for these purposes. If you disable them, some features and functionalities (such as social logins) may not work properly. </p><p></p></div></div><button aria-label=\"View Functional Cookies\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Functional Cookies choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Functional Cookies\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Functional Cookies\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Additional functions are enabled.</span><span class=\"gwt-InlineHTML\">Off: Additional functions that require optional Cookies are disabled.</span><span class=\"gwt-InlineHTML\">Off: Additional functions that require optional Cookies are disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Targeted Advertising / Do Not Sell or Share My Personal Information</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Targeted advertising / selling or sharing of your personal information is enabled.</p> <p>Off: Targeted advertising / selling or sharing of your personal information is disabled.</p> <p> Targeted advertising Cookies are used by us and third parties to show ads that are relevant to your interests based on your visit to EA websites. If you disable advertising cookies, you may still see ads, but they will not be tailored to your interests based on your visit to EA websites. </p><p></p></div></div><button aria-label=\"View Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Targeted Advertising / Do Not Sell or Share My Personal Information\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Targeted advertising / selling or sharing of your personal information is enabled.</span><span class=\"gwt-InlineHTML\">Off: Targeted advertising / selling or sharing of your personal information is disabled.</span><span class=\"gwt-InlineHTML\">Off: Targeted advertising / selling or sharing of your personal information is disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div><div class=\"truste-anti-vppa1\"><b>IMPORTANT:</b> If you wish to withdraw your consent to share and record your website activity (including game browsing, video viewing, and purchase history) with Electronic Arts’ third-party partners, switch this setting to OFF.</div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><div class=\"gwt-HTML\"><h2 translate=\"no\">Multimedia Player</h2></div><div class=\"gwt-HTML\"><p></p><p>On: Watching video content hosted by our partners (e.g., YouTube) is enabled.</p> <p>Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</p> <p> Watching video content hosted by our partners may involve their use of Cookies for advertising and functional/analytics purposes.</p><p></p></div></div><button aria-label=\"View Multimedia Player\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\"></button><button role=\"switch\" aria-label=\"Multimedia Player choice\" aria-checked=\"false\" class=\"switch\"><span aria-label=\"Off Multimedia Player\" aria-disabled=\"false\" class=\"gwt-InlineHTML on active\" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span><span aria-label=\"On Multimedia Player\" aria-disabled=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\"><div class=\"inline-m5mrkd\"></div></span></button><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">On: Watching video content hosted by our partners (e.g., YouTube) is enabled.</span><span class=\"gwt-InlineHTML\">Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</span><span class=\"gwt-InlineHTML\">Off: Watching video content hosted by our partners (e.g., YouTube) is disabled.</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><button class=\"submit\" translate=\"no\">Submit Preferences</button><button class=\"declineAllButtonLower\" translate=\"no\">Decline All</button><button class=\"acceptAllButtonLower\" translate=\"no\">Accept All</button></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\">Privacy Policy</a></div><div class=\"right\" translate=\"no\">Powered by: <a href=\"http://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.01335276006438535\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"1\" id=\"trustarc-internal-close-button\"></a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 10327,
+        "cmpType": "TrustArc",
+        "isIframe": false
+      }
+    }
+  ]
+}

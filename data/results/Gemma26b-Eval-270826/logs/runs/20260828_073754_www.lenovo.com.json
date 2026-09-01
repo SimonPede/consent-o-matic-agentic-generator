@@ -1,0 +1,182 @@
+{
+  "timestamp": "2026-08-28T07:37:54.803976",
+  "url": "https://www.lenovo.com",
+  "structured_dom_chars": 263177,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 16,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Evidon\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".evidon-barrier\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".evidon-barrier\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".evidion-barrier\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1074 (char 1073)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1035 (char 1034)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1035 (char 1034)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1035 (char 1034)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1036 (char 1035)",
+    "Ruleset structure invalid: 3 validation errors for CoMRule\nEvidon.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...vidon-banner-wrapper'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nEvidon.detectors.1.presentMatcher\n  Field required [type=missing, input_value={'showingMatcher': {'type...vidon-banner-wrapper'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nEvidon.methods\n  Field required [type=missing, input_value={'detectors': [{'presentM...don-banner-wrapper'}}}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1035 (char 1034)",
+    "No CMP detected in 5 seconds, stopping engine...",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1011 (char 1010)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1011 (char 1010)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1011 (char 1010)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1075 (char 1074)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1074 (char 1073)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1074 (char 1073)"
+  ],
+  "duration_seconds": 351.65,
+  "extraction_duration_seconds": 17.03,
+  "extraction_share_percent": 4.84,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "Evidon": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".evidon-barrier"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".evidon-barrier",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".evidon-barrier"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#_evidon-banner-cookiebutton"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#analytics-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#analytics-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#advertising-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#advertising-toggle"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#prc-fp-cat-all-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#prc-fp-cat-all-toggle"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#evidon-prefdiag-decline"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

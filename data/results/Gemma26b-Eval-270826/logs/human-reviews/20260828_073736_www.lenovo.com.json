@@ -1,0 +1,39 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.lenovo.com",
+  "llm_calls": 20,
+  "last_ai_message": "---\n",
+  "last_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1074 (char 1073)",
+  "rule_draft": {
+    "Evidon": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".evidon-barrier"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".evidon-barrier",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".evidion-barrier"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

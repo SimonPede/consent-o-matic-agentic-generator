@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-08-28T05:43:13.690894",
+  "url": "https://theconversation.com",
+  "structured_dom_chars": 324882,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "Didomi",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Didomi\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#didomi-popup\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#didomi-popup\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#didomi-notice-learn-more-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-cookies']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-cookies']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-measure_content_performance']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-measure_content_performance']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-improve_products']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-improve_products']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-market_research']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-market_research']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics_tracking']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-analytics_tracking']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"E\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-create_content_profile']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-create_content_profile']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"E\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_personalized_content']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_personalized_content']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-create_ads_profile']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-create_ads_profile']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-measure_ad_performance']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-measure_ad_performance']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_basic_ads']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_basic_ads']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_personalized_ads']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-select_personalized_ads']\", \"textFilter\": \"Disagree\"}}}, {\"type\": \"X\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-theconver-AA8pWL4T']\", \"textFilter\": \"Agree\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-describedby='didomi-purpose-theconver-AA8pWL4T']\", \"textFilter\": \"Disagree\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"#btn-toggle-save\"}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#didomi-host\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Banner not found or matchers failed.",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 1800.12,
+  "extraction_duration_seconds": 8.09,
+  "extraction_share_percent": 0.45,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "error": "API timeout",
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "error": "API timeout",
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

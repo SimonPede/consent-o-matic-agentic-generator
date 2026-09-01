@@ -1,0 +1,153 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.diy.com",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "No rule found in agent message",
+  "rule_draft": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='truste']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "parent": {
+                  "selector": "#pop-frame06147879416119968",
+                  "iframeFilter": true
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Accept Functional Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Refuse Functional Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "parent": {
+                  "selector": "#pop-frame06147879416119968",
+                  "iframeFilter": true
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Accept Performance & Analytics']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Refuse Performance & Analytics']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "parent": {
+                  "selector": "#pop-frame06147879416119968",
+                  "iframeFilter": true
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q's marketing and advertising cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q's marketing and advertising cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "parent": {
+                  "selector": "#pop-frame06147879416119968",
+                  "iframeFilter": true
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#pop-frame06147879416119968",
+                  "iframeFilter": true
+                },
+                "target": {
+                  "selector": ".submit"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

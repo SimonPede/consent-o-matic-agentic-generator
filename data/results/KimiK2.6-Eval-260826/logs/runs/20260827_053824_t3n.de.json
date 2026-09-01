@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T05:38:24.433272",
+  "url": "https://t3n.de",
+  "structured_dom_chars": 39254,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on t3n.de visibly offers only a “Zustimmen” (Accept) button, a paid “Pur-Abo” option, and an “Einstellungen” (Settings) link, with no “Reject All” or “Decline” button present on the initial layer. Because Sourcepoint nests its granular reject controls inside secondary iframes that this architecture cannot navigate, a free reject option may exist behind the inaccessible settings screen.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on t3n.de visibly offers only a “Zustimmen” (Accept) button, a paid “Pur-Abo” option, and an “Einstellungen” (Settings) link, with no “Reject All” or “Decline” button present on the initial layer. Because Sourcepoint nests its granular reject controls inside secondary iframes that this architecture cannot navigate, a free reject option may exist behind the inaccessible settings screen.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The Sourcepoint first-layer banner on t3n.de visibly offers only a “Zustimmen” (Accept) button, a paid “Pur-Abo” option, and an “Einstellungen” (Settings) link, with no “Reject All” or “Decline” button present on the initial layer. Because Sourcepoint nests its granular reject controls inside secondary iframes that this architecture cannot navigate, a free reject option may exist behind the inaccessible settings screen.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on t3n.de visibly offers only a “Zustimmen” (Accept) button, a paid “Pur-Abo” option, and an “Einstellungen” (Settings) link, with no “Reject All” or “Decline” button present on the initial layer. Because Sourcepoint nests its granular reject controls inside secondary iframes that this architecture cannot navigate, a free reject option may exist behind the inaccessible settings screen."
+  ],
+  "duration_seconds": 22.99,
+  "extraction_duration_seconds": 6.95,
+  "extraction_share_percent": 30.23,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

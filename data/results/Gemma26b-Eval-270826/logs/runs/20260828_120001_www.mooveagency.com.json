@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-08-28T12:00:01.722858",
+  "url": "https://www.mooveagency.com/",
+  "structured_dom_chars": 56175,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Moove",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 16,
+  "human_review_count": 0,
+  "test_rule_count": 9,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Moove\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#moove_gdpr_cookie_info_bar\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#moove_gdpr_cookie_info_bar\"}, \"displayFilter\": true}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#moove_gdpr_cookie_info_bar\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label=\\\"Accept\\\"]\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label=\\\"Reject\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label=\\\"Reject\\\"]\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 541 (char 540)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 541 (char 540)"
+  ],
+  "duration_seconds": 1079.84,
+  "extraction_duration_seconds": 16.8,
+  "extraction_share_percent": 1.56,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Moove": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#moove_gdpr_cookie_info_bar"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#moove_gdpr_cookie_info_bar",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#moove_gdpr_cookie_info_bar"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label=\"Accept\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label=\"Reject\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button[aria:label=\"Reject\"]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

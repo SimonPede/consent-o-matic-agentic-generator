@@ -1,0 +1,62 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.leboncoin.fr",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+  "rule_draft": {
+    "leboncoin": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id^='didomi']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id^='didomi']",
+              "displayFilter": false
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#didomi-agree-to-all"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[data-qa-id='didomi_cta_continue_without_consent']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#didomi-host"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

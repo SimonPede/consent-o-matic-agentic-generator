@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-08-28T02:48:15.866524",
+  "url": "https://www.ebay.co.uk",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.ebay.co.uk"
+  ],
+  "duration_seconds": 32.3,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Regex failed in frame https://www.ebay.co.uk/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.ebay.co.uk/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.ebay.co.uk/',",
+      "      filteredHtml: '<body><main class=\"main-content\"><div class=\"status--container\"><div class=\"error-header\"><div class=\"error-header__text-block\"><p class=\"error-header__headline\">SORRY</p><div id=\"error-info\"><p>Something went wrong on our end</p><hr><p class=\"reference-id\">0.5ac1702.1787878064.6c42357</p><hr><p>Please go back and try again<br>or go to eBay Homepage.</p></div><a class=\"fake-btn\" href=\"https://www.ebay.com\">Go to homepage</a></div></div></div></main><footer id=\"glbfooter\"><p>Copyright © 1995-2026 eBay Inc. All Rights Reserved.</p></footer></body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 551",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.ebay.co.uk/",
+      "   isMainFrame: true | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (1):",
+      "      [A] \"Go to homepage\" --> selector: .fake-btn",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.ebay.co.uk/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Go to homepage",
+            "tag": "A",
+            "attributes": {
+              "class": "fake-btn",
+              "href": "https://www.ebay.com"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "error-header__text-block",
+              "selector": ".error-header__text-block",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "error-header",
+                "selector": ".error-header"
+              }
+            },
+            "selector": ".fake-btn",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.ebay.co.uk/",
+        "filteredHtml": "<body><main class=\"main-content\"><div class=\"status--container\"><div class=\"error-header\"><div class=\"error-header__text-block\"><p class=\"error-header__headline\">SORRY</p><div id=\"error-info\"><p>Something went wrong on our end</p><hr><p class=\"reference-id\">0.5ac1702.1787878064.6c42357</p><hr><p>Please go back and try again<br>or go to eBay Homepage.</p></div><a class=\"fake-btn\" href=\"https://www.ebay.com\">Go to homepage</a></div></div></div></main><footer id=\"glbfooter\"><p>Copyright © 1995-2026 eBay Inc. All Rights Reserved.</p></footer></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 551
+      },
+      "settings": null
+    }
+  ]
+}

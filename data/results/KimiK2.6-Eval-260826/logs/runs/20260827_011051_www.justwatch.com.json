@@ -1,0 +1,553 @@
+{
+  "timestamp": "2026-08-27T01:10:51.252630",
+  "url": "https://www.justwatch.com",
+  "structured_dom_chars": 161202,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Usercentrics",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Usercentrics\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#usercentrics-cmp-ui\"}}],\"showingMatcher\":[{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-cmp-header\"}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#usercentrics-cmp-ui\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-more-link\"}},{\"type\":\"wait\",\"waitTime\":500}]}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"D\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-1-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-1-consent-toggle\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-2-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-2-consent-toggle\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-2-legitimate-interest-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-2-legitimate-interest-toggle\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-3-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-3-consent-toggle\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-4-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-4-consent-toggle\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-marketing-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-marketing-toggle\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-5-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-5-consent-toggle\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-6-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-6-consent-toggle\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-11-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-11-consent-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-7-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-7-consent-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-7-legitimate-interest-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-7-legitimate-interest-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-8-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-8-consent-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-8-legitimate-interest-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-8-legitimate-interest-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-9-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-9-consent-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-9-legitimate-interest-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-9-legitimate-interest-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-10-consent-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-10-consent-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-10-legitimate-interest-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-purpose-10-legitimate-interest-toggle\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-functional-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-category-functional-toggle\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-feature-1-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-feature-1-toggle\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-feature-2-toggle[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#uc-feature-2-toggle\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\"#usercentrics-cmp-ui\"},\"target\":{\"selector\":\"#save\"}}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 238.47,
+  "extraction_duration_seconds": 8.35,
+  "extraction_share_percent": 3.5,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Usercentrics": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#usercentrics-cmp-ui"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#usercentrics-cmp-ui"
+              },
+              "target": {
+                "selector": "#uc-cmp-header"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#usercentrics-cmp-ui"
+                },
+                "target": {
+                  "selector": "#uc-more-link"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-1-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-1-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-2-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-2-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-2-legitimate-interest-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-2-legitimate-interest-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-3-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-3-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-4-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-4-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-marketing-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-marketing-toggle"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-5-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-5-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-6-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-6-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-11-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-11-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-7-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-7-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-7-legitimate-interest-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-7-legitimate-interest-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-8-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-8-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-8-legitimate-interest-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-8-legitimate-interest-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-9-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-9-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-9-legitimate-interest-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-9-legitimate-interest-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-10-consent-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-10-consent-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-10-legitimate-interest-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-purpose-10-legitimate-interest-toggle"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-functional-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-functional-toggle"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-feature-1-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-feature-1-toggle"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-feature-2-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-feature-2-toggle"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#save"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

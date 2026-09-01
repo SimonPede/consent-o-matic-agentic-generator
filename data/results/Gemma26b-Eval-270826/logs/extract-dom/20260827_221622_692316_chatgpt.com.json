@@ -1,0 +1,2405 @@
+{
+  "timestamp": "2026-08-27T22:16:22.692409",
+  "url": "https://chatgpt.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://chatgpt.com"
+  ],
+  "duration_seconds": 15.02,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://chatgpt.com/ with Score: 56",
+      "Settings match: \"Settings\" --> lowered: \"settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Settings\"], textMatch: Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 308149 chars.",
+      "DOM diff: 7523 chars added, 0 inputs added.",
+      "Old state: 26 buttons, 3 inputs.",
+      "New state: 31 buttons, 3 inputs.",
+      "Settings detected: 7523 chars, 0 inputs, 5 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 6 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://chatgpt.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://chatgpt.com/',",
+      "      filteredHtml: '<body> <div id=\"web-mobile-root\"><main aria-label=\"ChatGPT\" class=\"wm-app-appShell _tEuLUa_deferredRoot\" data-default-home=\"\" data-mobile-shell=\"desktop\" data-new-c><div class=\"wm-desktop-layout _Td-r0q_root\" data-desktop-layout=\"\" data-testid=\"desktop-app-shell\" data-desktop-sidebar-swipe-ready=\"\"><div class=\"wm-desktop-visualViewport _Td-r0q_viewport\"><aside aria-label=\"Sidebar\" class=\"wm-desktop-sidebar _Td-r0q_sidebar\" tabindex=\"-1\" data-desktop-sidebar-swipe-compact=\"false\"><div class=\"wm-sidebar-sidebar\" data-sidebar-shell-version=\"m-shell-v2\"><header class=\"wm-sidebar-header\"><div class=\"wm-sidebar-headerActions\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"medium\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-expanded=\"true\" aria-label=\"Close sidebar\" data-desktop-sidebar-toggle=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-utilityButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login_or_signup\" data-mobile-auth-entry-point=\"sidebar_hover_card\" data-mobile-auth-entry-trigger=\"automatic\" aria-label=\"Search chats\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-sidebar-auth-item=\"search_chats\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></div></header><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">New chat</span></span></a><div class=\"wm-sidebar-body\"></div><section aria-labelledby=\"sidebar-login-title\" class=\"wm-sidebar-loginPanel\"><h2 class=\"wm-sidebar-loginTitle\" id=\"sidebar-login-title\">Get responses tailored to you</h2><p class=\"wm-sidebar-loginCopy\">Log in to get answers based on saved chats, plus create images and upload files.</p><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"sidebar_bottom_unit\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button></section><footer class=\"wm-sidebar-footer\"><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-mobileChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">Chat</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-settingsButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\" command=\"show-modal\" commandfor=\"mobile-settings-dialog\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></footer></div></aside><section class=\"wm-desktop-detailPane\" tabindex=\"-1\"><header class=\"wm-desktop-detailHeader\"><div class=\"wm-desktop-detailHeaderLabel\" data-mobile-header-label=\"\"><span class=\"wm-app-headerWordmark wm-app-headerProductTrigger\" aria-c aria-expanded=\"false\" aria-haspopup=\"dialog\" role=\"button\" tabindex=\"0\"><span class=\"wm-app-headerWordmarkText\">ChatGPT</span></span><div aria-describedby=\"desktop-chatgpt-product-card-description\" aria-labelledby=\"desktop-chatgpt-product-card-heading\" class=\"_954kYq_popover\" data-placement=\"below-header\" id=\"desktop-chatgpt-product-card-popover\" popover=\"auto\" role=\"dialog\"><div aria-hidden=\"true\" class=\"_954kYq_hero\" data-t></div><div class=\"_954kYq_content\"><p class=\"_954kYq_heading\" id=\"desktop-chatgpt-product-card-heading\">Try advanced features for free</p><p class=\"_954kYq_description\" id=\"desktop-chatgpt-product-card-description\">Get smarter responses, upload files, create images, and more by logging in.</p><div class=\"_954kYq_actions\"><button class=\"wm-button wm-button--small wm-button--primary wm-button--radius-full _954kYq_primaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"primary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--small wm-button--secondary wm-button--radius-full _954kYq_secondaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></div></div><div class=\"wm-desktop-headerSpacer\"></div><div class=\"wm-desktop-headerActionGroup\"><div class=\"wm-app-authActions\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></header><div aria-label=\"Conversation\" class=\"wm-desktop-detailBody wm-app-threadViewport\" data-swipable-detail-body=\"\" role=\"region\"><section aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" class=\"wm-app-conversation\" data-web-mobile-c><div><div class=\"wm-app-thread\"><div class=\"wm-app-threadContent\"><ol aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" data-conversation-transcript=\"\"></ol><div data-web-mobile-optimistic-turn=\"\" hidden=\"\"><ol data-conversation-transcript=\"\"><li data-message-role=\"user\" id=\"lightweight-web-optimistic-user\"><p data-user-message-copy=\"\">Write-only optimistic message</p></li><li data-mobile-initial-scroll-target=\"\" data-message-role=\"assistant\" data-message-streaming=\"\" id=\"pending-lightweight-web-optimistic-assistant\"><div data-assistant-markdown=\"\" data-stream-target=\"\"></div></li><li aria-hidden=\"true\" data-conversation-stream-anchor=\"\" hidden=\"\"></li></ol></div><div aria-hidden=\"true\" class=\"wm-app-threadBottomAnchor\"><div class=\"wm-app-scrollToBottomThresholdAnchor\" data-mobile-scroll-to-bottom-threshold-anchor=\"\"></div></div></div></div></div></section></div><footer class=\"wm-desktop-detailFooter\" data-swipable-detail-footer=\"\"><div class=\"wm-app-composerDock\"><div class=\"wm-app-composerPositioner\"><h1 class=\"wm-app-landingHeading\" data-mobile-landing-heading=\"\"><span class=\"wm-app-mobileLandingHeading\">What are you working on?</span><span class=\"wm-app-desktopLandingHeading\">Where should we begin?</span></h1><div class=\"wm-app-scrollToBottomAnchor\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-scrollToBottomButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Scroll to bottom\" data-oai-tooltip=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><form autocomplete=\"off\" class=\"wm-composer-composer _wCCh4W_deferredRoot\" data-dictation-status=\"idle\" data-landing=\"\" data-mobile-composer=\"\" action=\"/unauth-mweb/conversation\" method=\"post\"><div aria-hidden=\"true\" class=\"wm-composer-submitTransitionBubble\" data-mobile-submit-transition-bubble=\"\"></div><input read type=\"hidden\" name=\"conversationState\" value=\"{&quot;messages&quot;:[],&quot;parentMessageId&quot;:&quot;client-created-root&quot;,&quot;safety&quot;:{&quot;dismissedInterventionIds&quot;:[]},&quot;userMessageCount&quot;:0}\"><input type=\"hidden\" name=\"messageMetadata\" value=\"{}\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><input read type=\"hidden\" name=\"imageAttachments\" value=\"[]\"><input read type=\"hidden\" name=\"pendingImageUploads\" value=\"[]\"><input accept=\"image/*\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-photos-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/avif,image/bmp,image/gif,image/heic,image/heif,image/jpeg,image/png,image/webp\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-files-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/*\" aria-hidden=\"true'... 20921 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 30921",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://chatgpt.com/',",
+      "      filteredHtml: '<body> <div id=\"web-mobile-root\"><main aria-label=\"ChatGPT\" class=\"wm-app-appShell _tEuLUa_deferredRoot\" data-default-home=\"\" data-mobile-shell=\"desktop\" data-new-c><div class=\"wm-desktop-layout _Td-r0q_root\" data-desktop-layout=\"\" data-testid=\"desktop-app-shell\" data-desktop-sidebar-swipe-ready=\"\"><div class=\"wm-desktop-visualViewport _Td-r0q_viewport\"><aside aria-label=\"Sidebar\" class=\"wm-desktop-sidebar _Td-r0q_sidebar\" tabindex=\"-1\" data-desktop-sidebar-swipe-compact=\"false\"><div class=\"wm-sidebar-sidebar\" data-sidebar-shell-version=\"m-shell-v2\"><header class=\"wm-sidebar-header\"><div class=\"wm-sidebar-headerActions\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"medium\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-expanded=\"true\" aria-label=\"Close sidebar\" data-desktop-sidebar-toggle=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-utilityButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login_or_signup\" data-mobile-auth-entry-point=\"sidebar_hover_card\" data-mobile-auth-entry-trigger=\"automatic\" aria-label=\"Search chats\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-sidebar-auth-item=\"search_chats\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></div></header><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">New chat</span></span></a><div class=\"wm-sidebar-body\"></div><section aria-labelledby=\"sidebar-login-title\" class=\"wm-sidebar-loginPanel\"><h2 class=\"wm-sidebar-loginTitle\" id=\"sidebar-login-title\">Get responses tailored to you</h2><p class=\"wm-sidebar-loginCopy\">Log in to get answers based on saved chats, plus create images and upload files.</p><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"sidebar_bottom_unit\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button></section><footer class=\"wm-sidebar-footer\"><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-mobileChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">Chat</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-settingsButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\" command=\"show-modal\" commandfor=\"mobile-settings-dialog\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></footer></div></aside><section class=\"wm-desktop-detailPane\" tabindex=\"-1\"><header class=\"wm-desktop-detailHeader\"><div class=\"wm-desktop-detailHeaderLabel\" data-mobile-header-label=\"\"><span class=\"wm-app-headerWordmark wm-app-headerProductTrigger\" aria-c aria-expanded=\"false\" aria-haspopup=\"dialog\" role=\"button\" tabindex=\"0\"><span class=\"wm-app-headerWordmarkText\">ChatGPT</span></span><div aria-describedby=\"desktop-chatgpt-product-card-description\" aria-labelledby=\"desktop-chatgpt-product-card-heading\" class=\"_954kYq_popover\" data-placement=\"below-header\" id=\"desktop-chatgpt-product-card-popover\" popover=\"auto\" role=\"dialog\"><div aria-hidden=\"true\" class=\"_954kYq_hero\" data-t></div><div class=\"_954kYq_content\"><p class=\"_954kYq_heading\" id=\"desktop-chatgpt-product-card-heading\">Try advanced features for free</p><p class=\"_954kYq_description\" id=\"desktop-chatgpt-product-card-description\">Get smarter responses, upload files, create images, and more by logging in.</p><div class=\"_954kYq_actions\"><button class=\"wm-button wm-button--small wm-button--primary wm-button--radius-full _954kYq_primaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"primary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--small wm-button--secondary wm-button--radius-full _954kYq_secondaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></div></div><div class=\"wm-desktop-headerSpacer\"></div><div class=\"wm-desktop-headerActionGroup\"><div class=\"wm-app-authActions\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></header><div aria-label=\"Conversation\" class=\"wm-desktop-detailBody wm-app-threadViewport\" data-swipable-detail-body=\"\" role=\"region\"><section aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" class=\"wm-app-conversation\" data-web-mobile-c><div><div class=\"wm-app-thread\"><div class=\"wm-app-threadContent\"><ol aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" data-conversation-transcript=\"\"></ol><div data-web-mobile-optimistic-turn=\"\" hidden=\"\"><ol data-conversation-transcript=\"\"><li data-message-role=\"user\" id=\"lightweight-web-optimistic-user\"><p data-user-message-copy=\"\">Write-only optimistic message</p></li><li data-mobile-initial-scroll-target=\"\" data-message-role=\"assistant\" data-message-streaming=\"\" id=\"pending-lightweight-web-optimistic-assistant\"><div data-assistant-markdown=\"\" data-stream-target=\"\"></div></li><li aria-hidden=\"true\" data-conversation-stream-anchor=\"\" hidden=\"\"></li></ol></div><div aria-hidden=\"true\" class=\"wm-app-threadBottomAnchor\"><div class=\"wm-app-scrollToBottomThresholdAnchor\" data-mobile-scroll-to-bottom-threshold-anchor=\"\"></div></div></div></div></div></section></div><footer class=\"wm-desktop-detailFooter\" data-swipable-detail-footer=\"\"><div class=\"wm-app-composerDock\"><div class=\"wm-app-composerPositioner\"><h1 class=\"wm-app-landingHeading\" data-mobile-landing-heading=\"\"><span class=\"wm-app-mobileLandingHeading\">What are you working on?</span><span class=\"wm-app-desktopLandingHeading\">Where should we begin?</span></h1><div class=\"wm-app-scrollToBottomAnchor\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-scrollToBottomButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Scroll to bottom\" data-oai-tooltip=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><form autocomplete=\"off\" class=\"wm-composer-composer _wCCh4W_deferredRoot\" data-dictation-status=\"idle\" data-landing=\"\" data-mobile-composer=\"\" action=\"/unauth-mweb/conversation\" method=\"post\"><div aria-hidden=\"true\" class=\"wm-composer-submitTransitionBubble\" data-mobile-submit-transition-bubble=\"\"></div><input read type=\"hidden\" name=\"conversationState\" value=\"{&quot;messages&quot;:[],&quot;parentMessageId&quot;:&quot;client-created-root&quot;,&quot;safety&quot;:{&quot;dismissedInterventionIds&quot;:[]},&quot;userMessageCount&quot;:0}\"><input type=\"hidden\" name=\"messageMetadata\" value=\"{}\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><input read type=\"hidden\" name=\"imageAttachments\" value=\"[]\"><input read type=\"hidden\" name=\"pendingImageUploads\" value=\"[]\"><input accept=\"image/*\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-photos-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/avif,image/bmp,image/gif,image/heic,image/heif,image/jpeg,image/png,image/webp\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-files-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/*\" aria-hidden=\"true'... 20983 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 30983,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://chatgpt.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (26):",
+      "      [BUTTON] \"Close sidebar\" --> selector: [aria-label=\"Close sidebar\"]",
+      "      [A] \"New chat\" --> selector: [aria-label=\"New chat\"]",
+      "      [BUTTON] \"Search chats\" --> selector: [aria-label=\"Search chats\"]",
+      "      [A] \"Images\" --> selector: [aria-label=\"Images\"]",
+      "      [A] \"Plugins\" --> selector: [aria-label=\"Plugins\"]",
+      "      [BUTTON] \"Deep research\" --> selector: [aria-label=\"Deep research\"]",
+      "      [A] \"See plans and pricing\" --> selector: [aria-label=\"See plans and pricing\"]",
+      "      [BUTTON] \"Settings\" --> selector: [aria-label=\"Settings\"]",
+      "      [A] \"Help\" --> selector: [aria-label=\"OpenAI Help\"]",
+      "      [BUTTON] \"Log in\" --> selector: button",
+      "      [SPAN] \"ChatGPT\" --> selector: .wm-app-headerWordmark",
+      "      [BUTTON] \"Log in\" --> selector: button",
+      "      [BUTTON] \"Sign up for free\" --> selector: button",
+      "      [BUTTON] \"Add files and more\" --> selector: [aria-label=\"Add files and more\"]",
+      "      [BUTTON] \"Start dictation\" --> selector: [aria-label=\"Start dictation\"]",
+      "      [BUTTON] \"Send message\" --> selector: [aria-label=\"Send message\"]",
+      "      [BUTTON] \"What can you do?\" --> selector: #t",
+      "      [A] \"Terms\" --> selector: a",
+      "      [A] \"Privacy Policy\" --> selector: a",
+      "      [A] \"Learn more\" --> selector: a",
+      "      [BUTTON] \"Close\" --> selector: [aria-label=\"Close\"]",
+      "      [A] \"Manage\" --> selector: a",
+      "      [A] \"cookie policy\" --> selector: a",
+      "      [BUTTON] \"Accept all\" --> selector: button",
+      "      [BUTTON] \"Reject non-essential\" --> selector: button",
+      "      [A] \"Cookie preferences\" --> selector: a",
+      "   Checkboxes found (3):",
+      "      \"Improve the model for everyone\" | checked: true | disabled: false --> selector: ._tIVtWa_switchInput",
+      "      \"Marketing measurement\" | checked: false | disabled: false --> selector: ._tIVtWa_switchInput",
+      "      \"Personalized marketing\" | checked: false | disabled: false --> selector: ._tIVtWa_switchInput",
+      "  Toggles found (3):",
+      "      \"\" | aria-checked: true --> selector: ._tIVtWa_switchInput",
+      "      \"\" | aria-checked: false --> selector: ._tIVtWa_switchInput",
+      "      \"\" | aria-checked: false --> selector: ._tIVtWa_switchInput",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (31):",
+      "      [BUTTON] \"Close sidebar\" --> selector: [aria-label=\"Close sidebar\"]",
+      "      [A] \"New chat\" --> selector: [aria-label=\"New chat\"]",
+      "      [BUTTON] \"Search chats\" --> selector: [aria-label=\"Search chats\"]",
+      "      [A] \"Images\" --> selector: [aria-label=\"Images\"]",
+      "      [A] \"Plugins\" --> selector: [aria-label=\"Plugins\"]",
+      "      [BUTTON] \"Deep research\" --> selector: [aria-label=\"Deep research\"]",
+      "      [A] \"See plans and pricing\" --> selector: [aria-label=\"See plans and pricing\"]",
+      "      [BUTTON] \"Settings\" --> selector: [aria-label=\"Settings\"]",
+      "      [A] \"Help\" --> selector: [aria-label=\"OpenAI Help\"]",
+      "      [BUTTON] \"Log in\" --> selector: button",
+      "      [SPAN] \"ChatGPT\" --> selector: .wm-app-headerWordmark",
+      "      [BUTTON] \"Log in\" --> selector: button",
+      "      [BUTTON] \"Sign up for free\" --> selector: button",
+      "      [BUTTON] \"Add files and more\" --> selector: [aria-label=\"Add files and more\"]",
+      "      [BUTTON] \"Start dictation\" --> selector: [aria-label=\"Start dictation\"]",
+      "      [BUTTON] \"Send message\" --> selector: [aria-label=\"Send message\"]",
+      "      [BUTTON] \"What can you do?\" --> selector: #t",
+      "      [A] \"Terms\" --> selector: a",
+      "      [A] \"Privacy Policy\" --> selector: a",
+      "      [A] \"Learn more\" --> selector: a",
+      "      [BUTTON] \"Close\" --> selector: [aria-label=\"Close\"]",
+      "      [A] \"Manage\" --> selector: a",
+      "      [A] \"cookie policy\" --> selector: a",
+      "      [BUTTON] \"Accept all\" --> selector: button",
+      "      [BUTTON] \"Reject non-essential\" --> selector: button",
+      "      [A] \"Cookie preferences\" --> selector: a",
+      "      [BUTTON] \"Dismiss\" --> selector: [aria-label=\"Dismiss\"]",
+      "      [BUTTON] \"Back to ChatGPT\" --> selector: [aria-label=\"Back to ChatGPT\"]",
+      "      [BUTTON] \"Data controls\" --> selector: button",
+      "      [BUTTON] \"Settings\" --> selector: [aria-label=\"Settings\"]",
+      "      [A] \"Learn more\" --> selector: a",
+      "   Checkboxes found (3):",
+      "      \"Improve the model for everyone\" | checked: true | disabled: false --> selector: ._tIVtWa_switchInput",
+      "      \"Marketing measurement\" | checked: false | disabled: false --> selector: ._tIVtWa_switchInput",
+      "      \"Personalized marketing\" | checked: false | disabled: false --> selector: ._tIVtWa_switchInput",
+      "  Toggles found (3):",
+      "      \"\" | aria-checked: true --> selector: ._tIVtWa_switchInput",
+      "      \"\" | aria-checked: false --> selector: ._tIVtWa_switchInput",
+      "      \"\" | aria-checked: false --> selector: ._tIVtWa_switchInput",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://chatgpt.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Close sidebar",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "medium",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-expanded": "true",
+              "aria-label": "Close sidebar",
+              "data-desktop-sidebar-toggle": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-headerActions",
+              "selector": ".wm-sidebar-headerActions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "wm-sidebar-header",
+                "selector": ".wm-sidebar-header"
+              }
+            },
+            "selector": "[aria-label=\"Close sidebar\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "New chat",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "large",
+              "data-variant": "primary",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "/",
+              "aria-label": "New chat",
+              "aria-current": "page",
+              "data-mobile-new-chat": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-sidebar",
+              "selector": ".wm-sidebar-sidebar",
+              "grandparent": {
+                "tag": "ASIDE",
+                "id": null,
+                "className": "wm-desktop-sidebar _Td-r0q_sidebar",
+                "selector": ".wm-desktop-sidebar"
+              }
+            },
+            "selector": "[aria-label=\"New chat\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search chats",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink wm-sidebar-desktopSearch",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login_or_signup",
+              "data-mobile-auth-entry-point": "sidebar_hover_card",
+              "data-mobile-auth-entry-trigger": "automatic",
+              "aria-label": "Search chats",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-sidebar-auth-item": "search_chats",
+              "aria-controls": "desktop-search-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0",
+              "style": "--button-icon-size: 1.25rem;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Search chats\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Images",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://chatgpt.com/images",
+              "aria-label": "Images"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Images\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Plugins",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://chatgpt.com/plugins",
+              "aria-label": "Plugins"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Plugins\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deep research",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login_or_signup",
+              "data-mobile-auth-entry-point": "sidebar_hover_card",
+              "data-mobile-auth-entry-trigger": "automatic",
+              "aria-label": "Deep research",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-sidebar-auth-item": "deep_research",
+              "aria-controls": "desktop-deep-research-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0",
+              "style": "--button-icon-size: 1.25rem;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Deep research\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "See plans and pricing",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://openai.com/chatgpt/pricing/",
+              "aria-label": "See plans and pricing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"See plans and pricing\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink wm-sidebar-desktopSettings",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Settings",
+              "command": "show-modal",
+              "commandfor": "mobile-settings-dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Settings\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Help",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://help.openai.com",
+              "aria-label": "OpenAI Help"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"OpenAI Help\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login",
+              "data-mobile-auth-entry-point": "sidebar_bottom_unit",
+              "data-mobile-auth-entry-trigger": "cta",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "",
+              "className": "wm-sidebar-loginPanel",
+              "selector": ".wm-sidebar-loginPanel",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-sidebar-sidebar",
+                "selector": ".wm-sidebar-sidebar"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ChatGPT",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "wm-app-headerWordmark wm-app-headerProductTrigger",
+              "aria-controls": "desktop-chatgpt-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-desktop-detailHeaderLabel",
+              "selector": ".wm-desktop-detailHeaderLabel",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "wm-desktop-detailHeader",
+                "selector": ".wm-desktop-detailHeader"
+              }
+            },
+            "selector": ".wm-app-headerWordmark",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "data-w-component": "button",
+              "type": "button",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-auth-entry-action": "login",
+              "data-mobile-auth-entry-point": "mobile_chat_stage_header",
+              "data-mobile-auth-entry-trigger": "cta"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-app-authActions",
+              "selector": ".wm-app-authActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-desktop-headerActionGroup",
+                "selector": ".wm-desktop-headerActionGroup"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign up for free",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-auth-entry-action": "signup",
+              "data-mobile-auth-entry-point": "mobile_chat_stage_header",
+              "data-mobile-auth-entry-trigger": "cta"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-app-authActions",
+              "selector": ".wm-app-authActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-desktop-headerActionGroup",
+                "selector": ".wm-desktop-headerActionGroup"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Add files and more",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-actionButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Add files and more",
+              "data-composer-action": "",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "popovertarget": "mobile-composer-actions-popover",
+              "popovertargetaction": "toggle"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-actionField",
+              "selector": ".wm-composer-actionField",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-composer-wrapInner",
+                "selector": ".wm-composer-wrapInner"
+              }
+            },
+            "selector": "[aria-label=\"Add files and more\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Start dictation",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-dictationButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Start dictation",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "data-start-dictation": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-trailing",
+              "selector": ".wm-composer-trailing",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "wm-composer-composer _wCCh4W_deferredRoot",
+                "selector": ".wm-composer-composer"
+              }
+            },
+            "selector": "[aria-label=\"Start dictation\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Send message",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-composer-submitButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "aria-disabled": "true",
+              "data-visually-disabled": "",
+              "data-w-component": "button",
+              "type": "submit",
+              "aria-label": "Send message",
+              "data-composer-submit": "",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "data-send-label": "Send message",
+              "data-stop-label": "Stop generating"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-trailing",
+              "selector": ".wm-composer-trailing",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "wm-composer-composer _wCCh4W_deferredRoot",
+                "selector": ".wm-composer-composer"
+              }
+            },
+            "selector": "[aria-label=\"Send message\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "What can you do?",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-emptyComposerAction",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "What can you do?",
+              "data-empty-composer-help": "",
+              "id": "t"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "trends",
+              "className": null,
+              "selector": "#trends",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-app-composerPositioner",
+                "selector": ".wm-app-composerPositioner"
+              }
+            },
+            "selector": "#t",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/terms",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/privacy",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more",
+            "tag": "A",
+            "attributes": {
+              "href": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Close",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_closeButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "submit",
+              "aria-label": "Close"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_closeForm",
+              "selector": "._IXg8xG_closeForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "[aria-label=\"Close\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage",
+            "tag": "A",
+            "attributes": {
+              "data-cookie-preferences-link": "",
+              "href": "/privacy?returnTo=%2F",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "_IXg8xG_body",
+              "selector": "._IXg8xG_body",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "cookie policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/policies/cookie-policy/",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "_IXg8xG_body",
+              "selector": "._IXg8xG_body",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full _IXg8xG_primaryButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "data-w-component": "button",
+              "type": "submit"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_acceptForm",
+              "selector": "._IXg8xG_acceptForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_bannerActions",
+                "selector": "._IXg8xG_bannerActions"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject non-essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full _IXg8xG_secondaryButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "submit"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_rejectForm",
+              "selector": "._IXg8xG_rejectForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_bannerActions",
+                "selector": "._IXg8xG_bannerActions"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie preferences",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_desktopManageButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "link-button",
+              "href": "/privacy?returnTo=%2F",
+              "data-cookie-preferences-link": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_IXg8xG_bannerActions",
+              "selector": "._IXg8xG_bannerActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Improve the model for everyone",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "true",
+              "aria-describedby": "_R_qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox",
+              "checked": ""
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": true,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Marketing measurement",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1aj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Personalized marketing",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "true",
+              "aria-describedby": "_R_qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox",
+              "checked": ""
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "true",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1aj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://chatgpt.com/",
+        "filteredHtml": "<body> <div id=\"web-mobile-root\"><main aria-label=\"ChatGPT\" class=\"wm-app-appShell _tEuLUa_deferredRoot\" data-default-home=\"\" data-mobile-shell=\"desktop\" data-new-c><div class=\"wm-desktop-layout _Td-r0q_root\" data-desktop-layout=\"\" data-testid=\"desktop-app-shell\" data-desktop-sidebar-swipe-ready=\"\"><div class=\"wm-desktop-visualViewport _Td-r0q_viewport\"><aside aria-label=\"Sidebar\" class=\"wm-desktop-sidebar _Td-r0q_sidebar\" tabindex=\"-1\" data-desktop-sidebar-swipe-compact=\"false\"><div class=\"wm-sidebar-sidebar\" data-sidebar-shell-version=\"m-shell-v2\"><header class=\"wm-sidebar-header\"><div class=\"wm-sidebar-headerActions\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"medium\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-expanded=\"true\" aria-label=\"Close sidebar\" data-desktop-sidebar-toggle=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-utilityButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login_or_signup\" data-mobile-auth-entry-point=\"sidebar_hover_card\" data-mobile-auth-entry-trigger=\"automatic\" aria-label=\"Search chats\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-sidebar-auth-item=\"search_chats\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></div></header><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">New chat</span></span></a><div class=\"wm-sidebar-body\"></div><section aria-labelledby=\"sidebar-login-title\" class=\"wm-sidebar-loginPanel\"><h2 class=\"wm-sidebar-loginTitle\" id=\"sidebar-login-title\">Get responses tailored to you</h2><p class=\"wm-sidebar-loginCopy\">Log in to get answers based on saved chats, plus create images and upload files.</p><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"sidebar_bottom_unit\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button></section><footer class=\"wm-sidebar-footer\"><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-mobileChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">Chat</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-settingsButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\" command=\"show-modal\" commandfor=\"mobile-settings-dialog\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></footer></div></aside><section class=\"wm-desktop-detailPane\" tabindex=\"-1\"><header class=\"wm-desktop-detailHeader\"><div class=\"wm-desktop-detailHeaderLabel\" data-mobile-header-label=\"\"><span class=\"wm-app-headerWordmark wm-app-headerProductTrigger\" aria-c aria-expanded=\"false\" aria-haspopup=\"dialog\" role=\"button\" tabindex=\"0\"><span class=\"wm-app-headerWordmarkText\">ChatGPT</span></span><div aria-describedby=\"desktop-chatgpt-product-card-description\" aria-labelledby=\"desktop-chatgpt-product-card-heading\" class=\"_954kYq_popover\" data-placement=\"below-header\" id=\"desktop-chatgpt-product-card-popover\" popover=\"auto\" role=\"dialog\"><div aria-hidden=\"true\" class=\"_954kYq_hero\" data-t></div><div class=\"_954kYq_content\"><p class=\"_954kYq_heading\" id=\"desktop-chatgpt-product-card-heading\">Try advanced features for free</p><p class=\"_954kYq_description\" id=\"desktop-chatgpt-product-card-description\">Get smarter responses, upload files, create images, and more by logging in.</p><div class=\"_954kYq_actions\"><button class=\"wm-button wm-button--small wm-button--primary wm-button--radius-full _954kYq_primaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"primary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--small wm-button--secondary wm-button--radius-full _954kYq_secondaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></div></div><div class=\"wm-desktop-headerSpacer\"></div><div class=\"wm-desktop-headerActionGroup\"><div class=\"wm-app-authActions\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></header><div aria-label=\"Conversation\" class=\"wm-desktop-detailBody wm-app-threadViewport\" data-swipable-detail-body=\"\" role=\"region\"><section aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" class=\"wm-app-conversation\" data-web-mobile-c><div><div class=\"wm-app-thread\"><div class=\"wm-app-threadContent\"><ol aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" data-conversation-transcript=\"\"></ol><div data-web-mobile-optimistic-turn=\"\" hidden=\"\"><ol data-conversation-transcript=\"\"><li data-message-role=\"user\" id=\"lightweight-web-optimistic-user\"><p data-user-message-copy=\"\">Write-only optimistic message</p></li><li data-mobile-initial-scroll-target=\"\" data-message-role=\"assistant\" data-message-streaming=\"\" id=\"pending-lightweight-web-optimistic-assistant\"><div data-assistant-markdown=\"\" data-stream-target=\"\"></div></li><li aria-hidden=\"true\" data-conversation-stream-anchor=\"\" hidden=\"\"></li></ol></div><div aria-hidden=\"true\" class=\"wm-app-threadBottomAnchor\"><div class=\"wm-app-scrollToBottomThresholdAnchor\" data-mobile-scroll-to-bottom-threshold-anchor=\"\"></div></div></div></div></div></section></div><footer class=\"wm-desktop-detailFooter\" data-swipable-detail-footer=\"\"><div class=\"wm-app-composerDock\"><div class=\"wm-app-composerPositioner\"><h1 class=\"wm-app-landingHeading\" data-mobile-landing-heading=\"\"><span class=\"wm-app-mobileLandingHeading\">What are you working on?</span><span class=\"wm-app-desktopLandingHeading\">Where should we begin?</span></h1><div class=\"wm-app-scrollToBottomAnchor\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-scrollToBottomButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Scroll to bottom\" data-oai-tooltip=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><form autocomplete=\"off\" class=\"wm-composer-composer _wCCh4W_deferredRoot\" data-dictation-status=\"idle\" data-landing=\"\" data-mobile-composer=\"\" action=\"/unauth-mweb/conversation\" method=\"post\"><div aria-hidden=\"true\" class=\"wm-composer-submitTransitionBubble\" data-mobile-submit-transition-bubble=\"\"></div><input read type=\"hidden\" name=\"conversationState\" value=\"{&quot;messages&quot;:[],&quot;parentMessageId&quot;:&quot;client-created-root&quot;,&quot;safety&quot;:{&quot;dismissedInterventionIds&quot;:[]},&quot;userMessageCount&quot;:0}\"><input type=\"hidden\" name=\"messageMetadata\" value=\"{}\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><input read type=\"hidden\" name=\"imageAttachments\" value=\"[]\"><input read type=\"hidden\" name=\"pendingImageUploads\" value=\"[]\"><input accept=\"image/*\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-photos-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/avif,image/bmp,image/gif,image/heic,image/heif,image/jpeg,image/png,image/webp\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-files-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/*\" aria-hidden=\"true\" capture=\"environment\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-camera-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><div class=\"wm-composer-wrapOuter\"><div class=\"wm-composer-wrapInner\"><div class=\"wm-composer-actionField\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-actionButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-label=\"Add files and more\" data-composer-action=\"\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" popovertarget=\"mobile-composer-actions-popover\" popovertargetaction=\"toggle\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><div class=\"wm-composer-actionMenu\" id=\"mobile-composer-actions-popover\" popover=\"auto\"></div></div><div class=\"wm-composer-primary\"><label class=\"wm-composer-promptHitArea\" for=\"mobile-composer-prompt\"><span class=\"wm-composer-srOnly\">Chat with ChatGPT</span></label><textarea aria-label=\"Chat with ChatGPT\" autocapitalize=\"sentences\" autocomplete=\"off\" autocorrect=\"on\" class=\"wm-composer-textarea\" data-mobile-composer-prompt=\"\" id=\"mobile-composer-prompt\" enterkeyhint=\"enter\" inputmode=\"text\" name=\"prompt\" placeholder=\"Ask ChatGPT\" required=\"\" rows=\"1\" spellcheck=\"true\" data-composer-draft-react=\"\"></textarea><span aria-live=\"assertive\" class=\"wm-composer-srOnly\" role=\"status\"></span></div></div></div><div class=\"wm-composer-trailing\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-dictationButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-label=\"Start dictation\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" data-start-dictation=\"\"><span class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-composer-submitButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" aria-disabled=\"true\" data-visually-disabled=\"\" data-w-comp type=\"submit\" aria-label=\"Send message\" data-composer-submit=\"\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" data-send-label=\"Send message\" data-stop-label=\"Stop generating\"><span class=\"wm-button__icon wm-composer-sendIcon\"></span><span class=\"wm-button__icon wm-composer-stopIcon\"></span></button></div></form></div><div data-trending-slot=\"\" id=\"trends\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-emptyComposerAction\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"What can you do?\" data-empty-composer-help=\"\" id=\"t\"><span class=\"wm-button__label\">What can you do?</span></button><section aria-labelledby=\"lightweight-web-trending-searches-heading\" data-trending-searches=\"\" hidden=\"\"><h2 data-trending-searches-heading=\"\" id=\"lightweight-web-trending-searches-heading\">Trending searches</h2><ul aria-hidden=\"true\" data-trending-searches-skeleton=\"\" hidden=\"\" role=\"list\"></ul></section></div><div class=\"wm-app-promptTypeaheadPortal\" data-mobile-prompt-typeahead-portal=\"\"></div></div><div class=\"wm-app-privacyPositioner\"><div data-compact-disclaimer=\"ChatGPT is AI and can make mistakes.\" data-privacy-notice=\"\"><p><span data-privacy-legal-notice=\"\">ChatGPT is AI. By using it, you agree to our <a href=\"https://openai.com/terms\" rel=\"noreferrer\" target=\"_blank\">Terms</a> &amp; <a href=\"https://openai.com/privacy\" rel=\"noreferrer\" target=\"_blank\">Privacy Policy</a>. Chats may be reviewed and used to improve our AI models. <a href=\"https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance\" rel=\"noreferrer\" target=\"_blank\">Learn more</a></span></p></div></div></div></footer></section></div><div class=\"_Td-r0q_track\" aria-hidden=\"true\" data-desktop-sidebar-swipe-track=\"\"><div class=\"_Td-r0q_snapPoint _Td-r0q_initialSnapPoint\" data-desktop-sidebar-swipe-snap=\"expanded\"></div><div class=\"_Td-r0q_spacer\"></div><div class=\"_Td-r0q_snapPoint\" data-desktop-sidebar-swipe-snap=\"collapsed\"></div></div></div><div hidden=\"\" data-shell-action-ids=\"conversation.submit sidebar.open conversation.scroll-to-message conversation.open\" data-shell-disabled-action-ids=\"\" data-shell-integration-trace=\"\" data-shell-provider-ids=\"conversation-actions\" data-shell-slot-ids=\"composer.leading-action header.trailing-action assistant-message.action sidebar.primary\" data-shell-version=\"m-shell-v2\"></div><dialog aria-labelledby=\"cookie-consent-title\" aria-live=\"polite\" class=\"_IXg8xG_cookieOverlay\" data-cookie-c role=\"dialog\" open=\"\"><div class=\"_IXg8xG_cookieCard\"><form class=\"_IXg8xG_closeForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"ignore\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_closeButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"submit\" aria-label=\"Close\"></button></form><h1 class=\"_IXg8xG_title\" id=\"cookie-consent-title\">We use cookies</h1><p class=\"_IXg8xG_body\">Cookies help this site function, measure usage, and support marketing. <a data-cookie-preferences-link=\"\" href=\"/privacy?returnTo=%2F\">Manage</a> your cookie preferences anytime. Learn more about our <a href=\"https://openai.com/policies/cookie-policy/\" rel=\"noreferrer\" target=\"_blank\">cookie policy</a>.</p><div class=\"_IXg8xG_bannerActions\"><form class=\"_IXg8xG_acceptForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"accept\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full _IXg8xG_primaryButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Accept all</span></button></form><form class=\"_IXg8xG_rejectForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"reject\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _IXg8xG_secondaryButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Reject non-essential</span></button></form><a class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_desktopManageButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp href=\"/privacy?returnTo=%2F\" data-cookie-preferences-link=\"\"><span class=\"wm-button__label\">Cookie preferences</span></a></div></div></dialog></main><dialog aria-describedby=\"mobile-auth-description\" aria-labelledby=\"mobile-auth-title\" autofocus=\"\" class=\"_NosTRa_dialog\" closedby=\"closerequest\" data-bottom-sheet=\"\" data-bottom-sheet-input-target=\"mobile-auth-email\" data-bottom-sheet-presentation=\"sheet\" id=\"mobile-auth-dialog\" role=\"dialog\" tabindex=\"-1\"><div class=\"_NosTRa_scroller\" data-bottom-sheet-scroller=\"\"><div class=\"_NosTRa_visualViewport\"><form class=\"_NosTRa_dismissLayer\" data-bottom-sheet-dismiss-layer=\"\" method=\"dialog\"><button aria-label=\"Dismiss\" class=\"_NosTRa_dismissButton\" data-bottom-sheet-dismiss-button=\"\" disabled=\"\" tabindex=\"-1\" type=\"submit\" value=\"backdrop\"></button></form><section class=\"_NosTRa_surface\" data-bottom-sheet-surface=\"\" data-bottom-sheet-surface-variant=\"default\"><div class=\"_NosTRa_sheetContent\"><div aria-hidden=\"true\" class=\"_NosTRa_handle\" data-bottom-sheet-handle=\"\"></div><a aria-label=\"Log in\" data-mobile-auth-chatgpt-prefetch=\"\" hidden=\"\" href=\"https://chatgpt.com/auth/login\"></a><div data-mobile-auth-dialog=\"\"><header><form method=\"dialog\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _X60mza_closeButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"submit\" aria-label=\"Close\" value=\"close-button\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></form></header><div class=\"_X60mza_content\"><h2 class=\"_X60mza_title\" id=\"mobile-auth-title\">Log in or sign up</h2><p class=\"_X60mza_subtitle\" id=\"mobile-auth-description\">You’ll get smarter responses and can upload files, images, and more.</p><div class=\"_X60mza_actions\"><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=google-oauth2&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"google\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Google</span></span></a><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=windowslive&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"microsoft\" hidden=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Microsoft</span></span></a><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=apple&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"apple\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Apple</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-auth-provider=\"phone\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span class=\"wm-button__label\">Continue with phone</span></span></button></div><div aria-hidden=\"true\" class=\"_X60mza_divider\"><span></span><span class=\"_X60mza_dividerLabel\">OR</span><span></span></div><form class=\"_X60mza_emailForm\" data-auth-provider=\"email\" data-bottom-sheet-keyboard-region=\"\" novalidate=\"\" action=\"https://chatgpt.com/auth/login_with\" method=\"get\"><input type=\"hidden\" name=\"callback_path\" value=\"/\"><input type=\"hidden\" name=\"screen_hint\" value=\"login_or_signup\"><label class=\"sr-only\" for=\"mobile-auth-email\">Email address</label><div><div><input autocapitalize=\"none\" autocomplete=\"email\" class=\"_X60mza_emailInput\" dir=\"ltr\" enterkeyhint=\"Continue\" id=\"mobile-auth-email\" inputmode=\"email\" placeholder=\"Email address\" required=\"\" data-mobile-auth-email-invalid-message=\"Email is not valid.\" spellcheck=\"false\" type=\"email\" name=\"login_hint\"></div></div><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full _X60mza_emailButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Continue</span></button></form></div></div></div><div aria-hidden=\"true\" class=\"_NosTRa_handle _NosTRa_focusedHandle\" data-bottom-sheet-handle=\"\"></div></section></div><div aria-hidden=\"true\" class=\"_NosTRa_gestureTrack\"><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-dismiss-snap=\"\"></div><div class=\"_NosTRa_dismissSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-compact-snap=\"\" data-bottom-sheet-snap=\"compact\"></div><div class=\"_NosTRa_expandSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-snap=\"full\"></div></div></div></dialog><dialog aria-labelledby=\"mobile-settings-title\" autofocus=\"\" class=\"_NosTRa_dialog\" closedby=\"any\" data-bottom-sheet=\"\" data-bottom-sheet-presentation=\"full-screen\" id=\"mobile-settings-dialog\" role=\"dialog\" tabindex=\"-1\"><div class=\"_NosTRa_scroller\" data-bottom-sheet-scroller=\"\"><div class=\"_NosTRa_visualViewport\"><form class=\"_NosTRa_dismissLayer\" data-bottom-sheet-dismiss-layer=\"\" method=\"dialog\"><button aria-label=\"Dismiss\" class=\"_NosTRa_dismissButton\" data-bottom-sheet-dismiss-button=\"\" tabindex=\"-1\" type=\"submit\" value=\"backdrop\"></button></form><section class=\"_NosTRa_surface\" data-bottom-sheet-surface=\"\" data-bottom-sheet-surface-variant=\"default\"><div class=\"_NosTRa_sheetContent\"><div class=\"_tIVtWa_modal\" data-mobile-settings-modal=\"\" data-sidebar-light-dismiss-ignore=\"\"><div class=\"_tIVtWa_swipeLayout\"><main aria-labelledby=\"mobile-settings-title\" class=\"_tIVtWa_pane\"><header class=\"_tIVtWa_header\"><form class=\"_tIVtWa_headerLeading\" method=\"dialog\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"submit\" aria-label=\"Back to ChatGPT\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></form><h2 class=\"_tIVtWa_title\" id=\"mobile-settings-title\">Settings</h2></header><div class=\"_tIVtWa_content\"><section aria-labelledby=\"mobile-settings-general-heading\"><h3 class=\"_tIVtWa_sectionTitle\" id=\"mobile-settings-general-heading\">General</h3><div class=\"_tIVtWa_rowGroup\"><label class=\"_tIVtWa_settingRow\"><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowCopy\"><span class=\"_tIVtWa_rowLabel\">Appearance</span><span class=\"_tIVtWa_rowValue\">System</span></span><select aria-label=\"Appearance\" class=\"_tIVtWa_select\"><option value=\"system\" selected=\"\">System</option><option value=\"dark\">Dark</option><option value=\"light\">Light</option></select></label><label class=\"_tIVtWa_settingRow\"><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowCopy\"><span class=\"_tIVtWa_rowLabel\">Language</span><span class=\"_tIVtWa_rowValue\">Auto-detect</span></span><select aria-label=\"Language\" class=\"_tIVtWa_select\"><option value=\"auto\" selected=\"\">Auto-detect</option><option value=\"am\">አማርኛ</option><option value=\"ar\">العربية</option><option value=\"bg-BG\">български</option><option value=\"bn-BD\">বাংলা</option><option value=\"bs-BA\">bosanski</option><option value=\"ca-ES\">català</option><option value=\"cs-CZ\">čeština</option><option value=\"da-DK\">dansk</option><option value=\"de-DE\">Deutsch</option><option value=\"el-GR\">Ελληνικά</option><option value=\"en-US\">English (US)</option><option value=\"es-419\">español (Latinoamérica)</option><option value=\"es-ES\">español (España)</option><option value=\"et-EE\">eesti</option><option value=\"fa\">فارسی</option><option value=\"fi-FI\">suomi</option><option value=\"fr-CA\">français (Canada)</option><option value=\"fr-FR\">français (France)</option><option value=\"gu-IN\">ગુજરાતી</option><option value=\"hi-IN\">हिन्दी</option><option value=\"hr-HR\">hrvatski</option><option value=\"hu-HU\">magyar</option><option value=\"hy-AM\">հայերեն</option><option value=\"id-ID\">Indonesia</option><option value=\"is-IS\">íslenska</option><option value=\"it-IT\">italiano</option><option value=\"ja-JP\">日本語</option><option value=\"ka-GE\">ქართული</option><option value=\"kk\">қазақ тілі</option><option value=\"kn-IN\">ಕನ್ನಡ</option><option value=\"ko-KR\">한국어</option><option value=\"lt\">lietuvių</option><option value=\"lv-LV\">latviešu</option><option value=\"mk-MK\">македонски</option><option value=\"ml\">മലയാളം</option><option value=\"mn\">монгол</option><option value=\"mr-IN\">मराठी</option><option value=\"ms-MY\">Bahasa Melayu</option><option value=\"my-MM\">မြန်မာ</option><option value=\"nb-NO\">norsk bokmål</option><option value=\"nl-NL\">Nederlands</option><option value=\"pa\">ਪੰਜਾਬੀ</option><option value=\"pl-PL\">polski</option><option value=\"pt-BR\">português (Brasil)</option><option value=\"pt-PT\">português (Portugal)</option><option value=\"ro-RO\">română</option><option value=\"ru-RU\">русский</option><option value=\"sk-SK\">slovenčina</option><option value=\"sl-SI\">slovenščina</option><option value=\"so-SO\">Soomaali</option><option value=\"sq-AL\">shqip</option><option value=\"sr-RS\">српски</option><option value=\"sv-SE\">svenska</option><option value=\"sw-TZ\">Kiswahili</option><option value=\"ta-IN\">தமிழ்</option><option value=\"te-IN\">తెలుగు</option><option value=\"th-TH\">ไทย</option><option value=\"tl\">Tagalog</option><option value=\"tr-TR\">Türkçe</option><option value=\"uk-UA\">українська</option><option value=\"ur\">اردو</option><option value=\"vi-VN\">Tiếng Việt</option><option value=\"zh-CN\">简体中文</option><option value=\"zh-HK\">繁體中文（香港）</option><option value=\"zh-TW\">繁體中文（台灣）</option></select></label></div></section><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_settingRow _tIVtWa_detailTrigger\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-c><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowLabel\">Data controls</span></button></div></main><section aria-hidden=\"true\" aria-labelledby=\"mobile-settings-data-controls-title\" class=\"_tIVtWa_pane\" id=\"mobile-settings-data-controls\" inert=\"\"><header class=\"_tIVtWa_header\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton _tIVtWa_headerLeading\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><h2 class=\"_tIVtWa_title\" id=\"mobile-settings-data-controls-title\">Data controls</h2></header><div class=\"_tIVtWa_content\"><div class=\"_tIVtWa_controls\"><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Improve the model for everyone</span><input aria-checked=\"true\" aria-describedby=\"_R_qj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\" checked=\"\"></label><small class=\"_tIVtWa_description\" id=\"_R_qj7_\">Allow your content to be used to train our models, which makes ChatGPT better for you and everyone who uses it. We take steps to protect your privacy. <a href=\"https://help.openai.com/en/articles/5722486\" rel=\"noreferrer\" target=\"_blank\">Learn more</a></small></div><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Marketing measurement</span><input aria-checked=\"false\" aria-describedby=\"_R_1aj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\"></label><small class=\"_tIVtWa_description\" id=\"_R_1aj7_\">These cookies help us measure the effectiveness of our marketing campaigns.</small></div><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Personalized marketing</span><input aria-checked=\"false\" aria-describedby=\"_R_1qj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\"></label><small class=\"_tIVtWa_description\" id=\"_R_1qj7_\">This helps us personalize and measure OpenAI’s own marketing on third-party platforms.</small></div><p aria-live=\"polite\" class=\"_tIVtWa_saveStatus\" role=\"status\"></p></div></div></section></div></div></div></section></div><div aria-hidden=\"true\" class=\"_NosTRa_gestureTrack\"><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-dismiss-snap=\"\"></div><div class=\"_NosTRa_dismissSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-compact-snap=\"\" data-bottom-sheet-snap=\"compact\"></div><div class=\"_NosTRa_expandSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-snap=\"full\"></div></div></div></dialog></div> <div id=\"web-mobile-safety\"><div data-safety-banners=\"\"></div><div data-conversation-gate=\"\"></div><div data-safety-dialog-queue=\"\"></div></div> <div id=\"oai-tooltip-1\" hidden=\"\" popover=\"hint\" role=\"tooltip\" data-oai-tooltip-surface=\"\" data-density=\"default\" data-oai-tooltip-density=\"default\"></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 30921
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Close sidebar",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "medium",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-expanded": "true",
+              "aria-label": "Close sidebar",
+              "data-desktop-sidebar-toggle": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-headerActions",
+              "selector": ".wm-sidebar-headerActions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "wm-sidebar-header",
+                "selector": ".wm-sidebar-header"
+              }
+            },
+            "selector": "[aria-label=\"Close sidebar\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "New chat",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "large",
+              "data-variant": "primary",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "/",
+              "aria-label": "New chat",
+              "aria-current": "page",
+              "data-mobile-new-chat": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-sidebar",
+              "selector": ".wm-sidebar-sidebar",
+              "grandparent": {
+                "tag": "ASIDE",
+                "id": null,
+                "className": "wm-desktop-sidebar _Td-r0q_sidebar",
+                "selector": ".wm-desktop-sidebar"
+              }
+            },
+            "selector": "[aria-label=\"New chat\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search chats",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink wm-sidebar-desktopSearch",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login_or_signup",
+              "data-mobile-auth-entry-point": "sidebar_hover_card",
+              "data-mobile-auth-entry-trigger": "automatic",
+              "aria-label": "Search chats",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-sidebar-auth-item": "search_chats",
+              "aria-controls": "desktop-search-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0",
+              "style": "--button-icon-size: 1.25rem;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Search chats\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Images",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://chatgpt.com/images",
+              "aria-label": "Images"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Images\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Plugins",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://chatgpt.com/plugins",
+              "aria-label": "Plugins"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Plugins\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deep research",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login_or_signup",
+              "data-mobile-auth-entry-point": "sidebar_hover_card",
+              "data-mobile-auth-entry-trigger": "automatic",
+              "aria-label": "Deep research",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-sidebar-auth-item": "deep_research",
+              "aria-controls": "desktop-deep-research-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0",
+              "style": "--button-icon-size: 1.25rem;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-primaryNavigation",
+              "selector": ".wm-sidebar-primaryNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Deep research\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "See plans and pricing",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://openai.com/chatgpt/pricing/",
+              "aria-label": "See plans and pricing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"See plans and pricing\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink wm-sidebar-desktopSettings",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Settings",
+              "command": "show-modal",
+              "commandfor": "mobile-settings-dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"Settings\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Help",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-sidebar-navigationLink",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "link-button",
+              "href": "https://help.openai.com",
+              "aria-label": "OpenAI Help"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-sidebar-utilityNavigation",
+              "selector": ".wm-sidebar-utilityNavigation",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "wm-sidebar-navigation",
+                "selector": ".wm-sidebar-navigation"
+              }
+            },
+            "selector": "[aria-label=\"OpenAI Help\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "data-mobile-auth-entry-action": "login",
+              "data-mobile-auth-entry-point": "sidebar_bottom_unit",
+              "data-mobile-auth-entry-trigger": "cta",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog"
+            },
+            "parentInfo": {
+              "tag": "SECTION",
+              "id": "",
+              "className": "wm-sidebar-loginPanel",
+              "selector": ".wm-sidebar-loginPanel",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-sidebar-sidebar",
+                "selector": ".wm-sidebar-sidebar"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ChatGPT",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "wm-app-headerWordmark wm-app-headerProductTrigger",
+              "aria-controls": "desktop-chatgpt-product-card-popover",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "role": "button",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-desktop-detailHeaderLabel",
+              "selector": ".wm-desktop-detailHeaderLabel",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "wm-desktop-detailHeader",
+                "selector": ".wm-desktop-detailHeader"
+              }
+            },
+            "selector": ".wm-app-headerWordmark",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Log in",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "data-w-component": "button",
+              "type": "button",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-auth-entry-action": "login",
+              "data-mobile-auth-entry-point": "mobile_chat_stage_header",
+              "data-mobile-auth-entry-trigger": "cta"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-app-authActions",
+              "selector": ".wm-app-authActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-desktop-headerActionGroup",
+                "selector": ".wm-desktop-headerActionGroup"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign up for free",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "command": "show-modal",
+              "commandfor": "mobile-auth-dialog",
+              "data-mobile-auth-entry-action": "signup",
+              "data-mobile-auth-entry-point": "mobile_chat_stage_header",
+              "data-mobile-auth-entry-trigger": "cta"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-app-authActions",
+              "selector": ".wm-app-authActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-desktop-headerActionGroup",
+                "selector": ".wm-desktop-headerActionGroup"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Add files and more",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-actionButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Add files and more",
+              "data-composer-action": "",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "popovertarget": "mobile-composer-actions-popover",
+              "popovertargetaction": "toggle"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-actionField",
+              "selector": ".wm-composer-actionField",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-composer-wrapInner",
+                "selector": ".wm-composer-wrapInner"
+              }
+            },
+            "selector": "[aria-label=\"Add files and more\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Start dictation",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-dictationButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Start dictation",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "data-start-dictation": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-trailing",
+              "selector": ".wm-composer-trailing",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "wm-composer-composer _wCCh4W_deferredRoot",
+                "selector": ".wm-composer-composer"
+              }
+            },
+            "selector": "[aria-label=\"Start dictation\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Send message",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-composer-submitButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "aria-disabled": "true",
+              "data-visually-disabled": "",
+              "data-w-component": "button",
+              "type": "submit",
+              "aria-label": "Send message",
+              "data-composer-submit": "",
+              "data-oai-tooltip": "",
+              "data-oai-tooltip-side": "bottom",
+              "data-send-label": "Send message",
+              "data-stop-label": "Stop generating"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "wm-composer-trailing",
+              "selector": ".wm-composer-trailing",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "wm-composer-composer _wCCh4W_deferredRoot",
+                "selector": ".wm-composer-composer"
+              }
+            },
+            "selector": "[aria-label=\"Send message\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "What can you do?",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-emptyComposerAction",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "What can you do?",
+              "data-empty-composer-help": "",
+              "id": "t"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "trends",
+              "className": null,
+              "selector": "#trends",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "wm-app-composerPositioner",
+                "selector": ".wm-app-composerPositioner"
+              }
+            },
+            "selector": "#t",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/terms",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/privacy",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more",
+            "tag": "A",
+            "attributes": {
+              "href": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Close",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_closeButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "button",
+              "type": "submit",
+              "aria-label": "Close"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_closeForm",
+              "selector": "._IXg8xG_closeForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "[aria-label=\"Close\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage",
+            "tag": "A",
+            "attributes": {
+              "data-cookie-preferences-link": "",
+              "href": "/privacy?returnTo=%2F",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "_IXg8xG_body",
+              "selector": "._IXg8xG_body",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "cookie policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://openai.com/policies/cookie-policy/",
+              "rel": "noreferrer",
+              "style": "text-decoration:underline;text-underline-offset:0.125rem",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "_IXg8xG_body",
+              "selector": "._IXg8xG_body",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--primary wm-button--radius-full _IXg8xG_primaryButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "primary",
+              "data-w-component": "button",
+              "type": "submit"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_acceptForm",
+              "selector": "._IXg8xG_acceptForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_bannerActions",
+                "selector": "._IXg8xG_bannerActions"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject non-essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full _IXg8xG_secondaryButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "submit"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_IXg8xG_rejectForm",
+              "selector": "._IXg8xG_rejectForm",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_bannerActions",
+                "selector": "._IXg8xG_bannerActions"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie preferences",
+            "tag": "A",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_desktopManageButton",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "ghost",
+              "data-w-component": "link-button",
+              "href": "/privacy?returnTo=%2F",
+              "data-cookie-preferences-link": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_IXg8xG_bannerActions",
+              "selector": "._IXg8xG_bannerActions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_IXg8xG_cookieCard",
+                "selector": "._IXg8xG_cookieCard"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Dismiss",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Dismiss",
+              "class": "_NosTRa_dismissButton",
+              "data-bottom-sheet-dismiss-button": "",
+              "tabindex": "-1",
+              "type": "submit",
+              "value": "backdrop"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_NosTRa_dismissLayer",
+              "selector": "._NosTRa_dismissLayer",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_NosTRa_visualViewport",
+                "selector": "._NosTRa_visualViewport"
+              }
+            },
+            "selector": "[aria-label=\"Dismiss\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Back to ChatGPT",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "submit",
+              "aria-label": "Back to ChatGPT"
+            },
+            "parentInfo": {
+              "tag": "FORM",
+              "id": "",
+              "className": "_tIVtWa_headerLeading",
+              "selector": "._tIVtWa_headerLeading",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "_tIVtWa_header",
+                "selector": "._tIVtWa_header"
+              }
+            },
+            "selector": "[aria-label=\"Back to ChatGPT\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Data controls",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_settingRow _tIVtWa_detailTrigger",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-controls": "mobile-settings-data-controls"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_tIVtWa_content",
+              "selector": "._tIVtWa_content",
+              "grandparent": {
+                "tag": "MAIN",
+                "id": null,
+                "className": "_tIVtWa_pane",
+                "selector": "._tIVtWa_pane"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton _tIVtWa_headerLeading",
+              "data-icon-only": "",
+              "data-icon-position": "start",
+              "data-icon-shape": "non-circular",
+              "data-radius": "full",
+              "data-size": "medium",
+              "data-variant": "secondary",
+              "style": "--button-icon-size:1.25rem",
+              "data-w-component": "button",
+              "type": "button",
+              "aria-label": "Settings"
+            },
+            "parentInfo": {
+              "tag": "HEADER",
+              "id": "",
+              "className": "_tIVtWa_header",
+              "selector": "._tIVtWa_header",
+              "grandparent": {
+                "tag": "SECTION",
+                "id": "mobile-settings-data-controls",
+                "className": "_tIVtWa_pane",
+                "selector": "#mobile-settings-data-controls"
+              }
+            },
+            "selector": "[aria-label=\"Settings\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more",
+            "tag": "A",
+            "attributes": {
+              "href": "https://help.openai.com/en/articles/5722486",
+              "rel": "noreferrer",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SMALL",
+              "id": "_R_qj7_",
+              "className": "_tIVtWa_description",
+              "selector": "#_R_qj7_",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Improve the model for everyone",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "true",
+              "aria-describedby": "_R_qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": true,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Marketing measurement",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1aj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Personalized marketing",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "true",
+              "aria-describedby": "_R_qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "true",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1aj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "",
+            "tag": "INPUT",
+            "attributes": {
+              "aria-checked": "false",
+              "aria-describedby": "_R_1qj7_",
+              "class": "_tIVtWa_switchInput",
+              "role": "switch",
+              "type": "checkbox"
+            },
+            "parentInfo": {
+              "tag": "LABEL",
+              "id": "",
+              "className": "_tIVtWa_switchRow",
+              "selector": "._tIVtWa_switchRow",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_tIVtWa_switchGroup",
+                "selector": "._tIVtWa_switchGroup"
+              }
+            },
+            "selector": "._tIVtWa_switchInput",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://chatgpt.com/",
+        "filteredHtml": "<body> <div id=\"web-mobile-root\"><main aria-label=\"ChatGPT\" class=\"wm-app-appShell _tEuLUa_deferredRoot\" data-default-home=\"\" data-mobile-shell=\"desktop\" data-new-c><div class=\"wm-desktop-layout _Td-r0q_root\" data-desktop-layout=\"\" data-testid=\"desktop-app-shell\" data-desktop-sidebar-swipe-ready=\"\"><div class=\"wm-desktop-visualViewport _Td-r0q_viewport\"><aside aria-label=\"Sidebar\" class=\"wm-desktop-sidebar _Td-r0q_sidebar\" tabindex=\"-1\" data-desktop-sidebar-swipe-compact=\"false\"><div class=\"wm-sidebar-sidebar\" data-sidebar-shell-version=\"m-shell-v2\"><header class=\"wm-sidebar-header\"><div class=\"wm-sidebar-headerActions\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-medium wm-sidebar-desktopToggle\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"medium\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-expanded=\"true\" aria-label=\"Close sidebar\" data-desktop-sidebar-toggle=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-utilityButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login_or_signup\" data-mobile-auth-entry-point=\"sidebar_hover_card\" data-mobile-auth-entry-trigger=\"automatic\" aria-label=\"Search chats\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-sidebar-auth-item=\"search_chats\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></div></header><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-desktopChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">New chat</span></span></a><div class=\"wm-sidebar-body\"></div><section aria-labelledby=\"sidebar-login-title\" class=\"wm-sidebar-loginPanel\"><h2 class=\"wm-sidebar-loginTitle\" id=\"sidebar-login-title\">Get responses tailored to you</h2><p class=\"wm-sidebar-loginCopy\">Log in to get answers based on saved chats, plus create images and upload files.</p><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"sidebar_bottom_unit\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button></section><footer class=\"wm-sidebar-footer\"><a class=\"wm-button wm-button--large wm-button--primary wm-button--radius-full wm-sidebar-chatButton wm-sidebar-mobileChatButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"large\" data-variant=\"primary\" data-w-comp href=\"/\" aria-label=\"New chat\" aria-current=\"page\" data-mobile-new-chat=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span><span class=\"wm-button__label wm-sidebar-chatButtonLabel\">Chat</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-sidebar-settingsButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\" command=\"show-modal\" commandfor=\"mobile-settings-dialog\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></footer></div></aside><section class=\"wm-desktop-detailPane\" tabindex=\"-1\"><header class=\"wm-desktop-detailHeader\"><div class=\"wm-desktop-detailHeaderLabel\" data-mobile-header-label=\"\"><span class=\"wm-app-headerWordmark wm-app-headerProductTrigger\" aria-c aria-expanded=\"false\" aria-haspopup=\"dialog\" role=\"button\" tabindex=\"0\"><span class=\"wm-app-headerWordmarkText\">ChatGPT</span></span><div aria-describedby=\"desktop-chatgpt-product-card-description\" aria-labelledby=\"desktop-chatgpt-product-card-heading\" class=\"_954kYq_popover\" data-placement=\"below-header\" id=\"desktop-chatgpt-product-card-popover\" popover=\"auto\" role=\"dialog\"><div aria-hidden=\"true\" class=\"_954kYq_hero\" data-t></div><div class=\"_954kYq_content\"><p class=\"_954kYq_heading\" id=\"desktop-chatgpt-product-card-heading\">Try advanced features for free</p><p class=\"_954kYq_description\" id=\"desktop-chatgpt-product-card-description\">Get smarter responses, upload files, create images, and more by logging in.</p><div class=\"_954kYq_actions\"><button class=\"wm-button wm-button--small wm-button--primary wm-button--radius-full _954kYq_primaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"primary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--small wm-button--secondary wm-button--radius-full _954kYq_secondaryAction\" data-radius=\"full\" data-size=\"small\" data-variant=\"secondary\" data-w-comp type=\"button\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></div></div><div class=\"wm-desktop-headerSpacer\"></div><div class=\"wm-desktop-headerActionGroup\"><div class=\"wm-app-authActions\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-app-loginButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"login\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Log in</span></button><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-signupButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" command=\"show-modal\" commandfor=\"mobile-auth-dialog\" data-mobile-auth-entry-action=\"signup\" data-mobile-auth-entry-point=\"mobile_chat_stage_header\" data-mobile-auth-entry-trigger=\"cta\"><span class=\"wm-button__label\">Sign up for free</span></button></div></div></header><div aria-label=\"Conversation\" class=\"wm-desktop-detailBody wm-app-threadViewport\" data-swipable-detail-body=\"\" role=\"region\"><section aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" class=\"wm-app-conversation\" data-web-mobile-c><div><div class=\"wm-app-thread\"><div class=\"wm-app-threadContent\"><ol aria-label=\"Conversation chat-939f34ed-5e05-4d5d-9687-dfe2f06d7eb4\" data-conversation-transcript=\"\"></ol><div data-web-mobile-optimistic-turn=\"\" hidden=\"\"><ol data-conversation-transcript=\"\"><li data-message-role=\"user\" id=\"lightweight-web-optimistic-user\"><p data-user-message-copy=\"\">Write-only optimistic message</p></li><li data-mobile-initial-scroll-target=\"\" data-message-role=\"assistant\" data-message-streaming=\"\" id=\"pending-lightweight-web-optimistic-assistant\"><div data-assistant-markdown=\"\" data-stream-target=\"\"></div></li><li aria-hidden=\"true\" data-conversation-stream-anchor=\"\" hidden=\"\"></li></ol></div><div aria-hidden=\"true\" class=\"wm-app-threadBottomAnchor\"><div class=\"wm-app-scrollToBottomThresholdAnchor\" data-mobile-scroll-to-bottom-threshold-anchor=\"\"></div></div></div></div></div></section></div><footer class=\"wm-desktop-detailFooter\" data-swipable-detail-footer=\"\"><div class=\"wm-app-composerDock\"><div class=\"wm-app-composerPositioner\"><h1 class=\"wm-app-landingHeading\" data-mobile-landing-heading=\"\"><span class=\"wm-app-mobileLandingHeading\">What are you working on?</span><span class=\"wm-app-desktopLandingHeading\">Where should we begin?</span></h1><div class=\"wm-app-scrollToBottomAnchor\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-scrollToBottomButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Scroll to bottom\" data-oai-tooltip=\"\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><form autocomplete=\"off\" class=\"wm-composer-composer _wCCh4W_deferredRoot\" data-dictation-status=\"idle\" data-landing=\"\" data-mobile-composer=\"\" action=\"/unauth-mweb/conversation\" method=\"post\"><div aria-hidden=\"true\" class=\"wm-composer-submitTransitionBubble\" data-mobile-submit-transition-bubble=\"\"></div><input read type=\"hidden\" name=\"conversationState\" value=\"{&quot;messages&quot;:[],&quot;parentMessageId&quot;:&quot;client-created-root&quot;,&quot;safety&quot;:{&quot;dismissedInterventionIds&quot;:[]},&quot;userMessageCount&quot;:0}\"><input type=\"hidden\" name=\"messageMetadata\" value=\"{}\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><input read type=\"hidden\" name=\"imageAttachments\" value=\"[]\"><input read type=\"hidden\" name=\"pendingImageUploads\" value=\"[]\"><input accept=\"image/*\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-photos-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/avif,image/bmp,image/gif,image/heic,image/heif,image/jpeg,image/png,image/webp\" aria-hidden=\"true\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-files-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><input accept=\"image/*\" aria-hidden=\"true\" capture=\"environment\" class=\"wm-composer-srOnly\" data-image-picker-input=\"\" id=\"mobile-composer-camera-input\" multiple=\"\" tabindex=\"-1\" type=\"file\"><div class=\"wm-composer-wrapOuter\"><div class=\"wm-composer-wrapInner\"><div class=\"wm-composer-actionField\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-actionButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-label=\"Add files and more\" data-composer-action=\"\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" popovertarget=\"mobile-composer-actions-popover\" popovertargetaction=\"toggle\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><div class=\"wm-composer-actionMenu\" id=\"mobile-composer-actions-popover\" popover=\"auto\"></div></div><div class=\"wm-composer-primary\"><label class=\"wm-composer-promptHitArea\" for=\"mobile-composer-prompt\"><span class=\"wm-composer-srOnly\">Chat with ChatGPT</span></label><textarea aria-label=\"Chat with ChatGPT\" autocapitalize=\"sentences\" autocomplete=\"off\" autocorrect=\"on\" class=\"wm-composer-textarea\" data-mobile-composer-prompt=\"\" id=\"mobile-composer-prompt\" enterkeyhint=\"enter\" inputmode=\"text\" name=\"prompt\" placeholder=\"Ask ChatGPT\" required=\"\" rows=\"1\" spellcheck=\"true\" data-composer-draft-react=\"\"></textarea><span aria-live=\"assertive\" class=\"wm-composer-srOnly\" role=\"status\"></span></div></div></div><div class=\"wm-composer-trailing\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full wm-composer-dictationButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"button\" aria-label=\"Start dictation\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" data-start-dictation=\"\"><span class=\"wm-button__icon\"></span></button><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full wm-composer-submitButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" aria-disabled=\"true\" data-visually-disabled=\"\" data-w-comp type=\"submit\" aria-label=\"Send message\" data-composer-submit=\"\" data-oai-tooltip=\"\" data-oai-tooltip-side=\"bottom\" data-send-label=\"Send message\" data-stop-label=\"Stop generating\"><span class=\"wm-button__icon wm-composer-sendIcon\"></span><span class=\"wm-button__icon wm-composer-stopIcon\"></span></button></div></form></div><div data-trending-slot=\"\" id=\"trends\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full wm-app-emptyComposerAction\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"What can you do?\" data-empty-composer-help=\"\" id=\"t\"><span class=\"wm-button__label\">What can you do?</span></button><section aria-labelledby=\"lightweight-web-trending-searches-heading\" data-trending-searches=\"\" hidden=\"\"><h2 data-trending-searches-heading=\"\" id=\"lightweight-web-trending-searches-heading\">Trending searches</h2><ul aria-hidden=\"true\" data-trending-searches-skeleton=\"\" hidden=\"\" role=\"list\"></ul></section></div><div class=\"wm-app-promptTypeaheadPortal\" data-mobile-prompt-typeahead-portal=\"\"></div></div><div class=\"wm-app-privacyPositioner\"><div data-compact-disclaimer=\"ChatGPT is AI and can make mistakes.\" data-privacy-notice=\"\"><p><span data-privacy-legal-notice=\"\">ChatGPT is AI. By using it, you agree to our <a href=\"https://openai.com/terms\" rel=\"noreferrer\" target=\"_blank\">Terms</a> &amp; <a href=\"https://openai.com/privacy\" rel=\"noreferrer\" target=\"_blank\">Privacy Policy</a>. Chats may be reviewed and used to improve our AI models. <a href=\"https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance\" rel=\"noreferrer\" target=\"_blank\">Learn more</a></span></p></div></div></div></footer></section></div><div class=\"_Td-r0q_track\" aria-hidden=\"true\" data-desktop-sidebar-swipe-track=\"\"><div class=\"_Td-r0q_snapPoint _Td-r0q_initialSnapPoint\" data-desktop-sidebar-swipe-snap=\"expanded\"></div><div class=\"_Td-r0q_spacer\"></div><div class=\"_Td-r0q_snapPoint\" data-desktop-sidebar-swipe-snap=\"collapsed\"></div></div></div><div hidden=\"\" data-shell-action-ids=\"conversation.submit sidebar.open conversation.scroll-to-message conversation.open\" data-shell-disabled-action-ids=\"\" data-shell-integration-trace=\"\" data-shell-provider-ids=\"conversation-actions\" data-shell-slot-ids=\"composer.leading-action header.trailing-action assistant-message.action sidebar.primary\" data-shell-version=\"m-shell-v2\"></div><dialog aria-labelledby=\"cookie-consent-title\" aria-live=\"polite\" class=\"_IXg8xG_cookieOverlay\" data-cookie-c role=\"dialog\" open=\"\"><div class=\"_IXg8xG_cookieCard\"><form class=\"_IXg8xG_closeForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"ignore\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_closeButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"submit\" aria-label=\"Close\"></button></form><h1 class=\"_IXg8xG_title\" id=\"cookie-consent-title\">We use cookies</h1><p class=\"_IXg8xG_body\">Cookies help this site function, measure usage, and support marketing. <a data-cookie-preferences-link=\"\" href=\"/privacy?returnTo=%2F\">Manage</a> your cookie preferences anytime. Learn more about our <a href=\"https://openai.com/policies/cookie-policy/\" rel=\"noreferrer\" target=\"_blank\">cookie policy</a>.</p><div class=\"_IXg8xG_bannerActions\"><form class=\"_IXg8xG_acceptForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"accept\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full _IXg8xG_primaryButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Accept all</span></button></form><form class=\"_IXg8xG_rejectForm\" data-privacy-consent-form=\"\" action=\"/unauth-mweb/privacy\" method=\"post\"><input type=\"hidden\" name=\"action\" value=\"reject\"><input type=\"hidden\" name=\"returnTo\" value=\"/\"><input type=\"hidden\" name=\"oai-session-id\" value=\"9307cbde-1eda-4b0a-b41d-ed8d1a085bc0\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _IXg8xG_secondaryButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Reject non-essential</span></button></form><a class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _IXg8xG_desktopManageButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp href=\"/privacy?returnTo=%2F\" data-cookie-preferences-link=\"\"><span class=\"wm-button__label\">Cookie preferences</span></a></div></div></dialog></main><dialog aria-describedby=\"mobile-auth-description\" aria-labelledby=\"mobile-auth-title\" autofocus=\"\" class=\"_NosTRa_dialog\" closedby=\"closerequest\" data-bottom-sheet=\"\" data-bottom-sheet-input-target=\"mobile-auth-email\" data-bottom-sheet-presentation=\"sheet\" id=\"mobile-auth-dialog\" role=\"dialog\" tabindex=\"-1\"><div class=\"_NosTRa_scroller\" data-bottom-sheet-scroller=\"\"><div class=\"_NosTRa_visualViewport\"><form class=\"_NosTRa_dismissLayer\" data-bottom-sheet-dismiss-layer=\"\" method=\"dialog\"><button aria-label=\"Dismiss\" class=\"_NosTRa_dismissButton\" data-bottom-sheet-dismiss-button=\"\" disabled=\"\" tabindex=\"-1\" type=\"submit\" value=\"backdrop\"></button></form><section class=\"_NosTRa_surface\" data-bottom-sheet-surface=\"\" data-bottom-sheet-surface-variant=\"default\"><div class=\"_NosTRa_sheetContent\"><div aria-hidden=\"true\" class=\"_NosTRa_handle\" data-bottom-sheet-handle=\"\"></div><a aria-label=\"Log in\" data-mobile-auth-chatgpt-prefetch=\"\" hidden=\"\" href=\"https://chatgpt.com/auth/login\"></a><div data-mobile-auth-dialog=\"\"><header><form method=\"dialog\"><button class=\"wm-button wm-button--medium wm-button--ghost wm-button--radius-full _X60mza_closeButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"ghost\" data-w-comp type=\"submit\" aria-label=\"Close\" value=\"close-button\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></form></header><div class=\"_X60mza_content\"><h2 class=\"_X60mza_title\" id=\"mobile-auth-title\">Log in or sign up</h2><p class=\"_X60mza_subtitle\" id=\"mobile-auth-description\">You’ll get smarter responses and can upload files, images, and more.</p><div class=\"_X60mza_actions\"><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=google-oauth2&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"google\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Google</span></span></a><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=windowslive&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"microsoft\" hidden=\"\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Microsoft</span></span></a><a class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp href=\"https://chatgpt.com/auth/login_with?callback_path=%2F&amp;connection=apple&amp;screen_hint=login_or_signup&amp;ext-web-mobile-direct-social-login=true\" data-auth-provider=\"apple\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span>Continue with Apple</span></span></a><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _X60mza_providerButton\" data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" data-auth-provider=\"phone\"><span class=\"wm-button__content\"><span aria-hidden=\"true\" class=\"wm-button__icon _X60mza_providerIcon\"></span><span class=\"wm-button__label\">Continue with phone</span></span></button></div><div aria-hidden=\"true\" class=\"_X60mza_divider\"><span></span><span class=\"_X60mza_dividerLabel\">OR</span><span></span></div><form class=\"_X60mza_emailForm\" data-auth-provider=\"email\" data-bottom-sheet-keyboard-region=\"\" novalidate=\"\" action=\"https://chatgpt.com/auth/login_with\" method=\"get\"><input type=\"hidden\" name=\"callback_path\" value=\"/\"><input type=\"hidden\" name=\"screen_hint\" value=\"login_or_signup\"><label class=\"sr-only\" for=\"mobile-auth-email\">Email address</label><div><div><input autocapitalize=\"none\" autocomplete=\"email\" class=\"_X60mza_emailInput\" dir=\"ltr\" enterkeyhint=\"Continue\" id=\"mobile-auth-email\" inputmode=\"email\" placeholder=\"Email address\" required=\"\" data-mobile-auth-email-invalid-message=\"Email is not valid.\" spellcheck=\"false\" type=\"email\" name=\"login_hint\"></div></div><button class=\"wm-button wm-button--medium wm-button--primary wm-button--radius-full _X60mza_emailButton\" data-radius=\"full\" data-size=\"medium\" data-variant=\"primary\" data-w-comp type=\"submit\"><span class=\"wm-button__label\">Continue</span></button></form></div></div></div><div aria-hidden=\"true\" class=\"_NosTRa_handle _NosTRa_focusedHandle\" data-bottom-sheet-handle=\"\"></div></section></div><div aria-hidden=\"true\" class=\"_NosTRa_gestureTrack\"><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-dismiss-snap=\"\"></div><div class=\"_NosTRa_dismissSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-compact-snap=\"\" data-bottom-sheet-snap=\"compact\"></div><div class=\"_NosTRa_expandSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-snap=\"full\"></div></div></div></dialog><dialog aria-labelledby=\"mobile-settings-title\" autofocus=\"\" class=\"_NosTRa_dialog\" closedby=\"any\" data-bottom-sheet=\"\" data-bottom-sheet-presentation=\"full-screen\" id=\"mobile-settings-dialog\" role=\"dialog\" tabindex=\"-1\" open=\"\" data-bottom-sheet-native-scroll=\"\" data-bottom-sheet-expanded=\"\"><div class=\"_NosTRa_scroller\" data-bottom-sheet-scroller=\"\"><div class=\"_NosTRa_visualViewport\"><form class=\"_NosTRa_dismissLayer\" data-bottom-sheet-dismiss-layer=\"\" method=\"dialog\"><button aria-label=\"Dismiss\" class=\"_NosTRa_dismissButton\" data-bottom-sheet-dismiss-button=\"\" tabindex=\"-1\" type=\"submit\" value=\"backdrop\"></button></form><section class=\"_NosTRa_surface\" data-bottom-sheet-surface=\"\" data-bottom-sheet-surface-variant=\"default\"><div class=\"_NosTRa_sheetContent\"><div class=\"_tIVtWa_modal\" data-mobile-settings-modal=\"\" data-sidebar-light-dismiss-ignore=\"\"><div class=\"_tIVtWa_swipeLayout\"><main aria-labelledby=\"mobile-settings-title\" class=\"_tIVtWa_pane\"><header class=\"_tIVtWa_header\"><form class=\"_tIVtWa_headerLeading\" method=\"dialog\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"submit\" aria-label=\"Back to ChatGPT\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button></form><h2 class=\"_tIVtWa_title\" id=\"mobile-settings-title\">Settings</h2></header><div class=\"_tIVtWa_content\"><section aria-labelledby=\"mobile-settings-general-heading\"><h3 class=\"_tIVtWa_sectionTitle\" id=\"mobile-settings-general-heading\">General</h3><div class=\"_tIVtWa_rowGroup\"><label class=\"_tIVtWa_settingRow\"><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowCopy\"><span class=\"_tIVtWa_rowLabel\">Appearance</span><span class=\"_tIVtWa_rowValue\">System</span></span><select aria-label=\"Appearance\" class=\"_tIVtWa_select\"><option value=\"system\" selected=\"\">System</option><option value=\"dark\">Dark</option><option value=\"light\">Light</option></select></label><label class=\"_tIVtWa_settingRow\"><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowCopy\"><span class=\"_tIVtWa_rowLabel\">Language</span><span class=\"_tIVtWa_rowValue\">Auto-detect</span></span><select aria-label=\"Language\" class=\"_tIVtWa_select\"><option value=\"auto\" selected=\"\">Auto-detect</option><option value=\"am\">አማርኛ</option><option value=\"ar\">العربية</option><option value=\"bg-BG\">български</option><option value=\"bn-BD\">বাংলা</option><option value=\"bs-BA\">bosanski</option><option value=\"ca-ES\">català</option><option value=\"cs-CZ\">čeština</option><option value=\"da-DK\">dansk</option><option value=\"de-DE\">Deutsch</option><option value=\"el-GR\">Ελληνικά</option><option value=\"en-US\">English (US)</option><option value=\"es-419\">español (Latinoamérica)</option><option value=\"es-ES\">español (España)</option><option value=\"et-EE\">eesti</option><option value=\"fa\">فارسی</option><option value=\"fi-FI\">suomi</option><option value=\"fr-CA\">français (Canada)</option><option value=\"fr-FR\">français (France)</option><option value=\"gu-IN\">ગુજરાતી</option><option value=\"hi-IN\">हिन्दी</option><option value=\"hr-HR\">hrvatski</option><option value=\"hu-HU\">magyar</option><option value=\"hy-AM\">հայերեն</option><option value=\"id-ID\">Indonesia</option><option value=\"is-IS\">íslenska</option><option value=\"it-IT\">italiano</option><option value=\"ja-JP\">日本語</option><option value=\"ka-GE\">ქართული</option><option value=\"kk\">қазақ тілі</option><option value=\"kn-IN\">ಕನ್ನಡ</option><option value=\"ko-KR\">한국어</option><option value=\"lt\">lietuvių</option><option value=\"lv-LV\">latviešu</option><option value=\"mk-MK\">македонски</option><option value=\"ml\">മലയാളം</option><option value=\"mn\">монгол</option><option value=\"mr-IN\">मराठी</option><option value=\"ms-MY\">Bahasa Melayu</option><option value=\"my-MM\">မြန်မာ</option><option value=\"nb-NO\">norsk bokmål</option><option value=\"nl-NL\">Nederlands</option><option value=\"pa\">ਪੰਜਾਬੀ</option><option value=\"pl-PL\">polski</option><option value=\"pt-BR\">português (Brasil)</option><option value=\"pt-PT\">português (Portugal)</option><option value=\"ro-RO\">română</option><option value=\"ru-RU\">русский</option><option value=\"sk-SK\">slovenčina</option><option value=\"sl-SI\">slovenščina</option><option value=\"so-SO\">Soomaali</option><option value=\"sq-AL\">shqip</option><option value=\"sr-RS\">српски</option><option value=\"sv-SE\">svenska</option><option value=\"sw-TZ\">Kiswahili</option><option value=\"ta-IN\">தமிழ்</option><option value=\"te-IN\">తెలుగు</option><option value=\"th-TH\">ไทย</option><option value=\"tl\">Tagalog</option><option value=\"tr-TR\">Türkçe</option><option value=\"uk-UA\">українська</option><option value=\"ur\">اردو</option><option value=\"vi-VN\">Tiếng Việt</option><option value=\"zh-CN\">简体中文</option><option value=\"zh-HK\">繁體中文（香港）</option><option value=\"zh-TW\">繁體中文（台灣）</option></select></label></div></section><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_settingRow _tIVtWa_detailTrigger\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-c><span class=\"_tIVtWa_rowIcon\"></span><span class=\"_tIVtWa_rowLabel\">Data controls</span></button></div></main><section aria-hidden=\"true\" aria-labelledby=\"mobile-settings-data-controls-title\" class=\"_tIVtWa_pane\" id=\"mobile-settings-data-controls\" inert=\"\"><header class=\"_tIVtWa_header\"><button class=\"wm-button wm-button--medium wm-button--secondary wm-button--radius-full _tIVtWa_backButton _tIVtWa_headerLeading\" data-icon- data-icon-position=\"start\" data-icon-shape=\"non-circular\" data-radius=\"full\" data-size=\"medium\" data-variant=\"secondary\" data-w-comp type=\"button\" aria-label=\"Settings\"><span aria-hidden=\"true\" class=\"wm-button__icon\"></span></button><h2 class=\"_tIVtWa_title\" id=\"mobile-settings-data-controls-title\">Data controls</h2></header><div class=\"_tIVtWa_content\"><div class=\"_tIVtWa_controls\"><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Improve the model for everyone</span><input aria-checked=\"true\" aria-describedby=\"_R_qj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\"></label><small class=\"_tIVtWa_description\" id=\"_R_qj7_\">Allow your content to be used to train our models, which makes ChatGPT better for you and everyone who uses it. We take steps to protect your privacy. <a href=\"https://help.openai.com/en/articles/5722486\" rel=\"noreferrer\" target=\"_blank\">Learn more</a></small></div><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Marketing measurement</span><input aria-checked=\"false\" aria-describedby=\"_R_1aj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\"></label><small class=\"_tIVtWa_description\" id=\"_R_1aj7_\">These cookies help us measure the effectiveness of our marketing campaigns.</small></div><div class=\"_tIVtWa_switchGroup\"><label class=\"_tIVtWa_switchRow\"><span class=\"_tIVtWa_rowLabel\">Personalized marketing</span><input aria-checked=\"false\" aria-describedby=\"_R_1qj7_\" class=\"_tIVtWa_switchInput\" role=\"switch\" type=\"checkbox\"></label><small class=\"_tIVtWa_description\" id=\"_R_1qj7_\">This helps us personalize and measure OpenAI’s own marketing on third-party platforms.</small></div><p aria-live=\"polite\" class=\"_tIVtWa_saveStatus\" role=\"status\"></p></div></div></section></div></div></div></section></div><div aria-hidden=\"true\" class=\"_NosTRa_gestureTrack\"><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-dismiss-snap=\"\"></div><div class=\"_NosTRa_dismissSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-compact-snap=\"\" data-bottom-sheet-snap=\"compact\"></div><div class=\"_NosTRa_expandSpacer\"></div><div class=\"_NosTRa_snapPoint\" data-bottom-sheet-snap=\"full\"></div></div></div></dialog></div> <div id=\"web-mobile-safety\"><div data-safety-banners=\"\"></div><div data-conversation-gate=\"\"></div><div data-safety-dialog-queue=\"\"></div></div> <div id=\"oai-tooltip-1\" hidden=\"\" popover=\"hint\" role=\"tooltip\" data-oai-tooltip-surface=\"\" data-density=\"default\" data-oai-tooltip-density=\"default\"></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 30983,
+        "isIframe": false
+      }
+    }
+  ]
+}

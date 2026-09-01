@@ -1,0 +1,230 @@
+{
+  "timestamp": "2026-08-27T23:36:18.589507",
+  "url": "https://ezgif.com",
+  "structured_dom_chars": 162900,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Setupad\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".stpd_cmp\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".stpd_cmp\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".stpd_cmp\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button.stpd_submit_btn\", \"textFilter\": \"Manage settings\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[data-id=\\\"1\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".stpd_consent_box\", \"childFilter\": {\"target\": {\"selector\": \"input[data-id=\\\"1\\\"]\"}}}, \"target\": {\"selector\": \"label.stpd_switch\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[data-id=\\\"2\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".stpd_consent_box\", \"childFilter\": {\"target\": {\"selector\": \"input[data-id=\\\"2\\\"]\"}}}, \"target\": {\"selector\": \"label.stpd_switch\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[data-id=\\\"3\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".stpd_consent_box\", \"childFilter\": {\"target\": {\"selector\": \"input[data-id=\\\"3\\\"]\"}}}, \"target\": {\"selector\": \"label.stpd_switch\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[data-id=\\\"5\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".stpd_consent_box\", \"childFilter\": {\"target\": {\"selector\": \"input[data-id=\\\"5\\\"]\"}}}, \"target\": {\"selector\": \"label.stpd_switch\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[data-id=\\\"9\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".stpd_consent_box\", \"childFilter\": {\"target\": {\"selector\": \"input[data-id=\\\"9\\\"]\"}}}, \"target\": {\"selector\": \"label.stpd_switch\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button.stpd_submit_btn\", \"textFilter\": \"Confirm choices\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 1656 (char 1655)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 1656 (char 1655)"
+  ],
+  "duration_seconds": 225.83,
+  "extraction_duration_seconds": 18.98,
+  "extraction_share_percent": 8.4,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Setupad": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".stpd_cmp"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".stpd_cmp"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".stpd_cmp"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button.stpd_submit_btn",
+              "textFilter": "Manage settings"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[data-id=\"1\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".stpd_consent_box",
+                    "childFilter": {
+                      "target": {
+                        "selector": "input[data-id=\"1\"]"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "label.stpd_switch"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[data-id=\"2\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".stpd_consent_box",
+                    "childFilter": {
+                      "target": {
+                        "selector": "input[data-id=\"2\"]"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "label.stpd_switch"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[data-id=\"3\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".stpd_consent_box",
+                    "childFilter": {
+                      "target": {
+                        "selector": "input[data-id=\"3\"]"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "label.stpd_switch"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[data-id=\"5\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".stpd_consent_box",
+                    "childFilter": {
+                      "target": {
+                        "selector": "input[data-id=\"5\"]"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "label.stpd_switch"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[data-id=\"9\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".stpd_consent_box",
+                    "childFilter": {
+                      "target": {
+                        "selector": "input[data-id=\"9\"]"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "label.stpd_switch"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button.stpd_submit_btn",
+              "textFilter": "Confirm choices"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

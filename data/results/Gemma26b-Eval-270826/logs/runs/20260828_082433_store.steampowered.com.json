@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-08-28T08:24:33.582717",
+  "url": "https://store.steampowered.com",
+  "structured_dom_chars": 260322,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 7,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"Steam\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".cookieMessage\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".cookieMessage\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".cookieMessage\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"Accept All\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"Reject All\"}}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: button, a",
+  "error_history": [
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 594 (char 593)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button, a",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a, button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a, button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button, a"
+  ],
+  "duration_seconds": 1303.63,
+  "extraction_duration_seconds": 17.22,
+  "extraction_share_percent": 1.32,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "Steam": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".cookieMessage"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".cookieMessage",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".cookieMessage"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "*",
+                    "textFilter": "Accept"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "*",
+                    "textFilter": "Reject"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

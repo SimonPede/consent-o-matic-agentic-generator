@@ -1,0 +1,755 @@
+{
+  "timestamp": "2026-08-27T19:29:08.688368",
+  "url": "https://www.samsung.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.samsung.com"
+  ],
+  "duration_seconds": 8.02,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"truste\"]\" (TrustArc) in frame: https://www.samsung.com/dk/",
+      "waitForCmpUi detected CMP Type: TrustArc",
+      "I found 3 frames.",
+      "a frame was picked by score: https://www.samsung.com/dk/ with Score: 26",
+      "Settings match: \"Konfigurer\" --> lowered: \"konfigurer\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #truste-show-consent, textMatch: Konfigurer",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 2681840 chars.",
+      "DOM diff: 55606 chars added, 3 inputs added.",
+      "Old state: 144 buttons, 2 inputs.",
+      "New state: 158 buttons, 5 inputs.",
+      "Settings detected: 55606 chars, 3 inputs, 14 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 3 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.samsung.com/dk/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'TrustArc',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://www.samsung.com/dk/',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"trustarc-banner truste-responsive ta-show ta-display-block\"> <div class=\"truste-consent-content\"> <div class=\"truste-custom-samsung-wrap\"> <div class=\"truste-custom-wrapper\"> <div class=\"truste-custom-img\"> </div> </div> <p class=\"truste-custom-text-wrapper\">Samsung Electronics og dets partnere bruger cookies og lignende teknologier (samlet \"teknologier\") til at gemme og få adgang til oplysninger på din enhed. Nogle af disse teknologier er teknisk vigtige for at give dig et sikkert, velfungerende og pålideligt websted. Vi vil også gerne placere valgfrie/ikke-essentielle teknologier for at give dig den bedste brugeroplevelse. Valgfrie teknologier gør det muligt at måle på besøgende på vores websted, at vise personlig annoncering på tredjepartswebsteder baseret på din profil, at spore din placering, at udføre målrettede marketingkampagner samt tilpasse indholdet af vores websted afhængigt af din brug. Gennem disse teknologier indsamler vi oplysninger såsom din interaktion med vores websted, dine præferencer og dine browservaner.</p> <p class=\"truste-custom-text-wrapper\">Hvis du gerne vil acceptere teknologier, der skal bruges til disse formål, skal du klikke på \"Accepter alle\" for at tilføje alle disse teknologier. Alternativt kan du klikke på \"Kun nødvendige\" for at afvise alle ikke-nødvendige teknologier. Du kan også foretage et valg efter kategori ved at klikke på \"Konfigurer\". Du kan til enhver tid trække dit samtykke tilbage og ændre dine valg ved at klikke på knappen \"Cookiepræferencer\", der er placeret nederst på vores websted. Yderligere oplysninger er også tilgængelige i vores&nbsp;<a href=\"https://www.samsung.com/dk/info/privacy/cookie-policy/\" target=\"_blank\" id=\"truste-cookie-button\" class=\"truste-cookie-link\"><strong>Cookiepolitik</strong></a>&nbsp;og vores&nbsp;<a href=\"https://www.samsung.com/dk/info/privacy/\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-privacy-link\"><strong>Privatlivspolitik</strong></a>.</p></div> <div id=\"truste-consent-buttons\" class=\"trustarc-buttons\"> <button id=\"truste-consent-button\" type=\"button\" class=\"truste-button1\">Accepter alle cookies</button> <button id=\"truste-consent-required\" type=\"button\" class=\"truste-button1\">Kun nødvendige</button> <button id=\"truste-show-consent\" type=\"button\" class=\"truste-button2\" aria-haspopup=\"dialog\">Konfigurer</button> </div> </div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 2406,",
+      "      cmpType: 'TrustArc'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://www.samsung.com/dk/',",
+      "      filteredHtml: '<div id=\"pop-div20564604842202569\" class=\"truste_box_overlay\"><div id=\"pop-div309012078529665678\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame04172845058594701\" tabindex=\"0\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"da\"><div class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1 role=\"heading\" aria-level=\"2\"><span>Administrer dine cookies</span></h1> <p>Cookies er små tekstfiler placeret på din enhed, som vi bruger til at forbedre din oplevelse på vores websted og vise dig relevante reklamer. Vores partnere og de cookies, der er placeret på din enhed, er beskrevet nedenfor. Nedenfor kan du også administrere, hvilke cookies der er indstillet på din enhed. Du kan til enhver tid ændre dine præferencer ved at klikke på ikonet \"Cookiepræferencer\" nederst på vores websted. Dit valg vil blive gemt i 13 måneder. Du kan finde flere oplysninger i vores <a id=\"privacyPolicyAnchor\" href=\"https://www.samsung.com/dk/info/privacy/cookie-policy/\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\">Cookiepolitik</a>​.</p> <button id=\"accept_all_button\">Accepter alle</button><button id=\"decline_all_button\">Kun nødvendige</button></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Nødvendige cookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies er strengt nødvendige for levering af den tjeneste, som du udtrykkeligt har anmodet om eller har det ene formål at muliggøre eller lette elektronisk kommunikation. For eksempel giver de os mulighed for at huske de varer, du har lagt i din indkøbskurv. Disse cookies aktiveres automatisk og kan ikke deaktiveres, fordi de er afgørende for, at du kan browse på vores websted.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Analytiske / performance cookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies giver os mulighed for at forstå, hvordan du tilgår webstedet og dine browservaner (fx besøgte sider, tid brugt på en side, indhold du har klikket på). De giver os mulighed for at analysere vores websteds ydeevne og design samt opdage mulige fejl. Grundet disse performanceindikatorer kan vi løbende forbedre vores websted og vores produkter, indhold og tilbud.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Analytiske / performance cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Analytiske / performance cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Analytiske / performance cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Funktionalitets- og profilcookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies giver os mulighed for at tilbyde dig tilpasset indhold i henhold til din profil, dine interesser og din brug. For eksempel giver AB-testcookies os mulighed for at teste forskellige versioner af en side/tjeneste for statistisk at kunne identificere besøgendes præferencer. Ved at acceptere disse cookies hjælper du os med at forbedre layoutet og funktionerne på vores websted.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Funktionalitets- og profilcookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Funktionalitets- og profilcookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Funktionalitets- og profilcookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Reklame- og Targetingcookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies indsamler oplysninger om dine browservaner. De husker, at du har besøgt vores websted og deler disse oplysninger med samarbejdspartnere, såsom annoncører, med henblik på målrettet annoncering. Brugen af disse cookies omfatter visning af reklamer, frekvensbegrænsning, forebyggelse af svindel, fakturering og måling.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Reklame- og Targetingcookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Reklame- og Targetingcookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Reklame- og Targetingcookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"submit\" translate=\"no\">Gem indstillinger og luk</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"declineAllButtonLower\" translate=\"no\">Kun nødvendige</a></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\">Privatlivspolitik</a></div><div class=\"right\" translate=\"no\">Drevet af: <a href=\"http://trustarc.com/\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.9162501373976589\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"0\" id=\"trustarc-internal-close-button\"></a></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 7619,",
+      "      cmpType: 'TrustArc',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.samsung.com/dk/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: TrustArc via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (5):",
+      "      [A] \"Cookiepolitik\" --> selector: #truste-cookie-button",
+      "      [A] \"Privatlivspolitik\" --> selector: #truste-privacy-button",
+      "      [BUTTON] \"Accepter alle cookies\" --> selector: #truste-consent-button",
+      "      [BUTTON] \"Kun nødvendige\" --> selector: #truste-consent-required",
+      "      [BUTTON] \"Konfigurer\" --> selector: #truste-show-consent",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (13):",
+      "      [A] \"close\" --> selector: #trustarc-internal-close-button",
+      "      [A] \"Cookiepolitik\" --> selector: #pop-frame04172845058594701 >>> #privacyPolicyAnchor",
+      "      [A] \"SE COOKIES\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+      "      [A] \"SE COOKIES\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"NEJ\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Refuse Analytiske / performance cookies\"]",
+      "      [SPAN] \"JA\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Accept Analytiske / performance cookies\"]",
+      "      [A] \"SE COOKIES\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"NEJ\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Refuse Funktionalitets- og profilcookies\"]",
+      "      [SPAN] \"JA\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Accept Funktionalitets- og profilcookies\"]",
+      "      [A] \"SE COOKIES\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"NEJ\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Refuse Reklame- og Targetingcookies\"]",
+      "      [SPAN] \"JA\" --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Accept Reklame- og Targetingcookies\"]",
+      "      [A] \"GEM INDSTILLINGER OG LUK\" --> selector: #pop-frame04172845058594701 >>> .submit",
+      "   Checkboxes found (0):",
+      "  Toggles found (3):",
+      "      \"NEJ",
+      "JA\" | aria-checked: null --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Analytiske / performance cookies choice\"]",
+      "      \"NEJ",
+      "JA\" | aria-checked: null --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Funktionalitets- og profilcookies choice\"]",
+      "      \"NEJ",
+      "JA\" | aria-checked: null --> selector: #pop-frame04172845058594701 >>> [aria-label=\"Reklame- og Targetingcookies choice\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.samsung.com/dk/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "TrustArc",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookiepolitik",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.samsung.com/dk/info/privacy/cookie-policy/",
+              "target": "_blank",
+              "id": "truste-cookie-button",
+              "style": "cursor:pointer; text-decoration: underline;",
+              "class": "truste-cookie-link"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "truste-custom-text-wrapper",
+              "selector": ".truste-custom-text-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-custom-samsung-wrap",
+                "selector": ".truste-custom-samsung-wrap"
+              }
+            },
+            "selector": "#truste-cookie-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privatlivspolitik",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.samsung.com/dk/info/privacy/",
+              "target": "_blank",
+              "id": "truste-privacy-button",
+              "style": "cursor:pointer; text-decoration: underline;",
+              "class": "truste-privacy-link"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "truste-custom-text-wrapper",
+              "selector": ".truste-custom-text-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-custom-samsung-wrap",
+                "selector": ".truste-custom-samsung-wrap"
+              }
+            },
+            "selector": "#truste-privacy-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accepter alle cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button",
+              "type": "button",
+              "class": "truste-button1"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "trustarc-buttons",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-consent-content",
+                "selector": ".truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kun nødvendige",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required",
+              "type": "button",
+              "class": "truste-button1"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "trustarc-buttons",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-consent-content",
+                "selector": ".truste-consent-content"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Konfigurer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-show-consent",
+              "type": "button",
+              "class": "truste-button2",
+              "aria-haspopup": "dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "trustarc-buttons",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "truste-consent-content",
+                "selector": ".truste-consent-content"
+              }
+            },
+            "selector": "#truste-show-consent",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://www.samsung.com/dk/",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"trustarc-banner truste-responsive ta-show ta-display-block\"> <div class=\"truste-consent-content\"> <div class=\"truste-custom-samsung-wrap\"> <div class=\"truste-custom-wrapper\"> <div class=\"truste-custom-img\"> </div> </div> <p class=\"truste-custom-text-wrapper\">Samsung Electronics og dets partnere bruger cookies og lignende teknologier (samlet \"teknologier\") til at gemme og få adgang til oplysninger på din enhed. Nogle af disse teknologier er teknisk vigtige for at give dig et sikkert, velfungerende og pålideligt websted. Vi vil også gerne placere valgfrie/ikke-essentielle teknologier for at give dig den bedste brugeroplevelse. Valgfrie teknologier gør det muligt at måle på besøgende på vores websted, at vise personlig annoncering på tredjepartswebsteder baseret på din profil, at spore din placering, at udføre målrettede marketingkampagner samt tilpasse indholdet af vores websted afhængigt af din brug. Gennem disse teknologier indsamler vi oplysninger såsom din interaktion med vores websted, dine præferencer og dine browservaner.</p> <p class=\"truste-custom-text-wrapper\">Hvis du gerne vil acceptere teknologier, der skal bruges til disse formål, skal du klikke på \"Accepter alle\" for at tilføje alle disse teknologier. Alternativt kan du klikke på \"Kun nødvendige\" for at afvise alle ikke-nødvendige teknologier. Du kan også foretage et valg efter kategori ved at klikke på \"Konfigurer\". Du kan til enhver tid trække dit samtykke tilbage og ændre dine valg ved at klikke på knappen \"Cookiepræferencer\", der er placeret nederst på vores websted. Yderligere oplysninger er også tilgængelige i vores&nbsp;<a href=\"https://www.samsung.com/dk/info/privacy/cookie-policy/\" target=\"_blank\" id=\"truste-cookie-button\" class=\"truste-cookie-link\"><strong>Cookiepolitik</strong></a>&nbsp;og vores&nbsp;<a href=\"https://www.samsung.com/dk/info/privacy/\" target=\"_blank\" id=\"truste-privacy-button\" class=\"truste-privacy-link\"><strong>Privatlivspolitik</strong></a>.</p></div> <div id=\"truste-consent-buttons\" class=\"trustarc-buttons\"> <button id=\"truste-consent-button\" type=\"button\" class=\"truste-button1\">Accepter alle cookies</button> <button id=\"truste-consent-required\" type=\"button\" class=\"truste-button1\">Kun nødvendige</button> <button id=\"truste-show-consent\" type=\"button\" class=\"truste-button2\" aria-haspopup=\"dialog\">Konfigurer</button> </div> </div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 2406,
+        "cmpType": "TrustArc"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "close",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "close",
+              "role": "button",
+              "class": "truste-close-button",
+              "tabindex": "0",
+              "id": "trustarc-internal-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "closebtn-id0.9162501373976589",
+              "className": "truste-close-button-container",
+              "selector": "#closebtn-id0.9162501373976589",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "pop-div309012078529665678",
+                "className": "truste_box_overlay_inner",
+                "selector": "#pop-div309012078529665678"
+              }
+            },
+            "selector": "#trustarc-internal-close-button",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookiepolitik",
+            "tag": "A",
+            "attributes": {
+              "id": "privacyPolicyAnchor",
+              "href": "https://www.samsung.com/dk/info/privacy/cookie-policy/",
+              "target": "_blank",
+              "aria-describedby": "audioeye_new_window_message"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookieMainHeader",
+                "className": "mainHeader consentHeader",
+                "selector": "#cookieMainHeader"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> #privacyPolicyAnchor",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SE COOKIES",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SE COOKIES",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NEJ",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Analytiske / performance cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML on active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Refuse Analytiske / performance cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "JA",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Analytiske / performance cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML off",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Accept Analytiske / performance cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SE COOKIES",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NEJ",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Funktionalitets- og profilcookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML on active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Refuse Funktionalitets- og profilcookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "JA",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Funktionalitets- og profilcookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML off",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Accept Funktionalitets- og profilcookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SE COOKIES",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "NEJ",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Reklame- og Targetingcookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML on active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Refuse Reklame- og Targetingcookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "JA",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Reklame- og Targetingcookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML off",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Accept Reklame- og Targetingcookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "GEM INDSTILLINGER OG LUK",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "submit",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> .submit",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "NEJ\nJA",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Analytiske / performance cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Analytiske / performance cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "NEJ\nJA",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Funktionalitets- og profilcookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Funktionalitets- og profilcookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "NEJ\nJA",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Reklame- og Targetingcookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame04172845058594701 >>> [aria-label=\"Reklame- og Targetingcookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://www.samsung.com/dk/",
+        "filteredHtml": "<div id=\"pop-div20564604842202569\" class=\"truste_box_overlay\"><div id=\"pop-div309012078529665678\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame04172845058594701\" tabindex=\"0\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-767=\"true\" data-breakpoint-max-width-780=\"true\"><div lang=\"da\"><div class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><h1 role=\"heading\" aria-level=\"2\"><span>Administrer dine cookies</span></h1> <p>Cookies er små tekstfiler placeret på din enhed, som vi bruger til at forbedre din oplevelse på vores websted og vise dig relevante reklamer. Vores partnere og de cookies, der er placeret på din enhed, er beskrevet nedenfor. Nedenfor kan du også administrere, hvilke cookies der er indstillet på din enhed. Du kan til enhver tid ændre dine præferencer ved at klikke på ikonet \"Cookiepræferencer\" nederst på vores websted. Dit valg vil blive gemt i 13 måneder. Du kan finde flere oplysninger i vores <a id=\"privacyPolicyAnchor\" href=\"https://www.samsung.com/dk/info/privacy/cookie-policy/\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\">Cookiepolitik</a>​.</p> <button id=\"accept_all_button\">Accepter alle</button><button id=\"decline_all_button\">Kun nødvendige</button></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Nødvendige cookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies er strengt nødvendige for levering af den tjeneste, som du udtrykkeligt har anmodet om eller har det ene formål at muliggøre eller lette elektronisk kommunikation. For eksempel giver de os mulighed for at huske de varer, du har lagt i din indkøbskurv. Disse cookies aktiveres automatisk og kan ikke deaktiveres, fordi de er afgørende for, at du kan browse på vores websted.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Analytiske / performance cookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies giver os mulighed for at forstå, hvordan du tilgår webstedet og dine browservaner (fx besøgte sider, tid brugt på en side, indhold du har klikket på). De giver os mulighed for at analysere vores websteds ydeevne og design samt opdage mulige fejl. Grundet disse performanceindikatorer kan vi løbende forbedre vores websted og vores produkter, indhold og tilbud.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Analytiske / performance cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Analytiske / performance cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Analytiske / performance cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Funktionalitets- og profilcookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies giver os mulighed for at tilbyde dig tilpasset indhold i henhold til din profil, dine interesser og din brug. For eksempel giver AB-testcookies os mulighed for at teste forskellige versioner af en side/tjeneste for statistisk at kunne identificere besøgendes præferencer. Ved at acceptere disse cookies hjælper du os med at forbedre layoutet og funktionerne på vores websted.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Funktionalitets- og profilcookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Funktionalitets- og profilcookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Funktionalitets- og profilcookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"-1\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Reklame- og Targetingcookies</h3></span><span class=\"gwt-InlineHTML\">Disse cookies indsamler oplysninger om dine browservaner. De husker, at du har besøgt vores websted og deler disse oplysninger med samarbejdspartnere, såsom annoncører, med henblik på målrettet annoncering. Brugen af disse cookies omfatter visning af reklamer, frekvensbegrænsning, forebyggelse af svindel, fakturering og måling.</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">Se cookies</a><div role=\"listbox\" aria-label=\"Reklame- og Targetingcookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Reklame- og Targetingcookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML on active\" translate=\"no\">Nej</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Reklame- og Targetingcookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML off \" translate=\"no\">Ja</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"submit\" translate=\"no\">Gem indstillinger og luk</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"declineAllButtonLower\" translate=\"no\">Kun nødvendige</a></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><a id=\"privacyPolicyAnchor\" href=\"#\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\">Privatlivspolitik</a></div><div class=\"right\" translate=\"no\">Drevet af: <a href=\"http://trustarc.com/\" target=\"_blank\" aria-describedby=\"audioeye_new_window_message\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.9162501373976589\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"0\" id=\"trustarc-internal-close-button\"></a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 7619,
+        "cmpType": "TrustArc",
+        "isIframe": false
+      }
+    }
+  ]
+}

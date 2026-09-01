@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T09:37:18.424258",
+  "url": "https://allegro.pl",
+  "structured_dom_chars": 9348,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: I checked the main frame and the only identified iframe, which contained a DataDome security challenge (\"You have been blocked\"). No cookie consent interface or CMP was detected in the provided DOM.",
+  "abort_reason": "NO_BANNER_DETECTED: I checked the main frame and the only identified iframe, which contained a DataDome security challenge (\"You have been blocked\"). No cookie consent interface or CMP was detected in the provided DOM.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "I checked the main frame and the only identified iframe, which contained a DataDome security challenge (\"You have been blocked\"). No cookie consent interface or CMP was detected in the provided DOM.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: I checked the main frame and the only identified iframe, which contained a DataDome security challenge (\"You have been blocked\"). No cookie consent interface or CMP was detected in the provided DOM."
+  ],
+  "duration_seconds": 88.1,
+  "extraction_duration_seconds": 75.96,
+  "extraction_share_percent": 86.22,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

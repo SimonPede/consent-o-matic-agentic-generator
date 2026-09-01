@@ -1,0 +1,154 @@
+{
+  "timestamp": "2026-08-28T00:10:31.660505",
+  "url": "https://www.test.de",
+  "structured_dom_chars": 145805,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 10,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"test.de\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#cmpwelcomebtncustom\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label*='Marketing']\"}}, \"falseAction\": {\"type: \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label*='Marketing']\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label*='Statistik']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[aria-label*='Statistik']\"}}}]}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"a.cmpboxbtnsave\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpwrapper\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 523 (char 522)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 523 (char 522)",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 891 (char 890)",
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 894 (char 893)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 894 (char 893)",
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 983 (char 982)",
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 904 (char 903)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\n`test.de`.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...ector': '#cmpwrapper'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 523 (char 522)"
+  ],
+  "duration_seconds": 1041.07,
+  "extraction_duration_seconds": 16.36,
+  "extraction_share_percent": 1.57,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "test.de": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmpwrapper"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#cmpwelcomebtncustom"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label*='Marketing']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label*='Marketing']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label*='Statistik']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#cmpwrapper"
+                  },
+                  "target": {
+                    "selector": "[aria-label*='Statistik']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "a.cmpboxbtnsave"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

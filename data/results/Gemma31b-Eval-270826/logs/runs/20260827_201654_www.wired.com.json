@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T20:16:54.225106",
+  "url": "https://www.wired.com",
+  "structured_dom_chars": 180926,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "PAY_OR_CONSENT_DEAD_END: The primary banner only provides \"I Accept\" and \"Your Privacy Choices\" buttons, with no direct \"Reject All\" option. Since the settings subpage was not extracted and no save/confirm button exists in the provided DOM, granular consent cannot be saved.",
+  "abort_reason": "PAY_OR_CONSENT_DEAD_END: The primary banner only provides \"I Accept\" and \"Your Privacy Choices\" buttons, with no direct \"Reject All\" option. Since the settings subpage was not extracted and no save/confirm button exists in the provided DOM, granular consent cannot be saved.",
+  "abort_code": "PAY_OR_CONSENT_DEAD_END",
+  "abort_explanation": "The primary banner only provides \"I Accept\" and \"Your Privacy Choices\" buttons, with no direct \"Reject All\" option. Since the settings subpage was not extracted and no save/confirm button exists in the provided DOM, granular consent cannot be saved.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "PAY_OR_CONSENT_DEAD_END: The primary banner only provides \"I Accept\" and \"Your Privacy Choices\" buttons, with no direct \"Reject All\" option. Since the settings subpage was not extracted and no save/confirm button exists in the provided DOM, granular consent cannot be saved."
+  ],
+  "duration_seconds": 446.55,
+  "extraction_duration_seconds": 196.48,
+  "extraction_share_percent": 44.0,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

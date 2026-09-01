@@ -1,0 +1,320 @@
+{
+  "timestamp": "2026-08-28T01:56:06.290476",
+  "url": "https://www.accuweather.com",
+  "structured_dom_chars": 344661,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Ketch\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#ketch-consent-banner, #ketch-purposes-modal\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#ketch-consent-banner, #ketch-purposes-modal\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#ketch-consent-banner, #ketch-modal\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#ketch-banner-button-tertiary\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#analytics\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#analytics\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_9\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_9\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_10\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_10\"}}}, {\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_1\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_1\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_5\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_5\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_6\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_6\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_8\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_8\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_11\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_11\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#targeted_advertising\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#targeted_advertising\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_2\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_2\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_3\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_3\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_4\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_4\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#tcf_purpose_7\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#tcf_purpose_7\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Confirm\\\"]\"}}]}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 665.82,
+  "extraction_duration_seconds": 16.41,
+  "extraction_share_percent": 2.46,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Ketch": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#ketch-consent-banner, #ketch-purposes-modal"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#ketch-consent-banner, #ketch-purposes-modal",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#ketch-consent-banner, #ketch-modal"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#ketch-banner-button-tertiary"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#analytics"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#analytics"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_9"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_9"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_10"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_10"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_1"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_1"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_5"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_5"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_6"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_6"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_8"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_8"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_11"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_11"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#targeted_advertising"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#targeted_advertising"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_2"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_2"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_3"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_3"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_4"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_4"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#tcf_purpose_7"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#tcf_purpose_7"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[aria-label=\"Confirm\"]"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

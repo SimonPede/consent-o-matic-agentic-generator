@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-08-28T09:48:45.139448",
+  "url": "https://www.bestbuy.ca",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.bestbuy.ca"
+  ],
+  "duration_seconds": 23.89,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Regex failed in frame https://www.bestbuy.ca/en-ca, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.bestbuy.ca/en-ca',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.bestbuy.ca/en-ca',",
+      "      filteredHtml: `<body> <h1>Access Denied</h1> You don't have permission to access \"http://www.bestbuy.ca/en-ca\" on this server.<p> Reference #18.7fac1702.1787903301.4473160 </p><p>https://errors.edgesuite.net/18.7fac1702.1787903301.4473160</p> </body>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 235",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.bestbuy.ca/en-ca",
+      "   isMainFrame: true | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (0):",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.bestbuy.ca/en-ca",
+      "isMainFrame": true,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.bestbuy.ca/en-ca",
+        "filteredHtml": "<body> <h1>Access Denied</h1> You don't have permission to access \"http://www.bestbuy.ca/en-ca\" on this server.<p> Reference #18.7fac1702.1787903301.4473160 </p><p>https://errors.edgesuite.net/18.7fac1702.1787903301.4473160</p> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 235
+      },
+      "settings": null
+    }
+  ]
+}

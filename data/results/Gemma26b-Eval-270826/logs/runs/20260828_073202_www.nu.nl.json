@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T07:32:02.763918",
+  "url": "https://www.nu.nl",
+  "structured_dom_chars": 8556,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "PAY_OR_CONSENT_DEAD_END: The first layer of the DPG Media/myPrivacy banner contains an 'Akkoord' (Accept) button and an 'Instellen' (Settings) button, but lacks an explicit 'Reject All' or 'Decline' button, and no settings page data was provided to configure granular choices.",
+  "abort_reason": "PAY_OR_CONSENT_DEAD_END: The first layer of the DPG Media/myPrivacy banner contains an 'Akkoord' (Accept) button and an 'Instellen' (Settings) button, but lacks an explicit 'Reject All' or 'Decline' button, and no settings page data was provided to configure granular choices.",
+  "abort_code": "PAY_OR_CONSENT_DEAD_END",
+  "abort_explanation": "The first layer of the DPG Media/myPrivacy banner contains an 'Akkoord' (Accept) button and an 'Instellen' (Settings) button, but lacks an explicit 'Reject All' or 'Decline' button, and no settings page data was provided to configure granular choices.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "PAY_OR_CONSENT_DEAD_END: The first layer of the DPG Media/myPrivacy banner contains an 'Akkoord' (Accept) button and an 'Instellen' (Settings) button, but lacks an explicit 'Reject All' or 'Decline' button, and no settings page data was provided to configure granular choices."
+  ],
+  "duration_seconds": 85.75,
+  "extraction_duration_seconds": 27.1,
+  "extraction_share_percent": 31.6,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

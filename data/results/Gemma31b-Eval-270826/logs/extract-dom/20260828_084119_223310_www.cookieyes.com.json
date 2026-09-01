@@ -1,0 +1,801 @@
+{
+  "timestamp": "2026-08-28T08:41:19.223376",
+  "url": "https://www.cookieyes.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.cookieyes.com/"
+  ],
+  "duration_seconds": 28.99,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.cookieyes.com/ with Score: 116",
+      "Regex failed in frame https://www.cookieyes.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"button[data-cky-tag='settings-button']\", text: \"Customise\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: button[data-cky-tag='settings-button'], textMatch: Customise",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 922421 chars.",
+      "DOM diff: 15 chars added, 4 inputs added.",
+      "Old state: 64 buttons, 3 inputs.",
+      "New state: 71 buttons, 7 inputs.",
+      "Settings detected: 15 chars, 4 inputs, 7 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 8 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.cookieyes.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"cky\"]',",
+      "      url: 'https://www.cookieyes.com/',",
+      "      filteredHtml: '<div class=\"cky-consent-container cky-banner-bottom\" role=\"region\" aria-label=\"We value your privacy\" tabindex=\"-1\"><div class=\"cky-consent-bar\" data-cky-tag=\"notice\"><div class=\"cky-notice\"><p class=\"cky-title\" data-cky-tag=\"title\" aria-level=\"2\" role=\"heading\">We value your privacy</p><div class=\"cky-notice-group\"><div class=\"cky-notice-des\" data-cky-tag=\"description\"><p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.&nbsp;<a href=\"https://www.cookieyes.com/cookie-policy/\" class=\"cky-policy\" aria-label=\"Cookie Policy\" target=\"_blank\" rel=\"noopener\" data-cky-tag=\"readmore-button\">Cookie Policy</a></p></div><div class=\"cky-notice-btn-wrapper\" data-cky-tag=\"notice-buttons\" role=\"group\"><button class=\"cky-btn cky-btn-customize\" aria-label=\"Customise\" aria-haspopup=\"dialog\" aria-c data-cky-tag=\"settings-button\">Customise</button> <button class=\"cky-btn cky-btn-reject\" aria-label=\"Reject All\" data-cky-tag=\"reject-button\">Reject All</button> <button class=\"cky-btn cky-btn-accept\" aria-label=\"Accept All\" data-cky-tag=\"accept-button\">Accept All</button> </div></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1218,",
+      "      cmpType: null",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"cky\"]',",
+      "      url: 'https://www.cookieyes.com/',",
+      "      filteredHtml: `<div class=\"cky-preference-center\" data-cky-tag=\"detail\" role=\"dialog\" aria-modal=\"true\" id=\"ckyPreferenceCenter\" aria-labelledby=\"ckyPreferenceTitle\"><div class=\"cky-preference-header\"><span class=\"cky-preference-title\" aria-level=\"2\" data-cky-tag=\"detail-title\" role=\"heading\" id=\"ckyPreferenceTitle\">Customise Consent Preferences</span> <button aria-label=\"Close\" class=\"cky-btn-close\" data-cky-tag=\"detail-close\"></button></div><div class=\"cky-preference-body-wrapper\"><div class=\"cky-preference-content-wrapper\" data-cky-tag=\"detail-description\"><p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p><p>The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ...&nbsp;<button class=\"cky-show-desc-btn\" data-cky-tag=\"show-desc-button\" aria-expanded=\"false\" aria-label=\"Show more\">Show more</button></p></div><div class=\"cky-horizontal-separator\"></div><div class=\"cky-accordion-wrapper\" data-cky-tag=\"detail-categories\"><div class=\"cky-accordion\" id=\"ckyDetailCategorynecessary\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Necessary\" data-cky-tag=\"detail-category-title\">Necessary</button><span class=\"cky-always-active\" data-cky-tag=\"always-active\">Always Active</span></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategorynecessaryBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_GRECAPTCHA</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div>Google Recaptcha service sets this cookie to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ajs_anonymous_id</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by Segment to count the number of people who visit a certain site by tracking if they have visited before.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ajs_user_id</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by Segment to help track visitor usage, events, target marketing, and also measure application performance and stability.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>m</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Stripe sets this cookie for fraud prevention purposes. It identifies the device used to access the website, allowing the website to be formatted accordingly.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes_privacy_policy_generator_session</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div><p>CookieYes sets this cookie to maintain the user session while using our Privacy Policy Generator.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>XSRF-TOKEN</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div>This cookie enhances visitor browsing security by preventing cross-site request forgery.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes_cookie_policy_generator_session</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div><p>CookieYes sets this cookie to maintain the user session while using our Cookie Policy Generator.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__cf_bm</div></li><li><div>Duration</div><div>1 hour</div></li><li><div>Description</div><div>This cookie, set by Cloudflare, is used to support Cloudflare Bot Management. </div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>referrer_user_id</div></li><li><div>Duration</div><div>14 days</div></li><li><div>Description</div><div>Calendly sets this cookie for the booking functionality of the website.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_calendly_session</div></li><li><div>Duration</div><div>21 days</div></li><li><div>Description</div><div>Calendly, a Meeting Schedulers, sets this cookie to allow the meeting scheduler to function within the website and to add events into the visitor’s calendar.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_cfuvid</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>Calendly sets this cookie to track users across sessions to optimize user experience by maintaining session consistency and providing personalized services</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::a</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::f</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::c</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::b</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__Secure-ENID</div></li><li><div>Duration</div><div>1 year 1 month</div></li><li><div>Description</div><div>The __Secure-ENID cookie is a type of secure cookie used for authentication and to ensure the security of user sessions.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>csrf_token</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div><p>This cookie is set by Reddit and is used to help prevent cross-site request forgery (CSRF) attacks. It ensures that requests made to Reddit’s servers come from authenticated users and not malicious sources.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>irclickid</div></li><li><div>Duration</div><div>1 month</div></li><li><div>Description</div><div><p>The Impact platform sets this cookie to securely store referral information essential for accurately processing and attributing user referrals made through affiliate links.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>tpclickid</div></li><li><div>Duration</div><div>2 months</div></li><li><div>Description</div><div><p>The Tapfiliate platform sets this cookie to securely store referral information essential for accurately processing and attributing user referrals made through affiliate links.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes-*</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>CookieYes sets this cookie for consent solution management.</div></li></ul></div></div></div><div class=\"cky-accordion\" id=\"ckyDetailCategoryfunctional\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Functional\" data-cky-tag=\"detail-category-title\">Functional</button><div class=\"cky-switch\" data-cky-tag=\"detail-category-toggle\"><input type=\"checkbox\" role=\"switch\" id=\"ckySwitchfunctional\" aria-label=\"Enable Functional\" autocomplete=\"off\"></div></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategoryfunctionalBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ytidb::LAST_RESULT_ENTRY_KEY</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>The cookie ytidb::LAST_RESULT_ENTRY_KEY is used by YouTube to store the last search result entry that was clicked by the user. This information is used to improve the user experience by providing more relevant search results in the future.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>intercom-id-*</div></li><li><div>Duration</div><div>8 months 26 days 1 hour</div></li><li><div>Description</div><div>Intercom sets this cookie that allows visitors to see any conversations they've had on Intercom websites.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>intercom-session-*</div></li><li><div>Duration</div><div>7 days</div></li><li><div>D`... 13212 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 23212,",
+      "      cmpType: null,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.cookieyes.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: unknown via selector \"[class^=\"cky\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"Cookie Policy\" --> selector: [aria-label=\"Cookie Policy\"]",
+      "      [BUTTON] \"Customise\" --> selector: [aria-label=\"Customise\"]",
+      "      [BUTTON] \"Reject All\" --> selector: [aria-label=\"Reject All\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (11):",
+      "      [BUTTON] \"Close\" --> selector: [aria-label=\"Close\"]",
+      "      [BUTTON] \"Show more\" --> selector: [aria-label=\"Show more\"]",
+      "      [BUTTON] \"Necessary\" --> selector: [aria-label=\"Necessary\"]",
+      "      [BUTTON] \"Functional\" --> selector: [aria-label=\"Functional\"]",
+      "      [BUTTON] \"Analytics\" --> selector: [aria-label=\"Analytics\"]",
+      "      [BUTTON] \"Performance\" --> selector: [aria-label=\"Performance\"]",
+      "      [BUTTON] \"Advertisement\" --> selector: [aria-label=\"Advertisement\"]",
+      "      [BUTTON] \"Reject All\" --> selector: [aria-label=\"Reject All\"]",
+      "      [BUTTON] \"Save My Preferences\" --> selector: [aria-label=\"Save My Preferences\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "      [A] \"Visit CookieYes website\" --> selector: [aria-label=\"Visit CookieYes website\"]",
+      "   Checkboxes found (4):",
+      "      \"Enable Functional\" | checked: false | disabled: false --> selector: #ckySwitchfunctional",
+      "      \"Enable Analytics\" | checked: false | disabled: false --> selector: #ckySwitchanalytics",
+      "      \"Enable Performance\" | checked: false | disabled: false --> selector: #ckySwitchperformance",
+      "      \"Enable Advertisement\" | checked: false | disabled: false --> selector: #ckySwitchadvertisement",
+      "  Toggles found (4):",
+      "      \"Enable Functional\" | aria-checked: false --> selector: #ckySwitchfunctional",
+      "      \"Enable Analytics\" | aria-checked: false --> selector: #ckySwitchanalytics",
+      "      \"Enable Performance\" | aria-checked: false --> selector: #ckySwitchperformance",
+      "      \"Enable Advertisement\" | aria-checked: false --> selector: #ckySwitchadvertisement",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.cookieyes.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookie Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.cookieyes.com/cookie-policy/",
+              "class": "cky-policy",
+              "aria-label": "Cookie Policy",
+              "target": "_blank",
+              "rel": "noopener",
+              "style": "color: #1863dc; border-color: transparent; background-color: transparent;",
+              "data-cky-tag": "readmore-button"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-notice-des",
+                "selector": ".cky-notice-des"
+              }
+            },
+            "selector": "[aria-label=\"Cookie Policy\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Customise",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-btn cky-btn-customize",
+              "aria-label": "Customise",
+              "aria-haspopup": "dialog",
+              "aria-controls": "ckyPreferenceCenter",
+              "data-cky-tag": "settings-button",
+              "style": "color: #1863dc; border-color: #1863dc; background-color: transparent;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-notice-btn-wrapper",
+              "selector": ".cky-notice-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-notice-group",
+                "selector": ".cky-notice-group"
+              }
+            },
+            "selector": "[aria-label=\"Customise\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject All",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-btn cky-btn-reject",
+              "aria-label": "Reject All",
+              "data-cky-tag": "reject-button",
+              "style": "color: #FFFFFF; border-color: #1863dc; background-color: #1863dc;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-notice-btn-wrapper",
+              "selector": ".cky-notice-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-notice-group",
+                "selector": ".cky-notice-group"
+              }
+            },
+            "selector": "[aria-label=\"Reject All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-btn cky-btn-accept",
+              "aria-label": "Accept All",
+              "data-cky-tag": "accept-button",
+              "style": "color: #FFFFFF; border-color: #1863dc; background-color: #1863dc;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-notice-btn-wrapper",
+              "selector": ".cky-notice-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-notice-group",
+                "selector": ".cky-notice-group"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"cky\"]",
+        "url": "https://www.cookieyes.com/",
+        "filteredHtml": "<div class=\"cky-consent-container cky-banner-bottom\" role=\"region\" aria-label=\"We value your privacy\" tabindex=\"-1\"><div class=\"cky-consent-bar\" data-cky-tag=\"notice\"><div class=\"cky-notice\"><p class=\"cky-title\" data-cky-tag=\"title\" aria-level=\"2\" role=\"heading\">We value your privacy</p><div class=\"cky-notice-group\"><div class=\"cky-notice-des\" data-cky-tag=\"description\"><p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.&nbsp;<a href=\"https://www.cookieyes.com/cookie-policy/\" class=\"cky-policy\" aria-label=\"Cookie Policy\" target=\"_blank\" rel=\"noopener\" data-cky-tag=\"readmore-button\">Cookie Policy</a></p></div><div class=\"cky-notice-btn-wrapper\" data-cky-tag=\"notice-buttons\" role=\"group\"><button class=\"cky-btn cky-btn-customize\" aria-label=\"Customise\" aria-haspopup=\"dialog\" aria-c data-cky-tag=\"settings-button\">Customise</button> <button class=\"cky-btn cky-btn-reject\" aria-label=\"Reject All\" data-cky-tag=\"reject-button\">Reject All</button> <button class=\"cky-btn cky-btn-accept\" aria-label=\"Accept All\" data-cky-tag=\"accept-button\">Accept All</button> </div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1218,
+        "cmpType": null
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Close",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Close",
+              "class": "cky-btn-close",
+              "data-cky-tag": "detail-close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-preference-header",
+              "selector": ".cky-preference-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ckyPreferenceCenter",
+                "className": "cky-preference-center",
+                "selector": "#ckyPreferenceCenter"
+              }
+            },
+            "selector": "[aria-label=\"Close\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Show more",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-show-desc-btn",
+              "data-cky-tag": "show-desc-button",
+              "aria-expanded": "false",
+              "aria-label": "Show more"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-preference-content-wrapper",
+                "selector": ".cky-preference-content-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Show more\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Necessary",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-accordion-btn",
+              "aria-expanded": "false",
+              "aria-controls": "ckyDetailCategorynecessaryBody",
+              "aria-label": "Necessary",
+              "data-cky-tag": "detail-category-title",
+              "style": "color: #212121;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-accordion-header",
+              "selector": ".cky-accordion-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header-wrapper",
+                "selector": ".cky-accordion-header-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Necessary\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Functional",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-accordion-btn",
+              "aria-expanded": "false",
+              "aria-controls": "ckyDetailCategoryfunctionalBody",
+              "aria-label": "Functional",
+              "data-cky-tag": "detail-category-title",
+              "style": "color: #212121;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-accordion-header",
+              "selector": ".cky-accordion-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header-wrapper",
+                "selector": ".cky-accordion-header-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Functional\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Analytics",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-accordion-btn",
+              "aria-expanded": "false",
+              "aria-controls": "ckyDetailCategoryanalyticsBody",
+              "aria-label": "Analytics",
+              "data-cky-tag": "detail-category-title",
+              "style": "color: #212121;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-accordion-header",
+              "selector": ".cky-accordion-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header-wrapper",
+                "selector": ".cky-accordion-header-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Analytics\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-accordion-btn",
+              "aria-expanded": "false",
+              "aria-controls": "ckyDetailCategoryperformanceBody",
+              "aria-label": "Performance",
+              "data-cky-tag": "detail-category-title",
+              "style": "color: #212121;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-accordion-header",
+              "selector": ".cky-accordion-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header-wrapper",
+                "selector": ".cky-accordion-header-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Performance\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Advertisement",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "cky-accordion-btn",
+              "aria-expanded": "false",
+              "aria-controls": "ckyDetailCategoryadvertisementBody",
+              "aria-label": "Advertisement",
+              "data-cky-tag": "detail-category-title",
+              "style": "color: #212121;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-accordion-header",
+              "selector": ".cky-accordion-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header-wrapper",
+                "selector": ".cky-accordion-header-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Advertisement\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject All",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Reject All",
+              "class": "cky-btn cky-btn-reject",
+              "data-cky-tag": "detail-reject-button",
+              "style": "color: #FFFFFF; border-color: #1863dc; background-color: #1863dc;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-prefrence-btn-wrapper",
+              "selector": ".cky-prefrence-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-footer-wrapper",
+                "selector": ".cky-footer-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Reject All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save My Preferences",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Save My Preferences",
+              "class": "cky-btn cky-btn-preferences",
+              "data-cky-tag": "detail-save-button",
+              "style": "color: #ffffff; border-color: #1863dc; background-color: #1863DC;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-prefrence-btn-wrapper",
+              "selector": ".cky-prefrence-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-footer-wrapper",
+                "selector": ".cky-footer-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Save My Preferences\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Accept All",
+              "class": "cky-btn cky-btn-accept",
+              "data-cky-tag": "detail-accept-button",
+              "style": "color: #ffffff; border-color: #1863dc; background-color: #1863dc;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-prefrence-btn-wrapper",
+              "selector": ".cky-prefrence-btn-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-footer-wrapper",
+                "selector": ".cky-footer-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Visit CookieYes website",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Visit CookieYes website",
+              "href": "https://www.cookieyes.com/product/cookie-consent/?ref=cypbcyb&utm_source=cookie-banner&utm_medium=powered-by-cookieyes",
+              "rel": "noopener",
+              "style": "margin-left:5px;line-height:0",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-footer-wrapper",
+                "selector": ".cky-footer-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Visit CookieYes website\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "Enable Functional",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchfunctional",
+              "aria-label": "Enable Functional",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchfunctional",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Enable Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchanalytics",
+              "aria-label": "Enable Analytics",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchanalytics",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Enable Performance",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchperformance",
+              "aria-label": "Enable Performance",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchperformance",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "Enable Advertisement",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchadvertisement",
+              "aria-label": "Enable Advertisement",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchadvertisement",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Enable Functional",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchfunctional",
+              "aria-label": "Enable Functional",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchfunctional",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Enable Analytics",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchanalytics",
+              "aria-label": "Enable Analytics",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchanalytics",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Enable Performance",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchperformance",
+              "aria-label": "Enable Performance",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchperformance",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Enable Advertisement",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "role": "switch",
+              "id": "ckySwitchadvertisement",
+              "aria-label": "Enable Advertisement",
+              "autocomplete": "off",
+              "style": "background-color: rgb(208, 213, 210);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cky-switch",
+              "selector": ".cky-switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cky-accordion-header",
+                "selector": ".cky-accordion-header"
+              }
+            },
+            "selector": "#ckySwitchadvertisement",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"cky\"]",
+        "url": "https://www.cookieyes.com/",
+        "filteredHtml": "<div class=\"cky-preference-center\" data-cky-tag=\"detail\" role=\"dialog\" aria-modal=\"true\" id=\"ckyPreferenceCenter\" aria-labelledby=\"ckyPreferenceTitle\"><div class=\"cky-preference-header\"><span class=\"cky-preference-title\" aria-level=\"2\" data-cky-tag=\"detail-title\" role=\"heading\" id=\"ckyPreferenceTitle\">Customise Consent Preferences</span> <button aria-label=\"Close\" class=\"cky-btn-close\" data-cky-tag=\"detail-close\"></button></div><div class=\"cky-preference-body-wrapper\"><div class=\"cky-preference-content-wrapper\" data-cky-tag=\"detail-description\"><p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p><p>The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ...&nbsp;<button class=\"cky-show-desc-btn\" data-cky-tag=\"show-desc-button\" aria-expanded=\"false\" aria-label=\"Show more\">Show more</button></p></div><div class=\"cky-horizontal-separator\"></div><div class=\"cky-accordion-wrapper\" data-cky-tag=\"detail-categories\"><div class=\"cky-accordion\" id=\"ckyDetailCategorynecessary\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Necessary\" data-cky-tag=\"detail-category-title\">Necessary</button><span class=\"cky-always-active\" data-cky-tag=\"always-active\">Always Active</span></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategorynecessaryBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_GRECAPTCHA</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div>Google Recaptcha service sets this cookie to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ajs_anonymous_id</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by Segment to count the number of people who visit a certain site by tracking if they have visited before.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ajs_user_id</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by Segment to help track visitor usage, events, target marketing, and also measure application performance and stability.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>m</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Stripe sets this cookie for fraud prevention purposes. It identifies the device used to access the website, allowing the website to be formatted accordingly.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes_privacy_policy_generator_session</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div><p>CookieYes sets this cookie to maintain the user session while using our Privacy Policy Generator.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>XSRF-TOKEN</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div>This cookie enhances visitor browsing security by preventing cross-site request forgery.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes_cookie_policy_generator_session</div></li><li><div>Duration</div><div>2 hours</div></li><li><div>Description</div><div><p>CookieYes sets this cookie to maintain the user session while using our Cookie Policy Generator.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__cf_bm</div></li><li><div>Duration</div><div>1 hour</div></li><li><div>Description</div><div>This cookie, set by Cloudflare, is used to support Cloudflare Bot Management. </div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>referrer_user_id</div></li><li><div>Duration</div><div>14 days</div></li><li><div>Description</div><div>Calendly sets this cookie for the booking functionality of the website.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_calendly_session</div></li><li><div>Duration</div><div>21 days</div></li><li><div>Description</div><div>Calendly, a Meeting Schedulers, sets this cookie to allow the meeting scheduler to function within the website and to add events into the visitor’s calendar.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_cfuvid</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>Calendly sets this cookie to track users across sessions to optimize user experience by maintaining session consistency and providing personalized services</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::a</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::f</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::c</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>rc::b</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Google recaptcha service to identify bots to protect the website against malicious spam attacks.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__Secure-ENID</div></li><li><div>Duration</div><div>1 year 1 month</div></li><li><div>Description</div><div>The __Secure-ENID cookie is a type of secure cookie used for authentication and to ensure the security of user sessions.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>csrf_token</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div><p>This cookie is set by Reddit and is used to help prevent cross-site request forgery (CSRF) attacks. It ensures that requests made to Reddit’s servers come from authenticated users and not malicious sources.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>irclickid</div></li><li><div>Duration</div><div>1 month</div></li><li><div>Description</div><div><p>The Impact platform sets this cookie to securely store referral information essential for accurately processing and attributing user referrals made through affiliate links.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>tpclickid</div></li><li><div>Duration</div><div>2 months</div></li><li><div>Description</div><div><p>The Tapfiliate platform sets this cookie to securely store referral information essential for accurately processing and attributing user referrals made through affiliate links.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cookieyes-*</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>CookieYes sets this cookie for consent solution management.</div></li></ul></div></div></div><div class=\"cky-accordion\" id=\"ckyDetailCategoryfunctional\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Functional\" data-cky-tag=\"detail-category-title\">Functional</button><div class=\"cky-switch\" data-cky-tag=\"detail-category-toggle\"><input type=\"checkbox\" role=\"switch\" id=\"ckySwitchfunctional\" aria-label=\"Enable Functional\" autocomplete=\"off\"></div></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategoryfunctionalBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ytidb::LAST_RESULT_ENTRY_KEY</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>The cookie ytidb::LAST_RESULT_ENTRY_KEY is used by YouTube to store the last search result entry that was clicked by the user. This information is used to improve the user experience by providing more relevant search results in the future.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>intercom-id-*</div></li><li><div>Duration</div><div>8 months 26 days 1 hour</div></li><li><div>Description</div><div>Intercom sets this cookie that allows visitors to see any conversations they've had on Intercom websites.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>intercom-session-*</div></li><li><div>Duration</div><div>7 days</div></li><li><div>Description</div><div>Intercom sets this cookie that allows visitors to see any conversations they've had on Intercom websites.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>intercom-device-id-*</div></li><li><div>Duration</div><div>8 months 26 days 1 hour</div></li><li><div>Description</div><div>Intercom sets this cookie that allows visitors to see any conversations they've had on Intercom websites.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__Secure-ROLLOUT_TOKEN</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div><p>YouTube sets this cookie to manage the phased rollout of new features and updates.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>loid</div></li><li><div>Duration</div><div>2 years</div></li><li><div>Description</div><div>This cookie is set by the Reddit. The cookie enables the sharing of content from the website onto the social media platform.</div></li></ul></div></div></div><div class=\"cky-accordion\" id=\"ckyDetailCategoryanalytics\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Analytics\" data-cky-tag=\"detail-category-title\">Analytics</button><div class=\"cky-switch\" data-cky-tag=\"detail-category-toggle\"><input type=\"checkbox\" role=\"switch\" id=\"ckySwitchanalytics\" aria-label=\"Enable Analytics\" autocomplete=\"off\"></div></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategoryanalyticsBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_ga</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Google Analytics sets this cookie to calculate visitor, session and campaign data and track site usage for the site's analytics report. The cookie stores information anonymously and assigns a randomly generated number to recognise unique visitors.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_hjTLDTest</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>To determine the most generic cookie path that has to be used instead of the page hostname, Hotjar sets the _hjTLDTest cookie to store different URL substring alternatives until it fails.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_gcl_au</div></li><li><div>Duration</div><div>3 months</div></li><li><div>Description</div><div>Google Tag Manager sets the cookie to experiment advertisement efficiency of websites using their services.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_clck</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>Microsoft Clarity sets this cookie to retain the browser's Clarity User ID and settings exclusive to that website. This guarantees that actions taken during subsequent visits to the same website will be linked to the same user ID.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_clsk</div></li><li><div>Duration</div><div>1 day</div></li><li><div>Description</div><div>Microsoft Clarity sets this cookie to store and consolidate a user's pageviews into a single session recording.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>MR</div></li><li><div>Duration</div><div>7 days</div></li><li><div>Description</div><div>This cookie, set by Bing, is used to collect user information for analytics purposes.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_ga_*</div></li><li><div>Duration</div><div>1 year 1 month 4 days</div></li><li><div>Description</div><div>Google Analytics sets this cookie to store and count page views.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_hjSessionUser_*</div></li><li><div>Duration</div><div>1 year</div></li><li><div>Description</div><div>Hotjar sets this cookie to ensure data from subsequent visits to the same site is attributed to the same user ID, which persists in the Hotjar User ID, which is unique to that site.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_hjSession_*</div></li><li><div>Duration</div><div>1 hour</div></li><li><div>Description</div><div>Hotjar sets this cookie to ensure data from subsequent visits to the same site is attributed to the same user ID, which persists in the Hotjar User ID, which is unique to that site.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_cltk</div></li><li><div>Duration</div><div>Session</div></li><li><div>Description</div><div><p>Microsoft Clarity sets this cookie to store information about how visitors interact with the website.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_hjAbsoluteSessionInProgress</div></li><li><div>Duration</div><div>1 day</div></li><li><div>Description</div><div>Hotjar sets this cookie to detect a user's first pageview session, which is a True/False flag set by the cookie.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>VISITOR_PRIVACY_METADATA</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div>YouTube sets this cookie to store the user's cookie consent state for the current domain. </div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>mp_*_mixpanel</div></li><li><div>Duration</div><div>Never Expires</div></li><li><div>Description</div><div>Mixpanel sets this cookie to determine how users use the website so that a good user experience can be provided. </div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>cky_flowId</div></li><li><div>Duration</div><div>Login session</div></li><li><div>Description</div><div><p>CookieYes sets this cookie for analytics purposes, helping us understand user interactions with the website.</p></div></li></ul></div></div></div><div class=\"cky-accordion\" id=\"ckyDetailCategoryperformance\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Performance\" data-cky-tag=\"detail-category-title\">Performance</button><div class=\"cky-switch\" data-cky-tag=\"detail-category-toggle\"><input type=\"checkbox\" role=\"switch\" id=\"ckySwitchperformance\" aria-label=\"Enable Performance\" autocomplete=\"off\"></div></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategoryperformanceBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>SRM_B</div></li><li><div>Duration</div><div>1 year 24 days</div></li><li><div>Description</div><div>Used by Microsoft Advertising as a unique ID for visitors.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_uetsid</div></li><li><div>Duration</div><div>1 day</div></li><li><div>Description</div><div>Bing Ads sets this cookie to engage with a user that has previously visited the website.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>_uetvid</div></li><li><div>Duration</div><div>1 year 24 days</div></li><li><div>Description</div><div>Bing Ads sets this cookie to engage with a user that has previously visited the website.</div></li></ul></div></div></div><div class=\"cky-accordion\" id=\"ckyDetailCategoryadvertisement\"><div class=\"cky-accordion-item\"><div class=\"cky-accordion-chevron\"><i class=\"cky-chevron-right\"></i></div><div class=\"cky-accordion-header-wrapper\"><div class=\"cky-accordion-header\"><button class=\"cky-accordion-btn\" aria-expanded=\"false\" aria-c aria-label=\"Advertisement\" data-cky-tag=\"detail-category-title\">Advertisement</button><div class=\"cky-switch\" data-cky-tag=\"detail-category-toggle\"><input type=\"checkbox\" role=\"switch\" id=\"ckySwitchadvertisement\" aria-label=\"Enable Advertisement\" autocomplete=\"off\"></div></div><div class=\"cky-accordion-header-des\" data-cky-tag=\"detail-category-description\"><p>Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.</p></div></div></div><div class=\"cky-accordion-body\" id=\"ckyDetailCategoryadvertisementBody\"><div class=\"cky-audit-table\" data-cky-tag=\"audit-table\"><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>YSC</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>Youtube sets this cookie to track the views of embedded videos on Youtube pages.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>VISITOR_INFO1_LIVE</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div>YouTube sets this cookie to measure bandwidth, determining whether the user gets the new or old player interface.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>test_cookie</div></li><li><div>Duration</div><div>15 minutes</div></li><li><div>Description</div><div>doubleclick.net sets this cookie to determine if the user's browser supports cookies.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>SM</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>Microsoft Clarity cookie set this cookie for synchronizing the MUID across Microsoft domains.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>MUID</div></li><li><div>Duration</div><div>1 year 24 days</div></li><li><div>Description</div><div>Bing sets this cookie to recognise unique web browsers visiting Microsoft sites. This cookie is used for advertising, site analytics, and other operations.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>ANONCHK</div></li><li><div>Duration</div><div>10 minutes</div></li><li><div>Description</div><div>The ANONCHK cookie, set by Bing, is used to store a user's session ID and verify ads' clicks on the Bing search engine. The cookie helps in reporting and personalization as well.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>IDE</div></li><li><div>Duration</div><div>1 year 24 days</div></li><li><div>Description</div><div>Google DoubleClick IDE cookies store information about how the user uses the website to present them with relevant ads according to the user profile.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>token_v2</div></li><li><div>Duration</div><div>1 day</div></li><li><div>Description</div><div><p>Reddit sets this cookie to track the usage of its services and support personalised ads.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>session_tracker</div></li><li><div>Duration</div><div>session</div></li><li><div>Description</div><div>This cookie is set by the Reddit. This cookie is used to identify trusted web traffic. It also helps in adverstising on the website.</div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__Secure-YEC</div></li><li><div>Duration</div><div>past</div></li><li><div>Description</div><div><p>YouTube sets this cookie to store the user’s video player preferences and help prevent fraudulent activity.</p></div></li></ul><ul class=\"cky-cookie-des-table\"><li><div>Cookie</div><div>__Secure-YNID</div></li><li><div>Duration</div><div>6 months</div></li><li><div>Description</div><div><p>Google sets this cookie to support personalised advertising and measure ad performance.</p></div></li></ul></div></div></div></div></div><div class=\"cky-footer-wrapper\"><span class=\"cky-footer-shadow\"></span><div class=\"cky-prefrence-btn-wrapper\" data-cky-tag=\"detail-buttons\" role=\"group\"><button aria-label=\"Reject All\" class=\"cky-btn cky-btn-reject\" data-cky-tag=\"detail-reject-button\">Reject All</button> <button aria-label=\"Save My Preferences\" class=\"cky-btn cky-btn-preferences\" data-cky-tag=\"detail-save-button\">Save My Preferences</button> <button aria-label=\"Accept All\" class=\"cky-btn cky-btn-accept\" data-cky-tag=\"detail-accept-button\">Accept All</button></div><div data-cky-tag=\"detail-powered-by\">Powered by <a aria-label=\"Visit CookieYes website\" href=\"https://www.cookieyes.com/product/cookie-consent/?ref=cypbcyb&amp;utm_source=cookie-banner&amp;utm_medium=powered-by-cookieyes\" rel=\"noopener\" target=\"_blank\"></a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 23212,
+        "cmpType": null,
+        "isIframe": false
+      }
+    }
+  ]
+}

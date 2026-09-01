@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-08-28T04:05:48.910609",
+  "url": "https://www.srf.ch",
+  "structured_dom_chars": 98435,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Usercentrics",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Usercentrics\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#more\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle[aria-checked='false']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-functional-toggle[aria-checked='false']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-functional-toggle\"}}}, {\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle[aria-checked='false']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle[aria-\\uff1f\\u201daria-checked='false']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#save\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #more | Selector Failed: ACTION_TARGET_NOT_FOUND: #save"
+  ],
+  "duration_seconds": 333.67,
+  "extraction_duration_seconds": 7.13,
+  "extraction_share_percent": 2.14,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": null
+    }
+  },
+  "final_rule": {
+    "Usercentrics": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#more"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle[aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#uc-category-customcand-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#uc-category-functional-toggle[aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#uc-category-functional-toggle"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle[aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle[aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#save"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

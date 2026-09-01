@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-08-27T21:51:38.006057",
+  "url": "https://www.aliexpress.com",
+  "structured_dom_chars": 317755,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 13,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"aliexpress\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Personalize cookies\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Personalize cookies\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Personalize cookies\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Personalize cookies\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Accept cookies\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Reject cookies\"}}}]}}]}}",
+  "last_error": "Invalid JSON in rule tags: Invalid control character at: line 28 column 31 (char 826)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine..."
+  ],
+  "duration_seconds": 1043.28,
+  "extraction_duration_seconds": 17.47,
+  "extraction_share_percent": 1.67,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "aliexpress": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "button",
+              "textFilter": "Personalize cookies"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "button",
+              "textFilter": "Personalize cookies"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "button",
+              "textFilter": "Personalize cookies"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Personalize cookies"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Accept cookies"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Reject cookies"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

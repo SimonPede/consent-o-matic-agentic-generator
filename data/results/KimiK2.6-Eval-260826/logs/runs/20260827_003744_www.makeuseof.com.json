@@ -1,0 +1,134 @@
+{
+  "timestamp": "2026-08-27T00:37:44.124612",
+  "url": "https://www.makeuseof.com",
+  "structured_dom_chars": 223047,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 6,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"consentmanager_makeuseof\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"#cmpbox\"}}], \"showingMatcher\": [{\"type\": \"css\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"#cmpbox\"}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \".cmpboxbtn.cmpboxbtncustom.cmptxt_btn_settings\"}}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"waitcss\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[role='button']\", \"textFilter\": \"Reject all\"}, \"retries\": 12, \"waitTime\": 250}, {\"type\": \"click\", \"parent\": {\"selector\": \"#cmpwrapper\"}, \"target\": {\"selector\": \"[role='button']\", \"textFilter\": \"Reject all\"}}, {\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"ifcss\", \"target\": {\"selector\": \"#cmpwrapper\"}, \"trueAction\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpwrapper\"}}, \"falseAction\": {\"type\": \"wait\", \"waitTime\": 0}}]}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [role='button']",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtn.cmpboxbtnsave.cmptxt_btn_save",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnno",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [role='button']"
+  ],
+  "duration_seconds": 930.37,
+  "extraction_duration_seconds": 14.35,
+  "extraction_share_percent": 1.54,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "consentmanager": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#cmpwrapper"
+              },
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "parent": {
+                "selector": "#cmpwrapper"
+              },
+              "target": {
+                "selector": "#cmpbox"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#cmpwrapper"
+            },
+            "target": {
+              "selector": ".cmpboxbtn.cmpboxbtncustom.cmptxt_btn_settings"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "waitcss",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": "[role='button']",
+                  "textFilter": "Reject all"
+                },
+                "retries": 12,
+                "waitTime": 250
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "#cmpwrapper"
+                },
+                "target": {
+                  "selector": "[role='button']",
+                  "textFilter": "Reject all"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

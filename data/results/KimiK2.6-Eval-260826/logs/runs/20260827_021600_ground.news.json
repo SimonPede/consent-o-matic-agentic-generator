@@ -1,0 +1,182 @@
+{
+  "timestamp": "2026-08-27T02:16:00.551886",
+  "url": "https://ground.news",
+  "structured_dom_chars": 41306,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Osano",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Osano\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".osano-cm-window\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \".osano-cm-dialog, .osano-cm-info-dialog\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".osano-cm-window\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"ifcss\", \"target\": {\"selector\": \".osano-cm-info-dialog.osano-cm-info-dialog--hidden\"}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \".osano-cm-link--type_manage\"}}, \"falseAction\": {\"type\": \"wait\", \"waitTime\": 100}}, {\"type\": \"wait\", \"waitTime\": 500}]}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_PERSONALIZATION\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_PERSONALIZATION\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_ANALYTICS\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_ANALYTICS\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_MARKETING\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_MARKETING\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".osano-cm-view__button\"}}} ]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 232.39,
+  "extraction_duration_seconds": 17.06,
+  "extraction_share_percent": 7.34,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Osano": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".osano-cm-window"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".osano-cm-dialog, .osano-cm-info-dialog",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".osano-cm-window"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "ifcss",
+                "target": {
+                  "selector": ".osano-cm-info-dialog.osano-cm-info-dialog--hidden"
+                },
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": ".osano-cm-link--type_manage"
+                  }
+                },
+                "falseAction": {
+                  "type": "wait",
+                  "waitTime": 100
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".osano-cm-view__button"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1093 @@
+{
+  "timestamp": "2026-08-28T04:53:18.471050",
+  "url": "https://www.stern.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.stern.de"
+  ],
+  "duration_seconds": 7.67,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 4 frames.",
+      "a frame was picked by score: https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1 with Score: 64",
+      "Settings match: \"EINSTELLUNGEN\" --> lowered: \"einstellungen\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Einstellungen\"], textMatch: EINSTELLUNGEN",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://baseendpoint.stern.de/privacy-manager/index.html?message_id=1434438&hasCsp=true&mms_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fmms%2Fv2&site_id=243&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 53 for URL: https://baseendpoint.stern.de/privacy-manager/index.html?message_id=1434438&hasCsp=true&mms_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fmms%2Fv2&site_id=243&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1",
+      "Best new frame selected for settings extraction: https://baseendpoint.stern.de/privacy-manager/index.html?message_id=1434438&hasCsp=true&mms_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fmms%2Fv2&site_id=243&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "      filteredHtml: '<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row main-wrapper\"><div class=\"message-component message-column\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children header custom-font first-focusable-el\">Willkommen auf STERN.de</h1><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Die Sicherheit ihrer Daten ist uns wichtig! Um unsere Webseite kostendeckend betreiben zu können, verarbeiten wir und unsere 196 <a data-choice=\"1715678098588\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-1 focusable\" aria-label=\"Partner\" tabindex=\"0\">Partner</a> personenbezogene Daten von Ihnen, um die angezeigten Werbeinhalte zu personalisieren. Diese Personalisierung basiert u.a. auf individuellen Nutzungsprofilen, die von unseren Partnern erstellt und mit Daten von anderen Websites, die Sie besuchen und bei denen Sie eine entsprechende Zustimmung gegeben haben, angereichert werden. Wir und unsere Partner nutzen auch Technologien wie Cookies oder persönliche Identifikationsmerkmale wie Gerätekennungen oder IP-Adressen, um die Reichweite unserer Inhalte zu analysieren und um das Benutzererlebnis zu verbessern. Damit stellen wir sicher, dass STERN.de auch weiterhin Journalismus zu relevanten gesellschaftlichen Themen liefern kann.</p><p></p><p><br></p><p>Ihre Einwilligung umfasst:</p><ul><li>Informationen auf einem Gerät speichern und/oder abrufen (gem. § 25 Abs. 1 TTDSG)</li><li>Personalisierte Anzeigen und Inhalte, Anzeigen- und Inhaltsmessungen, Erkenntnisse über Zielgruppen und Produktentwicklungen ausspielen</li><li>die eigene Produkt- und Vertriebsentwicklung durch Analyse von Nutzungsverhalten und die angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement</li></ul><p>Alternativ zur Einwilligung in das geschilderte Werbetracking können Sie ein kostenpflichtiges PUR-Abo abschließen und auf diese Weise zu redaktionell unabhängigem Journalismus beitragen.</p><p></p><div class=\"message-component message-row options-group\"><div class=\"message-component message-column options-group-first\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Mit Werbung lesen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Durch das Klicken des Buttons „Zustimmen und weiter“ stimmen Sie der Verarbeitung der auf Ihrem Gerät bzw. Ihrer Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit. a DSGVO zu.</p><button title=\"Zustimmen und weiter\" aria-label=\"Zustimmen und weiter\" class=\"message-component message-button no-children focusable button-confirm custom-font sp_choice_type_11\">Zustimmen und weiter</button></div><div class=\"message-component message-column options-group-second\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Ohne Werbung lesen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Mit diesem Abonnement nutzen Sie STERN.de ohne Banner- und Videowerbung sowie ohne Werbe-Tracking. STERN PLUS-Inhalte erfordern ein separates Abonnement.</p><p></p><p><br></p><p>Sie sind bereits PUR-Abonnent? <span aria-label=\"message-link\" target=\"_blank\" href=\"true\"><a data-choice=\"1733751389048\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-2-1-1 focusable\" aria-label=\"Hier anmelden\" tabindex=\"0\">Hier anmelden</a></span></p><p></p><button title=\"Zum PUR-Abo\" aria-label=\"Zum PUR-Abo\" class=\"message-component message-button no-children focusable button-subscribe custom-font sp_choice_type_9\">Zum PUR-Abo</button></div></div><div class=\"message-component message-row settings-group\"><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable button-settings custom-font sp_choice_type_12\">Einstellungen</button><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Unter <a data-choice=\"1714386979026\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-3-1 focusable\" aria-label=\"Einstellungen\" tabindex=\"0\">Einstellungen</a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"> können Sie einzelnen Datenverarbeitungen zustimmen oder diese ablehnen. Über den Link \"Datenschutz-Einstellungen\" am Ende jeder Seite können Sie Ihre Einwilligung insgesamt oder hinsichtlich einzelner Zwecke jederzeit bearbeiten oder widerrufen. Weiterführende Details finden Sie in unseren </span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/datenschutz\" class=\"text-link-0-0-0-3-1 focusable\" aria-label=\"&lt;span href=&quot;true&quot; target=&quot;_blank&quot; aria-label=&quot;message-link&quot;&gt;Datenschutzhinweisen&lt;/span&gt;\" tabindex=\"0\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Datenschutzhinweisen</span></a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">.</span></p></div><div class=\"message-component message-row footer\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"><a data-choice=\"1733751339327\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-4-0 focusable\" aria-label=\"Anmelden\" tabindex=\"0\">Anmelden</a></span></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/impressum\" class=\"text-link-0-0-0-4-1 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/agb\" class=\"text-link-0-0-0-4-2 focusable\" aria-label=\"AGB\" tabindex=\"0\">AGB</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/datenschutz\" class=\"text-link-0-0-0-4-3 focusable\" aria-label=\"&lt;span href=&quot;true&quot; target=&quot;_blank&quot; aria-label=&quot;message-link&quot;&gt;Datenschutz&lt;/span&gt;\" tabindex=\"0\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Datenschutz</span></a></p></div></div></div><div class=\"message-component message-row buttons-on-mobile\"><button title=\"Zustimmen und weiter\" aria-label=\"Zustimmen und weiter\" class=\"message-component message-button no-children focusable button-confirm custom-font sp_choice_type_11\">Zustimmen und weiter</button><button title=\"Zum PUR-Abo\" aria-label=\"Zum PUR-Abo\" class=\"message-component message-button no-children focusable button-subscribe custom-font sp_choice_type_9\">Zum PUR-Abo</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable button-settings custom-font sp_choice_type_12 last-focusable-el\">Einstellungen</button></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 7150,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://baseendpoint.stern.de/privacy-manager/index.html?message_id=1434438&hasCsp=true&mms_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fmms%2Fv2&site_id=243&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container global-font\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row headline\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font first-focusable-el\">Ihre persönlichen Daten</p></div><div class=\"message-component message-row intro\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><strong>Welche Daten wir verwenden</strong></p><p></p><p><br></p><p>Falls Sie sich nicht für unser&nbsp;Werbefrei-lesen-Abo entscheiden, speichern und verarbeiten wir und unsere Partner mit Ihrer Zustimmung Cookies und andere Technologien auf Ihrem Gerät und verarbeiten diese zu den unten angegebenen Zwecken, insbesondere der Finanzierung unseres Angebotes durch personalisierte Werbung. Funktionale Zwecke werden auch ohne Ihr Einverständnis auf Grundlage unserer und Ihrer berechtigten Interessen verfolgt.&nbsp;</p><p>Details, insbesondere zu Partnern („Anbieter“), der jeweils verwendeten Cookies (und andere Storage Elemente) und verfolgten Verarbeitungszwecken, finden Sie nachfolgend. Weitere Informationen, insbesondere zu stattfindenden Datenverarbeitungen, berechtigten Interessen und die jederzeitige Widerrufsmöglichkeit Ihres Einverständnisses, stellen wir Ihnen außerdem in unserer Datenschutzerklärung zur Verfügung.</p><p></p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children custom-tcfv2-inline\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"662779476b5999067b9e025a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung mit seitenübergreifender Profilbildung und Re-Targeting</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b46a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse und Nutzeransprache</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b47f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement </h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b48c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Eigene personalisierte redaktionelle Inhaltsempfehlungen</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b495\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Anzeigen von Fremdinhalten (Soziale Netzwerke, Videos)<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"662779476b5999067b9e054b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstreckung von Einwilligungen auf Geräte, Apps &amp; Inhalte ohne grafische Benutzerschnittstelle.<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"668e654d4daac705822f3b32\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Generierung einer User-ID auf Basis Ihrer E-Mail Adresse<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"679b819db84e4d05989902a6\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Wir arbeiten ebenfalls mit einigen Anbietern auf Basis von berechtigtem Interesse, ohne ihre Zustimmung.</div><div tabindex=\"0\" class=\"page-action\">Einstellungen anpassen</div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen wir zusammenarbeiten.</div><div tabindex=\"0\" class=\"page-action\">Alle Technologieanbieter</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Required For Consent\">R</span><h2 class=\"custom-header\">Required For Consent</h2></div></div></div><div class=\"message-component message-row row-sticky\"><button title=\"ZURÜCK\" aria-label=\"ZURÜCK\" class=\"message-component message-button no-children focusable button-back sp_choice_type_CANCEL\">ZURÜCK</button><button title=\"ALLEN ZUSTIMMEN\" aria-label=\"ALLEN ZUSTIMMEN\" class=\"message-component message-button no-children focusable choice sp_choice_type_ACCEPT_ALL\">ALLEN ZUSTIMMEN</button><button title=\"AUSGEWÄHLTEN ZUSTIMMEN\" aria-label=\"AUSGEWÄHLTEN ZUSTIMMEN\" class=\"message-component message-button no-children focusable choice sp_choice_type_SAVE_AND_EXIT last-focusable-el\" aria-disabled=\"true\" disabled=\"\">AUSGEWÄHLTEN ZUSTIMMEN</button></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 8097,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (11):",
+      "      [A] \"Partner\" --> selector: [aria-label=\"Partner\"]",
+      "      [BUTTON] \"ZUSTIMMEN UND WEITER\" --> selector: [aria-label=\"Zustimmen und weiter\"]",
+      "      [A] \"Hier anmelden\" --> selector: [aria-label=\"Hier anmelden\"]",
+      "      [BUTTON] \"ZUM PUR-ABO\" --> selector: [aria-label=\"Zum PUR-Abo\"]",
+      "      [BUTTON] \"EINSTELLUNGEN\" --> selector: [aria-label=\"Einstellungen\"]",
+      "      [A] \"Einstellungen\" --> selector: [aria-label=\"Einstellungen\"]",
+      "      [A] \"Datenschutzhinweisen\" --> selector: [aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutzhinweisen</span>\"]",
+      "      [A] \"ANMELDEN\" --> selector: [aria-label=\"Anmelden\"]",
+      "      [A] \"IMPRESSUM\" --> selector: [aria-label=\"Impressum\"]",
+      "      [A] \"AGB\" --> selector: [aria-label=\"AGB\"]",
+      "      [A] \"DATENSCHUTZ\" --> selector: [aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (23):",
+      "      [H2] \"Personalisierte Werbung mit seitenübergreifender Profilbildung und Re-Targeting\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [H2] \"Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse und Nutzeransprache\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [H2] \"Angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [H2] \"Eigene personalisierte redaktionelle Inhaltsempfehlungen\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [BUTTON] \"ABLEHNEN\" --> selector: button",
+      "      [H2] \"Anzeigen von Fremdinhalten (Soziale Netzwerke, Videos)\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [BUTTON] \"ABLEHNEN\" --> selector: button",
+      "      [H2] \"Erstreckung von Einwilligungen auf Geräte, Apps & Inhalte ohne grafische Benutzerschnittstelle.\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [BUTTON] \"ABLEHNEN\" --> selector: button",
+      "      [H2] \"Generierung einer User-ID auf Basis Ihrer E-Mail Adresse\" --> selector: h2",
+      "      [BUTTON] \"ZUSTIMMEN\" --> selector: button",
+      "      [BUTTON] \"ABLEHNEN\" --> selector: button",
+      "      [H2] \"Funktionale Verwendungszwecke\" --> selector: h2",
+      "      [H2] \"Zusatzfunktionen\" --> selector: h2",
+      "      [BUTTON] \"ZURÜCK\" --> selector: [aria-label=\"ZURÜCK\"]",
+      "      [BUTTON] \"ALLEN ZUSTIMMEN\" --> selector: [aria-label=\"ALLEN ZUSTIMMEN\"]",
+      "      [BUTTON] \"AUSGEWÄHLTEN ZUSTIMMEN\" --> selector: [aria-label=\"AUSGEWÄHLTEN ZUSTIMMEN\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Partner",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1715678098588",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#444444;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-1 focusable",
+              "aria-label": "Partner",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Partner\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN UND WEITER",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zustimmen und weiter",
+              "aria-label": "Zustimmen und weiter",
+              "class": "message-component message-button no-children focusable button-confirm custom-font sp_choice_type_11",
+              "style": "opacity: 1; padding: 8px 28px 8px 32px; margin: 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 18px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(204, 0, 0); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column options-group-first",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row options-group",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zustimmen und weiter\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Hier anmelden",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1733751389048",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#111111;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-0-2-1-1 focusable",
+              "aria-label": "Hier anmelden",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Hier anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUM PUR-ABO",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zum PUR-Abo",
+              "aria-label": "Zum PUR-Abo",
+              "class": "message-component message-button no-children focusable button-subscribe custom-font sp_choice_type_9",
+              "style": "opacity: 1; padding: 8px 28px 8px 32px; margin: 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 20px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(17, 17, 17); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column options-group-second",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row options-group",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zum PUR-Abo\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "EINSTELLUNGEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Einstellungen",
+              "aria-label": "Einstellungen",
+              "class": "message-component message-button no-children focusable button-settings custom-font sp_choice_type_12",
+              "style": "opacity: 1; padding: 7px 28px 7px 32px; margin: 0px 16px; border-width: 1px; border-color: rgb(212, 212, 212); border-radius: 18px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif; background: rgb(255, 255, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row settings-group",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Einstellungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einstellungen",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1714386979026",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#111111;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-0-3-1 focusable",
+              "aria-label": "Einstellungen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row settings-group",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Einstellungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzhinweisen",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.stern.de/datenschutz",
+              "style": "color:#111111;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-0-3-1 focusable",
+              "aria-label": "<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutzhinweisen</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row settings-group",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutzhinweisen</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ANMELDEN",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1733751339327",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#111111;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-4-0 focusable",
+              "aria-label": "Anmelden",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children custom-font",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "IMPRESSUM",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.stern.de/impressum",
+              "style": "color:#111111;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-4-1 focusable",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "AGB",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.stern.de/agb",
+              "style": "color:#111111;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-4-2 focusable",
+              "aria-label": "AGB",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"AGB\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DATENSCHUTZ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.stern.de/datenschutz",
+              "style": "color:#111111;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-0-4-3 focusable",
+              "aria-label": "<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children custom-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<span href=\"true\" target=\"_blank\" aria-label=\"message-link\">Datenschutz</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://baseendpoint.stern.de/index.html?hasCsp=true&message_id=1507622&consentUUID=null&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+        "filteredHtml": "<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row main-wrapper\"><div class=\"message-component message-column\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children header custom-font first-focusable-el\">Willkommen auf STERN.de</h1><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Die Sicherheit ihrer Daten ist uns wichtig! Um unsere Webseite kostendeckend betreiben zu können, verarbeiten wir und unsere 196 <a data-choice=\"1715678098588\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-1 focusable\" aria-label=\"Partner\" tabindex=\"0\">Partner</a> personenbezogene Daten von Ihnen, um die angezeigten Werbeinhalte zu personalisieren. Diese Personalisierung basiert u.a. auf individuellen Nutzungsprofilen, die von unseren Partnern erstellt und mit Daten von anderen Websites, die Sie besuchen und bei denen Sie eine entsprechende Zustimmung gegeben haben, angereichert werden. Wir und unsere Partner nutzen auch Technologien wie Cookies oder persönliche Identifikationsmerkmale wie Gerätekennungen oder IP-Adressen, um die Reichweite unserer Inhalte zu analysieren und um das Benutzererlebnis zu verbessern. Damit stellen wir sicher, dass STERN.de auch weiterhin Journalismus zu relevanten gesellschaftlichen Themen liefern kann.</p><p></p><p><br></p><p>Ihre Einwilligung umfasst:</p><ul><li>Informationen auf einem Gerät speichern und/oder abrufen (gem. § 25 Abs. 1 TTDSG)</li><li>Personalisierte Anzeigen und Inhalte, Anzeigen- und Inhaltsmessungen, Erkenntnisse über Zielgruppen und Produktentwicklungen ausspielen</li><li>die eigene Produkt- und Vertriebsentwicklung durch Analyse von Nutzungsverhalten und die angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement</li></ul><p>Alternativ zur Einwilligung in das geschilderte Werbetracking können Sie ein kostenpflichtiges PUR-Abo abschließen und auf diese Weise zu redaktionell unabhängigem Journalismus beitragen.</p><p></p><div class=\"message-component message-row options-group\"><div class=\"message-component message-column options-group-first\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Mit Werbung lesen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Durch das Klicken des Buttons „Zustimmen und weiter“ stimmen Sie der Verarbeitung der auf Ihrem Gerät bzw. Ihrer Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TTDSG sowie Art. 6 Abs. 1 lit. a DSGVO zu.</p><button title=\"Zustimmen und weiter\" aria-label=\"Zustimmen und weiter\" class=\"message-component message-button no-children focusable button-confirm custom-font sp_choice_type_11\">Zustimmen und weiter</button></div><div class=\"message-component message-column options-group-second\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Ohne Werbung lesen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Mit diesem Abonnement nutzen Sie STERN.de ohne Banner- und Videowerbung sowie ohne Werbe-Tracking. STERN PLUS-Inhalte erfordern ein separates Abonnement.</p><p></p><p><br></p><p>Sie sind bereits PUR-Abonnent? <span aria-label=\"message-link\" target=\"_blank\" href=\"true\"><a data-choice=\"1733751389048\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-2-1-1 focusable\" aria-label=\"Hier anmelden\" tabindex=\"0\">Hier anmelden</a></span></p><p></p><button title=\"Zum PUR-Abo\" aria-label=\"Zum PUR-Abo\" class=\"message-component message-button no-children focusable button-subscribe custom-font sp_choice_type_9\">Zum PUR-Abo</button></div></div><div class=\"message-component message-row settings-group\"><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable button-settings custom-font sp_choice_type_12\">Einstellungen</button><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\">Unter <a data-choice=\"1714386979026\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-3-1 focusable\" aria-label=\"Einstellungen\" tabindex=\"0\">Einstellungen</a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"> können Sie einzelnen Datenverarbeitungen zustimmen oder diese ablehnen. Über den Link \"Datenschutz-Einstellungen\" am Ende jeder Seite können Sie Ihre Einwilligung insgesamt oder hinsichtlich einzelner Zwecke jederzeit bearbeiten oder widerrufen. Weiterführende Details finden Sie in unseren </span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/datenschutz\" class=\"text-link-0-0-0-3-1 focusable\" aria-label=\"&lt;span href=&quot;true&quot; target=&quot;_blank&quot; aria-label=&quot;message-link&quot;&gt;Datenschutzhinweisen&lt;/span&gt;\" tabindex=\"0\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Datenschutzhinweisen</span></a><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">.</span></p></div><div class=\"message-component message-row footer\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\"><a data-choice=\"1733751339327\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-4-0 focusable\" aria-label=\"Anmelden\" tabindex=\"0\">Anmelden</a></span></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/impressum\" class=\"text-link-0-0-0-4-1 focusable\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/agb\" class=\"text-link-0-0-0-4-2 focusable\" aria-label=\"AGB\" tabindex=\"0\">AGB</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.stern.de/datenschutz\" class=\"text-link-0-0-0-4-3 focusable\" aria-label=\"&lt;span href=&quot;true&quot; target=&quot;_blank&quot; aria-label=&quot;message-link&quot;&gt;Datenschutz&lt;/span&gt;\" tabindex=\"0\"><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Datenschutz</span></a></p></div></div></div><div class=\"message-component message-row buttons-on-mobile\"><button title=\"Zustimmen und weiter\" aria-label=\"Zustimmen und weiter\" class=\"message-component message-button no-children focusable button-confirm custom-font sp_choice_type_11\">Zustimmen und weiter</button><button title=\"Zum PUR-Abo\" aria-label=\"Zum PUR-Abo\" class=\"message-component message-button no-children focusable button-subscribe custom-font sp_choice_type_9\">Zum PUR-Abo</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable button-settings custom-font sp_choice_type_12 last-focusable-el\">Einstellungen</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 7150,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Werbung mit seitenübergreifender Profilbildung und Re-Targeting",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6628d71ea2c0dd057770b46a",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse und Nutzeransprache",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6628d71ea2c0dd057770b47f",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6628d71ea2c0dd057770b48c",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene personalisierte redaktionelle Inhaltsempfehlungen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6628d71ea2c0dd057770b495",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ABLEHNEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Anzeigen von Fremdinhalten (Soziale Netzwerke, Videos)",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "662779476b5999067b9e054b",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ABLEHNEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erstreckung von Einwilligungen auf Geräte, Apps & Inhalte ohne grafische Benutzerschnittstelle.",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "668e654d4daac705822f3b32",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ABLEHNEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Generierung einer User-ID auf Basis Ihrer E-Mail Adresse",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "679b819db84e4d05989902a6",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ABLEHNEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(161, 160, 160); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Funktionale Verwendungszwecke",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Funktionale Verwendungszwecke",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zusatzfunktionen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Zusatzfunktionen",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 400; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ZURÜCK",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "ZURÜCK",
+              "aria-label": "ZURÜCK",
+              "class": "message-component message-button no-children focusable button-back sp_choice_type_CANCEL",
+              "style": "opacity: 1; padding: 7px 31px 7px 27px; margin: 0px; border-width: 1px; border-color: rgb(212, 212, 212); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(17, 17, 17); font-family: arial, helvetica, sans-serif; width: calc(27% - 58px); background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row row-sticky",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"ZURÜCK\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ALLEN ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "ALLEN ZUSTIMMEN",
+              "aria-label": "ALLEN ZUSTIMMEN",
+              "class": "message-component message-button no-children focusable choice sp_choice_type_ACCEPT_ALL",
+              "style": "opacity: 1; padding: 8px 32px; margin: 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(40% - 64px); background: rgb(0, 124, 68);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row row-sticky",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"ALLEN ZUSTIMMEN\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "AUSGEWÄHLTEN ZUSTIMMEN",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "AUSGEWÄHLTEN ZUSTIMMEN",
+              "aria-label": "AUSGEWÄHLTEN ZUSTIMMEN",
+              "class": "message-component message-button no-children focusable choice sp_choice_type_SAVE_AND_EXIT last-focusable-el",
+              "aria-disabled": "true",
+              "disabled": "",
+              "style": "opacity: 0.5; padding: 8px 32px; margin: 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(48% - 64px); background: rgb(40, 40, 40);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row row-sticky",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"AUSGEWÄHLTEN ZUSTIMMEN\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://baseendpoint.stern.de/privacy-manager/index.html?message_id=1434438&hasCsp=true&mms_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fmms%2Fv2&site_id=243&consent_origin=https%3A%2F%2Fbaseendpoint.stern.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container global-font\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row headline\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font first-focusable-el\">Ihre persönlichen Daten</p></div><div class=\"message-component message-row intro\"><p tabindex=\"0\" class=\"focusable message-component text no-children custom-font\"><strong>Welche Daten wir verwenden</strong></p><p></p><p><br></p><p>Falls Sie sich nicht für unser&nbsp;Werbefrei-lesen-Abo entscheiden, speichern und verarbeiten wir und unsere Partner mit Ihrer Zustimmung Cookies und andere Technologien auf Ihrem Gerät und verarbeiten diese zu den unten angegebenen Zwecken, insbesondere der Finanzierung unseres Angebotes durch personalisierte Werbung. Funktionale Zwecke werden auch ohne Ihr Einverständnis auf Grundlage unserer und Ihrer berechtigten Interessen verfolgt.&nbsp;</p><p>Details, insbesondere zu Partnern („Anbieter“), der jeweils verwendeten Cookies (und andere Storage Elemente) und verfolgten Verarbeitungszwecken, finden Sie nachfolgend. Weitere Informationen, insbesondere zu stattfindenden Datenverarbeitungen, berechtigten Interessen und die jederzeitige Widerrufsmöglichkeit Ihres Einverständnisses, stellen wir Ihnen außerdem in unserer Datenschutzerklärung zur Verfügung.</p><p></p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children custom-tcfv2-inline\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"662779476b5999067b9e025a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung mit seitenübergreifender Profilbildung und Re-Targeting</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b46a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Eigene Produkt- und Vertriebsentwicklung durch Datenanalyse und Nutzeransprache</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b47f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Angebotsübergreifende Verarbeitung von Daten durch Bertelsmann-Unternehmen für Analyse, Produktentwicklung, Messung, Werbung und Risikomanagement </h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b48c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Eigene personalisierte redaktionelle Inhaltsempfehlungen</h3></div></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"6628d71ea2c0dd057770b495\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Anzeigen von Fremdinhalten (Soziale Netzwerke, Videos)<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"662779476b5999067b9e054b\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Erstreckung von Einwilligungen auf Geräte, Apps &amp; Inhalte ohne grafische Benutzerschnittstelle.<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"668e654d4daac705822f3b32\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Generierung einer User-ID auf Basis Ihrer E-Mail Adresse<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>ZUSTIMMEN</button><button>ABLEHNEN</button></div></div><div id=\"679b819db84e4d05989902a6\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Wir arbeiten ebenfalls mit einigen Anbietern auf Basis von berechtigtem Interesse, ohne ihre Zustimmung.</div><div tabindex=\"0\" class=\"page-action\">Einstellungen anpassen</div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen wir zusammenarbeiten.</div><div tabindex=\"0\" class=\"page-action\">Alle Technologieanbieter</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Required For Consent\">R</span><h2 class=\"custom-header\">Required For Consent</h2></div></div></div><div class=\"message-component message-row row-sticky\"><button title=\"ZURÜCK\" aria-label=\"ZURÜCK\" class=\"message-component message-button no-children focusable button-back sp_choice_type_CANCEL\">ZURÜCK</button><button title=\"ALLEN ZUSTIMMEN\" aria-label=\"ALLEN ZUSTIMMEN\" class=\"message-component message-button no-children focusable choice sp_choice_type_ACCEPT_ALL\">ALLEN ZUSTIMMEN</button><button title=\"AUSGEWÄHLTEN ZUSTIMMEN\" aria-label=\"AUSGEWÄHLTEN ZUSTIMMEN\" class=\"message-component message-button no-children focusable choice sp_choice_type_SAVE_AND_EXIT last-focusable-el\" aria-disabled=\"true\" disabled=\"\">AUSGEWÄHLTEN ZUSTIMMEN</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 8097,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

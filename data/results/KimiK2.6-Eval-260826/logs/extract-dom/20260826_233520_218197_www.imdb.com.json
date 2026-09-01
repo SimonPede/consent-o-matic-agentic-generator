@@ -1,0 +1,611 @@
+{
+  "timestamp": "2026-08-26T23:35:20.218267",
+  "url": "https://www.imdb.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.imdb.com"
+  ],
+  "duration_seconds": 14.1,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[data-testid='consent-banner']\" (Anthropic_Custom) in frame: https://www.imdb.com/",
+      "waitForCmpUi detected CMP Type: Anthropic_Custom",
+      "I found 4 frames.",
+      "a frame was picked by score: https://www.imdb.com/ with Score: 70",
+      "Settings match: \"Customize\" --> lowered: \"customize\"",
+      "Settings Match dismissed due to it being a real navigation element!",
+      "Regex failed in frame https://www.imdb.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"[data-testid=\"details\"]\", text: \"Customize\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [data-testid=\"details\"], textMatch: Customize",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://www.amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 79 for URL: https://www.amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc",
+      "Best new frame selected for settings extraction: https://www.amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.imdb.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Anthropic_Custom',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: \"[data-testid='consent-banner']\",",
+      "      url: 'https://www.imdb.com/',",
+      "      filteredHtml: '<div data-testid=\"consent-banner\" class=\"sc-jSFipO jkeblC sc-gKAaef kDrfrQ\"><div class=\"sc-kEqXeH dcSthb\"><div class=\"sc-eCAqax eDWlCV icb-html\">Select Your Preferences <br><br>If you agree, we may use your personal information from the IMDb service (such as your past browsing history on IMDb) to personalize the ads we show you on other services. We will also personalize the ads we show you on IMDb using cookies and personal information, including personal information we may receive from third parties.<br><br>We use cookies and similar necessary tools to enhance your experiences and to provide our services, as detailed in our <a class=\"ipc-md-link\" target=\"_blank\" rel=\"nofollow noopener\" href=\"https://www.amazon.de/gp/help/customer/display.html?nodeId=GVASXV5UZ64R4Y25&amp;language=en_GB&amp;&amp;ref_=cb_text_link\">Cookie Notice</a>. Your choice applies to using first-party and third-party advertising cookies on this service. Cookies store or access standard device information such as a unique identifier. The 103 third parties who use cookies on Amazon services display and measure personalized ads, generate audience insights, and develop and improve products. Click “Decline” to decline, or “Customize” to make more detailed advertising choices, or learn more. You can change your choices at any time by visiting <a class=\"ipc-md-link\" href=\"https://www.imdb.com/privacy/redirect/?ref_=cb_text_link\">cookies and advertising choices</a>. To learn more about how and for what purposes Amazon uses personal information (such as Store order history or Prime Video Watch history) and cookies, please visit our <a class=\"ipc-md-link\" href=\"https://www.imdb.com/privacy?ref_=cb_text_link\">Privacy Notice</a> and Cookie Notice.</div><div class=\"sc-jrsKJM csrMhK\"><div class=\"sc-pNWRh eqpbWD\"><button class=\"icb-btn sc-bdnyFh sc-hKFymg sc-fujznN kTxEXP kgKczh fhqUfK\" data-testid=\"reject-button\">Decline</button><button class=\"icb-btn sc-bdnyFh sc-dlniIP sc-iCoHzw kTxEXP jqScCk kQxsXA\" data-testid=\"accept-button\">Accept</button></div><a class=\"icb-btn sc-bdnyFh sc-gtsqUy kTxEXP fFlyGn\" href=\"https://amazon.de/privacyprefs/imdb?oCT=ads&amp;disableNav=true&amp;locale=en_US&amp;cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc\" data-testid=\"details\">Customize</a></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 3193,",
+      "      cmpType: 'Anthropic_Custom'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: 'Anthropic_Custom',",
+      "      cmpSelector: null,",
+      "      url: 'https://www.amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc',",
+      "      filteredHtml: `<body class=\"a-m-de a-aui_72554-c a-aui_template_weblab_cache_333406-c a-meter-animate\"><div id=\"a-page\"> <form method=\"post\" action=\"\" id=\"cmp-dma-form\"><input type=\"hidden\" name=\"anti-csrftoken-a2z\" value=\"hMP+kAVuRJjcokFuODlJcHk/hMMeycdc+IUM+Ij1XGj1AAAAAGqPXBQ1Y2M5ZGM3Yy03OWIwLTQ5MjQtYmY0NS0yOGUwMGUxN2M0ZGI=\"> <div class=\"a-container container\"> <div class=\"a-section\"> <div class=\"a-row a-spacing-extra-large a-spacing-top-medium a-ws-row\"> <div class=\"a-column a-span12 a-ws-span3\"></div> <div class=\"a-column a-span12 a-ws-span6\"> <div class=\"a-row a-spacing-medium\"> <div class=\"a-column a-span12\"> <h1 id=\"cmp-dma-heading\" class=\"a-size-base-plus a-spacing-micro\"> <span>Cookies and advertising choices</span> </h1> </div> </div> <div class=\"a-row\"> <p class=\"a-size-base a-color-secondary\"> We use cookies and similar tools (collectively, ‘cookies’) for the purposes described below. Approved third parties also use cookies for limited ads-related purposes described below. We will apply your cookie preferences across IMDb services if you are signed in. If you aren't signed in, we may need to ask you for your preferences again. </p> <p class=\"a-size-base a-color-secondary\"> </p> <p class=\"a-size-base a-color-secondary\"> We also personalize the ads we show you using your personal information as described below. To learn more about how IMDb provides interest-based ads, go to the Amazon <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050\">Interest-based ads</a> notice. </p> </div> <div class=\"a-row a-spacing-top-base\"> <div class=\"a-column a-span12\"> <fieldset role=\"group\" aria-labelledby=\"cmp-dma-heading\"> <span class=\"a-declarative\" data-action=\"dmaCmpAcceptAll\" data-dmacmpacceptall=\"{}\"> <span class=\"a-button a-spacing-top-mini a-button-primary\" id=\"a-autoid-0\"><span class=\"a-button-inner\"><input name=\"accept\" class=\"a-button-input\" type=\"submit\" value=\"all\" aria-labelledby=\"a-autoid-0-announce\"><span class=\"a-button-text\" aria-hidden=\"true\" id=\"a-autoid-0-announce\"> Accept all </span></span></span> </span> <span class=\"a-declarative\" data-action=\"dmaCmpDeclineOrSave\" data-dmacmpdeclineorsave=\"{}\"> <span id=\"rejectOrSave\" class=\"a-button a-spacing-top-mini a-button-base\"><span class=\"a-button-inner\"><input name=\"rejectOrSave\" class=\"a-button-input\" type=\"submit\" value=\"Decline all\" aria-labelledby=\"rejectOrSave-announce\"><span id=\"rejectOrSave-announce\" class=\"a-button-text\" aria-hidden=\"true\"> Decline all </span></span></span> </span> </fieldset> </div> </div> <div class=\"a-section a-spacing-top-large\"> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <h2 class=\"a-size-base\"> Operational cookies </h2> </div> </div> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary\"> Operational cookies can't be deactivated to the extent we use them to provide you our services. </p> </div> </div> <div class=\"a-row a-spacing-medium\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <div class=\"a-row a-expander-container a-expander-inline-container\"> <a aria-expanded=\"false\" role=\"button\" href=\"javascript:void(0)\" data-action=\"a-expander-toggle\" class=\"a-expander-header a-declarative a-expander-inline-header a-link-expander\" data-a-expander-toggle=\"{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}\"><i class=\"a-icon a-icon-expand\"></i><span class=\"a-expander-prompt\"> <span class=\"a-size-base\"> Learn more </span> </span></a> <div data-expanded=\"false\" class=\"a-expander-content a-expander-inline-content a-expander-inner\"> <p class=\"a-size-base a-color-secondary\"> We use cookies to provide our services, for example:</p><ul><li>Recognising you when you sign-in to use our services.</li><li>Displaying features, products, and services which might be of interest to you.</li><li>Preventing fraudulent activity.</li><li>Improving security.</li><li>Keeping track of your preferences such as language.</li></ul> <p></p> <p class=\"a-size-base a-color-secondary\"> We also use cookies to understand how customers use our services so we can make improvements. For example, we use cookies to conduct research and diagnostics to improve IMDb’s content, products, and services, and to measure and understand the performance of our services. </p> </div> </div> </div> </div> <div data-a-expander-name=\"advertising-cookies-expander\" class=\"a-row a-expander-container a-expander-inline-container\"> <div class=\"a-row a-spacing-medium a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10\"> <a id=\"ADVERTISING-expander-heading\" aria-expanded=\"false\" role=\"button\" href=\"javascript:void(0)\" data-action=\"a-expander-toggle\" class=\"a-expander-header a-declarative a-expander-inline-header no-text-decoration a-link-expander\" data-a-expander-toggle=\"{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}\"><i class=\"a-icon a-icon-expand\"></i><span class=\"a-expander-prompt\"> <h2 class=\"a-size-base a-color-base\"> Advertising cookies </h2> </span></a> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"ADVERTISING-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"ADVERTISING-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"ADVERTISING-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"ADVERTISING-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"ADVERTISING\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary ml-16px\"> These cookies allow us to serve you ads, including ads relevant to your interests on IMDb, Amazon, or on third-party sites and to work with approved third parties in the process of delivering content, to measure the effectiveness of their ads, and to perform services on behalf of IMDb. </p> <p class=\"a-size-base a-color-secondary ml-16px\"> To learn more about how IMDb provides interest-based ads, go to the Amazon <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050\">Interest-based ads</a> notice. To change your interest-based ad preferences, go to the Amazon <a href=\"/-/en/adprefs\">Advertising Preferences</a> page. </p> </div> </div> <div id=\"ADVERTISING-expander-content\" data-expanded=\"false\" class=\"a-expander-content a-expander-inline-content a-expander-inner\"> <div class=\"a-row a-spacing-large a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <h3 class=\"a-size-base a-color-base\"> Amazon Advertising </h3> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"amazon-ads-systems-switch-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"amazon-ads-systems-switch-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"amazon-ads-systems-switch-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"amazon-ads-systems-switch-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"amazon-ads-systems-switch\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-extra-large a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <h3 class=\"a-size-base a-color-base\"> Approved Advertising Third Parties </h3> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"third-parties-switch-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"third-parties-switch-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"third-parties-switch-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"third-parties-switch-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"third-parties-switch\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-base a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <span class=\"a-declarative\" data-action=\"customize-third-parties\" data-customize-third-parties=\"{}\"> <a class=\"a-link-normal\" h`... 5309 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 15309,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.imdb.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Anthropic_Custom via selector \"[data-testid='consent-banner']\"",
+      "  Buttons found (6):",
+      "      [A] \"Cookie Notice\" --> selector: .ipc-md-link",
+      "      [A] \"cookies and advertising choices\" --> selector: .ipc-md-link",
+      "      [A] \"Privacy Notice\" --> selector: .ipc-md-link",
+      "      [BUTTON] \"Decline\" --> selector: .icb-btn",
+      "      [BUTTON] \"Accept\" --> selector: .icb-btn",
+      "      [A] \"Customize\" --> selector: .icb-btn",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (11):",
+      "      [A] \"Interest-based ads\" --> selector: a",
+      "      [A] \"Learn more\" --> selector: .a-expander-header",
+      "      [A] \"Advertising cookies\" --> selector: #ADVERTISING-expander-heading",
+      "      [BUTTON] \"On\" --> selector: #ADVERTISING-on-announce",
+      "      [BUTTON] \"Off\" --> selector: #ADVERTISING-off-announce",
+      "      [A] \"Interest-based ads\" --> selector: a",
+      "      [A] \"Advertising Preferences\" --> selector: a",
+      "      [BUTTON] \"On\" --> selector: #data-ads-imdb-on-announce",
+      "      [BUTTON] \"Off\" --> selector: #data-ads-imdb-off-announce",
+      "      [BUTTON] \"On\" --> selector: #data-ads-3p-on-announce",
+      "      [BUTTON] \"Off\" --> selector: #data-ads-3p-off-announce",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.imdb.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Anthropic_Custom",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cookie Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "ipc-md-link",
+              "target": "_blank",
+              "rel": "nofollow noopener",
+              "href": "https://www.amazon.de/gp/help/customer/display.html?nodeId=GVASXV5UZ64R4Y25&language=en_GB&&ref_=cb_text_link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-eCAqax eDWlCV icb-html",
+              "selector": ".sc-eCAqax",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-kEqXeH dcSthb",
+                "selector": ".sc-kEqXeH"
+              }
+            },
+            "selector": ".ipc-md-link",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "cookies and advertising choices",
+            "tag": "A",
+            "attributes": {
+              "class": "ipc-md-link",
+              "href": "https://www.imdb.com/privacy/redirect/?ref_=cb_text_link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-eCAqax eDWlCV icb-html",
+              "selector": ".sc-eCAqax",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-kEqXeH dcSthb",
+                "selector": ".sc-kEqXeH"
+              }
+            },
+            "selector": ".ipc-md-link",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "ipc-md-link",
+              "href": "https://www.imdb.com/privacy?ref_=cb_text_link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-eCAqax eDWlCV icb-html",
+              "selector": ".sc-eCAqax",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-kEqXeH dcSthb",
+                "selector": ".sc-kEqXeH"
+              }
+            },
+            "selector": ".ipc-md-link",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "icb-btn sc-bdnyFh sc-hKFymg sc-fujznN kTxEXP kgKczh fhqUfK",
+              "data-testid": "reject-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-pNWRh eqpbWD",
+              "selector": ".sc-pNWRh",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-jrsKJM csrMhK",
+                "selector": ".sc-jrsKJM"
+              }
+            },
+            "selector": ".icb-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "icb-btn sc-bdnyFh sc-dlniIP sc-iCoHzw kTxEXP jqScCk kQxsXA",
+              "data-testid": "accept-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-pNWRh eqpbWD",
+              "selector": ".sc-pNWRh",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-jrsKJM csrMhK",
+                "selector": ".sc-jrsKJM"
+              }
+            },
+            "selector": ".icb-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Customize",
+            "tag": "A",
+            "attributes": {
+              "class": "icb-btn sc-bdnyFh sc-gtsqUy kTxEXP fFlyGn",
+              "href": "https://amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc",
+              "data-testid": "details"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "sc-jrsKJM csrMhK",
+              "selector": ".sc-jrsKJM",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "sc-kEqXeH dcSthb",
+                "selector": ".sc-kEqXeH"
+              }
+            },
+            "selector": ".icb-btn",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[data-testid='consent-banner']",
+        "url": "https://www.imdb.com/",
+        "filteredHtml": "<div data-testid=\"consent-banner\" class=\"sc-jSFipO jkeblC sc-gKAaef kDrfrQ\"><div class=\"sc-kEqXeH dcSthb\"><div class=\"sc-eCAqax eDWlCV icb-html\">Select Your Preferences <br><br>If you agree, we may use your personal information from the IMDb service (such as your past browsing history on IMDb) to personalize the ads we show you on other services. We will also personalize the ads we show you on IMDb using cookies and personal information, including personal information we may receive from third parties.<br><br>We use cookies and similar necessary tools to enhance your experiences and to provide our services, as detailed in our <a class=\"ipc-md-link\" target=\"_blank\" rel=\"nofollow noopener\" href=\"https://www.amazon.de/gp/help/customer/display.html?nodeId=GVASXV5UZ64R4Y25&amp;language=en_GB&amp;&amp;ref_=cb_text_link\">Cookie Notice</a>. Your choice applies to using first-party and third-party advertising cookies on this service. Cookies store or access standard device information such as a unique identifier. The 103 third parties who use cookies on Amazon services display and measure personalized ads, generate audience insights, and develop and improve products. Click “Decline” to decline, or “Customize” to make more detailed advertising choices, or learn more. You can change your choices at any time by visiting <a class=\"ipc-md-link\" href=\"https://www.imdb.com/privacy/redirect/?ref_=cb_text_link\">cookies and advertising choices</a>. To learn more about how and for what purposes Amazon uses personal information (such as Store order history or Prime Video Watch history) and cookies, please visit our <a class=\"ipc-md-link\" href=\"https://www.imdb.com/privacy?ref_=cb_text_link\">Privacy Notice</a> and Cookie Notice.</div><div class=\"sc-jrsKJM csrMhK\"><div class=\"sc-pNWRh eqpbWD\"><button class=\"icb-btn sc-bdnyFh sc-hKFymg sc-fujznN kTxEXP kgKczh fhqUfK\" data-testid=\"reject-button\">Decline</button><button class=\"icb-btn sc-bdnyFh sc-dlniIP sc-iCoHzw kTxEXP jqScCk kQxsXA\" data-testid=\"accept-button\">Accept</button></div><a class=\"icb-btn sc-bdnyFh sc-gtsqUy kTxEXP fFlyGn\" href=\"https://amazon.de/privacyprefs/imdb?oCT=ads&amp;disableNav=true&amp;locale=en_US&amp;cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc\" data-testid=\"details\">Customize</a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 3193,
+        "cmpType": "Anthropic_Custom"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Interest-based ads",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "a-size-base a-color-secondary",
+              "selector": ".a-size-base",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "a-row",
+                "selector": ".a-row"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more",
+            "tag": "A",
+            "attributes": {
+              "aria-expanded": "false",
+              "role": "button",
+              "href": "javascript:void(0)",
+              "data-action": "a-expander-toggle",
+              "class": "a-expander-header a-declarative a-expander-inline-header a-link-expander",
+              "data-a-expander-toggle": "{\"allowLinkDefault\":true, \"expand_prompt\":\"\", \"collapse_prompt\":\"\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "a-row a-expander-container a-expander-inline-container",
+              "selector": ".a-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "a-column a-span11 a-text-left a-ws-span10",
+                "selector": ".a-column"
+              }
+            },
+            "selector": ".a-expander-header",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Advertising cookies",
+            "tag": "A",
+            "attributes": {
+              "id": "ADVERTISING-expander-heading",
+              "aria-expanded": "false",
+              "role": "button",
+              "href": "javascript:void(0)",
+              "data-action": "a-expander-toggle",
+              "class": "a-expander-header a-declarative a-expander-inline-header no-text-decoration a-link-expander",
+              "data-a-expander-toggle": "{\"allowLinkDefault\":true, \"expand_prompt\":\"\", \"collapse_prompt\":\"\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "a-column a-span8 a-text-left a-ws-span10",
+              "selector": ".a-column",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "a-row a-spacing-medium a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row",
+                "selector": ".a-row"
+              }
+            },
+            "selector": "#ADVERTISING-expander-heading",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "On",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "ADVERTISING-on-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "on",
+              "aria-posinset": "1",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "ADVERTISING-on",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#ADVERTISING-on"
+              }
+            },
+            "selector": "#ADVERTISING-on-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "ADVERTISING-off-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "off",
+              "aria-posinset": "2",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "ADVERTISING-off",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#ADVERTISING-off"
+              }
+            },
+            "selector": "#ADVERTISING-off-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Interest-based ads",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "a-size-base a-color-secondary ml-16px",
+              "selector": ".a-size-base",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "a-column a-span11 a-text-left a-ws-span10",
+                "selector": ".a-column"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Advertising Preferences",
+            "tag": "A",
+            "attributes": {
+              "href": "/-/en/adprefs"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "a-size-base a-color-secondary ml-16px",
+              "selector": ".a-size-base",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "a-column a-span11 a-text-left a-ws-span10",
+                "selector": ".a-column"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "On",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "data-ads-imdb-on-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "on",
+              "aria-posinset": "1",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "data-ads-imdb-on",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#data-ads-imdb-on"
+              }
+            },
+            "selector": "#data-ads-imdb-on-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "data-ads-imdb-off-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "off",
+              "aria-posinset": "2",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "data-ads-imdb-off",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#data-ads-imdb-off"
+              }
+            },
+            "selector": "#data-ads-imdb-off-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "On",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "data-ads-3p-on-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "on",
+              "aria-posinset": "1",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "data-ads-3p-on",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#data-ads-3p-on"
+              }
+            },
+            "selector": "#data-ads-3p-on-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "data-ads-3p-off-announce",
+              "role": "radio",
+              "aria-checked": "false",
+              "class": "a-button-text",
+              "type": "button",
+              "value": "off",
+              "aria-posinset": "2",
+              "aria-setsize": "2"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "a-button-inner",
+              "selector": ".a-button-inner",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": "data-ads-3p-off",
+                "className": "a-button a-button-normal a-button-base a-button-small",
+                "selector": "#data-ads-3p-off"
+              }
+            },
+            "selector": "#data-ads-3p-off-announce",
+            "selectorConfidence": "very high",
+            "role": "radio",
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": "Anthropic_Custom",
+        "cmpSelector": null,
+        "url": "https://www.amazon.de/privacyprefs/imdb?oCT=ads&disableNav=true&locale=en_US&cmpRef=AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc",
+        "filteredHtml": "<body class=\"a-m-de a-aui_72554-c a-aui_template_weblab_cache_333406-c a-meter-animate\"><div id=\"a-page\"> <form method=\"post\" action=\"\" id=\"cmp-dma-form\"><input type=\"hidden\" name=\"anti-csrftoken-a2z\" value=\"hMP+kAVuRJjcokFuODlJcHk/hMMeycdc+IUM+Ij1XGj1AAAAAGqPXBQ1Y2M5ZGM3Yy03OWIwLTQ5MjQtYmY0NS0yOGUwMGUxN2M0ZGI=\"> <div class=\"a-container container\"> <div class=\"a-section\"> <div class=\"a-row a-spacing-extra-large a-spacing-top-medium a-ws-row\"> <div class=\"a-column a-span12 a-ws-span3\"></div> <div class=\"a-column a-span12 a-ws-span6\"> <div class=\"a-row a-spacing-medium\"> <div class=\"a-column a-span12\"> <h1 id=\"cmp-dma-heading\" class=\"a-size-base-plus a-spacing-micro\"> <span>Cookies and advertising choices</span> </h1> </div> </div> <div class=\"a-row\"> <p class=\"a-size-base a-color-secondary\"> We use cookies and similar tools (collectively, ‘cookies’) for the purposes described below. Approved third parties also use cookies for limited ads-related purposes described below. We will apply your cookie preferences across IMDb services if you are signed in. If you aren't signed in, we may need to ask you for your preferences again. </p> <p class=\"a-size-base a-color-secondary\"> </p> <p class=\"a-size-base a-color-secondary\"> We also personalize the ads we show you using your personal information as described below. To learn more about how IMDb provides interest-based ads, go to the Amazon <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050\">Interest-based ads</a> notice. </p> </div> <div class=\"a-row a-spacing-top-base\"> <div class=\"a-column a-span12\"> <fieldset role=\"group\" aria-labelledby=\"cmp-dma-heading\"> <span class=\"a-declarative\" data-action=\"dmaCmpAcceptAll\" data-dmacmpacceptall=\"{}\"> <span class=\"a-button a-spacing-top-mini a-button-primary\" id=\"a-autoid-0\"><span class=\"a-button-inner\"><input name=\"accept\" class=\"a-button-input\" type=\"submit\" value=\"all\" aria-labelledby=\"a-autoid-0-announce\"><span class=\"a-button-text\" aria-hidden=\"true\" id=\"a-autoid-0-announce\"> Accept all </span></span></span> </span> <span class=\"a-declarative\" data-action=\"dmaCmpDeclineOrSave\" data-dmacmpdeclineorsave=\"{}\"> <span id=\"rejectOrSave\" class=\"a-button a-spacing-top-mini a-button-base\"><span class=\"a-button-inner\"><input name=\"rejectOrSave\" class=\"a-button-input\" type=\"submit\" value=\"Decline all\" aria-labelledby=\"rejectOrSave-announce\"><span id=\"rejectOrSave-announce\" class=\"a-button-text\" aria-hidden=\"true\"> Decline all </span></span></span> </span> </fieldset> </div> </div> <div class=\"a-section a-spacing-top-large\"> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <h2 class=\"a-size-base\"> Operational cookies </h2> </div> </div> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary\"> Operational cookies can't be deactivated to the extent we use them to provide you our services. </p> </div> </div> <div class=\"a-row a-spacing-medium\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <div class=\"a-row a-expander-container a-expander-inline-container\"> <a aria-expanded=\"false\" role=\"button\" href=\"javascript:void(0)\" data-action=\"a-expander-toggle\" class=\"a-expander-header a-declarative a-expander-inline-header a-link-expander\" data-a-expander-toggle=\"{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}\"><i class=\"a-icon a-icon-expand\"></i><span class=\"a-expander-prompt\"> <span class=\"a-size-base\"> Learn more </span> </span></a> <div data-expanded=\"false\" class=\"a-expander-content a-expander-inline-content a-expander-inner\"> <p class=\"a-size-base a-color-secondary\"> We use cookies to provide our services, for example:</p><ul><li>Recognising you when you sign-in to use our services.</li><li>Displaying features, products, and services which might be of interest to you.</li><li>Preventing fraudulent activity.</li><li>Improving security.</li><li>Keeping track of your preferences such as language.</li></ul> <p></p> <p class=\"a-size-base a-color-secondary\"> We also use cookies to understand how customers use our services so we can make improvements. For example, we use cookies to conduct research and diagnostics to improve IMDb’s content, products, and services, and to measure and understand the performance of our services. </p> </div> </div> </div> </div> <div data-a-expander-name=\"advertising-cookies-expander\" class=\"a-row a-expander-container a-expander-inline-container\"> <div class=\"a-row a-spacing-medium a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10\"> <a id=\"ADVERTISING-expander-heading\" aria-expanded=\"false\" role=\"button\" href=\"javascript:void(0)\" data-action=\"a-expander-toggle\" class=\"a-expander-header a-declarative a-expander-inline-header no-text-decoration a-link-expander\" data-a-expander-toggle=\"{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}\"><i class=\"a-icon a-icon-expand\"></i><span class=\"a-expander-prompt\"> <h2 class=\"a-size-base a-color-base\"> Advertising cookies </h2> </span></a> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"ADVERTISING-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"ADVERTISING-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"ADVERTISING-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"ADVERTISING-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"ADVERTISING\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary ml-16px\"> These cookies allow us to serve you ads, including ads relevant to your interests on IMDb, Amazon, or on third-party sites and to work with approved third parties in the process of delivering content, to measure the effectiveness of their ads, and to perform services on behalf of IMDb. </p> <p class=\"a-size-base a-color-secondary ml-16px\"> To learn more about how IMDb provides interest-based ads, go to the Amazon <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=202075050\">Interest-based ads</a> notice. To change your interest-based ad preferences, go to the Amazon <a href=\"/-/en/adprefs\">Advertising Preferences</a> page. </p> </div> </div> <div id=\"ADVERTISING-expander-content\" data-expanded=\"false\" class=\"a-expander-content a-expander-inline-content a-expander-inner\"> <div class=\"a-row a-spacing-large a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <h3 class=\"a-size-base a-color-base\"> Amazon Advertising </h3> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"amazon-ads-systems-switch-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"amazon-ads-systems-switch-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"amazon-ads-systems-switch-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"amazon-ads-systems-switch-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"amazon-ads-systems-switch\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-extra-large a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <h3 class=\"a-size-base a-color-base\"> Approved Advertising Third Parties </h3> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"third-parties-switch-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"third-parties-switch-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"third-parties-switch-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"third-parties-switch-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"third-parties-switch\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-base a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span10 pl-12\"> <span class=\"a-declarative\" data-action=\"customize-third-parties\" data-customize-third-parties=\"{}\"> <a class=\"a-link-normal\" href=\"#\" role=\"button\"> Customize third-party cookies </a> </span> </div> <div class=\"a-column a-span3 a-ws-span1 a-span-last a-ws-span-last\"></div> </div> </div> </div> </div> <div class=\"a-section a-spacing-top-base\"> <div class=\"a-row a-spacing-medium a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span11\"> <h2 class=\"a-size-base a-color-base\"> Personal information from IMDb </h2> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"data-ads-imdb-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"data-ads-imdb-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"data-ads-imdb-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"data-ads-imdb-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"data-ads-imdb\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary\"> Includes your IMDb browsing history and other interactions with the IMDb website and app. </p> </div> </div> <div class=\"a-row a-spacing-medium a-spacing-top-medium a-grid-vertical-align a-grid-center a-ws-row\"> <div class=\"a-column a-span8 a-text-left a-ws-span11\"> <h2 class=\"a-size-base a-color-base\"> Personal information from third parties </h2> </div> <div class=\"a-column a-span4 a-text-right a-ws-span1 a-span-last a-ws-span-last\"> <div class=\"a-section\"> <span class=\"a-declarative\" data-action=\"toggle-consent\" data-toggle-c> <div class=\"a-button-group a-declarative border-separation\" data-action=\"a-button-group\" role=\"radiogroup\"> <span id=\"data-ads-3p-on\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"data-ads-3p-on-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"on\" aria-posinset=\"1\" aria-setsize=\"2\"> On </button></span></span> <span id=\"data-ads-3p-off\" class=\"a-button a-button-normal a-button-base a-button-small\"><span class=\"a-button-inner\"><button id=\"data-ads-3p-off-announce\" role=\"radio\" aria-checked=\"false\" class=\"a-button-text\" type=\"button\" value=\"off\" aria-posinset=\"2\" aria-setsize=\"2\"> Off </button></span></span> </div> </span> <input type=\"hidden\" name=\"data-ads-3p\" value=\"off\"> </div> </div> </div> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-secondary\"> Allows us to personalize the ads we show you using demographic information (such as age range) or other personal information we may receive from third parties. </p> </div> </div> </div> <div class=\"a-row a-spacing-large a-spacing-top-base\"> <div class=\"a-column a-span12\"> <p class=\"a-size-base\"> You can change your cookie preferences at any time by returning to this Cookie Preference page. </p> </div> </div> <div class=\"a-row a-spacing-medium a-ws-row\"> <div class=\"a-column a-span11 a-text-left a-ws-span10\"> <p class=\"a-size-base a-color-base\"> Some mobile operating systems may further limit the use of cookies and similar technologies; your choices do not override those more limited settings on such mobile devices. </p> </div> </div> </div> </div> </div> </div> <input type=\"hidden\" name=\"oCT\" value=\"ads\"> <input type=\"hidden\" name=\"disableNav\" value=\"true\"> <input type=\"hidden\" name=\"locale\" value=\"en_US\"> <input type=\"hidden\" name=\"cmpRef\" value=\"AYADeNv79UJf8IZHcK1Iwip20i8AagACABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREEyUGpNMlZKa3BlV1NPcUt5QjVjSmFFK0tCLzR6d2N3S3hjcTJlc0doMUtsRkN1ZGxoVld2VzFmZys4eERQaHNJdz09AAZkb21haW4AATYAAQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjI0ODMzMzc2NTMwMjprZXkvODEzOTI3M2YtYWRjOC00YTFhLTgzN2EtYzMwYzIzNGZkNTgzALgBAgEAeGcwM0Kk6hrd5D_8ua2bjPpzf1nWHso1MuLzYHOfsYN8AYGlymbecXJZbIE44WK5rGAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAyweDFgJmgNOI4iuRYCARCAO7oqylZSBtkD35eAUJGe7OEBwT1UnRckMvfanxZoinlhanqQYfeD8NoXI63a3Uo510AbUSK389LsNwmOAgAAAAAMAAAQAAAAAAAAAAAAAAAAAINS4t1vDgMMt6AiX7dd8eH_____AAAAAQAAAAAAAAAAAAAAAQAAAHrvlb_LDRqLmrm-tMtUJSU062i36SOEr2iDGgH1sG4shMdbDcXAoJmt-wqSpmwWPmmwpSEZyRkKn3VogtXH3eJJFkdkq_GT8eunJ5-loDrnKg5yGSayw3PmoFL_2-k-2k37I722HMmqioci_c7yKv-0zIyLqC6uSYknD_2f-bLn1Nnb6eyeeyv_dagAZzBlAjEAoxU93dnZeOqU4TnY-U6ndw1Ey1JNr8GX1hTRHDqNxaVhnfP3QMwnv7GwiPTFtc2UAjBe8qBvp3ol2hbtgr8xmo53qAXb06n8ZaSZIs8y3PyWnrO12KZWPAbMgJ1GB-xCQBc\"> </form> <link rel=\"stylesheet\" href=\"https://m.media-amazon.com/images/I/11ZxbGB3PBL.css?AUIClients/WebFlowIngressJs\"> <div id=\"be\"><form name=\"ue_backdetect\" action=\"get\"><input type=\"hidden\" name=\"ue_back\" value=\"2\"></form> </div> </div><iframe name=\"__tcfapiLocator\" src=\"about:blank\"></iframe> <div id=\"a-popover-root\"></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 15309,
+        "isIframe": false
+      }
+    }
+  ]
+}

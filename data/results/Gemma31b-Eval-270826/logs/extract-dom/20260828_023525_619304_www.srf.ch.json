@@ -1,0 +1,1019 @@
+{
+  "timestamp": "2026-08-28T02:35:25.619371",
+  "url": "https://www.srf.ch",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.srf.ch"
+  ],
+  "duration_seconds": 7.52,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"#usercentrics-cmp-ui\" (Usercentrics) in frame: https://www.srf.ch/",
+      "waitForCmpUi detected CMP Type: Usercentrics",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.srf.ch/ with Score: 47",
+      "Settings match: \"Individuell verwalten\" --> lowered: \"individuell verwalten\"",
+      "State snapshot scope selector: #usercentrics-cmp-ui",
+      "settings click target - selector: #usercentrics-cmp-ui >>> #more, textMatch: Individuell verwalten",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 278598 chars.",
+      "DOM diff: 111432 chars added, 0 inputs added.",
+      "Old state: 0 buttons, 0 inputs.",
+      "New state: 0 buttons, 0 inputs.",
+      "Settings detected: 111432 chars, 0 inputs, 0 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 6 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.srf.ch/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Usercentrics',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.srf.ch/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Welche Datenschutz-Einstellungen bevorzugen Sie?</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Damit Sie unser Online-Angebot optimal nutzen können, setzen wir Cookies und vergleichbare Technologien ein. Sie bestimmen grundsätzlich, für welche Zwecke wir Ihre Daten bearbeiten dürfen. Eine kommerzielle Verwendung ist ausgeschlossen. </span> </div> </div> </header> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"more\" class=\"more uc-more-button\" id=\"more\" aria-label=\"Individuell verwalten\" tabindex=\"0\"> Individuell verwalten </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Nur Notwendige\" tabindex=\"0\"> Nur Notwendige </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Alle akzeptieren\" tabindex=\"0\"> Alle akzeptieren </button> </div> </div> <span class=\"poweredBy\"> <a href=\"https://usercentrics.com/de/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&amp;utm_medium=referral&amp;utm_content=v3\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"> Powered by Usercentrics Consent Management</a> </span> </footer> </div> </div> </div> </aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 2127,",
+      "      cmpType: 'Usercentrics'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.srf.ch/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Layer schließen\" aria-label=\"Layer schließen\" tabindex=\"0\" class=\"closeButton\" title=\"Layer schließen\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Für welche Zwecke dürfen wir Ihre Daten bearbeiten?</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Bestimmen Sie grundsätzlich, für welche Zwecke wir Ihre Daten bearbeiten dürfen: Grundfunktionen sind zwingend, andere optional – z.B. die Personalisierung oder die Integration von Drittsystemen. Ihre Entscheidung können Sie jederzeit in den Datenschutz-Einstellungen anpassen. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Zwecke </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-essential\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-essential\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsessential\" data-load-id=\"essential\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-essential-item-title\">Technische Funktionen (notwendig)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-essential-item-subtitle\">Wir analysieren und speichern bestimmte Interaktionen und Einstellungen auf Ihrem Gerät. Dies ist notwendig für die grundlegenden Funktionen unseres Online-Angebots – z.B. die Verwendung von Untertiteln im Videoplayer oder die Favoritenspeicherung. Diese gespeicherten Daten ermöglichen keine Rückverfolgung Ihrer Person bzw. Ihres Gerätes.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\" aria-labelledby=\"uc-category-essential-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-essential-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Technische Funktionen (notwendig)\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsessential\" role=\"region\" aria-labelledby=\"uc-category-essential-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" data-load-id=\"customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\">Nutzungsmessung (notwendig)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-subtitle\">Mit einer anonymisierten Nutzungsmessung stellen wir sicher, dass unsere Inhalte den unterschiedlichen Interessen unseres Publikums entsprechen. So können wir unsere Angebote stets verbessern und unserem gesetzlichen Auftrag nachkommen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Nutzungsmessung (notwendig)\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" role=\"region\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" data-load-id=\"customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\">Erweiterte Nutzungsmessung</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-subtitle\">Wir verwenden Analysetools, welche uns helfen, technische Probleme zu identifizieren und das Nutzer:innen-Erlebnis zu optimieren. Dies beinhaltet Google Analytics, welches Cookies setzt um Daten zu sammeln. Diese Daten werden auch von Google bearbeitet und können für eigene Zwecke verwendet werden. Es kann nicht ausgeschlossen werden, dass Google Daten auch in den USA speichert. Lesen Sie die Datenschutzerklärung von Google Analytics, um mehr darüber zu erfahren.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Erweiterte Nutzungsmessung\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" role=\"region\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Social Media und externe Drittsysteme</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">Wir verwenden Social Media Tools und Dienste anderer Drittanbieter. So können Sie zum Beispiel Inhalte von Instagram oder Grafiken auf unserem Online-Angebot anschauen. Dadurch kann Ihre IP-Adresse an diese Drittanbieter übertragen werden. Beachten Sie, dass diese Daten auch in Ländern bearbeitet werden können, in denen kein vergleichbarer Datenschutz wie in der Schw'... 60000 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 80570,",
+      "      cmpType: 'Usercentrics',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.srf.ch/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Usercentrics via selector \"#usercentrics-cmp-ui\"",
+      "  Buttons found (4):",
+      "      [A] \"Datenschutzerklärung\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [BUTTON] \"Individuell verwalten\" --> selector: #usercentrics-cmp-ui >>> #more",
+      "      [BUTTON] \"Nur Notwendige\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Alle akzeptieren\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (17):",
+      "      [BUTTON] \"Layer schließen\" --> selector: #usercentrics-cmp-ui >>> #uc-close-button",
+      "      [A] \"Datenschutzerklärung\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      [DIV] \"Erweitern Technische Funktionen (notwendig)\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Technische Funktionen (notwendig)\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+      "      [DIV] \"Erweitern Nutzungsmessung (notwendig)\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Nutzungsmessung (notwendig)\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+      "      [DIV] \"Erweitern Erweiterte Nutzungsmessung\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Erweiterte Nutzungsmessung\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      [DIV] \"Erweitern Social Media und externe Drittsysteme\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Social Media und externe Drittsysteme\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+      "      [DIV] \"Erweitern Personalisierung\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierung\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+      "      [DIV] \"Erweitern Marketing\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Marketing\"]",
+      "      [BUTTON] \"Auswahl speichern\" --> selector: #usercentrics-cmp-ui >>> #save",
+      "      [BUTTON] \"Nur Notwendige\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Alle akzeptieren\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (6):",
+      "      \"Technische Funktionen (notwendig)\" | aria-checked: true --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      \"Nutzungsmessung (notwendig)\" | aria-checked: true --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+      "      \"Erweiterte Nutzungsmessung\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+      "      \"Social Media und externe Drittsysteme\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      \"Personalisierung\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+      "      \"Marketing\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.srf.ch/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Usercentrics",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.srgssr.ch/de/datenschutz",
+              "aria-label": "Öffnen Datenschutzerklärung",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Individuell verwalten",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "more",
+              "class": "more uc-more-button",
+              "id": "more",
+              "aria-label": "Individuell verwalten",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #more",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nur Notwendige",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Nur Notwendige",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle akzeptieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Alle akzeptieren",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.srf.ch/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Welche Datenschutz-Einstellungen bevorzugen Sie?</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Damit Sie unser Online-Angebot optimal nutzen können, setzen wir Cookies und vergleichbare Technologien ein. Sie bestimmen grundsätzlich, für welche Zwecke wir Ihre Daten bearbeiten dürfen. Eine kommerzielle Verwendung ist ausgeschlossen. </span> </div> </div> </header> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"more\" class=\"more uc-more-button\" id=\"more\" aria-label=\"Individuell verwalten\" tabindex=\"0\"> Individuell verwalten </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Nur Notwendige\" tabindex=\"0\"> Nur Notwendige </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Alle akzeptieren\" tabindex=\"0\"> Alle akzeptieren </button> </div> </div> <span class=\"poweredBy\"> <a href=\"https://usercentrics.com/de/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&amp;utm_medium=referral&amp;utm_content=v3\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"> Powered by Usercentrics Consent Management</a> </span> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 2127,
+        "cmpType": "Usercentrics"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Layer schließen",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "uc-close-button",
+              "type": "button",
+              "name": "Layer schließen",
+              "aria-label": "Layer schließen",
+              "tabindex": "0",
+              "class": "closeButton",
+              "title": "Layer schließen",
+              "data-action": "consent",
+              "data-action-type": "less",
+              "data-testid": "uc-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "actions right",
+              "selector": ".actions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-close-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.srgssr.ch/de/datenschutz",
+              "aria-label": "Öffnen Datenschutzerklärung",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Technische Funktionen (notwendig)",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-essential-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsessential",
+              "tabindex": "0",
+              "aria-label": "Erweitern Technische Funktionen (notwendig)"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-essential",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-essential"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Technische Funktionen (notwendig)\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b",
+              "aria-labelledby": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Nutzungsmessung (notwendig)",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-37e8dfb9-5b08-4500-819f-f838d37a030b",
+              "tabindex": "0",
+              "aria-label": "Erweitern Nutzungsmessung (notwendig)"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Nutzungsmessung (notwendig)\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd",
+              "aria-labelledby": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Erweiterte Nutzungsmessung",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd",
+              "tabindex": "0",
+              "aria-label": "Erweitern Erweiterte Nutzungsmessung"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Erweiterte Nutzungsmessung\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Social Media und externe Drittsysteme",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-functional-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsfunctional",
+              "tabindex": "0",
+              "aria-label": "Erweitern Social Media und externe Drittsysteme"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-functional",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-functional"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Social Media und externe Drittsysteme\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6",
+              "aria-labelledby": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Personalisierung",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-a6401f50-94ee-479d-a789-5adfa16d63b6",
+              "tabindex": "0",
+              "aria-label": "Erweitern Personalisierung"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierung\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317",
+              "aria-labelledby": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Marketing",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317",
+              "tabindex": "0",
+              "aria-label": "Erweitern Marketing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Marketing\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Auswahl speichern",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "save",
+              "class": "save uc-save-button",
+              "id": "save",
+              "aria-label": "Auswahl speichern",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nur Notwendige",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Nur Notwendige",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle akzeptieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Alle akzeptieren",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Technische Funktionen (notwendig)",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          },
+          {
+            "type": "toggle",
+            "text": "Nutzungsmessung (notwendig)",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b",
+              "aria-labelledby": "uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          },
+          {
+            "type": "toggle",
+            "text": "Erweiterte Nutzungsmessung",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd",
+              "aria-labelledby": "uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Social Media und externe Drittsysteme",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalisierung",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6",
+              "aria-labelledby": "uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317",
+              "aria-labelledby": "uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.srf.ch/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Layer schließen\" aria-label=\"Layer schließen\" tabindex=\"0\" class=\"closeButton\" title=\"Layer schließen\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Für welche Zwecke dürfen wir Ihre Daten bearbeiten?</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Bestimmen Sie grundsätzlich, für welche Zwecke wir Ihre Daten bearbeiten dürfen: Grundfunktionen sind zwingend, andere optional – z.B. die Personalisierung oder die Integration von Drittsystemen. Ihre Entscheidung können Sie jederzeit in den Datenschutz-Einstellungen anpassen. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Zwecke </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-essential\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-essential\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsessential\" data-load-id=\"essential\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-essential-item-title\">Technische Funktionen (notwendig)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-essential-item-subtitle\">Wir analysieren und speichern bestimmte Interaktionen und Einstellungen auf Ihrem Gerät. Dies ist notwendig für die grundlegenden Funktionen unseres Online-Angebots – z.B. die Verwendung von Untertiteln im Videoplayer oder die Favoritenspeicherung. Diese gespeicherten Daten ermöglichen keine Rückverfolgung Ihrer Person bzw. Ihres Gerätes.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\" aria-labelledby=\"uc-category-essential-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-essential-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Technische Funktionen (notwendig)\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsessential\" role=\"region\" aria-labelledby=\"uc-category-essential-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" data-load-id=\"customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\">Nutzungsmessung (notwendig)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-subtitle\">Mit einer anonymisierten Nutzungsmessung stellen wir sicher, dass unsere Inhalte den unterschiedlichen Interessen unseres Publikums entsprechen. So können wir unsere Angebote stets verbessern und unserem gesetzlichen Auftrag nachkommen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Nutzungsmessung (notwendig)\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-37e8dfb9-5b08-4500-819f-f838d37a030b\" role=\"region\" aria-labelledby=\"uc-category-customcategory-37e8dfb9-5b08-4500-819f-f838d37a030b-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" data-load-id=\"customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\">Erweiterte Nutzungsmessung</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-subtitle\">Wir verwenden Analysetools, welche uns helfen, technische Probleme zu identifizieren und das Nutzer:innen-Erlebnis zu optimieren. Dies beinhaltet Google Analytics, welches Cookies setzt um Daten zu sammeln. Diese Daten werden auch von Google bearbeitet und können für eigene Zwecke verwendet werden. Es kann nicht ausgeschlossen werden, dass Google Daten auch in den USA speichert. Lesen Sie die Datenschutzerklärung von Google Analytics, um mehr darüber zu erfahren.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Erweiterte Nutzungsmessung\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd\" role=\"region\" aria-labelledby=\"uc-category-customcategory-5dbbb282-82ba-49e0-9ea5-0d33a0d5fedd-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Social Media und externe Drittsysteme</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">Wir verwenden Social Media Tools und Dienste anderer Drittanbieter. So können Sie zum Beispiel Inhalte von Instagram oder Grafiken auf unserem Online-Angebot anschauen. Dadurch kann Ihre IP-Adresse an diese Drittanbieter übertragen werden. Beachten Sie, dass diese Daten auch in Ländern bearbeitet werden können, in denen kein vergleichbarer Datenschutz wie in der Schweiz besteht (z.B. USA). Lesen Sie die Datenschutzerklärung dieser Anbieter, um mehr darüber zu erfahren.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\" aria-labelledby=\"uc-category-functional-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-functional-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Social Media und externe Drittsysteme\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsfunctional\" role=\"region\" aria-labelledby=\"uc-category-functional-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\" data-load-id=\"customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title\">Personalisierung</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-subtitle\">Wir gestalten Ihr Erlebnis auf unseren digitalen Plattformen noch angenehmer. Dazu berücksichtigen wir Ihre Interessen, indem wir die von Ihnen besuchten Seiten und Ihre Interaktionen analysieren. So können wir Ihnen individuelle Empfehlungen geben. Falls Sie keine personalisierten Inhalte wünschen, können Sie unsere Angebote weiterhin in nicht personalisierter Form nutzen, indem Sie diese abwählen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\" aria-labelledby=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Personalisierung\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-a6401f50-94ee-479d-a789-5adfa16d63b6\" role=\"region\" aria-labelledby=\"uc-category-customcategory-a6401f50-94ee-479d-a789-5adfa16d63b6-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\" data-load-id=\"customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title\">Marketing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-subtitle\">Mit diesen Cookies und anderen Arten der lokalen Speicherung können wir Ihnen besonders aktuelle SRF-Inhalte empfehlen und den Erfolg unserer Kampagnen messen (wie z.B. die Bewerbung einer neuen SRF-Serie).</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\" aria-labelledby=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Marketing\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317\" role=\"region\" aria-labelledby=\"uc-category-customcategory-fdd237ac-cc04-40c1-b29d-59e7010b7317-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> </div> </div> <div role=\"tabpanel\" id=\"servicesPanel\" aria-labelledby=\"services-tab-button\"> <div id=\"uc-services-list\" class=\"list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-xw1jXWaLiDOWUk\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-xw1jXWaLiDOWUk\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsxw1jXWaLiDOWUk\" data-load-id=\"xw1jXWaLiDOWUk\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-xw1jXWaLiDOWUk-item-title\">ably.io</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-xw1jXWaLiDOWUk-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-xw1jXWaLiDOWUk-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern ably.io\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsxw1jXWaLiDOWUk\" role=\"region\" aria-labelledby=\"uc-service-xw1jXWaLiDOWUk-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-jcJkRKyXPGxJTX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-jcJkRKyXPGxJTX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsjcJkRKyXPGxJTX\" data-load-id=\"jcJkRKyXPGxJTX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-jcJkRKyXPGxJTX-item-title\">Airship</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-jcJkRKyXPGxJTX-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-jcJkRKyXPGxJTX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Airship\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsjcJkRKyXPGxJTX\" role=\"region\" aria-labelledby=\"uc-service-jcJkRKyXPGxJTX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-uQiyefbRi\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-uQiyefbRi\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsuQiyefbRi\" data-load-id=\"uQiyefbRi\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-uQiyefbRi-item-title\">Akamai</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-uQiyefbRi-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-uQiyefbRi-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Akamai\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsuQiyefbRi\" role=\"region\" aria-labelledby=\"uc-service-uQiyefbRi-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-tnfBi7gwe\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-tnfBi7gwe\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailstnfBi7gwe\" data-load-id=\"tnfBi7gwe\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-tnfBi7gwe-item-title\">Algolia</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-tnfBi7gwe-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-tnfBi7gwe-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Algolia\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailstnfBi7gwe\" role=\"region\" aria-labelledby=\"uc-service-tnfBi7gwe-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-J39GyuWQq\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-J39GyuWQq\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsJ39GyuWQq\" data-load-id=\"J39GyuWQq\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-J39GyuWQq-item-title\">Amazon Web Services</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-J39GyuWQq-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-J39GyuWQq-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Amazon Web Services\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsJ39GyuWQq\" role=\"region\" aria-labelledby=\"uc-service-J39GyuWQq-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-HJbZqVodjZX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-HJbZqVodjZX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsHJbZqVodjZX\" data-load-id=\"HJbZqVodjZX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-HJbZqVodjZX-item-title\">Chartbeat</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-HJbZqVodjZX-item-subtitle\">Nutzungsmessung (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-HJbZqVodjZX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Chartbeat\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsHJbZqVodjZX\" role=\"region\" aria-labelledby=\"uc-service-HJbZqVodjZX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-xQ7R_MtouldLmR\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-xQ7R_MtouldLmR\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsxQ7R_MtouldLmR\" data-load-id=\"xQ7R_MtouldLmR\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-xQ7R_MtouldLmR-item-title\">Cloudflare Turnstile</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-xQ7R_MtouldLmR-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-xQ7R_MtouldLmR-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Cloudflare Turnstile\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsxQ7R_MtouldLmR\" role=\"region\" aria-labelledby=\"uc-service-xQ7R_MtouldLmR-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BJ_ocNjds-X\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BJ_ocNjds-X\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBJ_ocNjds-X\" data-load-id=\"BJ_ocNjds-X\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BJ_ocNjds-X-item-title\">cloudfront.net</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BJ_ocNjds-X-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BJ_ocNjds-X-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern cloudfront.net\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBJ_ocNjds-X\" role=\"region\" aria-labelledby=\"uc-service-BJ_ocNjds-X-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-B1WMgcNodi-7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-B1WMgcNodi-7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsB1WMgcNodi-7\" data-load-id=\"B1WMgcNodi-7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-B1WMgcNodi-7-item-title\">comScore</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-B1WMgcNodi-7-item-subtitle\">Nutzungsmessung (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-B1WMgcNodi-7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern comScore\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsB1WMgcNodi-7\" role=\"region\" aria-labelledby=\"uc-service-B1WMgcNodi-7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-8Nxb4ZtSa\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-8Nxb4ZtSa\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails8Nxb4ZtSa\" data-load-id=\"8Nxb4ZtSa\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-8Nxb4ZtSa-item-title\">DataWrapper</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-8Nxb4ZtSa-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-8Nxb4ZtSa-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern DataWrapper\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails8Nxb4ZtSa\" role=\"region\" aria-labelledby=\"uc-service-8Nxb4ZtSa-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-UeCJp_Yp3cabRV\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-UeCJp_Yp3cabRV\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsUeCJp_Yp3cabRV\" data-load-id=\"UeCJp_Yp3cabRV\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-UeCJp_Yp3cabRV-item-title\">Evenito</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-UeCJp_Yp3cabRV-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-UeCJp_Yp3cabRV-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Evenito\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsUeCJp_Yp3cabRV\" role=\"region\" aria-labelledby=\"uc-service-UeCJp_Yp3cabRV-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ytzFgf-eM\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ytzFgf-eM\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsytzFgf-eM\" data-load-id=\"ytzFgf-eM\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ytzFgf-eM-item-title\">Firebase A/B Testing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ytzFgf-eM-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ytzFgf-eM-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Firebase A/B Testing\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsytzFgf-eM\" role=\"region\" aria-labelledby=\"uc-service-ytzFgf-eM-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-rJJjcVouoZ7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-rJJjcVouoZ7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsrJJjcVouoZ7\" data-load-id=\"rJJjcVouoZ7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-rJJjcVouoZ7-item-title\">gstatic.com</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-rJJjcVouoZ7-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-rJJjcVouoZ7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern gstatic.com\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsrJJjcVouoZ7\" role=\"region\" aria-labelledby=\"uc-service-rJJjcVouoZ7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-F-REmjGq7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-F-REmjGq7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsF-REmjGq7\" data-load-id=\"F-REmjGq7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-F-REmjGq7-item-title\">JSDelivr</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-F-REmjGq7-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-F-REmjGq7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern JSDelivr\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsF-REmjGq7\" role=\"region\" aria-labelledby=\"uc-service-F-REmjGq7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-geVqHvnyCG73wD\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-geVqHvnyCG73wD\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsgeVqHvnyCG73wD\" data-load-id=\"geVqHvnyCG73wD\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-geVqHvnyCG73wD-item-title\">Logora</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-geVqHvnyCG73wD-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-geVqHvnyCG73wD-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Logora\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsgeVqHvnyCG73wD\" role=\"region\" aria-labelledby=\"uc-service-geVqHvnyCG73wD-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-QmkqgbGhi\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-QmkqgbGhi\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsQmkqgbGhi\" data-load-id=\"QmkqgbGhi\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-QmkqgbGhi-item-title\">Mapp</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-QmkqgbGhi-item-subtitle\">Nutzungsmessung (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-QmkqgbGhi-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Mapp\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsQmkqgbGhi\" role=\"region\" aria-labelledby=\"uc-service-QmkqgbGhi-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-lqimeCu1WWaiXX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-lqimeCu1WWaiXX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailslqimeCu1WWaiXX\" data-load-id=\"lqimeCu1WWaiXX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-lqimeCu1WWaiXX-item-title\">rokka.io</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-lqimeCu1WWaiXX-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-lqimeCu1WWaiXX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern rokka.io\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailslqimeCu1WWaiXX\" role=\"region\" aria-labelledby=\"uc-service-lqimeCu1WWaiXX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-3b91KHiC4SQWK5\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-3b91KHiC4SQWK5\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails3b91KHiC4SQWK5\" data-load-id=\"3b91KHiC4SQWK5\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-3b91KHiC4SQWK5-item-title\">Saleforce Marketing Cloud Cloudpages</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-3b91KHiC4SQWK5-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-3b91KHiC4SQWK5-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Saleforce Marketing Cloud Cloudpages\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails3b91KHiC4SQWK5\" role=\"region\" aria-labelledby=\"uc-service-3b91KHiC4SQWK5-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-d_5HNF7Yc\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-d_5HNF7Yc\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsd_5HNF7Yc\" data-load-id=\"d_5HNF7Yc\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-d_5HNF7Yc-item-title\">Salesforce</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-d_5HNF7Yc-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-d_5HNF7Yc-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Salesforce\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsd_5HNF7Yc\" role=\"region\" aria-labelledby=\"uc-service-d_5HNF7Yc-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-yzxGI9lr4arZxP\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-yzxGI9lr4arZxP\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsyzxGI9lr4arZxP\" data-load-id=\"yzxGI9lr4arZxP\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-yzxGI9lr4arZxP-item-title\">SRFUDP</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-yzxGI9lr4arZxP-item-subtitle\">Nutzungsmessung (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-yzxGI9lr4arZxP-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern SRFUDP\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsyzxGI9lr4arZxP\" role=\"region\" aria-labelledby=\"uc-service-yzxGI9lr4arZxP-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ryi2qNjOsbX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ryi2qNjOsbX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsryi2qNjOsbX\" data-load-id=\"ryi2qNjOsbX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ryi2qNjOsbX-item-title\">TagCommander Reporting</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ryi2qNjOsbX-item-subtitle\">Nutzungsmessung (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ryi2qNjOsbX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern TagCommander Reporting\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsryi2qNjOsbX\" role=\"region\" aria-labelledby=\"uc-service-ryi2qNjOsbX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-H1Vl5NidjWX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-H1Vl5NidjWX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsH1Vl5NidjWX\" data-load-id=\"H1Vl5NidjWX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-H1Vl5NidjWX-item-title\">Usercentrics Consent Management Platform</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-H1Vl5NidjWX-item-subtitle\">Technische Funktionen (notwendig)</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Usercentrics Consent Management Platform\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsH1Vl5NidjWX\" role=\"region\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-87DQMHFZ8HagxW\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-87DQMHFZ8HagxW\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails87DQMHFZ8HagxW\" data-load-id=\"87DQMHFZ8HagxW\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-87DQMHFZ8HagxW-item-title\">23video.com</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-87DQMHFZ8HagxW-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-87DQMHFZ8HagxW-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern 23video.com\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails87DQMHFZ8HagxW\" role=\"region\" aria-labelledby=\"uc-service-87DQMHFZ8HagxW-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Bkdj2xyEX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Bkdj2xyEX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBkdj2xyEX\" data-load-id=\"Bkdj2xyEX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Bkdj2xyEX-item-title\">Amazon S3</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Bkdj2xyEX-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Bkdj2xyEX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Amazon S3\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBkdj2xyEX\" role=\"region\" aria-labelledby=\"uc-service-Bkdj2xyEX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-iiahPM6unjQSxq\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-iiahPM6unjQSxq\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsiiahPM6unjQSxq\" data-load-id=\"iiahPM6unjQSxq\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-iiahPM6unjQSxq-item-title\">Bluesky</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-iiahPM6unjQSxq-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-iiahPM6unjQSxq-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Bluesky\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsiiahPM6unjQSxq\" role=\"region\" aria-labelledby=\"uc-service-iiahPM6unjQSxq-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-r1HocEjOiWm\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-r1HocEjOiWm\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsr1HocEjOiWm\" data-load-id=\"r1HocEjOiWm\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-r1HocEjOiWm-item-title\">Cloudinary</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-r1HocEjOiWm-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-r1HocEjOiWm-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Cloudinary\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsr1HocEjOiWm\" role=\"region\" aria-labelledby=\"uc-service-r1HocEjOiWm-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-VJNO26pZe\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-VJNO26pZe\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsVJNO26pZe\" data-load-id=\"VJNO26pZe\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-VJNO26pZe-item-title\">Dailymotion</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-VJNO26pZe-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-VJNO26pZe-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Dailymotion\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsVJNO26pZe\" role=\"region\" aria-labelledby=\"uc-service-VJNO26pZe-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-1jGX_kiDIsxfmb\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-1jGX_kiDIsxfmb\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails1jGX_kiDIsxfmb\" data-load-id=\"1jGX_kiDIsxfmb\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-1jGX_kiDIsxfmb-item-title\">Docmine</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-1jGX_kiDIsxfmb-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-1jGX_kiDIsxfmb-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Docmine\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails1jGX_kiDIsxfmb\" role=\"region\" aria-labelledby=\"uc-service-1jGX_kiDIsxfmb-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-JUf4KxMBj\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-JUf4KxMBj\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsJUf4KxMBj\" data-load-id=\"JUf4KxMBj\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-JUf4KxMBj-item-title\">dpa Deutsche Presse-Agentur GmbH</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-JUf4KxMBj-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-JUf4KxMBj-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern dpa Deutsche Presse-Agentur GmbH\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsJUf4KxMBj\" role=\"region\" aria-labelledby=\"uc-service-JUf4KxMBj-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-1XvFW-Y2k\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-1XvFW-Y2k\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails1XvFW-Y2k\" data-load-id=\"1XvFW-Y2k\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-1XvFW-Y2k-item-title\">Facebook</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-1XvFW-Y2k-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-1XvFW-Y2k-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Facebook\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails1XvFW-Y2k\" role=\"region\" aria-labelledby=\"uc-service-1XvFW-Y2k-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-XYQZBUojc\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-XYQZBUojc\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsXYQZBUojc\" data-load-id=\"XYQZBUojc\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-XYQZBUojc-item-title\">Facebook Social Plugins</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-XYQZBUojc-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-XYQZBUojc-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Facebook Social Plugins\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsXYQZBUojc\" role=\"region\" aria-labelledby=\"uc-service-XYQZBUojc-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-_e2qblwniJgKSV\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-_e2qblwniJgKSV\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails_e2qblwniJgKSV\" data-load-id=\"_e2qblwniJgKSV\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-_e2qblwniJgKSV-item-title\">Feratel</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-_e2qblwniJgKSV-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-_e2qblwniJgKSV-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Feratel\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails_e2qblwniJgKSV\" role=\"region\" aria-labelledby=\"uc-service-_e2qblwniJgKSV-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-X0wJtpzqX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-X0wJtpzqX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsX0wJtpzqX\" data-load-id=\"X0wJtpzqX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-X0wJtpzqX-item-title\">Flickr</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-X0wJtpzqX-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-X0wJtpzqX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Flickr\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsX0wJtpzqX\" role=\"region\" aria-labelledby=\"uc-service-X0wJtpzqX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-kbmJpLAUf\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-kbmJpLAUf\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailskbmJpLAUf\" data-load-id=\"kbmJpLAUf\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-kbmJpLAUf-item-title\">Flourish</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-kbmJpLAUf-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-kbmJpLAUf-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Flourish\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailskbmJpLAUf\" role=\"region\" aria-labelledby=\"uc-service-kbmJpLAUf-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-RuWQqICz\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-RuWQqICz\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsRuWQqICz\" data-load-id=\"RuWQqICz\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-RuWQqICz-item-title\">GIPHY</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-RuWQqICz-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-RuWQqICz-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern GIPHY\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsRuWQqICz\" role=\"region\" aria-labelledby=\"uc-service-RuWQqICz-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-diWdt4yLB\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-diWdt4yLB\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsdiWdt4yLB\" data-load-id=\"diWdt4yLB\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-diWdt4yLB-item-title\">Google Analytics for Firebase</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-diWdt4yLB-item-subtitle\">Erweiterte Nutzungsmessung</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-diWdt4yLB-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Google Analytics for Firebase\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsdiWdt4yLB\" role=\"region\" aria-labelledby=\"uc-service-diWdt4yLB-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-HkPBYFofN\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-HkPBYFofN\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsHkPBYFofN\" data-load-id=\"HkPBYFofN\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-HkPBYFofN-item-title\">Google Fonts</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-HkPBYFofN-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-HkPBYFofN-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Google Fonts\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsHkPBYFofN\" role=\"region\" aria-labelledby=\"uc-service-HkPBYFofN-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-qvkzz7qPe\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-qvkzz7qPe\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsqvkzz7qPe\" data-load-id=\"qvkzz7qPe\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-qvkzz7qPe-item-title\">Google Translate</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-qvkzz7qPe-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-qvkzz7qPe-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Google Translate\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsqvkzz7qPe\" role=\"region\" aria-labelledby=\"uc-service-qvkzz7qPe-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-SyUQ54odobQ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-SyUQ54odobQ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsSyUQ54odobQ\" data-load-id=\"SyUQ54odobQ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-SyUQ54odobQ-item-title\">Instagram Content</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-SyUQ54odobQ-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-SyUQ54odobQ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Instagram Content\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsSyUQ54odobQ\" role=\"region\" aria-labelledby=\"uc-service-SyUQ54odobQ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-9FYjH37-J\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-9FYjH37-J\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails9FYjH37-J\" data-load-id=\"9FYjH37-J\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-9FYjH37-J-item-title\">Kameleoon A/B Testing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-9FYjH37-J-item-subtitle\">Erweiterte Nutzungsmessung</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-9FYjH37-J-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Kameleoon A/B Testing\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails9FYjH37-J\" role=\"region\" aria-labelledby=\"uc-service-9FYjH37-J-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Ve72otXktk8k4i\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Ve72otXktk8k4i\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsVe72otXktk8k4i\" data-load-id=\"Ve72otXktk8k4i\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Ve72otXktk8k4i-item-title\">Mapbox</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Ve72otXktk8k4i-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Ve72otXktk8k4i-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Mapbox\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsVe72otXktk8k4i\" role=\"region\" aria-labelledby=\"uc-service-Ve72otXktk8k4i-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-y45-reP4HhCnck\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-y45-reP4HhCnck\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsy45-reP4HhCnck\" data-load-id=\"y45-reP4HhCnck\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-y45-reP4HhCnck-item-title\">Meta Conversions API</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-y45-reP4HhCnck-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-y45-reP4HhCnck-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Meta Conversions API\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsy45-reP4HhCnck\" role=\"region\" aria-labelledby=\"uc-service-y45-reP4HhCnck-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-bbAwldnsoN0NKq\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-bbAwldnsoN0NKq\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsbbAwldnsoN0NKq\" data-load-id=\"bbAwldnsoN0NKq\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-bbAwldnsoN0NKq-item-title\">OBS Olympia Widgets</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-bbAwldnsoN0NKq-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-bbAwldnsoN0NKq-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern OBS Olympia Widgets\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsbbAwldnsoN0NKq\" role=\"region\" aria-labelledby=\"uc-service-bbAwldnsoN0NKq-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-j7Igy6o8D\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-j7Igy6o8D\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsj7Igy6o8D\" data-load-id=\"j7Igy6o8D\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-j7Igy6o8D-item-title\">OpenStreetMap</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-j7Igy6o8D-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-j7Igy6o8D-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern OpenStreetMap\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsj7Igy6o8D\" role=\"region\" aria-labelledby=\"uc-service-j7Igy6o8D-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-F9-VFHIpH2RsnU\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-F9-VFHIpH2RsnU\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsF9-VFHIpH2RsnU\" data-load-id=\"F9-VFHIpH2RsnU\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-F9-VFHIpH2RsnU-item-title\">Personalisierung</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-F9-VFHIpH2RsnU-item-subtitle\">Personalisierung</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-F9-VFHIpH2RsnU-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Personalisierung\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsF9-VFHIpH2RsnU\" role=\"region\" aria-labelledby=\"uc-service-F9-VFHIpH2RsnU-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-pl3anzrRv\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-pl3anzrRv\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailspl3anzrRv\" data-load-id=\"pl3anzrRv\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-pl3anzrRv-item-title\">Riddle</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-pl3anzrRv-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-pl3anzrRv-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Riddle\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailspl3anzrRv\" role=\"region\" aria-labelledby=\"uc-service-pl3anzrRv-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-b0hANt-DHB3Q-9\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-b0hANt-DHB3Q-9\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsb0hANt-DHB3Q-9\" data-load-id=\"b0hANt-DHB3Q-9\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-b0hANt-DHB3Q-9-item-title\">Sentry, Functional Software, Inc.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-b0hANt-DHB3Q-9-item-subtitle\">Erweiterte Nutzungsmessung</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-b0hANt-DHB3Q-9-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Sentry, Functional Software, Inc.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsb0hANt-DHB3Q-9\" role=\"region\" aria-labelledby=\"uc-service-b0hANt-DHB3Q-9-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-vr78GBKhE1U-3r\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-vr78GBKhE1U-3r\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsvr78GBKhE1U-3r\" data-load-id=\"vr78GBKhE1U-3r\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-vr78GBKhE1U-3r-item-title\">smartvote.ch</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-vr78GBKhE1U-3r-item-subtitle\">Social Media und externe Drittsysteme</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-vr78GBKhE1U-3r-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern smartvote.ch\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsvr78GBKhE1U-3r\" role=\"region\" aria-labelledby=\"uc-service-vr78GBKhE1U-3r-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-HyP_q4sdobm\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-HyP_q4sdobm\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsHyP_q4sdobm\" data-load-id=\"HyP_q4sdobm\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-HyP_q4sdobm-item-title\">Soun",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 80570,
+        "cmpType": "Usercentrics",
+        "isIframe": false
+      }
+    }
+  ]
+}

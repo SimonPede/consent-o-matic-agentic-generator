@@ -1,0 +1,1341 @@
+{
+  "timestamp": "2026-08-28T00:05:00.530406",
+  "url": "https://find-and-update.company-information.service.gov.uk",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://find-and-update.company-information.service.gov.uk"
+  ],
+  "duration_seconds": 43.63,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://find-and-update.company-information.service.gov.uk/ with Score: 51",
+      "Regex failed in frame https://find-and-update.company-information.service.gov.uk/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"a[href='/help/cookies']\", text: \"View cookies\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: a[href='/help/cookies'], textMatch: View cookies",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://find-and-update.company-information.service.gov.uk/help/cookies",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 71 for URL: https://find-and-update.company-information.service.gov.uk/help/cookies",
+      "Best new frame selected for settings extraction: https://find-and-update.company-information.service.gov.uk/help/cookies",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://find-and-update.company-information.service.gov.uk/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://find-and-update.company-information.service.gov.uk/',",
+      "      filteredHtml: `<body class=\"govuk-template__body js-enabled govuk-frontend-supported\"> <div class=\"entire-wrapper\"> <div id=\"cookie-banner\" class=\"govuk-cookie-banner\" role=\"region\" aria-label=\"Cookies on Companies House services\"> <div id=\"accept-or-reject-message\" class=\"govuk-cookie-banner__message govuk-width-container\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <h2 class=\"govuk-cookie-banner__heading govuk-heading-m\">Cookies on Companies House services</h2> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">We use some essential cookies to make our services work.</p> <p class=\"govuk-body\">We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"accept-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Accept analytics cookies </button> <button id=\"reject-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Reject analytics cookies </button> <a class=\"govuk-link\" href=\"/help/cookies\">View cookies</a> </div> </div> <div id=\"accepted-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've accepted analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-accepted-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> <div id=\"rejected-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've rejected analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-rejected-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> </div> <div id=\"skiplink-container\"> <div> <a href=\"#content\" class=\"govuk-skip-link\" data-module=\"govuk-skip-link\" data-govuk-skip-link-init=\"\">Skip to main content</a> </div> </div> <header class=\"govuk-header\" role=\"banner\" data-module=\"govuk-header\" data-govuk-header-init=\"\"> <div class=\"govuk-header__container govuk-width-container\"> <div class=\"govuk-header__logo\"> <a href=\"https://www.gov.uk/\" class=\"govuk-header__link govuk-header__link--homepage\"> </a> </div> </div> </header> <section aria-label=\"Service information\" class=\"govuk-service-navigation\" data-module=\"govuk-service-navigation\" data-govuk-service-navigation-init=\"\"> <div class=\"govuk-width-container\"> <div class=\"govuk-service-navigation__container\"> <span class=\"govuk-service-navigation__service-name\"> <a class=\"govuk-service-navigation__link\" href=\"/\" title=\"Go to the Companies House homepage\" id=\"logo\"> Find and update company information </a> </span> </div> </div> </section> <div class=\"govuk-body\" id=\"chs-customer-insights-top\"> <div class=\"govuk-width-container\"> <a class=\"govuk-link\" href=\"https://www.smartsurvey.co.uk/s/csat-companieshouseservice/\">Tell us what you think of Companies House</a> </div> </div> <main id=\"page-container\" class=\"search search govuk-width-container\" role=\"main\"> <div> <div class=\"small-text\"><a class=\"govuk-link\" href=\"https://www.gov.uk/guidance/searching-the-companies-house-register\" target=\"_blank\">Companies House does not check the accuracy of the information filed<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a></div> </div> <div class=\"js-toggle-nav\" id=\"global-nav\"> <a id=\"user-signin-mobile\" href=\"/signin\" class=\"sign-in govuk-link\">Sign in / Register</a> </div> <div id=\"search-container\"> <div class=\"warning-overview\" id=\"image-disabled-notice\"><b>For the latest update on filing delays and service closures:</b> <a class=\"govuk-link\" href=\"https://www.gov.uk/government/organisations/companies-house/about/about-our-services#service-availability-and-planned-maintenance\">About our services - Companies House - GOV.UK</a></div> <div class=\"column-full-width\"> <form id=\"content\" action=\"/search\" method=\"get\" accept-charset=\"utf-8\" role=\"search\" class=\"search-header js-search-hash\"> <h1 id=\"start-searching\" class=\"main-title center\"> Search the register </h1> <p><label id=\"search-cta-label\" for=\"site-search-text\">Enter company name, number or officer name</label></p> <div class=\"search-bar-active\"> <div class=\"searchfield\"> <input type=\"search\" class=\"govuk-input\" autocomplete=\"off\" name=\"q\" id=\"site-search-text\" title=\"Search\" value=\"\"> <button type=\"submit\" id=\"search-submit\" class=\"search-submit gem-c-search__submit\">Search</button> <p id=\"slowsearch\" class=\"slow-search-msg\">Please press ENTER to search</p> </div> </div> </form> <a class=\"govuk-link piwik-event\" data-id=\"advanced-company-search\" data-event-id=\"Advanced company search\" href=\"/advanced-search\" target=\"_blank\">Advanced company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a> <div id=\"feature-info\" class=\"grid-row\"> <div class=\"column-third\"> <h2 class=\"heading-medium\">Current features include</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link\" href=\"/accounts/guidance\">File abridged or full accounts</a><sup class=\"label phase-tag\">New</sup></li> <li>Change a registered office address</li> <li>View company data and document images</li> <li>Search for disqualified directors</li> <li>Order certificates and certified documents<sup class=\"label phase-tag\">New</sup></li> <li>Follow companies</li> </ul> </div> <div class=\"column-third\"> <h2 class=\"heading-medium\">Planned features</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link\" href=\"/help/other-filings\">Other document filings</a></li> </ul> </div> <div class=\"column-third\"> <h2 class=\"heading-medium\">Other useful tools</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Company name availability\" href=\"/company-name-availability\" target=\"_blank\">Company name availability checker<span class=\"govuk-visually-hidden\">Link opens in new window</span></a></li> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Alphabetical company search\" href=\"/alphabetical-search\" target=\"_blank\">Alphabetical company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a><sup class=\"label phase-tag\">New</sup></li> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Dissolved company search\" href=\"/dissolved-search\" target=\"_blank\">Dissolved company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a><sup class=\"label phase-tag\">New</sup></li> </ul> </div> </div> </div> </div> </main> <div class=\"push\"></div> </div> <div id=\"chs-customer-insights\"> <a class=\"govuk-link govuk-link--inverse\" href=\"https://www.smartsurvey.co.uk/s/getcompanyinformation/\" target=\"_blank\">Tell us what you think of this service<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> <a id=\"feedback-link\" class=\"govuk-link secondary-customer-insights govuk-link--inverse\" target=\"_blank\" href=\"/help/feedback?sourceurl=https://find-and-update.company-information.service.gov.uk/\">Is there anything wrong with this page?<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> </div> <footer id=\"footer\" class=\"govuk-footer \" role=\"contentinfo\"> <div class=\"govuk-width-container \"> <div class=\"govuk-footer__meta\"> <div class=\"govuk-footer__meta-item govuk-footer__meta-item--grow\"> <h2 class=\"govuk-visually-hidden\">Support links</h2> <ul class=\"govuk-footer__inline-list\"> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/guidance/search-the-companies-house-register\" target=\"_blank\"> Policies <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/cookies\"> Cookies </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/find-contact-details-companies-house\" target=\"_blank\"> Contact us <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/accessibility-statement\"> Accessibility statement </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://developer.companieshouse.gov.uk/\" target=\"_blank\"> Developers <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> </ul> <span class=\"govuk-footer__inline-list-item\"> Built by <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/government/organisations/companies-house\" rel=\"license\">Companies House</a> </span> </div> <div class=\"govuk-footer__meta-item\"> <a class=\"govuk-footer__link govuk-footer__copyright-logo underline\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">© Crown copyright</a> </div> </div> </div> </footer> <div id=\"global-app-error\" class=\"app-error hidden\"></div> </body>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 9695",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://find-and-update.company-information.service.gov.uk/help/cookies',",
+      "      filteredHtml: `<body class=\"govuk-template__body js-enabled govuk-frontend-supported\"> <div class=\"entire-wrapper\"> <div id=\"cookie-banner\" class=\"govuk-cookie-banner\" role=\"region\" aria-label=\"Cookies on Companies House services\"> <div id=\"accept-or-reject-message\" class=\"govuk-cookie-banner__message govuk-width-container\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <h2 class=\"govuk-cookie-banner__heading govuk-heading-m\">Cookies on Companies House services</h2> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">We use some essential cookies to make our services work.</p> <p class=\"govuk-body\">We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"accept-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Accept analytics cookies </button> <button id=\"reject-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Reject analytics cookies </button> <a class=\"govuk-link\" href=\"/help/cookies\">View cookies</a> </div> </div> <div id=\"accepted-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've accepted analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-accepted-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> <div id=\"rejected-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've rejected analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-rejected-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> </div> <div id=\"skiplink-container\"> <div> <a href=\"#content\" class=\"govuk-skip-link\" data-module=\"govuk-skip-link\" data-govuk-skip-link-init=\"\">Skip to main content</a> </div> </div> <header class=\"govuk-header\" role=\"banner\" data-module=\"govuk-header\" data-govuk-header-init=\"\"> <div class=\"govuk-header__container govuk-width-container\"> <div class=\"govuk-header__logo\"> <a href=\"https://www.gov.uk/\" class=\"govuk-header__link govuk-header__link--homepage\"> </a> </div> </div> </header> <section aria-label=\"Service information\" class=\"govuk-service-navigation\" data-module=\"govuk-service-navigation\" data-govuk-service-navigation-init=\"\"> <div class=\"govuk-width-container\"> <div class=\"govuk-service-navigation__container\"> <span class=\"govuk-service-navigation__service-name\"> <a class=\"govuk-service-navigation__link\" href=\"/\" title=\"Go to the Companies House homepage\" id=\"logo\"> Find and update company information </a> </span> </div> </div> </section> <main id=\"page-container\" class=\"search govuk-width-container\" role=\"main\"> <div> <div class=\"small-text\"><a class=\"govuk-link\" href=\"https://www.gov.uk/guidance/searching-the-companies-house-register\" target=\"_blank\">Companies House does not check the accuracy of the information filed<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a></div> </div> <div class=\"js-toggle-nav\" id=\"global-nav\"> <a id=\"user-signin-mobile\" href=\"/signin\" class=\"sign-in govuk-link\">Sign in / Register</a> </div> <div id=\"search-container\"> <article class=\"text\" id=\"content\"> <div id=\"cookie-settings-success-message\" class=\"govuk-notification-banner govuk-notification-banner--success\" role=\"alert\" aria-labelledby=\"govuk-notification-banner-title\" data-module=\"govuk-notification-banner\" hidden=\"\" data-govuk-notification-banner-init=\"\" tabindex=\"-1\"> <div class=\"govuk-notification-banner__header\"> <h2 class=\"govuk-notification-banner__title\" id=\"govuk-notification-banner-title\"> Success </h2> </div> <div class=\"govuk-notification-banner__content\"> <p class=\"govuk-notification-banner__heading\"> You’ve set your cookie preferences. <a id=\"cookie-success-link\" class=\"govuk-notification-banner__link\" href=\"#\" hidden=\"\">Go back to the page you were looking at.</a> </p> </div> </div> <h1 class=\"heading-xlarge\">Cookies</h1> <p>Cookies are small files saved on your phone, tablet or computer when you visit a website.</p> <p>We use cookies to make this site work and collect information about how you use our service.</p> <h3 class=\"heading-medium\">Essential cookies</h3> <p>We use some essential cookies to make our services work. They help us keep your information secure, and remember notifications you’ve seen so that we don’t show them to you again.</p> <p>The following cookies are first-party cookies, which means they are set by Companies House:</p> <table> <thead> <tr> <th>Name</th> <th>Purpose</th> <th>Expires</th> </tr> </thead> <tbody> <tr> <td>__prefs</td> <td>Used to remember when you have seen important notices, so you do not see them again.</td> <td>5 years</td> </tr> <tr> <td>__CAS</td> <td>Used to remember choices you have made and to choose the correct information to show to you.</td> <td>10 years</td> </tr> <tr> <td>__SID</td> <td>A session identifier. A unique random value that allows the site to recognise your movement around the site as being from one computer. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>_FLP</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>Persistent</td> </tr> <tr> <td>_PIN</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>_ZXS</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>ch_cookie_consent</td> <td>Used to remember your analytics cookie choice.</td> <td>1 year</td> </tr> <tr> <td>ch_session</td> <td>Session identifier for Electronic Web Filing (EWF) services. A unique random value that allows the site to identify the user’s session. Also contains a randomly generated token that changes on every page. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>chcookie</td> <td>In built Apache tracking cookie, present on Electronic Web Filing (EWF) services.</td> <td>25 months</td> </tr> <tr> <td>search.web.user</td> <td>Used to remember user preferences when performing searches.</td> <td>1 year</td> </tr> <tr> <td>sft</td> <td>Used to manage the users preferences during their Companies House service journey.</td> <td>From 2 years to 10 years</td> </tr> <tr> <td>transaction</td> <td>Used by Electronic Web Filing (EWF) to store the url the user will be redirected to if any session errors occur.</td> <td>1 day</td> </tr> <tr> <td>JSESSIONID</td> <td>A session identifier. A unique random value that allows the site to recognise your movement around the site as being from one computer. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> </tbody> </table> <p>The following cookies are essential third-party cookies, which are set by the external suppliers that provide ‘plug ins’ for some of our services:</p> <table> <thead> <tr> <th>Name</th> <th>Purpose</th> <th>Expires</th> </tr> </thead> <tbody> <tr> <td>frontend_state_2</td> <td>GOV.UK pay use this to secure your payment session.</td> <td>3 hours</td> </tr> <tr> <td>seen_cookie_message</td> <td>GOV.UK pay use this to let them know that you have seen their cookie message.</td> <td>1 month</td> </tr> <tr> <td>__cfduid</td> <td>The _cfduid cookie helps Cloudflare detect malicious visitors to our Customers’ websites and minimizes blocking legitimate users. It may be placed on the devices of our customers’ End Users to identify individual clients behind a shared IP address and apply security settings on a per-client basis. It is necessary for supporting Cloudflare’s security features.</td> <td>30 days</td> </tr> <tr> <td>__cflb</td> <td>This is a load balancer cookie for sticky sessions on Cloudflare's load balancers.</td> <td>24 hours</td> </tr> <tr> <td>ep201</td> <td>Set by Survey Monkey's load balancer. User tracking for abuse and troubleshooting problems.</td> <td>1 hour</td> </tr> <tr> <td>ep202</td> <td>Used as a unique user identifier by Survey Monkey to AB test new functions.</td> <td>90 days (resets from time of last access)</td> </tr> <tr> <td>ep203</td> <td>Enables the Survey Monkey system to uniquely identify browsers/devices for the purpose of mitigating account sharing. Identifies devices that could be account sharing which is not allowed under our terms of use. </td> <td>90 days</td> </tr> </tbody> </table> <h3 class=\"heading-medium\">Analytics cookies</h3> <p>These cookies are optional. With your permission, we use them to find out how you use our services. For example, which pages you visit, how long you are on the site, how you got there and what you click on. This information helps us to improve our services.</p> <p> Our cookies do not store or collect any personal information (such as your name or address), or anything that allows us to find out who you are. We use Google Analytics software (Universal Analyti`... 5020 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 15020,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://find-and-update.company-information.service.gov.uk/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (25):",
+      "      [BUTTON] \"Accept analytics cookies\" --> selector: #accept-cookies-button",
+      "      [BUTTON] \"Reject analytics cookies\" --> selector: #reject-cookies-button",
+      "      [A] \"View cookies\" --> selector: a",
+      "      [A] \"Skip to main content\" --> selector: .govuk-skip-link",
+      "      [A] \"Find and update company information\" --> selector: #logo",
+      "      [A] \"Tell us what you think of Companies House\" --> selector: a",
+      "      [A] \"Companies House does not check the accuracy of the information filed",
+      "(link opens a new window)\" --> selector: a",
+      "      [A] \"Sign in / Register\" --> selector: #user-signin",
+      "      [A] \"About our services - Companies House - GOV.UK\" --> selector: a",
+      "      [BUTTON] \"Search\" --> selector: #search-submit",
+      "      [A] \"Advanced company search",
+      "Link opens in new window\" --> selector: a",
+      "      [A] \"File abridged or full accounts\" --> selector: a",
+      "      [A] \"Other document filings\" --> selector: a",
+      "      [A] \"Company name availability checker",
+      "Link opens in new window\" --> selector: a",
+      "      [A] \"Alphabetical company search",
+      "Link opens in new window\" --> selector: a",
+      "      [A] \"Dissolved company search",
+      "Link opens in new window\" --> selector: a",
+      "      [A] \"Tell us what you think of this service",
+      "(link opens a new window)\" --> selector: a",
+      "      [A] \"Is there anything wrong with this page?",
+      "(link opens a new window)\" --> selector: #feedback-link",
+      "      [A] \"Policies",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Cookies\" --> selector: a",
+      "      [A] \"Contact us",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Accessibility statement\" --> selector: a",
+      "      [A] \"Developers",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Companies House\" --> selector: a",
+      "      [A] \"© Crown copyright\" --> selector: a",
+      "   Checkboxes found (0):",
+      "  Toggles found (1):",
+      "      \"Sign in / Register\" | aria-checked: null --> selector: #global-nav",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (17):",
+      "      [BUTTON] \"Accept analytics cookies\" --> selector: #accept-cookies-button",
+      "      [BUTTON] \"Reject analytics cookies\" --> selector: #reject-cookies-button",
+      "      [A] \"View cookies\" --> selector: a",
+      "      [A] \"Skip to main content\" --> selector: .govuk-skip-link",
+      "      [A] \"Find and update company information\" --> selector: #logo",
+      "      [A] \"Companies House does not check the accuracy of the information filed",
+      "(link opens a new window)\" --> selector: a",
+      "      [A] \"Sign in / Register\" --> selector: #user-signin",
+      "      [BUTTON] \"Save cookie settings\" --> selector: #analytics-choice-button",
+      "      [A] \"Tell us what you think of this service",
+      "(link opens a new window)\" --> selector: a",
+      "      [A] \"Is there anything wrong with this page?",
+      "(link opens a new window)\" --> selector: #feedback-link",
+      "      [A] \"Policies",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Cookies\" --> selector: a",
+      "      [A] \"Contact us",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Accessibility statement\" --> selector: a",
+      "      [A] \"Developers",
+      "Link opens in new tab\" --> selector: a",
+      "      [A] \"Companies House\" --> selector: a",
+      "      [A] \"© Crown copyright\" --> selector: a",
+      "   Checkboxes found (0):",
+      "  Toggles found (1):",
+      "      \"Sign in / Register\" | aria-checked: null --> selector: #global-nav",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://find-and-update.company-information.service.gov.uk/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Accept analytics cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "accept-cookies-button",
+              "type": "button",
+              "class": "govuk-button",
+              "data-module": "govuk-button",
+              "data-govuk-button-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "#accept-cookies-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject analytics cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "reject-cookies-button",
+              "type": "button",
+              "class": "govuk-button",
+              "data-module": "govuk-button",
+              "data-govuk-button-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "#reject-cookies-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "/help/cookies"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Skip to main content",
+            "tag": "A",
+            "attributes": {
+              "href": "#content",
+              "class": "govuk-skip-link",
+              "data-module": "govuk-skip-link",
+              "data-govuk-skip-link-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "skiplink-container",
+                "className": null,
+                "selector": "#skiplink-container"
+              }
+            },
+            "selector": ".govuk-skip-link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Find and update company information",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-service-navigation__link",
+              "href": "/",
+              "title": "Go to the Companies House homepage",
+              "onclick": "javascript:_paq.push(['trackEvent', 'CHLogo', 'Homepage']);",
+              "id": "logo"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "govuk-service-navigation__service-name",
+              "selector": ".govuk-service-navigation__service-name",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-service-navigation__container",
+                "selector": ".govuk-service-navigation__container"
+              }
+            },
+            "selector": "#logo",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tell us what you think of Companies House",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "https://www.smartsurvey.co.uk/s/csat-companieshouseservice/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-width-container",
+              "selector": ".govuk-width-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "chs-customer-insights-top",
+                "className": "govuk-body",
+                "selector": "#chs-customer-insights-top"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Companies House does not check the accuracy of the information filed\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "https://www.gov.uk/guidance/searching-the-companies-house-register",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "small-text",
+              "selector": ".small-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in / Register",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "id": "user-signin",
+              "href": "/signin"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "unauthenticated",
+              "selector": ".unauthenticated",
+              "grandparent": {
+                "tag": "UL",
+                "id": "navigation",
+                "className": "mobile-hidden",
+                "selector": "#navigation"
+              }
+            },
+            "selector": "#user-signin",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "About our services - Companies House - GOV.UK",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "https://www.gov.uk/government/organisations/companies-house/about/about-our-services#service-availability-and-planned-maintenance"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "image-disabled-notice",
+              "className": "warning-overview",
+              "selector": "#image-disabled-notice",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "search-container",
+                "className": null,
+                "selector": "#search-container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "submit",
+              "id": "search-submit",
+              "class": "search-submit gem-c-search__submit"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "searchfield",
+              "selector": ".searchfield",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "search-bar-active",
+                "selector": ".search-bar-active"
+              }
+            },
+            "selector": "#search-submit",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Advanced company search\nLink opens in new window",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link piwik-event",
+              "data-id": "advanced-company-search",
+              "data-event-id": "Advanced company search",
+              "href": "/advanced-search",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "column-full-width",
+              "selector": ".column-full-width",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "search-container",
+                "className": null,
+                "selector": "#search-container"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "File abridged or full accounts",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "/accounts/guidance"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-list govuk-list--bullet",
+                "selector": ".govuk-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Other document filings",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "/help/other-filings"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-list govuk-list--bullet",
+                "selector": ".govuk-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Company name availability checker\nLink opens in new window",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link piwik-event",
+              "data-id": "other-useful-tools",
+              "data-event-id": "Company name availability",
+              "href": "/company-name-availability",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-list govuk-list--bullet",
+                "selector": ".govuk-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alphabetical company search\nLink opens in new window",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link piwik-event",
+              "data-id": "other-useful-tools",
+              "data-event-id": "Alphabetical company search",
+              "href": "/alphabetical-search",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-list govuk-list--bullet",
+                "selector": ".govuk-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Dissolved company search\nLink opens in new window",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link piwik-event",
+              "data-id": "other-useful-tools",
+              "data-event-id": "Dissolved company search",
+              "href": "/dissolved-search",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-list govuk-list--bullet",
+                "selector": ".govuk-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tell us what you think of this service\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link govuk-link--inverse",
+              "href": "https://www.smartsurvey.co.uk/s/getcompanyinformation/",
+              "target": "_blank",
+              "onclick": "javascript:_paq.push(['trackEvent', 'Beta', 'Feedback']);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "chs-customer-insights",
+              "className": null,
+              "selector": "#chs-customer-insights",
+              "grandparent": {
+                "tag": "BODY",
+                "id": null,
+                "className": "govuk-template__body js-enabled govuk-frontend-supported",
+                "selector": ".govuk-template__body"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Is there anything wrong with this page?\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "id": "feedback-link",
+              "class": "govuk-link secondary-customer-insights govuk-link--inverse",
+              "target": "_blank",
+              "href": "/help/feedback?sourceurl=https://find-and-update.company-information.service.gov.uk/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "chs-customer-insights",
+              "className": null,
+              "selector": "#chs-customer-insights",
+              "grandparent": {
+                "tag": "BODY",
+                "id": null,
+                "className": "govuk-template__body js-enabled govuk-frontend-supported",
+                "selector": ".govuk-template__body"
+              }
+            },
+            "selector": "#feedback-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Policies\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/guidance/search-the-companies-house-register",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "/help/cookies"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Contact us\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/find-contact-details-companies-house",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accessibility statement",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "/help/accessibility-statement"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Developers\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://developer.companieshouse.gov.uk/",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Companies House",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/government/organisations/companies-house",
+              "rel": "license"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-footer__meta-item govuk-footer__meta-item--grow",
+                "selector": ".govuk-footer__meta-item"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "© Crown copyright",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link govuk-footer__copyright-logo underline",
+              "href": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-footer__meta-item",
+              "selector": ".govuk-footer__meta-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-footer__meta",
+                "selector": ".govuk-footer__meta"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Sign in / Register",
+            "tag": "DIV",
+            "attributes": {
+              "class": "js-toggle-nav",
+              "id": "global-nav"
+            },
+            "parentInfo": {
+              "tag": "MAIN",
+              "id": "page-container",
+              "className": "search search govuk-width-container",
+              "selector": "#page-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "entire-wrapper",
+                "selector": ".entire-wrapper"
+              }
+            },
+            "selector": "#global-nav",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://find-and-update.company-information.service.gov.uk/",
+        "filteredHtml": "<body class=\"govuk-template__body js-enabled govuk-frontend-supported\"> <div class=\"entire-wrapper\"> <div id=\"cookie-banner\" class=\"govuk-cookie-banner\" role=\"region\" aria-label=\"Cookies on Companies House services\"> <div id=\"accept-or-reject-message\" class=\"govuk-cookie-banner__message govuk-width-container\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <h2 class=\"govuk-cookie-banner__heading govuk-heading-m\">Cookies on Companies House services</h2> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">We use some essential cookies to make our services work.</p> <p class=\"govuk-body\">We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"accept-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Accept analytics cookies </button> <button id=\"reject-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Reject analytics cookies </button> <a class=\"govuk-link\" href=\"/help/cookies\">View cookies</a> </div> </div> <div id=\"accepted-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've accepted analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-accepted-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> <div id=\"rejected-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've rejected analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-rejected-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> </div> <div id=\"skiplink-container\"> <div> <a href=\"#content\" class=\"govuk-skip-link\" data-module=\"govuk-skip-link\" data-govuk-skip-link-init=\"\">Skip to main content</a> </div> </div> <header class=\"govuk-header\" role=\"banner\" data-module=\"govuk-header\" data-govuk-header-init=\"\"> <div class=\"govuk-header__container govuk-width-container\"> <div class=\"govuk-header__logo\"> <a href=\"https://www.gov.uk/\" class=\"govuk-header__link govuk-header__link--homepage\"> </a> </div> </div> </header> <section aria-label=\"Service information\" class=\"govuk-service-navigation\" data-module=\"govuk-service-navigation\" data-govuk-service-navigation-init=\"\"> <div class=\"govuk-width-container\"> <div class=\"govuk-service-navigation__container\"> <span class=\"govuk-service-navigation__service-name\"> <a class=\"govuk-service-navigation__link\" href=\"/\" title=\"Go to the Companies House homepage\" id=\"logo\"> Find and update company information </a> </span> </div> </div> </section> <div class=\"govuk-body\" id=\"chs-customer-insights-top\"> <div class=\"govuk-width-container\"> <a class=\"govuk-link\" href=\"https://www.smartsurvey.co.uk/s/csat-companieshouseservice/\">Tell us what you think of Companies House</a> </div> </div> <main id=\"page-container\" class=\"search search govuk-width-container\" role=\"main\"> <div> <div class=\"small-text\"><a class=\"govuk-link\" href=\"https://www.gov.uk/guidance/searching-the-companies-house-register\" target=\"_blank\">Companies House does not check the accuracy of the information filed<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a></div> </div> <div class=\"js-toggle-nav\" id=\"global-nav\"> <a id=\"user-signin-mobile\" href=\"/signin\" class=\"sign-in govuk-link\">Sign in / Register</a> </div> <div id=\"search-container\"> <div class=\"warning-overview\" id=\"image-disabled-notice\"><b>For the latest update on filing delays and service closures:</b> <a class=\"govuk-link\" href=\"https://www.gov.uk/government/organisations/companies-house/about/about-our-services#service-availability-and-planned-maintenance\">About our services - Companies House - GOV.UK</a></div> <div class=\"column-full-width\"> <form id=\"content\" action=\"/search\" method=\"get\" accept-charset=\"utf-8\" role=\"search\" class=\"search-header js-search-hash\"> <h1 id=\"start-searching\" class=\"main-title center\"> Search the register </h1> <p><label id=\"search-cta-label\" for=\"site-search-text\">Enter company name, number or officer name</label></p> <div class=\"search-bar-active\"> <div class=\"searchfield\"> <input type=\"search\" class=\"govuk-input\" autocomplete=\"off\" name=\"q\" id=\"site-search-text\" title=\"Search\" value=\"\"> <button type=\"submit\" id=\"search-submit\" class=\"search-submit gem-c-search__submit\">Search</button> <p id=\"slowsearch\" class=\"slow-search-msg\">Please press ENTER to search</p> </div> </div> </form> <a class=\"govuk-link piwik-event\" data-id=\"advanced-company-search\" data-event-id=\"Advanced company search\" href=\"/advanced-search\" target=\"_blank\">Advanced company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a> <div id=\"feature-info\" class=\"grid-row\"> <div class=\"column-third\"> <h2 class=\"heading-medium\">Current features include</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link\" href=\"/accounts/guidance\">File abridged or full accounts</a><sup class=\"label phase-tag\">New</sup></li> <li>Change a registered office address</li> <li>View company data and document images</li> <li>Search for disqualified directors</li> <li>Order certificates and certified documents<sup class=\"label phase-tag\">New</sup></li> <li>Follow companies</li> </ul> </div> <div class=\"column-third\"> <h2 class=\"heading-medium\">Planned features</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link\" href=\"/help/other-filings\">Other document filings</a></li> </ul> </div> <div class=\"column-third\"> <h2 class=\"heading-medium\">Other useful tools</h2> <ul class=\"govuk-list govuk-list--bullet\"> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Company name availability\" href=\"/company-name-availability\" target=\"_blank\">Company name availability checker<span class=\"govuk-visually-hidden\">Link opens in new window</span></a></li> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Alphabetical company search\" href=\"/alphabetical-search\" target=\"_blank\">Alphabetical company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a><sup class=\"label phase-tag\">New</sup></li> <li><a class=\"govuk-link piwik-event\" data-id=\"other-useful-tools\" data-event-id=\"Dissolved company search\" href=\"/dissolved-search\" target=\"_blank\">Dissolved company search<span class=\"govuk-visually-hidden\">Link opens in new window</span></a><sup class=\"label phase-tag\">New</sup></li> </ul> </div> </div> </div> </div> </main> <div class=\"push\"></div> </div> <div id=\"chs-customer-insights\"> <a class=\"govuk-link govuk-link--inverse\" href=\"https://www.smartsurvey.co.uk/s/getcompanyinformation/\" target=\"_blank\">Tell us what you think of this service<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> <a id=\"feedback-link\" class=\"govuk-link secondary-customer-insights govuk-link--inverse\" target=\"_blank\" href=\"/help/feedback?sourceurl=https://find-and-update.company-information.service.gov.uk/\">Is there anything wrong with this page?<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> </div> <footer id=\"footer\" class=\"govuk-footer \" role=\"contentinfo\"> <div class=\"govuk-width-container \"> <div class=\"govuk-footer__meta\"> <div class=\"govuk-footer__meta-item govuk-footer__meta-item--grow\"> <h2 class=\"govuk-visually-hidden\">Support links</h2> <ul class=\"govuk-footer__inline-list\"> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/guidance/search-the-companies-house-register\" target=\"_blank\"> Policies <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/cookies\"> Cookies </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/find-contact-details-companies-house\" target=\"_blank\"> Contact us <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/accessibility-statement\"> Accessibility statement </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://developer.companieshouse.gov.uk/\" target=\"_blank\"> Developers <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> </ul> <span class=\"govuk-footer__inline-list-item\"> Built by <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/government/organisations/companies-house\" rel=\"license\">Companies House</a> </span> </div> <div class=\"govuk-footer__meta-item\"> <a class=\"govuk-footer__link govuk-footer__copyright-logo underline\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">© Crown copyright</a> </div> </div> </div> </footer> <div id=\"global-app-error\" class=\"app-error hidden\"></div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 9695
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Accept analytics cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "accept-cookies-button",
+              "type": "button",
+              "class": "govuk-button",
+              "data-module": "govuk-button",
+              "data-govuk-button-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "#accept-cookies-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject analytics cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "reject-cookies-button",
+              "type": "button",
+              "class": "govuk-button",
+              "data-module": "govuk-button",
+              "data-govuk-button-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "#reject-cookies-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "/help/cookies"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-button-group",
+              "selector": ".govuk-button-group",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "accept-or-reject-message",
+                "className": "govuk-cookie-banner__message govuk-width-container",
+                "selector": "#accept-or-reject-message"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Skip to main content",
+            "tag": "A",
+            "attributes": {
+              "href": "#content",
+              "class": "govuk-skip-link",
+              "data-module": "govuk-skip-link",
+              "data-govuk-skip-link-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "skiplink-container",
+                "className": null,
+                "selector": "#skiplink-container"
+              }
+            },
+            "selector": ".govuk-skip-link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Find and update company information",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-service-navigation__link",
+              "href": "/",
+              "title": "Go to the Companies House homepage",
+              "onclick": "javascript:_paq.push(['trackEvent', 'CHLogo', 'Homepage']);",
+              "id": "logo"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "govuk-service-navigation__service-name",
+              "selector": ".govuk-service-navigation__service-name",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-service-navigation__container",
+                "selector": ".govuk-service-navigation__container"
+              }
+            },
+            "selector": "#logo",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Companies House does not check the accuracy of the information filed\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "href": "https://www.gov.uk/guidance/searching-the-companies-house-register",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "small-text",
+              "selector": ".small-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign in / Register",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link",
+              "id": "user-signin",
+              "href": "/signin"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "unauthenticated",
+              "selector": ".unauthenticated",
+              "grandparent": {
+                "tag": "UL",
+                "id": "navigation",
+                "className": "mobile-hidden",
+                "selector": "#navigation"
+              }
+            },
+            "selector": "#user-signin",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save cookie settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "analytics-choice-button",
+              "type": "button",
+              "class": "govuk-button",
+              "data-module": "govuk-button",
+              "data-govuk-button-init": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-grid-column-two-thirds",
+              "selector": ".govuk-grid-column-two-thirds",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "govuk-controls",
+                "className": "govuk-grid-row",
+                "selector": "#govuk-controls"
+              }
+            },
+            "selector": "#analytics-choice-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tell us what you think of this service\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-link govuk-link--inverse",
+              "href": "https://www.smartsurvey.co.uk/s/getcompanyinformation/",
+              "target": "_blank",
+              "onclick": "javascript:_paq.push(['trackEvent', 'Beta', 'Feedback']);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "chs-customer-insights",
+              "className": null,
+              "selector": "#chs-customer-insights",
+              "grandparent": {
+                "tag": "BODY",
+                "id": null,
+                "className": "govuk-template__body js-enabled govuk-frontend-supported",
+                "selector": ".govuk-template__body"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Is there anything wrong with this page?\n(link opens a new window)",
+            "tag": "A",
+            "attributes": {
+              "id": "feedback-link",
+              "class": "govuk-link secondary-customer-insights govuk-link--inverse",
+              "target": "_blank",
+              "href": "/help/feedback?sourceurl=https://find-and-update.company-information.service.gov.uk/help/cookies"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "chs-customer-insights",
+              "className": null,
+              "selector": "#chs-customer-insights",
+              "grandparent": {
+                "tag": "BODY",
+                "id": null,
+                "className": "govuk-template__body js-enabled govuk-frontend-supported",
+                "selector": ".govuk-template__body"
+              }
+            },
+            "selector": "#feedback-link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Policies\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/guidance/search-the-companies-house-register",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookies",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "/help/cookies"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Contact us\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/find-contact-details-companies-house",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accessibility statement",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "/help/accessibility-statement"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Developers\nLink opens in new tab",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://developer.companieshouse.gov.uk/",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "govuk-footer__inline-list",
+                "selector": ".govuk-footer__inline-list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Companies House",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link",
+              "href": "https://www.gov.uk/government/organisations/companies-house",
+              "rel": "license"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "govuk-footer__inline-list-item",
+              "selector": ".govuk-footer__inline-list-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-footer__meta-item govuk-footer__meta-item--grow",
+                "selector": ".govuk-footer__meta-item"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "© Crown copyright",
+            "tag": "A",
+            "attributes": {
+              "class": "govuk-footer__link govuk-footer__copyright-logo underline",
+              "href": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "govuk-footer__meta-item",
+              "selector": ".govuk-footer__meta-item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "govuk-footer__meta",
+                "selector": ".govuk-footer__meta"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Sign in / Register",
+            "tag": "DIV",
+            "attributes": {
+              "class": "js-toggle-nav",
+              "id": "global-nav"
+            },
+            "parentInfo": {
+              "tag": "MAIN",
+              "id": "page-container",
+              "className": "search govuk-width-container",
+              "selector": "#page-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "entire-wrapper",
+                "selector": ".entire-wrapper"
+              }
+            },
+            "selector": "#global-nav",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://find-and-update.company-information.service.gov.uk/help/cookies",
+        "filteredHtml": "<body class=\"govuk-template__body js-enabled govuk-frontend-supported\"> <div class=\"entire-wrapper\"> <div id=\"cookie-banner\" class=\"govuk-cookie-banner\" role=\"region\" aria-label=\"Cookies on Companies House services\"> <div id=\"accept-or-reject-message\" class=\"govuk-cookie-banner__message govuk-width-container\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <h2 class=\"govuk-cookie-banner__heading govuk-heading-m\">Cookies on Companies House services</h2> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">We use some essential cookies to make our services work.</p> <p class=\"govuk-body\">We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"accept-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Accept analytics cookies </button> <button id=\"reject-cookies-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Reject analytics cookies </button> <a class=\"govuk-link\" href=\"/help/cookies\">View cookies</a> </div> </div> <div id=\"accepted-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've accepted analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-accepted-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> <div id=\"rejected-cookies-message\" class=\"govuk-cookie-banner__message govuk-width-container\" role=\"alert\" hidden=\"\"> <div class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <div class=\"govuk-cookie-banner__content\"> <p class=\"govuk-body\">You've rejected analytics cookies. You can <a class=\"govuk-link\" href=\"/help/cookies\">change your cookie settings</a> at any time.</p> </div> </div> </div> <div class=\"govuk-button-group\"> <button id=\"hide-rejected-message-button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Hide this message </button> </div> </div> </div> <div id=\"skiplink-container\"> <div> <a href=\"#content\" class=\"govuk-skip-link\" data-module=\"govuk-skip-link\" data-govuk-skip-link-init=\"\">Skip to main content</a> </div> </div> <header class=\"govuk-header\" role=\"banner\" data-module=\"govuk-header\" data-govuk-header-init=\"\"> <div class=\"govuk-header__container govuk-width-container\"> <div class=\"govuk-header__logo\"> <a href=\"https://www.gov.uk/\" class=\"govuk-header__link govuk-header__link--homepage\"> </a> </div> </div> </header> <section aria-label=\"Service information\" class=\"govuk-service-navigation\" data-module=\"govuk-service-navigation\" data-govuk-service-navigation-init=\"\"> <div class=\"govuk-width-container\"> <div class=\"govuk-service-navigation__container\"> <span class=\"govuk-service-navigation__service-name\"> <a class=\"govuk-service-navigation__link\" href=\"/\" title=\"Go to the Companies House homepage\" id=\"logo\"> Find and update company information </a> </span> </div> </div> </section> <main id=\"page-container\" class=\"search govuk-width-container\" role=\"main\"> <div> <div class=\"small-text\"><a class=\"govuk-link\" href=\"https://www.gov.uk/guidance/searching-the-companies-house-register\" target=\"_blank\">Companies House does not check the accuracy of the information filed<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a></div> </div> <div class=\"js-toggle-nav\" id=\"global-nav\"> <a id=\"user-signin-mobile\" href=\"/signin\" class=\"sign-in govuk-link\">Sign in / Register</a> </div> <div id=\"search-container\"> <article class=\"text\" id=\"content\"> <div id=\"cookie-settings-success-message\" class=\"govuk-notification-banner govuk-notification-banner--success\" role=\"alert\" aria-labelledby=\"govuk-notification-banner-title\" data-module=\"govuk-notification-banner\" hidden=\"\" data-govuk-notification-banner-init=\"\" tabindex=\"-1\"> <div class=\"govuk-notification-banner__header\"> <h2 class=\"govuk-notification-banner__title\" id=\"govuk-notification-banner-title\"> Success </h2> </div> <div class=\"govuk-notification-banner__content\"> <p class=\"govuk-notification-banner__heading\"> You’ve set your cookie preferences. <a id=\"cookie-success-link\" class=\"govuk-notification-banner__link\" href=\"#\" hidden=\"\">Go back to the page you were looking at.</a> </p> </div> </div> <h1 class=\"heading-xlarge\">Cookies</h1> <p>Cookies are small files saved on your phone, tablet or computer when you visit a website.</p> <p>We use cookies to make this site work and collect information about how you use our service.</p> <h3 class=\"heading-medium\">Essential cookies</h3> <p>We use some essential cookies to make our services work. They help us keep your information secure, and remember notifications you’ve seen so that we don’t show them to you again.</p> <p>The following cookies are first-party cookies, which means they are set by Companies House:</p> <table> <thead> <tr> <th>Name</th> <th>Purpose</th> <th>Expires</th> </tr> </thead> <tbody> <tr> <td>__prefs</td> <td>Used to remember when you have seen important notices, so you do not see them again.</td> <td>5 years</td> </tr> <tr> <td>__CAS</td> <td>Used to remember choices you have made and to choose the correct information to show to you.</td> <td>10 years</td> </tr> <tr> <td>__SID</td> <td>A session identifier. A unique random value that allows the site to recognise your movement around the site as being from one computer. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>_FLP</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>Persistent</td> </tr> <tr> <td>_PIN</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>_ZXS</td> <td>Used to manage the Companies House service users sign-in journey. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>ch_cookie_consent</td> <td>Used to remember your analytics cookie choice.</td> <td>1 year</td> </tr> <tr> <td>ch_session</td> <td>Session identifier for Electronic Web Filing (EWF) services. A unique random value that allows the site to identify the user’s session. Also contains a randomly generated token that changes on every page. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> <tr> <td>chcookie</td> <td>In built Apache tracking cookie, present on Electronic Web Filing (EWF) services.</td> <td>25 months</td> </tr> <tr> <td>search.web.user</td> <td>Used to remember user preferences when performing searches.</td> <td>1 year</td> </tr> <tr> <td>sft</td> <td>Used to manage the users preferences during their Companies House service journey.</td> <td>From 2 years to 10 years</td> </tr> <tr> <td>transaction</td> <td>Used by Electronic Web Filing (EWF) to store the url the user will be redirected to if any session errors occur.</td> <td>1 day</td> </tr> <tr> <td>JSESSIONID</td> <td>A session identifier. A unique random value that allows the site to recognise your movement around the site as being from one computer. Contains no personal information and cannot be used to identify a user.</td> <td>When you close your browser</td> </tr> </tbody> </table> <p>The following cookies are essential third-party cookies, which are set by the external suppliers that provide ‘plug ins’ for some of our services:</p> <table> <thead> <tr> <th>Name</th> <th>Purpose</th> <th>Expires</th> </tr> </thead> <tbody> <tr> <td>frontend_state_2</td> <td>GOV.UK pay use this to secure your payment session.</td> <td>3 hours</td> </tr> <tr> <td>seen_cookie_message</td> <td>GOV.UK pay use this to let them know that you have seen their cookie message.</td> <td>1 month</td> </tr> <tr> <td>__cfduid</td> <td>The _cfduid cookie helps Cloudflare detect malicious visitors to our Customers’ websites and minimizes blocking legitimate users. It may be placed on the devices of our customers’ End Users to identify individual clients behind a shared IP address and apply security settings on a per-client basis. It is necessary for supporting Cloudflare’s security features.</td> <td>30 days</td> </tr> <tr> <td>__cflb</td> <td>This is a load balancer cookie for sticky sessions on Cloudflare's load balancers.</td> <td>24 hours</td> </tr> <tr> <td>ep201</td> <td>Set by Survey Monkey's load balancer. User tracking for abuse and troubleshooting problems.</td> <td>1 hour</td> </tr> <tr> <td>ep202</td> <td>Used as a unique user identifier by Survey Monkey to AB test new functions.</td> <td>90 days (resets from time of last access)</td> </tr> <tr> <td>ep203</td> <td>Enables the Survey Monkey system to uniquely identify browsers/devices for the purpose of mitigating account sharing. Identifies devices that could be account sharing which is not allowed under our terms of use. </td> <td>90 days</td> </tr> </tbody> </table> <h3 class=\"heading-medium\">Analytics cookies</h3> <p>These cookies are optional. With your permission, we use them to find out how you use our services. For example, which pages you visit, how long you are on the site, how you got there and what you click on. This information helps us to improve our services.</p> <p> Our cookies do not store or collect any personal information (such as your name or address), or anything that allows us to find out who you are. We use Google Analytics software (Universal Analytics) and LUX Real User Monitoring (RUM) software from SpeedCurve to collect anonymised information about how you use GOV.UK. We do this to help make sure the site is meeting the needs of its users and to help us make improvements to the site and to government digital services. </p> <p>We use the following analytics cookies:</p> <table> <thead> <tr> <th>Name</th> <th>Purpose</th> <th>Expires</th> </tr> </thead> <tbody> <tr> <td>PIWIK_SESSID</td> <td>Used to store a unique session ID.</td> <td>24 minutes</td> </tr> <tr> <td>_pk_id.*</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>25 months</td> </tr> <tr> <td>_pk_ref.*</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>Up to 2 years</td> </tr> <tr> <td>_pk_ses.*</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>30 minutes</td> </tr> <tr> <td>_pk_cvar.*</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>30 minutes</td> </tr> <tr> <td>_ga</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>2 years</td> </tr> <tr> <td>_gid</td> <td>Used to improve our understanding of how people use our website and services, through web analytics.</td> <td>24 hours</td> </tr> </tbody> </table> <div id=\"govuk-controls\" class=\"govuk-grid-row\"> <div class=\"govuk-grid-column-two-thirds\"> <h2 class=\"govuk-heading-l\">Change your cookie settings</h2> <div class=\"govuk-form-group\"> <fieldset class=\"govuk-fieldset\"> <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--s\"> Do you want to accept analytics cookies? </legend> <div class=\"govuk-radios\"> <div class=\"govuk-radios__item\"> <input class=\"govuk-radios__input\" id=\"analytics-cookies-yes\" name=\"analytics-cookies\" type=\"radio\" value=\"yes\"> <label class=\"govuk-label govuk-radios__label\" for=\"analytics-cookies-yes\"> Yes </label> </div> <div class=\"govuk-radios__item\"> <input class=\"govuk-radios__input\" id=\"analytics-cookies-no\" name=\"analytics-cookies\" type=\"radio\" value=\"no\" checked=\"\"> <label class=\"govuk-label govuk-radios__label\" for=\"analytics-cookies-no\"> No </label> </div> </div> </fieldset> </div> <button id=\"analytics-choice-button\" type=\"button\" class=\"govuk-button\" data-module=\"govuk-button\" data-govuk-button-init=\"\"> Save cookie settings </button> </div> </div> </article> </div> </main> <div class=\"push\"></div> </div> <div id=\"chs-customer-insights\"> <a class=\"govuk-link govuk-link--inverse\" href=\"https://www.smartsurvey.co.uk/s/getcompanyinformation/\" target=\"_blank\">Tell us what you think of this service<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> <a id=\"feedback-link\" class=\"govuk-link secondary-customer-insights govuk-link--inverse\" target=\"_blank\" href=\"/help/feedback?sourceurl=https://find-and-update.company-information.service.gov.uk/help/cookies\">Is there anything wrong with this page?<span class=\"govuk-visually-hidden\">(link opens a new window)</span></a> </div> <footer id=\"footer\" class=\"govuk-footer \" role=\"contentinfo\"> <div class=\"govuk-width-container \"> <div class=\"govuk-footer__meta\"> <div class=\"govuk-footer__meta-item govuk-footer__meta-item--grow\"> <h2 class=\"govuk-visually-hidden\">Support links</h2> <ul class=\"govuk-footer__inline-list\"> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/guidance/search-the-companies-house-register\" target=\"_blank\"> Policies <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/cookies\"> Cookies </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/find-contact-details-companies-house\" target=\"_blank\"> Contact us <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"/help/accessibility-statement\"> Accessibility statement </a> </li> <li class=\"govuk-footer__inline-list-item\"> <a class=\"govuk-footer__link\" href=\"https://developer.companieshouse.gov.uk/\" target=\"_blank\"> Developers <span class=\"visuallyhidden\"> Link opens in new tab </span> </a> </li> </ul> <span class=\"govuk-footer__inline-list-item\"> Built by <a class=\"govuk-footer__link\" href=\"https://www.gov.uk/government/organisations/companies-house\" rel=\"license\">Companies House</a> </span> </div> <div class=\"govuk-footer__meta-item\"> <a class=\"govuk-footer__link govuk-footer__copyright-logo underline\" href=\"https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/\">© Crown copyright</a> </div> </div> </div> </footer> <div id=\"global-app-error\" class=\"app-error hidden\"></div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 15020,
+        "isIframe": false
+      }
+    }
+  ]
+}

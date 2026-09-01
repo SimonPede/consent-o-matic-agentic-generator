@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T04:04:42.186721",
+  "url": "https://www.svtplay.se",
+  "structured_dom_chars": 1475,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The extracted DOM only contained a geoblock message with no cookie controls, and the visual audit confirmed no cookie consent banner is currently visible on svtplay.se.",
+  "abort_reason": "NO_BANNER_DETECTED: The extracted DOM only contained a geoblock message with no cookie controls, and the visual audit confirmed no cookie consent banner is currently visible on svtplay.se.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The extracted DOM only contained a geoblock message with no cookie controls, and the visual audit confirmed no cookie consent banner is currently visible on svtplay.se.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The extracted DOM only contained a geoblock message with no cookie controls, and the visual audit confirmed no cookie consent banner is currently visible on svtplay.se."
+  ],
+  "duration_seconds": 30.84,
+  "extraction_duration_seconds": 8.85,
+  "extraction_share_percent": 28.7,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

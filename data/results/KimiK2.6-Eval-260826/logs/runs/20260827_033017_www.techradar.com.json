@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T03:30:17.102321",
+  "url": "https://www.techradar.com",
+  "structured_dom_chars": 70379,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first-layer banner only contains an \"Agree\" button and a \"More Options\" button, with no \"Reject All\" or \"Decline\" option present. Since Sourcepoint's granular settings are rendered in nested secondary iframes that this architecture cannot navigate, a reject option may exist behind the \"More Options\" path but cannot be reached automatically.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first-layer banner only contains an \"Agree\" button and a \"More Options\" button, with no \"Reject All\" or \"Decline\" option present. Since Sourcepoint's granular settings are rendered in nested secondary iframes that this architecture cannot navigate, a reject option may exist behind the \"More Options\" path but cannot be reached automatically.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The visible first-layer banner only contains an \"Agree\" button and a \"More Options\" button, with no \"Reject All\" or \"Decline\" option present. Since Sourcepoint's granular settings are rendered in nested secondary iframes that this architecture cannot navigate, a reject option may exist behind the \"More Options\" path but cannot be reached automatically.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The visible first-layer banner only contains an \"Agree\" button and a \"More Options\" button, with no \"Reject All\" or \"Decline\" option present. Since Sourcepoint's granular settings are rendered in nested secondary iframes that this architecture cannot navigate, a reject option may exist behind the \"More Options\" path but cannot be reached automatically."
+  ],
+  "duration_seconds": 29.14,
+  "extraction_duration_seconds": 7.76,
+  "extraction_share_percent": 26.63,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

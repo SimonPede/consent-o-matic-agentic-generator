@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-08-28T06:41:29.382999",
+  "url": "https://taz.de",
+  "structured_dom_chars": 62698,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 17,
+  "human_review_count": 0,
+  "test_rule_count": 7,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"taz\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class*=\\\"message-container\\\"]\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Selbst auswählen\\\"]\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-label*=\\\"Speichern von oder Zugriff\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label*=\\\"Speichern von oder Zugriff\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-label*=\\\"Personalisierte Werbung\\\"][aria-checked=\\\"\\\"\" ... \n```\n\nWait, I am experiencing a repetitive loop of outputting partial analysis. I must finish the thought.\n\nThe `SAVE_CONSENT` button `[class*=\"sp_choice_type_SAVE_AND_EXIT\"]` failed. Looking at the `settings` HTML:\n`<button ... class=\"... sp_choice_type_SAVE_AND_EXIT\">Auswahl akzeptieren</button>`\n\nThe class is there. The failure `ACTION_TARGET_NOT_FOUND` suggests the engine is looking in the wrong frame or the element isn't in the DOM when the action runs. Since `clicks: 1` was recorded and it failed on the *second* action, the `OPEN_OPTIONS` worked, but the settings page didn't load the button in time or the engine stayed in the main frame context.\n\nHowever, the `settings` data provided *is* from the same extraction. I will try one last variation: using `textFilter` on a generic `button` for `SAVE_CONSENT` and ensuring the `DO_CONSENT` switches are targeted very simply.\n\nFinal attempt strategy:\n- `OPEN_OPTIONS`: `[aria-label=\"Selbst auswählen\"]`\n- `DO_CONSENT`: Use `textFilter` on `button` for each category to avoid long string issues.\n- `SAVE_CONSENT`: Use `textFilter: \"Auswahl akzeptieren\"` on `button` with a `wait`.\n\n<rule>\n{\n    \"taz\": {\n        \"detectors\": [\n            {\n                \"presentMatcher\": {\n                    \"type\": \"css\",\n                    \"target\": { \"selector\": \"[class*=\\\"message-container\\\"]\" }\n                },\n                \"showingMatcher\": {\n                    \"type\": \"css\",\n                    \"target\": { \"selector\": \"[class*=\\\"message-container\\\"]\", \"displayFilter\": true }\n                }\n            }\n        ],\n        \"methods\": [\n            {\n                \"name\": \"HIDE_CMP\",\n                \"action\": {\n                    \"type\": \"hide\",\n                    \"target\": { \"selector\": \"[class*=\\\"message-container\\\"]\" }\n                }\n            },\n            {\n                \"name\": \"OPEN_OPTIONS\",\n                \"action\": {\n                    \"type\": \"click\",\n                    \"target\": { \"selector\": \"[aria-label=\\\"Selbst auswählen\\\"]\" }\n                }\n            },\n            {\n                \"name\": \"DO_CONSENT\",\n                \"action\": {\n                    \"type\": \"consent\",\n                    \"consents\": [\n                        {\n                            \"type\": \"D\",\n                            \"matcher\": { \"type\": \"css\", \"target\": { \"selector\": \"button[aria-label*=\\\"Speichern von oder Zugriff\\\"][aria-checked=\\\"true\\\"]\" } },\n                            \"toggleAction\": { \"type\": \"click\", \"target\": { \"selector\": \"button\", \"textFilter\": \"Speichern von oder Zugriff\" } }\n                        },\n                        {\n                            \"type\": \"F\",\n                            \"matcher\": { \"type\": \"css\", \"target\": { \"selector\": \"button[aria-label*=\\\"Personalisierte Werbung\\\"][aria-checked=\\\"true\\\"]\" } },\n                            \"toggleAction\": { \"type\": \"click\", \"target\": { \"selector\": \"button\", \"textFilter\": \"Personalisierte Werbung\" } }\n                        },\n                        {\n                            \"type\": \"B\",\n                            \"matcher\": { \"type\": \"css\", \"target\": { \"selector\": \"button[aria-label*=\\\"Messung der Werbeleistung\\\"][aria-checked=\\\"true\\\"]\" } },\n                            \"toggleAction\": { \"type\": \"click\", \"target\": { \"selector\": \"button\", \"textFilter\": \"Messung der Werbeleistung\" } }\n                        },\n                        {\n                            \"type\": \"E\",\n                            \"matcher\": { \"type\": \"css\", \"target\": { \"selector\": \"button[aria-label*=\\\"Verwendung reduzierter Daten\\\"][aria-checked=\\\"true\\\"]\" } },\n                            \"toggleAction\": { \"type\": \"click\", \"target\": { \"selector\": \"button\", \"textFilter\": \"Verwendung reduzierter Daten\" } }\n                        }\n                    ]\n                }\n            },\n            {\n                \"name\": \"SAVE_CONSENT\",\n                \"action\": {\n                    \"type\": \"list\",\n                    \"actions\": [\n                        { \"type\": \"wait\", \"waitTime\": 1000 },\n                        { \"type\": \"click\", \"target\": { \"selector\": \"button\", \"textFilter\": \"Auswahl akzeptieren\" } }\n                    ]\n                }\n            }\n        ]\n    }\n}\n</rule>",
+  "last_error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "model_aborted": false,
+  "final_test_error": "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Auswahl akzeptieren\"]",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Auswahl akzeptieren\"]",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button[class*=\"sp_choice_type_SAVE_AND_EXIT\"]",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [class*=\"sp_choice_type_SAVE_AND_EXIT\"]",
+    "CRITICAL ERROR: You forgot the required 'json_string' or 'url' argument in your tool call. Please try again and provide both"
+  ],
+  "duration_seconds": 1732.4,
+  "extraction_duration_seconds": 129.68,
+  "extraction_share_percent": 7.49,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "taz": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]"
+            }
+          },
+          "showingMatcher": {
+            "to": "css",
+            "target": {
+              "selector": "[class*=\"message-container\"]",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class*=\"message-container\"]"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[aria-label=\"Selbst auswählen\"]"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label*=\"Speichern von oder Zugriff\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Speichern von oder Zugriff"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label*=\"Personalisierte Werbung\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Personalisierte Werbung"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label*=\"Messung der Werbeleistung\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Messung der Werbeleistung"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label*=\"Verwendung reduzierter Daten\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button",
+                    "textFilter": "Verwendung reduzierter Daten"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 1000
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "button",
+                  "textFilter": "Auswahl akzeptieren"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

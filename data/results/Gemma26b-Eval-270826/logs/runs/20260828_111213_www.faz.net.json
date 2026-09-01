@@ -1,0 +1,194 @@
+{
+  "timestamp": "2026-08-28T11:12:13.769478",
+  "url": "https://www.faz.net",
+  "structured_dom_chars": 54382,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 19,
+  "human_review_count": 0,
+  "test_rule_count": 17,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"faz.net\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#notice\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#notice\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#notice\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Cookie-Manager']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät'][aria-checked='false']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät']\"}}}]}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Button']\"}}}]}}",
+  "last_error": "Invalid JSON in rule tags: Invalid control character at: line 54 column 57 (char 1771)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 772 (char 771)",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 5904 (char 5903)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 5903 (char 5902)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 2037 (char 2036)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 884 (char 883)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 2301 (char 2300)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 883 (char 882)",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 298 (char 297)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 883 (char 882)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\n`faz.net`.methods.0.name\n  Value error, Invalid method name: A. Must be one of {'SAVE_CONSENT', 'DO_CONSENT', 'OPEN_OPTIONS', 'HIDE_CMP'} [type=value_error, input_value='A', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1632 (char 1631)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 2302 (char 2301)",
+    "No CMP detected in 5 seconds, stopping engine... | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Button']",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1554 (char 1553)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1547 (char 1546)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 767 (char 766)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 772 (char 771)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 772 (char 771)"
+  ],
+  "duration_seconds": 679.53,
+  "extraction_duration_seconds": 247.15,
+  "extraction_share_percent": 36.37,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "faz.net": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#notice"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#notice"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#notice"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[aria-label='Cookie-Manager']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label='Speichern von oder Zugriff auf Informationen auf einem Endgerät'][aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label='Speichern von o/r Zugriff auf Informationen auf einem Endgerät']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten'][aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label='Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label='Messung der Werbeleistung'][aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label='Messung der Werbeleistung']"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label='Einbindung von externen Multimedia-Inhalten*'][aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label='Einbindung von externen Multimedia-Inhalten*']"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "button[aria-label='Politische Werbung'][aria-checked='false']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-label='Politische Werbung']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[aria-label='Button']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

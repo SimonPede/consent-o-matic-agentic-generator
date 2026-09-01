@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-08-30T14:43:21.010955",
+  "url": "https://www.ea.com/",
+  "structured_dom_chars": 23303,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 12,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id^=\\\"truste\\\"]\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id^=\\\"truste\\\"]\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id^=\\\"truste\\\"]\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Functional Cookies choice\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Functional Cookies choice\\\"]\"}}, \"parent\": {\"selector\": \"[id^=\\\"pop-frame\\\"]\"}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\\\"]\"}}, \"parent\": {\"selector\": \"[id^=\\\"pop-frame\\\"]\"}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label=\\\"Multimedia Player choice\\\"][aria-checked=\\\"true\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Multimedia Player choice\\\"]\"}}, \"parent\": {\"selector\": \"[id^=\\\"pop-frame\\\"]\"}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"[id^=\\\"pop-frame\\\"]\"}, \"target\": {\"selector\": \"button.submit\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Puppeteer Error in test_rule: net::ERR_BLOCKED_BY_CLIENT at https://www.examle.com/",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button"
+  ],
+  "duration_seconds": 569.43,
+  "extraction_duration_seconds": 39.92,
+  "extraction_share_percent": 7.01,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id^=\"truste\"]"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id^=\"truste\"]",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id^=\"truste\"]"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label=\"Functional Cookies choice\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Functional Cookies choice\"]"
+                  },
+                  "parent": {
+                    "selector": "[id^=\"pop-frame\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Targeted Advertising / Do Not Sell or Share My Personal Information choice\"]"
+                  },
+                  "parent": {
+                    "selector": "[id^=\"pop-frame\"]"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label=\"Multimedia Player choice\"][aria-checked=\"true\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Multimedia Player choice\"]"
+                  },
+                  "parent": {
+                    "selector": "[id^=\"pop-frame\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button.submit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "timestamp": "2026-08-27T20:57:36.324860",
+  "url": "https://www.canva.com",
+  "structured_dom_chars": 193837,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 18,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Canva\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"div[role='dialog']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"div[role='dialog']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"div[role='dialog']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Manage cookies\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Functionality Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Functionality Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Performance Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Performance Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch']\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Targeting Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch'][aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \".Upfisg\", \"childFilter\": {\"target\": {\"selector\": \"h4\", \"textFilter\": \"Targeting Cookies\"}}}, \"target\": {\"selector\": \"button[role='switch']\"}}}], \"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Save & Close\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 3192 (char 3191)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1840 (char 1839)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1935 (char 1934)"
+  ],
+  "duration_seconds": 1166.34,
+  "extraction_duration_seconds": 16.95,
+  "extraction_share_percent": 1.45,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Canva": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "div[role='dialog']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "div[role='dialog']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "div[role='dialog']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Manage cookies"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Functionality Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Functionality Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Performance Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Performance Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Targeting Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch'][aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".Upfisg",
+                    "childFilter": {
+                      "target": {
+                        "selector": "h4",
+                        "textFilter": "Targeting Cookies"
+                      }
+                    }
+                  },
+                  "target": {
+                    "selector": "button[role='switch']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Save & Close"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

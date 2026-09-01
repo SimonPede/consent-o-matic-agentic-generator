@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-08-28T09:48:20.675513",
+  "url": "https://www.pcgamer.com",
+  "structured_dom_chars": 70379,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 10,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Sourcepoint\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*='message-container']\", \"iframeFilter\": true}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*='message-container']\", \"iframeFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class*='message-container']\", \"iframeFilter\": true}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='REJECT ALL']",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3935 (char 3934)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1395 (char 1394)"
+  ],
+  "duration_seconds": 425.07,
+  "extraction_duration_seconds": 8.45,
+  "extraction_share_percent": 1.99,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Sourcepoint": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class*='message-container']",
+              "iframeFilter": true
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class*='message-container']",
+              "iframeFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[aria-label='More Options']",
+              "iframeFilter": true
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device'][aria-checked='true']",
+                    "iframeFilter": true
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Store and/or access information on a device']",
+                    "iframeFilter": true
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select advertising'][aria-checked='true']",
+                    "iframeFilter": true
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select advertising']",
+                    "iframeFilter": true
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select content'][aria-checked='true']",
+                    "iframeFilter": true
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Use limited data to select content']",
+                    "iframeFilter": true
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[aria_label='SAVE & EXIT']",
+              "iframeFilter": true
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class*='message-container']",
+              "iframeFilter": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

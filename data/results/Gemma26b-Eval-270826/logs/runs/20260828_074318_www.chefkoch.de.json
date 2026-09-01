@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-08-28T07:43:18.670468",
+  "url": "https://www.chefkoch.de",
+  "structured_dom_chars": 193806,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "consentmanager.net",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 13,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"consentmanager.net\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*=\\\"cmpbox\\\"]\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*=\\\"cmpbox\\\"]\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*=\\\"cmpbox\\\"]\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 3107 (char 3106)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 152 (char 151)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a.cmpboxbtysave",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 855 (char 854)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 856 (char 855)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 823 (char 822)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 823 (char 822)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 823 (char 822)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 825 (char 824)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 820 (char 819)"
+  ],
+  "duration_seconds": 323.29,
+  "extraction_duration_seconds": 8.36,
+  "extraction_share_percent": 2.59,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "consentmanager.net": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*=\"cmpbox\"]"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*=\"cmpbox\"]"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*=\"cmpbox\"]"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "a.ck-link",
+              "textFilter": "Datenschutzeinstellungen"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "a[aria-label*=\"Speichern von oder Zugriff\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "a[aria-label*=\"Speichern von oder Zugriff\"]"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "a[aria-label*=\"Anzeige von Drittinhalten\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "a[aria-label*=\"Anzeige von Drittinhalten\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "a",
+                  "textFilter": "Auswahl speichern"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

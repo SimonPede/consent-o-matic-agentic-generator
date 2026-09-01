@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-08-27T18:33:52.184253",
+  "url": "https://arstechnica.com",
+  "structured_dom_chars": 299802,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Fides\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#fides-accept-all-button\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#fides-accept-all-button\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#fides-manage-preferences-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[aria-label=\\\"Store and/or access information on a device\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[aria-label=\\\"Store and/or access information on a device\\\"]\"}}}, {\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[aria-label=\\\"Functional Cookies\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[aria-label=\\\"Functional Cookies\\\"]\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[aria-label=\\\"Audience Measurement\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[aria-label=\\\"Audience Measurement\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[aria-label=\\\"Targeted Advertising\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[aria-label=\\\"Targeted Advertising\\\"]\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"input[aria-label=\\\"Create profiles to personalise content\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"input[aria-label=\\\"Create profiles to personalise content\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button[aria-label*=\\\"Save\\\"], button[aria-label*=\\\"Confirm\\\"], button[aria-label*=\\\"Apply\\\"]\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*=\\\"fides\\\"]\"}}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 322.25,
+  "extraction_duration_seconds": 16.61,
+  "extraction_share_percent": 5.15,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "Fides": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#fides-accept-all-button"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#fides-accept-all-button",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#fides-manage-</strong>preferences-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[aria-label=\"Store and/or access information on a device\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[aria-label=\"Store and/or access information on a device\"]"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[aria-label=\"Functional Cookies\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[aria-label=\"Functional Cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[aria-label=\"Audience Measurement\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[aria-label=\"Audience Measurement\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[aria-label=\"Targeted Advertising\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[aria-label=\"Targeted Advertising\"]"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "input[aria-label=\"Create profiles to personalise content\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "input[aria-label=\"Create profiles to personalise content\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button[aria-label*=\"Save\"], button[aria-label*=\"Confirm\"], button[aria-label*=\"Apply\"]"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*=\"fides\"]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

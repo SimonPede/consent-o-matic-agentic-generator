@@ -1,0 +1,259 @@
+{
+  "timestamp": "2026-08-27T03:41:28.501266",
+  "url": "https://www.flickr.com",
+  "structured_dom_chars": 19893,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".truste_box_overlay\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".truste_box_overlay_inner\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\".truste_box_overlay\"}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".categories .purposeContainer > .listItem:nth-of-type(2) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".categories .purposeContainer > .listItem:nth-of-type(2) .consentno\"}}},{\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".categories .purposeContainer > .listItem:nth-of-type(3) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".categories .purposeContainer > .listItem:nth-of-type(3) .consentno\"}}},{\"type\":\"D\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".primaryPurposeContainer .purposeContainer > .listItem:nth-of-type(1) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".primaryPurposeContainer .purposeContainer > .listItem:nth-of-type(1) .consentno\"}}},{\"type\":\"X\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(1) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(1) .consentno\"}}},{\"type\":\"E\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(2) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(2) .consentno\"}}},{\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(3) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(3) .consentno\"}}},{\"type\":\"B\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(4) .consentyes\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(4) .consentno\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\".saveAndExit\"}}}]}}",
+  "last_error": "Banner not found or matchers failed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 671.21,
+  "extraction_duration_seconds": 20.51,
+  "extraction_share_percent": 3.06,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".truste_box_overlay"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".truste_box_overlay_inner",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".truste_box_overlay"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".categories .purposeContainer > .listItem:nth-of-type(2) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".categories .purposeContainer > .listItem:nth-of-type(2) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".categories .purposeContainer > .listItem:nth-of-type(3) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".categories .purposeContainer > .listItem:nth-of-type(3) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "D",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".primaryPurposeContainer .purposeContainer > .listItem:nth-of-type(1) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".primaryPurposeContainer .purposeContainer > .listItem:nth-of-type(1) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "X",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(1) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(1) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(2) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(2) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(3) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(3) .consentno"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(4) .consentyes"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": ".stacksAndPurposesContainer .purposeContainer > .listItem:nth-of-type(4) .consentno"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": ".trustarc_newcm_container"
+            },
+            "target": {
+              "selector": ".saveAndExit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

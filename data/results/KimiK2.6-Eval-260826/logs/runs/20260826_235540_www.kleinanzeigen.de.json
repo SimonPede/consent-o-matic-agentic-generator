@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-08-26T23:55:40.282228",
+  "url": "https://www.kleinanzeigen.de",
+  "structured_dom_chars": 266525,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"kleinanzeigen\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#gdpr-banner-accept, #ConsentManagementPage\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#gdpr-banner-accept, #ConsentManagementPage\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"ifcss\",\"target\":{\"selector\":\"#gdpr-banner-cmp-button\"},\"trueAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#gdpr-banner-cmp-button\"}},\"falseAction\":{\"type\":\"wait\",\"waitTime\":0}}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"ifcss\",\"target\":{\"selector\":\"#ConsentManagementPage\"},\"trueAction\":{\"type\":\"consent\",\"consents\":[{\"type\":\"D\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-1[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-1\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-2[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-2\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-2[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-2\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-3[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-3\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-4[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-4\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-5[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-5\"}}},{\"type\":\"E\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-6[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-6\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-7[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-7\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-7[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-7\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-8[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-8\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-9[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-9\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-9[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-9\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-10[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-10\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-10[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#leg-int-toggle-purpose-10\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-11[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-11\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-legitimate-interest-all[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-legitimate-interest-all\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-special-feature-1[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-special-feature-1\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-special-feature-2[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-special-feature-2\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-google-ac-1[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-google-ac-1\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-custom-2[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-custom-2\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-custom-4[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-custom-4\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-custom-5[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-custom-5\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-custom-7[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-custom-7\"}}},{\"type\":\"X\",\"matcher\":{\"type\":\"css\",\"target\":{\"selector\":\"#toggle-purpose-custom-8[aria-checked='true']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"#toggle-purpose-custom-8\"}}}]},\"falseAction\":{\"type\":\"wait\",\"waitTime\":0}}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"ifcss\",\"target\":{\"selector\":\"[aria-label='Speichern - Datenschutzbestimmungen und Einstellungen speichern']\"},\"trueAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label='Speichern - Datenschutzbestimmungen und Einstellungen speichern']\"}},\"falseAction\":{\"type\":\"wait\",\"waitTime\":0}}}]}}",
+  "last_error": "PAY_OR_CONSENT_DEAD_END: The kleinanzeigen.de initial banner displays \"Alle akzeptieren\" and \"Datenschutzeinstellungen\" but offers no direct \"Reject All\" or \"Decline\" button. The granular path requires navigation to /gdpr, which destroys the browser context and prevents the engine from executing DO_CONSENT and SAVE_CONSENT.",
+  "abort_reason": "PAY_OR_CONSENT_DEAD_END: The kleinanzeigen.de initial banner displays \"Alle akzeptieren\" and \"Datenschutzeinstellungen\" but offers no direct \"Reject All\" or \"Decline\" button. The granular path requires navigation to /gdpr, which destroys the browser context and prevents the engine from executing DO_CONSENT and SAVE_CONSENT.",
+  "abort_code": "PAY_OR_CONSENT_DEAD_END",
+  "abort_explanation": "The kleinanzeigen.de initial banner displays \"Alle akzeptieren\" and \"Datenschutzeinstellungen\" but offers no direct \"Reject All\" or \"Decline\" button. The granular path requires navigation to /gdpr, which destroys the browser context and prevents the engine from executing DO_CONSENT and SAVE_CONSENT.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "PAY_OR_CONSENT_DEAD_END: The kleinanzeigen.de initial banner displays \"Alle akzeptieren\" and \"Datenschutzeinstellungen\" but offers no direct \"Reject All\" or \"Decline\" button. The granular path requires navigation to /gdpr, which destroys the browser context and prevents the engine from executing DO_CONSENT and SAVE_CONSENT."
+  ],
+  "duration_seconds": 620.21,
+  "extraction_duration_seconds": 16.14,
+  "extraction_share_percent": 2.6,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

@@ -1,0 +1,39 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.vg.no",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+  "rule_draft": {
+    "Schibsted": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#notice"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#notice"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Gå tilbake"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

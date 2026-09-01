@@ -1,0 +1,177 @@
+{
+  "timestamp": "2026-08-28T05:02:43.819179",
+  "url": "https://www.garmin.com",
+  "structured_dom_chars": 17650,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 15,
+  "human_review_count": 0,
+  "test_rule_count": 14,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id^='truste']\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"[id^='truste']\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id^='truste']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"parent\": {\"selector\": \".trustarc_newcm_container\"}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Accept Functional Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Refuse Functional Cookies']\"}}}, {\"type\": \"F\", \"parent\": {\"selector\": \".trustarc_newcm_container\"}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Accept Advertising Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Refuse Advertising Cookies']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 1000}, {\"type\": \"click\", \"parent\": {\"selector\": \".trustarc_newcm_container\"}, \"target\": {\"selector\": \".declineAllButtonLower\"}}]}}]}}",
+  "last_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies']",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies']",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1231 (char 1230)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1240 (char 1239)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1028 (char 1027)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies']",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1072 (char 1071)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1072 (char 1071)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1010 (char 1009)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1010 (char 1009)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1028 (char 1027)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1028 (char 1027)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies']"
+  ],
+  "duration_seconds": 786.73,
+  "extraction_duration_seconds": 7.6,
+  "extraction_share_percent": 0.97,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id^='truste']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id^='truste']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Accept Functional Cookies']",
+                    "iframeFilter": true
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Refuse Functional Cookies']",
+                    "iframeFilter": true
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Accept Advertising Cookies']",
+                    "iframeFilter": true
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Refuse Advertising Cookies']",
+                    "iframeFilter": true
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 1000
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".submit",
+                  "iframeFilter": true
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

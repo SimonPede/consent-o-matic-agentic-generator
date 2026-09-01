@@ -1,0 +1,176 @@
+{
+  "timestamp": "2026-08-27T20:43:22.260707",
+  "url": "https://www.wired.com",
+  "structured_dom_chars": 180989,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 11,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Fides\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#fides-manage-preferences-button\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#fides-manage-preferences-button\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#fides-manage-preferences-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label=\\\"Store and/or access information on a device\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Store and/or access information on a device\\\"]\"}}}, {\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label=\\\"Functional Cookies\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Functional Cookies\\\"]\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label=\\\"Audience Measurement\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Audience Measurement\\\"]\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"[aria-label=\\\"Targeted Advertising\\\"]\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Targeted Advertising\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button[textFilter=\\\"Save\\\"], button[text*=\\\"Confirm\\\"], button[text*=\\\"Apply\\\"], #fides-save-button, .fides-banner-button-primary\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#fides-button-group\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1326 (char 1325)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1326 (char 1325)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1326 (char 1325)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1326 (char 1325)"
+  ],
+  "duration_seconds": 1160.36,
+  "extraction_duration_seconds": 154.17,
+  "extraction_share_percent": 13.29,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "Fides": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#fides-manage-preferences-button"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#fides-manage 'manage-preferences-button'",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#fides-manage-preferences-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label=\"Store and/or access information on a device\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Store and/or access information on a device\"]"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label=\"Functional Cookies\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Functional Cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label=\"Audience Measurement\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Audience Measurement\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label=\"Targeted Advertising\"]"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label=\"Targeted Advertising\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button[textFilter=\"Save\"], button[text*=\"Confirm\"], button[text*=\"Apply\"], #fides-save-button, .fides-banner-button-primary"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#fides-button-group"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

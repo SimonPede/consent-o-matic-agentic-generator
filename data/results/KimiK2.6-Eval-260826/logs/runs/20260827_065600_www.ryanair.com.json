@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-08-27T06:56:00.423512",
+  "url": "https://www.ryanair.com",
+  "structured_dom_chars": 160825,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "DECLINE_FALLBACK",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 14,
+  "human_review_count": 1,
+  "test_rule_count": 8,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Ryanair\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".cookie-popup-with-overlay\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\".cookie-popup-with-overlay\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\".cookie-popup-with-overlay\"}}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"target\":{\"selector\":\"[data-ref=\\\"cookie.no-thanks\\\"]\"}}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 2120 (char 2119)",
+    "Invalid JSON: Extra data: line 1 column 1965 (char 1964)",
+    "Invalid JSON: Extra data: line 1 column 1965 (char 1964)",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[type=\"checkbox\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[type=\"checkbox\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[type=\"checkbox\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .cookies-details__done-button",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [data-ref=\"cookies-details__done-button\"]",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 1350.22,
+  "extraction_duration_seconds": 15.43,
+  "extraction_share_percent": 1.14,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Ryanair": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".cookie-popup-with-overlay"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".cookie-popup-with-overlay",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".cookie-popup-with-overlay"
+            }
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "[data-ref=\"cookie.no-thanks\"]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

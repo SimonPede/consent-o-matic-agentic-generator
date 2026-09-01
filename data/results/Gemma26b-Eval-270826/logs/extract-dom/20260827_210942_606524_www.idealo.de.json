@@ -1,0 +1,995 @@
+{
+  "timestamp": "2026-08-27T21:09:42.606611",
+  "url": "https://www.idealo.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.idealo.de"
+  ],
+  "duration_seconds": 8.14,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"#usercentrics-cmp-ui\" (Usercentrics) in frame: https://www.idealo.de/",
+      "waitForCmpUi detected CMP Type: Usercentrics",
+      "I found 2 frames.",
+      "a frame was picked by score: https://www.idealo.de/ with Score: 35",
+      "Settings match: \"Einstellungen\" --> lowered: \"einstellungen\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: #usercentrics-cmp-ui",
+      "settings click target - selector: #usercentrics-cmp-ui >>> #uc-more-link, textMatch: Einstellungen",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 251040 chars.",
+      "DOM diff: 79258 chars added, 0 inputs added.",
+      "Old state: 0 buttons, 0 inputs.",
+      "New state: 0 buttons, 0 inputs.",
+      "Settings detected: 79258 chars, 0 inputs, 0 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 5 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.idealo.de/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Usercentrics',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.idealo.de/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Einwilligung zum Einsatz von Cookies 🍪</span> <div class=\"privacy-text expandable\" data-action=\"expand\" id=\"uc-privacy-description\"> <span class=\"privacy-text-summary\"><p class=\"MsoNormal\"><span>Deine Einwilligung vorausgesetzt, setzen wir (die idealo Internet GmbH) Cookies und ähnliche Technologien ein, die erfassen, wer du bist und wie du unsere Dienste nutzt, und um personalisierte Werbung (auch auf Webseiten Dritter) anzuzeigen.<o:p></o:p></span></p></span> <span class=\"privacy-text-detailed\"><div><span></span></div><p><span lang=\"EN-GB\"></span></p><div><div> </div><div>Deine Einwilligung vorausgesetzt, setzen wir (die idealo Internet GmbH) Cookies und ähnliche Technologien ein, die erfassen, wer du bist und wie du unsere Dienste nutzt. Die dabei erfassten Daten verarbeiten wir mit deiner Zustimmung, um unsere Dienste zu verbessern, dir personalisierte Produktempfehlungen anzuzeigen, mehr über unsere Nutzenden zu erfahren, den Erfolg von Werbemaßnahmen zu messen, den Absatz von Angeboten zu fördern und um ein Werbeprofil zu erstellen. Personenbezogenen Daten und Cookies werden auch für personalisierte Werbung auf Websites Dritter verwendet. Informationen über dich werden auch an unsere Partnerunternehmen weitergegeben, die deine Daten auch außerhalb der EU / des EWR verarbeiten. Mehr zu den Zwecken und unseren Partnern erfährst du, wenn du unten auf die entsprechenden Links klickst.</div><div><br></div><div>Deine Einwilligung umfasst die Verarbeitung deiner personenbezogenen Daten (Art. 6 Abs. 1 Buchst. a DSGVO)&nbsp; sowie die Speicherung von Informationen in deiner Endeinrichtung (z.B. in deinem Computer oder Handy) oder den Zugriff auf Informationen, die bereits in deiner Endeinrichtung gespeichert sind (§ 25 (1) TTDDG). Wenn du damit einverstanden bist, wähle „Annehmen”. Wenn du das nicht möchtest, drücke auf „Ablehnen”. Über „Einstellungen” kannst Du deine Einwilligung auf bestimmte Zwecke beschränken. Nach Annahme kannst du deine Einwilligung jederzeit für die Zukunft widerrufen, indem du in der Fußzeile auf „Privatsphäre“ gehst und anschließend „Ablehnen” auswählst.</div></div><div><div></div></div> </span> <a href=\"#\" class=\"privacy-text-more\">Details und rechtliche Grundlagen</a> <a href=\"#\" class=\"privacy-text-less\">Weniger lesen</a> </div> </div> </header> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Ablehnen\" tabindex=\"0\"> Ablehnen </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Annehmen\" tabindex=\"0\"> Annehmen </button> </div> </div> </footer> </div> </div> </div> </aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 3516,",
+      "      cmpType: 'Usercentrics'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.idealo.de/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Layer schließen\" aria-label=\"Layer schließen\" tabindex=\"0\" class=\"closeButton\" title=\"Layer schließen\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Einstellungen</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Cookies sind kleine Textdateien, die von Webseiten verwendet werden, um die Benutzererfahrung effizienter zu gestalten. Laut Gesetz können wir Cookies auf Ihrem Gerät speichern, wenn diese für den Betrieb dieser Seite unbedingt notwendig sind. Für alle anderen Cookie-Typen benötigen wir Ihre Erlaubnis. Diese Seite verwendet unterschiedliche Cookie-Typen. Einige Cookies werden von Drittparteien platziert, die auf unseren Seiten erscheinen. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Kategorien </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" data-load-id=\"customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\">Analysen zum Nutzungsverhalten</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-subtitle\">Wir führen Analysen durch, um unsere Nutzenden und unsere Zielgruppen besser zu verstehen und unsere Angebote entsprechend der Vorstellungen der Nutzenden anpassen und erweitern zu können. Auf diese Art und Weise erfassen wir z.B. welche Produkte unsere Nutzenden gerade besonders interessieren. Hierfür erstellen wir auch individuelle Nutzendenprofile und können Daten geräteübergreifend verknüpfen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Analysen zum Nutzungsverhalten\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" role=\"region\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-1713bd49-84f2-42f0-99db-2279104991ec\" data-load-id=\"customcategory-1713bd49-84f2-42f0-99db-2279104991ec\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\">Messung des Erfolgs von Werbemaßnahmen</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-subtitle\">Wir versuchen dich durch verschiedene Werbemaßnahmen zu erreichen. Mit deiner Einwilligung messen wir, wie erfolgreich diese Maßnahmen sind. Dabei erfassen wir auch, ob dich eine Werbemaßnahmen erreicht hat und wie du darauf reagierst. Teilweise hängt auch die Vergütung unserer Werbepartner vom Erfolg von Werbemaßnahmen ab. Wir erfassen dein Verhalten unter anderem in Bezug auf Werbemaßnahmen wie Werbekampagnen (z.B. TV-Spots, Werbeanzeigen), direkte Mitteilungen (z.B. Push-Benachrichtigungen in der App) und werbliche Gestaltung von Angeboten auf Website und App (z.B. im Wege von A/B-Tests).</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-1713bd49-84f2-42f0-99db-2279104991ec\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Messung des Erfolgs von Werbemaßnahmen\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-1713bd49-84f2-42f0-99db-2279104991ec\" role=\"region\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" data-load-id=\"customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\">Personalisierte Produktempfehlungen</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-subtitle\">Anzeigen, Inhalte, Werbenachrichten und Push-Nachrichten können basierend auf deinem Nutzerverhalten personalisiert und zur Erstellung eines Nutzerprofils ausgewertet werden. Wir werten dazu deine Interessen, deinen Standort und deine demografischen Informationen aus. Daten können in diesem Zusammenhang auch verwendet werden, um Systeme und Software aufzubauen oder zu verbessern. Hierzu können wir Informationen verwenden, um neue Rechenmodelle und Algorithmen mit Hilfe maschinellen Lernens zu erstellen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Personalisierte Produktempfehlungen\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" role=\"region\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230\"> <div class=\"list-item-header\" data-actio'... 49389 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 59389,",
+      "      cmpType: 'Usercentrics',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.idealo.de/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Usercentrics via selector \"#usercentrics-cmp-ui\"",
+      "  Buttons found (6):",
+      "      [A] \"Details und rechtliche Grundlagen\" --> selector: #usercentrics-cmp-ui >>> .privacy-text-more",
+      "      [A] \"Datenschutzerklärung\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [A] \"Impressum/AGB\" --> selector: #usercentrics-cmp-ui >>> #imprint",
+      "      [A] \"Einstellungen\" --> selector: #usercentrics-cmp-ui >>> #uc-more-link",
+      "      [BUTTON] \"Ablehnen\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Annehmen\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (16):",
+      "      [BUTTON] \"Layer schließen\" --> selector: #usercentrics-cmp-ui >>> #uc-close-button",
+      "      [A] \"Datenschutzerklärung\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [A] \"Impressum/AGB\" --> selector: #usercentrics-cmp-ui >>> #imprint",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+      "      [DIV] \"Erweitern Analysen zum Nutzungsverhalten\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Analysen zum Nutzungsverhalten\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+      "      [DIV] \"Erweitern Messung des Erfolgs von Werbemaßnahmen\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Messung des Erfolgs von Werbemaßnahmen\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+      "      [DIV] \"Erweitern Personalisierte Produktempfehlungen\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierte Produktempfehlungen\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+      "      [DIV] \"Erweitern Werbung bei anderen Webangeboten (Remarketing)\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Werbung bei anderen Webangeboten (Remarketing)\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+      "      [DIV] \"Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner\"]",
+      "      [BUTTON] \"Speichern\" --> selector: #usercentrics-cmp-ui >>> #save",
+      "      [BUTTON] \"Ablehnen\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Annehmen\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (5):",
+      "      \"Analysen zum Nutzungsverhalten\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+      "      \"Messung des Erfolgs von Werbemaßnahmen\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+      "      \"Personalisierte Produktempfehlungen\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+      "      \"Werbung bei anderen Webangeboten (Remarketing)\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+      "      \"Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.idealo.de/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Usercentrics",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Details und rechtliche Grundlagen",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "class": "privacy-text-more"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "uc-privacy-description",
+              "className": "privacy-text expandable",
+              "selector": "#uc-privacy-description",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-cmp-description",
+                "className": "overflow",
+                "selector": "#uc-cmp-description"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> .privacy-text-more",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.idealo.de/legal/datenschutz",
+              "aria-label": "Öffnen Datenschutzerklärung",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum/AGB",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.idealo.de/legal/agb",
+              "aria-label": "Öffnen Impressum/AGB",
+              "id": "imprint",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "imprint"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #imprint",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einstellungen",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Einstellungen",
+              "id": "uc-more-link",
+              "data-action": "consent",
+              "data-action-type": "more"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-more-link",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Ablehnen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Annehmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Annehmen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.idealo.de/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Einwilligung zum Einsatz von Cookies 🍪</span> <div class=\"privacy-text expandable\" data-action=\"expand\" id=\"uc-privacy-description\"> <span class=\"privacy-text-summary\"><p class=\"MsoNormal\"><span>Deine Einwilligung vorausgesetzt, setzen wir (die idealo Internet GmbH) Cookies und ähnliche Technologien ein, die erfassen, wer du bist und wie du unsere Dienste nutzt, und um personalisierte Werbung (auch auf Webseiten Dritter) anzuzeigen.<o:p></o:p></span></p></span> <span class=\"privacy-text-detailed\"><div><span></span></div><p><span lang=\"EN-GB\"></span></p><div><div> </div><div>Deine Einwilligung vorausgesetzt, setzen wir (die idealo Internet GmbH) Cookies und ähnliche Technologien ein, die erfassen, wer du bist und wie du unsere Dienste nutzt. Die dabei erfassten Daten verarbeiten wir mit deiner Zustimmung, um unsere Dienste zu verbessern, dir personalisierte Produktempfehlungen anzuzeigen, mehr über unsere Nutzenden zu erfahren, den Erfolg von Werbemaßnahmen zu messen, den Absatz von Angeboten zu fördern und um ein Werbeprofil zu erstellen. Personenbezogenen Daten und Cookies werden auch für personalisierte Werbung auf Websites Dritter verwendet. Informationen über dich werden auch an unsere Partnerunternehmen weitergegeben, die deine Daten auch außerhalb der EU / des EWR verarbeiten. Mehr zu den Zwecken und unseren Partnern erfährst du, wenn du unten auf die entsprechenden Links klickst.</div><div><br></div><div>Deine Einwilligung umfasst die Verarbeitung deiner personenbezogenen Daten (Art. 6 Abs. 1 Buchst. a DSGVO)&nbsp; sowie die Speicherung von Informationen in deiner Endeinrichtung (z.B. in deinem Computer oder Handy) oder den Zugriff auf Informationen, die bereits in deiner Endeinrichtung gespeichert sind (§ 25 (1) TTDDG). Wenn du damit einverstanden bist, wähle „Annehmen”. Wenn du das nicht möchtest, drücke auf „Ablehnen”. Über „Einstellungen” kannst Du deine Einwilligung auf bestimmte Zwecke beschränken. Nach Annahme kannst du deine Einwilligung jederzeit für die Zukunft widerrufen, indem du in der Fußzeile auf „Privatsphäre“ gehst und anschließend „Ablehnen” auswählst.</div></div><div><div></div></div> </span> <a href=\"#\" class=\"privacy-text-more\">Details und rechtliche Grundlagen</a> <a href=\"#\" class=\"privacy-text-less\">Weniger lesen</a> </div> </div> </header> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Ablehnen\" tabindex=\"0\"> Ablehnen </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Annehmen\" tabindex=\"0\"> Annehmen </button> </div> </div> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 3516,
+        "cmpType": "Usercentrics"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Layer schließen",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "uc-close-button",
+              "type": "button",
+              "name": "Layer schließen",
+              "aria-label": "Layer schließen",
+              "tabindex": "0",
+              "class": "closeButton",
+              "title": "Layer schließen",
+              "data-action": "consent",
+              "data-action-type": "less",
+              "data-testid": "uc-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "actions right",
+              "selector": ".actions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-close-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.idealo.de/legal/datenschutz",
+              "aria-label": "Öffnen Datenschutzerklärung",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum/AGB",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.idealo.de/legal/agb",
+              "aria-label": "Öffnen Impressum/AGB",
+              "id": "imprint",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "imprint"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #imprint",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101",
+              "aria-labelledby": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Analysen zum Nutzungsverhalten",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101",
+              "tabindex": "0",
+              "aria-label": "Erweitern Analysen zum Nutzungsverhalten"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Analysen zum Nutzungsverhalten\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-1713bd49-84f2-42f0-99db-2279104991ec",
+              "aria-labelledby": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Messung des Erfolgs von Werbemaßnahmen",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-1713bd49-84f2-42f0-99db-2279104991ec",
+              "tabindex": "0",
+              "aria-label": "Erweitern Messung des Erfolgs von Werbemaßnahmen"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Messung des Erfolgs von Werbemaßnahmen\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b",
+              "aria-labelledby": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Personalisierte Produktempfehlungen",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b",
+              "tabindex": "0",
+              "aria-label": "Erweitern Personalisierte Produktempfehlungen"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierte Produktempfehlungen\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-91d03ebd-6163-4689-9409-8cd1de03e230",
+              "aria-labelledby": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Werbung bei anderen Webangeboten (Remarketing)",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-91d03ebd-6163-4689-9409-8cd1de03e230",
+              "tabindex": "0",
+              "aria-label": "Erweitern Werbung bei anderen Webangeboten (Remarketing)"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Werbung bei anderen Webangeboten (Remarketing)\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4",
+              "aria-labelledby": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-ebe94f90-3457-4443-a462-6939cc24e3a4",
+              "tabindex": "0",
+              "aria-label": "Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Speichern",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "save",
+              "class": "save uc-save-button",
+              "id": "save",
+              "aria-label": "Speichern",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Ablehnen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Annehmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Annehmen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Analysen zum Nutzungsverhalten",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101",
+              "aria-labelledby": "uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Messung des Erfolgs von Werbemaßnahmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-1713bd49-84f2-42f0-99db-2279104991ec",
+              "aria-labelledby": "uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalisierte Produktempfehlungen",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b",
+              "aria-labelledby": "uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Werbung bei anderen Webangeboten (Remarketing)",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-91d03ebd-6163-4689-9409-8cd1de03e230",
+              "aria-labelledby": "uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4",
+              "aria-labelledby": "uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.idealo.de/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"group\" aria-label=\"Consent Management Platform Interface\"> <div id=\"uc-overlay\" class=\"overlay\"></div> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Layer schließen\" aria-label=\"Layer schließen\" tabindex=\"0\" class=\"closeButton\" title=\"Layer schließen\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Einstellungen</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Cookies sind kleine Textdateien, die von Webseiten verwendet werden, um die Benutzererfahrung effizienter zu gestalten. Laut Gesetz können wir Cookies auf Ihrem Gerät speichern, wenn diese für den Betrieb dieser Seite unbedingt notwendig sind. Für alle anderen Cookie-Typen benötigen wir Ihre Erlaubnis. Diese Seite verwendet unterschiedliche Cookie-Typen. Einige Cookies werden von Drittparteien platziert, die auf unseren Seiten erscheinen. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Kategorien </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" data-load-id=\"customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\">Analysen zum Nutzungsverhalten</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-subtitle\">Wir führen Analysen durch, um unsere Nutzenden und unsere Zielgruppen besser zu verstehen und unsere Angebote entsprechend der Vorstellungen der Nutzenden anpassen und erweitern zu können. Auf diese Art und Weise erfassen wir z.B. welche Produkte unsere Nutzenden gerade besonders interessieren. Hierfür erstellen wir auch individuelle Nutzendenprofile und können Daten geräteübergreifend verknüpfen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Analysen zum Nutzungsverhalten\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101\" role=\"region\" aria-labelledby=\"uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-1713bd49-84f2-42f0-99db-2279104991ec\" data-load-id=\"customcategory-1713bd49-84f2-42f0-99db-2279104991ec\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\">Messung des Erfolgs von Werbemaßnahmen</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-subtitle\">Wir versuchen dich durch verschiedene Werbemaßnahmen zu erreichen. Mit deiner Einwilligung messen wir, wie erfolgreich diese Maßnahmen sind. Dabei erfassen wir auch, ob dich eine Werbemaßnahmen erreicht hat und wie du darauf reagierst. Teilweise hängt auch die Vergütung unserer Werbepartner vom Erfolg von Werbemaßnahmen ab. Wir erfassen dein Verhalten unter anderem in Bezug auf Werbemaßnahmen wie Werbekampagnen (z.B. TV-Spots, Werbeanzeigen), direkte Mitteilungen (z.B. Push-Benachrichtigungen in der App) und werbliche Gestaltung von Angeboten auf Website und App (z.B. im Wege von A/B-Tests).</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-1713bd49-84f2-42f0-99db-2279104991ec\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Messung des Erfolgs von Werbemaßnahmen\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-1713bd49-84f2-42f0-99db-2279104991ec\" role=\"region\" aria-labelledby=\"uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" data-load-id=\"customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\">Personalisierte Produktempfehlungen</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-subtitle\">Anzeigen, Inhalte, Werbenachrichten und Push-Nachrichten können basierend auf deinem Nutzerverhalten personalisiert und zur Erstellung eines Nutzerprofils ausgewertet werden. Wir werten dazu deine Interessen, deinen Standort und deine demografischen Informationen aus. Daten können in diesem Zusammenhang auch verwendet werden, um Systeme und Software aufzubauen oder zu verbessern. Hierzu können wir Informationen verwenden, um neue Rechenmodelle und Algorithmen mit Hilfe maschinellen Lernens zu erstellen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Personalisierte Produktempfehlungen\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b\" role=\"region\" aria-labelledby=\"uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-91d03ebd-6163-4689-9409-8cd1de03e230\" data-load-id=\"customcategory-91d03ebd-6163-4689-9409-8cd1de03e230\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title\">Werbung bei anderen Webangeboten (Remarketing)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-subtitle\">Mit Hilfe unserer Partner zeigen wir Dir Werbung zu Inhalten unserer Dienste auf anderen Websites, Plattformen oder sonstigen Diensten an. Es kann z.B. sein, dass Du auch auf anderen Seiten Werbung zu Produkten erhältst, die Du Dir bei Idealo angesehen hast. In diesem Zusammenhang werden Deine Daten auch ausgewertet, um Erkenntnisse über andere Nutzende und Zielgruppen zu gewinnen. Die Auswertung erfolgt auch, um eine korrekte Abrechnung durch unsere Werbepartner sicherzustellen. Unsere Partner nutzen Deine Daten mit Deiner Einwilligung außerdem, um Dir Angebote zu machen und Profile über dich zu erstellen. Weitere Informationen zur Verarbeitung durch unsere Partnerunternehmen erhältst Du unter „Services” und den dort jeweils verlinkten Datenschutzinformationen.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-91d03ebd-6163-4689-9409-8cd1de03e230\" aria-labelledby=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Werbung bei anderen Webangeboten (Remarketing)\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-91d03ebd-6163-4689-9409-8cd1de03e230\" role=\"region\" aria-labelledby=\"uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\" data-load-id=\"customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title\">Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-subtitle\">Mit deiner Einwilligung setzt unser Werbepartner Media Impact („MI“) beim Besuch unserer Webseite Cookies oder vergleichbare Technologien mit einer pseudonymen Identifikationsnummer („MI-ID“) in deinem Browser. Diese MI-ID können wir auslesen und deinem Nutzungsprofil auf unserer Webseite hinzufügen.Wir analysieren deine Nutzungsdaten, um Erkenntnisse über deine Interessen zu gewinnen und Zielgruppenprofile zu erstellen. Damit MI dir und ähnlichen Nutzern auf anderen Webseiten personalisierte Werbung anzeigen kann, führen wir und MI fallweise einen Abgleich zwischen unseren MI-ID, deren Nutzerprofil einem vorgegebenen Zielgruppenkriterium entsprechen, und den bei MI vorhanden MI-ID durch. Wenn der Abgleich zu einer Schnittmenge an MI-ID führt, kann MI diese Information nutzen, um personalisierte Werbung an diese MI-ID auf anderen Webseiten auszuspielen oder zu optimieren.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\" aria-labelledby=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-ebe94f90-3457-4443-a462-6939cc24e3a4\" role=\"region\" aria-labelledby=\"uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> </div> </div> <div role=\"tabpanel\" id=\"servicesPanel\" aria-labelledby=\"services-tab-button\"> <div role=\"radiogroup\" class=\"data-transfer-filter\"> <button id=\"data-transfer-filter-all\" class=\"data-transfer-filter-button active\" role=\"radio\" aria-checked=\"true\">Alle</button> <button id=\"data-transfer-filter-third-country\" class=\"data-transfer-filter-button\" role=\"radio\" aria-checked=\"false\">Datenübermittlung in Drittländer</button> </div> <div id=\"uc-services-list\" class=\"list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-_LPDpmRU\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-_LPDpmRU\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails_LPDpmRU\" data-load-id=\"_LPDpmRU\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-_LPDpmRU-item-title\">AdUp Technology</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-_LPDpmRU-item-subtitle\">Messung des Erfolgs von Werbemaßnahmen</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-_LPDpmRU-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"_LPDpmRU\" aria-labelledby=\"uc-service-_LPDpmRU-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-_LPDpmRU-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern AdUp Technology\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails_LPDpmRU\" role=\"region\" aria-labelledby=\"uc-service-_LPDpmRU-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-3nIOv_GtMSrP8F\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-3nIOv_GtMSrP8F\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails3nIOv_GtMSrP8F\" data-load-id=\"3nIOv_GtMSrP8F\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-3nIOv_GtMSrP8F-item-title\">AWIN</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-3nIOv_GtMSrP8F-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-3nIOv_GtMSrP8F-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"3nIOv_GtMSrP8F\" aria-labelledby=\"uc-service-3nIOv_GtMSrP8F-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-3nIOv_GtMSrP8F-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern AWIN\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails3nIOv_GtMSrP8F\" role=\"region\" aria-labelledby=\"uc-service-3nIOv_GtMSrP8F-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-N6iKbUxfrvQejp\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-N6iKbUxfrvQejp\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsN6iKbUxfrvQejp\" data-load-id=\"N6iKbUxfrvQejp\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-N6iKbUxfrvQejp-item-title\">Braze</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-N6iKbUxfrvQejp-item-subtitle\">Personalisierte Produktempfehlungen</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-N6iKbUxfrvQejp-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"N6iKbUxfrvQejp\" aria-labelledby=\"uc-service-N6iKbUxfrvQejp-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-N6iKbUxfrvQejp-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Braze\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsN6iKbUxfrvQejp\" role=\"region\" aria-labelledby=\"uc-service-N6iKbUxfrvQejp-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-HyeqVsdjWX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-HyeqVsdjWX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsHyeqVsdjWX\" data-load-id=\"HyeqVsdjWX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-HyeqVsdjWX-item-title\">Criteo</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-HyeqVsdjWX-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-HyeqVsdjWX-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"HyeqVsdjWX\" aria-labelledby=\"uc-service-HyeqVsdjWX-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-HyeqVsdjWX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Criteo\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsHyeqVsdjWX\" role=\"region\" aria-labelledby=\"uc-service-HyeqVsdjWX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-UekC8ye4S\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-UekC8ye4S\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsUekC8ye4S\" data-load-id=\"UekC8ye4S\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-UekC8ye4S-item-title\">Display &amp; Video 360</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-UekC8ye4S-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-UekC8ye4S-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"UekC8ye4S\" aria-labelledby=\"uc-service-UekC8ye4S-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-UekC8ye4S-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Display &amp;amp; Video 360\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsUekC8ye4S\" role=\"region\" aria-labelledby=\"uc-service-UekC8ye4S-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-BkZ_qViOj-7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BkZ_qViOj-7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBkZ_qViOj-7\" data-load-id=\"BkZ_qViOj-7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BkZ_qViOj-7-item-title\">Fullstory</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BkZ_qViOj-7-item-subtitle\">Analysen zum Nutzungsverhalten</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BkZ_qViOj-7-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BkZ_qViOj-7\" aria-labelledby=\"uc-service-BkZ_qViOj-7-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BkZ_qViOj-7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Fullstory\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBkZ_qViOj-7\" role=\"region\" aria-labelledby=\"uc-service-BkZ_qViOj-7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-S1_9Vsuj-Q\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-S1_9Vsuj-Q\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsS1_9Vsuj-Q\" data-load-id=\"S1_9Vsuj-Q\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-S1_9Vsuj-Q-item-title\">Google Ads</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-S1_9Vsuj-Q-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-S1_9Vsuj-Q-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"S1_9Vsuj-Q\" aria-labelledby=\"uc-service-S1_9Vsuj-Q-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-S1_9Vsuj-Q-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Google Ads\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsS1_9Vsuj-Q\" role=\"region\" aria-labelledby=\"uc-service-S1_9Vsuj-Q-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-dyHOCwp5Y\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-dyHOCwp5Y\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsdyHOCwp5Y\" data-load-id=\"dyHOCwp5Y\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-dyHOCwp5Y-item-title\">Google Campaign Manager 360</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-dyHOCwp5Y-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-dyHOCwp5Y-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"dyHOCwp5Y\" aria-labelledby=\"uc-service-dyHOCwp5Y-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-dyHOCwp5Y-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Google Campaign Manager 360\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsdyHOCwp5Y\" role=\"region\" aria-labelledby=\"uc-service-dyHOCwp5Y-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-TX0Eg4mzz1BfIn\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-TX0Eg4mzz1BfIn\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsTX0Eg4mzz1BfIn\" data-load-id=\"TX0Eg4mzz1BfIn\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-TX0Eg4mzz1BfIn-item-title\">Idealo</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-TX0Eg4mzz1BfIn-item-subtitle\">Analysen zum Nutzungsverhalten</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-TX0Eg4mzz1BfIn-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"TX0Eg4mzz1BfIn\" aria-labelledby=\"uc-service-TX0Eg4mzz1BfIn-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-TX0Eg4mzz1BfIn-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Idealo\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsTX0Eg4mzz1BfIn\" role=\"region\" aria-labelledby=\"uc-service-TX0Eg4mzz1BfIn-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-bEKFRVbDQSz_eg\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-bEKFRVbDQSz_eg\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsbEKFRVbDQSz_eg\" data-load-id=\"bEKFRVbDQSz_eg\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-bEKFRVbDQSz_eg-item-title\">IPN</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-bEKFRVbDQSz_eg-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-bEKFRVbDQSz_eg-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"bEKFRVbDQSz_eg\" aria-labelledby=\"uc-service-bEKFRVbDQSz_eg-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-bEKFRVbDQSz_eg-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern IPN\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsbEKFRVbDQSz_eg\" role=\"region\" aria-labelledby=\"uc-service-bEKFRVbDQSz_eg-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-rk-nqEj_o-m\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-rk-nqEj_o-m\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsrk-nqEj_o-m\" data-load-id=\"rk-nqEj_o-m\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-rk-nqEj_o-m-item-title\">LinkedIn Ads</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-rk-nqEj_o-m-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-rk-nqEj_o-m-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"rk-nqEj_o-m\" aria-labelledby=\"uc-service-rk-nqEj_o-m-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-rk-nqEj_o-m-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern LinkedIn Ads\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsrk-nqEj_o-m\" role=\"region\" aria-labelledby=\"uc-service-rk-nqEj_o-m-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-YzNYbO_5Y6uXBN\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-YzNYbO_5Y6uXBN\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsYzNYbO_5Y6uXBN\" data-load-id=\"YzNYbO_5Y6uXBN\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-YzNYbO_5Y6uXBN-item-title\">Matomo</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-YzNYbO_5Y6uXBN-item-subtitle\">Analysen zum Nutzungsverhalten</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-YzNYbO_5Y6uXBN-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"YzNYbO_5Y6uXBN\" aria-labelledby=\"uc-service-YzNYbO_5Y6uXBN-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-YzNYbO_5Y6uXBN-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Matomo\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsYzNYbO_5Y6uXBN\" role=\"region\" aria-labelledby=\"uc-service-YzNYbO_5Y6uXBN-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-HUmEQMnlECI3OO\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-HUmEQMnlECI3OO\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsHUmEQMnlECI3OO\" data-load-id=\"HUmEQMnlECI3OO\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-HUmEQMnlECI3OO-item-title\">Media Impact</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-HUmEQMnlECI3OO-item-subtitle\">Personalisierte Werbung auf Seiten Dritter bereitstellen durch Werbepartner</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-HUmEQMnlECI3OO-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"HUmEQMnlECI3OO\" aria-labelledby=\"uc-service-HUmEQMnlECI3OO-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-HUmEQMnlECI3OO-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Media Impact\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsHUmEQMnlECI3OO\" role=\"region\" aria-labelledby=\"uc-service-HUmEQMnlECI3OO-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Ih1hqP_DTYfTcI\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Ih1hqP_DTYfTcI\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsIh1hqP_DTYfTcI\" data-load-id=\"Ih1hqP_DTYfTcI\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Ih1hqP_DTYfTcI-item-title\">MediaLabel GmbH</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Ih1hqP_DTYfTcI-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-Ih1hqP_DTYfTcI-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"Ih1hqP_DTYfTcI\" aria-labelledby=\"uc-service-Ih1hqP_DTYfTcI-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Ih1hqP_DTYfTcI-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern MediaLabel GmbH\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsIh1hqP_DTYfTcI\" role=\"region\" aria-labelledby=\"uc-service-Ih1hqP_DTYfTcI-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-lBuTa3JT8oefx4\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-lBuTa3JT8oefx4\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailslBuTa3JT8oefx4\" data-load-id=\"lBuTa3JT8oefx4\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-lBuTa3JT8oefx4-item-title\">Meta Pixel</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-lBuTa3JT8oefx4-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-lBuTa3JT8oefx4-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"lBuTa3JT8oefx4\" aria-labelledby=\"uc-service-lBuTa3JT8oefx4-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-lBuTa3JT8oefx4-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Meta Pixel\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailslBuTa3JT8oefx4\" role=\"region\" aria-labelledby=\"uc-service-lBuTa3JT8oefx4-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-BkeKqEjuoZQ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BkeKqEjuoZQ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBkeKqEjuoZQ\" data-load-id=\"BkeKqEjuoZQ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BkeKqEjuoZQ-item-title\">Microsoft Advertising</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BkeKqEjuoZQ-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BkeKqEjuoZQ-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BkeKqEjuoZQ\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Microsoft Advertising\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBkeKqEjuoZQ\" role=\"region\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-0QVzRHXZX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-0QVzRHXZX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails0QVzRHXZX\" data-load-id=\"0QVzRHXZX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-0QVzRHXZX-item-title\">Qualtrics</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-0QVzRHXZX-item-subtitle\">Analysen zum Nutzungsverhalten</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-0QVzRHXZX-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"0QVzRHXZX\" aria-labelledby=\"uc-service-0QVzRHXZX-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-0QVzRHXZX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Qualtrics\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails0QVzRHXZX\" role=\"region\" aria-labelledby=\"uc-service-0QVzRHXZX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-aK2_weUfCPRFAl\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-aK2_weUfCPRFAl\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsaK2_weUfCPRFAl\" data-load-id=\"aK2_weUfCPRFAl\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-aK2_weUfCPRFAl-item-title\">Reddit Advertising</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-aK2_weUfCPRFAl-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-aK2_weUfCPRFAl-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"aK2_weUfCPRFAl\" aria-labelledby=\"uc-service-aK2_weUfCPRFAl-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-aK2_weUfCPRFAl-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Reddit Advertising\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsaK2_weUfCPRFAl\" role=\"region\" aria-labelledby=\"uc-service-aK2_weUfCPRFAl-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-TdHcZNBpi_t15v\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-TdHcZNBpi_t15v\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsTdHcZNBpi_t15v\" data-load-id=\"TdHcZNBpi_t15v\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-TdHcZNBpi_t15v-item-title\">Ring Publishing Digital Advertising System (Ring DAS)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-TdHcZNBpi_t15v-item-subtitle\">Personalisierte Produktempfehlungen</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-TdHcZNBpi_t15v-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"TdHcZNBpi_t15v\" aria-labelledby=\"uc-service-TdHcZNBpi_t15v-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-TdHcZNBpi_t15v-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Ring Publishing Digital Advertising System (Ring DAS)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsTdHcZNBpi_t15v\" role=\"region\" aria-labelledby=\"uc-service-TdHcZNBpi_t15v-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-B1Ayg5Es_s-X\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-B1Ayg5Es_s-X\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsB1Ayg5Es_s-X\" data-load-id=\"B1Ayg5Es_s-X\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-B1Ayg5Es_s-X-item-title\">RTB House</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-B1Ayg5Es_s-X-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-B1Ayg5Es_s-X-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"B1Ayg5Es_s-X\" aria-labelledby=\"uc-service-B1Ayg5Es_s-X-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-B1Ayg5Es_s-X-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern RTB House\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsB1Ayg5Es_s-X\" role=\"region\" aria-labelledby=\"uc-service-B1Ayg5Es_s-X-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-cB8Sp12LSCipSy\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-cB8Sp12LSCipSy\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailscB8Sp12LSCipSy\" data-load-id=\"cB8Sp12LSCipSy\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-cB8Sp12LSCipSy-item-title\">Salesforce Marketing Cloud</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-cB8Sp12LSCipSy-item-subtitle\">Personalisierte Produktempfehlungen</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-cB8Sp12LSCipSy-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"cB8Sp12LSCipSy\" aria-labelledby=\"uc-service-cB8Sp12LSCipSy-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-cB8Sp12LSCipSy-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Salesforce Marketing Cloud\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailscB8Sp12LSCipSy\" role=\"region\" aria-labelledby=\"uc-service-cB8Sp12LSCipSy-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-DHS2sEi4b\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-DHS2sEi4b\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsDHS2sEi4b\" data-load-id=\"DHS2sEi4b\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-DHS2sEi4b-item-title\">Search Ads 360</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-DHS2sEi4b-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-DHS2sEi4b-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"DHS2sEi4b\" aria-labelledby=\"uc-service-DHS2sEi4b-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-DHS2sEi4b-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Search Ads 360\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsDHS2sEi4b\" role=\"region\" aria-labelledby=\"uc-service-DHS2sEi4b-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-Z0TcXjY0P\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Z0TcXjY0P\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsZ0TcXjY0P\" data-load-id=\"Z0TcXjY0P\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Z0TcXjY0P-item-title\">TikTok</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Z0TcXjY0P-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-Z0TcXjY0P-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"Z0TcXjY0P\" aria-labelledby=\"uc-service-Z0TcXjY0P-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Z0TcXjY0P-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern TikTok\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsZ0TcXjY0P\" role=\"region\" aria-labelledby=\"uc-service-Z0TcXjY0P-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-H1QMcEsusbm\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-H1QMcEsusbm\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsH1QMcEsusbm\" data-load-id=\"H1QMcEsusbm\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-H1QMcEsusbm-item-title\">TradeDesk</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-H1QMcEsusbm-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-H1QMcEsusbm-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"H1QMcEsusbm\" aria-labelledby=\"uc-service-H1QMcEsusbm-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-H1QMcEsusbm-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern TradeDesk\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsH1QMcEsusbm\" role=\"region\" aria-labelledby=\"uc-service-H1QMcEsusbm-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-JV1igo40jbfyQR\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-JV1igo40jbfyQR\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsJV1igo40jbfyQR\" data-load-id=\"JV1igo40jbfyQR\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-JV1igo40jbfyQR-item-title\">TVSquared</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-JV1igo40jbfyQR-item-subtitle\">Messung des Erfolgs von Werbemaßnahmen</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-JV1igo40jbfyQR-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"JV1igo40jbfyQR\" aria-labelledby=\"uc-service-JV1igo40jbfyQR-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-JV1igo40jbfyQR-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern TVSquared\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsJV1igo40jbfyQR\" role=\"region\" aria-labelledby=\"uc-service-JV1igo40jbfyQR-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-eR2DWcpGpkzmCc\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-eR2DWcpGpkzmCc\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailseR2DWcpGpkzmCc\" data-load-id=\"eR2DWcpGpkzmCc\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-eR2DWcpGpkzmCc-item-title\">Xing Ads</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-eR2DWcpGpkzmCc-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-eR2DWcpGpkzmCc-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"eR2DWcpGpkzmCc\" aria-labelledby=\"uc-service-eR2DWcpGpkzmCc-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-eR2DWcpGpkzmCc-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern Xing Ads\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailseR2DWcpGpkzmCc\" role=\"region\" aria-labelledby=\"uc-service-eR2DWcpGpkzmCc-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-outside-eu\" id=\"uc-service-BJz7qNsdj-7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BJz7qNsdj-7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBJz7qNsdj-7\" data-load-id=\"BJz7qNsdj-7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BJz7qNsdj-7-item-title\">YouTube Video</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BJz7qNsdj-7-item-subtitle\">Werbung bei anderen Webangeboten (Remarketing)</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BJz7qNsdj-7-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BJz7qNsdj-7\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Erweitern YouTube Video\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBJz7qNsdj-7\" role=\"region\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div class=\"uc-expandable-card list-item controller-id expandable\" role=\"listitem\" id=\"controller-id-item\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#controller-id-item\" tabindex=\"-1\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"controller-id-title\">ID zum Anfordern von Einwilligungsdaten</div> </div> <div role=\"button\" class=\"list-item-header-expander\" tabindex=\"0\" aria-labelledby=\"controller-id-title\" aria-expanded=\"false\" aria-c aria-label=\"Erweitern ID zum Anfordern von Einwilligungsdaten\"></div> </div> <div class=\"list-item-body\" id=\"list-item-body-controller-id\" role=\"region\" aria-labelledby=\"controller-id-title\"> <div class=\"controller-id-item-container\"> <div class=\"controller-id-item-text\">68c7b69c58da27f7e770ea52b9414e13e6ff4fa0ae0380d5263349baf6fabfd9</div> <button class=\"controller-id-item-button\" title=\"kopieren\"> <div class=\"copy-icon initial active\"></div> <div class=\"copy-icon success icon-container\"> <span class=\"success-text\">kopiert</span> <div class=\"success-icon\"></div> </div> </button> </div> </div> </div> </div> </div> </div> </div> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"save\" class=\"save uc-save-button\" id=\"save\" aria-label=\"Speichern\" tabindex=\"0\"> Speichern </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Ablehnen\" tabindex=\"0\"> Ablehnen </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Annehmen\" tabindex=\"0\"> Annehmen </button> </div> </div> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 59389,
+        "cmpType": "Usercentrics",
+        "isIframe": false
+      }
+    }
+  ]
+}

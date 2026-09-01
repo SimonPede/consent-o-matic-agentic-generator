@@ -1,0 +1,2758 @@
+{
+  "timestamp": "2026-08-27T02:20:55.669739",
+  "url": "https://www.nike.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.nike.com"
+  ],
+  "duration_seconds": 86.27,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 3 frames.",
+      "a frame was picked by score: https://www.nike.com/dk/en/ with Score: 69",
+      "Settings match: \"Company Details\" --> lowered: \"company details\"",
+      "Settings Match dismissed due to it being a real navigation element!",
+      "Settings match: \"Privacy & Cookie Settings\" --> lowered: \"privacy & cookie settings\"",
+      "Settings Match dismissed due to it being a real navigation element!",
+      "Regex failed in frame https://www.nike.com/dk/en/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.nike.com/dk/en/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.nike.com/dk/en/',",
+      "      filteredHtml: '',",
+      "      filteredHtmlOmitted: true,",
+      "      filteredHtmlOriginalChars: 136689",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.nike.com/dk/en/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (90):",
+      "      [A] \"Privacy & Cookie Policy\" --> selector: #privacyPolicyLinkData",
+      "      [BUTTON] \"Learn more about personalised advertising\" --> selector: [aria-label=\"Learn more about personalised advertising\"]",
+      "      [A] \"Learn more about personalised advertising\" --> selector: a",
+      "      [BUTTON] \"Learn more about profile-based advertising\" --> selector: [aria-label=\"Learn more about profile-based advertising\"]",
+      "      [A] \"Learn more about profile-based advertising\" --> selector: a",
+      "      [BUTTON] \"Confirm Choices\" --> selector: [aria-label=\"Confirm Choices\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "      [BUTTON] \"Decline All\" --> selector: [aria-label=\"Decline All\"]",
+      "      [A] \"Skip to main content\" --> selector: .nav-css-1iigv7v",
+      "      [A] \"Nike Homepage\" --> selector: [aria-label=\"Nike Homepage\"]",
+      "      [BUTTON] \"Search\" --> selector: #nav-search-icon",
+      "      [BUTTON] \"Sign In\" --> selector: [aria-label=\"Sign In\"]",
+      "      [A] \"Bag Items: 0\" --> selector: [aria-label=\"Bag Items: 0\"]",
+      "      [BUTTON] \"menu\" --> selector: [aria-label=\"menu\"]",
+      "      [A] \"Back to School READY FOR EVERY PLAY\" --> selector: [aria-label=\"Back to School READY FOR EVERY PLAY\"]",
+      "      [A] \"Shop Kids\" --> selector: [aria-label=\"Shop Kids\"]",
+      "      [A] \"Shop Adults\" --> selector: [aria-label=\"Shop Adults\"]",
+      "      [A] \"Back to School Promo With Code “BTS26” at Checkout\" --> selector: [aria-label=\"Back to School Promo With Code “BTS26” at Checkout\"]",
+      "      [A] \"Shop\" --> selector: [aria-label=\"Shop\"]",
+      "      [A] \"T&Cs\" --> selector: [aria-label=\"T&Cs\"]",
+      "      [A] \"ACG Chamo Camo Collection Catch Me If You Camo!\" --> selector: [aria-label=\"ACG Chamo Camo Collection Catch Me If You Camo!\"]",
+      "      [A] \"Shop\" --> selector: [aria-label=\"Shop\"]",
+      "      [A] \"It's just a tracksuit until it's not. Studio Fleece\" --> selector: [aria-label=\"It's just a tracksuit until it's not. Studio Fleece\"]",
+      "      [A] \"Shop\" --> selector: [aria-label=\"Shop\"]",
+      "      [A] \"Explore\" --> selector: [aria-label=\"Explore\"]",
+      "      [A] \"Nike Football Kylian Mbappé Mercurial Superfly\" --> selector: [aria-label=\"Nike Football Kylian Mbappé Mercurial Superfly\"]",
+      "      [A] \"Shop\" --> selector: [aria-label=\"Shop\"]",
+      "      [DIV] \"'Love Letter' Collection",
+      "GAME RECOGNISES GAME",
+      "The latest collection celebrates the love of the game with off-court styles.",
+      "Shop\" --> selector: .JP66kT9q",
+      "      [A] \"'Love Letter' Collection GAME RECOGNISES GAME\" --> selector: [aria-label=\"'Love Letter' Collection GAME RECOGNISES GAME\"]",
+      "      [A] \"Shop\" --> selector: [aria-label=\"Shop\"]",
+      "      [A] \"Air Jordan 1\" --> selector: a",
+      "      [A] \"Air Max\" --> selector: a",
+      "      [A] \"Graphic Tee\" --> selector: a",
+      "      [A] \"Dunk\" --> selector: a",
+      "      [A] \"Air Force 1\" --> selector: a",
+      "      [A] \"24.7 collection\" --> selector: a",
+      "      [A] \"ACG\" --> selector: a",
+      "      [A] \"Pegasus\" --> selector: a",
+      "      [A] \"Vomero Plus\" --> selector: a",
+      "      [A] \"Metcon\" --> selector: a",
+      "      [A] \"Fan Gear\" --> selector: a",
+      "      [A] \"Jordan Retro\" --> selector: a",
+      "      [A] \"Sabrina 3\" --> selector: a",
+      "      [A] \"Tatum 4\" --> selector: a",
+      "      [LABEL] \"Shoes\" --> selector: label",
+      "      [A] \"Black Running Shoes\" --> selector: a",
+      "      [A] \"White Running Shoes\" --> selector: a",
+      "      [A] \"Nike P-6000\" --> selector: a",
+      "      [A] \"Nike Initiator Shoes\" --> selector: a",
+      "      [A] \"Nike Shox\" --> selector: a",
+      "      [A] \"Nike Waffle Trainers\" --> selector: a",
+      "      [A] \"Nike Cortez\" --> selector: a",
+      "      [A] \"Nike Vomero\" --> selector: a",
+      "      [A] \"Black Trainers\" --> selector: a",
+      "      [A] \"Nike Motiva Shoes\" --> selector: a",
+      "      [LABEL] \"Clothing\" --> selector: label",
+      "      [A] \"Yoga Trousers\" --> selector: a",
+      "      [A] \"Tech Fleece Joggers\" --> selector: a",
+      "      [A] \"Tech Fleece\" --> selector: a",
+      "      [A] \"School Bags & Backpacks\" --> selector: a",
+      "      [A] \"School Shoes\" --> selector: a",
+      "      [LABEL] \"Kids'\" --> selector: label",
+      "      [A] \"Girls' Black Shoes\" --> selector: a",
+      "      [A] \"Kids' Black Shoes\" --> selector: a",
+      "      [A] \"Boys' School Shoes\" --> selector: a",
+      "      [A] \"Girls' School Shoes\" --> selector: a",
+      "      [A] \"Kids' School Clothing\" --> selector: a",
+      "      [A] \"Kids' School Shoes\" --> selector: a",
+      "      [A] \"Shoes\" --> selector: a",
+      "      [A] \"Men's Shoes\" --> selector: a",
+      "      [A] \"Women's Shoes\" --> selector: a",
+      "      [LABEL] \"Featured\" --> selector: label",
+      "      [A] \"Football Club Teams\" --> selector: a",
+      "      [A] \"Football\" --> selector: a",
+      "      [A] \"Nike Run Club\" --> selector: a",
+      "      [A] \"Nike Training Club\" --> selector: a",
+      "      [A] \"Nike By You Shoes\" --> selector: a",
+      "      [A] \"Gift Cards\" --> selector: a",
+      "      [A] \"Find a Store\" --> selector: a",
+      "      [A] \"Nike Journal\" --> selector: a",
+      "      [A] \"Become a Member\" --> selector: a",
+      "      [A] \"Feedback\" --> selector: a",
+      "      [A] \"Promo Codes\" --> selector: a",
+      "      [A] \"Running Shoe Finder\" --> selector: a",
+      "      [BUTTON] \"Denmark\" --> selector: [aria-label=\"Selected location: Denmark\"]",
+      "      [A] \"Terms of Use\" --> selector: .nav-css-1isz5ne",
+      "      [A] \"Terms of Sale\" --> selector: .nav-css-1isz5ne",
+      "      [A] \"Company Details\" --> selector: .nav-css-1isz5ne",
+      "      [A] \"Privacy & Cookie Policy\" --> selector: .nav-css-1isz5ne",
+      "      [A] \"Privacy & Cookie Settings\" --> selector: .nav-css-1isz5ne",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.nike.com/dk/en/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy & Cookie Policy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "style": "text-decoration:underline;font:inherit;",
+              "id": "privacyPolicyLinkData",
+              "href": "https://agreementservice.svs.nike.com/rest/agreement?agreementType=privacyPolicy&uxId=com.nike.commerce.nikedotcom.web&country=DK&language=en&requestType=redirect"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "nds-text css-638raf appearance-body1 color-primary weight-regular",
+              "selector": ".nds-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#privacyPolicyLinkData",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more about personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Learn more about personalised advertising",
+              "class": "nds-btn css-e8cdzc cta-primary-dark btn-responsive",
+              "type": "submit",
+              "data-testid": "learn-more-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nds-box css-inejbp e161jrzw0",
+              "selector": ".nds-box",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nds-box css-180fiwq e161jrzw0",
+                "selector": ".nds-box"
+              }
+            },
+            "selector": "[aria-label=\"Learn more about personalised advertising\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more about personalised advertising",
+            "tag": "A",
+            "attributes": {
+              "class": "nds-text css-1uwhofj appearance-body2Link color-secondary weight-regular"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "nds-btn css-e8cdzc cta-primary-dark btn-responsive",
+              "selector": ".nds-btn",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nds-box css-inejbp e161jrzw0",
+                "selector": ".nds-box"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more about profile-based advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Learn more about profile-based advertising",
+              "class": "nds-btn css-e8cdzc cta-primary-dark btn-responsive",
+              "type": "submit",
+              "data-testid": "learn-more-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nds-box css-inejbp e161jrzw0",
+              "selector": ".nds-box",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nds-box css-180fiwq e161jrzw0",
+                "selector": ".nds-box"
+              }
+            },
+            "selector": "[aria-label=\"Learn more about profile-based advertising\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Learn more about profile-based advertising",
+            "tag": "A",
+            "attributes": {
+              "class": "nds-text css-1uwhofj appearance-body2Link color-secondary weight-regular"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "nds-btn css-e8cdzc cta-primary-dark btn-responsive",
+              "selector": ".nds-btn",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nds-box css-inejbp e161jrzw0",
+                "selector": ".nds-box"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Confirm Choices",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Confirm Choices",
+              "class": "nds-btn css-153hayi ex41m6f0 btn-secondary-dark btn-lg",
+              "type": "button",
+              "data-testid": "confirm-choice-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "css-uw46dw",
+              "selector": ".css-uw46dw",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Confirm Choices\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Accept All",
+              "class": "nds-btn modal-actions-accept-btn css-7jsinp ex41m6f0 btn-primary-dark btn-lg",
+              "type": "button",
+              "data-testid": "modal-accept-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nds-modal__actions",
+              "selector": ".nds-modal__actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-1gztcv5",
+                "selector": ".css-1gztcv5"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline All",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Decline All",
+              "class": "nds-btn modal-actions-decline-btn css-7jsinp ex41m6f0 btn-primary-dark btn-lg",
+              "type": "button",
+              "data-testid": "modal-decline-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nds-modal__actions",
+              "selector": ".nds-modal__actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-1gztcv5",
+                "selector": ".css-1gztcv5"
+              }
+            },
+            "selector": "[aria-label=\"Decline All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Skip to main content",
+            "tag": "A",
+            "attributes": {
+              "href": "#skip-to-content",
+              "class": "nav-css-1iigv7v"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "no-peekaboo pre-l-header-container nav-css-gyxam0",
+              "selector": ".no-peekaboo",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "gen-nav-commerce-header-v2",
+                "className": null,
+                "selector": "#gen-nav-commerce-header-v2"
+              }
+            },
+            "selector": ".nav-css-1iigv7v",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Homepage",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Nike Homepage",
+              "class": "swoosh-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "swoosh css-1kcd44j nds-grid-item",
+              "selector": ".swoosh",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nds-grid nav-css-1s0iy6j",
+                "selector": ".nds-grid"
+              }
+            },
+            "selector": "[aria-label=\"Nike Homepage\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Search",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Search",
+              "class": "nds-btn nds-button--icon-only search-start-btn css-1ygbog4 btn-secondary-dark",
+              "type": "button",
+              "id": "nav-search-icon"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "search-start-icon-container",
+              "selector": ".search-start-icon-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "search-input-container",
+                "selector": ".search-input-container"
+              }
+            },
+            "selector": "#nav-search-icon",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sign In",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Sign In",
+              "class": "nds-btn nds-button--icon-only css-8cjbjk btn-primary-light",
+              "type": "button",
+              "data-testid": "sign-in-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nav-css-110rkf1",
+              "selector": ".nav-css-110rkf1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-f6c2as nds-grid-item",
+                "selector": ".css-f6c2as"
+              }
+            },
+            "selector": "[aria-label=\"Sign In\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Bag Items: 0",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "Bag Items: 0",
+              "class": "nds-btn nds-button--icon-only nav-bag-icon css-vwffdb btn-primary-light",
+              "href": "https://www.nike.com/dk/en/cart",
+              "title": "Bag Items: 0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nav-css-110rkf1",
+              "selector": ".nav-css-110rkf1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-f6c2as nds-grid-item",
+                "selector": ".css-f6c2as"
+              }
+            },
+            "selector": "[aria-label=\"Bag Items: 0\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "menu",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "menu",
+              "class": "nds-btn nds-button--icon-only mobile-btn css-8cjbjk btn-primary-light",
+              "type": "button",
+              "aria-haspopup": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "nav-css-110rkf1",
+              "selector": ".nav-css-110rkf1",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "css-f6c2as nds-grid-item",
+                "selector": ".css-f6c2as"
+              }
+            },
+            "selector": "[aria-label=\"menu\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Back to School READY FOR EVERY PLAY",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kids-back-to-school-840ikzv4dh",
+              "target": "_self",
+              "data-click-mod": "d1d39d2c70ae0f2a6ee95650b8527d6d8624cd6592b035c3e83cdeab563200bd",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "279180d9-acec-4a9e-a5b1-47ab8ec9c146",
+              "data-analytics-placement-id": "2e82adbf-1112-4402-826e-4ea9c5a35438",
+              "class": "_1GPQ9HJJ",
+              "data-qa-card-id": "0edd234d-8a75-48aa-ad3a-7535c2a7a5ee",
+              "aria-label": "Back to School READY FOR EVERY PLAY",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "FIGURE",
+              "id": "",
+              "className": "image-card _3l8ZuNi4",
+              "selector": ".image-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "ddd914b6-d5e2-4d6a-bf86-b7727825a194",
+                "className": "grid-col va-sm-t ncss-col-lg-12 ncss-col-md-12 ncss-col-sm-12 ncss-col-lg-offset-0 ncss-col-md-offset-0",
+                "selector": "#ddd914b6-d5e2-4d6a-bf86-b7727825a194"
+              }
+            },
+            "selector": "[aria-label=\"Back to School READY FOR EVERY PLAY\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop Kids",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kids-back-to-school-840ikzv4dh",
+              "target": "_self",
+              "aria-label": "Shop Kids",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop Kids",
+              "data-analytics-action-id": "8d5a42f6-0010-4212-8be7-75fc94cb02fc",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "2004e8cb1fb3eaa0c59c804d05a6e14aa8af1e57bcfc9ac06235cea03c59d522",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "0edd234d-8a75-48aa-ad3a-7535c2a7a5ee",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Re9pl6:-subtitle a11y_react-aria-:Re9pl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop Kids\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop Adults",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/back-to-school-3rauvz5e1x6z840ikznik1",
+              "target": "_self",
+              "aria-label": "Shop Adults",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop Adults",
+              "data-analytics-action-id": "93948f52-7f82-4e87-b6f1-39696536405d",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "9c3fcd7729201ddd18c528e6a8167f883038400d1b1bb99844a8dadc269514cf",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "1",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "0edd234d-8a75-48aa-ad3a-7535c2a7a5ee",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Re9pl6:-subtitle a11y_react-aria-:Re9pl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop Adults\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Back to School Promo With Code “BTS26” at Checkout",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/promotional-styles-3vvvm",
+              "target": "_self",
+              "data-click-mod": "c5152d6b551f0efab93cf9500bf37910d730794069995ce5ddf4e4b7a66163e0",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "e1674fe7-2c67-4bd4-88fe-78d631ee69f2",
+              "data-analytics-placement-id": "e0592a0b-58e4-4d30-8e80-7c95fc13edf1",
+              "class": "_1GPQ9HJJ",
+              "data-qa-card-id": "c7464c03-3610-4324-9eae-9f43f0b560c0",
+              "aria-label": "Back to School Promo With Code “BTS26” at Checkout",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "FIGURE",
+              "id": "",
+              "className": "image-card _3l8ZuNi4",
+              "selector": ".image-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "3d0c4c34-323c-46f7-9ba0-474bf5b08f37",
+                "className": "grid-col va-sm-t ncss-col-lg-6 ncss-col-md-6 ncss-col-sm-12 ncss-col-lg-offset-0 ncss-col-md-offset-0",
+                "selector": "#3d0c4c34-323c-46f7-9ba0-474bf5b08f37"
+              }
+            },
+            "selector": "[aria-label=\"Back to School Promo With Code “BTS26” at Checkout\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/promotional-styles-3vvvm",
+              "target": "_self",
+              "aria-label": "Shop",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _4EfJ5rYM css-1k7g084 ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop",
+              "data-analytics-action-id": "c0dcd6b9-ce6a-48f4-a67c-b78fa604cb55",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "f140844ee7f5946611f799a65979c838066cf03aee7b650aa1b6606385146c43",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "c7464c03-3610-4324-9eae-9f43f0b560c0",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rmdpl6:-subtitle a11y_react-aria-:Rmdpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "T&Cs",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/promo-terms-bts2026",
+              "target": "_self",
+              "aria-label": "T&Cs",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _4EfJ5rYM css-1k7g084 ex41m6f0",
+              "type": "button",
+              "data-actiontext": "T&Cs",
+              "data-analytics-action-id": "9bfd42f1-3501-4436-b700-a38deb6d4f38",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "f12f7420683b6371a13fe49b9330b0c0b1c51368818c9c59288be37e2a526356",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "1",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "c7464c03-3610-4324-9eae-9f43f0b560c0",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rmdpl6:-subtitle a11y_react-aria-:Rmdpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"T&Cs\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACG Chamo Camo Collection Catch Me If You Camo!",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/acg-trail-running-75jcnz93bsd",
+              "target": "_self",
+              "data-click-mod": "7af87af6576c1defdaa9ad8cc8681eed20a0464d96f87c991f5c130a5f85fbd8",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "877a212c-3dd2-47a9-abe2-a8101949c0d2",
+              "data-analytics-placement-id": "96cf82d9-fdbd-41c9-9cd8-7fece9ea3e0a",
+              "class": "_1GPQ9HJJ",
+              "data-qa-card-id": "2ac53168-dc9f-45cf-a707-2ffa9910660f",
+              "aria-label": "ACG Chamo Camo Collection Catch Me If You Camo!",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "FIGURE",
+              "id": "",
+              "className": "image-card _3l8ZuNi4",
+              "selector": ".image-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "8c5d0007-6103-42c2-b6a2-ed25a1dfdeaa",
+                "className": "grid-col va-sm-t ncss-col-lg-6 ncss-col-md-6 ncss-col-sm-12 ncss-col-lg-offset-0 ncss-col-md-offset-0",
+                "selector": "#8c5d0007-6103-42c2-b6a2-ed25a1dfdeaa"
+              }
+            },
+            "selector": "[aria-label=\"ACG Chamo Camo Collection Catch Me If You Camo!\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/acg-trail-running-75jcnz93bsd",
+              "target": "_self",
+              "aria-label": "Shop",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop",
+              "data-analytics-action-id": "eb458b94-a752-46f9-af49-9f07ba07fdb3",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "286a1da6190994a88a004ff5de4547e4ec3700f5c38c9aa0ffc03d518db75bfc",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "2ac53168-dc9f-45cf-a707-2ffa9910660f",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rqdpl6:-subtitle a11y_react-aria-:Rqdpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "It's just a tracksuit until it's not. Studio Fleece",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-studio-fleece-s531",
+              "target": "_self",
+              "data-click-mod": "ac5cf1d47e0eafcd89f30cb79a1d4bfc7745c861455d9f80805c8675828403f7",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "0d6155ff-9d0d-4778-8df8-ff470a755bd8",
+              "data-analytics-placement-id": "10768fab-bd46-4535-b257-9531ae101d40",
+              "class": "_1GPQ9HJJ",
+              "data-qa-card-id": "37618ee1-eba1-48b1-8b68-cb46cb8ed218",
+              "aria-label": "It's just a tracksuit until it's not. Studio Fleece",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "FIGURE",
+              "id": "",
+              "className": "image-card _3l8ZuNi4",
+              "selector": ".image-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cd7f74f4-6299-4dd7-b9b6-36f05549c688",
+                "className": "grid-col va-sm-t ncss-col-lg-6 ncss-col-md-6 ncss-col-sm-12 ncss-col-lg-offset-0 ncss-col-md-offset-0",
+                "selector": "#cd7f74f4-6299-4dd7-b9b6-36f05549c688"
+              }
+            },
+            "selector": "[aria-label=\"It's just a tracksuit until it's not. Studio Fleece\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-studio-fleece-s531",
+              "target": "_self",
+              "aria-label": "Shop",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop",
+              "data-analytics-action-id": "68103be3-40e9-4dfa-981f-406bfa568973",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "e1e014e441bb2c634826d63d565494ccc9233a7b4b3c9979066dc94c5016e275",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "37618ee1-eba1-48b1-8b68-cb46cb8ed218",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rmhpl6:-subtitle a11y_react-aria-:Rmhpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Explore",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/nike-fleece",
+              "target": "_self",
+              "aria-label": "Explore",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Explore",
+              "data-analytics-action-id": "ff6d4b42-7103-487c-b349-524ff859456d",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "9c4b4edf0037242a9b35cbb12e8dad1a37bc7e6845bb42a860cbd97b79ced5c0",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "1",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "37618ee1-eba1-48b1-8b68-cb46cb8ed218",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rmhpl6:-subtitle a11y_react-aria-:Rmhpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Explore\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Football Kylian Mbappé Mercurial Superfly",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kylian-mbappe-8hwqc",
+              "target": "_self",
+              "data-click-mod": "c6c8be86fa6762fce106ee6d7126a72b5ff32d85a38c7b16a7ee925143a3a819",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "b66240d4-5e01-44d7-bf9f-746332d150d6",
+              "data-analytics-placement-id": "5f1a3fd0-572a-4940-94b6-697a87848f5e",
+              "class": "_1GPQ9HJJ",
+              "data-qa-card-id": "5f204b23-f850-41b1-8ff3-d0b522417ca1",
+              "aria-label": "Nike Football Kylian Mbappé Mercurial Superfly",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "FIGURE",
+              "id": "",
+              "className": "image-card _3l8ZuNi4",
+              "selector": ".image-card",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "5280e727-7730-4940-97dc-f6f6d51d5537",
+                "className": "grid-col va-sm-t ncss-col-lg-6 ncss-col-md-6 ncss-col-sm-12 ncss-col-lg-offset-0 ncss-col-md-offset-0",
+                "selector": "#5280e727-7730-4940-97dc-f6f6d51d5537"
+              }
+            },
+            "selector": "[aria-label=\"Nike Football Kylian Mbappé Mercurial Superfly\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kylian-mbappe-8hwqc",
+              "target": "_self",
+              "aria-label": "Shop",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop",
+              "data-analytics-action-id": "b8c6c728-fc2f-4f2e-bb21-0aa7f4e93b25",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "1a6dacd0f3a806254443ccfc90152f2ae6f39855656b6ada79a0762e4fd609c7",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "data-qa-card-id": "5f204b23-f850-41b1-8ff3-d0b522417ca1",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Rqhpl6:-subtitle a11y_react-aria-:Rqhpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "'Love Letter' Collection\n\nGAME RECOGNISES GAME\n\nThe latest collection celebrates the love of the game with off-court styles.\n\nShop",
+            "tag": "DIV",
+            "attributes": {
+              "data-preview-wrapper": "true",
+              "role": "button",
+              "class": "JP66kT9q _3v1GaHyH",
+              "data-qa": "play-overlay"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "_3gp3Wlmq",
+              "selector": "._3gp3Wlmq",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3w5yTWne",
+                "selector": "._3w5yTWne"
+              }
+            },
+            "selector": ".JP66kT9q",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "'Love Letter' Collection GAME RECOGNISES GAME",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/love-letter-7xkbw",
+              "target": "_self",
+              "data-click-mod": "d44cec92c97f21fc5c7e8e0891f39b723e1650a4d1f9b347162706f03b88f803",
+              "data-qa": "card-link",
+              "data-analytics-action-id": "fde34db3-e032-4c18-a02f-10c13b562ef9",
+              "class": "_1GPQ9HJJ",
+              "aria-label": "'Love Letter' Collection GAME RECOGNISES GAME",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "JP66kT9q _3v1GaHyH",
+              "selector": ".JP66kT9q",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3gp3Wlmq",
+                "selector": "._3gp3Wlmq"
+              }
+            },
+            "selector": "[aria-label=\"'Love Letter' Collection GAME RECOGNISES GAME\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shop",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/love-letter-7xkbw",
+              "target": "_self",
+              "aria-label": "Shop",
+              "class": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0",
+              "type": "button",
+              "data-actiontext": "Shop",
+              "data-analytics-action-id": "0d485462-b908-4aad-86d7-221e357444b1",
+              "data-analytics-allow": "true",
+              "data-button-type": "button",
+              "data-click-mod": "0787008753f3f97b47b2ebd27de88084911c63776a85491fa3b0779db74d8d73",
+              "data-click-mod-in-carousel": "false",
+              "data-index": "0",
+              "data-qa": "cta-button",
+              "tabindex": "0",
+              "aria-describedby": "a11y_react-aria-:Relpl6:-subtitle a11y_react-aria-:Relpl6:-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "Yjk73vve _1NORiqU4",
+              "selector": ".Yjk73vve",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "_3T7SP3hk",
+                "selector": "._3T7SP3hk"
+              }
+            },
+            "selector": "[aria-label=\"Shop\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Air Jordan 1",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/jordan-1-shoes-aj85gzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "0d238c63-d47d-405d-8d0f-70657380b537",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "0",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Air Max",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/air-max-shoes-a6d8hzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "39a99d80-2630-4bf8-bfd5-4fa30e85b509",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "1",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Graphic Tee",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/graphic-t-shirts-5shrv",
+              "target": "_self",
+              "data-analytics-action-id": "e6fd36ba-6a32-494d-bfa2-564f625c8e68",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "2",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Dunk",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/dunk-shoes-90aohzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "27df466a-814d-49fe-aff9-448d20a9807d",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "3",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Air Force 1",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/air-force-1-shoes-5sj3yzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "35eae082-ed23-483a-9213-24eb94377ef5",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "4",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "24.7 collection",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-247-3wdkx",
+              "target": "_self",
+              "data-analytics-action-id": "60ac1563-20f1-4ced-9252-533c899d08ae",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "5",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACG",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/acg-93bsd",
+              "target": "_self",
+              "data-analytics-action-id": "fe052dbc-7082-4a47-819f-27d209ac4670",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "6",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Pegasus",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/pegasus-running-shoes-37v7jz8nexhzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "c593bfa4-df70-42c7-a0d5-d4e22446237c",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "7",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Vomero Plus",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/zoom-vomero-running-shoes-37v7jz7gee1zy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "5ac6eba5-ea73-45c0-955c-71c20caa8669",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "8",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Metcon",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/training-gym-shoes-58jtozy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "bb152aa2-74f4-4967-9276-b4567e839f18",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "9",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Fan Gear",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/football-kits-jerseys-1gdj0z3a41e",
+              "target": "_self",
+              "data-analytics-action-id": "a5cd8c5c-8cb0-4ffb-8573-602d07b39876",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "10",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jordan Retro",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/jordan-shoes-37eefzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "cce7341a-eef3-4a15-93e1-5f36b4f29070",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "11",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sabrina 3",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/basketball-shoes-3glsmzy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "3fe82c55-e9aa-45e8-b3c9-daf5b716ab9f",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "12",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tatum 4",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/jayson-tatum-basketball-shoes-3glsmz4t66izy7ok",
+              "target": "_self",
+              "data-analytics-action-id": "328007ce-32cd-408f-a29a-7eaa76f9e0c5",
+              "data-click-mod": "531c2dc2dec968a0e6a8c4a3b551c6d0251388d207e48a77f65c9f3bfecd9670",
+              "data-item-count": "14",
+              "data-index": "13",
+              "data-grid-position": "6"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "FaNuH3kT",
+              "selector": ".FaNuH3kT",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "PJwtGh2V",
+                "selector": ".PJwtGh2V"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shoes",
+            "tag": "LABEL",
+            "attributes": {
+              "class": "nds-text css-1m2rxfq e1yhcai00 appearance-title4 color-primary weight-regular",
+              "role": "button",
+              "for": "toggle-6e194ac4-c8f4-4adf-acbe-400328a9ed13",
+              "aria-expanded": "false",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "H4",
+              "id": "",
+              "className": "merch-menu-heading",
+              "selector": ".merch-menu-heading",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "merchMenuWrapper _3vlxrJ7S _3cmYugQ4",
+                "selector": ".merchMenuWrapper"
+              }
+            },
+            "selector": "label",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Black Running Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/black-running-shoes-37v7jz90poyzy7ok",
+              "data-analytics-action-id": "36d29d8b-31e3-442f-a0be-0ed0a4a31c22",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "White Running Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/white-running-shoes-37v7jz4g797zy7ok",
+              "data-analytics-action-id": "5facdd7c-6cea-42d8-8453-8748cfc256bd",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike P-6000",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-p-6000-shoes-4ff6czy7ok",
+              "data-analytics-action-id": "762c609c-d7e2-41c6-ba4d-9c9209aca638",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Initiator Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-initiator-shoes-7ji49zy7ok",
+              "data-analytics-action-id": "a57f1c3e-15a8-4c9d-8bbc-a6131ea883d5",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Shox",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/shox-shoes-7e8jqzy7ok",
+              "data-analytics-action-id": "82b8c4ea-38c7-4a8a-9f5f-ffe1b783ff47",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Waffle Trainers",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-waffle-shoes-2wk64zy7ok",
+              "data-analytics-action-id": "a2df7680-cc41-4562-978b-68c8b662f0d9",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Cortez",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/cortez-shoes-byfxzy7ok",
+              "data-analytics-action-id": "a5e47a65-cb35-4733-9fea-73dc6aa44578",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Vomero",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/zoom-vomero-shoes-7gee1zy7ok",
+              "data-analytics-action-id": "4ec1f061-6fee-4882-adf0-7334398103f2",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Black Trainers",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/black-shoes-90poyzy7ok",
+              "data-analytics-action-id": "fed64bb3-b36c-4c24-916e-129fb141221c",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Motiva Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-motiva-shoes-4tmb6zy7ok",
+              "data-analytics-action-id": "c017a1f6-2595-4fe0-a188-1f136d5a40aa",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Clothing",
+            "tag": "LABEL",
+            "attributes": {
+              "class": "nds-text css-1m2rxfq e1yhcai00 appearance-title4 color-primary weight-regular",
+              "role": "button",
+              "for": "toggle-bec756b7-8586-48f3-9421-6f0862eb2e09",
+              "aria-expanded": "false",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "H4",
+              "id": "",
+              "className": "merch-menu-heading",
+              "selector": ".merch-menu-heading",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "merchMenuWrapper _3vlxrJ7S _3cmYugQ4",
+                "selector": ".merchMenuWrapper"
+              }
+            },
+            "selector": "label",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Yoga Trousers",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/yoga-trousers-tights-2kq19zanrlj",
+              "data-analytics-action-id": "2da152b3-5bf8-474b-9884-de11802ec55f",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tech Fleece Joggers",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/tech-fleece-joggers-sweatpants-6sipkzaepf0",
+              "data-analytics-action-id": "cf74e364-0257-4bee-9514-66c081aebea5",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tech Fleece",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/tech-fleece-clothing-6sipkz6ymx6",
+              "data-analytics-action-id": "c5d9ca10-483a-4e09-bd5b-66eca0943920",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "School Bags & Backpacks",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/back-to-school-bags-backpacks-840ikz9xy71",
+              "data-analytics-action-id": "3209bc47-94df-4768-9f78-a5fb7dc9b47b",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "School Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/back-to-school-shoes-840ikzy7ok",
+              "data-analytics-action-id": "881bfd8a-c50d-42d8-8a36-f110bfae82db",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kids'",
+            "tag": "LABEL",
+            "attributes": {
+              "class": "nds-text css-1m2rxfq e1yhcai00 appearance-title4 color-primary weight-regular",
+              "role": "button",
+              "for": "toggle-533bc814-cd75-4637-9859-9401771f9c72",
+              "aria-expanded": "false",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "H4",
+              "id": "",
+              "className": "merch-menu-heading",
+              "selector": ".merch-menu-heading",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "merchMenuWrapper _3vlxrJ7S _3cmYugQ4",
+                "selector": ".merchMenuWrapper"
+              }
+            },
+            "selector": "label",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Girls' Black Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/girls-black-shoes-3aqegz90poyzy7ok",
+              "data-analytics-action-id": "ee932960-07ff-43aa-9463-aa13cbb1e7ab",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kids' Black Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kids-black-shoes-90poyzv4dhzy7ok",
+              "data-analytics-action-id": "ac120414-65d8-4b52-af95-362e6e4b1277",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Boys' School Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/boys-back-to-school-shoes-1onraz840ikzy7ok",
+              "data-analytics-action-id": "347fa04e-0385-43d9-95a1-674fd0174725",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Girls' School Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/girls-back-to-school-shoes-3aqegz840ikzy7ok",
+              "data-analytics-action-id": "f1662971-f07f-44e6-9758-892caf33348d",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kids' School Clothing",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kids-back-to-school-clothing-6ymx6z840ikzv4dh",
+              "data-analytics-action-id": "e6bbf53a-9d6d-45f0-b4f6-b76ee7b81127",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Kids' School Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/kids-back-to-school-shoes-840ikzv4dhzy7ok",
+              "data-analytics-action-id": "b1ad6820-a421-4173-9c87-54fd1b8b0a16",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/shoes-y7ok",
+              "data-analytics-action-id": "84124d22-c3dc-455c-9692-d75a091d1d84",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Men's Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/mens-shoes-nik1zy7ok",
+              "data-analytics-action-id": "bd2b73ef-906e-4aee-aa25-feeaa6d7a611",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Women's Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/womens-shoes-5e1x6zy7ok",
+              "data-analytics-action-id": "ca8c984e-5026-4c33-a201-bce17ec07a18",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Featured",
+            "tag": "LABEL",
+            "attributes": {
+              "class": "nds-text css-1m2rxfq e1yhcai00 appearance-title4 color-primary weight-regular",
+              "role": "button",
+              "for": "toggle-562c42cb-8793-4e13-b103-a45872f1dd1a",
+              "aria-expanded": "false",
+              "tabindex": "-1"
+            },
+            "parentInfo": {
+              "tag": "H4",
+              "id": "",
+              "className": "merch-menu-heading",
+              "selector": ".merch-menu-heading",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "merchMenuWrapper _3vlxrJ7S _3cmYugQ4",
+                "selector": ".merchMenuWrapper"
+              }
+            },
+            "selector": "label",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Football Club Teams",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/club-football-teams-6fu9q",
+              "data-analytics-action-id": "7ac410ea-e20e-40b0-b53f-900fddef493b",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Football",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/football-1gdj0",
+              "data-analytics-action-id": "bede0fc5-d3f0-40bf-9381-a832e1392ca2",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Run Club",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/nrc-app",
+              "data-analytics-action-id": "80f99c18-4159-46b4-8f1e-89625e0858a4",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Training Club",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/ntc-app",
+              "data-analytics-action-id": "51a17fa8-75a4-4e88-8d9c-36e187ac216c",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike By You Shoes",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.nike.com/dk/en/w/nike-by-you-shoes-6ealhzy7ok",
+              "data-analytics-action-id": "4521f6b1-3a0c-415e-82c1-c7a28616ed88",
+              "aria-hidden": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Gift Cards",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,gift cards",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/gift-cards"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Find a Store",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,find a store",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/retail/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nike Journal",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,nike journal",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/stories"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Become a Member",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,become a member",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/membership"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Feedback",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,site feedback",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "#site-feedback"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Promo Codes",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,promo codes",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/promo-code"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Running Shoe Finder",
+            "tag": "A",
+            "attributes": {
+              "path": "resources,shoe finder",
+              "class": "footer-link",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/running/shoe-finder"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "children-wrapper",
+              "selector": ".children-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "content-wrapper",
+                "selector": ".content-wrapper"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Denmark",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Selected location: Denmark",
+              "class": "nds-btn nav-css-1s2v2ha css-15ojgwm cta-primary-dark btn-responsive",
+              "type": "submit",
+              "title": "Selected location: Denmark",
+              "data-testid": "link"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "language-tunnel nav-css-171zxca",
+              "selector": ".language-tunnel",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "nav-css-3i08s5",
+                "selector": ".nav-css-3i08s5"
+              }
+            },
+            "selector": "[aria-label=\"Selected location: Denmark\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of Use",
+            "tag": "A",
+            "attributes": {
+              "path": "terms of use",
+              "class": "nav-css-1isz5ne",
+              "data-testid": "link",
+              "href": "https://agreementservice.svs.nike.com/dk/en_gb/rest/agreement?agreementType=termsOfUse&uxId=com.nike&country=DK&language=en&requestType=redirect"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-list",
+                "selector": ".footer-list"
+              }
+            },
+            "selector": ".nav-css-1isz5ne",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of Sale",
+            "tag": "A",
+            "attributes": {
+              "path": "terms of sale",
+              "class": "nav-css-1isz5ne",
+              "data-testid": "link",
+              "href": "https://agreementservice.svs.nike.com/rest/agreement?agreementType=termsOfSale&uxId=com.nike.tos&country=DK&language=en&requestType=redirect"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-list",
+                "selector": ".footer-list"
+              }
+            },
+            "selector": ".nav-css-1isz5ne",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Company Details",
+            "tag": "A",
+            "attributes": {
+              "path": "company details",
+              "class": "nav-css-1isz5ne",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/help/a/company-details"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-list",
+                "selector": ".footer-list"
+              }
+            },
+            "selector": ".nav-css-1isz5ne",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy & Cookie Policy",
+            "tag": "A",
+            "attributes": {
+              "path": "privacy cookie policy",
+              "class": "nav-css-1isz5ne",
+              "data-testid": "link",
+              "href": "https://agreementservice.svs.nike.com/dk/en_gb/rest/agreement?agreementType=privacyPolicy&uxId=com.nike.unite&country=DK&language=en&requestType=redirect"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-list",
+                "selector": ".footer-list"
+              }
+            },
+            "selector": ".nav-css-1isz5ne",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy & Cookie Settings",
+            "tag": "A",
+            "attributes": {
+              "path": "cookie settings",
+              "class": "nav-css-1isz5ne",
+              "data-testid": "link",
+              "href": "https://www.nike.com/dk/en/guest/settings/privacy"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-list",
+                "selector": ".footer-list"
+              }
+            },
+            "selector": ".nav-css-1isz5ne",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.nike.com/dk/en/",
+        "filteredHtml": "",
+        "filteredHtmlOmitted": true,
+        "filteredHtmlOriginalChars": 136689
+      },
+      "settings": null
+    }
+  ]
+}

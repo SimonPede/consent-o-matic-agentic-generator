@@ -1,0 +1,801 @@
+{
+  "timestamp": "2026-08-27T07:50:25.052135",
+  "url": "https://advertising.inmobi.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://advertising.inmobi.com/"
+  ],
+  "duration_seconds": 12.8,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"hs-en-cookie-\"]\" (HubSpot) in frame: https://advertising.inmobi.com/",
+      "waitForCmpUi detected CMP Type: HubSpot",
+      "I found 2 frames.",
+      "a frame was picked by score: https://advertising.inmobi.com/ with Score: 45",
+      "Settings match: \"CUSTOMIZE\" --> lowered: \"customize\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .buttonGradient, textMatch: CUSTOMIZE",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 148709 chars.",
+      "DOM diff: 189 chars added, 2 inputs added.",
+      "Old state: 12 buttons, 0 inputs.",
+      "New state: 10 buttons, 2 inputs.",
+      "Settings detected: 189 chars, 2 inputs, -2 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 2 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://advertising.inmobi.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'HubSpot',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: 'HubSpot',",
+      "      cmpSelector: null,",
+      "      url: 'https://advertising.inmobi.com/',",
+      "      filteredHtml: `<body><div id=\"hs-web-interactives-top-push-anchor\" class=\"go3670563033\"></div><div id=\"hs-eu-cookie-confirmation\" class=\"hs-cookie-notification-position-bottom\" data-nosnippet=\"\"> <div id=\"hs-eu-cookie-confirmation-inner\"> <div id=\"hs-eu-policy-wording\"><p>We use necessary and (optional) analytics cookies on our websites to analyze traffic and personalize content. You can read our <a href=\"https://www.inmobi.com/cookie-policy/\" target=\"_blank\">cookie policy</a> to understand how we use cookies. You may press 'decline' if you do not want us to use optional cookies. We will set a cookie on your device to remember and honor your preference.</p></div> <div id=\"hs-en-cookie-confirmation-buttons-area\"> <div id=\"hs-eu-cookie-confirmation-button-group\"> <a href=\"javascript:void(0);\" id=\"hs-eu-confirmation-button\" role=\"button\"> Accept </a> <a href=\"javascript:void(0);\" id=\"hs-eu-decline-button\" role=\"button\">Decline</a> </div> </div> </div> </div><div id=\"__next\"><div class=\"cookieModal\"></div><div class=\"accept-cookie\"><div class=\"accept-cookie-inner\"><div class=\"cookie-content\">We use third-party cookies to measure website performance, analytics, personalize content and ads for you. Read our <a href=\"https://www.inmobi.com/website-privacy-policy\" target=\"_blank\" class=\"cookie-link\" rel=\"noreferrer\">cookie policy</a> for more details.</div><div class=\"button-continer\"><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Reject\" data-event-category=\"Footer\" data-event-label=\"Reject\" data-faitracker-form-bind=\"true\">Decline</button><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\">Customize</button><button role=\"button\" class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\">Accept All</button></div></div></div><header id=\"header-v1\" class=\"headerdesktop_homeHeader__cx5ur\"><div class=\"headerdesktop_outerHeader__0L2au max1116\"><div class=\"headerdesktop_headerLogo__FPxI7\"><a class=\"headerdesktop_headerLogoLink__Srlch gaEvent\" href=\"/\" alt=\"InMobi Advertising\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi Advertising logo\" data-event-label=\"InMobi Advertising logo\"><span class=\"headerdesktop_headerSrOnly__QMN63\">InMobi Advertising</span></a></div><div class=\"headerdesktop_midMenu__Dq_q8\"><ul class=\"headerdesktop_topNav__z_V78 headerdesktop_genUl__WKY4_\"><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Solutions\" data-event-label=\"Solutions\">Solutions<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2 max1116\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Brand Building\" data-event-label=\"Brand Building\" href=\"/brand-building\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Brand Building</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Inspire the right audience on mobile and across screens</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Growth Marketing\" data-event-label=\"Growth Marketing\" href=\"/app-growth\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Growth Marketing</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Acquire and grow high-value users for your mobile app</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Ad Monetization\" data-event-label=\"Ad Monetization\" href=\"/ad-monetization\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Ad Monetization</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Unlock more value from your inventory</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Dropdown\" data-event-label=\"Resources\">Resources<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Link\" data-event-label=\"Resources\" href=\"/resources\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Resource Library</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our collection of blogs, case studies, and other insights</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi University\" data-event-label=\"InMobi University\" href=\"/inmobiu\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">InMobi University</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get educated on timely topics for advertisers and publishers</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Support Center\" data-event-label=\"Support Center\" href=\"https://support.inmobi.com/\" target=\"_blank\" rel=\"noreferrer\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Support Center</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our library of helpful tips and FAQs</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Company\" data-event-label=\"Company\">About<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - About Us\" data-event-label=\"About Us\" href=\"/company\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Company</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Hear more about our story</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Leadership\" data-event-label=\"Leadership Team\" href=\"/company/leadership/\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Leadership</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get to know our leaders</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Careers\" data-event-label=\"Careers\" href=\"https://www.inmobi.com/company/careers/\" target=\"_blank\" rel=\"noreferrer\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Careers</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Explore opportunities to join our growing team</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Sustainability\" data-event-label=\"Sustainability\" href=\"/company/sustainability/\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Sustainability</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Learn how we support a greener ad ecosystem</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Press Center\" data-event-label=\"Press Center\" href=\"/company/press\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Newsroom</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Stay updated on our latest news</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Contact Us\" data-event-label=\"Contact Us\" href=\"/company/contact\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Contact Us</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Connect with our global teams</p></a></li></ul></div></div></div></li></ul></div></div></header><div class=\"home\"><h1 class=\"sr-only\">Driving real connections</h1><div class=\"landingcarousel_carouselWrapper__UlQaz\"><div class=\"slick-slider slick-initialized\" dir=\"ltr\"><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-prev\" data-faitracker-form-bind=\"true\"> Previous</button><div class=\"slick-list\"><div class=\"slick-track\"><div data-index=\"0\" class=\"slick-slide slick-active slick-current\" tabindex=\"-1\" aria-hidden=\"false\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"1\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"2\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_ove`... 6766 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 16766",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: 'HubSpot',",
+      "      cmpSelector: null,",
+      "      url: 'https://advertising.inmobi.com/',",
+      "      filteredHtml: `<body><div id=\"hs-web-interactives-top-push-anchor\" class=\"go3670563033\"></div><div id=\"hs-eu-cookie-confirmation\" class=\"hs-cookie-notification-position-bottom\" data-nosnippet=\"\"> <div id=\"hs-eu-cookie-confirmation-inner\"> <div id=\"hs-eu-policy-wording\"><p>We use necessary and (optional) analytics cookies on our websites to analyze traffic and personalize content. You can read our <a href=\"https://www.inmobi.com/cookie-policy/\" target=\"_blank\" data-faitracker-click-bind=\"true\">cookie policy</a> to understand how we use cookies. You may press 'decline' if you do not want us to use optional cookies. We will set a cookie on your device to remember and honor your preference.</p></div> <div id=\"hs-en-cookie-confirmation-buttons-area\"> <div id=\"hs-eu-cookie-confirmation-button-group\"> <a href=\"javascript:void(0);\" id=\"hs-eu-confirmation-button\" role=\"button\" data-faitracker-click-bind=\"true\"> Accept </a> <a href=\"javascript:void(0);\" id=\"hs-eu-decline-button\" role=\"button\" data-faitracker-click-bind=\"true\">Decline</a> </div> </div> </div> </div><div id=\"__next\"><div class=\"cookieModal\"></div><div class=\"accept-cookie\"><div class=\"customize-cookie-popup\"><div><input type=\"checkbox\" checked=\"\">Necessary cookies ( To move around the website and use its features ) <br><input type=\"checkbox\" value=\"adv\">Analytics &amp; Third Party Advertising Partner cookies ( Google analytics and related third party for tracking purposes)</div><div><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">Cancel</button><button role=\"button\" class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">Confirm</button></div></div></div><header id=\"header-v1\" class=\"headerdesktop_homeHeader__cx5ur\"><div class=\"headerdesktop_outerHeader__0L2au max1116\"><div class=\"headerdesktop_headerLogo__FPxI7\"><a class=\"headerdesktop_headerLogoLink__Srlch gaEvent\" href=\"/\" alt=\"InMobi Advertising\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi Advertising logo\" data-event-label=\"InMobi Advertising logo\" data-faitracker-click-bind=\"true\"><span class=\"headerdesktop_headerSrOnly__QMN63\">InMobi Advertising</span></a></div><div class=\"headerdesktop_midMenu__Dq_q8\"><ul class=\"headerdesktop_topNav__z_V78 headerdesktop_genUl__WKY4_\"><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Solutions\" data-event-label=\"Solutions\">Solutions<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2 max1116\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Brand Building\" data-event-label=\"Brand Building\" href=\"/brand-building\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Brand Building</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Inspire the right audience on mobile and across screens</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Growth Marketing\" data-event-label=\"Growth Marketing\" href=\"/app-growth\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Growth Marketing</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Acquire and grow high-value users for your mobile app</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Ad Monetization\" data-event-label=\"Ad Monetization\" href=\"/ad-monetization\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Ad Monetization</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Unlock more value from your inventory</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Dropdown\" data-event-label=\"Resources\">Resources<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Link\" data-event-label=\"Resources\" href=\"/resources\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Resource Library</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our collection of blogs, case studies, and other insights</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi University\" data-event-label=\"InMobi University\" href=\"/inmobiu\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">InMobi University</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get educated on timely topics for advertisers and publishers</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Support Center\" data-event-label=\"Support Center\" href=\"https://support.inmobi.com/\" target=\"_blank\" rel=\"noreferrer\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Support Center</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our library of helpful tips and FAQs</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Company\" data-event-label=\"Company\">About<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - About Us\" data-event-label=\"About Us\" href=\"/company\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Company</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Hear more about our story</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Leadership\" data-event-label=\"Leadership Team\" href=\"/company/leadership/\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Leadership</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get to know our leaders</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Careers\" data-event-label=\"Careers\" href=\"https://www.inmobi.com/company/careers/\" target=\"_blank\" rel=\"noreferrer\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Careers</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Explore opportunities to join our growing team</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Sustainability\" data-event-label=\"Sustainability\" href=\"/company/sustainability/\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Sustainability</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Learn how we support a greener ad ecosystem</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Press Center\" data-event-label=\"Press Center\" href=\"/company/press\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Newsroom</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Stay updated on our latest news</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Contact Us\" data-event-label=\"Contact Us\" href=\"/company/contact\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Contact Us</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Connect with our global teams</p></a></li></ul></div></div></div></li></ul></div></div></header><div class=\"home\"><h1 class=\"sr-only\">Driving real connections</h1><div class=\"landingcarousel_carouselWrapper__UlQaz\"><div class=\"slick-slider slick-initialized\" dir=\"ltr\"><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-prev\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\"> Previous</button><div class=\"slick-list\"><div class=\"slick-track\"><div data-index=\"0\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"1\" `... 7345 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 17345,",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://advertising.inmobi.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (12):",
+      "      [A] \"cookie policy\" --> selector: .cookie-link",
+      "      [BUTTON] \"DECLINE\" --> selector: .buttonGradient",
+      "      [BUTTON] \"CUSTOMIZE\" --> selector: .buttonGradient",
+      "      [BUTTON] \"ACCEPT ALL\" --> selector: .buttonGradient",
+      "      [A] \"InMobi Advertising\" --> selector: .headerdesktop_headerLogoLink__Srlch",
+      "      [BUTTON] \"Previous\" --> selector: .slick-arrow",
+      "      [BUTTON] \"Next\" --> selector: .slick-arrow",
+      "      [BUTTON] \"1\" --> selector: button",
+      "      [BUTTON] \"2\" --> selector: button",
+      "      [BUTTON] \"3\" --> selector: button",
+      "      [A] \"Brand Solutions",
+      "Brand Solutions\" --> selector: a",
+      "      [A] \"App Growth Solutions",
+      "App Growth Solutions\" --> selector: a",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (10):",
+      "      [BUTTON] \"CANCEL\" --> selector: .buttonGradient",
+      "      [BUTTON] \"CONFIRM\" --> selector: .buttonGradient",
+      "      [A] \"InMobi Advertising\" --> selector: .headerdesktop_headerLogoLink__Srlch",
+      "      [BUTTON] \"Previous\" --> selector: .slick-arrow",
+      "      [BUTTON] \"Next\" --> selector: .slick-arrow",
+      "      [BUTTON] \"1\" --> selector: button",
+      "      [BUTTON] \"2\" --> selector: button",
+      "      [BUTTON] \"3\" --> selector: button",
+      "      [A] \"Brand Solutions",
+      "Brand Solutions\" --> selector: a",
+      "      [A] \"App Growth Solutions",
+      "App Growth Solutions\" --> selector: a",
+      "   Checkboxes found (2):",
+      "      \"\" | checked: true | disabled: false --> selector: input",
+      "      \"\" | checked: false | disabled: false --> selector: input",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://advertising.inmobi.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "HubSpot",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "cookie policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.inmobi.com/website-privacy-policy",
+              "target": "_blank",
+              "class": "cookie-link",
+              "rel": "noreferrer",
+              "style": "color: rgb(0, 0, 0); text-decoration: underline; font-weight: 600;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookie-content",
+              "selector": ".cookie-content",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "accept-cookie-inner",
+                "selector": ".accept-cookie-inner"
+              }
+            },
+            "selector": ".cookie-link",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DECLINE",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "buttonGradient buttonGradientPrimary buttonNano gaEvent",
+              "role": "button",
+              "data-event-action": "Click - Reject",
+              "data-event-category": "Footer",
+              "data-event-label": "Reject",
+              "data-faitracker-form-bind": "true",
+              "style": "margin-top: 0px; padding: 10px 12px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-shadow: none; text-transform: uppercase; font-size: 12px; font-weight: 400; border: none; border-radius: 22px; box-shadow: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "button-continer",
+              "selector": ".button-continer",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "accept-cookie-inner",
+                "selector": ".accept-cookie-inner"
+              }
+            },
+            "selector": ".buttonGradient",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CUSTOMIZE",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "buttonGradient buttonGradientPrimary buttonNano gaEvent",
+              "role": "button",
+              "data-event-action": "Click - Accept All",
+              "data-event-category": "Footer",
+              "data-event-label": "Accept All",
+              "data-faitracker-form-bind": "true",
+              "style": "margin-left: 15px; margin-top: 0px; padding: 10px 12px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-shadow: none; text-transform: uppercase; font-size: 12px; font-weight: 400; border: none; border-radius: 22px; box-shadow: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "button-continer",
+              "selector": ".button-continer",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "accept-cookie-inner",
+                "selector": ".accept-cookie-inner"
+              }
+            },
+            "selector": ".buttonGradient",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACCEPT ALL",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "button",
+              "class": "buttonGradient buttonGradientPrimary buttonNano gaEvent",
+              "data-event-action": "Click - Accept All",
+              "data-event-category": "Footer",
+              "data-event-label": "Accept All",
+              "data-faitracker-form-bind": "true",
+              "style": "margin-left: 15px; margin-top: 0px; padding: 10px 12px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-shadow: none; text-transform: uppercase; font-size: 12px; font-weight: 400; border: none; border-radius: 22px; box-shadow: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "button-continer",
+              "selector": ".button-continer",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "accept-cookie-inner",
+                "selector": ".accept-cookie-inner"
+              }
+            },
+            "selector": ".buttonGradient",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "InMobi Advertising",
+            "tag": "A",
+            "attributes": {
+              "class": "headerdesktop_headerLogoLink__Srlch gaEvent",
+              "href": "/",
+              "alt": "InMobi Advertising",
+              "data-event-category": "Desktop Navigation Menu",
+              "data-event-action": "Click - InMobi Advertising logo",
+              "data-event-label": "InMobi Advertising logo"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "headerdesktop_headerLogo__FPxI7",
+              "selector": ".headerdesktop_headerLogo__FPxI7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "headerdesktop_outerHeader__0L2au max1116",
+                "selector": ".headerdesktop_outerHeader__0L2au"
+              }
+            },
+            "selector": ".headerdesktop_headerLogoLink__Srlch",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Previous",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-role": "none",
+              "class": "slick-arrow slick-prev",
+              "style": "display:block",
+              "data-faitracker-form-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "slick-slider slick-initialized",
+              "selector": ".slick-slider",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "landingcarousel_carouselWrapper__UlQaz",
+                "selector": ".landingcarousel_carouselWrapper__UlQaz"
+              }
+            },
+            "selector": ".slick-arrow",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Next",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-role": "none",
+              "class": "slick-arrow slick-next",
+              "style": "display:block",
+              "data-faitracker-form-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "slick-slider slick-initialized",
+              "selector": ".slick-slider",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "landingcarousel_carouselWrapper__UlQaz",
+                "selector": ".landingcarousel_carouselWrapper__UlQaz"
+              }
+            },
+            "selector": ".slick-arrow",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "1",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "slick-active",
+              "selector": ".slick-active",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "2",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "3",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Brand Solutions\nBrand Solutions",
+            "tag": "A",
+            "attributes": {
+              "href": "/brand-building"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "brandsolutions_ctaContainerDesktop__U4E4j",
+              "selector": ".brandsolutions_ctaContainerDesktop__U4E4j",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "brandsolutions_copyContainer__RZQlZ",
+                "selector": ".brandsolutions_copyContainer__RZQlZ"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "App Growth Solutions\nApp Growth Solutions",
+            "tag": "A",
+            "attributes": {
+              "href": "/app-growth"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "appgrowthsolutions_ctaContainerDesktop__B43mh",
+                "selector": ".appgrowthsolutions_ctaContainerDesktop__B43mh"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": "HubSpot",
+        "cmpSelector": null,
+        "url": "https://advertising.inmobi.com/",
+        "filteredHtml": "<body><div id=\"hs-web-interactives-top-push-anchor\" class=\"go3670563033\"></div><div id=\"hs-eu-cookie-confirmation\" class=\"hs-cookie-notification-position-bottom\" data-nosnippet=\"\"> <div id=\"hs-eu-cookie-confirmation-inner\"> <div id=\"hs-eu-policy-wording\"><p>We use necessary and (optional) analytics cookies on our websites to analyze traffic and personalize content. You can read our <a href=\"https://www.inmobi.com/cookie-policy/\" target=\"_blank\">cookie policy</a> to understand how we use cookies. You may press 'decline' if you do not want us to use optional cookies. We will set a cookie on your device to remember and honor your preference.</p></div> <div id=\"hs-en-cookie-confirmation-buttons-area\"> <div id=\"hs-eu-cookie-confirmation-button-group\"> <a href=\"javascript:void(0);\" id=\"hs-eu-confirmation-button\" role=\"button\"> Accept </a> <a href=\"javascript:void(0);\" id=\"hs-eu-decline-button\" role=\"button\">Decline</a> </div> </div> </div> </div><div id=\"__next\"><div class=\"cookieModal\"></div><div class=\"accept-cookie\"><div class=\"accept-cookie-inner\"><div class=\"cookie-content\">We use third-party cookies to measure website performance, analytics, personalize content and ads for you. Read our <a href=\"https://www.inmobi.com/website-privacy-policy\" target=\"_blank\" class=\"cookie-link\" rel=\"noreferrer\">cookie policy</a> for more details.</div><div class=\"button-continer\"><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Reject\" data-event-category=\"Footer\" data-event-label=\"Reject\" data-faitracker-form-bind=\"true\">Decline</button><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\">Customize</button><button role=\"button\" class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\">Accept All</button></div></div></div><header id=\"header-v1\" class=\"headerdesktop_homeHeader__cx5ur\"><div class=\"headerdesktop_outerHeader__0L2au max1116\"><div class=\"headerdesktop_headerLogo__FPxI7\"><a class=\"headerdesktop_headerLogoLink__Srlch gaEvent\" href=\"/\" alt=\"InMobi Advertising\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi Advertising logo\" data-event-label=\"InMobi Advertising logo\"><span class=\"headerdesktop_headerSrOnly__QMN63\">InMobi Advertising</span></a></div><div class=\"headerdesktop_midMenu__Dq_q8\"><ul class=\"headerdesktop_topNav__z_V78 headerdesktop_genUl__WKY4_\"><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Solutions\" data-event-label=\"Solutions\">Solutions<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2 max1116\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Brand Building\" data-event-label=\"Brand Building\" href=\"/brand-building\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Brand Building</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Inspire the right audience on mobile and across screens</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Growth Marketing\" data-event-label=\"Growth Marketing\" href=\"/app-growth\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Growth Marketing</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Acquire and grow high-value users for your mobile app</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Ad Monetization\" data-event-label=\"Ad Monetization\" href=\"/ad-monetization\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Ad Monetization</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Unlock more value from your inventory</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Dropdown\" data-event-label=\"Resources\">Resources<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Link\" data-event-label=\"Resources\" href=\"/resources\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Resource Library</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our collection of blogs, case studies, and other insights</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi University\" data-event-label=\"InMobi University\" href=\"/inmobiu\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">InMobi University</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get educated on timely topics for advertisers and publishers</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Support Center\" data-event-label=\"Support Center\" href=\"https://support.inmobi.com/\" target=\"_blank\" rel=\"noreferrer\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Support Center</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our library of helpful tips and FAQs</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Company\" data-event-label=\"Company\">About<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - About Us\" data-event-label=\"About Us\" href=\"/company\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Company</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Hear more about our story</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Leadership\" data-event-label=\"Leadership Team\" href=\"/company/leadership/\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Leadership</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get to know our leaders</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Careers\" data-event-label=\"Careers\" href=\"https://www.inmobi.com/company/careers/\" target=\"_blank\" rel=\"noreferrer\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Careers</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Explore opportunities to join our growing team</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Sustainability\" data-event-label=\"Sustainability\" href=\"/company/sustainability/\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Sustainability</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Learn how we support a greener ad ecosystem</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Press Center\" data-event-label=\"Press Center\" href=\"/company/press\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Newsroom</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Stay updated on our latest news</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Contact Us\" data-event-label=\"Contact Us\" href=\"/company/contact\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Contact Us</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Connect with our global teams</p></a></li></ul></div></div></div></li></ul></div></div></header><div class=\"home\"><h1 class=\"sr-only\">Driving real connections</h1><div class=\"landingcarousel_carouselWrapper__UlQaz\"><div class=\"slick-slider slick-initialized\" dir=\"ltr\"><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-prev\" data-faitracker-form-bind=\"true\"> Previous</button><div class=\"slick-list\"><div class=\"slick-track\"><div data-index=\"0\" class=\"slick-slide slick-active slick-current\" tabindex=\"-1\" aria-hidden=\"false\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"1\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"2\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div></div></div><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-next\" data-faitracker-form-bind=\"true\"> Next</button><div class=\"slick-dots\"><li class=\"slick-active\"><button data-faitracker-form-bind=\"true\">1</button></li><li class=\"\"><button data-faitracker-form-bind=\"true\">2</button></li><li class=\"\"><button data-faitracker-form-bind=\"true\">3</button></li></div></div><div class=\"landingcarousel_textOverlay__FM8h5\"><h2>Driving real</h2><h2>connections</h2><p>On mobile and beyond</p></div></div><div id=\"brandSolutions\" class=\" brandsolutions_brandSolutionsWrapper__UkJNg\"><div class=\"brandsolutions_brandSolutionsBg__DY0P_\"><div class=\"brandsolutions_animationBg__Unh_H\"><div class=\"brandsolutions_animationBgWrapper__z50L_\"><div></div><div></div><div></div><div></div></div></div></div><div class=\"max1116 brandsolutions_brandSolutionMaxWidthWrapper__rGTZJ\"><div class=\"brandsolutions_copyContainer__RZQlZ\"><h2>Get your <span class=\"blockSpan\">brand noticed</span></h2><h4 class=\"brandsolutions_subTitle__nd7Zc\"> Tell your story to the right audience with InMobi Omnichannel Exchange.</h4><div class=\"brandsolutions_ctaContainerDesktop__U4E4j\"><a href=\"/brand-building\"><div class=\"wavebutton_wave-button__TINwY \"><div class=\"wavebutton_wrapper__itgcG\"><div class=\"wavebutton_btn__PUKbE\"><div class=\"wavebutton_btn__bg__RPBm4\"><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-first__T0_ip\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-second__laATr\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-third__Z9AHR\"></span></div><span class=\"wavebutton_btn__text-out__XPubg \">Brand Solutions </span><span class=\"wavebutton_btn__text-in__AUldb \">Brand Solutions </span></div></div></div></a></div></div><div class=\"brandsolutions_desktopCarouselContainer__nVtaN\"><div class=\" brandsolutions_cardWrapper__hAlgp \"><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div></div></div></div></div><div class=\" appgrowthsolutions_appGrowthSolutionsWrapper__D6_S6\"><div class=\"appgrowthsolutions_appGrowthSolutionBg___4MXB\"><div class=\"appgrowthsolutions_animationBg__EIF1S\"><div class=\"appgrowthsolutions_animationBgWrapper__gZG6Y\"><div></div><div></div><div></div><div></div></div></div></div><div class=\"max1116 appgrowthsolutions_appGrowthSolutionMaxWidthWrapper__hP37h\"><div class=\"appgrowthsolutions_copyContainer__DXWF1\"><h2>Grow your <span>app</span></h2><h4 class=\"appgrowthsolutions_subTitle__g5fHY\">Scale your app and your business with human insight and AI-driven optimization powered by InMobi DSP.</h4><div class=\"appgrowthsolutions_ctaContainerDesktop__B43mh\"><div><a href=\"/app-growth\"><div class=\"wavebutton_wave-button__TINwY \"><div class=\"wavebutton_wrapper__itgcG\"><div class=\"wavebutton_btn__PUKbE\"><div class=\"wavebutton_btn__bg__RPBm4\"><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-first__T0_ip\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-second__laATr\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-third__Z9AHR\"></span></div><span class=\"wavebutton_btn__text-out__XPubg \">App Growth Solutions </span><span class=\"wavebutton_btn__text-in__AUldb \">App Growth Solutions </span></div></div></div></a></div></div></div><div class=\"appgrowthsolutions_desktopCarouselContainer__RsrG9\"><div class=\" appgrowthsolutions_cardWrapper__Z7WVY \"><div></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div></div></div></div></div><div id=\"buildLastingConnections\" class=\"landingtile_landingTileContainer__2iaTH\"><div class=\"landingtile_circlesBg__B4fH7\"><div class=\"landingtile_scrollText__VrJH2\">Scroll</div></div><div class=\"landingtile_copy2Wrapper__37QeU\"><h2><span>Deepen your connection</span> </h2><h3>Engage consumers with interactive experiences on mobile and beyond</h3></div><div class=\"landingtile_elivaasWrapper__tkW27\"><video class=\"landingtile_elivaasVideo__Uoq_u\" src=\"assets/ellivas.mp4\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\"></video></div><div class=\"landingtile_skyBagsWrapper__Dk2XA\"></div><div class=\"landingtile_glowNLovelyWrapper__kG8kv\"><video class=\"landingtile_glowNLovelyVideo__5OPei\" src=\"assets/gnl.mp4\" playsinline=\"\" muted=\"\"></video></div><div class=\"landingtile_medicareWrapper__MfMgO\"></div><div class=\"landingtile_avatarWrapper__YGNH0\"></div><div class=\"landingtile_spiceItUpWrapper__4p_5A\"><video class=\"landingtile_spiceItUpVideo__wVlYj\" src=\"assets/spiceItUp.mp4\" playsinline=\"\" muted=\"\"></video></div><div class=\"landingtile_familyIslandWrapper___K8jz\"><video class=\"landingtile_familyIslandVideo__QlClZ\" src=\"assets/family-island.mp4\" playsinline=\"\" muted=\"\" poster=\"assets/family-island-poster.webp\"></video></div><div><div class=\"landingtile_viewsStatsWrapper__Wcbgl\"><div class=\"landingtile_viewsStats__NIE76\"><div></div><div class=\"landingtile_viewsStatsCount__SFey9\"> k Views</div></div></div></div><div><div class=\"landingtile_likesWrapper__LXQ0e\"><div class=\"landingtile_likes__maNuX\"><div></div><div class=\"landingtile_likesCount__alNYE\">Bn Likes</div></div></div></div><div><div class=\"landingtile_heartsWrapper__QhGoV\"><div class=\"landingtile_hearts__eTWqd\"><div></div><div class=\"landingtile_heartsCount__V4v9Q\">k Likes</div></div></div></div><div></div></div></div><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><next-route-announcer><p aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\"></p></next-route-announcer> <iframe alt=\"\" aria-hidden=\"true\" width=\"0\" height=\"0\" sandbox=\"\" id=\"db-sync\" src=\"https://s.company-target.com/s/sync?exc=lr\"></iframe> <div class=\"go2933276541 go2369186930\" id=\"hs-web-interactives-top-anchor\"><div id=\"hs-interactives-modal-overlay\" class=\"go1632949049\"></div></div> <div class=\"go2933276541 go1348078617\" id=\"hs-web-interactives-bottom-anchor\"></div> <div id=\"hs-web-interactives-floating-container\"> <div id=\"hs-web-interactives-floating-top-left-anchor\" class=\"go2417249464 go613305155\"> </div> <div id=\"hs-web-interactives-floating-top-right-anchor\" class=\"go2417249464 go471583506\"> </div> <div id=\"hs-web-interactives-floating-bottom-left-anchor\" class=\"go2417249464 go3921366393\"> </div> <div id=\"hs-web-interactives-floating-bottom-right-anchor\" class=\"go2417249464 go3967842156\"> </div> </div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 16766
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "CANCEL",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "buttonGradient buttonGradientPrimary buttonNano gaEvent",
+              "role": "button",
+              "data-event-action": "Click - Accept All",
+              "data-event-category": "Footer",
+              "data-event-label": "Accept All",
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true",
+              "style": "background: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 12px; font-weight: 400; border-radius: 22px; padding: 10px 12px; border: none; text-transform: uppercase; box-shadow: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "customize-cookie-popup",
+                "selector": ".customize-cookie-popup"
+              }
+            },
+            "selector": ".buttonGradient",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CONFIRM",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "button",
+              "class": "buttonGradient buttonGradientPrimary buttonNano gaEvent",
+              "data-event-action": "Click - Accept All",
+              "data-event-category": "Footer",
+              "data-event-label": "Accept All",
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true",
+              "style": "margin-left: 15px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 12px; font-weight: 400; border: none; border-radius: 22px; padding: 10px 12px; text-transform: uppercase; box-shadow: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "customize-cookie-popup",
+                "selector": ".customize-cookie-popup"
+              }
+            },
+            "selector": ".buttonGradient",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "InMobi Advertising",
+            "tag": "A",
+            "attributes": {
+              "class": "headerdesktop_headerLogoLink__Srlch gaEvent",
+              "href": "/",
+              "alt": "InMobi Advertising",
+              "data-event-category": "Desktop Navigation Menu",
+              "data-event-action": "Click - InMobi Advertising logo",
+              "data-event-label": "InMobi Advertising logo",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "headerdesktop_headerLogo__FPxI7",
+              "selector": ".headerdesktop_headerLogo__FPxI7",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "headerdesktop_outerHeader__0L2au max1116",
+                "selector": ".headerdesktop_outerHeader__0L2au"
+              }
+            },
+            "selector": ".headerdesktop_headerLogoLink__Srlch",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Previous",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-role": "none",
+              "class": "slick-arrow slick-prev",
+              "style": "display:block",
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "slick-slider slick-initialized",
+              "selector": ".slick-slider",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "landingcarousel_carouselWrapper__UlQaz",
+                "selector": ".landingcarousel_carouselWrapper__UlQaz"
+              }
+            },
+            "selector": ".slick-arrow",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Next",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-role": "none",
+              "class": "slick-arrow slick-next",
+              "style": "display:block",
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "slick-slider slick-initialized",
+              "selector": ".slick-slider",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "landingcarousel_carouselWrapper__UlQaz",
+                "selector": ".landingcarousel_carouselWrapper__UlQaz"
+              }
+            },
+            "selector": ".slick-arrow",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "1",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "2",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "slick-active",
+              "selector": ".slick-active",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "3",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-faitracker-form-bind": "true",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "slick-dots",
+                "selector": ".slick-dots"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Brand Solutions\nBrand Solutions",
+            "tag": "A",
+            "attributes": {
+              "href": "/brand-building",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "brandsolutions_ctaContainerDesktop__U4E4j",
+              "selector": ".brandsolutions_ctaContainerDesktop__U4E4j",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "brandsolutions_copyContainer__RZQlZ",
+                "selector": ".brandsolutions_copyContainer__RZQlZ"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "App Growth Solutions\nApp Growth Solutions",
+            "tag": "A",
+            "attributes": {
+              "href": "/app-growth",
+              "data-faitracker-click-bind": "true"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "appgrowthsolutions_ctaContainerDesktop__B43mh",
+                "selector": ".appgrowthsolutions_ctaContainerDesktop__B43mh"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "checked": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "customize-cookie-popup",
+                "selector": ".customize-cookie-popup"
+              }
+            },
+            "selector": "input",
+            "selectorConfidence": "very low",
+            "isChecked": true,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "",
+            "tag": "INPUT",
+            "attributes": {
+              "type": "checkbox",
+              "value": "adv"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "customize-cookie-popup",
+                "selector": ".customize-cookie-popup"
+              }
+            },
+            "selector": "input",
+            "selectorConfidence": "very low",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": "HubSpot",
+        "cmpSelector": null,
+        "url": "https://advertising.inmobi.com/",
+        "filteredHtml": "<body><div id=\"hs-web-interactives-top-push-anchor\" class=\"go3670563033\"></div><div id=\"hs-eu-cookie-confirmation\" class=\"hs-cookie-notification-position-bottom\" data-nosnippet=\"\"> <div id=\"hs-eu-cookie-confirmation-inner\"> <div id=\"hs-eu-policy-wording\"><p>We use necessary and (optional) analytics cookies on our websites to analyze traffic and personalize content. You can read our <a href=\"https://www.inmobi.com/cookie-policy/\" target=\"_blank\" data-faitracker-click-bind=\"true\">cookie policy</a> to understand how we use cookies. You may press 'decline' if you do not want us to use optional cookies. We will set a cookie on your device to remember and honor your preference.</p></div> <div id=\"hs-en-cookie-confirmation-buttons-area\"> <div id=\"hs-eu-cookie-confirmation-button-group\"> <a href=\"javascript:void(0);\" id=\"hs-eu-confirmation-button\" role=\"button\" data-faitracker-click-bind=\"true\"> Accept </a> <a href=\"javascript:void(0);\" id=\"hs-eu-decline-button\" role=\"button\" data-faitracker-click-bind=\"true\">Decline</a> </div> </div> </div> </div><div id=\"__next\"><div class=\"cookieModal\"></div><div class=\"accept-cookie\"><div class=\"customize-cookie-popup\"><div><input type=\"checkbox\" checked=\"\">Necessary cookies ( To move around the website and use its features ) <br><input type=\"checkbox\" value=\"adv\">Analytics &amp; Third Party Advertising Partner cookies ( Google analytics and related third party for tracking purposes)</div><div><button class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" role=\"button\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">Cancel</button><button role=\"button\" class=\"buttonGradient buttonGradientPrimary buttonNano gaEvent\" data-event-action=\"Click - Accept All\" data-event-category=\"Footer\" data-event-label=\"Accept All\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">Confirm</button></div></div></div><header id=\"header-v1\" class=\"headerdesktop_homeHeader__cx5ur\"><div class=\"headerdesktop_outerHeader__0L2au max1116\"><div class=\"headerdesktop_headerLogo__FPxI7\"><a class=\"headerdesktop_headerLogoLink__Srlch gaEvent\" href=\"/\" alt=\"InMobi Advertising\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi Advertising logo\" data-event-label=\"InMobi Advertising logo\" data-faitracker-click-bind=\"true\"><span class=\"headerdesktop_headerSrOnly__QMN63\">InMobi Advertising</span></a></div><div class=\"headerdesktop_midMenu__Dq_q8\"><ul class=\"headerdesktop_topNav__z_V78 headerdesktop_genUl__WKY4_\"><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Solutions\" data-event-label=\"Solutions\">Solutions<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2 max1116\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Brand Building\" data-event-label=\"Brand Building\" href=\"/brand-building\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Brand Building</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Inspire the right audience on mobile and across screens</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Growth Marketing\" data-event-label=\"Growth Marketing\" href=\"/app-growth\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Growth Marketing</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Acquire and grow high-value users for your mobile app</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Ad Monetization\" data-event-label=\"Ad Monetization\" href=\"/ad-monetization\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Ad Monetization</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Unlock more value from your inventory</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Dropdown\" data-event-label=\"Resources\">Resources<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Resources Link\" data-event-label=\"Resources\" href=\"/resources\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Resource Library</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our collection of blogs, case studies, and other insights</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - InMobi University\" data-event-label=\"InMobi University\" href=\"/inmobiu\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">InMobi University</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get educated on timely topics for advertisers and publishers</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Support Center\" data-event-label=\"Support Center\" href=\"https://support.inmobi.com/\" target=\"_blank\" rel=\"noreferrer\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Support Center</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Browse our library of helpful tips and FAQs</p></a></li></ul></div></div></div></li><li class=\"headerdesktop_fl__eHKEI\"><span class=\"gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Company\" data-event-label=\"Company\">About<i class=\"headerdesktop_topNavArrow__gn6Fb\"></i></span><div class=\"headerdesktop_subNav___RgC2\"><div class=\"headerdesktop_subNavContainer__E2H_e\"><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - About Us\" data-event-label=\"About Us\" href=\"/company\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Company</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Hear more about our story</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Leadership\" data-event-label=\"Leadership Team\" href=\"/company/leadership/\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Leadership</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Get to know our leaders</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Careers\" data-event-label=\"Careers\" href=\"https://www.inmobi.com/company/careers/\" target=\"_blank\" rel=\"noreferrer\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Careers</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Explore opportunities to join our growing team</p></a></li></ul></div><div class=\"headerdesktop_col2NavBlock__2QUaO\"><ul class=\"headerdesktop_megaMenuWrap__UzblC\"><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Sustainability\" data-event-label=\"Sustainability\" href=\"/company/sustainability/\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Sustainability</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Learn how we support a greener ad ecosystem</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Press Center\" data-event-label=\"Press Center\" href=\"/company/press\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Newsroom</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Stay updated on our latest news</p></a></li><li class=\"headerdesktop_listSub__NsBnq\"><a class=\"undefined gaEvent\" data-event-category=\"Desktop Navigation Menu\" data-event-action=\"Click - Contact Us\" data-event-label=\"Contact Us\" href=\"/company/contact\" data-faitracker-click-bind=\"true\"><h3 class=\"headerdesktop_snLinkHead__L_Mr6\">Contact Us</h3><p class=\"headerdesktop_snLinkDesp__zz4va undefined\">Connect with our global teams</p></a></li></ul></div></div></div></li></ul></div></div></header><div class=\"home\"><h1 class=\"sr-only\">Driving real connections</h1><div class=\"landingcarousel_carouselWrapper__UlQaz\"><div class=\"slick-slider slick-initialized\" dir=\"ltr\"><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-prev\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\"> Previous</button><div class=\"slick-list\"><div class=\"slick-track\"><div data-index=\"0\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"1\" class=\"slick-slide slick-active slick-current\" tabindex=\"-1\" aria-hidden=\"false\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div><div data-index=\"2\" class=\"slick-slide\" tabindex=\"-1\" aria-hidden=\"true\"><div><div class=\"landingcarousel_slide__e2vDe\" tabindex=\"-1\"><div class=\"landingcarousel_overlay___Ygxs\"></div></div></div></div></div></div><button type=\"button\" data-role=\"none\" class=\"slick-arrow slick-next\" data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\"> Next</button><div class=\"slick-dots\"><li class=\"\"><button data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">1</button></li><li class=\"slick-active\"><button data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">2</button></li><li class=\"\"><button data-faitracker-form-bind=\"true\" data-faitracker-click-bind=\"true\">3</button></li></div></div><div class=\"landingcarousel_textOverlay__FM8h5\"><h2>Driving real</h2><h2>connections</h2><p>On mobile and beyond</p></div></div><div id=\"brandSolutions\" class=\" brandsolutions_brandSolutionsWrapper__UkJNg\"><div class=\"brandsolutions_brandSolutionsBg__DY0P_\"><div class=\"brandsolutions_animationBg__Unh_H\"><div class=\"brandsolutions_animationBgWrapper__z50L_\"><div></div><div></div><div></div><div></div></div></div></div><div class=\"max1116 brandsolutions_brandSolutionMaxWidthWrapper__rGTZJ\"><div class=\"brandsolutions_copyContainer__RZQlZ\"><h2>Get your <span class=\"blockSpan\">brand noticed</span></h2><h4 class=\"brandsolutions_subTitle__nd7Zc\"> Tell your story to the right audience with InMobi Omnichannel Exchange.</h4><div class=\"brandsolutions_ctaContainerDesktop__U4E4j\"><a href=\"/brand-building\" data-faitracker-click-bind=\"true\"><div class=\"wavebutton_wave-button__TINwY \"><div class=\"wavebutton_wrapper__itgcG\"><div class=\"wavebutton_btn__PUKbE\"><div class=\"wavebutton_btn__bg__RPBm4\"><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-first__T0_ip\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-second__laATr\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-third__Z9AHR\"></span></div><span class=\"wavebutton_btn__text-out__XPubg \">Brand Solutions </span><span class=\"wavebutton_btn__text-in__AUldb \">Brand Solutions </span></div></div></div></a></div></div><div class=\"brandsolutions_desktopCarouselContainer__nVtaN\"><div class=\" brandsolutions_cardWrapper__hAlgp \"><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div><div class=\"brandsolutions_brandLogoWrapper__7h4DQ\"></div></div></div></div></div><div class=\" appgrowthsolutions_appGrowthSolutionsWrapper__D6_S6\"><div class=\"appgrowthsolutions_appGrowthSolutionBg___4MXB\"><div class=\"appgrowthsolutions_animationBg__EIF1S\"><div class=\"appgrowthsolutions_animationBgWrapper__gZG6Y\"><div></div><div></div><div></div><div></div></div></div></div><div class=\"max1116 appgrowthsolutions_appGrowthSolutionMaxWidthWrapper__hP37h\"><div class=\"appgrowthsolutions_copyContainer__DXWF1\"><h2>Grow your <span>app</span></h2><h4 class=\"appgrowthsolutions_subTitle__g5fHY\">Scale your app and your business with human insight and AI-driven optimization powered by InMobi DSP.</h4><div class=\"appgrowthsolutions_ctaContainerDesktop__B43mh\"><div><a href=\"/app-growth\" data-faitracker-click-bind=\"true\"><div class=\"wavebutton_wave-button__TINwY \"><div class=\"wavebutton_wrapper__itgcG\"><div class=\"wavebutton_btn__PUKbE\"><div class=\"wavebutton_btn__bg__RPBm4\"><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-first__T0_ip\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-second__laATr\"></span><span class=\"wavebutton_btn__bg__layer__L8OeS wavebutton_btn__bg__layer-third__Z9AHR\"></span></div><span class=\"wavebutton_btn__text-out__XPubg \">App Growth Solutions </span><span class=\"wavebutton_btn__text-in__AUldb \">App Growth Solutions </span></div></div></div></a></div></div></div><div class=\"appgrowthsolutions_desktopCarouselContainer__RsrG9\"><div class=\" appgrowthsolutions_cardWrapper__Z7WVY \"><div></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div><div class=\"appgrowthsolutions_brandLogoWrapper__yVDhe\"></div></div></div></div></div><div id=\"buildLastingConnections\" class=\"landingtile_landingTileContainer__2iaTH\"><div class=\"landingtile_circlesBg__B4fH7\"><div class=\"landingtile_scrollText__VrJH2\">Scroll</div></div><div class=\"landingtile_copy2Wrapper__37QeU\"><h2><span>Deepen your connection</span> </h2><h3>Engage consumers with interactive experiences on mobile and beyond</h3></div><div class=\"landingtile_elivaasWrapper__tkW27\"><video class=\"landingtile_elivaasVideo__Uoq_u\" src=\"assets/ellivas.mp4\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\"></video></div><div class=\"landingtile_skyBagsWrapper__Dk2XA\"></div><div class=\"landingtile_glowNLovelyWrapper__kG8kv\"><video class=\"landingtile_glowNLovelyVideo__5OPei\" src=\"assets/gnl.mp4\" playsinline=\"\" muted=\"\"></video></div><div class=\"landingtile_medicareWrapper__MfMgO\"></div><div class=\"landingtile_avatarWrapper__YGNH0\"></div><div class=\"landingtile_spiceItUpWrapper__4p_5A\"><video class=\"landingtile_spiceItUpVideo__wVlYj\" src=\"assets/spiceItUp.mp4\" playsinline=\"\" muted=\"\"></video></div><div class=\"landingtile_familyIslandWrapper___K8jz\"><video class=\"landingtile_familyIslandVideo__QlClZ\" src=\"assets/family-island.mp4\" playsinline=\"\" muted=\"\" poster=\"assets/family-island-poster.webp\"></video></div><div><div class=\"landingtile_viewsStatsWrapper__Wcbgl\"><div class=\"landingtile_viewsStats__NIE76\"><div></div><div class=\"landingtile_viewsStatsCount__SFey9\"> k Views</div></div></div></div><div><div class=\"landingtile_likesWrapper__LXQ0e\"><div class=\"landingtile_likes__maNuX\"><div></div><div class=\"landingtile_likesCount__alNYE\">Bn Likes</div></div></div></div><div><div class=\"landingtile_heartsWrapper__QhGoV\"><div class=\"landingtile_hearts__eTWqd\"><div></div><div class=\"landingtile_heartsCount__V4v9Q\">k Likes</div></div></div></div><div></div></div></div><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><next-route-announcer><p aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\"></p></next-route-announcer> <iframe alt=\"\" aria-hidden=\"true\" width=\"0\" height=\"0\" sandbox=\"\" id=\"db-sync\" src=\"https://s.company-target.com/s/sync?exc=lr\"></iframe> <div class=\"go2933276541 go2369186930\" id=\"hs-web-interactives-top-anchor\"><div id=\"hs-interactives-modal-overlay\" class=\"go1632949049\"></div></div> <div class=\"go2933276541 go1348078617\" id=\"hs-web-interactives-bottom-anchor\"></div> <div id=\"hs-web-interactives-floating-container\"> <div id=\"hs-web-interactives-floating-top-left-anchor\" class=\"go2417249464 go613305155\"> </div> <div id=\"hs-web-interactives-floating-top-right-anchor\" class=\"go2417249464 go471583506\"> </div> <div id=\"hs-web-interactives-floating-bottom-left-anchor\" class=\"go2417249464 go3921366393\"> </div> <div id=\"hs-web-interactives-floating-bottom-right-anchor\" class=\"go2417249464 go3967842156\"> </div> </div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 17345,
+        "isIframe": false
+      }
+    }
+  ]
+}

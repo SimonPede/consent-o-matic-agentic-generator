@@ -1,0 +1,169 @@
+{
+  "timestamp": "2026-08-27T23:43:21.159824",
+  "url": "https://ground.news",
+  "structured_dom_chars": 41306,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Osano",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Osano\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*='osano']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class*='osano']\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class*='osano']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"target\": {\"selector\": \".osano-cm-drawer-links__link\"}, \"type\": \"click\"}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_MARKETING\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_MARKETING\"}}, \"type\": \"F\"}, {\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_PERSONALIZATION\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_PERSONALIZATION\"}}, \"type\": \"A\"}, {\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_ANALYTICS\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#osano-cm-drawer-toggle--category_ANALYTICS\"}}, \"type\": \"B\"}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".osano-cm-save\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 289.59,
+  "extraction_duration_seconds": 16.18,
+  "extraction_share_percent": 5.59,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "Osano": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".osano-cm-window"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": ".osano-cm-window"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".osano-cm-drawer-links__link",
+              "textFilter": "Storage Preferences"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_MARKETING"
+                  }
+                }
+              },
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_PERSONALIZATION"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#osano-cm-drawer-toggle--category_ANALYTICS"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": ".osano-cm-save",
+                  "textFilter": "Save"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": ".osano-cm-window"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "timestamp": "2026-08-27T19:26:46.861724",
+  "url": "https://x.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://x.com"
+  ],
+  "duration_seconds": 47.87,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 2 frames.",
+      "a frame was picked by score: https://x.com/ with Score: 19",
+      "Settings match: \"Show more about your choices.\" --> lowered: \"show more about your choices.\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: .text-background, textMatch: Show more about your choices.",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 21 buttons, 0 inputs.",
+      "New state: 21 buttons, 0 inputs.",
+      "Settings click seems to have had no effect",
+      "Regex click had no effect in frame https://x.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"button.text-background.underline\", text: \"Show more about your choices.\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: button.text-background.underline, textMatch: Show more about your choices.",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff: 454 chars added, 0 inputs added.",
+      "Old state: 21 buttons, 0 inputs.",
+      "New state: 21 buttons, 0 inputs.",
+      "Settings click seems to have had no effect",
+      "[",
+      "  {",
+      "    frameUrl: 'https://x.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://x.com/',",
+      "      filteredHtml: '<body><div class=\"flex min-h-dvh flex-1 flex-col\"><div class=\"mx-auto flex w-full max-w-7xl flex-1 max-[500px]:hidden\"><div class=\"flex flex-1 items-center justify-center px-4 py-10 min-[851px]:justify-start min-[851px]:ps-9\"><div class=\"w-full max-w-[400px]\"><div class=\"mb-4 flex justify-center min-[851px]:hidden\"></div><h1 class=\"mb-8 pb-4 text-center text-[50px] leading-[0.9] font-semibold text-[#1A1A1A] min-[851px]:text-start min-[851px]:text-[64px] min-[851px]:tracking-[-1px] dark:text-white\">Happening now.</h1><div class=\"min-h-[440px] w-full overflow-hidden\"><div class=\"jf-element jetfuel-style-root h-full w-full h-full w-full\"><div class=\"jf-element w-full j-bd9wn50 jy49p8z0 jlvpxdh0 jfa278c0 jt6t7a70 jq6l2zd0\"><form class=\"jf-element flex flex-col j-bd9wn50 jy49p8z0 jfa278c0 j-71b4280 jiw0c10\"><div class=\"jf-element flex jy49p8z0 jiw0c10 j-by1qh80 jrg0orv0\"><button type=\"button\" class=\"jf-element jmm2vci0 j-5ger9i0 j-d7h1p60 jzedevn100\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-e9iyso12 jn6bdci11 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-4t3tug12 j-4t3tug12 j-53n1bs11 j-53n1bs11 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with phone</p></div></div></div></button><div class=\"jf-element flex j-bd9wn50 j94da6b0 j-fthzbj0\"><div class=\"jf-element jf-gsi-shell relative w-full\"><div aria-hidden=\"true\" class=\"jf-element jf-gsi-face pointer-events-none relative flex h-10 items-center justify-center overflow-hidden rounded-full border j-jvnxsw0 jfa278c0 j-e0iegv0 j-xqrfhb0 jdyswd217\"><span class=\"jf-element flex items-center justify-center gap-2 font-medium\">Continue with Google</span><div class=\"jf-element hidden\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-72iudk0 j-e9iyso12 jh9bqrp12 jn6bdci11 j-bd9wn511 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with Google</p></div></div></div><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 j7x4ayn0 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-72iudk0 j-lm1kid13 j-vdda9x11 j-w8elgx11 jh9bqrp11 j-fh4oj112 jspqp9z12 j-bd9wn512 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 jtbt6ie12 jdi40f11\"><p class=\"jf-element\">Continue with Google</p></div></div></div></div></div><div class=\"jf-element jf-gsi-hit absolute z-10 opacity-0\"><div class=\"S9gUrf-YoZ4jf\"><div><div tabindex=\"0\" role=\"button\" aria-labelledby=\"button-label\" class=\"nsm7Bb-HzV7m-LgbsSe hJDwNd-SxQuSe i5vt6e-Ia7Qfc JGcpL-RbRzK\"><div class=\"nsm7Bb-HzV7m-LgbsSe-MJoBVe\"></div><div class=\"nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb oXtfBe-l4eHX\"><div class=\"nsm7Bb-HzV7m-LgbsSe-Bz112c\"></div><span class=\"nsm7Bb-HzV7m-LgbsSe-BPrWId\">Fortsæt med Google</span><span class=\"L6cTce\" id=\"button-label\">Fortsæt med Google. Åbnes på en ny fane</span></div></div></div><iframe src=\"https://accounts.google.com/gsi/button?theme=outline&amp;size=large&amp;shape=pill&amp;logo_alignment=center&amp;text=continue_with&amp;type=standard&amp;is_fedcm_supported=true&amp;client_id=49625052041-kgt0hghf445lmcmhijv46b715m2mpbct.apps.googleusercontent.com&amp;iframe_id=gsi_565691_672858&amp;cas=cA5X0WTlEbUeKbLbCFfkg8cQ3KmqvjbpWDcHlT0SxjE&amp;hl=en\" class=\"L5Fo6c-PQbLGe\" allow=\"identity-credentials-get\" id=\"gsi_565691_672858\" title=\"Knap til Log ind med Google\"></iframe></div></div></div></div><button type=\"button\" class=\"jf-element\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-e9iyso12 jh9bqrp12 jn6bdci11 j-bd9wn511 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17 j-4t3tug12 j-53n1bs11\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with Apple</p></div></div></div><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 j7x4ayn0 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-lm1kid13 j-vdda9x11 j-w8elgx11 jh9bqrp11 j-fh4oj112 jspqp9z12 j-bd9wn512 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17 jtbt6ie12 jdi40f11\"></span><div class=\"jf-element text-text j8ug26k0 jtbt6ie12 jdi40f11\"><p class=\"jf-element\">Continue with Apple</p></div></div></div></button></div><div class=\"jf-element flex j-ou8jrn0 j-by1qh80 j8vunac0 j-4jzft30\"><div class=\"jf-element flex j-tfoedk0 j-i5opld0 ji3ksbw11 jr4597012\"></div><div class=\"jf-element text-text j-ipy2w60 jau5210\"><p class=\"jf-element\">or</p></div><div class=\"jf-element flex j-tfoedk0 j-i5opld0 ji3ksbw11 jr4597012\"></div></div><label for=\"jf-input-username_or_email\" class=\"jf-element jf-float-wrapper j-cqr3tr0 jhonkio0 j-kustoj0 j-nasjnf0 j-40lbxk0 j-e9iyso11 j-w8elgx11 j-4t3tug11 j-yc57ou12 jspqp9z12 j-53n1bs12 jd5kgwz2 jbtqe1h6\"><div class=\"jf-element jf-float-label-container\"><span class=\"jf-element jf-float-label\">Email or username</span><span class=\"jf-element jf-float-label-placholder\">Email or username</span><input autocomplete=\"username webauthn\" inputmode=\"text\" id=\"jf-input-username_or_email\" pattern=\"^[a-zA-Z0-9@._+\\\\-]+$\" class=\"jf-element jf-float-input\" type=\"text\" value=\"\" name=\"username_or_email\"><input inert=\"\" class=\"jf-element\" type=\"password\" value=\"\" name=\"password\"></div></label><div class=\"jf-element flex jb4wt3f0\"><div class=\"jf-element flex\"></div></div><div class=\"jf-element flex jfa278c0 jqjp5430 j8vunac0 j-by1qh80 j-pmlt8x0 j-dlswat0 jllpup913 jllpup911 jvbtivl12\"><div class=\"jf-element flex j-ou8jrn0 j8vunac0 j-by1qh80\"><div class=\"jf-element text-text j-a8kd9c0 j-nasjnf0 j-vmpu780 j-tboqzj0\"><p class=\"jf-element\">Continue</p></div></div></div><div class=\"jf-element flex jy49p8z0 jyks6vd0\"><div class=\"jf-element flex j-ou8jrn0 j-by1qh80 j8vunac0 j-4jzft30 j-avth0k0\"><div dir=\"\" class=\"jf-element inline-flex j-vmpu780 j-azowe50 j-2vsp8w0\"><p class=\"jf-element max-w-full\"><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">By continuing, you agree to our </span><a href=\"https://x.com/tos\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Terms of Service</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">, </span><a href=\"https://x.com/privacy\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Privacy Policy</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\"> and </span><a href=\"https://help.x.com/rules-and-policies/twitter-cookies\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Cookie Use</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">.</span></p></div></div></div></form></div><div class=\"jf-element\"></div></div></div></div></div><div class=\"hidden min-[851px]:flex min-[851px]:min-h-[45vh] min-[851px]:flex-1 min-[851px]:items-center min-[851px]:justify-center min-[851px]:overflow-hidden\"></div></div><div class=\"hidden flex-1 flex-col items-center justify-center max-[500px]:flex\"><div class=\"my-4 flex min-h-[30vh] w-full max-w-[250px] items-center justify-end self-center overflow-hidden\"></div><div class=\"mt-8 flex w-full flex-col items-center px-8\"><h1 class=\"text-gray-1100 mb-8 text-[20px] font-semibold dark:text-white\">See what’s happening</h1><p class=\"text-subtext1 text-gray-1100 mb-3 font-bold dark:text-white\">Already have an account?</p><a href=\"/i/jf/onboarding/web?mode=login&amp;redirect_after_login=%2F\" class=\"text-body flex h-11 w-full max-w-[400px] items-center justify-center rounded-full border border-gray-200 px-4 font-bold text-gray-700 transition-colors hover:bg-gray-50 dark:text-white\">Sign in</a></div></div><footer></footer></div><div role=\"region\" aria-label=\"Cookie consent\" class=\"two-col:flex-row two-col:items-center two-col:justify-evenly two-col:pb-[calc(env(safe-area-inset-bottom,0px)+20px)] bg-gray-1100 fixed inset-x-0 bottom-0 z-30 flex flex-col items-stretch gap-4 px-5 pt-5 pb-[calc(max(env(safe-area-inset-bottom,0px),34px)+20px)] shadow-md\"><div class=\"text-background flex max-w-[640px] flex-1 flex-col gap-2\"><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-background text-headline2 font-medium\">Did someone say … cookies?</div><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-background text-subtext2 font-normal\">X and its partners use cookies to provide you with a better, safer and faster service and to support our business. Some cookies are necessary to use our services, improve our services, and make sure they work properly. <button type=\"button\" class=\"text-background underline hover:no-underline\">Show more about your choices.</button></div></div><div class=\"two-col:w-auto two-col:max-w-none flex w-full max-w-[550px] flex-col gap-2\"><button class=\"gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center bg-background rounded-full text-text h-9 min-w-9 px-4 [&amp;&gt;svg]:size-5 text-body hover:bg-mix-current hover:bg-mix-amount-10 active:bg-mix-current active:bg-mix-amount-15 focus-visible:bg-mix-current focus-visible:bg-mix-amount-10 outline-current two-col:w-[420px] h-10 w-full border-transparent\"><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold\">Accept all cookies</div></button><button class=\"gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visi'... 1248 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 11248",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://x.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (21):",
+      "      [BUTTON] \"Continue with phone\" --> selector: button",
+      "      [DIV] \"Fortsæt med Google\" --> selector: .nsm7Bb-HzV7m-LgbsSe",
+      "      [BUTTON] \"Continue with Apple\" --> selector: button",
+      "      [A] \"Terms of Service\" --> selector: a",
+      "      [A] \"Privacy Policy\" --> selector: a",
+      "      [A] \"Cookie Use\" --> selector: a",
+      "      [A] \"About\" --> selector: a",
+      "      [A] \"Get App\" --> selector: a",
+      "      [A] \"Grok\" --> selector: .inline",
+      "      [A] \"Help\" --> selector: a",
+      "      [A] \"Terms\" --> selector: a",
+      "      [A] \"Privacy\" --> selector: a",
+      "      [A] \"Cookies\" --> selector: a",
+      "      [A] \"Careers\" --> selector: a",
+      "      [A] \"Ads & Business\" --> selector: a",
+      "      [A] \"Developers\" --> selector: a",
+      "      [A] \"News\" --> selector: a",
+      "      [A] \"Accessibility\" --> selector: a",
+      "      [BUTTON] \"Show more about your choices.\" --> selector: .text-background",
+      "      [BUTTON] \"Accept all cookies\" --> selector: .gap-1",
+      "      [BUTTON] \"Refuse non-essential cookies\" --> selector: .gap-1",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://x.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Continue with phone",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "jf-element jmm2vci0 j-5ger9i0 j-d7h1p60 jzedevn100"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "jf-element flex jy49p8z0 jiw0c10 j-by1qh80 jrg0orv0",
+              "selector": ".jf-element",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "jf-element flex flex-col j-bd9wn50 jy49p8z0 jfa278c0 j-71b4280",
+                "selector": ".jf-element"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Fortsæt med Google",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-labelledby": "button-label",
+              "class": "nsm7Bb-HzV7m-LgbsSe hJDwNd-SxQuSe i5vt6e-Ia7Qfc JGcpL-RbRzK"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "S9gUrf-YoZ4jf",
+                "selector": ".S9gUrf-YoZ4jf"
+              }
+            },
+            "selector": ".nsm7Bb-HzV7m-LgbsSe",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Continue with Apple",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "jf-element"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "jf-element flex jy49p8z0 jiw0c10 j-by1qh80 jrg0orv0",
+              "selector": ".jf-element",
+              "grandparent": {
+                "tag": "FORM",
+                "id": null,
+                "className": "jf-element flex flex-col j-bd9wn50 jy49p8z0 jfa278c0 j-71b4280",
+                "selector": ".jf-element"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of Service",
+            "tag": "A",
+            "attributes": {
+              "href": "https://x.com/tos",
+              "class": "jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "jf-element max-w-full",
+              "selector": ".jf-element",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "jf-element inline-flex j-vmpu780 j-azowe50 j-2vsp8w0",
+                "selector": ".jf-element"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://x.com/privacy",
+              "class": "jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "jf-element max-w-full",
+              "selector": ".jf-element",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "jf-element inline-flex j-vmpu780 j-azowe50 j-2vsp8w0",
+                "selector": ".jf-element"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie Use",
+            "tag": "A",
+            "attributes": {
+              "href": "https://help.x.com/rules-and-policies/twitter-cookies",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "jf-element max-w-full",
+              "selector": ".jf-element",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "jf-element inline-flex j-vmpu780 j-azowe50 j-2vsp8w0",
+                "selector": ".jf-element"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "About",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://about.x.com",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Get App",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://help.x.com/using-x/download-the-x-app",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Grok",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://grok.com/download",
+              "class": "inline hover:underline min-[1001px]:hidden"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": ".inline",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Help",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://help.x.com",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://x.com/tos",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://x.com/privacy",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookies",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://support.x.com/articles/20170514",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Careers",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://careers.x.com",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ads & Business",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://business.x.com/advertising?ref=gl-tw-tw-twitter-advertise",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Developers",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://developer.x.com",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "News",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://x.com/i/jf/stories/home",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accessibility",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer nofollow",
+              "href": "https://help.x.com/resources/accessibility",
+              "class": "hover:underline"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "flex items-center",
+              "selector": ".flex",
+              "grandparent": {
+                "tag": "NAV",
+                "id": null,
+                "className": "text-subtext3 flex flex-wrap items-center justify-center gap-y-1 px-4",
+                "selector": ".text-subtext3"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Show more about your choices.",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "class": "text-background underline hover:no-underline"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "font-chirp max-w-full whitespace-pre-wrap break-words text-background text-subtext2 font-normal",
+              "selector": ".font-chirp",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "text-background flex max-w-[640px] flex-1 flex-col gap-2",
+                "selector": ".text-background"
+              }
+            },
+            "selector": ".text-background",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "two-col:w-auto two-col:max-w-none flex w-full max-w-[550px] flex-col gap-2",
+              "selector": ".two-col:w-auto",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "two-col:flex-row two-col:items-center two-col:justify-evenly two-col:pb-[calc(env(safe-area-inset-bottom,0px)+20px)] bg-gray-1100 fixed inset-x-0",
+                "selector": ".two-col:flex-row"
+              }
+            },
+            "selector": ".gap-1",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Refuse non-essential cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "two-col:w-auto two-col:max-w-none flex w-full max-w-[550px] flex-col gap-2",
+              "selector": ".two-col:w-auto",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "two-col:flex-row two-col:items-center two-col:justify-evenly two-col:pb-[calc(env(safe-area-inset-bottom,0px)+20px)] bg-gray-1100 fixed inset-x-0",
+                "selector": ".two-col:flex-row"
+              }
+            },
+            "selector": ".gap-1",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://x.com/",
+        "filteredHtml": "<body><div class=\"flex min-h-dvh flex-1 flex-col\"><div class=\"mx-auto flex w-full max-w-7xl flex-1 max-[500px]:hidden\"><div class=\"flex flex-1 items-center justify-center px-4 py-10 min-[851px]:justify-start min-[851px]:ps-9\"><div class=\"w-full max-w-[400px]\"><div class=\"mb-4 flex justify-center min-[851px]:hidden\"></div><h1 class=\"mb-8 pb-4 text-center text-[50px] leading-[0.9] font-semibold text-[#1A1A1A] min-[851px]:text-start min-[851px]:text-[64px] min-[851px]:tracking-[-1px] dark:text-white\">Happening now.</h1><div class=\"min-h-[440px] w-full overflow-hidden\"><div class=\"jf-element jetfuel-style-root h-full w-full h-full w-full\"><div class=\"jf-element w-full j-bd9wn50 jy49p8z0 jlvpxdh0 jfa278c0 jt6t7a70 jq6l2zd0\"><form class=\"jf-element flex flex-col j-bd9wn50 jy49p8z0 jfa278c0 j-71b4280 jiw0c10\"><div class=\"jf-element flex jy49p8z0 jiw0c10 j-by1qh80 jrg0orv0\"><button type=\"button\" class=\"jf-element jmm2vci0 j-5ger9i0 j-d7h1p60 jzedevn100\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-e9iyso12 jn6bdci11 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-4t3tug12 j-4t3tug12 j-53n1bs11 j-53n1bs11 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with phone</p></div></div></div></button><div class=\"jf-element flex j-bd9wn50 j94da6b0 j-fthzbj0\"><div class=\"jf-element jf-gsi-shell relative w-full\"><div aria-hidden=\"true\" class=\"jf-element jf-gsi-face pointer-events-none relative flex h-10 items-center justify-center overflow-hidden rounded-full border j-jvnxsw0 jfa278c0 j-e0iegv0 j-xqrfhb0 jdyswd217\"><span class=\"jf-element flex items-center justify-center gap-2 font-medium\">Continue with Google</span><div class=\"jf-element hidden\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-72iudk0 j-e9iyso12 jh9bqrp12 jn6bdci11 j-bd9wn511 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with Google</p></div></div></div><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 j7x4ayn0 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-72iudk0 j-lm1kid13 j-vdda9x11 j-w8elgx11 jh9bqrp11 j-fh4oj112 jspqp9z12 j-bd9wn512 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17\"></span><div class=\"jf-element text-text j8ug26k0 jtbt6ie12 jdi40f11\"><p class=\"jf-element\">Continue with Google</p></div></div></div></div></div><div class=\"jf-element jf-gsi-hit absolute z-10 opacity-0\"><div class=\"S9gUrf-YoZ4jf\"><div><div tabindex=\"0\" role=\"button\" aria-labelledby=\"button-label\" class=\"nsm7Bb-HzV7m-LgbsSe hJDwNd-SxQuSe i5vt6e-Ia7Qfc JGcpL-RbRzK\"><div class=\"nsm7Bb-HzV7m-LgbsSe-MJoBVe\"></div><div class=\"nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb oXtfBe-l4eHX\"><div class=\"nsm7Bb-HzV7m-LgbsSe-Bz112c\"></div><span class=\"nsm7Bb-HzV7m-LgbsSe-BPrWId\">Fortsæt med Google</span><span class=\"L6cTce\" id=\"button-label\">Fortsæt med Google. Åbnes på en ny fane</span></div></div></div><iframe src=\"https://accounts.google.com/gsi/button?theme=outline&amp;size=large&amp;shape=pill&amp;logo_alignment=center&amp;text=continue_with&amp;type=standard&amp;is_fedcm_supported=true&amp;client_id=49625052041-kgt0hghf445lmcmhijv46b715m2mpbct.apps.googleusercontent.com&amp;iframe_id=gsi_565691_672858&amp;cas=cA5X0WTlEbUeKbLbCFfkg8cQ3KmqvjbpWDcHlT0SxjE&amp;hl=en\" class=\"L5Fo6c-PQbLGe\" allow=\"identity-credentials-get\" id=\"gsi_565691_672858\" title=\"Knap til Log ind med Google\"></iframe></div></div></div></div><button type=\"button\" class=\"jf-element\"><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-e9iyso12 jh9bqrp12 jn6bdci11 j-bd9wn511 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17 j-4t3tug12 j-53n1bs11\"></span><div class=\"jf-element text-text j8ug26k0 j-4t3tug12 j-53n1bs11\"><p class=\"jf-element\">Continue with Apple</p></div></div></div><div class=\"jf-element flex j8vunac0 j-by1qh80 jqjp5430 j7x4ayn0 jj7l3ky0 j9l8jq0 j-a8kd9c0 jfa278c0 j-lm1kid13 j-vdda9x11 j-w8elgx11 jh9bqrp11 j-fh4oj112 jspqp9z12 j-bd9wn512 j-ailshb34 j-ailshb33\"><div class=\"jf-element flex j-bd9wn50 j-ou8jrn0 j8vunac0 j-by1qh80\"><span class=\"jf-element jtcgvu70 j-l9bpyu17 j84lv1n17 jtbt6ie12 jdi40f11\"></span><div class=\"jf-element text-text j8ug26k0 jtbt6ie12 jdi40f11\"><p class=\"jf-element\">Continue with Apple</p></div></div></div></button></div><div class=\"jf-element flex j-ou8jrn0 j-by1qh80 j8vunac0 j-4jzft30\"><div class=\"jf-element flex j-tfoedk0 j-i5opld0 ji3ksbw11 jr4597012\"></div><div class=\"jf-element text-text j-ipy2w60 jau5210\"><p class=\"jf-element\">or</p></div><div class=\"jf-element flex j-tfoedk0 j-i5opld0 ji3ksbw11 jr4597012\"></div></div><label for=\"jf-input-username_or_email\" class=\"jf-element jf-float-wrapper j-cqr3tr0 jhonkio0 j-kustoj0 j-nasjnf0 j-40lbxk0 j-e9iyso11 j-w8elgx11 j-4t3tug11 j-yc57ou12 jspqp9z12 j-53n1bs12 jd5kgwz2 jbtqe1h6\"><div class=\"jf-element jf-float-label-container\"><span class=\"jf-element jf-float-label\">Email or username</span><span class=\"jf-element jf-float-label-placholder\">Email or username</span><input autocomplete=\"username webauthn\" inputmode=\"text\" id=\"jf-input-username_or_email\" pattern=\"^[a-zA-Z0-9@._+\\-]+$\" class=\"jf-element jf-float-input\" type=\"text\" value=\"\" name=\"username_or_email\"><input inert=\"\" class=\"jf-element\" type=\"password\" value=\"\" name=\"password\"></div></label><div class=\"jf-element flex jb4wt3f0\"><div class=\"jf-element flex\"></div></div><div class=\"jf-element flex jfa278c0 jqjp5430 j8vunac0 j-by1qh80 j-pmlt8x0 j-dlswat0 jllpup913 jllpup911 jvbtivl12\"><div class=\"jf-element flex j-ou8jrn0 j8vunac0 j-by1qh80\"><div class=\"jf-element text-text j-a8kd9c0 j-nasjnf0 j-vmpu780 j-tboqzj0\"><p class=\"jf-element\">Continue</p></div></div></div><div class=\"jf-element flex jy49p8z0 jyks6vd0\"><div class=\"jf-element flex j-ou8jrn0 j-by1qh80 j8vunac0 j-4jzft30 j-avth0k0\"><div dir=\"\" class=\"jf-element inline-flex j-vmpu780 j-azowe50 j-2vsp8w0\"><p class=\"jf-element max-w-full\"><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">By continuing, you agree to our </span><a href=\"https://x.com/tos\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Terms of Service</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">, </span><a href=\"https://x.com/privacy\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Privacy Policy</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\"> and </span><a href=\"https://help.x.com/rules-and-policies/twitter-cookies\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"jf-element j-azowe50 j-a8kd9c0 j-53n1bs12 j-4t3tug11\">Cookie Use</a><span class=\"jf-element j-vmpu780 j-azowe50 j-2vsp8w0\">.</span></p></div></div></div></form></div><div class=\"jf-element\"></div></div></div></div></div><div class=\"hidden min-[851px]:flex min-[851px]:min-h-[45vh] min-[851px]:flex-1 min-[851px]:items-center min-[851px]:justify-center min-[851px]:overflow-hidden\"></div></div><div class=\"hidden flex-1 flex-col items-center justify-center max-[500px]:flex\"><div class=\"my-4 flex min-h-[30vh] w-full max-w-[250px] items-center justify-end self-center overflow-hidden\"></div><div class=\"mt-8 flex w-full flex-col items-center px-8\"><h1 class=\"text-gray-1100 mb-8 text-[20px] font-semibold dark:text-white\">See what’s happening</h1><p class=\"text-subtext1 text-gray-1100 mb-3 font-bold dark:text-white\">Already have an account?</p><a href=\"/i/jf/onboarding/web?mode=login&amp;redirect_after_login=%2F\" class=\"text-body flex h-11 w-full max-w-[400px] items-center justify-center rounded-full border border-gray-200 px-4 font-bold text-gray-700 transition-colors hover:bg-gray-50 dark:text-white\">Sign in</a></div></div><footer></footer></div><div role=\"region\" aria-label=\"Cookie consent\" class=\"two-col:flex-row two-col:items-center two-col:justify-evenly two-col:pb-[calc(env(safe-area-inset-bottom,0px)+20px)] bg-gray-1100 fixed inset-x-0 bottom-0 z-30 flex flex-col items-stretch gap-4 px-5 pt-5 pb-[calc(max(env(safe-area-inset-bottom,0px),34px)+20px)] shadow-md\"><div class=\"text-background flex max-w-[640px] flex-1 flex-col gap-2\"><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-background text-headline2 font-medium\">Did someone say … cookies?</div><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-background text-subtext2 font-normal\">X and its partners use cookies to provide you with a better, safer and faster service and to support our business. Some cookies are necessary to use our services, improve our services, and make sure they work properly. <button type=\"button\" class=\"text-background underline hover:no-underline\">Show more about your choices.</button></div></div><div class=\"two-col:w-auto two-col:max-w-none flex w-full max-w-[550px] flex-col gap-2\"><button class=\"gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center bg-background rounded-full text-text h-9 min-w-9 px-4 [&amp;&gt;svg]:size-5 text-body hover:bg-mix-current hover:bg-mix-amount-10 active:bg-mix-current active:bg-mix-amount-15 focus-visible:bg-mix-current focus-visible:bg-mix-amount-10 outline-current two-col:w-[420px] h-10 w-full border-transparent\"><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold\">Accept all cookies</div></button><button class=\"gap-1 inline-flex items-center border border-solid font-bold has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center bg-background rounded-full text-text h-9 min-w-9 px-4 [&amp;&gt;svg]:size-5 text-body hover:bg-mix-current hover:bg-mix-amount-10 active:bg-mix-current active:bg-mix-amount-15 focus-visible:bg-mix-current focus-visible:bg-mix-amount-10 outline-current two-col:w-[420px] h-10 w-full border-transparent\"><div class=\"font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold\">Refuse non-essential cookies</div></button></div></div><div class=\"contents [&amp;:popover-open]:block [&amp;:popover-open]:m-0 [&amp;:popover-open]:size-0 [&amp;:popover-open]:overflow-hidden [&amp;:popover-open]:border-0 [&amp;:popover-open]:bg-transparent [&amp;:popover-open]:p-0 [&amp;:popover-open]:[inset:auto]\" popover=\"manual\"><section aria-label=\"Notifications alt+T\" tabindex=\"-1\" aria-live=\"polite\" aria-relevant=\"additions text\" aria-atomic=\"false\" data-react-aria-top-layer=\"true\"></section></div><div aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div><div></div><div><section aria-label=\"Notifications alt+T\" tabindex=\"-1\" aria-live=\"polite\" aria-relevant=\"additions text\" aria-atomic=\"false\" data-react-aria-top-layer=\"true\"></section></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 11248
+      },
+      "settings": null
+    }
+  ]
+}

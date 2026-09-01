@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-08-28T05:24:50.419288",
+  "url": "https://account.microsoft.com",
+  "structured_dom_chars": 112284,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 13,
+  "human_review_count": 0,
+  "test_rule_count": 10,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Microsoft\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#wcpConsentBannerCtrl\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#wcpConsentBannerCtrl\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#wcpConsentBannerCtrl\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"click\", \"target\": {\"selector\": \"._1XuCi2WhiqeWRUVp3pnFG3\", \"textFilter\": \"Manage cookies\"}}, {\"type\": \"wait\", \"waitTime\": 500}]}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"._1XuCi2WhiqeWRUVp3pnFG3\", \"textFilter\": \"Accept\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"._1XuCi2WhiqeWRUVp3pnFG3\", \"textFilter\": \"Reject\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Analytics\"}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Analytics\"}, \"target\": {\"selector\": \"label\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Social Media\"}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Social Media\"}, \"target\": {\"selector\": \"label\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Advertising\"}, \"target\": {\"selector\": \"input\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"dt\", \"textFilter\": \"Advertising\"}, \"target\": {\"selector\": \"label\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Save changes']\"}}]}}]}}",
+  "last_error": "The JSON rule generation for Microsoft's cookie consent interface failed due to persistent syntax errors in the formatting of the JSON string within the tool. While the selectors and logic for the rule were identified, the inability to use the correct escaping for nested quotes and text filters in a single-line JSON string resulted in repeated invalid JSON errors. The interface is fundamentally resolvable using the identified logic.",
+  "abort_reason": "The JSON rule generation for Microsoft's cookie consent interface failed due to persistent syntax errors in the formatting of the JSON string within the tool. While the selectors and logic for the rule were identified, the inability to use the correct escaping for nested quotes and text filters in a single-line JSON string resulted in repeated invalid JSON errors. The interface is fundamentally resolvable using the identified logic.",
+  "abort_code": "The JSON rule generation for Microsoft's cookie consent interface failed due to persistent syntax errors in the formatting of the JSON string within the tool. While the selectors and logic for the rule were identified, the inability to use the correct escaping for nested quotes and text filters in a single-line JSON string resulted in repeated invalid JSON errors. The interface is fundamentally resolvable using the identified logic.",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Save changes']",
+  "model_aborted": true,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Save changes']",
+  "error_history": [
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1408 (char 1407)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1412 (char 1411)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1330 (char 1329)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nMicrosoft.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...wcpConsentBannerCtrl'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 1306 (char 1305)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 1249 (char 1248)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[id*='_c1_accept'] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[id*='_c2_accept'] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[id*='_c3_accept'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Save changes']",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[name='c1'] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[name='c2'] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input[name='c3'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Save changes']",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: input | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Save changes']",
+    "The JSON rule generation for Microsoft's cookie consent interface failed due to persistent syntax errors in the formatting of the JSON string within the tool. While the selectors and logic for the rule were identified, the inability to use the correct escaping for nested quotes and text filters in a single-line JSON string resulted in repeated invalid JSON errors. The interface is fundamentally resolvable using the identified logic."
+  ],
+  "duration_seconds": 1730.87,
+  "extraction_duration_seconds": 18.4,
+  "extraction_share_percent": 1.06,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

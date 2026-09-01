@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-08-28T09:33:52.999686",
+  "url": "https://www.gutefrage.net",
+  "structured_dom_chars": 248408,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "consentmanager.net",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 9,
+  "human_review_count": 0,
+  "test_rule_count": 4,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"consentmanager.net\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".cmpboxbtn\", \"textFilter\": \"Accept all\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".cmpboxbtn\", \"textFilter\": \"Accept all\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpbox\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"a.cmptxt_btn_custom\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": []}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".cmpboxbtnsave\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnsave",
+  "error_history": [
+    "No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine...",
+    "Ruleset structure invalid: 2 validation errors for CoMRule\n`consentmanager.net`.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...Filter': 'Accept all'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\n`consentmanager.net`.detectors.1.presentMatcher\n  Field required [type=missing, input_value={'showingMatcher': {'type...Filter': 'Accept all'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtnsave"
+  ],
+  "duration_seconds": 947.94,
+  "extraction_duration_seconds": 8.51,
+  "extraction_share_percent": 0.9,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "consentmanager.net": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#cmpbox"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "#cmpbox"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#cmp．cmpbox"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "a.cmptxt_btn_yes"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

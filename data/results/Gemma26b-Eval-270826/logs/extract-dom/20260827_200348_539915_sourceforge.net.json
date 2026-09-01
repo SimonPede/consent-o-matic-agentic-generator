@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-08-27T20:03:48.539962",
+  "url": "https://sourceforge.net",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://sourceforge.net"
+  ],
+  "duration_seconds": 50.34,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 2 frames.",
+      "a frame was picked by score: https://sourceforge.net/ with Score: 9",
+      "Regex failed in frame https://sourceforge.net/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"a.footer-text\", text: \"Privacy\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: a.footer-text, textMatch: Privacy",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 2 buttons, 0 inputs.",
+      "New state: 2 buttons, 0 inputs.",
+      "Settings click seems to have had no effect",
+      "[",
+      "  {",
+      "    frameUrl: 'https://sourceforge.net/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://sourceforge.net/',",
+      "      filteredHtml: '<body><div class=\"main-wrapper KfMSd3\" role=\"main\"><div class=\"main-content\"><div class=\"YpeSi0\"><h1>sourceforge.net</h1></div><h2 id=\"Awso7\" class=\"GaKLP3 kswNB2\">Performing security verification</h2><p id=\"NlCO0\" class=\"ePpQf0 RiSF9\">This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.</p><div id=\"VjQXz6\"><div><div><div></div><input type=\"hidden\" name=\"cf-turnstile-response\" id=\"cf-chl-widget-w5ssy_response\"></div></div></div><div id=\"cHbPN7\"><h2 id=\"hGshV0\" class=\"RiSF9\">Verification successful. Waiting for sourceforge.net to respond</h2></div><div id=\"SkKl0\" class=\"QsBQ8 PzyvR1\"><div class=\"gdYkF6\"><div></div><div></div><div></div><div></div></div></div></div></div><div class=\"footer\" role=\"contentinfo\"><div class=\"footer-inner\"><div class=\"footer-wrapper\"><div><div class=\"ray-id\">Ray ID: <code>a31cfd85cad82af8</code></div></div><div class=\"footer-link-wrapper\"><span class=\"footer-text\">Performance and Security by <a rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com?utm_source=challenge&amp;utm_campaign=l\" target=\"_blank\" aria-label=\"Cloudflare, opens in a new tab\">Cloudflare</a></span><span class=\"footer-divider\"></span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com/privacypolicy/\" aria-label=\"Privacy, opens in a new tab\" class=\"footer-text\">Privacy</a></div></div></div></div></body>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1437",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://sourceforge.net/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (2):",
+      "      [A] \"Cloudflare\" --> selector: [aria-label=\"Cloudflare, opens in a new tab\"]",
+      "      [A] \"Privacy\" --> selector: [aria-label=\"Privacy, opens in a new tab\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://sourceforge.net/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Cloudflare",
+            "tag": "A",
+            "attributes": {
+              "rel": "noopener noreferrer",
+              "href": "https://www.cloudflare.com?utm_source=challenge&utm_campaign=l",
+              "target": "_blank",
+              "aria-label": "Cloudflare, opens in a new tab"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "footer-text",
+              "selector": ".footer-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer-link-wrapper",
+                "selector": ".footer-link-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Cloudflare, opens in a new tab\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "href": "https://www.cloudflare.com/privacypolicy/",
+              "aria-label": "Privacy, opens in a new tab",
+              "class": "footer-text"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "footer-link-wrapper",
+              "selector": ".footer-link-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer-wrapper",
+                "selector": ".footer-wrapper"
+              }
+            },
+            "selector": "[aria-label=\"Privacy, opens in a new tab\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://sourceforge.net/",
+        "filteredHtml": "<body><div class=\"main-wrapper KfMSd3\" role=\"main\"><div class=\"main-content\"><div class=\"YpeSi0\"><h1>sourceforge.net</h1></div><h2 id=\"Awso7\" class=\"GaKLP3 kswNB2\">Performing security verification</h2><p id=\"NlCO0\" class=\"ePpQf0 RiSF9\">This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.</p><div id=\"VjQXz6\"><div><div><div></div><input type=\"hidden\" name=\"cf-turnstile-response\" id=\"cf-chl-widget-w5ssy_response\"></div></div></div><div id=\"cHbPN7\"><h2 id=\"hGshV0\" class=\"RiSF9\">Verification successful. Waiting for sourceforge.net to respond</h2></div><div id=\"SkKl0\" class=\"QsBQ8 PzyvR1\"><div class=\"gdYkF6\"><div></div><div></div><div></div><div></div></div></div></div></div><div class=\"footer\" role=\"contentinfo\"><div class=\"footer-inner\"><div class=\"footer-wrapper\"><div><div class=\"ray-id\">Ray ID: <code>a31cfd85cad82af8</code></div></div><div class=\"footer-link-wrapper\"><span class=\"footer-text\">Performance and Security by <a rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com?utm_source=challenge&amp;utm_campaign=l\" target=\"_blank\" aria-label=\"Cloudflare, opens in a new tab\">Cloudflare</a></span><span class=\"footer-divider\"></span><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com/privacypolicy/\" aria-label=\"Privacy, opens in a new tab\" class=\"footer-text\">Privacy</a></div></div></div></div></body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1437
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "timestamp": "2026-08-27T05:28:28.934695",
+  "url": "https://www.twitch.tv",
+  "structured_dom_chars": 250443,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 3,
+  "human_review_count": 0,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"twitch\":{\"detectors\":[{\"presentMatcher\":{\"type\":\"css\",\"target\":{\"selector\":\"[data-a-target='consent-banner']\"}},\"showingMatcher\":{\"type\":\"css\",\"target\":{\"selector\":\"[data-a-target='consent-banner']\",\"displayFilter\":true}}}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"[data-a-target='consent-banner']\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"target\":{\"selector\":\"[data-a-target='consent-banner-manage-preferences']\"}},{\"type\":\"wait\",\"waitTime\":500}]}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"F\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label='Combining and Cross-Use of Your Data with Amazon Ads']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label='Combining and Cross-Use of Your Data with Amazon Ads']\"}}},{\"type\":\"B\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label='Analytics cookies']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label='Analytics cookies']\"}}},{\"type\":\"F\",\"matcher\":{\"type\":\"checkbox\",\"target\":{\"selector\":\"[aria-label='Advertising cookies']\"}},\"toggleAction\":{\"type\":\"click\",\"target\":{\"selector\":\"[aria-label='Advertising cookies']\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"target\":{\"selector\":\"[data-a-target='consent-modal-save']\"}},{\"type\":\"wait\",\"waitTime\":500}]}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 155.35,
+  "extraction_duration_seconds": 15.77,
+  "extraction_share_percent": 10.15,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": true,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "twitch": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-a-target='consent-banner']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[data-a-target='consent-banner']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[data-a-target='consent-banner']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[data-a-target='consent-banner-manage-preferences']"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Combining and Cross-Use of Your Data with Amazon Ads']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Combining and Cross-Use of Your Data with Amazon Ads']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Analytics cookies']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Analytics cookies']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "[aria-label='Advertising cookies']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label='Advertising cookies']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": "[data-a-target='consent-modal-save']"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

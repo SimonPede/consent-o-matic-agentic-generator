@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-08-28T04:00:15.220290",
+  "url": "https://elpais.com",
+  "structured_dom_chars": 282982,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 17,
+  "human_review_count": 0,
+  "test_rule_count": 14,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Didomi\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".pmConsentWall-button\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \".pmConsentWall-button\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \".pmConsentWall-main-inner\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \".pmConsentWall-button\", \"textFilter\": \"ACCEPT AND CONTINUE\"}}}]}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "ABORTED: overall timeout reached (1800s)",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a | Selector Failed: ACTION_TARGET_NOT_FOUND: .pmConsentWall-button",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "No CMP detected in 5 seconds, stopping engine... | No CMP detected in 5 seconds, stopping engine...",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 149 (char 148)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 516 (char 515)",
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation."
+  ],
+  "duration_seconds": 1800.11,
+  "extraction_duration_seconds": 54.44,
+  "extraction_share_percent": 3.02,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": null
+}

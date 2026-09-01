@@ -1,0 +1,216 @@
+{
+  "timestamp": "2026-08-27T07:01:56.494241",
+  "url": "https://www.diy.com",
+  "structured_dom_chars": 34235,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 5,
+  "human_review_count": 1,
+  "test_rule_count": 2,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\":{\"detectors\":[{\"presentMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#truste-consent-track\"}}],\"showingMatcher\":[{\"type\":\"css\",\"target\":{\"selector\":\"#truste-consent-track\",\"displayFilter\":true}}]}],\"methods\":[{\"name\":\"HIDE_CMP\",\"action\":{\"type\":\"hide\",\"target\":{\"selector\":\"#truste-consent-track\"}}},{\"name\":\"OPEN_OPTIONS\",\"action\":{\"type\":\"list\",\"actions\":[{\"type\":\"click\",\"target\":{\"selector\":\"#truste-show-consent\"}},{\"type\":\"wait\",\"waitTime\":500},{\"type\":\"waitcss\",\"target\":{\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"selector\":\"a.submit\"},\"retries\":10,\"waitTime\":200}]}},{\"name\":\"DO_CONSENT\",\"action\":{\"type\":\"consent\",\"consents\":[{\"type\":\"A\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Accept Functional Cookies\\\"]\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Refuse Functional Cookies\\\"]\"}}},{\"type\":\"B\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Accept Performance & Analytics\\\"]\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Refuse Performance & Analytics\\\"]\"}}},{\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Accept B&Q's marketing and advertising cookies\\\"]\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Refuse B&Q's marketing and advertising cookies\\\"]\"}}},{\"type\":\"F\",\"trueAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Accept B&Q Partners' Marketing and Advertising Cookies\\\"]\"}},\"falseAction\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"[aria-label=\\\"Refuse B&Q Partners' Marketing and Advertising Cookies\\\"]\"}}}]}},{\"name\":\"SAVE_CONSENT\",\"action\":{\"type\":\"click\",\"parent\":{\"selector\":\".trustarc_newcm_container\"},\"target\":{\"selector\":\"a.submit\"}}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 149.31,
+  "extraction_duration_seconds": 7.93,
+  "extraction_share_percent": 5.31,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-track"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-track",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#truste-consent-track"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#truste-show-consent"
+                }
+              },
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "waitcss",
+                "target": {
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "selector": "a.submit"
+                },
+                "retries": 10,
+                "waitTime": 200
+              }
+            ]
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept Functional Cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse Functional Cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept Performance & Analytics\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse Performance & Analytics\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q's marketing and advertising cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q's marketing and advertising cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".trustarc_newcm_container"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": ".trustarc_newcm_container"
+            },
+            "target": {
+              "selector": "a.submit"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

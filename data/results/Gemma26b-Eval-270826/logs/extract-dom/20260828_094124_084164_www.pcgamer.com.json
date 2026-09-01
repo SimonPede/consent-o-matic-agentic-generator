@@ -1,0 +1,2093 @@
+{
+  "timestamp": "2026-08-28T09:41:24.084249",
+  "url": "https://www.pcgamer.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.pcgamer.com"
+  ],
+  "duration_seconds": 8.45,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 5 frames.",
+      "a frame was picked by score: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1 with Score: 92",
+      "Settings match: \"more options\" --> lowered: \"more options\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Settings match: \"More Options\" --> lowered: \"more options\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"More Options\"], textMatch: More Options",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1377000&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=28471&concatenatedUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04&includeCustomVendorsRes=1",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 94 for URL: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1377000&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=28471&concatenatedUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04&includeCustomVendorsRes=1",
+      "Best new frame selected for settings extraction: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1377000&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=28471&concatenatedUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04&includeCustomVendorsRes=1",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "      filteredHtml: `<div class=\"message-container global-font\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">We value your privacy</h1></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children main-text-block\">We and our partners use cookies and similar technologies to store and access information such as IP addresses, unique identifiers and browsing behaviour. This helps us keep the website secure and functional, understand our audience, develop products, and deliver more relevant ads and content.</p><p></p><p><br></p><p>You can choose to accept all cookies, allow only essential cookies, or you can learn more about how your data is used, our 441 partners, and how to withdraw your consent in <a data-choice=\"1758798491829\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0-0 focusable\" aria-label=\"more options\" tabindex=\"0\">more options</a>.</p><p><br></p><p>If you want to change your preferences at any time, select 'Privacy settings' at the bottom of the site. Here is our&nbsp;<a target=\"_blank\" href=\"https://www.futureplc.com/privacy-policy/\" class=\"text-link-0-1-0-0 focusable\" aria-label=\"privacy policy\" tabindex=\"0\">privacy policy</a>.</p><p></p></div></div><div class=\"message-component message-row button-container\"><div class=\"message-component message-column button-wrapper2\"><button title=\"Agree\" aria-label=\"Agree\" class=\"message-component message-button no-children focusable button-font2 sp_choice_type_11\">Agree</button></div><div class=\"message-component message-column button-wrapper\"><button title=\"More Options\" aria-label=\"More Options\" class=\"message-component message-button no-children focusable sp_choice_type_12 last-focusable-el\">More Options</button></div></div></div></div>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 2033,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1377000&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=28471&concatenatedUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04&includeCustomVendorsRes=1',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container sp-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row header-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children title-text first-focusable-el\">We value your privacy</p><p tabindex=\"0\" class=\"focusable message-component text no-children description-text\">We and our partners store or access information on devices, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for the purposes described below. You may click to consent to our and our partners’ processing for such purposes. Alternatively, you may click to refuse to consent, or access more detailed information and change your preferences before consenting. Your preferences will apply to this website only. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. You can change your preferences at any time by returning to this site or visit our privacy policy.</p></div><div class=\"message-component message-stacks privacy-manager-tcfv2 no-children main-container\"><div class=\"pm-tabs\" role=\"tablist\"><div role=\"tab\" tabindex=\"0\" class=\"pm-tab active focusable\" aria-selected=\"true\" title=\"Purposes\">Purposes</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Features\">Features</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Partners\">Partners</div></div><div class=\"pm-section\"><div class=\"pm-purposes\"><div class=\"pm-type-toggle\"><div id=\"purposes-focus\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" class=\"focusable\" title=\"User Consent\">User Consent</div><div role=\"tab\" tabindex=\"0\" title=\"Legitimate Interest\">Legitimate Interest</div><span class=\"selected consent\"></span></div><h2 tabindex=\"0\" class=\"info-title\">Purposes</h2><p tabindex=\"0\" class=\"pm-sub-p\">You give an affirmative action to indicate that we can use your data for this purpose.</p><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2></div><div class=\"tcfv2-stack\" title=\"Store and/or access information on a device\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Store and/or access information on a device</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Store and/or access information on a device\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"89988\" class=\"panel\"><p>kies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. For Example: * Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each ti</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use limited data to select advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"6182\" class=\"panel\"><p>ertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). For Example: * A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone. * A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too of</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles for personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles for personalised advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Create profiles for personalised advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"51097\" class=\"panel\"><p>ormation about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. For Example: * If you read several articles about the best bike accessories to buy, this information could be used to create a profile about your interest in bike accessories. Such a profile may be used or improved later on, on the same or a different website or app to present you with advertising for a particular bike accessory brand. If you also look at a configurator for a vehicle on a luxury car manufacturer website, this information could be combined with your interest in bikes to refine your profile and make an assumption that you are interested in luxury cycling gear. * An apparel company wishes to promote its new line of high-end baby clothes. It gets in touch with an agency that has a network of clients with high income customers (such as high-end supermarkets) and asks the agency to create profiles of young parents or couples who can be assumed to be wealthy and to have a new child, so that these can later be used to present advertising within partner apps based on those profi</p></div></div><div class=\"tcfv2-stack\" title=\"Use profiles to select personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use profiles to select personalised advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use profiles to select personalised advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"29583\" class=\"panel\"><p>ertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. For Example: * An online retailer wants to advertise a limited sale on running shoes. It wants to target advertising to users who previously looked at running shoes on its mobile app. Tracking technologies might be used to recognise that you have previously used the mobile app to consult running shoes, in order to present you with the corresponding advertisement on the app. * A profile created for personalised advertising in relation to a person having searched for bike accessories on a website can be used to present the relevant advertisement for bike accessories on a mobile app of another organisat</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles to personalise content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles to personalise content</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Create profiles to personalise content\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"33976\" class=\"panel\"><p>ormation about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests'... 15675 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 25675,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"more options\" --> selector: [aria-label=\"more options\"]",
+      "      [A] \"privacy policy\" --> selector: [aria-label=\"privacy policy\"]",
+      "      [BUTTON] \"Agree\" --> selector: [aria-label=\"Agree\"]",
+      "      [BUTTON] \"More Options\" --> selector: [aria-label=\"More Options\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (30):",
+      "      [BUTTON] \"Store and/or access information on a device\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      [BUTTON] \"Use limited data to select advertising\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Use limited data to select advertising\"]",
+      "      [BUTTON] \"Create profiles for personalised advertising\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Create profiles for personalised advertising\"]",
+      "      [BUTTON] \"Use profiles to select personalised advertising\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Use profiles to select personalised advertising\"]",
+      "      [BUTTON] \"Create profiles to personalise content\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Create profiles to personalise content\"]",
+      "      [BUTTON] \"Use profiles to select personalised content\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Use profiles to select personalised content\"]",
+      "      [BUTTON] \"Measure advertising performance\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Measure advertising performance\"]",
+      "      [BUTTON] \"Measure content performance\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Measure content performance\"]",
+      "      [BUTTON] \"Understand audiences through statistics or combinations of data from different sources\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+      "      [BUTTON] \"Develop and improve services\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Develop and improve services\"]",
+      "      [BUTTON] \"Use limited data to select content\" --> selector: button",
+      "      [BUTTON] \"Off",
+      "On\" --> selector: [aria-label=\"Use limited data to select content\"]",
+      "      [BUTTON] \"Ensure security, prevent and detect fraud, and fix errors\" --> selector: button",
+      "      [BUTTON] \"Deliver and present advertising and content\" --> selector: button",
+      "      [BUTTON] \"Save and communicate privacy choices\" --> selector: button",
+      "      [BUTTON] \"Analytics StorageC\" --> selector: button",
+      "      [BUTTON] \"REJECT ALL\" --> selector: [aria-label=\"REJECT ALL\"]",
+      "      [BUTTON] \"WITHDRAW CONSENT\" --> selector: [aria-label=\"WITHDRAW CONSENT\"]",
+      "      [BUTTON] \"ACCEPT ALL\" --> selector: [aria-label=\"ACCEPT ALL\"]",
+      "      [BUTTON] \"SAVE & EXIT\" --> selector: [aria-label=\"SAVE & EXIT\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (33):",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Use limited data to select advertising\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Create profiles for personalised advertising\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Use profiles to select personalised advertising\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Create profiles to personalise content\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Use profiles to select personalised content\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Measure advertising performance\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Measure content performance\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Develop and improve services\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "      \"Off",
+      "On\" | aria-checked: false --> selector: [aria-label=\"Use limited data to select content\"]",
+      "      \"Off\" | aria-checked: false --> selector: span",
+      "      \"On\" | aria-checked: false --> selector: span",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "more options",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1758798491829",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#206dc5;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-1-0-0 focusable",
+              "aria-label": "more options",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children main-text-block",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"more options\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy policy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.futureplc.com/privacy-policy/",
+              "style": "color:#206dc5;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-1-0-0 focusable",
+              "aria-label": "privacy policy",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children main-text-block",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"privacy policy\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Agree",
+              "aria-label": "Agree",
+              "class": "message-component message-button no-children focusable button-font2 sp_choice_type_11",
+              "style": "opacity: 1; padding: 10px 15px; margin: 5px 10px; border-width: 1px; border-color: rgb(255, 255, 255); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(62, 139, 227); width: calc(100% - 50px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-wrapper2",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row button-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Agree\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "More Options",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "More Options",
+              "aria-label": "More Options",
+              "class": "message-component message-button no-children focusable sp_choice_type_12 last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 5px 10px; border-width: 1px; border-color: rgb(97, 97, 97); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(97, 97, 97); font-family: arial, helvetica, sans-serif; background: rgb(255, 255, 255); width: calc(100% - 50px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-wrapper",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row button-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"More Options\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1505525&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+        "filteredHtml": "<div class=\"message-container global-font\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">We value your privacy</h1></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children main-text-block\">We and our partners use cookies and similar technologies to store and access information such as IP addresses, unique identifiers and browsing behaviour. This helps us keep the website secure and functional, understand our audience, develop products, and deliver more relevant ads and content.</p><p></p><p><br></p><p>You can choose to accept all cookies, allow only essential cookies, or you can learn more about how your data is used, our 441 partners, and how to withdraw your consent in <a data-choice=\"1758798491829\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0-0 focusable\" aria-label=\"more options\" tabindex=\"0\">more options</a>.</p><p><br></p><p>If you want to change your preferences at any time, select 'Privacy settings' at the bottom of the site. Here is our&nbsp;<a target=\"_blank\" href=\"https://www.futureplc.com/privacy-policy/\" class=\"text-link-0-1-0-0 focusable\" aria-label=\"privacy policy\" tabindex=\"0\">privacy policy</a>.</p><p></p></div></div><div class=\"message-component message-row button-container\"><div class=\"message-component message-column button-wrapper2\"><button title=\"Agree\" aria-label=\"Agree\" class=\"message-component message-button no-children focusable button-font2 sp_choice_type_11\">Agree</button></div><div class=\"message-component message-column button-wrapper\"><button title=\"More Options\" aria-label=\"More Options\" class=\"message-component message-button no-children focusable sp_choice_type_12 last-focusable-el\">More Options</button></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 2033,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "89988",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Store and/or access information on a device",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "6182",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use limited data to select advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles for personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "51097",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Create profiles for personalised advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles for personalised advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "29583",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use profiles to select personalised advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles to personalise content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "33976",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Create profiles to personalise content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles to personalise content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "19567",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use profiles to select personalised content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure advertising performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "19113",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Measure advertising performance",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure advertising performance\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure content performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "67787",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Measure content performance",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure content performance\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Understand audiences through statistics or combinations of data from different sources",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "10881",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Understand audiences through statistics or combinations of data from different sources",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Develop and improve services",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "47391",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Develop and improve services",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Develop and improve services\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "85819",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use limited data to select content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ensure security, prevent and detect fraud, and fix errors",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "57321",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deliver and present advertising and content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "53280",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save and communicate privacy choices",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "80605",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Analytics StorageC",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "13063",
+              "style": "padding: 16px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "REJECT ALL",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "REJECT ALL",
+              "aria-label": "REJECT ALL",
+              "class": "message-component message-button no-children focusable button-font sp_choice_type_REJECT_ALL",
+              "style": "opacity: 1; padding: 0px 15px; margin: 0px 15px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 600; color: rgb(32, 109, 197); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-div",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row button-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"REJECT ALL\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "WITHDRAW CONSENT",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "WITHDRAW CONSENT",
+              "aria-label": "WITHDRAW CONSENT",
+              "class": "message-component message-button no-children focusable button-font sp_choice_type_ACCEPT_LI_ONLY",
+              "style": "opacity: 1; padding: 0px 15px; margin: 2px 10px 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 600; color: rgb(32, 109, 197); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-div",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row button-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"WITHDRAW CONSENT\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACCEPT ALL",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "ACCEPT ALL",
+              "aria-label": "ACCEPT ALL",
+              "class": "message-component message-button no-children focusable button-font sp_choice_type_ACCEPT_ALL",
+              "style": "opacity: 1; padding: 0px 15px; margin: 0px 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 600; color: rgb(32, 109, 197); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column button-div",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row button-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"ACCEPT ALL\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SAVE & EXIT",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "SAVE & EXIT",
+              "aria-label": "SAVE & EXIT",
+              "class": "message-component message-button no-children focusable button-font2 sp_choice_type_SAVE_AND_EXIT last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"SAVE & EXIT\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Store and/or access information on a device",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use limited data to select advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Create profiles for personalised advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles for personalised advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use profiles to select personalised advertising",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Create profiles to personalise content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles to personalise content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use profiles to select personalised content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Measure advertising performance",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure advertising performance\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Measure content performance",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure content performance\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Understand audiences through statistics or combinations of data from different sources",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Develop and improve services",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Develop and improve services\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off\nOn",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-toggle",
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-label": "Use limited data to select content",
+              "aria-checked": "false",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Off",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "off",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: rgb(204, 204, 204); color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "On",
+            "tag": "SPAN",
+            "attributes": {
+              "class": "on",
+              "role": "switch",
+              "aria-checked": "false",
+              "style": "background-color: transparent; color: rgb(0, 0, 0); border-color: rgb(221, 221, 221);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-toggle",
+              "selector": ".pm-toggle",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "span",
+            "selectorConfidence": "low",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1377000&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=28471&concatenatedUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=132c7f9f-6a5a-464c-93ef-6ed7eb7cef04&includeCustomVendorsRes=1",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container sp-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row header-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children title-text first-focusable-el\">We value your privacy</p><p tabindex=\"0\" class=\"focusable message-component text no-children description-text\">We and our partners store or access information on devices, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for the purposes described below. You may click to consent to our and our partners’ processing for such purposes. Alternatively, you may click to refuse to consent, or access more detailed information and change your preferences before consenting. Your preferences will apply to this website only. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. You can change your preferences at any time by returning to this site or visit our privacy policy.</p></div><div class=\"message-component message-stacks privacy-manager-tcfv2 no-children main-container\"><div class=\"pm-tabs\" role=\"tablist\"><div role=\"tab\" tabindex=\"0\" class=\"pm-tab active focusable\" aria-selected=\"true\" title=\"Purposes\">Purposes</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Features\">Features</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Partners\">Partners</div></div><div class=\"pm-section\"><div class=\"pm-purposes\"><div class=\"pm-type-toggle\"><div id=\"purposes-focus\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" class=\"focusable\" title=\"User Consent\">User Consent</div><div role=\"tab\" tabindex=\"0\" title=\"Legitimate Interest\">Legitimate Interest</div><span class=\"selected consent\"></span></div><h2 tabindex=\"0\" class=\"info-title\">Purposes</h2><p tabindex=\"0\" class=\"pm-sub-p\">You give an affirmative action to indicate that we can use your data for this purpose.</p><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2></div><div class=\"tcfv2-stack\" title=\"Store and/or access information on a device\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Store and/or access information on a device</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Store and/or access information on a device\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"89988\" class=\"panel\"><p>kies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. For Example: * Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each ti</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use limited data to select advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"6182\" class=\"panel\"><p>ertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). For Example: * A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone. * A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too of</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles for personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles for personalised advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Create profiles for personalised advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"51097\" class=\"panel\"><p>ormation about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. For Example: * If you read several articles about the best bike accessories to buy, this information could be used to create a profile about your interest in bike accessories. Such a profile may be used or improved later on, on the same or a different website or app to present you with advertising for a particular bike accessory brand. If you also look at a configurator for a vehicle on a luxury car manufacturer website, this information could be combined with your interest in bikes to refine your profile and make an assumption that you are interested in luxury cycling gear. * An apparel company wishes to promote its new line of high-end baby clothes. It gets in touch with an agency that has a network of clients with high income customers (such as high-end supermarkets) and asks the agency to create profiles of young parents or couples who can be assumed to be wealthy and to have a new child, so that these can later be used to present advertising within partner apps based on those profi</p></div></div><div class=\"tcfv2-stack\" title=\"Use profiles to select personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use profiles to select personalised advertising</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use profiles to select personalised advertising\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"29583\" class=\"panel\"><p>ertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. For Example: * An online retailer wants to advertise a limited sale on running shoes. It wants to target advertising to users who previously looked at running shoes on its mobile app. Tracking technologies might be used to recognise that you have previously used the mobile app to consult running shoes, in order to present you with the corresponding advertisement on the app. * A profile created for personalised advertising in relation to a person having searched for bike accessories on a website can be used to present the relevant advertisement for bike accessories on a mobile app of another organisat</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles to personalise content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles to personalise content</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Create profiles to personalise content\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"33976\" class=\"panel\"><p>ormation about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests. For Example: * You read several articles on how to build a treehouse on a social media platform. This information might be added to a profile to mark your interest in content related to outdoors as well as do-it-yourself guides (with the objective of allowing the personalisation of content, so that for example you are presented with more blog posts and articles on treehouses and wood cabins in the future). * You have viewed three videos on space exploration across different TV apps. An unrelated news platform with which you have had no contact builds a profile based on that viewing behaviour, marking space exploration as a topic of possible interest for other vid</p></div></div><div class=\"tcfv2-stack\" title=\"Use profiles to select personalised content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use profiles to select personalised content</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use profiles to select personalised content\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"19567\" class=\"panel\"><p>tent presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects, such as by adapting the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. For Example: * You read articles on vegetarian food on a social media platform and then use the cooking app of an unrelated company. The profile built about you on the social media platform will be used to present you vegetarian recipes on the welcome screen of the cooking app. * You have viewed three videos about rowing across different websites. An unrelated video sharing platform will recommend five other videos on rowing that may be of interest to you when you use your TV app, based on a profile built about you when you visited those different websites to watch online vid</p></div></div><div class=\"tcfv2-stack\" title=\"Measure advertising performance\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Measure advertising performance</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Measure advertising performance\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"19113\" class=\"panel\"><p>ormation regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very helpful to understand the relevance of advertising campaigns. For Example: * You have clicked on an advertisement about a “black Friday” discount by an online shop on the website of a publisher and purchased a product. Your click will be linked to this purchase. Your interaction and that of other users will be measured to know how many clicks on the ad led to a purchase. * You are one of very few to have clicked on an advertisement about an “international appreciation day” discount by an online gift shop within the app of a publisher. The publisher wants to have reports to understand how often a specific ad placement within the app, and notably the “international appreciation day” ad, has been viewed or clicked by you and other users, in order to help the publisher and its partners (such as agencies) optimise ad placeme</p></div></div><div class=\"tcfv2-stack\" title=\"Measure content performance\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Measure content performance</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Measure content performance\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"67787\" class=\"panel\"><p>ormation regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. For Example: * You have read a blog post about hiking on a mobile app of a publisher and followed a link to a recommended and related post. Your interactions will be recorded as showing that the initial hiking post was useful to you and that it was successful in interesting you in the related post. This will be measured to know whether to produce more posts on hiking in the future and where to place them on the home screen of the mobile app. * You were presented a video on fashion trends, but you and several other users stopped watching after 30 seconds. This information is then used to evaluate the right length of future videos on fashion tre</p></div></div><div class=\"tcfv2-stack\" title=\"Understand audiences through statistics or combinations of data from different sources\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Understand audiences through statistics or combinations of data from different sources</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Understand audiences through statistics or combinations of data from different sources\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"10881\" class=\"panel\"><p>orts can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents). For Example: * The owner of an online bookstore wants commercial reporting showing the proportion of visitors who consulted and left its site without buying, or consulted and bought the last celebrity autobiography of the month, as well as the average age and the male/female distribution of each category. Data relating to your navigation on its site and to your personal characteristics is then used and combined with other such data to produce these statistics. * An advertiser wants to better understand the type of audience interacting with its adverts. It calls upon a research institute to compare the characteristics of users who interacted with the ad with typical attributes of users of similar platforms, across different devices. This comparison reveals to the advertiser that its ad audience is mainly accessing the adverts through mobile devices and is likely in the 45-60 age ra</p></div></div><div class=\"tcfv2-stack\" title=\"Develop and improve services\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Develop and improve services</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Develop and improve services\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"47391\" class=\"panel\"><p>ormation about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers. For Example: * A technology platform working with a social media provider notices a growth in mobile app users, and sees based on their profiles that many of them are connecting through mobile connections. It uses a new technology to deliver ads that are formatted for mobile devices and that are low-bandwidth, to improve their performance. * An advertiser is looking for a way to display ads on a new type of consumer device. It collects information regarding the way users interact with this new kind of device to determine whether it can build a new mechanism for displaying advertising on this type of dev</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select content</span></button><button class=\"pm-toggle\" tabindex=\"0\" type=\"button\" role=\"switch\" aria-label=\"Use limited data to select content\" aria-checked=\"false\"><span class=\"off\" role=\"switch\" aria-checked=\"false\">Off</span><span class=\"on\" role=\"switch\" aria-checked=\"false\">On</span></button></div><div id=\"85819\" class=\"panel\"><p>tent presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you). For Example: * A travel magazine has published an article on its website about the new online courses proposed by a language school, to improve travelling experiences abroad. The school’s blog posts are inserted directly at the bottom of the page, and selected on the basis of your non-precise location (for instance, blog posts explaining the course curriculum for different languages than the language of the country you are situated in). * A sports news mobile app has started a new section of articles covering the most recent football games. Each article includes videos hosted by a separate streaming platform showcasing the highlights of each match. If you fast-forward a video, this information may be used to select a shorter video to play n</p></div></div><h2 class=\"info-title\">Special Purposes</h2><p class=\"pm-sub-p\">We have a need to use your data for this processing purpose that is required for us to deliver services to you.</p><div class=\"tcfv2-stack\" title=\"Ensure security, prevent and detect fraud, and fix errors\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span>Ensure security, prevent and detect fraud, and fix errors</button></div><div id=\"57321\" class=\"panel\"><p>r data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. For Example: * An advertising intermediary delivers ads from various advertisers to its network of partnering websites. It notices a large increase in clicks on ads relating to one advertiser, and uses data regarding the source of the clicks to determine that 80% of the clicks come from bots rather than hum</p></div></div><div class=\"tcfv2-stack\" title=\"Deliver and present advertising and content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span>Deliver and present advertising and content</button></div><div id=\"53280\" class=\"panel\"><p>tain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. For Example: * Clicking on a link in an article might normally send you to another page or part of the article. To achieve this, 1°) your browser sends a request to a server linked to the website, 2°) the server answers back (“here is the article you asked for”), using technical information automatically included in the request sent by your device, to properly display the information / images that are part of the article you asked for. Technically, such exchange of information is necessary to deliver the content that appears on your scr</p></div></div><div class=\"tcfv2-stack\" title=\"Save and communicate privacy choices\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span>Save and communicate privacy choices</button></div><div id=\"80605\" class=\"panel\"><p> choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. For Example: * When you visit a website and are offered a choice between consenting to the use of profiles for personalised advertising or not consenting, the choice you make is saved and made available to advertising providers, so that advertising presented to you respects that cho</p></div></div><div class=\"tcfv2-stack\" title=\"Essential\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Essential<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></button></div><div id=\"25079\" class=\"panel\"><p></p></div></div><div class=\"tcfv2-stack\" title=\"Analytics Storage\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Analytics Storage<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></button></div><div id=\"13063\" class=\"panel\"><p><br></p></div></div></div></div></div><div class=\"message-component message-row button-container\"><div class=\"message-component message-column button-div\"><button title=\"REJECT ALL\" aria-label=\"REJECT ALL\" class=\"message-component message-button no-children focusable button-font sp_choice_type_REJECT_ALL\">REJECT ALL</button><button title=\"WITHDRAW CONSENT\" aria-label=\"WITHDRAW CONSENT\" class=\"message-component message-button no-children focusable button-font sp_choice_type_ACCEPT_LI_ONLY\">WITHDRAW CONSENT</button><button title=\"ACCEPT ALL\" aria-label=\"ACCEPT ALL\" class=\"message-component message-button no-children focusable button-font sp_choice_type_ACCEPT_ALL\">ACCEPT ALL</button></div><button title=\"SAVE &amp; EXIT\" aria-label=\"SAVE &amp; EXIT\" class=\"message-component message-button no-children focusable button-font2 sp_choice_type_SAVE_AND_EXIT last-focusable-el\">SAVE &amp; EXIT</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 25675,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T04:02:44.585967",
+  "url": "https://www.bol.com",
+  "structured_dom_chars": 3219,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": false,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The page is currently displaying an IP block/access denied message rather than the website's main content or a consent banner.",
+  "abort_reason": "NO_BANNER_DETECTED: The page is currently displaying an IP block/access denied message rather than the website's main content or a consent banner.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The page is currently displaying an IP block/access denied message rather than the website's main content or a consent banner.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The page is currently displaying an IP block/access denied message rather than the website's main content or a consent banner."
+  ],
+  "duration_seconds": 62.96,
+  "extraction_duration_seconds": 27.23,
+  "extraction_share_percent": 43.25,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

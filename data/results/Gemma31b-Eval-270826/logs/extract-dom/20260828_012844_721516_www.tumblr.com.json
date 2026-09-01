@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-28T01:28:44.721555",
+  "url": "https://www.tumblr.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.tumblr.com"
+  ],
+  "duration_seconds": 450.1,
+  "returncode": 124,
+  "stderr": {
+    "lines": [
+      "extract_dom.js timed out after 450s for URL: https://www.tumblr.com"
+    ]
+  },
+  "stdout_json_parse_error": "extract_dom.js timed out after 450s for URL: https://www.tumblr.com",
+  "stdout_json": null
+}

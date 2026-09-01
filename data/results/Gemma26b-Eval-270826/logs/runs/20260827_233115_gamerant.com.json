@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T23:31:15.368199",
+  "url": "https://gamerant.com",
+  "structured_dom_chars": 231055,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint banner only contains 'Accept all' and 'Settings' buttons, with no visible 'Reject All' or 'Decline' option available to use for a fallback strategy.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint banner only contains 'Accept all' and 'Settings' buttons, with no visible 'Reject All' or 'Decline' option available to use for a fallback strategy.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The primary layer of the Sourcepoint banner only contains 'Accept all' and 'Settings' buttons, with no visible 'Reject All' or 'Decline' option available to use for a fallback strategy.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The primary layer of the Sourcepoint banner only contains 'Accept all' and 'Settings' buttons, with no visible 'Reject All' or 'Decline' option available to use for a fallback strategy."
+  ],
+  "duration_seconds": 104.55,
+  "extraction_duration_seconds": 14.08,
+  "extraction_share_percent": 13.47,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

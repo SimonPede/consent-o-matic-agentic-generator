@@ -1,0 +1,2293 @@
+{
+  "timestamp": "2026-08-27T23:05:37.307673",
+  "url": "https://www.bild.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.bild.de"
+  ],
+  "duration_seconds": 7.93,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 5 frames.",
+      "a frame was picked by score: https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de with Score: 47",
+      "Settings match: \"Einstellungen\" --> lowered: \"einstellungen\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Einstellungen\"], textMatch: Einstellungen",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://cmp2.bild.de/privacy-manager/index.html?message_id=1230133&hasCsp=true&mms_origin=https%3A%2F%2Fcmp2.bild.de%2Fmms%2Fv2&site_id=6804&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=de",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 59 for URL: https://cmp2.bild.de/privacy-manager/index.html?message_id=1230133&hasCsp=true&mms_origin=https%3A%2F%2Fcmp2.bild.de%2Fmms%2Fv2&site_id=6804&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=de",
+      "Best new frame selected for settings extraction: https://cmp2.bild.de/privacy-manager/index.html?message_id=1230133&hasCsp=true&mms_origin=https%3A%2F%2Fcmp2.bild.de%2Fmms%2Fv2&site_id=6804&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=de",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de',",
+      "      filteredHtml: '<div class=\"message-container cmp-banner\"><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\"><strong>Datenschutz und Nutzungserlebnis auf BILD.de</strong></h1></div><div class=\"message-component message-row row-choice\"><div class=\"message-component message-row row-consent\"><div class=\"message-component message-column\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Mit Tracking und Cookies nutzen</strong></h2><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers\">Nutzen Sie BILD.de mit Tracking, Cookies und ähnlichen Technologien (wie <a target=\"_blank\" href=\"https://utiq.com/\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"&lt;strong&gt;Utiq&lt;/strong&gt;\" tabindex=\"0\"><strong>Utiq</strong></a> und <a target=\"_blank\" href=\"https://netid.de\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"netID\" tabindex=\"0\">netID</a>) und damit einschließlich personalisierter Werbung. Details zu Datenverarbeitungen, eingesetzten Drittanbietern und Tracking-Technologien wie Cookies sowie zur Übermittlung in Drittländer finden Sie unten sowie in unserer <a target=\"_blank\" href=\"https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.&nbsp;</p><button title=\"Alle akzeptieren\" aria-label=\"Alle akzeptieren\" class=\"message-component message-button no-children focusable accept-all sp_choice_type_11\">Alle akzeptieren</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable settings sp_choice_type_12\">Einstellungen</button><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-muted\">Ihre Einwilligung ist jederzeit unter \"Widerruf Tracking und Cookies\" am Seitenende widerrufbar.</p></div></div><div class=\"message-component message-row row-contentpass\"><div class=\"message-component message-column cmp-pur-cta\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children\">Ohne Tracking und Cookies* nutzen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers\">Nutzen Sie BILD.de ohne Tracking und Cookies und damit ohne personalisierte Werbung für 3,99 EUR/Monat (rabattiert für BILDplus-Abonnenten 2,99 EUR/Monat). Informationen zur Datenverarbeitung im BILD Pur-Abo finden Sie in unserer <a target=\"_blank\" href=\"https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-1-1-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> und in den <a target=\"_blank\" href=\"https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f\" class=\"text-link-0-1-1-0-1 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.&nbsp;</p><button title=\"Jetzt BILD PUR abonnieren\" aria-label=\"Jetzt BILD PUR abonnieren\" class=\"message-component message-button no-children focusable pur-subscribe-cta sp_choice_type_9\">Jetzt BILD PUR abonnieren</button><p tabindex=\"0\" class=\"focusable message-component text no-children\">Sie haben bereits ein BILD Pur-Abo? <a target=\"_blank\" href=\"https://login.prod.ps.bild.de/login?service=https%3A%2F%2Fwww.bild.de%2F\" class=\"text-link-0-1-1-0-3 focusable\" aria-label=\"Jetzt anmelden\" tabindex=\"0\">Jetzt anmelden</a></p></div></div></div><div class=\"message-component message-row legal\"><div class=\"message-component message-column\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers cmp-main-disclaimer\"><strong>Mit Tracking und Cookies nutzen: </strong>Wenn Sie sich dafür entscheiden, unser Angebot kostenfrei, dafür mit Tracking und Cookies zu nutzen, verarbeiten wir und bis zu 308 von uns eingesetzte <a data-choice=\"1743519401327\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Drittanbieter\" tabindex=\"0\">Drittanbieter</a> personenbezogene Daten zu den nachstehenden Verarbeitungszwecken. Dabei werden auch Nutzungsprofile (u.a. auf Basis von Cookie-IDs) erstellt, mit Daten von anderen Webseiten angereichert und auch außerhalb des EWR verarbeitet.&nbsp;&nbsp;</p><p></p><p>Indem Sie auf \"Alle akzeptieren\" klicken, willigen Sie in die Verarbeitungszwecke und die Übermittlung an die Drittanbieter ein. Dies umfasst auch Ihre Einwilligung in die Übermittlung bestimmter personenbezogener Daten in Drittländer, u.a. die USA, nach Art. 49 (1) (a) DSGVO. Drittländer weisen ggf. kein adäquates Datenschutzniveau entsprechend der DSGVO auf. Dies kann eine erschwerte Durchsetzung von Betroffenenrechten, fehlende Kontrolle der Weiterverarbeitung und Datenübermittlung sowie Zugriffe staatlicher Stellen zu Kontroll- und Überwachungszwecken ohne mögliche Rechtsbehelfe zur Folge haben. Sie können dies jederzeit widerrufen, indem Sie auf den Link „Widerruf Tracking und Cookies“ am Seitenende klicken. Unter \"Einstellungen\" haben Sie die Möglichkeit, in einzelne Verarbeitungszwecke einzuwilligen oder diese abzulehnen. Sie können Ihre Auswahl jederzeit über den Link „Privacy-Manager“ ändern.&nbsp;&nbsp;</p><p><br></p><p><a target=\"_blank\" href=\"https://utiq.com/\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;Utiq&lt;/strong&gt;\" tabindex=\"0\"><strong>Utiq</strong></a> <strong>Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter</strong></p><p>Wenn Sie unser Angebot mit Tracking und Cookies nutzen und in diesen Verarbeitungszweck einwilligen sowie eine&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement#telecom-operators\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;unterstützte Internetverbindung&lt;/strong&gt;\" tabindex=\"0\"><strong>unterstützte Internetverbindung</strong></a>&nbsp;nutzen, verwenden wir die von Utiq bereitgestellten Werbekennungen&nbsp;<a target=\"_blank\" href=\"https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"für Werbe- und Analysezwecke\" tabindex=\"0\">für Werbe- und Analysezwecke</a>. Zur Erstellung dieser Werbekennungen arbeitet Utiq mit Ihrem&nbsp;<strong>Telekommunikationsanbieter</strong>&nbsp;zusammen, der Ihre IP-Adresse mit internen Daten (z.B. Ihrer Mobilfunknummer) abgleicht. Wir verwenden die Werbekennungen, um die Surfaktivitäten&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/digital-properties?domain=Axel+Springer\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"auf allen unseren Angeboten\" tabindex=\"0\">auf allen unseren Angeboten</a>, für die eine Utiq-Einwilligung vorliegt, miteinander zu verknüpfen. Dies gilt auch für andere Nutzer, die dieselbe Internetverbindung verwenden. Sie können die Einwilligung&nbsp;<a data-choice=\"1778838673607\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"für Utiq jetzt ablehnen\" tabindex=\"0\">für Utiq jetzt ablehnen</a> oder später über „Utiq verwalten“ oder im Datenschutzportal von Utiq („<a target=\"_blank\" href=\"https://consenthub.utiq.com/\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Utiq Consenthub\" tabindex=\"0\">Utiq Consenthub</a>“) widerrufen. Wenn Sie ein BILD Pur-Abo haben oder abschließen („Jetzt BILD PUR abonnieren“), wird die Utiq-Technologie nicht eingesetzt. Mit Ihrer Einwilligung bestätigen Sie, dass Sie der Inhaber des Anschlusses sind bzw. dessen Erlaubnis haben, Utiq zu aktivieren. Weitere Informationen finden Sie in der&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Datenschutzerklärung von Utiq\" tabindex=\"0\">Datenschutzerklärung von Utiq</a>.</p><p><br></p><p><a target=\"_blank\" href=\"https://netid.de\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;netID&lt;/strong&gt;\" tabindex=\"0\"><strong>netID</strong></a> <strong>Nutzung der netID-Technologie für netID Nutzer</strong></p><p>Wenn Sie unser Angebot mit Tracking und Cookies nutzen und in diesen Verarbeitungszweck einwilligen, prüfen wir, ob Sie bereits netID-Nutzer sind. Wenn Sie über einen netID-Account verfügen und eingewilligt haben, verwenden wir die netID-Kennung, die uns von Ihrem netID-Account Provider (z. B. GMX, WEB.DE, 7Pass) bereitgestellt wird, um Sie auf unseren Angeboten für die eine entsprechende Einwilligung vorliegt, wiederzuerkennen sowie Inhalte und Werbung zu personalisieren. Sie können diese Einwilligung jederzeit über den Link „Privacy-Manager“ am Seitenende oder im <a target=\"_blank\" href=\"https://broker.netid.de/privacycenter\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"netID Privacy Center\" tabindex=\"0\">netID Privacy Center</a> ändern oder widerrufen.</p><p></p></div><div class=\"message-component message-row\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cmp-muted\">Verarbeitungszwecke</h2></div></div></div><div class=\"message-component message-row\"><div class=\"message-component message-stacks no-children cmp-stacks\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\">Speichern von oder Zugriff auf Informationen auf einem Endgerät<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, Endgeräte- oder ähnliche Online-Kennungen (z. B. login-basierte Kennungen, zufällig generierte Kennungen, netzwerkbasierte Kennungen) können zusammen mit anderen Informationen (z. B. Browsertyp und Browserinformationen, Sprache, Bildschirmgröße, unterstützte Technologien usw.) auf Ihrem Endgerät gespeichert oder von dort ausgele'... 14689 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 24689,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp2.bild.de/privacy-manager/index.html?message_id=1230133&hasCsp=true&mms_origin=https%3A%2F%2Fcmp2.bild.de%2Fmms%2Fv2&site_id=6804&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=de',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><div class=\"message-component message-row pm-header-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children pm-heading first-focusable-el\">Datenschutz und Nutzungserlebnis auf BILD.de</h1><button title=\"Zurück\" aria-label=\"Zurück\" class=\"message-component message-button no-children focusable back-btn sp_choice_type_CANCEL\">Zurück</button></div><p tabindex=\"0\" class=\"focusable message-component text no-children pm-description\">Die Einstellungen helfen Ihnen bei der Aktivierung und Deaktivierung verschiedener Tags, Tracker und Analysetools, die auf dieser Webseite verwendet werden.</p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Falls Sie sich nicht für unser BILD Pur-Abo entscheiden, können Sie BILD.de kostenfrei, dafür mit Tracking und Cookies und damit einschließlich personalisierter Werbung nutzen. Hierfür bitten wir Sie um Ihre Einwilligung, dass wir und unsere Drittanbieter zu den nachstehenden Verarbeitungszwecken Cookies, Geräte-Kennungen oder andere Informationen auf Ihrem Gerät speichern oder abrufen und personenbezogene Daten verarbeiten dürfen. Dies ermöglicht es uns, unser Angebot zu verbessern und zu finanzieren sowie Ihnen die bestmögliche Nutzererfahrung zu bieten.&nbsp;&nbsp;</p><p tabindex=\"0\" class=\"focusable message-component text no-children data-process-hint\"><strong>Um BILD.de kostenfrei nutzen zu können, ist für einige Verarbeitungszwecke Ihre Einwilligung erforderlich. Für andere Verarbeitungszwecke können Sie hier eine Auswahl treffen. Wenn Sie zu allen Verarbeitungszwecken eine Auswahl getroffen haben, können Sie diese speichern. Sie können Ihre Auswahl jederzeit über den Link „Privacy-Manager“ ändern.</strong>&nbsp;</p></div></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children pm-tcfv2-inline-required-purpose\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeb93c8ddb053c929115\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></h3></div></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aebb3c8ddb053c92ad5e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeba3c8ddb053c92974a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Produkt- und Vertriebsentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeba3c8ddb053c92975d\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec0673890421\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Nutzung der netID-Technologie für netID Nutzer<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6a31504e0471039913da995f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6968ec775c338fb1b5f7ede9\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec0673890429\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung anzeigen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"697b72d3311543086063da7a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Personalisierte Inhaltsempfehlungen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab3a170da460593fd86a3\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab3a170da460593fd86aa\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>A/B Testing für Produktentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec067389042f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Sonderkategorien</span></h2></div><div id=\"Sonderkategorien\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><'... 2369 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 12369,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (35):",
+      "      [A] \"Utiq\" --> selector: [aria-label=\"<strong>Utiq</strong>\"]",
+      "      [A] \"netID\" --> selector: [aria-label=\"netID\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [BUTTON] \"Alle akzeptieren\" --> selector: [aria-label=\"Alle akzeptieren\"]",
+      "      [BUTTON] \"Einstellungen\" --> selector: [aria-label=\"Einstellungen\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [BUTTON] \"Jetzt BILD PUR abonnieren\" --> selector: [aria-label=\"Jetzt BILD PUR abonnieren\"]",
+      "      [A] \"Jetzt anmelden\" --> selector: [aria-label=\"Jetzt anmelden\"]",
+      "      [A] \"Drittanbieter\" --> selector: [aria-label=\"Drittanbieter\"]",
+      "      [A] \"Utiq\" --> selector: [aria-label=\"<strong>Utiq</strong>\"]",
+      "      [A] \"unterstützte Internetverbindung\" --> selector: [aria-label=\"<strong>unterstützte Internetverbindung</strong>\"]",
+      "      [A] \"für Werbe- und Analysezwecke\" --> selector: [aria-label=\"für Werbe- und Analysezwecke\"]",
+      "      [A] \"auf allen unseren Angeboten\" --> selector: [aria-label=\"auf allen unseren Angeboten\"]",
+      "      [A] \"für Utiq jetzt ablehnen\" --> selector: [aria-label=\"für Utiq jetzt ablehnen\"]",
+      "      [A] \"Utiq Consenthub\" --> selector: [aria-label=\"Utiq Consenthub\"]",
+      "      [A] \"Datenschutzerklärung von Utiq\" --> selector: [aria-label=\"Datenschutzerklärung von Utiq\"]",
+      "      [A] \"netID\" --> selector: [aria-label=\"<strong>netID</strong>\"]",
+      "      [A] \"netID Privacy Center\" --> selector: [aria-label=\"netID Privacy Center\"]",
+      "      [BUTTON] \"Speichern von oder Zugriff auf Informationen auf einem Endgerät\" --> selector: [aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"]",
+      "      [BUTTON] \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" --> selector: [aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+      "      [BUTTON] \"Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken\" --> selector: [aria-label=\"Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken\"]",
+      "      [BUTTON] \"Eigene Produkt- und Vertriebsentwicklung\" --> selector: [aria-label=\"Eigene Produkt- und Vertriebsentwicklung\"]",
+      "      [BUTTON] \"Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter\" --> selector: [aria-label=\"Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter\"]",
+      "      [BUTTON] \"Nutzung der netID-Technologie für netID Nutzer\" --> selector: [aria-label=\"Nutzung der netID-Technologie für netID Nutzer\"]",
+      "      [BUTTON] \"Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse\" --> selector: [aria-label=\"Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse\"]",
+      "      [BUTTON] \"Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung\" --> selector: [aria-label=\"Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung\"]",
+      "      [BUTTON] \"Politische Werbung anzeigen\" --> selector: [aria-label=\"Politische Werbung anzeigen\"]",
+      "      [BUTTON] \"Personalisierte Inhaltsempfehlungen\" --> selector: [aria-label=\"Personalisierte Inhaltsempfehlungen\"]",
+      "      [BUTTON] \"Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln\" --> selector: [aria-label=\"Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln\"]",
+      "      [BUTTON] \"A/B Testing für Produktentwicklung\" --> selector: [aria-label=\"A/B Testing für Produktentwicklung\"]",
+      "      [A] \"hier\" --> selector: [aria-label=\"hier\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (41):",
+      "      [BUTTON] \"Zurück\" --> selector: [aria-label=\"Zurück\"]",
+      "      [H2] \"Speichern von oder Zugriff auf Informationen auf einem EndgerätErforderlich für kostenfreie Nutzung\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [H2] \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von AngebotenErforderlich für kostenfreie Nutzung\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [H2] \"Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken*Erforderlich für kostenfreie Nutzung\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [H2] \"Eigene Produkt- und Vertriebsentwicklung*Erforderlich für kostenfreie Nutzung\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [H2] \"Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Nutzung der netID-Technologie für netID Nutzer*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Politische Werbung anzeigen*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Personalisierte Inhaltsempfehlungen*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"A/B Testing für Produktentwicklung*\" --> selector: h2",
+      "      [BUTTON] \"Einwilligen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Sonderkategorien\" --> selector: h2",
+      "      [H2] \"Funktionen\" --> selector: h2",
+      "      [BUTTON] \"Alle akzeptieren\" --> selector: [aria-label=\"Alle akzeptieren\"]",
+      "      [BUTTON] \"Jetzt BILD Pur abonnieren\" --> selector: [aria-label=\"Jetzt BILD Pur abonnieren\"]",
+      "      [BUTTON] \"Auswahl speichern\" --> selector: [aria-label=\"Auswahl speichern\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [A] \"Datenschutzerklärung\" --> selector: [aria-label=\"Datenschutzerklärung\"]",
+      "      [A] \"Impressum\" --> selector: [aria-label=\"Impressum\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Utiq",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://utiq.com/",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-0-0-1 focusable",
+              "aria-label": "<strong>Utiq</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Utiq</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "netID",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://netid.de",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-0-0-1 focusable",
+              "aria-label": "netID",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"netID\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-0-0-1 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle akzeptieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Alle akzeptieren",
+              "aria-label": "Alle akzeptieren",
+              "class": "message-component message-button no-children focusable accept-all sp_choice_type_11",
+              "style": "opacity: 1; padding: 10px 0px; margin: 10px 0px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(221, 0, 0); width: calc(100% + 0px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-consent",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Alle akzeptieren\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einstellungen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Einstellungen",
+              "aria-label": "Einstellungen",
+              "class": "message-component message-button no-children focusable settings sp_choice_type_12",
+              "style": "opacity: 1; padding: 10px 0px; margin: 6px 0px 10px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(221, 0, 0); font-family: arial, helvetica, sans-serif; background: none; width: calc(100% + 0px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-consent",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Einstellungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-1-0-1 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cmp-pur-cta",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-1-0-1 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cmp-pur-cta",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt BILD PUR abonnieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Jetzt BILD PUR abonnieren",
+              "aria-label": "Jetzt BILD PUR abonnieren",
+              "class": "message-component message-button no-children focusable pur-subscribe-cta sp_choice_type_9",
+              "style": "opacity: 1; padding: 10px 0px; margin: 50px 0px 14px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(221, 0, 0); font-family: arial, helvetica, sans-serif; background: none; width: calc(100% + 0px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column cmp-pur-cta",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-contentpass",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Jetzt BILD PUR abonnieren\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt anmelden",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://login.prod.ps.bild.de/login?service=https%3A%2F%2Fwww.bild.de%2F",
+              "style": "color:#000000;text-decoration:underline;font-weight: 500;",
+              "class": "text-link-0-1-1-0-3 focusable",
+              "aria-label": "Jetzt anmelden",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column cmp-pur-cta",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Jetzt anmelden\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Drittanbieter",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1743519401327",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "Drittanbieter",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Drittanbieter\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Utiq",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://utiq.com/",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "<strong>Utiq</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Utiq</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "unterstützte Internetverbindung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://consenthub.utiq.com/pages/privacy-statement#telecom-operators",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "<strong>unterstützte Internetverbindung</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>unterstützte Internetverbindung</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "für Werbe- und Analysezwecke",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "für Werbe- und Analysezwecke",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"für Werbe- und Analysezwecke\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "auf allen unseren Angeboten",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://consenthub.utiq.com/pages/digital-properties?domain=Axel+Springer",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "auf allen unseren Angeboten",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"auf allen unseren Angeboten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "für Utiq jetzt ablehnen",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1778838673607",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "für Utiq jetzt ablehnen",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"für Utiq jetzt ablehnen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Utiq Consenthub",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://consenthub.utiq.com/",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "Utiq Consenthub",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Utiq Consenthub\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung von Utiq",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://consenthub.utiq.com/pages/privacy-statement",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "Datenschutzerklärung von Utiq",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung von Utiq\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "netID",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://netid.de",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "<strong>netID</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>netID</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "netID Privacy Center",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://broker.netid.de/privacycenter",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0-0-0 focusable",
+              "aria-label": "netID Privacy Center",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children cmp-offers cmp-main-disclaimer",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"netID Privacy Center\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Speichern von oder Zugriff auf Informationen auf einem Endgerät",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Speichern von oder Zugriff auf Informationen auf einem Endgerät",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene Produkt- und Vertriebsentwicklung",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Eigene Produkt- und Vertriebsentwicklung",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Eigene Produkt- und Vertriebsentwicklung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nutzung der netID-Technologie für netID Nutzer",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Nutzung der netID-Technologie für netID Nutzer",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Nutzung der netID-Technologie für netID Nutzer\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Politische Werbung anzeigen",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Politische Werbung anzeigen",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Politische Werbung anzeigen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Inhaltsempfehlungen",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Personalisierte Inhaltsempfehlungen",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Personalisierte Inhaltsempfehlungen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "A/B Testing für Produktentwicklung",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "A/B Testing für Produktentwicklung",
+              "style": "padding: 6px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"A/B Testing für Produktentwicklung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "hier",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/bild-de/service-erforderliche-endgeraete-zugriffe-84477220.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-4 focusable",
+              "aria-label": "hier",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"hier\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-5-0-0 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-5-0-0 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/bild-de/impressum-81395212.bild.html?t_ref=https%3A%2F%2Fm.bild.de%2Fcorporate%2Fsite%2Fbild-de%2Fimpressum-81395212.bildMobile.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-5-0-0 focusable last-focusable-el",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp2.bild.de/index.html?hasCsp=true&message_id=1495530&consentUUID=null&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=de",
+        "filteredHtml": "<div class=\"message-container cmp-banner\"><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\"><strong>Datenschutz und Nutzungserlebnis auf BILD.de</strong></h1></div><div class=\"message-component message-row row-choice\"><div class=\"message-component message-row row-consent\"><div class=\"message-component message-column\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Mit Tracking und Cookies nutzen</strong></h2><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers\">Nutzen Sie BILD.de mit Tracking, Cookies und ähnlichen Technologien (wie <a target=\"_blank\" href=\"https://utiq.com/\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"&lt;strong&gt;Utiq&lt;/strong&gt;\" tabindex=\"0\"><strong>Utiq</strong></a> und <a target=\"_blank\" href=\"https://netid.de\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"netID\" tabindex=\"0\">netID</a>) und damit einschließlich personalisierter Werbung. Details zu Datenverarbeitungen, eingesetzten Drittanbietern und Tracking-Technologien wie Cookies sowie zur Übermittlung in Drittländer finden Sie unten sowie in unserer <a target=\"_blank\" href=\"https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-1-0-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a>.&nbsp;</p><button title=\"Alle akzeptieren\" aria-label=\"Alle akzeptieren\" class=\"message-component message-button no-children focusable accept-all sp_choice_type_11\">Alle akzeptieren</button><button title=\"Einstellungen\" aria-label=\"Einstellungen\" class=\"message-component message-button no-children focusable settings sp_choice_type_12\">Einstellungen</button><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-muted\">Ihre Einwilligung ist jederzeit unter \"Widerruf Tracking und Cookies\" am Seitenende widerrufbar.</p></div></div><div class=\"message-component message-row row-contentpass\"><div class=\"message-component message-column cmp-pur-cta\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children\">Ohne Tracking und Cookies* nutzen</h2><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers\">Nutzen Sie BILD.de ohne Tracking und Cookies und damit ohne personalisierte Werbung für 3,99 EUR/Monat (rabattiert für BILDplus-Abonnenten 2,99 EUR/Monat). Informationen zur Datenverarbeitung im BILD Pur-Abo finden Sie in unserer <a target=\"_blank\" href=\"https://www.bild.de/corporate-site/datenschutz/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-1-1-0-1 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> und in den <a target=\"_blank\" href=\"https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f\" class=\"text-link-0-1-1-0-1 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.&nbsp;</p><button title=\"Jetzt BILD PUR abonnieren\" aria-label=\"Jetzt BILD PUR abonnieren\" class=\"message-component message-button no-children focusable pur-subscribe-cta sp_choice_type_9\">Jetzt BILD PUR abonnieren</button><p tabindex=\"0\" class=\"focusable message-component text no-children\">Sie haben bereits ein BILD Pur-Abo? <a target=\"_blank\" href=\"https://login.prod.ps.bild.de/login?service=https%3A%2F%2Fwww.bild.de%2F\" class=\"text-link-0-1-1-0-3 focusable\" aria-label=\"Jetzt anmelden\" tabindex=\"0\">Jetzt anmelden</a></p></div></div></div><div class=\"message-component message-row legal\"><div class=\"message-component message-column\"><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children cmp-offers cmp-main-disclaimer\"><strong>Mit Tracking und Cookies nutzen: </strong>Wenn Sie sich dafür entscheiden, unser Angebot kostenfrei, dafür mit Tracking und Cookies zu nutzen, verarbeiten wir und bis zu 308 von uns eingesetzte <a data-choice=\"1743519401327\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Drittanbieter\" tabindex=\"0\">Drittanbieter</a> personenbezogene Daten zu den nachstehenden Verarbeitungszwecken. Dabei werden auch Nutzungsprofile (u.a. auf Basis von Cookie-IDs) erstellt, mit Daten von anderen Webseiten angereichert und auch außerhalb des EWR verarbeitet.&nbsp;&nbsp;</p><p></p><p>Indem Sie auf \"Alle akzeptieren\" klicken, willigen Sie in die Verarbeitungszwecke und die Übermittlung an die Drittanbieter ein. Dies umfasst auch Ihre Einwilligung in die Übermittlung bestimmter personenbezogener Daten in Drittländer, u.a. die USA, nach Art. 49 (1) (a) DSGVO. Drittländer weisen ggf. kein adäquates Datenschutzniveau entsprechend der DSGVO auf. Dies kann eine erschwerte Durchsetzung von Betroffenenrechten, fehlende Kontrolle der Weiterverarbeitung und Datenübermittlung sowie Zugriffe staatlicher Stellen zu Kontroll- und Überwachungszwecken ohne mögliche Rechtsbehelfe zur Folge haben. Sie können dies jederzeit widerrufen, indem Sie auf den Link „Widerruf Tracking und Cookies“ am Seitenende klicken. Unter \"Einstellungen\" haben Sie die Möglichkeit, in einzelne Verarbeitungszwecke einzuwilligen oder diese abzulehnen. Sie können Ihre Auswahl jederzeit über den Link „Privacy-Manager“ ändern.&nbsp;&nbsp;</p><p><br></p><p><a target=\"_blank\" href=\"https://utiq.com/\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;Utiq&lt;/strong&gt;\" tabindex=\"0\"><strong>Utiq</strong></a> <strong>Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter</strong></p><p>Wenn Sie unser Angebot mit Tracking und Cookies nutzen und in diesen Verarbeitungszweck einwilligen sowie eine&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement#telecom-operators\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;unterstützte Internetverbindung&lt;/strong&gt;\" tabindex=\"0\"><strong>unterstützte Internetverbindung</strong></a>&nbsp;nutzen, verwenden wir die von Utiq bereitgestellten Werbekennungen&nbsp;<a target=\"_blank\" href=\"https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"für Werbe- und Analysezwecke\" tabindex=\"0\">für Werbe- und Analysezwecke</a>. Zur Erstellung dieser Werbekennungen arbeitet Utiq mit Ihrem&nbsp;<strong>Telekommunikationsanbieter</strong>&nbsp;zusammen, der Ihre IP-Adresse mit internen Daten (z.B. Ihrer Mobilfunknummer) abgleicht. Wir verwenden die Werbekennungen, um die Surfaktivitäten&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/digital-properties?domain=Axel+Springer\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"auf allen unseren Angeboten\" tabindex=\"0\">auf allen unseren Angeboten</a>, für die eine Utiq-Einwilligung vorliegt, miteinander zu verknüpfen. Dies gilt auch für andere Nutzer, die dieselbe Internetverbindung verwenden. Sie können die Einwilligung&nbsp;<a data-choice=\"1778838673607\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"für Utiq jetzt ablehnen\" tabindex=\"0\">für Utiq jetzt ablehnen</a> oder später über „Utiq verwalten“ oder im Datenschutzportal von Utiq („<a target=\"_blank\" href=\"https://consenthub.utiq.com/\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Utiq Consenthub\" tabindex=\"0\">Utiq Consenthub</a>“) widerrufen. Wenn Sie ein BILD Pur-Abo haben oder abschließen („Jetzt BILD PUR abonnieren“), wird die Utiq-Technologie nicht eingesetzt. Mit Ihrer Einwilligung bestätigen Sie, dass Sie der Inhaber des Anschlusses sind bzw. dessen Erlaubnis haben, Utiq zu aktivieren. Weitere Informationen finden Sie in der&nbsp;<a target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"Datenschutzerklärung von Utiq\" tabindex=\"0\">Datenschutzerklärung von Utiq</a>.</p><p><br></p><p><a target=\"_blank\" href=\"https://netid.de\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"&lt;strong&gt;netID&lt;/strong&gt;\" tabindex=\"0\"><strong>netID</strong></a> <strong>Nutzung der netID-Technologie für netID Nutzer</strong></p><p>Wenn Sie unser Angebot mit Tracking und Cookies nutzen und in diesen Verarbeitungszweck einwilligen, prüfen wir, ob Sie bereits netID-Nutzer sind. Wenn Sie über einen netID-Account verfügen und eingewilligt haben, verwenden wir die netID-Kennung, die uns von Ihrem netID-Account Provider (z. B. GMX, WEB.DE, 7Pass) bereitgestellt wird, um Sie auf unseren Angeboten für die eine entsprechende Einwilligung vorliegt, wiederzuerkennen sowie Inhalte und Werbung zu personalisieren. Sie können diese Einwilligung jederzeit über den Link „Privacy-Manager“ am Seitenende oder im <a target=\"_blank\" href=\"https://broker.netid.de/privacycenter\" class=\"text-link-0-2-0-0-0 focusable\" aria-label=\"netID Privacy Center\" tabindex=\"0\">netID Privacy Center</a> ändern oder widerrufen.</p><p></p></div><div class=\"message-component message-row\"><h2 tabindex=\"0\" class=\"focusable message-component text no-children cmp-muted\">Verarbeitungszwecke</h2></div></div></div><div class=\"message-component message-row\"><div class=\"message-component message-stacks no-children cmp-stacks\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Speichern von oder Zugriff auf Informationen auf einem Endgerät\">Speichern von oder Zugriff auf Informationen auf einem Endgerät<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, Endgeräte- oder ähnliche Online-Kennungen (z. B. login-basierte Kennungen, zufällig generierte Kennungen, netzwerkbasierte Kennungen) können zusammen mit anderen Informationen (z. B. Browsertyp und Browserinformationen, Sprache, Bildschirmgröße, unterstützte Technologien usw.) auf Ihrem Endgerät gespeichert oder von dort ausgelesen werden, um es jedes Mal wiederzuerkennen, wenn es eine App oder einer Webseite aufruft. Dies geschieht für einen oder mehrere der hier aufgeführten Verarbeitungszwecke.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\">Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Anzeigen und Werbung können basierend auf Ihrem Profil personalisiert werden. Ihre Aktivitäten auf diesem Dienst können verwendet werden, um ein Profil über Sie für personalisierte Werbung zu erstellen oder zu ergänzen. Die Werbeleistung und die Performance von Inhalten können gemessen werden. Basierend auf Ihrer Aktivität und den Aktivitäten anderer können Berichte erstellt werden. Ihre Aktivitäten auf diesem Dienst können helfen, Produkte und Dienstleistungen zu entwickeln und zu verbessern</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken\">Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>In Ihrem Browser können pseudonyme Kennungen gespeichert und bei einem erneuten Besuch unseres Angebots abgerufen werden. Die pseudonymen Kennungen können für die oben angegebenen Zwecke \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" verarbeitet werden. Die Verarbeitung zu den vorstehenden Werbezwecken umfasst auch eine Weitergabe der Kennungen an die nachfolgend aufgelisteten Drittanbieter.&nbsp;</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Eigene Produkt- und Vertriebsentwicklung\">Eigene Produkt- und Vertriebsentwicklung<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Informationen über Ihre Aktivitäten auf unserem Angebot können für die Weiterentwicklung unserer Produkte und des Vertriebs genutzt werden. Dies umfasst die Bewerbung von Verlagsangeboten wie BILD Plus, Reichweitenmessung sowie Nutzungsanalysen und erfolgt ausschließlich zu unseren eigenen Zwecken, um unsere Verlagsangebote zu bewerben und zu messen. Es erfolgt keine Datenweitergabe an Dritte.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter\">Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Beim Besuch unseres Angebots kann die Utiq-Technologie verwendet werden. Dies beinhaltet folgende Verarbeitungen:</p><ul><li><strong>Berechtigungsprüfung:&nbsp;</strong>Utiq verwendet Ihre IP-Adresse, um zu überprüfen, ob Sie eine<strong>&nbsp;</strong><a aria-label=\"message-link\" target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement#telecom-operators\"><span class=\"ql-underline\">unterstützte Internetverbindung</span></a><strong>&nbsp;</strong>verwenden.&nbsp;Ist dies nicht der Fall, wird Utiq nicht aktiviert.</li><li><strong>Aktivierung der Utiq-Technologie:&nbsp;</strong>Ihre IP-Adresse wird an Ihren Telekommunikationsanbieter weitergegeben, um eine sichere Kennung (sog. „Netzwerksignal”) zu erstellen. Dazu gleicht Ihr Anbieter Ihre IP-Adresse mit internen Daten (z. B. Ihrer Mobilfunknummer) ab. Die sichere Kennung wird dann an Utiq weitergegeben.</li><li><strong>Erstellung von Werbekennungen:&nbsp;</strong>Utiq verwendet das Netzwerksignal, um zusätzliche Werbekennungen mit begrenzter Lebensdauer zu erstellen, die in Ihrem Browser zusammen mit sog.&nbsp;„First-Party-Cookies” und anderen Gerätespeicherinformationen gespeichert werden.</li><li><strong>Weitergabe und Verwendung von Werbekennungen</strong>: Utiq gibt die Werbekennungen an uns weiter, die wir verwenden können, um Ihre Besuche&nbsp;<a aria-label=\"message-link\" target=\"_blank\" href=\"https://consenthub.utiq.com/pages/digital-properties?domain=Axel+Springer\"><span class=\"ql-underline\">auf unseren digitalen Angeboten</span></a>&nbsp;miteinander zu verknüpfen (jedoch nur wenn Sie der Aktivierung der Utiq-Technologie auf jedem Angebot einzeln zustimmen). Dies hilft uns beispielsweise dabei, Inhalte auf unseren Angeboten zu personalisieren oder anzupassen, Sie bei Ihrer Rückkehr wiederzuerkennen oder uns bzw. unseren ausgewählten Partnern die Erstellung von Zielgruppen für Werbung oder Analysen zu erlauben, wie unten erläutert. Wenn die Internetverbindung geteilt wird, werden jeder einwilligenden Person auf dieser Verbindung dieselben Werbekennungen zugewiesen, wodurch ihr Surfverhalten verknüpft wird.</li><li><strong>Weitergabe von Werbekennungen an Werbe- und Analyseplattformen:&nbsp;</strong>Bestimmte Werbekennungen werden an Plattformen weitergegeben, die mit uns und/oder Utiq zusammenarbeiten. Wir ergänzen diese Werbekennungen mit Daten, die wir über Ihre Surfaktivität und Ihr Profil gespeichert haben. Diese Daten werden auf den Plattformen weiterverarbeitet, um Ihnen personalisierte Werbung (von uns oder unseren Partnern) anzuzeigen oder Analysen durchzuführen, entsprechend den Einwilligungen, die Sie uns erteilt haben. Dies kann die Anzeige von Werbung, die Verwaltung der Häufigkeit Utiq&nbsp;der Anzeigenschaltung oder die Messung der Werbeleistung umfassen. Die Analyseaktivitäten können Vergleichsanalysen zur Erstellung aggregierter Berichte oder zur Auswahl von Zielgruppen für die Aktivierung umfassen. Ausführlichere Informationen darüber, wie diese Aktivitäten von Utiq unterstützt werden, finden Sie im entsprechenden Abschnitt der Datenschutzerklärung von Utiq.</li></ul><p>Utiq bietet auch ein Datenschutzportal („<a aria-label=\"message-link\" target=\"_blank\" href=\"https://consenthub.utiq.com/\"><span class=\"ql-underline\">Utiq Consenthub</span></a>“) an, über das Sie Ihre Datenschutzrechte ausüben können.</p><p>Weitere Informationen finden Sie in der&nbsp;<a aria-label=\"message-link\" target=\"_blank\" href=\"https://consenthub.utiq.com/pages/privacy-statement\"><span class=\"ql-underline\">Datenschutzerklärung von Utiq</span></a>.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Nutzung der netID-Technologie für netID Nutzer\">Nutzung der netID-Technologie für netID Nutzer<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Mit Ihrer Einwilligung in diesen Zweck stimmen Sie den folgenden Verarbeitungsvorgängen zu:</p><ul><li><strong>Prüfung, ob Sie bereits netID-Nutzer sind: </strong>Beim Besuch unseres Angebots können wir Cookies und vergleichbare Technologien verwenden, um zu prüfen, ob Sie bereits netID-Nutzer sind.</li><li><strong>Identifikation auf Basis Ihrer netID-Kennung: </strong>Sofern Sie netID-Nutzer sind, können wir Sie mithilfe Ihrer netID-Kennung auf unseren Angeboten wiedererkennen. Hierfür verwenden wir die netID-Kennung, die uns von Ihrem Account-Provider (z.B. GMX, WEB.DE, 7Pass) bereitgestellt wird.</li><li><strong>Nutzung für weitere von Ihnen ausgewählte Zwecke: </strong>Sofern Sie netID-Nutzer sind, können wir vorbehaltlich Ihrer Einwilligung in die Verarbeitungszwecke “Personalisierte Inhaltsempfehlungen” und “Personalisierte Werbung und Inhalte, Messung der Werbe- und Inhaltsperformance, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten und Produkten” Ihre netID-Kennung auch für diese Zwecke verwenden.</li></ul><p><br></p><p>Sie können Ihre Einwilligung in die Nutzung der netID-Technologie jederzeit über den Link “Privacy-Manager” am Seitenende oder dem <a aria-label=\"message-link\" target=\"_blank\" href=\"https://broker.netid.de/privacycenter\">netID Privacy Center</a> einsehen, verwalten oder widerrufen.</p><p>Weitere Informationen zur Verwendung der netID-Technologie finden Sie in unserer <a aria-label=\"message-link\" target=\"_blank\" href=\"https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html\">Datenschutzerklärung</a>.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse\">Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Soweit Sie uns im Rahmen der Nutzung unseres Angebotes Ihre E-Mail-Adresse bereitstellen, können wir und Media Impact Vermarktungspartner, einschließlich ihrer ausgewählten&nbsp;<a aria-label=\"message-link\" target=\"_blank\" href=\"https://www.mediaimpact.de/ueber-unsere-werbung-2/\">Werbepartner</a>, Ihre E-Mail-Adresse in pseudonymisierter Form als Identifizierungsmerkmal für die oben aufgeführten Zwecke \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten“ nutzen.</p><p>Die Verwendung Ihrer Daten im Hinblick auf The UK Trade Desk Limited können Sie unter&nbsp;<a aria-label=\"message-link\" target=\"_blank\" href=\"https://www.transparentadvertising.eu/\">https://www.transparentadvertising.eu/</a>&nbsp;verwalten und dieser individuell widersprechen.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung\">Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Informationen über Ihre Interaktion mit unserem Chatbot „Hey_“ sowie der mit „Hey_“ verbundenen interaktiven Elemente, einschließlich des Chat-Verlaufs, können für die oben angegebenen Zwecke \"Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten\" verarbeitet werden. Die Verarbeitung zu den vorstehenden Werbezwecken umfasst dabei auch eine Weitergabe an die nachfolgend aufgelisteten Drittanbieter.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Politische Werbung anzeigen\">Politische Werbung anzeigen<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p>Sie willigen ein, dass personenbezogene Daten zum Zweck der Anzeige personalisierter politischer Werbung verarbeitet werden. Diese Werbung kann sich auf Wahlen, Referenden oder politische Entscheidungsprozesse beziehen und wird Ihnen beispielsweise auf Grundlage Ihres Standorts und Ihres Nutzungsverhaltens auf diesem Angebot angezeigt.</p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalisierte Inhaltsempfehlungen\">Personalisierte Inhaltsempfehlungen<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p>Beim Besuch unseres Angebots können Ihnen personalisierte redaktionelle Inhaltsempfehlungen ausgespielt werden. </p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln\">Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p>Inhalte von Drittanbietern aus sozialen Netzwerken können in redaktionellen Artikeln angezeigt werden.</p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"A/B Testing für Produktentwicklung\">A/B Testing für Produktentwicklung<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p>Zur Weiterentwicklung und Verbesserung unserer Produkte können A/B-Tests für die Produktentwicklung durchgeführt werden, um z.B. neue Funktionen und Gestaltungen zu testen.</p></div></div></div></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Ohne Tracking und Cookies* nutzen: </strong>Wenn Sie BILD Pur abonnieren, können Sie die auf BILD.de verfügbaren Inhalte ohne Tracking und Cookies* und damit ohne personalisierte Werbung lesen. Sofern Sie bereits BILDplus-Abonnent sind und BILD Pur zusätzlich abonnieren, können Sie auch die BILDplus-Inhalte ohne Tracking und Cookies* lesen.&nbsp;</p><p></p><p><br></p><p>* In BILD Pur werden keine einwilligungspflichtigen Datenverarbeitungen vorgenommen und nur solche Cookies und ähnliche Technologien verwendet, die zur Erbringung dieses Dienstes unbedingt erforderlich sind (§ 25 TDDDG). Weitere Informationen sind <a target=\"_blank\" href=\"https://www.bild.de/corporate/site/bild-de/service-erforderliche-endgeraete-zugriffe-84477220.bild.html\" class=\"text-link-0-4 focusable\" aria-label=\"hier\" tabindex=\"0\">hier</a> abrufbar.&nbsp;</p><p></p><div class=\"message-component message-row cmp-muted\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f\" class=\"text-link-0-5-0-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a> | <a target=\"_blank\" href=\"https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-5-0-0 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> | <a target=\"_blank\" href=\"https://www.bild.de/corporate/site/bild-de/impressum-81395212.bild.html?t_ref=https%3A%2F%2Fm.bild.de%2Fcorporate%2Fsite%2Fbild-de%2Fimpressum-81395212.bildMobile.html\" class=\"text-link-0-5-0-0 focusable last-focusable-el\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 24689,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Zurück",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zurück",
+              "aria-label": "Zurück",
+              "class": "message-component message-button no-children focusable back-btn sp_choice_type_CANCEL",
+              "style": "opacity: 1; padding: 0px 20px; margin: 0px 0px 0px 10px; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif; width: auto; background: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row pm-header-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zurück\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Speichern von oder Zugriff auf Informationen auf einem EndgerätErforderlich für kostenfreie Nutzung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6759aeb93c8ddb053c929115",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von AngebotenErforderlich für kostenfreie Nutzung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6759aebb3c8ddb053c92ad5e",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken*Erforderlich für kostenfreie Nutzung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6759aeba3c8ddb053c92974a",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene Produkt- und Vertriebsentwicklung*Erforderlich für kostenfreie Nutzung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6759aeba3c8ddb053c92975d",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "675ab66a24ceec0673890421",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Nutzung der netID-Technologie für netID Nutzer*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6a31504e0471039913da995f",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6968ec775c338fb1b5f7ede9",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "675ab66a24ceec0673890429",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Politische Werbung anzeigen*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "697b72d3311543086063da7a",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Inhaltsempfehlungen*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "675ab3a170da460593fd86a3",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "675ab3a170da460593fd86aa",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "A/B Testing für Produktentwicklung*",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "675ab66a24ceec067389042f",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Einwilligen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(96, 96, 96); color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Sonderkategorien",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Sonderkategorien",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Funktionen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Funktionen",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 7px 30px 7px 0px; font-size: 14px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Alle akzeptieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Alle akzeptieren",
+              "aria-label": "Alle akzeptieren",
+              "class": "message-component message-button no-children focusable button-responsive-secondary sp_choice_type_ACCEPT_ALL",
+              "style": "opacity: 1; padding: 0px; margin: 0px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 18px; font-weight: 700; color: rgb(221, 0, 0); font-family: arial, helvetica, sans-serif; width: calc(100% + 0px); background: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row mobile-reverse",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Alle akzeptieren\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Jetzt BILD Pur abonnieren",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Jetzt BILD Pur abonnieren",
+              "aria-label": "Jetzt BILD Pur abonnieren",
+              "class": "message-component message-button no-children focusable button-responsive-secondary sp_choice_type_[object Object]",
+              "style": "opacity: 1; padding: 0px; margin: 0px 0px 10px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 18px; font-weight: 700; color: rgb(221, 0, 0); font-family: arial, helvetica, sans-serif; width: calc(100% + 0px); background: none;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row mobile-reverse",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Jetzt BILD Pur abonnieren\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Auswahl speichern",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Auswahl speichern",
+              "aria-label": "Auswahl speichern",
+              "class": "message-component message-button no-children focusable button-responsive-primary sp_choice_type_SAVE_AND_EXIT",
+              "aria-disabled": "true",
+              "disabled": "",
+              "style": "opacity: 0.5; padding: 0px; margin: 0px; border-width: 1px; border-color: rgb(221, 0, 0); border-radius: 4px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% + 0px); background: rgb(221, 0, 0);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row mobile-reverse",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Auswahl speichern\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-3-0 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-3-0 focusable",
+              "aria-label": "Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Impressum",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.bild.de/corporate/site/bild-de/impressum-81395212.bild.html?t_ref=https%3A%2F%2Fm.bild.de%2Fcorporate%2Fsite%2Fbild-de%2Fimpressum-81395212.bildMobile.html",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-3-0 focusable last-focusable-el",
+              "aria-label": "Impressum",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer-links",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Impressum\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp2.bild.de/privacy-manager/index.html?message_id=1230133&hasCsp=true&mms_origin=https%3A%2F%2Fcmp2.bild.de%2Fmms%2Fv2&site_id=6804&consent_origin=https%3A%2F%2Fcmp2.bild.de%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=de",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><div class=\"message-component message-row pm-header-row\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children pm-heading first-focusable-el\">Datenschutz und Nutzungserlebnis auf BILD.de</h1><button title=\"Zurück\" aria-label=\"Zurück\" class=\"message-component message-button no-children focusable back-btn sp_choice_type_CANCEL\">Zurück</button></div><p tabindex=\"0\" class=\"focusable message-component text no-children pm-description\">Die Einstellungen helfen Ihnen bei der Aktivierung und Deaktivierung verschiedener Tags, Tracker und Analysetools, die auf dieser Webseite verwendet werden.</p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Falls Sie sich nicht für unser BILD Pur-Abo entscheiden, können Sie BILD.de kostenfrei, dafür mit Tracking und Cookies und damit einschließlich personalisierter Werbung nutzen. Hierfür bitten wir Sie um Ihre Einwilligung, dass wir und unsere Drittanbieter zu den nachstehenden Verarbeitungszwecken Cookies, Geräte-Kennungen oder andere Informationen auf Ihrem Gerät speichern oder abrufen und personenbezogene Daten verarbeiten dürfen. Dies ermöglicht es uns, unser Angebot zu verbessern und zu finanzieren sowie Ihnen die bestmögliche Nutzererfahrung zu bieten.&nbsp;&nbsp;</p><p tabindex=\"0\" class=\"focusable message-component text no-children data-process-hint\"><strong>Um BILD.de kostenfrei nutzen zu können, ist für einige Verarbeitungszwecke Ihre Einwilligung erforderlich. Für andere Verarbeitungszwecke können Sie hier eine Auswahl treffen. Wenn Sie zu allen Verarbeitungszwecken eine Auswahl getroffen haben, können Sie diese speichern. Sie können Ihre Auswahl jederzeit über den Link „Privacy-Manager“ ändern.</strong>&nbsp;</p></div></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children pm-tcfv2-inline-required-purpose\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeb93c8ddb053c929115\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung und Inhalte, Messung von Werbeleistung und der Performance von Inhalten, Zielgruppenforschung sowie Entwicklung und Verbesserung von Angeboten<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></h3></div></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aebb3c8ddb053c92ad5e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung und Weitergabe von Nutzerkennungen zu Werbezwecken<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeba3c8ddb053c92974a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Produkt- und Vertriebsentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6759aeba3c8ddb053c92975d\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Nutzung der Utiq-Technologie, unterstützt durch Ihren Telekommunikationsanbieter<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec0673890421\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Nutzung der netID-Technologie für netID Nutzer<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6a31504e0471039913da995f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung von Werbekennungen auf Basis Ihrer E-Mail-Adresse<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"6968ec775c338fb1b5f7ede9\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Verwendung und Weitergabe von Chatbotdaten zur Werbeausspielung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec0673890429\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung anzeigen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"697b72d3311543086063da7a\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Personalisierte Inhaltsempfehlungen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab3a170da460593fd86a3\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Drittanbieterinhalte aus sozialen Netzwerken in redaktionellen Artikeln<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab3a170da460593fd86aa\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>A/B Testing für Produktentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Einwilligen</button><button>Ablehnen</button></div></div><div id=\"675ab66a24ceec067389042f\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Sonderkategorien</span></h2></div><div id=\"Sonderkategorien\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionen</span></h2></div><div id=\"Funktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Drittanbieter, mit denen eine Zusammenarbeit möglich ist. </div><div tabindex=\"0\" class=\"page-action\">Drittanbieter</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Nicht-IAB Verarbeitungszwecke\">*</span><h2 class=\"custom-header\">Nicht-IAB Verarbeitungszwecke</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Required For Consent\">Erforderlich für kostenfreie Nutzung</span><h2 class=\"custom-header\">Required For Consent</h2></div></div></div><div class=\"message-component message-row mobile-reverse\"><button title=\"Alle akzeptieren\" aria-label=\"Alle akzeptieren\" class=\"message-component message-button no-children focusable button-responsive-secondary sp_choice_type_ACCEPT_ALL\">Alle akzeptieren</button><button title=\"Jetzt BILD Pur abonnieren\" aria-label=\"Jetzt BILD Pur abonnieren\" class=\"message-component message-button no-children focusable button-responsive-secondary sp_choice_type_[object Object]\">Jetzt BILD Pur abonnieren</button><button title=\"Auswahl speichern\" aria-label=\"Auswahl speichern\" class=\"message-component message-button no-children focusable button-responsive-primary sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Auswahl speichern</button></div><div class=\"message-component message-row footer-links\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><a target=\"_blank\" href=\"https://www.bild.de/sonstiges/corporate-site/bild-faq-bild-pur-abonnement-67498a39299cd34e00bff78f\" class=\"text-link-0-3-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a> | <a target=\"_blank\" href=\"https://www.bild.de/corporate/site/datenschutz/artikel-datenschutz-54485502.bild.html\" class=\"text-link-0-3-0 focusable\" aria-label=\"Datenschutzerklärung\" tabindex=\"0\">Datenschutzerklärung</a> | <a target=\"_blank\" href=\"https://www.bild.de/corporate/site/bild-de/impressum-81395212.bild.html?t_ref=https%3A%2F%2Fm.bild.de%2Fcorporate%2Fsite%2Fbild-de%2Fimpressum-81395212.bildMobile.html\" class=\"text-link-0-3-0 focusable last-focusable-el\" aria-label=\"Impressum\" tabindex=\"0\">Impressum</a></p></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 12369,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

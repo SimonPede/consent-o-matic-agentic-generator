@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-08-27T23:02:17.019864",
+  "url": "https://www.instagram.com",
+  "structured_dom_chars": 182926,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "no_final_rule",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Instagram\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"button._asz1\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"button._asz1\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button._a9_1\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"div[role=\\\"dialog\\\"]\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "ABORTED: overall timeout reached (1800s)",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Productivity\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Analytics\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Content and media\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: Checkbox Matcher failed for selector: [aria-label=\"Advertising\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: button._abl-"
+  ],
+  "duration_seconds": 1800.02,
+  "extraction_duration_seconds": 15.58,
+  "extraction_share_percent": 0.87,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

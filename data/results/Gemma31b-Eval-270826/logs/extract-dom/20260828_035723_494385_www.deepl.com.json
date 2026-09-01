@@ -1,0 +1,814 @@
+{
+  "timestamp": "2026-08-28T03:57:23.494445",
+  "url": "https://www.deepl.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.deepl.com"
+  ],
+  "duration_seconds": 13.39,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"#usercentrics-cmp-ui\" (Usercentrics) in frame: https://www.deepl.com/en",
+      "waitForCmpUi detected CMP Type: Usercentrics",
+      "I found 2 frames.",
+      "a frame was picked by score: https://www.deepl.com/en with Score: 35",
+      "Settings match: \"More Information\" --> lowered: \"more information\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: #usercentrics-cmp-ui",
+      "settings click target - selector: #usercentrics-cmp-ui >>> #uc-more-link, textMatch: More Information",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 223436 chars.",
+      "DOM diff: 62972 chars added, 0 inputs added.",
+      "Old state: 0 buttons, 0 inputs.",
+      "New state: 0 buttons, 0 inputs.",
+      "Settings detected: 62972 chars, 0 inputs, 0 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 4 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.deepl.com/en',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Usercentrics',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.deepl.com/en',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp first left tablet zoom-normal widget \"> <div id=\"uc-main-dialog\" class=\"cmp first left tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper widget-view\"> <div id=\"top-container\"> <div class=\"no-logo-container\"></div> </div> <div id=\"mid-container\"> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Cookie Notice</span> <div class=\"privacy-text\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">We and third parties use cookies and other technologies to improve your experience. By clicking \"Accept\" you consent to the use of all cookies and technologies, including marketing cookies used to personalise the ads you see. </span> </div> <button class=\"show-more-button\" aria-c aria-expanded=\"false\"> Read more </button> </div> </div> <div id=\"bottom-container\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Reject\" tabindex=\"0\"> Reject </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Accept\" tabindex=\"0\"> Accept </button> </div> </div> </div> </div> </div> </div> </div> </aside>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1565,",
+      "      cmpType: 'Usercentrics'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://www.deepl.com/en',",
+      "      filteredHtml: `<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp second center tablet zoom-normal widget \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Close Layer\" aria-label=\"Close Layer\" tabindex=\"0\" class=\"closeButton\" title=\"Close Layer\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Privacy Settings</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Cookies are small text files that can be used by websites to make a user's experience more efficient. The law states that we can store cookies on your device if they are strictly necessary for the operation of this site. For all other types of cookies we need your permission. This site uses different types of cookies. Some cookies are placed by third party services that appear on our pages. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Categories </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-essential\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-essential\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsessential\" data-load-id=\"essential\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-essential-item-title\">Necessary</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-essential-item-subtitle\">These cookies or web storage objects are necessary for our website to work properly, to enable smooth navigation and access our most important functions. This includes essential security and accessibility features and preferences such as interface and translator language as well as the handling of the checkout process for DeepL Pro. </div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\" aria-labelledby=\"uc-category-essential-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-essential-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Necessary\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsessential\" role=\"region\" aria-labelledby=\"uc-category-essential-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-performance\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-performance\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsperformance\" data-load-id=\"performance\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-performance-item-title\">Performance</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-performance-item-subtitle\">These cookies or web storage objects measure how our site is used. We use this information to improve our website and services. With these cookies we measure, for example, how often users return and which functions they use.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-performance-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"performance\" aria-labelledby=\"uc-category-performance-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-performance-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Performance\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsperformance\" role=\"region\" aria-labelledby=\"uc-category-performance-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Functional</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">These cookies enable us to provide you with enhanced functionality and personalization on our website. For example, we can personalize your experience based on which pages you visited.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\" aria-labelledby=\"uc-category-functional-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-functional-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Functional\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsfunctional\" role=\"region\" aria-labelledby=\"uc-category-functional-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-marketing\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-marketing\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsmarketing\" data-load-id=\"marketing\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-marketing-item-title\">Marketing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-marketing-item-subtitle\">These cookies and other technologies are used to deliver content, offers and advertising more relevant to you and your interests. By selecting this category, you also consent to DeepL sending your data to third parties outside the EU (e.g. Google), including the storing or sharing of hashed email addresses (e.g. Reddit). </div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-marketing-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"marketing\" aria-labelledby=\"uc-category-marketing-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-marketing-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Marketing\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsmarketing\" role=\"region\" aria-labelledby=\"uc-category-marketing-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> </div> </div> <div role=\"tabpanel\" id=\"servicesPanel\" aria-labelledby=\"services-tab-button\"> <div id=\"uc-services-list\" class=\"list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-8i9a9uLp_unXuq\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-8i9a9uLp_unXuq\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails8i9a9uLp_unXuq\" data-load-id=\"8i9a9uLp_unXuq\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-8i9a9uLp_unXuq-item-title\">Cloudflare</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-8i9a9uLp_unXuq-item-subtitle\">Necessary</div> </div> `... 34800 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 44800,",
+      "      cmpType: 'Usercentrics',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.deepl.com/en",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Usercentrics via selector \"#usercentrics-cmp-ui\"",
+      "  Buttons found (4):",
+      "      [A] \"Privacy Notice\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [A] \"More Information\" --> selector: #usercentrics-cmp-ui >>> #uc-more-link",
+      "      [BUTTON] \"Reject\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Accept\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (13):",
+      "      [BUTTON] \"Close Layer\" --> selector: #usercentrics-cmp-ui >>> #uc-close-button",
+      "      [A] \"Privacy Notice\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      [DIV] \"Expand Necessary\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Necessary\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-performance-toggle",
+      "      [DIV] \"Expand Performance\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Performance\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      [DIV] \"Expand Functional\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Functional\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "      [DIV] \"Expand Marketing\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Marketing\"]",
+      "      [BUTTON] \"Save Settings\" --> selector: #usercentrics-cmp-ui >>> #save",
+      "      [BUTTON] \"Reject\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Accept\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "   Checkboxes found (0):",
+      "  Toggles found (4):",
+      "      \"Necessary\" | aria-checked: true --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      \"Performance\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-performance-toggle",
+      "      \"Functional\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      \"Marketing\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.deepl.com/en",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Usercentrics",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.deepl.com/privacy",
+              "aria-label": "Open Privacy Notice",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "mid-container",
+                "className": null,
+                "selector": "#mid-container"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "More Information",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "More Information",
+              "id": "uc-more-link",
+              "data-action": "consent",
+              "data-action-type": "more"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "mid-container",
+                "className": null,
+                "selector": "#mid-container"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-more-link",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Reject",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Accept",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.deepl.com/en",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp first left tablet zoom-normal widget \"> <div id=\"uc-main-dialog\" class=\"cmp first left tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper widget-view\"> <div id=\"top-container\"> <div class=\"no-logo-container\"></div> </div> <div id=\"mid-container\"> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Cookie Notice</span> <div class=\"privacy-text\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">We and third parties use cookies and other technologies to improve your experience. By clicking \"Accept\" you consent to the use of all cookies and technologies, including marketing cookies used to personalise the ads you see. </span> </div> <button class=\"show-more-button\" aria-c aria-expanded=\"false\"> Read more </button> </div> </div> <div id=\"bottom-container\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Reject\" tabindex=\"0\"> Reject </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Accept\" tabindex=\"0\"> Accept </button> </div> </div> </div> </div> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1565,
+        "cmpType": "Usercentrics"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Close Layer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "uc-close-button",
+              "type": "button",
+              "name": "Close Layer",
+              "aria-label": "Close Layer",
+              "tabindex": "0",
+              "class": "closeButton",
+              "title": "Close Layer",
+              "data-action": "consent",
+              "data-action-type": "less",
+              "data-testid": "uc-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "actions right",
+              "selector": ".actions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-close-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://www.deepl.com/privacy",
+              "aria-label": "Open Privacy Notice",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Necessary",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-essential-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsessential",
+              "tabindex": "0",
+              "aria-label": "Expand Necessary"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-essential",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-essential"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Necessary\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-performance-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "performance",
+              "aria-labelledby": "uc-category-performance-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-performance-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Performance",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-performance-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsperformance",
+              "tabindex": "0",
+              "aria-label": "Expand Performance"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-performance",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-performance"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Performance\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Functional",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-functional-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsfunctional",
+              "tabindex": "0",
+              "aria-label": "Expand Functional"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-functional",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-functional"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Functional\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing",
+              "aria-labelledby": "uc-category-marketing-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Marketing",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-marketing-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsmarketing",
+              "tabindex": "0",
+              "aria-label": "Expand Marketing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-marketing",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-marketing"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Marketing\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "save",
+              "class": "save uc-save-button",
+              "id": "save",
+              "aria-label": "Save Settings",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Reject",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Accept",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Necessary",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          },
+          {
+            "type": "toggle",
+            "text": "Performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-performance-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "performance",
+              "aria-labelledby": "uc-category-performance-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-performance-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Functional",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing",
+              "aria-labelledby": "uc-category-marketing-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://www.deepl.com/en",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp second center tablet zoom-normal widget \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"\"> <div class=\"actions right\"> <button id=\"uc-close-button\" type=\"button\" name=\"Close Layer\" aria-label=\"Close Layer\" tabindex=\"0\" class=\"closeButton\" title=\"Close Layer\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Privacy Settings</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">Cookies are small text files that can be used by websites to make a user's experience more efficient. The law states that we can store cookies on your device if they are strictly necessary for the operation of this site. For all other types of cookies we need your permission. This site uses different types of cookies. Some cookies are placed by third party services that appear on our pages. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Categories </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-essential\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-essential\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsessential\" data-load-id=\"essential\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-essential-item-title\">Necessary</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-essential-item-subtitle\">These cookies or web storage objects are necessary for our website to work properly, to enable smooth navigation and access our most important functions. This includes essential security and accessibility features and preferences such as interface and translator language as well as the handling of the checkout process for DeepL Pro. </div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\" aria-labelledby=\"uc-category-essential-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-essential-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Necessary\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsessential\" role=\"region\" aria-labelledby=\"uc-category-essential-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-performance\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-performance\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsperformance\" data-load-id=\"performance\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-performance-item-title\">Performance</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-performance-item-subtitle\">These cookies or web storage objects measure how our site is used. We use this information to improve our website and services. With these cookies we measure, for example, how often users return and which functions they use.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-performance-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"performance\" aria-labelledby=\"uc-category-performance-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-performance-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Performance\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsperformance\" role=\"region\" aria-labelledby=\"uc-category-performance-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Functional</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">These cookies enable us to provide you with enhanced functionality and personalization on our website. For example, we can personalize your experience based on which pages you visited.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\" aria-labelledby=\"uc-category-functional-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-functional-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Functional\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsfunctional\" role=\"region\" aria-labelledby=\"uc-category-functional-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-marketing\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-marketing\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsmarketing\" data-load-id=\"marketing\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-marketing-item-title\">Marketing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-marketing-item-subtitle\">These cookies and other technologies are used to deliver content, offers and advertising more relevant to you and your interests. By selecting this category, you also consent to DeepL sending your data to third parties outside the EU (e.g. Google), including the storing or sharing of hashed email addresses (e.g. Reddit). </div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-marketing-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"marketing\" aria-labelledby=\"uc-category-marketing-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-marketing-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Marketing\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsmarketing\" role=\"region\" aria-labelledby=\"uc-category-marketing-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> </div> </div> <div role=\"tabpanel\" id=\"servicesPanel\" aria-labelledby=\"services-tab-button\"> <div id=\"uc-services-list\" class=\"list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-8i9a9uLp_unXuq\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-8i9a9uLp_unXuq\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails8i9a9uLp_unXuq\" data-load-id=\"8i9a9uLp_unXuq\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-8i9a9uLp_unXuq-item-title\">Cloudflare</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-8i9a9uLp_unXuq-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-8i9a9uLp_unXuq-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Cloudflare\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails8i9a9uLp_unXuq\" role=\"region\" aria-labelledby=\"uc-service-8i9a9uLp_unXuq-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-yyNEWofr_QTGJw\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-yyNEWofr_QTGJw\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsyyNEWofr_QTGJw\" data-load-id=\"yyNEWofr_QTGJw\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-yyNEWofr_QTGJw-item-title\">DeepL (Necessary)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-yyNEWofr_QTGJw-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-yyNEWofr_QTGJw-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand DeepL (Necessary)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsyyNEWofr_QTGJw\" role=\"region\" aria-labelledby=\"uc-service-yyNEWofr_QTGJw-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-sOpOyvUNb3Qe-k\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-sOpOyvUNb3Qe-k\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailssOpOyvUNb3Qe-k\" data-load-id=\"sOpOyvUNb3Qe-k\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-sOpOyvUNb3Qe-k-item-title\">GitBook</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-sOpOyvUNb3Qe-k-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-sOpOyvUNb3Qe-k-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand GitBook\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailssOpOyvUNb3Qe-k\" role=\"region\" aria-labelledby=\"uc-service-sOpOyvUNb3Qe-k-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-qHU5DcdE6-uIwZ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-qHU5DcdE6-uIwZ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsqHU5DcdE6-uIwZ\" data-load-id=\"qHU5DcdE6-uIwZ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-qHU5DcdE6-uIwZ-item-title\">Riskified Ltd.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-qHU5DcdE6-uIwZ-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-qHU5DcdE6-uIwZ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Riskified Ltd.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsqHU5DcdE6-uIwZ\" role=\"region\" aria-labelledby=\"uc-service-qHU5DcdE6-uIwZ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-C1o3fe7NC9tDq8\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-C1o3fe7NC9tDq8\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsC1o3fe7NC9tDq8\" data-load-id=\"C1o3fe7NC9tDq8\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-C1o3fe7NC9tDq8-item-title\">Statsig</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-C1o3fe7NC9tDq8-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-C1o3fe7NC9tDq8-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Statsig\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsC1o3fe7NC9tDq8\" role=\"region\" aria-labelledby=\"uc-service-C1o3fe7NC9tDq8-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-YnAUcIdhM2sLED\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-YnAUcIdhM2sLED\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsYnAUcIdhM2sLED\" data-load-id=\"YnAUcIdhM2sLED\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-YnAUcIdhM2sLED-item-title\">Stripe</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-YnAUcIdhM2sLED-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-YnAUcIdhM2sLED-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Stripe\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsYnAUcIdhM2sLED\" role=\"region\" aria-labelledby=\"uc-service-YnAUcIdhM2sLED-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-H1Vl5NidjWX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-H1Vl5NidjWX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsH1Vl5NidjWX\" data-load-id=\"H1Vl5NidjWX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-H1Vl5NidjWX-item-title\">Usercentrics Consent Management Platform</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-H1Vl5NidjWX-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Usercentrics Consent Management Platform\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsH1Vl5NidjWX\" role=\"region\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-m4BRiGBSEc4FS0\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-m4BRiGBSEc4FS0\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsm4BRiGBSEc4FS0\" data-load-id=\"m4BRiGBSEc4FS0\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-m4BRiGBSEc4FS0-item-title\">Zendesk (Necessary)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-m4BRiGBSEc4FS0-item-subtitle\">Necessary</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-m4BRiGBSEc4FS0-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Zendesk (Necessary)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsm4BRiGBSEc4FS0\" role=\"region\" aria-labelledby=\"uc-service-m4BRiGBSEc4FS0-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-6EJeslwaSFHMKC\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-6EJeslwaSFHMKC\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails6EJeslwaSFHMKC\" data-load-id=\"6EJeslwaSFHMKC\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-6EJeslwaSFHMKC-item-title\">DeepL (Functional)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-6EJeslwaSFHMKC-item-subtitle\">Functional</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-6EJeslwaSFHMKC-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand DeepL (Functional)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails6EJeslwaSFHMKC\" role=\"region\" aria-labelledby=\"uc-service-6EJeslwaSFHMKC-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BzoJQe69f08Q1l\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BzoJQe69f08Q1l\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBzoJQe69f08Q1l\" data-load-id=\"BzoJQe69f08Q1l\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BzoJQe69f08Q1l-item-title\">DeepL (Marketing)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BzoJQe69f08Q1l-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BzoJQe69f08Q1l-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand DeepL (Marketing)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBzoJQe69f08Q1l\" role=\"region\" aria-labelledby=\"uc-service-BzoJQe69f08Q1l-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-qONy-wVWVlKBUF\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-qONy-wVWVlKBUF\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsqONy-wVWVlKBUF\" data-load-id=\"qONy-wVWVlKBUF\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-qONy-wVWVlKBUF-item-title\">DeepL (Performance)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-qONy-wVWVlKBUF-item-subtitle\">Performance</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-qONy-wVWVlKBUF-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand DeepL (Performance)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsqONy-wVWVlKBUF\" role=\"region\" aria-labelledby=\"uc-service-qONy-wVWVlKBUF-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-l_q_1IPuFDYS_J\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-l_q_1IPuFDYS_J\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsl_q_1IPuFDYS_J\" data-load-id=\"l_q_1IPuFDYS_J\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-l_q_1IPuFDYS_J-item-title\">Foleon</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-l_q_1IPuFDYS_J-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-l_q_1IPuFDYS_J-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Foleon\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsl_q_1IPuFDYS_J\" role=\"region\" aria-labelledby=\"uc-service-l_q_1IPuFDYS_J-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-jsfyFdQOb_PAtF\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-jsfyFdQOb_PAtF\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsjsfyFdQOb_PAtF\" data-load-id=\"jsfyFdQOb_PAtF\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-jsfyFdQOb_PAtF-item-title\">GitHub</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-jsfyFdQOb_PAtF-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-jsfyFdQOb_PAtF-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand GitHub\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsjsfyFdQOb_PAtF\" role=\"region\" aria-labelledby=\"uc-service-jsfyFdQOb_PAtF-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-b-zgJa8cF2CgYQ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-b-zgJa8cF2CgYQ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsb-zgJa8cF2CgYQ\" data-load-id=\"b-zgJa8cF2CgYQ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-b-zgJa8cF2CgYQ-item-title\">Google Ireland Ltd.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-b-zgJa8cF2CgYQ-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-b-zgJa8cF2CgYQ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Google Ireland Ltd.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsb-zgJa8cF2CgYQ\" role=\"region\" aria-labelledby=\"uc-service-b-zgJa8cF2CgYQ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-FNh6UFLg_w2OIg\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-FNh6UFLg_w2OIg\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsFNh6UFLg_w2OIg\" data-load-id=\"FNh6UFLg_w2OIg\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-FNh6UFLg_w2OIg-item-title\">HubSpot, Inc.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-FNh6UFLg_w2OIg-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-FNh6UFLg_w2OIg-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand HubSpot, Inc.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsFNh6UFLg_w2OIg\" role=\"region\" aria-labelledby=\"uc-service-FNh6UFLg_w2OIg-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-W3JMltQh0VhJRE\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-W3JMltQh0VhJRE\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsW3JMltQh0VhJRE\" data-load-id=\"W3JMltQh0VhJRE\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-W3JMltQh0VhJRE-item-title\">Line Ads (LY Corporation)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-W3JMltQh0VhJRE-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-W3JMltQh0VhJRE-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Line Ads (LY Corporation)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsW3JMltQh0VhJRE\" role=\"region\" aria-labelledby=\"uc-service-W3JMltQh0VhJRE-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-cSZ3HWtZmDBEhZ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-cSZ3HWtZmDBEhZ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailscSZ3HWtZmDBEhZ\" data-load-id=\"cSZ3HWtZmDBEhZ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-cSZ3HWtZmDBEhZ-item-title\">LinkedIn Ireland Unlimited Company</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-cSZ3HWtZmDBEhZ-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-cSZ3HWtZmDBEhZ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand LinkedIn Ireland Unlimited Company\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailscSZ3HWtZmDBEhZ\" role=\"region\" aria-labelledby=\"uc-service-cSZ3HWtZmDBEhZ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-xiSk6GpX--lh-s\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-xiSk6GpX--lh-s\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsxiSk6GpX--lh-s\" data-load-id=\"xiSk6GpX--lh-s\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-xiSk6GpX--lh-s-item-title\">LY Corporation</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-xiSk6GpX--lh-s-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-xiSk6GpX--lh-s-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand LY Corporation\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsxiSk6GpX--lh-s\" role=\"region\" aria-labelledby=\"uc-service-xiSk6GpX--lh-s-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-vV6nWQeg_FsOnV\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-vV6nWQeg_FsOnV\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsvV6nWQeg_FsOnV\" data-load-id=\"vV6nWQeg_FsOnV\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-vV6nWQeg_FsOnV-item-title\">Matomo</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-vV6nWQeg_FsOnV-item-subtitle\">Performance</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-vV6nWQeg_FsOnV-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Matomo\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsvV6nWQeg_FsOnV\" role=\"region\" aria-labelledby=\"uc-service-vV6nWQeg_FsOnV-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-TA2anzeiKHXve6\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-TA2anzeiKHXve6\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsTA2anzeiKHXve6\" data-load-id=\"TA2anzeiKHXve6\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-TA2anzeiKHXve6-item-title\">Mediaocean</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-TA2anzeiKHXve6-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-TA2anzeiKHXve6-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Mediaocean\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsTA2anzeiKHXve6\" role=\"region\" aria-labelledby=\"uc-service-TA2anzeiKHXve6-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-CN1y7GPT5m95a2\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-CN1y7GPT5m95a2\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsCN1y7GPT5m95a2\" data-load-id=\"CN1y7GPT5m95a2\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-CN1y7GPT5m95a2-item-title\">Meta Platforms, Inc.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-CN1y7GPT5m95a2-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-CN1y7GPT5m95a2-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Meta Platforms, Inc.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsCN1y7GPT5m95a2\" role=\"region\" aria-labelledby=\"uc-service-CN1y7GPT5m95a2-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-U7GFUQMgWAe53w\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-U7GFUQMgWAe53w\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsU7GFUQMgWAe53w\" data-load-id=\"U7GFUQMgWAe53w\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-U7GFUQMgWAe53w-item-title\">Microsoft Ireland Operations Ltd.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-U7GFUQMgWAe53w-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-U7GFUQMgWAe53w-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Microsoft Ireland Operations Ltd.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsU7GFUQMgWAe53w\" role=\"region\" aria-labelledby=\"uc-service-U7GFUQMgWAe53w-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-TTAwuVl5d8CQuM\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-TTAwuVl5d8CQuM\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsTTAwuVl5d8CQuM\" data-load-id=\"TTAwuVl5d8CQuM\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-TTAwuVl5d8CQuM-item-title\">Mintlify</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-TTAwuVl5d8CQuM-item-subtitle\">Performance</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-TTAwuVl5d8CQuM-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Mintlify\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsTTAwuVl5d8CQuM\" role=\"region\" aria-labelledby=\"uc-service-TTAwuVl5d8CQuM-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Zk9GT6DFVkB8P4\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Zk9GT6DFVkB8P4\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsZk9GT6DFVkB8P4\" data-load-id=\"Zk9GT6DFVkB8P4\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Zk9GT6DFVkB8P4-item-title\">Naver Corp.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Zk9GT6DFVkB8P4-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Zk9GT6DFVkB8P4-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Naver Corp.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsZk9GT6DFVkB8P4\" role=\"region\" aria-labelledby=\"uc-service-Zk9GT6DFVkB8P4-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Qjt031VRyHK8m-\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Qjt031VRyHK8m-\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsQjt031VRyHK8m-\" data-load-id=\"Qjt031VRyHK8m-\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Qjt031VRyHK8m--item-title\">Qualified.com, Inc.</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Qjt031VRyHK8m--item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Qjt031VRyHK8m--item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Qualified.com, Inc.\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsQjt031VRyHK8m-\" role=\"region\" aria-labelledby=\"uc-service-Qjt031VRyHK8m--item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-7PpBUi-BX56wB7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-7PpBUi-BX56wB7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails7PpBUi-BX56wB7\" data-load-id=\"7PpBUi-BX56wB7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-7PpBUi-BX56wB7-item-title\">Reddit</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-7PpBUi-BX56wB7-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-7PpBUi-BX56wB7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Reddit\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails7PpBUi-BX56wB7\" role=\"region\" aria-labelledby=\"uc-service-7PpBUi-BX56wB7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-1RL7hiMT8jFyDy\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-1RL7hiMT8jFyDy\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails1RL7hiMT8jFyDy\" data-load-id=\"1RL7hiMT8jFyDy\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-1RL7hiMT8jFyDy-item-title\">StackAdapt</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-1RL7hiMT8jFyDy-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-1RL7hiMT8jFyDy-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand StackAdapt\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails1RL7hiMT8jFyDy\" role=\"region\" aria-labelledby=\"uc-service-1RL7hiMT8jFyDy-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-VrZIS9ffT5Bgjs\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-VrZIS9ffT5Bgjs\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsVrZIS9ffT5Bgjs\" data-load-id=\"VrZIS9ffT5Bgjs\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-VrZIS9ffT5Bgjs-item-title\">Vimeo</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-VrZIS9ffT5Bgjs-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-VrZIS9ffT5Bgjs-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Vimeo\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsVrZIS9ffT5Bgjs\" role=\"region\" aria-labelledby=\"uc-service-VrZIS9ffT5Bgjs-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-F2Fh5KpKcawHH1\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-F2Fh5KpKcawHH1\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsF2Fh5KpKcawHH1\" data-load-id=\"F2Fh5KpKcawHH1\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-F2Fh5KpKcawHH1-item-title\">Youtube</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-F2Fh5KpKcawHH1-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-F2Fh5KpKcawHH1-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Youtube\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsF2Fh5KpKcawHH1\" role=\"region\" aria-labelledby=\"uc-service-F2Fh5KpKcawHH1-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-k_6jJexGSw_5LJ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-k_6jJexGSw_5LJ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsk_6jJexGSw_5LJ\" data-load-id=\"k_6jJexGSw_5LJ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-k_6jJexGSw_5LJ-item-title\">Zendesk (Performance)</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-k_6jJexGSw_5LJ-item-subtitle\">Performance</div> </div> <div class=\"list-item-header-actions \"> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-k_6jJexGSw_5LJ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Zendesk (Performance)\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsk_6jJexGSw_5LJ\" role=\"region\" aria-labelledby=\"uc-service-k_6jJexGSw_5LJ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div class=\"uc-expandable-card list-item controller-id expandable\" role=\"listitem\" id=\"controller-id-item\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#controller-id-item\" tabindex=\"-1\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"controller-id-title\">ID to request consent data</div> </div> <div role=\"button\" class=\"list-item-header-expander\" tabindex=\"0\" aria-labelledby=\"controller-id-title\" aria-expanded=\"false\" aria-c aria-label=\"Expand ID to request consent data\"></div> </div> <div class=\"list-item-body\" id=\"list-item-body-controller-id\" role=\"region\" aria-labelledby=\"controller-id-title\"> <div class=\"controller-id-item-container\"> <div class=\"controller-id-item-text\">2773bd700052b9a368f3f9cf2e555bc29cbdc9bfe52683de094dee8acff0493e</div> <button class=\"controller-id-item-button\" title=\"copy\"> <div class=\"copy-icon initial active\"></div> <div class=\"copy-icon success icon-container\"> <span class=\"success-text\">copied</span> <div class=\"success-icon\"></div> </div> </button> </div> </div> </div> </div> </div> </div> </div> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"save\" class=\"save uc-save-button\" id=\"save\" aria-label=\"Save Settings\" tabindex=\"0\"> Save Settings </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Reject\" tabindex=\"0\"> Reject </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Accept\" tabindex=\"0\"> Accept </button> </div> </div> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 44800,
+        "cmpType": "Usercentrics",
+        "isIframe": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "timestamp": "2026-08-28T08:17:18.488735",
+  "url": "https://www.diy.com",
+  "structured_dom_chars": 34232,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 4,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#truste-consent-track\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#truste-consent-track\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label='Accept Functional Cookies']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label='Refuse Functional Cookies']\"}}}, {\"type\": \"B\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label='Accept Performance & Analytics']\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label='Refuse Performance & Analytics']\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label=\\\"Accept B&Q's marketing and advertising cookies\\\"]\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label=\\\"Refuse B&Q's marketing and advertising cookies\\\"]\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label=\\\"Accept B&Q Partners' Marketing and Advertising Cookies\\\"]\"}}, \"falseAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \"[aria-label=\\\"Refuse B&Q Partners' Marketing and Advertising Cookies\\\"]\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"parent\": {\"selector\": \"div[name='trustarc_cm']\"}, \"target\": {\"selector\": \".submit\"}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#truste-consent-track\"}}}]}}",
+  "last_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 340.43,
+  "extraction_duration_seconds": 8.06,
+  "extraction_share_percent": 2.37,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-track"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#truste-consent-track",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Functional Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Functional Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Performance & Analytics']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Performance & Analytics']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q's marketing and advertising cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q's marketing and advertising cookies\"]"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "div[name='trustarc_cm']"
+                  },
+                  "target": {
+                    "selector": "[aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 500
+              },
+              {
+                "type": "click",
+                "parent": {
+                  "selector": "div[name='trustarc_cm']"
+                },
+                "target": {
+                  "selector": ".submit"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#truste-consent-track"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

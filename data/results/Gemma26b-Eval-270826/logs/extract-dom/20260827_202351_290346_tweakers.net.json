@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-08-27T20:23:51.290391",
+  "url": "https://tweakers.net",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://tweakers.net"
+  ],
+  "duration_seconds": 53.26,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.",
+      "Regex failed in frame https://tweakers.net/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://tweakers.net/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: false,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://tweakers.net/',",
+      "      filteredHtml: `<body> <h1>Access Denied</h1> <p>Your request was blocked by DPG Media's Web Application Firewall.</p> <p>For more information contact application support and specify: </p> <ul> <li>Reference: 0.7e9b645f.1787854978.6462de6</li> <li>ClientIP: 87.104.43.11</li> <li><div id=\"url\">https://tweakers.net/</div></li> </ul> </body>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 324",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://tweakers.net/",
+      "   isMainFrame: true | isCookieFrame: false",
+      "  No known CMP – generic extraction",
+      "  Buttons found (0):",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://tweakers.net/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": false,
+      "cmpType": null,
+      "data": {
+        "buttons": [],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://tweakers.net/",
+        "filteredHtml": "<body> <h1>Access Denied</h1> <p>Your request was blocked by DPG Media's Web Application Firewall.</p> <p>For more information contact application support and specify: </p> <ul> <li>Reference: 0.7e9b645f.1787854978.6462de6</li> <li>ClientIP: 87.104.43.11</li> <li><div id=\"url\">https://tweakers.net/</div></li> </ul> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 324
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.microsoft.com",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "Invalid JSON: Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+  "rule_draft": {
+    "microsoft": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "body"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "body"
+            }
+          }
+        }
+      ],
+      "methods": []
+    }
+  }
+}

@@ -1,0 +1,953 @@
+{
+  "timestamp": "2026-08-28T10:38:25.317763",
+  "url": "https://www.diy.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.diy.com"
+  ],
+  "duration_seconds": 8.02,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class^=\"truste\"]\" (TrustArc) in frame: https://www.diy.com/",
+      "waitForCmpUi detected CMP Type: TrustArc",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.diy.com/ with Score: 52",
+      "Settings match: \"manage your cookie preferences\" --> lowered: \"manage your cookie preferences\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Settings match: \"Change Settings\" --> lowered: \"change settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #truste-show-consent, textMatch: Change Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 1244063 chars.",
+      "DOM diff: 69309 chars added, 4 inputs added.",
+      "Old state: 161 buttons, 0 inputs.",
+      "New state: 182 buttons, 4 inputs.",
+      "Settings detected: 69309 chars, 4 inputs, 21 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 4 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.diy.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'TrustArc',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"truste\"]',",
+      "      url: 'https://www.diy.com/',",
+      "      filteredHtml: '<div id=\"truste-consent-track\" class=\"ta-show ta-display-block\"> <div id=\"trustarc-banner-overlay\"></div> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"truste-banner\"> <div class=\"flex-container\"> <div class=\"text-header\"> <h1>Cookie Preferences</h1> </div> <div class=\"text-content\"> <p id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span>B&amp;Q use essential cookies, including third party cookies (and similar technologies) so that our website works.</span> </p> <p id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span>We would also like to set non-essential cookies (and similar technologies) to personalise and improve your experience as well as deliver relevant advertising on this and other websites.</span> </p> <p id=\"truste-consent-text\" class=\"truste-messageColumn\">You can refuse your consent to these non-essential cookies (and similar technologies) by clicking on \"Reject Non-Essential Cookies\". You can <a class=\"read-more\">read more information about the cookies</a> (and similar technologies) we use on this website and our <a id=\"privacyPolicyAnchor\" href=\"https://www.diy.com/customer-support/privacy\" target=\"_blank\">Privacy Policy</a>&nbsp;or&nbsp;<a class=\"read-more\">manage your cookie preferences</a>. You can view or change your settings any time by clicking on \"Cookie Preferences\" contained within the footer of our website.</p> </div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <button id=\"truste-show-consent\" aria-haspopup=\"dialog\">Change Settings</button> <button id=\"truste-consent-required\">Reject Non-Essential Cookies</button> <button id=\"truste-consent-button\">Accept Cookies</button> </div> </div> <div></div> </div> </div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1739,",
+      "      cmpType: 'TrustArc'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class^=\"truste\"]',",
+      "      url: 'https://www.diy.com/',",
+      "      filteredHtml: `<div id=\"pop-div209128995396298002\" class=\"truste_box_overlay\"><div id=\"pop-div308576621097664021\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame06147879416119968\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-1000=\"true\" data-breakpoint-max-width-1024=\"true\" data-breakpoint-max-width-1200=\"true\" data-breakpoint-min-width-768=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><div class=\"logo\"></div> <p></p><h1 class=\"mainHeader\">COOKIE PREFERENCES</h1><p>B&amp;Q uses cookies on this website. Cookies are small text files that are stored on your computer or other device by websites that you visit. This page explains the cookies we use and what we use them for, and lets you turn them on or off. (Some cookies are necessary in order for our website to work properly.) We also explain below which other companies use cookies on our website and what they use them for, and lets you turn those other companies' cookies on or off.</p> <p>Our website uses cookies in order to make the website easier to use, to support the provision of information and functionality to you, as well as to provide us with information about how the website is used so that we can make sure it is as up to date, relevant and error free as we can. We also use cookies to try to ensure that our online adverts reflect the interests of web users. Further information about the types of cookies that are used on our website is set out box below.</p> <p>As well as the options provided below, you can choose to restrict or block cookies through your browser settings at any time. For more information about how to do this, and about cookies in general, you can visit <a href=\"http://www.allaboutcookies.org\">www.allaboutcookies.org</a> and <a href=\"http://www.youronlinechoices.eu\">www.youronlinechoices.eu</a>. However, please be aware that restricting or blocking cookies set on our website may impact the functionality or performance of the website, or prevent you from using certain services provided through the website</p><p></p> <p>Please note that third parties (including, for example, advertising networks and providers of external services like website analysis services) may also use cookies, over which we have no control, although we may receive services from these third parties (including, for example, for targeted advertising purposes and website analytics). These cookies are likely to be performance cookies or targeting cookies (as described below).</p></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Strictly necessary cookies</h3></span><span class=\"gwt-InlineHTML\"><p> These cookies are essential for the use of the features and services on our website. If you block these cookies we cannot guarantee access to the services provided through our website or be sure how our website will perform during your visit. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Remembering which products you have placed in your shopping basket.</li> <li>Remembering that you are logged in to our website.</li> <li>Remembering information you have entered into forms on our website (so that you don’t have to re-enter this information if you use your browser’s “back” and “forward” buttons to navigate through a form).</li> <li>Preventing unauthorised posting to our website.</li> </ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Provide secure log-in</span><span class=\"gwt-InlineHTML\">Remember how far you are through an order</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Functional Cookies</h3></span><span class=\"gwt-InlineHTML\"><p>Functional cookies allow our website to remember choices you make, such as your user name, log in details or language preferences, and any customisations you make to pages on our website during your visit. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Providing individual services, such as watching a video or commenting.</li> <li>Sharing information with our partners to provide a service on our website. The information shared is only to be used to provide the service, product or function you requested, and not for any other purpose.</li> <li>Remembering if we’ve already asked you if you want to fill in a survey.</li> <li>Remembering your location.</li> <li>Remembering your preferred language.</li></ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"Functional Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Remember your log-in details</span><span class=\"gwt-InlineHTML\">Remember what is in your shopping cart</span><span class=\"gwt-InlineHTML\">Make sure the website looks consistent</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Performance &amp; Analytics</h3></span><span class=\"gwt-InlineHTML\"><p> These cookies help us understand how people use our website. They collect information such as which pages on our website visitors go to most often, which features they use, and which websites people have visited before they visit ours. We use this information to improve our website and provide a better user experience. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Monitoring and providing statistics on how our website is used.</li> <li>Helping us improve our website by measuring any errors that occur.</li> <li>Seeing how effective adverts on our website are and trying to ensure they are as relevant as possible.</li> <li>Providing feedback to our affiliates, and third parties we have allowed to link to our website, regarding users accessing their sites. This information may be used by those third parties to improve their sites or services.</li> <li>Testing the website’s design and operability.</li> </ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"Performance &amp; Analytics choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Performance &amp; Analytics\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Performance &amp; Analytics\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Allow you to share pages with social networks</span><span class=\"gwt-InlineHTML\">Allow you to post comments</span><span class=\"gwt-InlineHTML\">Serve ads relevant to your interests</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">B&amp;Q's marketing and advertising cookies</h3></span><span class=\"gwt-InlineHTML\">These are cookies that we use to remember which pages you’ve viewed (including which adverts you’ve been shown) on our website, and to show you adverts that we think might be of interest to you, based on your browsing history on our website. We also use these cookies to limit the number of times you’re shown a particular advert, and to follow up with you if you partially complete an order for products or registration on our website</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"B&amp;Q's marketing and advertising cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse B&amp;Q's marketing and advertising cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translat`... 5041 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 15041,",
+      "      cmpType: 'TrustArc',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.diy.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: TrustArc via selector \"[id^=\"truste\"]\"",
+      "  Buttons found (6):",
+      "      [A] \"read more information about the cookies\" --> selector: .read-more",
+      "      [A] \"Privacy Policy\" --> selector: #privacyPolicyAnchor",
+      "      [A] \"manage your cookie preferences\" --> selector: .read-more",
+      "      [BUTTON] \"Change Settings\" --> selector: #truste-show-consent",
+      "      [BUTTON] \"Reject Non-Essential Cookies\" --> selector: #truste-consent-required",
+      "      [BUTTON] \"Accept Cookies\" --> selector: #truste-consent-button",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (19):",
+      "      [A] \"www.allaboutcookies.org\" --> selector: #pop-frame06147879416119968 >>> a",
+      "      [A] \"www.youronlinechoices.eu\" --> selector: #pop-frame06147879416119968 >>> a",
+      "      [SPAN] \"Disable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Refuse Functional Cookies\"]",
+      "      [SPAN] \"Enable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Accept Functional Cookies\"]",
+      "      [SPAN] \"Disable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Refuse Performance & Analytics\"]",
+      "      [SPAN] \"Enable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Accept Performance & Analytics\"]",
+      "      [SPAN] \"Disable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Refuse B&Q's marketing and advertising cookies\"]",
+      "      [SPAN] \"Enable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Accept B&Q's marketing and advertising cookies\"]",
+      "      [A] \"https://www.kingfisher.com\" --> selector: #pop-frame06147879416119968 >>> a",
+      "      [A] \"Microsoft Internet Explorer (IE)\" --> selector: #pop-frame06147879416119968 >>> .ta_link",
+      "      [A] \"Google Chrome\" --> selector: #pop-frame06147879416119968 >>> .ta_link",
+      "      [A] \"Safari\" --> selector: #pop-frame06147879416119968 >>> .ta_link",
+      "      [A] \"Firefox\" --> selector: #pop-frame06147879416119968 >>> .ta_link",
+      "      [A] \"View Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"View\"]",
+      "      [SPAN] \"Disable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]",
+      "      [SPAN] \"Enable Cookies\" --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]",
+      "      [A] \"decline all\" --> selector: #pop-frame06147879416119968 >>> .declineAllButtonLower",
+      "      [A] \"save settings\" --> selector: #pop-frame06147879416119968 >>> .submit",
+      "      [A] \"Privacy Policy\" --> selector: #pop-frame06147879416119968 >>> #privacyPolicyAnchor",
+      "   Checkboxes found (0):",
+      "  Toggles found (4):",
+      "      \"Disable Cookies",
+      "Enable Cookies\" | aria-checked: null --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Functional Cookies choice\"]",
+      "      \"Disable Cookies",
+      "Enable Cookies\" | aria-checked: null --> selector: #pop-frame06147879416119968 >>> [aria-label=\"Performance & Analytics choice\"]",
+      "      \"Disable Cookies",
+      "Enable Cookies\" | aria-checked: null --> selector: #pop-frame06147879416119968 >>> [aria-label=\"B&Q's marketing and advertising cookies choice\"]",
+      "      \"Disable Cookies",
+      "Enable Cookies\" | aria-checked: null --> selector: #pop-frame06147879416119968 >>> [aria-label=\"B&Q Partners' Marketing and Advertising Cookies choice\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.diy.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "TrustArc",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "read more information about the cookies",
+            "tag": "A",
+            "attributes": {
+              "onclick": "truste.eu && truste.eu.clickListener()",
+              "class": "read-more"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "truste-consent-text",
+              "className": "truste-messageColumn",
+              "selector": "#truste-consent-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "text-content",
+                "selector": ".text-content"
+              }
+            },
+            "selector": ".read-more",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "id": "privacyPolicyAnchor",
+              "href": "https://www.diy.com/customer-support/privacy",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "truste-consent-text",
+              "className": "truste-messageColumn",
+              "selector": "#truste-consent-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "text-content",
+                "selector": ".text-content"
+              }
+            },
+            "selector": "#privacyPolicyAnchor",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "manage your cookie preferences",
+            "tag": "A",
+            "attributes": {
+              "onclick": "truste.eu && truste.eu.clickListener()",
+              "class": "read-more"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "truste-consent-text",
+              "className": "truste-messageColumn",
+              "selector": "#truste-consent-text",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "text-content",
+                "selector": ".text-content"
+              }
+            },
+            "selector": ".read-more",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Change Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-show-consent",
+              "aria-haspopup": "dialog"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex-container",
+                "selector": ".flex-container"
+              }
+            },
+            "selector": "#truste-show-consent",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject Non-Essential Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-required"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex-container",
+                "selector": ".flex-container"
+              }
+            },
+            "selector": "#truste-consent-required",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept Cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "truste-consent-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "truste-consent-buttons",
+              "className": "truste-buttonsColumn",
+              "selector": "#truste-consent-buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "flex-container",
+                "selector": ".flex-container"
+              }
+            },
+            "selector": "#truste-consent-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"truste\"]",
+        "url": "https://www.diy.com/",
+        "filteredHtml": "<div id=\"truste-consent-track\" class=\"ta-show ta-display-block\"> <div id=\"trustarc-banner-overlay\"></div> <div class=\"truste-consent-track-class\"> <div id=\"truste-consent-content\" class=\"truste-banner\"> <div class=\"flex-container\"> <div class=\"text-header\"> <h1>Cookie Preferences</h1> </div> <div class=\"text-content\"> <p id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span>B&amp;Q use essential cookies, including third party cookies (and similar technologies) so that our website works.</span> </p> <p id=\"truste-consent-text\" class=\"truste-messageColumn\"> <span>We would also like to set non-essential cookies (and similar technologies) to personalise and improve your experience as well as deliver relevant advertising on this and other websites.</span> </p> <p id=\"truste-consent-text\" class=\"truste-messageColumn\">You can refuse your consent to these non-essential cookies (and similar technologies) by clicking on \"Reject Non-Essential Cookies\". You can <a class=\"read-more\">read more information about the cookies</a> (and similar technologies) we use on this website and our <a id=\"privacyPolicyAnchor\" href=\"https://www.diy.com/customer-support/privacy\" target=\"_blank\">Privacy Policy</a>&nbsp;or&nbsp;<a class=\"read-more\">manage your cookie preferences</a>. You can view or change your settings any time by clicking on \"Cookie Preferences\" contained within the footer of our website.</p> </div> <div id=\"truste-consent-buttons\" class=\"truste-buttonsColumn\"> <button id=\"truste-show-consent\" aria-haspopup=\"dialog\">Change Settings</button> <button id=\"truste-consent-required\">Reject Non-Essential Cookies</button> <button id=\"truste-consent-button\">Accept Cookies</button> </div> </div> <div></div> </div> </div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1739,
+        "cmpType": "TrustArc"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "www.allaboutcookies.org",
+            "tag": "A",
+            "attributes": {
+              "href": "http://www.allaboutcookies.org"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookieMainHeader",
+                "className": "mainHeader consentHeader",
+                "selector": "#cookieMainHeader"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "www.youronlinechoices.eu",
+            "tag": "A",
+            "attributes": {
+              "href": "http://www.youronlinechoices.eu"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookieMainHeader",
+                "className": "mainHeader consentHeader",
+                "selector": "#cookieMainHeader"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Functional Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML on",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Refuse Functional Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Enable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Functional Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML off active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Accept Functional Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse Performance & Analytics",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML on",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Refuse Performance & Analytics\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Enable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept Performance & Analytics",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML off active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Accept Performance & Analytics\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse B&Q's marketing and advertising cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML on",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Refuse B&Q's marketing and advertising cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Enable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept B&Q's marketing and advertising cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML off active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Accept B&Q's marketing and advertising cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "https://www.kingfisher.com",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.kingfisher.com",
+              "target": "_blank",
+              "style": "display:inline;font-size:16px;padding-right: 0;"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "gwt-InlineHTML",
+                "selector": ".gwt-InlineHTML"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Microsoft Internet Explorer (IE)",
+            "tag": "A",
+            "attributes": {
+              "class": "ta_link",
+              "target": "_blank",
+              "href": "https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "gwt-InlineHTML",
+                "selector": ".gwt-InlineHTML"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .ta_link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google Chrome",
+            "tag": "A",
+            "attributes": {
+              "class": "ta_link",
+              "target": "_blank",
+              "href": "https://support.google.com/chrome/answer/95647?hl=en"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "gwt-InlineHTML",
+                "selector": ".gwt-InlineHTML"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .ta_link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Safari",
+            "tag": "A",
+            "attributes": {
+              "class": "ta_link",
+              "target": "_blank",
+              "href": "https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "gwt-InlineHTML",
+                "selector": ".gwt-InlineHTML"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .ta_link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Firefox",
+            "tag": "A",
+            "attributes": {
+              "class": "ta_link",
+              "target": "_blank",
+              "href": "https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "gwt-InlineHTML",
+                "selector": ".gwt-InlineHTML"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .ta_link",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View Cookies",
+            "tag": "A",
+            "attributes": {
+              "href": "javascript:;",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "View",
+              "aria-expanded": "false",
+              "class": "viewcookie",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"View\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Refuse B&Q Partners' Marketing and Advertising Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "false",
+              "class": "gwt-InlineHTML on",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Refuse B&Q Partners' Marketing and Advertising Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Enable Cookies",
+            "tag": "SPAN",
+            "attributes": {
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Accept B&Q Partners' Marketing and Advertising Cookies",
+              "aria-disabled": "false",
+              "aria-pressed": "true",
+              "class": "gwt-InlineHTML off active",
+              "translate": "no",
+              "style": "visibility: visible;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "switch",
+              "selector": ".switch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiecat",
+                "selector": ".cookiecat"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Accept B&Q Partners' Marketing and Advertising Cookies\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "decline all",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "declineAllButtonLower",
+              "translate": "no",
+              "style": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .declineAllButtonLower",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "save settings",
+            "tag": "A",
+            "attributes": {
+              "href": "#",
+              "tabindex": "0",
+              "role": "button",
+              "class": "submit",
+              "translate": "no"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pdynamicbutton",
+              "selector": ".pdynamicbutton",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "gdpr",
+                "selector": ".gdpr"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> .submit",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "id": "privacyPolicyAnchor",
+              "href": "https://www.diy.com/customer-support/policies/privacy",
+              "target": "_top"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "left",
+              "selector": ".left",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer",
+                "selector": ".footer"
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> #privacyPolicyAnchor",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Disable Cookies\nEnable Cookies",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Functional Cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Functional Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Disable Cookies\nEnable Cookies",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "Performance & Analytics choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"Performance & Analytics choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Disable Cookies\nEnable Cookies",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "B&Q's marketing and advertising cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"B&Q's marketing and advertising cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Disable Cookies\nEnable Cookies",
+            "tag": "DIV",
+            "attributes": {
+              "role": "listbox",
+              "aria-label": "B&Q Partners' Marketing and Advertising Cookies choice",
+              "class": "switch"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiecat",
+              "selector": ".cookiecat",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "#pop-frame06147879416119968 >>> [aria-label=\"B&Q Partners' Marketing and Advertising Cookies choice\"]",
+            "selectorConfidence": "very high",
+            "ariaChecked": null,
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class^=\"truste\"]",
+        "url": "https://www.diy.com/",
+        "filteredHtml": "<div id=\"pop-div209128995396298002\" class=\"truste_box_overlay\"><div id=\"pop-div308576621097664021\" class=\"truste_box_overlay_inner\" tabindex=\"-1\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Your choices regarding the use of cookies on this site\"><div class=\"truste_box_overlay_border\"></div><div id=\"pop-frame06147879416119968\" tabindex=\"1\" name=\"trustarc_cm\" class=\"trustarc_newcm_container truste_popframe\" data-no-c><div class=\"wrapper\" data-lenis-prevent=\"\" tabindex=\"-1\" data-breakpoint-max-width-1000=\"true\" data-breakpoint-max-width-1024=\"true\" data-breakpoint-max-width-1200=\"true\" data-breakpoint-min-width-768=\"true\"><div lang=\"en\"><div aria-labelledby=\"cookieMainHeader\" class=\"mainContent\"><div class=\"gdpr\"><div id=\"cookieMainHeader\" class=\"mainHeader consentHeader\" translate=\"no\"><div class=\"logo\"></div> <p></p><h1 class=\"mainHeader\">COOKIE PREFERENCES</h1><p>B&amp;Q uses cookies on this website. Cookies are small text files that are stored on your computer or other device by websites that you visit. This page explains the cookies we use and what we use them for, and lets you turn them on or off. (Some cookies are necessary in order for our website to work properly.) We also explain below which other companies use cookies on our website and what they use them for, and lets you turn those other companies' cookies on or off.</p> <p>Our website uses cookies in order to make the website easier to use, to support the provision of information and functionality to you, as well as to provide us with information about how the website is used so that we can make sure it is as up to date, relevant and error free as we can. We also use cookies to try to ensure that our online adverts reflect the interests of web users. Further information about the types of cookies that are used on our website is set out box below.</p> <p>As well as the options provided below, you can choose to restrict or block cookies through your browser settings at any time. For more information about how to do this, and about cookies in general, you can visit <a href=\"http://www.allaboutcookies.org\">www.allaboutcookies.org</a> and <a href=\"http://www.youronlinechoices.eu\">www.youronlinechoices.eu</a>. However, please be aware that restricting or blocking cookies set on our website may impact the functionality or performance of the website, or prevent you from using certain services provided through the website</p><p></p> <p>Please note that third parties (including, for example, advertising networks and providers of external services like website analysis services) may also use cookies, over which we have no control, although we may receive services from these third parties (including, for example, for targeted advertising purposes and website analytics). These cookies are likely to be performance cookies or targeting cookies (as described below).</p></div><div aria-hidden=\"true\"></div><div class=\"prefPanel\"><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Strictly necessary cookies</h3></span><span class=\"gwt-InlineHTML\"><p> These cookies are essential for the use of the features and services on our website. If you block these cookies we cannot guarantee access to the services provided through our website or be sure how our website will perform during your visit. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Remembering which products you have placed in your shopping basket.</li> <li>Remembering that you are logged in to our website.</li> <li>Remembering information you have entered into forms on our website (so that you don’t have to re-enter this information if you use your browser’s “back” and “forward” buttons to navigate through a form).</li> <li>Preventing unauthorised posting to our website.</li> </ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div aria-hidden=\"true\"></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Provide secure log-in</span><span class=\"gwt-InlineHTML\">Remember how far you are through an order</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable optoutless\"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Functional Cookies</h3></span><span class=\"gwt-InlineHTML\"><p>Functional cookies allow our website to remember choices you make, such as your user name, log in details or language preferences, and any customisations you make to pages on our website during your visit. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Providing individual services, such as watching a video or commenting.</li> <li>Sharing information with our partners to provide a service on our website. The information shared is only to be used to provide the service, product or function you requested, and not for any other purpose.</li> <li>Remembering if we’ve already asked you if you want to fill in a survey.</li> <li>Remembering your location.</li> <li>Remembering your preferred language.</li></ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"Functional Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Functional Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Remember your log-in details</span><span class=\"gwt-InlineHTML\">Remember what is in your shopping cart</span><span class=\"gwt-InlineHTML\">Make sure the website looks consistent</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">Performance &amp; Analytics</h3></span><span class=\"gwt-InlineHTML\"><p> These cookies help us understand how people use our website. They collect information such as which pages on our website visitors go to most often, which features they use, and which websites people have visited before they visit ours. We use this information to improve our website and provide a better user experience. </p><p><span>Examples of how we use these cookies include:</span></p> <ul> <li>Monitoring and providing statistics on how our website is used.</li> <li>Helping us improve our website by measuring any errors that occur.</li> <li>Seeing how effective adverts on our website are and trying to ensure they are as relevant as possible.</li> <li>Providing feedback to our affiliates, and third parties we have allowed to link to our website, regarding users accessing their sites. This information may be used by those third parties to improve their sites or services.</li> <li>Testing the website’s design and operability.</li> </ul> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"Performance &amp; Analytics choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse Performance &amp; Analytics\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept Performance &amp; Analytics\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><div class=\"prefPanel\"><div class=\"left\"><span class=\"gwt-InlineHTML\">Example Purposes</span></div><div class=\"right\"><span class=\"gwt-InlineHTML\">Allow you to share pages with social networks</span><span class=\"gwt-InlineHTML\">Allow you to post comments</span><span class=\"gwt-InlineHTML\">Serve ads relevant to your interests</span></div></div><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">B&amp;Q's marketing and advertising cookies</h3></span><span class=\"gwt-InlineHTML\">These are cookies that we use to remember which pages you’ve viewed (including which adverts you’ve been shown) on our website, and to show you adverts that we think might be of interest to you, based on your browsing history on our website. We also use these cookies to limit the number of times you’re shown a particular advert, and to follow up with you if you partially complete an order for products or registration on our website</span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"B&amp;Q's marketing and advertising cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse B&amp;Q's marketing and advertising cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept B&amp;Q's marketing and advertising cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div><div><div class=\"cookiecat\"><div tabindex=\"0\"><span class=\"gwt-InlineHTML\"><h3 translate=\"no\">B&amp;Q Partners' Marketing and Advertising Cookies</h3></span><span class=\"gwt-InlineHTML\"><p>These cookies are used by other companies we work with to deliver you relevant advertising on our website and on other websites. They are sometimes called \"third party cookies\" because they are set by other companies when you browse our website, rather than by us.</p> <p>These companies use cookies to build a profile of you, based on your browsing on our website, their own websites and other websites that they work with, and which adverts you've seen and clicked on our website and on other websites. They may also combine this with other information they collect about you from other sources. They use these profiles to show you relevant adverts, both on our website and on other websites. This information may also be shared with other members of the Kingfisher Group so that these companies can show you relevant adverts for other Group members’ products, both on their websites and on other websites for more information on the Kingfisher Group please visit&nbsp;<a href=\"https://www.kingfisher.com\" target=\"_blank\">https://www.kingfisher.com</a>).</p><p>These companies may track your browsing across multiple devices, and combine your browsing on multiple devices into a single profile that is used to deliver relevant adverts to you on all of those devices. They may use a number of different methods to work out whether multiple devices appear to be used by you, including matching information about your devices, browsing activity and geo-location.</p> <p>Different web browsers may use different methods for managing cookies. Please follow the instructions below, from the web browser manufacturers directly, to configure your browser settings*.</p> <p> </p><li><a class=\"ta_link\" target=\"_blank\" href=\"https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies\">Microsoft Internet Explorer (IE)</a></li> <li><a class=\"ta_link\" target=\"_blank\" href=\"https://support.google.com/chrome/answer/95647?hl=en\">Google Chrome</a></li> <li><a class=\"ta_link\" target=\"_blank\" href=\"https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac\">Safari</a></li> <li><a class=\"ta_link\" target=\"_blank\" href=\"https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences\">Firefox</a></li> <p></p></span></div><a href=\"javascript:;\" role=\"button\" tabindex=\"0\" aria-label=\"View\" aria-expanded=\"false\" class=\"viewcookie\" translate=\"no\">View Cookies</a><div role=\"listbox\" aria-label=\"B&amp;Q Partners' Marketing and Advertising Cookies choice\" class=\"switch\"><span role=\"button\" tabindex=\"0\" aria-label=\"Refuse B&amp;Q Partners' Marketing and Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"false\" class=\"gwt-InlineHTML on \" translate=\"no\">Disable Cookies</span><span role=\"button\" tabindex=\"0\" aria-label=\"Accept B&amp;Q Partners' Marketing and Advertising Cookies\" aria-disabled=\"false\" aria-pressed=\"true\" class=\"gwt-InlineHTML off active\" translate=\"no\">Enable Cookies</span></div><div aria-hidden=\"true\"><span class=\"gwt-InlineHTML\"><br aria-hidden=\"true\" class=\"spacing br-clear\"></span><table class=\"prefTable \"><colgroup><col width=\"2%\"><col width=\"28%\"><col width=\"70%\"></colgroup><tbody></tbody></table></div></div></div></div><div class=\"pdynamicbutton\"><div></div><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"declineAllButtonLower\" translate=\"no\">Decline All</a><a href=\"#\" tabindex=\"0\" role=\"button\" class=\"submit\" translate=\"no\">Save Settings</a></div></div></div><div class=\"footer\"><div class=\"left\" translate=\"no\"><span>You can see a list of the other companies who use cookies on this website, and change your cookie settings at any time, by visiting Cookie Settings at the bottom of each page. For full details of how we use your personal information, and your rights in relation to it, view our</span> <a id=\"privacyPolicyAnchor\" href=\"https://www.diy.com/customer-support/policies/privacy\" target=\"_top\">Privacy Policy</a></div><div class=\"right\" translate=\"no\"><label tabindex=\"0\">Powered by</label>: <a href=\"http://trustarc.com/\" target=\"_blank\"></a></div><br class=\"spacing\"><div aria-hidden=\"true\"></div></div></div></div></div><div id=\"closebtn-id0.4067061970188818\" class=\"truste-close-button-container\"><a aria-label=\"close\" role=\"button\" class=\"truste-close-button\" tabindex=\"1\" id=\"trustarc-internal-close-button\"></a></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 15041,
+        "cmpType": "TrustArc",
+        "isIframe": false
+      }
+    }
+  ]
+}

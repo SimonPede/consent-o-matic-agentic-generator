@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T07:45:57.408400",
+  "url": "https://www.patreon.com",
+  "structured_dom_chars": 147005,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "NO_BANNER_DETECTED: The provided DOM contains an 'Edit Cookie Preferences' button, but no visible top-level consent banner (like an 'Accept All' or 'Reject' banner) was detected in the buttons list or the filtered HTML. The settings/preferences view needed for granular consent is also missing from the input data.",
+  "abort_reason": "NO_BANNER_DETECTED: The provided DOM contains an 'Edit Cookie Preferences' button, but no visible top-level consent banner (like an 'Accept All' or 'Reject' banner) was detected in the buttons list or the filtered HTML. The settings/preferences view needed for granular consent is also missing from the input data.",
+  "abort_code": "NO_BANNER_DETECTED",
+  "abort_explanation": "The provided DOM contains an 'Edit Cookie Preferences' button, but no visible top-level consent banner (like an 'Accept All' or 'Reject' banner) was detected in the buttons list or the filtered HTML. The settings/preferences view needed for granular consent is also missing from the input data.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "NO_BANNER_DETECTED: The provided DOM contains an 'Edit Cookie Preferences' button, but no visible top-level consent banner (like an 'Accept All' or 'Reject' banner) was detected in the buttons list or the filtered HTML. The settings/preferences view needed for granular consent is also missing from the input data."
+  ],
+  "duration_seconds": 92.51,
+  "extraction_duration_seconds": 64.84,
+  "extraction_share_percent": 70.09,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

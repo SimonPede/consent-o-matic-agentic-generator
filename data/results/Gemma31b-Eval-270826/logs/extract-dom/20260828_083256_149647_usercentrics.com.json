@@ -1,0 +1,1249 @@
+{
+  "timestamp": "2026-08-28T08:32:56.149739",
+  "url": "https://usercentrics.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://usercentrics.com/"
+  ],
+  "duration_seconds": 7.78,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"#usercentrics-cmp-ui\" (Usercentrics) in frame: https://usercentrics.com/",
+      "waitForCmpUi detected CMP Type: Usercentrics",
+      "I found 1 frames.",
+      "a frame was picked by score: https://usercentrics.com/ with Score: 78",
+      "Settings match: \"Privacy Settings\" --> lowered: \"privacy settings\"",
+      "Settings button search: Found <a> match, saving as fallback but continuing search...",
+      "Using <a> tag fallback for settings button.",
+      "State snapshot scope selector: #usercentrics-cmp-ui",
+      "settings click target - selector: #usercentrics-cmp-ui >>> #uc-more-link, textMatch: Privacy Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 253113 chars.",
+      "DOM diff: 63277 chars added, 0 inputs added.",
+      "Old state: 0 buttons, 0 inputs.",
+      "New state: 0 buttons, 0 inputs.",
+      "Settings detected: 63277 chars, 0 inputs, 0 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 4 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://usercentrics.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Usercentrics',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://usercentrics.com/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <ul class=\"language-selector-menu escapable\" role=\"listbox\" visibility=\"false\" id=\"language-selector-menu\" aria-labelledby=\"uc-language-button\"> <li tabindex=\"0\" role=\"option\" lang=\"en\" aria-posinset=\"1\" aria-setsize=\"41\" data-language=\"en\" aria-label=\"English\" aria-selected=\"true\" class=\"language-selected\"> English </li> <li tabindex=\"0\" role=\"option\" lang=\"ar\" aria-posinset=\"2\" aria-setsize=\"41\" data-language=\"ar\" aria-label=\"العربية\"> العربية </li> <li tabindex=\"0\" role=\"option\" lang=\"be\" aria-posinset=\"3\" aria-setsize=\"41\" data-language=\"be\" aria-label=\"Беларуская\"> Беларуская </li> <li tabindex=\"0\" role=\"option\" lang=\"bg\" aria-posinset=\"4\" aria-setsize=\"41\" data-language=\"bg\" aria-label=\"български\"> български </li> <li tabindex=\"0\" role=\"option\" lang=\"bs\" aria-posinset=\"5\" aria-setsize=\"41\" data-language=\"bs\" aria-label=\"Bosanski\"> Bosanski </li> <li tabindex=\"0\" role=\"option\" lang=\"ca\" aria-posinset=\"6\" aria-setsize=\"41\" data-language=\"ca\" aria-label=\"Català\"> Català </li> <li tabindex=\"0\" role=\"option\" lang=\"cs\" aria-posinset=\"7\" aria-setsize=\"41\" data-language=\"cs\" aria-label=\"Čeština\"> Čeština </li> <li tabindex=\"0\" role=\"option\" lang=\"da\" aria-posinset=\"8\" aria-setsize=\"41\" data-language=\"da\" aria-label=\"Dansk\"> Dansk </li> <li tabindex=\"0\" role=\"option\" lang=\"de\" aria-posinset=\"9\" aria-setsize=\"41\" data-language=\"de\" aria-label=\"Deutsch\"> Deutsch </li> <li tabindex=\"0\" role=\"option\" lang=\"el\" aria-posinset=\"10\" aria-setsize=\"41\" data-language=\"el\" aria-label=\"Ελληνικά\"> Ελληνικά </li> <li tabindex=\"0\" role=\"option\" lang=\"es\" aria-posinset=\"11\" aria-setsize=\"41\" data-language=\"es\" aria-label=\"Español\"> Español </li> <li tabindex=\"0\" role=\"option\" lang=\"et\" aria-posinset=\"12\" aria-setsize=\"41\" data-language=\"et\" aria-label=\"Eesti\"> Eesti </li> <li tabindex=\"0\" role=\"option\" lang=\"fi\" aria-posinset=\"13\" aria-setsize=\"41\" data-language=\"fi\" aria-label=\"Suomi\"> Suomi </li> <li tabindex=\"0\" role=\"option\" lang=\"fr\" aria-posinset=\"14\" aria-setsize=\"41\" data-language=\"fr\" aria-label=\"Français\"> Français </li> <li tabindex=\"0\" role=\"option\" lang=\"hi\" aria-posinset=\"15\" aria-setsize=\"41\" data-language=\"hi\" aria-label=\"हिन्दी\"> हिन्दी </li> <li tabindex=\"0\" role=\"option\" lang=\"hr\" aria-posinset=\"16\" aria-setsize=\"41\" data-language=\"hr\" aria-label=\"Hrvatski\"> Hrvatski </li> <li tabindex=\"0\" role=\"option\" lang=\"hu\" aria-posinset=\"17\" aria-setsize=\"41\" data-language=\"hu\" aria-label=\"Magyar\"> Magyar </li> <li tabindex=\"0\" role=\"option\" lang=\"is\" aria-posinset=\"18\" aria-setsize=\"41\" data-language=\"is\" aria-label=\"Íslenska\"> Íslenska </li> <li tabindex=\"0\" role=\"option\" lang=\"it\" aria-posinset=\"19\" aria-setsize=\"41\" data-language=\"it\" aria-label=\"Italiano\"> Italiano </li> <li tabindex=\"0\" role=\"option\" lang=\"ja\" aria-posinset=\"20\" aria-setsize=\"41\" data-language=\"ja\" aria-label=\"日本語\"> 日本語 </li> <li tabindex=\"0\" role=\"option\" lang=\"ko\" aria-posinset=\"21\" aria-setsize=\"41\" data-language=\"ko\" aria-label=\"한국어\"> 한국어 </li> <li tabindex=\"0\" role=\"option\" lang=\"lt\" aria-posinset=\"22\" aria-setsize=\"41\" data-language=\"lt\" aria-label=\"Lietuvių\"> Lietuvių </li> <li tabindex=\"0\" role=\"option\" lang=\"lv\" aria-posinset=\"23\" aria-setsize=\"41\" data-language=\"lv\" aria-label=\"Latviešu\"> Latviešu </li> <li tabindex=\"0\" role=\"option\" lang=\"mk\" aria-posinset=\"24\" aria-setsize=\"41\" data-language=\"mk\" aria-label=\"Македонски\"> Македонски </li> <li tabindex=\"0\" role=\"option\" lang=\"mn\" aria-posinset=\"25\" aria-setsize=\"41\" data-language=\"mn\" aria-label=\"монгол\"> монгол </li> <li tabindex=\"0\" role=\"option\" lang=\"nl\" aria-posinset=\"26\" aria-setsize=\"41\" data-language=\"nl\" aria-label=\"Nederlands\"> Nederlands </li> <li tabindex=\"0\" role=\"option\" lang=\"pl\" aria-posinset=\"27\" aria-setsize=\"41\" data-language=\"pl\" aria-label=\"Polski\"> Polski </li> <li tabindex=\"0\" role=\"option\" lang=\"pt\" aria-posinset=\"28\" aria-setsize=\"41\" data-language=\"pt\" aria-label=\"Português (Portugal)\"> Português (Portugal) </li> <li tabindex=\"0\" role=\"option\" lang=\"ro\" aria-posinset=\"29\" aria-setsize=\"41\" data-language=\"ro\" aria-label=\"Română\"> Română </li> <li tabindex=\"0\" role=\"option\" lang=\"ru\" aria-posinset=\"30\" aria-setsize=\"41\" data-language=\"ru\" aria-label=\"Русский\"> Русский </li> <li tabindex=\"0\" role=\"option\" lang=\"sk\" aria-posinset=\"31\" aria-setsize=\"41\" data-language=\"sk\" aria-label=\"Slovenčina\"> Slovenčina </li> <li tabindex=\"0\" role=\"option\" lang=\"sl\" aria-posinset=\"32\" aria-setsize=\"41\" data-language=\"sl\" aria-label=\"Slovenščina\"> Slovenščina </li> <li tabindex=\"0\" role=\"option\" lang=\"sq\" aria-posinset=\"33\" aria-setsize=\"41\" data-language=\"sq\" aria-label=\"Shqip\"> Shqip </li> <li tabindex=\"0\" role=\"option\" lang=\"sr\" aria-posinset=\"34\" aria-setsize=\"41\" data-language=\"sr\" aria-label=\"Српски\"> Српски </li> <li tabindex=\"0\" role=\"option\" lang=\"sv\" aria-posinset=\"35\" aria-setsize=\"41\" data-language=\"sv\" aria-label=\"Svenska\"> Svenska </li> <li tabindex=\"0\" role=\"option\" lang=\"th\" aria-posinset=\"36\" aria-setsize=\"41\" data-language=\"th\" aria-label=\"ไทย\"> ไทย </li> <li tabindex=\"0\" role=\"option\" lang=\"tr\" aria-posinset=\"37\" aria-setsize=\"41\" data-language=\"tr\" aria-label=\"Türkçe\"> Türkçe </li> <li tabindex=\"0\" role=\"option\" lang=\"uk\" aria-posinset=\"38\" aria-setsize=\"41\" data-language=\"uk\" aria-label=\"Українська\"> Українська </li> <li tabindex=\"0\" role=\"option\" lang=\"ur\" aria-posinset=\"39\" aria-setsize=\"41\" data-language=\"ur\" aria-label=\"اردو\"> اردو </li> <li tabindex=\"0\" role=\"option\" lang=\"vi\" aria-posinset=\"40\" aria-setsize=\"41\" data-language=\"vi\" aria-label=\"Tiếng Việt\"> Tiếng Việt </li> <li tabindex=\"0\" role=\"option\" lang=\"zh\" aria-posinset=\"41\" aria-setsize=\"41\" data-language=\"zh\" aria-label=\"简体中文\"> 简体中文 </li> </ul> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <div class=\"language-selector-button-mobile\"> <select data-action=\"language\" autocomplete=\"language\" id=\"uc-language-button\" aria-label=\"Select language\" class=\"language-selector-mobile\"> <option value=\"en\" aria-selected=\"true\" selected=\"selected\">English</option> <option value=\"ar\">العربية</option> <option value=\"be\">Беларуская</option> <option value=\"bg\">български</option> <option value=\"bs\">Bosanski</option> <option value=\"ca\">Català</option> <option value=\"cs\">Čeština</option> <option value=\"da\">Dansk</option> <option value=\"de\">Deutsch</option> <option value=\"el\">Ελληνικά</option> <option value=\"es\">Español</option> <option value=\"et\">Eesti</option> <option value=\"fi\">Suomi</option> <option value=\"fr\">Français</option> <option value=\"hi\">हिन्दी</option> <option value=\"hr\">Hrvatski</option> <option value=\"hu\">Magyar</option> <option value=\"is\">Íslenska</option> <option value=\"it\">Italiano</option> <option value=\"ja\">日本語</option> <option value=\"ko\">한국어</option> <option value=\"lt\">Lietuvių</option> <option value=\"lv\">Latviešu</option> <option value=\"mk\">Македонски</option> <option value=\"mn\">монгол</option> <option value=\"nl\">Nederlands</option> <option value=\"pl\">Polski</option> <option value=\"pt\">Português (Portugal)</option> <option value=\"ro\">Română</option> <option value=\"ru\">Русский</option> <option value=\"sk\">Slovenčina</option> <option value=\"sl\">Slovenščina</option> <option value=\"sq\">Shqip</option> <option value=\"sr\">Српски</option> <option value=\"sv\">Svenska</option> <option value=\"th\">ไทย</option> <option value=\"tr\">Türkçe</option> <option value=\"uk\">Українська</option> <option value=\"ur\">اردو</option> <option value=\"vi\">Tiếng Việt</option> <option value=\"zh\">简体中文</option> </select> <span class=\"language-selector-label-mobile\" aria-hidden=\"true\"></span> </div> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">We value your privacy</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">We and our partners are using technologies like Cookies or Targeting and process personal data like IP-address or browser information in order to personalize the advertisement you see. These technologies may access your device and&nbsp;<span>help us to show you more relevant ads and improve your internet experience.</span><div><div>We also use it in order to measure results or align our website content. Because we value your privacy, we are herewith asking your permission to use the following technologies.&nbsp;</div><div>You can always change/withdraw your consent later by clicking on the settings button on the left lower corner of the page.</div></div> </span> </div> </div> <div class=\"categories\"> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-category-functional-label\"> Functional </span> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read aria-labelledby=\"uc-category-functional-label\" id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-category-marketing-label\"> Marketing </span> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read aria-labelledby=\"uc-category-marketing-label\" id=\"uc-category-marketing-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"marketing\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-cat'... 2168 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 12168,",
+      "      cmpType: 'Usercentrics'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '#usercentrics-cmp-ui',",
+      "      url: 'https://usercentrics.com/',",
+      "      filteredHtml: '<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <ul class=\"language-selector-menu escapable\" role=\"listbox\" visibility=\"false\" id=\"language-selector-menu\" aria-labelledby=\"uc-language-button\"> <li tabindex=\"0\" role=\"option\" lang=\"en\" aria-posinset=\"1\" aria-setsize=\"41\" data-language=\"en\" aria-label=\"English\" aria-selected=\"true\" class=\"language-selected\"> English </li> <li tabindex=\"0\" role=\"option\" lang=\"ar\" aria-posinset=\"2\" aria-setsize=\"41\" data-language=\"ar\" aria-label=\"العربية\"> العربية </li> <li tabindex=\"0\" role=\"option\" lang=\"be\" aria-posinset=\"3\" aria-setsize=\"41\" data-language=\"be\" aria-label=\"Беларуская\"> Беларуская </li> <li tabindex=\"0\" role=\"option\" lang=\"bg\" aria-posinset=\"4\" aria-setsize=\"41\" data-language=\"bg\" aria-label=\"български\"> български </li> <li tabindex=\"0\" role=\"option\" lang=\"bs\" aria-posinset=\"5\" aria-setsize=\"41\" data-language=\"bs\" aria-label=\"Bosanski\"> Bosanski </li> <li tabindex=\"0\" role=\"option\" lang=\"ca\" aria-posinset=\"6\" aria-setsize=\"41\" data-language=\"ca\" aria-label=\"Català\"> Català </li> <li tabindex=\"0\" role=\"option\" lang=\"cs\" aria-posinset=\"7\" aria-setsize=\"41\" data-language=\"cs\" aria-label=\"Čeština\"> Čeština </li> <li tabindex=\"0\" role=\"option\" lang=\"da\" aria-posinset=\"8\" aria-setsize=\"41\" data-language=\"da\" aria-label=\"Dansk\"> Dansk </li> <li tabindex=\"0\" role=\"option\" lang=\"de\" aria-posinset=\"9\" aria-setsize=\"41\" data-language=\"de\" aria-label=\"Deutsch\"> Deutsch </li> <li tabindex=\"0\" role=\"option\" lang=\"el\" aria-posinset=\"10\" aria-setsize=\"41\" data-language=\"el\" aria-label=\"Ελληνικά\"> Ελληνικά </li> <li tabindex=\"0\" role=\"option\" lang=\"es\" aria-posinset=\"11\" aria-setsize=\"41\" data-language=\"es\" aria-label=\"Español\"> Español </li> <li tabindex=\"0\" role=\"option\" lang=\"et\" aria-posinset=\"12\" aria-setsize=\"41\" data-language=\"et\" aria-label=\"Eesti\"> Eesti </li> <li tabindex=\"0\" role=\"option\" lang=\"fi\" aria-posinset=\"13\" aria-setsize=\"41\" data-language=\"fi\" aria-label=\"Suomi\"> Suomi </li> <li tabindex=\"0\" role=\"option\" lang=\"fr\" aria-posinset=\"14\" aria-setsize=\"41\" data-language=\"fr\" aria-label=\"Français\"> Français </li> <li tabindex=\"0\" role=\"option\" lang=\"hi\" aria-posinset=\"15\" aria-setsize=\"41\" data-language=\"hi\" aria-label=\"हिन्दी\"> हिन्दी </li> <li tabindex=\"0\" role=\"option\" lang=\"hr\" aria-posinset=\"16\" aria-setsize=\"41\" data-language=\"hr\" aria-label=\"Hrvatski\"> Hrvatski </li> <li tabindex=\"0\" role=\"option\" lang=\"hu\" aria-posinset=\"17\" aria-setsize=\"41\" data-language=\"hu\" aria-label=\"Magyar\"> Magyar </li> <li tabindex=\"0\" role=\"option\" lang=\"is\" aria-posinset=\"18\" aria-setsize=\"41\" data-language=\"is\" aria-label=\"Íslenska\"> Íslenska </li> <li tabindex=\"0\" role=\"option\" lang=\"it\" aria-posinset=\"19\" aria-setsize=\"41\" data-language=\"it\" aria-label=\"Italiano\"> Italiano </li> <li tabindex=\"0\" role=\"option\" lang=\"ja\" aria-posinset=\"20\" aria-setsize=\"41\" data-language=\"ja\" aria-label=\"日本語\"> 日本語 </li> <li tabindex=\"0\" role=\"option\" lang=\"ko\" aria-posinset=\"21\" aria-setsize=\"41\" data-language=\"ko\" aria-label=\"한국어\"> 한국어 </li> <li tabindex=\"0\" role=\"option\" lang=\"lt\" aria-posinset=\"22\" aria-setsize=\"41\" data-language=\"lt\" aria-label=\"Lietuvių\"> Lietuvių </li> <li tabindex=\"0\" role=\"option\" lang=\"lv\" aria-posinset=\"23\" aria-setsize=\"41\" data-language=\"lv\" aria-label=\"Latviešu\"> Latviešu </li> <li tabindex=\"0\" role=\"option\" lang=\"mk\" aria-posinset=\"24\" aria-setsize=\"41\" data-language=\"mk\" aria-label=\"Македонски\"> Македонски </li> <li tabindex=\"0\" role=\"option\" lang=\"mn\" aria-posinset=\"25\" aria-setsize=\"41\" data-language=\"mn\" aria-label=\"монгол\"> монгол </li> <li tabindex=\"0\" role=\"option\" lang=\"nl\" aria-posinset=\"26\" aria-setsize=\"41\" data-language=\"nl\" aria-label=\"Nederlands\"> Nederlands </li> <li tabindex=\"0\" role=\"option\" lang=\"pl\" aria-posinset=\"27\" aria-setsize=\"41\" data-language=\"pl\" aria-label=\"Polski\"> Polski </li> <li tabindex=\"0\" role=\"option\" lang=\"pt\" aria-posinset=\"28\" aria-setsize=\"41\" data-language=\"pt\" aria-label=\"Português (Portugal)\"> Português (Portugal) </li> <li tabindex=\"0\" role=\"option\" lang=\"ro\" aria-posinset=\"29\" aria-setsize=\"41\" data-language=\"ro\" aria-label=\"Română\"> Română </li> <li tabindex=\"0\" role=\"option\" lang=\"ru\" aria-posinset=\"30\" aria-setsize=\"41\" data-language=\"ru\" aria-label=\"Русский\"> Русский </li> <li tabindex=\"0\" role=\"option\" lang=\"sk\" aria-posinset=\"31\" aria-setsize=\"41\" data-language=\"sk\" aria-label=\"Slovenčina\"> Slovenčina </li> <li tabindex=\"0\" role=\"option\" lang=\"sl\" aria-posinset=\"32\" aria-setsize=\"41\" data-language=\"sl\" aria-label=\"Slovenščina\"> Slovenščina </li> <li tabindex=\"0\" role=\"option\" lang=\"sq\" aria-posinset=\"33\" aria-setsize=\"41\" data-language=\"sq\" aria-label=\"Shqip\"> Shqip </li> <li tabindex=\"0\" role=\"option\" lang=\"sr\" aria-posinset=\"34\" aria-setsize=\"41\" data-language=\"sr\" aria-label=\"Српски\"> Српски </li> <li tabindex=\"0\" role=\"option\" lang=\"sv\" aria-posinset=\"35\" aria-setsize=\"41\" data-language=\"sv\" aria-label=\"Svenska\"> Svenska </li> <li tabindex=\"0\" role=\"option\" lang=\"th\" aria-posinset=\"36\" aria-setsize=\"41\" data-language=\"th\" aria-label=\"ไทย\"> ไทย </li> <li tabindex=\"0\" role=\"option\" lang=\"tr\" aria-posinset=\"37\" aria-setsize=\"41\" data-language=\"tr\" aria-label=\"Türkçe\"> Türkçe </li> <li tabindex=\"0\" role=\"option\" lang=\"uk\" aria-posinset=\"38\" aria-setsize=\"41\" data-language=\"uk\" aria-label=\"Українська\"> Українська </li> <li tabindex=\"0\" role=\"option\" lang=\"ur\" aria-posinset=\"39\" aria-setsize=\"41\" data-language=\"ur\" aria-label=\"اردو\"> اردو </li> <li tabindex=\"0\" role=\"option\" lang=\"vi\" aria-posinset=\"40\" aria-setsize=\"41\" data-language=\"vi\" aria-label=\"Tiếng Việt\"> Tiếng Việt </li> <li tabindex=\"0\" role=\"option\" lang=\"zh\" aria-posinset=\"41\" aria-setsize=\"41\" data-language=\"zh\" aria-label=\"简体中文\"> 简体中文 </li> </ul> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <div class=\"language-selector-button-mobile\"> <select data-action=\"language\" autocomplete=\"language\" id=\"uc-language-button\" aria-label=\"Select language\" class=\"language-selector-mobile\"> <option value=\"en\" aria-selected=\"true\" selected=\"selected\">English</option> <option value=\"ar\">العربية</option> <option value=\"be\">Беларуская</option> <option value=\"bg\">български</option> <option value=\"bs\">Bosanski</option> <option value=\"ca\">Català</option> <option value=\"cs\">Čeština</option> <option value=\"da\">Dansk</option> <option value=\"de\">Deutsch</option> <option value=\"el\">Ελληνικά</option> <option value=\"es\">Español</option> <option value=\"et\">Eesti</option> <option value=\"fi\">Suomi</option> <option value=\"fr\">Français</option> <option value=\"hi\">हिन्दी</option> <option value=\"hr\">Hrvatski</option> <option value=\"hu\">Magyar</option> <option value=\"is\">Íslenska</option> <option value=\"it\">Italiano</option> <option value=\"ja\">日本語</option> <option value=\"ko\">한국어</option> <option value=\"lt\">Lietuvių</option> <option value=\"lv\">Latviešu</option> <option value=\"mk\">Македонски</option> <option value=\"mn\">монгол</option> <option value=\"nl\">Nederlands</option> <option value=\"pl\">Polski</option> <option value=\"pt\">Português (Portugal)</option> <option value=\"ro\">Română</option> <option value=\"ru\">Русский</option> <option value=\"sk\">Slovenčina</option> <option value=\"sl\">Slovenščina</option> <option value=\"sq\">Shqip</option> <option value=\"sr\">Српски</option> <option value=\"sv\">Svenska</option> <option value=\"th\">ไทย</option> <option value=\"tr\">Türkçe</option> <option value=\"uk\">Українська</option> <option value=\"ur\">اردو</option> <option value=\"vi\">Tiếng Việt</option> <option value=\"zh\">简体中文</option> </select> <span class=\"language-selector-label-mobile\" aria-hidden=\"true\"></span> </div> <button id=\"uc-close-button\" type=\"button\" name=\"Close Layer\" aria-label=\"Close Layer\" tabindex=\"0\" class=\"closeButton\" title=\"Close Layer\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Privacy Settings</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">This tool helps you to select and deactivate various tags / trackers / analysis tools used on this website. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Categories </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Functional</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">These tags enable us to analyze website usage so that we'... 45171 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 55171,",
+      "      cmpType: 'Usercentrics',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://usercentrics.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Usercentrics via selector \"#usercentrics-cmp-ui\"",
+      "  Buttons found (11):",
+      "      [A] \"Privacy Policy\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [A] \"Legal Notice\" --> selector: #usercentrics-cmp-ui >>> #imprint",
+      "      [A] \"Privacy Settings\" --> selector: #usercentrics-cmp-ui >>> #uc-more-link",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      [BUTTON] \"Save\" --> selector: #usercentrics-cmp-ui >>> #save",
+      "      [BUTTON] \"Deny\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Accept and close\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "      [A] \"Powered by Usercentrics Consent Management\" --> selector: #usercentrics-cmp-ui >>> a",
+      "   Checkboxes found (0):",
+      "  Toggles found (4):",
+      "      \"Functional\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      \"Marketing\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "      \"Analytics\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+      "      \"Essential\" | aria-checked: true --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (15):",
+      "      [BUTTON] \"Close Layer\" --> selector: #usercentrics-cmp-ui >>> #uc-close-button",
+      "      [A] \"Privacy Policy\" --> selector: #usercentrics-cmp-ui >>> #privacyPolicy",
+      "      [A] \"Legal Notice\" --> selector: #usercentrics-cmp-ui >>> #imprint",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      [DIV] \"Expand Functional\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Functional\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "      [DIV] \"Expand Marketing\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Marketing\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+      "      [DIV] \"Expand Analytics\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Analytics\"]",
+      "      [BUTTON] \"\" --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "      [DIV] \"Expand Essential\" --> selector: #usercentrics-cmp-ui >>> [aria-label=\"Expand Essential\"]",
+      "      [BUTTON] \"Save\" --> selector: #usercentrics-cmp-ui >>> #save",
+      "      [BUTTON] \"Deny\" --> selector: #usercentrics-cmp-ui >>> #deny",
+      "      [BUTTON] \"Accept and close\" --> selector: #usercentrics-cmp-ui >>> #accept",
+      "      [A] \"Powered by Usercentrics Consent Management\" --> selector: #usercentrics-cmp-ui >>> a",
+      "   Checkboxes found (0):",
+      "  Toggles found (4):",
+      "      \"Functional\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+      "      \"Marketing\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+      "      \"Analytics\" | aria-checked: false --> selector: #usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+      "      \"Essential\" | aria-checked: true --> selector: #usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://usercentrics.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Usercentrics",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://usercentrics.com/privacy-policy/",
+              "aria-label": "Open Privacy Policy",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Legal Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://usercentrics.com/legal-notice/",
+              "aria-label": "Open Legal Notice",
+              "id": "imprint",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "imprint"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #imprint",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Settings",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "role": "button",
+              "tabindex": "0",
+              "aria-label": "Privacy Settings",
+              "id": "uc-more-link",
+              "data-action": "consent",
+              "data-action-type": "more"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-more-link",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-functional-label",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-marketing-label",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-label",
+              "id": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "aria-labelledby": "uc-category-essential-label",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "save",
+              "class": "save uc-save-button",
+              "id": "save",
+              "aria-label": "Save",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deny",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Deny",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept and close",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Accept and close",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Powered by Usercentrics Consent Management",
+            "tag": "A",
+            "attributes": {
+              "href": "https://usercentrics.com/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&utm_medium=referral&utm_content=v3",
+              "target": "_blank",
+              "rel": "noopener nofollow",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "poweredBy",
+              "selector": ".poweredBy",
+              "grandparent": {
+                "tag": "FOOTER",
+                "id": "uc-cmp-footer",
+                "className": "center",
+                "selector": "#uc-cmp-footer"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Functional",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-functional-label",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-marketing-label",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "aria-labelledby": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-label",
+              "id": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "aria-labelledby": "uc-category-essential-label",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "categories",
+                "selector": ".categories"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://usercentrics.com/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp first center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp first center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <ul class=\"language-selector-menu escapable\" role=\"listbox\" visibility=\"false\" id=\"language-selector-menu\" aria-labelledby=\"uc-language-button\"> <li tabindex=\"0\" role=\"option\" lang=\"en\" aria-posinset=\"1\" aria-setsize=\"41\" data-language=\"en\" aria-label=\"English\" aria-selected=\"true\" class=\"language-selected\"> English </li> <li tabindex=\"0\" role=\"option\" lang=\"ar\" aria-posinset=\"2\" aria-setsize=\"41\" data-language=\"ar\" aria-label=\"العربية\"> العربية </li> <li tabindex=\"0\" role=\"option\" lang=\"be\" aria-posinset=\"3\" aria-setsize=\"41\" data-language=\"be\" aria-label=\"Беларуская\"> Беларуская </li> <li tabindex=\"0\" role=\"option\" lang=\"bg\" aria-posinset=\"4\" aria-setsize=\"41\" data-language=\"bg\" aria-label=\"български\"> български </li> <li tabindex=\"0\" role=\"option\" lang=\"bs\" aria-posinset=\"5\" aria-setsize=\"41\" data-language=\"bs\" aria-label=\"Bosanski\"> Bosanski </li> <li tabindex=\"0\" role=\"option\" lang=\"ca\" aria-posinset=\"6\" aria-setsize=\"41\" data-language=\"ca\" aria-label=\"Català\"> Català </li> <li tabindex=\"0\" role=\"option\" lang=\"cs\" aria-posinset=\"7\" aria-setsize=\"41\" data-language=\"cs\" aria-label=\"Čeština\"> Čeština </li> <li tabindex=\"0\" role=\"option\" lang=\"da\" aria-posinset=\"8\" aria-setsize=\"41\" data-language=\"da\" aria-label=\"Dansk\"> Dansk </li> <li tabindex=\"0\" role=\"option\" lang=\"de\" aria-posinset=\"9\" aria-setsize=\"41\" data-language=\"de\" aria-label=\"Deutsch\"> Deutsch </li> <li tabindex=\"0\" role=\"option\" lang=\"el\" aria-posinset=\"10\" aria-setsize=\"41\" data-language=\"el\" aria-label=\"Ελληνικά\"> Ελληνικά </li> <li tabindex=\"0\" role=\"option\" lang=\"es\" aria-posinset=\"11\" aria-setsize=\"41\" data-language=\"es\" aria-label=\"Español\"> Español </li> <li tabindex=\"0\" role=\"option\" lang=\"et\" aria-posinset=\"12\" aria-setsize=\"41\" data-language=\"et\" aria-label=\"Eesti\"> Eesti </li> <li tabindex=\"0\" role=\"option\" lang=\"fi\" aria-posinset=\"13\" aria-setsize=\"41\" data-language=\"fi\" aria-label=\"Suomi\"> Suomi </li> <li tabindex=\"0\" role=\"option\" lang=\"fr\" aria-posinset=\"14\" aria-setsize=\"41\" data-language=\"fr\" aria-label=\"Français\"> Français </li> <li tabindex=\"0\" role=\"option\" lang=\"hi\" aria-posinset=\"15\" aria-setsize=\"41\" data-language=\"hi\" aria-label=\"हिन्दी\"> हिन्दी </li> <li tabindex=\"0\" role=\"option\" lang=\"hr\" aria-posinset=\"16\" aria-setsize=\"41\" data-language=\"hr\" aria-label=\"Hrvatski\"> Hrvatski </li> <li tabindex=\"0\" role=\"option\" lang=\"hu\" aria-posinset=\"17\" aria-setsize=\"41\" data-language=\"hu\" aria-label=\"Magyar\"> Magyar </li> <li tabindex=\"0\" role=\"option\" lang=\"is\" aria-posinset=\"18\" aria-setsize=\"41\" data-language=\"is\" aria-label=\"Íslenska\"> Íslenska </li> <li tabindex=\"0\" role=\"option\" lang=\"it\" aria-posinset=\"19\" aria-setsize=\"41\" data-language=\"it\" aria-label=\"Italiano\"> Italiano </li> <li tabindex=\"0\" role=\"option\" lang=\"ja\" aria-posinset=\"20\" aria-setsize=\"41\" data-language=\"ja\" aria-label=\"日本語\"> 日本語 </li> <li tabindex=\"0\" role=\"option\" lang=\"ko\" aria-posinset=\"21\" aria-setsize=\"41\" data-language=\"ko\" aria-label=\"한국어\"> 한국어 </li> <li tabindex=\"0\" role=\"option\" lang=\"lt\" aria-posinset=\"22\" aria-setsize=\"41\" data-language=\"lt\" aria-label=\"Lietuvių\"> Lietuvių </li> <li tabindex=\"0\" role=\"option\" lang=\"lv\" aria-posinset=\"23\" aria-setsize=\"41\" data-language=\"lv\" aria-label=\"Latviešu\"> Latviešu </li> <li tabindex=\"0\" role=\"option\" lang=\"mk\" aria-posinset=\"24\" aria-setsize=\"41\" data-language=\"mk\" aria-label=\"Македонски\"> Македонски </li> <li tabindex=\"0\" role=\"option\" lang=\"mn\" aria-posinset=\"25\" aria-setsize=\"41\" data-language=\"mn\" aria-label=\"монгол\"> монгол </li> <li tabindex=\"0\" role=\"option\" lang=\"nl\" aria-posinset=\"26\" aria-setsize=\"41\" data-language=\"nl\" aria-label=\"Nederlands\"> Nederlands </li> <li tabindex=\"0\" role=\"option\" lang=\"pl\" aria-posinset=\"27\" aria-setsize=\"41\" data-language=\"pl\" aria-label=\"Polski\"> Polski </li> <li tabindex=\"0\" role=\"option\" lang=\"pt\" aria-posinset=\"28\" aria-setsize=\"41\" data-language=\"pt\" aria-label=\"Português (Portugal)\"> Português (Portugal) </li> <li tabindex=\"0\" role=\"option\" lang=\"ro\" aria-posinset=\"29\" aria-setsize=\"41\" data-language=\"ro\" aria-label=\"Română\"> Română </li> <li tabindex=\"0\" role=\"option\" lang=\"ru\" aria-posinset=\"30\" aria-setsize=\"41\" data-language=\"ru\" aria-label=\"Русский\"> Русский </li> <li tabindex=\"0\" role=\"option\" lang=\"sk\" aria-posinset=\"31\" aria-setsize=\"41\" data-language=\"sk\" aria-label=\"Slovenčina\"> Slovenčina </li> <li tabindex=\"0\" role=\"option\" lang=\"sl\" aria-posinset=\"32\" aria-setsize=\"41\" data-language=\"sl\" aria-label=\"Slovenščina\"> Slovenščina </li> <li tabindex=\"0\" role=\"option\" lang=\"sq\" aria-posinset=\"33\" aria-setsize=\"41\" data-language=\"sq\" aria-label=\"Shqip\"> Shqip </li> <li tabindex=\"0\" role=\"option\" lang=\"sr\" aria-posinset=\"34\" aria-setsize=\"41\" data-language=\"sr\" aria-label=\"Српски\"> Српски </li> <li tabindex=\"0\" role=\"option\" lang=\"sv\" aria-posinset=\"35\" aria-setsize=\"41\" data-language=\"sv\" aria-label=\"Svenska\"> Svenska </li> <li tabindex=\"0\" role=\"option\" lang=\"th\" aria-posinset=\"36\" aria-setsize=\"41\" data-language=\"th\" aria-label=\"ไทย\"> ไทย </li> <li tabindex=\"0\" role=\"option\" lang=\"tr\" aria-posinset=\"37\" aria-setsize=\"41\" data-language=\"tr\" aria-label=\"Türkçe\"> Türkçe </li> <li tabindex=\"0\" role=\"option\" lang=\"uk\" aria-posinset=\"38\" aria-setsize=\"41\" data-language=\"uk\" aria-label=\"Українська\"> Українська </li> <li tabindex=\"0\" role=\"option\" lang=\"ur\" aria-posinset=\"39\" aria-setsize=\"41\" data-language=\"ur\" aria-label=\"اردو\"> اردو </li> <li tabindex=\"0\" role=\"option\" lang=\"vi\" aria-posinset=\"40\" aria-setsize=\"41\" data-language=\"vi\" aria-label=\"Tiếng Việt\"> Tiếng Việt </li> <li tabindex=\"0\" role=\"option\" lang=\"zh\" aria-posinset=\"41\" aria-setsize=\"41\" data-language=\"zh\" aria-label=\"简体中文\"> 简体中文 </li> </ul> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <div class=\"language-selector-button-mobile\"> <select data-action=\"language\" autocomplete=\"language\" id=\"uc-language-button\" aria-label=\"Select language\" class=\"language-selector-mobile\"> <option value=\"en\" aria-selected=\"true\" selected=\"selected\">English</option> <option value=\"ar\">العربية</option> <option value=\"be\">Беларуская</option> <option value=\"bg\">български</option> <option value=\"bs\">Bosanski</option> <option value=\"ca\">Català</option> <option value=\"cs\">Čeština</option> <option value=\"da\">Dansk</option> <option value=\"de\">Deutsch</option> <option value=\"el\">Ελληνικά</option> <option value=\"es\">Español</option> <option value=\"et\">Eesti</option> <option value=\"fi\">Suomi</option> <option value=\"fr\">Français</option> <option value=\"hi\">हिन्दी</option> <option value=\"hr\">Hrvatski</option> <option value=\"hu\">Magyar</option> <option value=\"is\">Íslenska</option> <option value=\"it\">Italiano</option> <option value=\"ja\">日本語</option> <option value=\"ko\">한국어</option> <option value=\"lt\">Lietuvių</option> <option value=\"lv\">Latviešu</option> <option value=\"mk\">Македонски</option> <option value=\"mn\">монгол</option> <option value=\"nl\">Nederlands</option> <option value=\"pl\">Polski</option> <option value=\"pt\">Português (Portugal)</option> <option value=\"ro\">Română</option> <option value=\"ru\">Русский</option> <option value=\"sk\">Slovenčina</option> <option value=\"sl\">Slovenščina</option> <option value=\"sq\">Shqip</option> <option value=\"sr\">Српски</option> <option value=\"sv\">Svenska</option> <option value=\"th\">ไทย</option> <option value=\"tr\">Türkçe</option> <option value=\"uk\">Українська</option> <option value=\"ur\">اردو</option> <option value=\"vi\">Tiếng Việt</option> <option value=\"zh\">简体中文</option> </select> <span class=\"language-selector-label-mobile\" aria-hidden=\"true\"></span> </div> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">We value your privacy</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">We and our partners are using technologies like Cookies or Targeting and process personal data like IP-address or browser information in order to personalize the advertisement you see. These technologies may access your device and&nbsp;<span>help us to show you more relevant ads and improve your internet experience.</span><div><div>We also use it in order to measure results or align our website content. Because we value your privacy, we are herewith asking your permission to use the following technologies.&nbsp;</div><div>You can always change/withdraw your consent later by clicking on the settings button on the left lower corner of the page.</div></div> </span> </div> </div> <div class=\"categories\"> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-category-functional-label\"> Functional </span> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read aria-labelledby=\"uc-category-functional-label\" id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-category-marketing-label\"> Marketing </span> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read aria-labelledby=\"uc-category-marketing-label\" id=\"uc-category-marketing-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"marketing\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> <div class=\"uc-toggle-container \"> <span tabindex=\"-1\" class=\"text \" id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-label\"> Analytics </span> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read aria-labelledby=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-label\" id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <span tabindex=\"-1\" class=\"text disabled\" id=\"uc-category-essential-label\"> Essential </span> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" aria-labelledby=\"uc-category-essential-label\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> </header> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"save\" class=\"save uc-save-button\" id=\"save\" aria-label=\"Save\" tabindex=\"0\"> Save </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Deny\" tabindex=\"0\"> Deny </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Accept and close\" tabindex=\"0\"> Accept and close </button> </div> </div> <span class=\"poweredBy\"> <a href=\"https://usercentrics.com/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&amp;utm_medium=referral&amp;utm_content=v3\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"> Powered by Usercentrics Consent Management</a> </span> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 12168,
+        "cmpType": "Usercentrics"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Close Layer",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "uc-close-button",
+              "type": "button",
+              "name": "Close Layer",
+              "aria-label": "Close Layer",
+              "tabindex": "0",
+              "class": "closeButton",
+              "title": "Close Layer",
+              "data-action": "consent",
+              "data-action-type": "less",
+              "data-testid": "uc-close-button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "actions right",
+              "selector": ".actions",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-close-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://usercentrics.com/privacy-policy/",
+              "aria-label": "Open Privacy Policy",
+              "id": "privacyPolicy",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "privacyPolicy"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #privacyPolicy",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Legal Notice",
+            "tag": "A",
+            "attributes": {
+              "class": "uc-button-link",
+              "tabindex": "0",
+              "href": "https://usercentrics.com/legal-notice/",
+              "aria-label": "Open Legal Notice",
+              "id": "imprint",
+              "rel": "noopener",
+              "target": "_blank",
+              "data-action": "link",
+              "data-action-type": "imprint"
+            },
+            "parentInfo": {
+              "tag": "NAV",
+              "id": "",
+              "className": "links",
+              "selector": ".links",
+              "grandparent": {
+                "tag": "HEADER",
+                "id": null,
+                "className": "has-custom-logo",
+                "selector": ".has-custom-logo"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #imprint",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Functional",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-functional-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsfunctional",
+              "tabindex": "0",
+              "aria-label": "Expand Functional"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-functional",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-functional"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Functional\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing",
+              "aria-labelledby": "uc-category-marketing-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Marketing",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-marketing-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsmarketing",
+              "tabindex": "0",
+              "aria-label": "Expand Marketing"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-marketing",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-marketing"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Marketing\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356",
+              "aria-labelledby": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Analytics",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailscustomcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356",
+              "tabindex": "0",
+              "aria-label": "Expand Analytics"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Analytics\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "role": "switch",
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Expand Essential",
+            "tag": "DIV",
+            "attributes": {
+              "role": "button",
+              "class": "list-item-header-expander",
+              "aria-labelledby": "uc-category-essential-item-title",
+              "aria-expanded": "false",
+              "aria-controls": "categoryDetailsessential",
+              "tabindex": "0",
+              "aria-label": "Expand Essential"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "list-item-header",
+              "selector": ".list-item-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "uc-category-essential",
+                "className": "uc-expandable-card list-item expandable has-toggles",
+                "selector": "#uc-category-essential"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> [aria-label=\"Expand Essential\"]",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "save",
+              "class": "save uc-save-button",
+              "id": "save",
+              "aria-label": "Save",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Deny",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "deny",
+              "class": "deny uc-deny-button",
+              "id": "deny",
+              "aria-label": "Deny",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #deny",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept and close",
+            "tag": "BUTTON",
+            "attributes": {
+              "data-action": "consent",
+              "data-action-type": "accept",
+              "class": "accept uc-accept-button",
+              "id": "accept",
+              "aria-label": "Accept and close",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "buttons-row",
+              "selector": ".buttons-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "buttons",
+                "selector": ".buttons"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #accept",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Powered by Usercentrics Consent Management",
+            "tag": "A",
+            "attributes": {
+              "href": "https://usercentrics.com/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&utm_medium=referral&utm_content=v3",
+              "target": "_blank",
+              "rel": "noopener nofollow",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "poweredBy",
+              "selector": ".poweredBy",
+              "grandparent": {
+                "tag": "FOOTER",
+                "id": "uc-cmp-footer",
+                "className": "center",
+                "selector": "#uc-cmp-footer"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> a",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Functional",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-functional-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "functional",
+              "aria-labelledby": "uc-category-functional-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-functional-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Marketing",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-marketing-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "marketing",
+              "aria-labelledby": "uc-category-marketing-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-marketing-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Analytics",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-readonly": "false",
+              "id": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+              "class": "uc-switch",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356",
+              "aria-labelledby": "uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "role": "switch",
+              "checked": "checked",
+              "aria-checked": "true",
+              "aria-disabled": "true",
+              "disabled": "disabled",
+              "aria-readonly": "true",
+              "tabindex": "-1",
+              "aria-hidden": "true",
+              "id": "uc-category-essential-toggle",
+              "class": "uc-switch disabled",
+              "data-action": "toggle",
+              "data-action-type": "categoryConsent",
+              "value": "essential",
+              "aria-labelledby": "uc-category-essential-item-title"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "uc-toggle-container disabled",
+              "selector": ".uc-toggle-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "list-item-header-actions",
+                "selector": ".list-item-header-actions"
+              }
+            },
+            "selector": "#usercentrics-cmp-ui >>> #uc-category-essential-toggle",
+            "selectorConfidence": "very high",
+            "ariaChecked": "true",
+            "isDisabled": true
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "#usercentrics-cmp-ui",
+        "url": "https://usercentrics.com/",
+        "filteredHtml": "<aside id=\"usercentrics-cmp-ui\" data-nosnippet=\"1\" keyboard-events=\"true\"> <div id=\"uc-screen-reader-shell\" tabindex=\"0\" role=\"region\" aria-label=\"Consent Management Platform Interface\"> <div class=\"cmp-wrapper cmp second center tablet zoom-normal wall \"> <div id=\"uc-main-dialog\" class=\"cmp second center tablet ltr gdpr \" role=\"dialog\" aria-labelledby=\"uc-privacy-title\" aria-describedby=\"uc-privacy-description\"> <ul class=\"language-selector-menu escapable\" role=\"listbox\" visibility=\"false\" id=\"language-selector-menu\" aria-labelledby=\"uc-language-button\"> <li tabindex=\"0\" role=\"option\" lang=\"en\" aria-posinset=\"1\" aria-setsize=\"41\" data-language=\"en\" aria-label=\"English\" aria-selected=\"true\" class=\"language-selected\"> English </li> <li tabindex=\"0\" role=\"option\" lang=\"ar\" aria-posinset=\"2\" aria-setsize=\"41\" data-language=\"ar\" aria-label=\"العربية\"> العربية </li> <li tabindex=\"0\" role=\"option\" lang=\"be\" aria-posinset=\"3\" aria-setsize=\"41\" data-language=\"be\" aria-label=\"Беларуская\"> Беларуская </li> <li tabindex=\"0\" role=\"option\" lang=\"bg\" aria-posinset=\"4\" aria-setsize=\"41\" data-language=\"bg\" aria-label=\"български\"> български </li> <li tabindex=\"0\" role=\"option\" lang=\"bs\" aria-posinset=\"5\" aria-setsize=\"41\" data-language=\"bs\" aria-label=\"Bosanski\"> Bosanski </li> <li tabindex=\"0\" role=\"option\" lang=\"ca\" aria-posinset=\"6\" aria-setsize=\"41\" data-language=\"ca\" aria-label=\"Català\"> Català </li> <li tabindex=\"0\" role=\"option\" lang=\"cs\" aria-posinset=\"7\" aria-setsize=\"41\" data-language=\"cs\" aria-label=\"Čeština\"> Čeština </li> <li tabindex=\"0\" role=\"option\" lang=\"da\" aria-posinset=\"8\" aria-setsize=\"41\" data-language=\"da\" aria-label=\"Dansk\"> Dansk </li> <li tabindex=\"0\" role=\"option\" lang=\"de\" aria-posinset=\"9\" aria-setsize=\"41\" data-language=\"de\" aria-label=\"Deutsch\"> Deutsch </li> <li tabindex=\"0\" role=\"option\" lang=\"el\" aria-posinset=\"10\" aria-setsize=\"41\" data-language=\"el\" aria-label=\"Ελληνικά\"> Ελληνικά </li> <li tabindex=\"0\" role=\"option\" lang=\"es\" aria-posinset=\"11\" aria-setsize=\"41\" data-language=\"es\" aria-label=\"Español\"> Español </li> <li tabindex=\"0\" role=\"option\" lang=\"et\" aria-posinset=\"12\" aria-setsize=\"41\" data-language=\"et\" aria-label=\"Eesti\"> Eesti </li> <li tabindex=\"0\" role=\"option\" lang=\"fi\" aria-posinset=\"13\" aria-setsize=\"41\" data-language=\"fi\" aria-label=\"Suomi\"> Suomi </li> <li tabindex=\"0\" role=\"option\" lang=\"fr\" aria-posinset=\"14\" aria-setsize=\"41\" data-language=\"fr\" aria-label=\"Français\"> Français </li> <li tabindex=\"0\" role=\"option\" lang=\"hi\" aria-posinset=\"15\" aria-setsize=\"41\" data-language=\"hi\" aria-label=\"हिन्दी\"> हिन्दी </li> <li tabindex=\"0\" role=\"option\" lang=\"hr\" aria-posinset=\"16\" aria-setsize=\"41\" data-language=\"hr\" aria-label=\"Hrvatski\"> Hrvatski </li> <li tabindex=\"0\" role=\"option\" lang=\"hu\" aria-posinset=\"17\" aria-setsize=\"41\" data-language=\"hu\" aria-label=\"Magyar\"> Magyar </li> <li tabindex=\"0\" role=\"option\" lang=\"is\" aria-posinset=\"18\" aria-setsize=\"41\" data-language=\"is\" aria-label=\"Íslenska\"> Íslenska </li> <li tabindex=\"0\" role=\"option\" lang=\"it\" aria-posinset=\"19\" aria-setsize=\"41\" data-language=\"it\" aria-label=\"Italiano\"> Italiano </li> <li tabindex=\"0\" role=\"option\" lang=\"ja\" aria-posinset=\"20\" aria-setsize=\"41\" data-language=\"ja\" aria-label=\"日本語\"> 日本語 </li> <li tabindex=\"0\" role=\"option\" lang=\"ko\" aria-posinset=\"21\" aria-setsize=\"41\" data-language=\"ko\" aria-label=\"한국어\"> 한국어 </li> <li tabindex=\"0\" role=\"option\" lang=\"lt\" aria-posinset=\"22\" aria-setsize=\"41\" data-language=\"lt\" aria-label=\"Lietuvių\"> Lietuvių </li> <li tabindex=\"0\" role=\"option\" lang=\"lv\" aria-posinset=\"23\" aria-setsize=\"41\" data-language=\"lv\" aria-label=\"Latviešu\"> Latviešu </li> <li tabindex=\"0\" role=\"option\" lang=\"mk\" aria-posinset=\"24\" aria-setsize=\"41\" data-language=\"mk\" aria-label=\"Македонски\"> Македонски </li> <li tabindex=\"0\" role=\"option\" lang=\"mn\" aria-posinset=\"25\" aria-setsize=\"41\" data-language=\"mn\" aria-label=\"монгол\"> монгол </li> <li tabindex=\"0\" role=\"option\" lang=\"nl\" aria-posinset=\"26\" aria-setsize=\"41\" data-language=\"nl\" aria-label=\"Nederlands\"> Nederlands </li> <li tabindex=\"0\" role=\"option\" lang=\"pl\" aria-posinset=\"27\" aria-setsize=\"41\" data-language=\"pl\" aria-label=\"Polski\"> Polski </li> <li tabindex=\"0\" role=\"option\" lang=\"pt\" aria-posinset=\"28\" aria-setsize=\"41\" data-language=\"pt\" aria-label=\"Português (Portugal)\"> Português (Portugal) </li> <li tabindex=\"0\" role=\"option\" lang=\"ro\" aria-posinset=\"29\" aria-setsize=\"41\" data-language=\"ro\" aria-label=\"Română\"> Română </li> <li tabindex=\"0\" role=\"option\" lang=\"ru\" aria-posinset=\"30\" aria-setsize=\"41\" data-language=\"ru\" aria-label=\"Русский\"> Русский </li> <li tabindex=\"0\" role=\"option\" lang=\"sk\" aria-posinset=\"31\" aria-setsize=\"41\" data-language=\"sk\" aria-label=\"Slovenčina\"> Slovenčina </li> <li tabindex=\"0\" role=\"option\" lang=\"sl\" aria-posinset=\"32\" aria-setsize=\"41\" data-language=\"sl\" aria-label=\"Slovenščina\"> Slovenščina </li> <li tabindex=\"0\" role=\"option\" lang=\"sq\" aria-posinset=\"33\" aria-setsize=\"41\" data-language=\"sq\" aria-label=\"Shqip\"> Shqip </li> <li tabindex=\"0\" role=\"option\" lang=\"sr\" aria-posinset=\"34\" aria-setsize=\"41\" data-language=\"sr\" aria-label=\"Српски\"> Српски </li> <li tabindex=\"0\" role=\"option\" lang=\"sv\" aria-posinset=\"35\" aria-setsize=\"41\" data-language=\"sv\" aria-label=\"Svenska\"> Svenska </li> <li tabindex=\"0\" role=\"option\" lang=\"th\" aria-posinset=\"36\" aria-setsize=\"41\" data-language=\"th\" aria-label=\"ไทย\"> ไทย </li> <li tabindex=\"0\" role=\"option\" lang=\"tr\" aria-posinset=\"37\" aria-setsize=\"41\" data-language=\"tr\" aria-label=\"Türkçe\"> Türkçe </li> <li tabindex=\"0\" role=\"option\" lang=\"uk\" aria-posinset=\"38\" aria-setsize=\"41\" data-language=\"uk\" aria-label=\"Українська\"> Українська </li> <li tabindex=\"0\" role=\"option\" lang=\"ur\" aria-posinset=\"39\" aria-setsize=\"41\" data-language=\"ur\" aria-label=\"اردو\"> اردو </li> <li tabindex=\"0\" role=\"option\" lang=\"vi\" aria-posinset=\"40\" aria-setsize=\"41\" data-language=\"vi\" aria-label=\"Tiếng Việt\"> Tiếng Việt </li> <li tabindex=\"0\" role=\"option\" lang=\"zh\" aria-posinset=\"41\" aria-setsize=\"41\" data-language=\"zh\" aria-label=\"简体中文\"> 简体中文 </li> </ul> <div id=\"main-view\" class=\"main-wrapper\"> <header class=\"has-custom-logo\"> <div class=\"actions right\"> <div class=\"language-selector-button-mobile\"> <select data-action=\"language\" autocomplete=\"language\" id=\"uc-language-button\" aria-label=\"Select language\" class=\"language-selector-mobile\"> <option value=\"en\" aria-selected=\"true\" selected=\"selected\">English</option> <option value=\"ar\">العربية</option> <option value=\"be\">Беларуская</option> <option value=\"bg\">български</option> <option value=\"bs\">Bosanski</option> <option value=\"ca\">Català</option> <option value=\"cs\">Čeština</option> <option value=\"da\">Dansk</option> <option value=\"de\">Deutsch</option> <option value=\"el\">Ελληνικά</option> <option value=\"es\">Español</option> <option value=\"et\">Eesti</option> <option value=\"fi\">Suomi</option> <option value=\"fr\">Français</option> <option value=\"hi\">हिन्दी</option> <option value=\"hr\">Hrvatski</option> <option value=\"hu\">Magyar</option> <option value=\"is\">Íslenska</option> <option value=\"it\">Italiano</option> <option value=\"ja\">日本語</option> <option value=\"ko\">한국어</option> <option value=\"lt\">Lietuvių</option> <option value=\"lv\">Latviešu</option> <option value=\"mk\">Македонски</option> <option value=\"mn\">монгол</option> <option value=\"nl\">Nederlands</option> <option value=\"pl\">Polski</option> <option value=\"pt\">Português (Portugal)</option> <option value=\"ro\">Română</option> <option value=\"ru\">Русский</option> <option value=\"sk\">Slovenčina</option> <option value=\"sl\">Slovenščina</option> <option value=\"sq\">Shqip</option> <option value=\"sr\">Српски</option> <option value=\"sv\">Svenska</option> <option value=\"th\">ไทย</option> <option value=\"tr\">Türkçe</option> <option value=\"uk\">Українська</option> <option value=\"ur\">اردو</option> <option value=\"vi\">Tiếng Việt</option> <option value=\"zh\">简体中文</option> </select> <span class=\"language-selector-label-mobile\" aria-hidden=\"true\"></span> </div> <button id=\"uc-close-button\" type=\"button\" name=\"Close Layer\" aria-label=\"Close Layer\" tabindex=\"0\" class=\"closeButton\" title=\"Close Layer\" data-action=\"consent\" data-action-type=\"less\" data-testid=\"uc-close-button\"> </button> </div> <div id=\"uc-cmp-description\" class=\"overflow\"> <span aria-level=\"2\" role=\"heading\" class=\"privacy-title\" id=\"uc-privacy-title\">Privacy Settings</span> <div class=\"privacy-text \" data-action=\"\" id=\"uc-privacy-description\"> <span class=\"privacy-text-detailed\">This tool helps you to select and deactivate various tags / trackers / analysis tools used on this website. </span> </div> </div> </header> <div class=\"sections\"> <div id=\"uc-tabs-header\" class=\"sections-header\" role=\"tablist\"> <div role=\"tab\" id=\"categories-tab-button\" class=\"active\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#categoriesPanel\" type=\"button\" aria-c tabindex=\"0\" aria-selected=\"true\"> Categories </div> <div role=\"tab\" id=\"services-tab-button\" data-action=\"activate\" data-source=\".sections-header &gt; div\" data-target=\"#servicesPanel\" type=\"button\" aria-c tabindex=\"-1\" aria-selected=\"false\"> Services </div> </div> <div id=\"uc-sections-body\" class=\"sections-body overflow\"> <div class=\"active\" role=\"tabpanel\" id=\"categoriesPanel\" aria-labelledby=\"categories-tab-button\"> <div id=\"uc-categories-list\" class=\"list categories-list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-functional\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-functional\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsfunctional\" data-load-id=\"functional\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-functional-item-title\">Functional</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-functional-item-subtitle\">These tags enable us to analyze website usage so that we can measure and improve its performance.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-functional-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"functional\" aria-labelledby=\"uc-category-functional-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-functional-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Functional\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsfunctional\" role=\"region\" aria-labelledby=\"uc-category-functional-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-marketing\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-marketing\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsmarketing\" data-load-id=\"marketing\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-marketing-item-title\">Marketing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-marketing-item-subtitle\">Marketing/target cookies are usually used to show you advertisements that meet your interests. When you visit another website, your browser's cookie is recognized and selected ads are displayed to you based on the information stored in this cookie (art. 6 par. 1 p. 1 a) GDPR).</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-marketing-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"marketing\" aria-labelledby=\"uc-category-marketing-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-marketing-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Marketing\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsmarketing\" role=\"region\" aria-labelledby=\"uc-category-marketing-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailscustomcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\" data-load-id=\"customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title\">Analytics</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-subtitle\">We use analytics tools to understand how visitors use our website, including which pages are visited, how long users stay on the site, and how they interact with the content. This data is processed by the following third-party providers and may be transferred to countries outside the EU. The information is used to improve our website and for internal reporting.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\" aria-labelledby=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Analytics\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailscustomcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356\" role=\"region\" aria-labelledby=\"uc-category-customcategory-be421ec6-1e02-4b3d-b522-c6a3744bd356-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles \" id=\"uc-category-essential\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-category-essential\" data-load-action=\"categoryDetails\" data-load-target=\"#categoryDetailsessential\" data-load-id=\"essential\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-category-essential-item-title\">Essential</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-category-essential-item-subtitle\">These tags are necessary for the basic functions of the website.</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-category-essential-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"categoryConsent\" value=\"essential\" aria-labelledby=\"uc-category-essential-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-category-essential-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Essential\"></div> </div> <div class=\"list-item-body\" id=\"categoryDetailsessential\" role=\"region\" aria-labelledby=\"uc-category-essential-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> </div> </div> <div role=\"tabpanel\" id=\"servicesPanel\" aria-labelledby=\"services-tab-button\"> <div id=\"uc-services-list\" class=\"list\" role=\"list\"> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BJ59EidsWQ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BJ59EidsWQ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBJ59EidsWQ\" data-load-id=\"BJ59EidsWQ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BJ59EidsWQ-item-title\">Google Tag Manager</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BJ59EidsWQ-item-subtitle\">Essential</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-service-BJ59EidsWQ-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BJ59EidsWQ\" aria-labelledby=\"uc-service-BJ59EidsWQ-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BJ59EidsWQ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Google Tag Manager\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBJ59EidsWQ\" role=\"region\" aria-labelledby=\"uc-service-BJ59EidsWQ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-H1Vl5NidjWX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-H1Vl5NidjWX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsH1Vl5NidjWX\" data-load-id=\"H1Vl5NidjWX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-H1Vl5NidjWX-item-title\">Usercentrics Consent Management Platform</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-H1Vl5NidjWX-item-subtitle\">Essential</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container disabled\" aria-hidden=\"true\"> <button type=\"button\" role=\"switch\" checked=\"checked\" aria-checked=\"true\" aria-disabled=\"true\" disabled=\"disabled\" aria-read tabindex=\"-1\" aria-hidden=\"true\" id=\"uc-service-H1Vl5NidjWX-toggle\" class=\"uc-switch disabled\" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"H1Vl5NidjWX\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\"> <span class=\"icon close disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> <span class=\"icon check disabled\" tabindex=\"-1\" aria-hidden=\"true\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Usercentrics Consent Management Platform\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsH1Vl5NidjWX\" role=\"region\" aria-labelledby=\"uc-service-H1Vl5NidjWX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-Sk9kb5VoOi-7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-Sk9kb5VoOi-7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsSk9kb5VoOi-7\" data-load-id=\"Sk9kb5VoOi-7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-Sk9kb5VoOi-7-item-title\">Amplitude</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-Sk9kb5VoOi-7-item-subtitle\">Analytics</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-Sk9kb5VoOi-7-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"Sk9kb5VoOi-7\" aria-labelledby=\"uc-service-Sk9kb5VoOi-7-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-Sk9kb5VoOi-7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Amplitude\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsSk9kb5VoOi-7\" role=\"region\" aria-labelledby=\"uc-service-Sk9kb5VoOi-7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BO3dx6Mra1k9GA\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BO3dx6Mra1k9GA\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBO3dx6Mra1k9GA\" data-load-id=\"BO3dx6Mra1k9GA\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BO3dx6Mra1k9GA-item-title\">Chat Metrics</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BO3dx6Mra1k9GA-item-subtitle\">Functional</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BO3dx6Mra1k9GA-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BO3dx6Mra1k9GA\" aria-labelledby=\"uc-service-BO3dx6Mra1k9GA-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BO3dx6Mra1k9GA-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Chat Metrics\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBO3dx6Mra1k9GA\" role=\"region\" aria-labelledby=\"uc-service-BO3dx6Mra1k9GA-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-LykAT-gy\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-LykAT-gy\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsLykAT-gy\" data-load-id=\"LykAT-gy\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-LykAT-gy-item-title\">Conversion Linker</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-LykAT-gy-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-LykAT-gy-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"LykAT-gy\" aria-labelledby=\"uc-service-LykAT-gy-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-LykAT-gy-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Conversion Linker\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsLykAT-gy\" role=\"region\" aria-labelledby=\"uc-service-LykAT-gy-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-jE46pSyKb4wx8z\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-jE46pSyKb4wx8z\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsjE46pSyKb4wx8z\" data-load-id=\"jE46pSyKb4wx8z\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-jE46pSyKb4wx8z-item-title\">Dreamdata</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-jE46pSyKb4wx8z-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-jE46pSyKb4wx8z-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"jE46pSyKb4wx8z\" aria-labelledby=\"uc-service-jE46pSyKb4wx8z-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-jE46pSyKb4wx8z-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Dreamdata\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsjE46pSyKb4wx8z\" role=\"region\" aria-labelledby=\"uc-service-jE46pSyKb4wx8z-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ko1w5PpFl\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ko1w5PpFl\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsko1w5PpFl\" data-load-id=\"ko1w5PpFl\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ko1w5PpFl-item-title\">Facebook Pixel</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ko1w5PpFl-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-ko1w5PpFl-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"ko1w5PpFl\" aria-labelledby=\"uc-service-ko1w5PpFl-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ko1w5PpFl-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Facebook Pixel\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsko1w5PpFl\" role=\"region\" aria-labelledby=\"uc-service-ko1w5PpFl-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-piwGbNOxMBmKDe\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-piwGbNOxMBmKDe\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailspiwGbNOxMBmKDe\" data-load-id=\"piwGbNOxMBmKDe\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-piwGbNOxMBmKDe-item-title\">Factors.ai</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-piwGbNOxMBmKDe-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-piwGbNOxMBmKDe-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"piwGbNOxMBmKDe\" aria-labelledby=\"uc-service-piwGbNOxMBmKDe-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-piwGbNOxMBmKDe-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Factors.ai\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailspiwGbNOxMBmKDe\" role=\"region\" aria-labelledby=\"uc-service-piwGbNOxMBmKDe-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-3AwSqkFPz_OCMx\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-3AwSqkFPz_OCMx\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails3AwSqkFPz_OCMx\" data-load-id=\"3AwSqkFPz_OCMx\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-3AwSqkFPz_OCMx-item-title\">G2 - Track Your Prospects</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-3AwSqkFPz_OCMx-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-3AwSqkFPz_OCMx-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"3AwSqkFPz_OCMx\" aria-labelledby=\"uc-service-3AwSqkFPz_OCMx-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-3AwSqkFPz_OCMx-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand G2 - Track Your Prospects\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails3AwSqkFPz_OCMx\" role=\"region\" aria-labelledby=\"uc-service-3AwSqkFPz_OCMx-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-n9pGpcK5L\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-n9pGpcK5L\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsn9pGpcK5L\" data-load-id=\"n9pGpcK5L\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-n9pGpcK5L-item-title\">Google Ad Exchange</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-n9pGpcK5L-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-n9pGpcK5L-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"n9pGpcK5L\" aria-labelledby=\"uc-service-n9pGpcK5L-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-n9pGpcK5L-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Google Ad Exchange\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsn9pGpcK5L\" role=\"region\" aria-labelledby=\"uc-service-n9pGpcK5L-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ZNl-QzrhP\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ZNl-QzrhP\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsZNl-QzrhP\" data-load-id=\"ZNl-QzrhP\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ZNl-QzrhP-item-title\">Google Ads</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ZNl-QzrhP-item-subtitle\">Marketing • 1 Subservice</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-ZNl-QzrhP-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"ZNl-QzrhP\" aria-labelledby=\"uc-service-ZNl-QzrhP-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ZNl-QzrhP-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Google Ads\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsZNl-QzrhP\" role=\"region\" aria-labelledby=\"uc-service-ZNl-QzrhP-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-87JYasXPF\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-87JYasXPF\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails87JYasXPF\" data-load-id=\"87JYasXPF\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-87JYasXPF-item-title\">Google Analytics 4</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-87JYasXPF-item-subtitle\">Analytics</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-87JYasXPF-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"87JYasXPF\" aria-labelledby=\"uc-service-87JYasXPF-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-87JYasXPF-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Google Analytics 4\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails87JYasXPF\" role=\"region\" aria-labelledby=\"uc-service-87JYasXPF-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-rJJjcVouoZ7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-rJJjcVouoZ7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsrJJjcVouoZ7\" data-load-id=\"rJJjcVouoZ7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-rJJjcVouoZ7-item-title\">gstatic.com</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-rJJjcVouoZ7-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-rJJjcVouoZ7-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"rJJjcVouoZ7\" aria-labelledby=\"uc-service-rJJjcVouoZ7-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-rJJjcVouoZ7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand gstatic.com\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsrJJjcVouoZ7\" role=\"region\" aria-labelledby=\"uc-service-rJJjcVouoZ7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-S1kgcNo_j-m\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-S1kgcNo_j-m\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsS1kgcNo_j-m\" data-load-id=\"S1kgcNo_j-m\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-S1kgcNo_j-m-item-title\">Hotjar</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-S1kgcNo_j-m-item-subtitle\">Analytics</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-S1kgcNo_j-m-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"S1kgcNo_j-m\" aria-labelledby=\"uc-service-S1kgcNo_j-m-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-S1kgcNo_j-m-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Hotjar\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsS1kgcNo_j-m\" role=\"region\" aria-labelledby=\"uc-service-S1kgcNo_j-m-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-JQ2XQxIk\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-JQ2XQxIk\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsJQ2XQxIk\" data-load-id=\"JQ2XQxIk\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-JQ2XQxIk-item-title\">LinkedIn Insight Tag</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-JQ2XQxIk-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-JQ2XQxIk-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"JQ2XQxIk\" aria-labelledby=\"uc-service-JQ2XQxIk-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-JQ2XQxIk-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand LinkedIn Insight Tag\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsJQ2XQxIk\" role=\"region\" aria-labelledby=\"uc-service-JQ2XQxIk-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-KpU9UXKjc\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-KpU9UXKjc\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsKpU9UXKjc\" data-load-id=\"KpU9UXKjc\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-KpU9UXKjc-item-title\">Livestorm.io</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-KpU9UXKjc-item-subtitle\">Functional</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-KpU9UXKjc-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"KpU9UXKjc\" aria-labelledby=\"uc-service-KpU9UXKjc-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-KpU9UXKjc-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Livestorm.io\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsKpU9UXKjc\" role=\"region\" aria-labelledby=\"uc-service-KpU9UXKjc-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BkeKqEjuoZQ\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BkeKqEjuoZQ\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBkeKqEjuoZQ\" data-load-id=\"BkeKqEjuoZQ\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BkeKqEjuoZQ-item-title\">Microsoft Advertising</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BkeKqEjuoZQ-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BkeKqEjuoZQ-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BkeKqEjuoZQ\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Microsoft Advertising\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBkeKqEjuoZQ\" role=\"region\" aria-labelledby=\"uc-service-BkeKqEjuoZQ-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-3zpCxDpYLSeJUX\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-3zpCxDpYLSeJUX\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails3zpCxDpYLSeJUX\" data-load-id=\"3zpCxDpYLSeJUX\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-3zpCxDpYLSeJUX-item-title\">NextRoll/AdRoll/RollWorks</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-3zpCxDpYLSeJUX-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-3zpCxDpYLSeJUX-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"3zpCxDpYLSeJUX\" aria-labelledby=\"uc-service-3zpCxDpYLSeJUX-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-3zpCxDpYLSeJUX-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand NextRoll/AdRoll/RollWorks\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails3zpCxDpYLSeJUX\" role=\"region\" aria-labelledby=\"uc-service-3zpCxDpYLSeJUX-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ZglHJrjn\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ZglHJrjn\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsZglHJrjn\" data-load-id=\"ZglHJrjn\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ZglHJrjn-item-title\">Reddit Advertising</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ZglHJrjn-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-ZglHJrjn-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"ZglHJrjn\" aria-labelledby=\"uc-service-ZglHJrjn-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ZglHJrjn-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Reddit Advertising\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsZglHJrjn\" role=\"region\" aria-labelledby=\"uc-service-ZglHJrjn-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-DZgkFbk_nmmNES\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-DZgkFbk_nmmNES\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsDZgkFbk_nmmNES\" data-load-id=\"DZgkFbk_nmmNES\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-DZgkFbk_nmmNES-item-title\">Storylane</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-DZgkFbk_nmmNES-item-subtitle\">Functional</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-DZgkFbk_nmmNES-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"DZgkFbk_nmmNES\" aria-labelledby=\"uc-service-DZgkFbk_nmmNES-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-DZgkFbk_nmmNES-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Storylane\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsDZgkFbk_nmmNES\" role=\"region\" aria-labelledby=\"uc-service-DZgkFbk_nmmNES-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-ZNeoif4BVLO3t6\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-ZNeoif4BVLO3t6\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsZNeoif4BVLO3t6\" data-load-id=\"ZNeoif4BVLO3t6\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-ZNeoif4BVLO3t6-item-title\">Taboola</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-ZNeoif4BVLO3t6-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-ZNeoif4BVLO3t6-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"ZNeoif4BVLO3t6\" aria-labelledby=\"uc-service-ZNeoif4BVLO3t6-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-ZNeoif4BVLO3t6-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Taboola\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsZNeoif4BVLO3t6\" role=\"region\" aria-labelledby=\"uc-service-ZNeoif4BVLO3t6-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-b_fpTV8tY\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-b_fpTV8tY\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsb_fpTV8tY\" data-load-id=\"b_fpTV8tY\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-b_fpTV8tY-item-title\">Usercentrics Website Functions</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-b_fpTV8tY-item-subtitle\">Functional</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-b_fpTV8tY-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"b_fpTV8tY\" aria-labelledby=\"uc-service-b_fpTV8tY-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-b_fpTV8tY-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Usercentrics Website Functions\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsb_fpTV8tY\" role=\"region\" aria-labelledby=\"uc-service-b_fpTV8tY-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-6pwgls0Tb0A7Dp\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-6pwgls0Tb0A7Dp\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetails6pwgls0Tb0A7Dp\" data-load-id=\"6pwgls0Tb0A7Dp\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-6pwgls0Tb0A7Dp-item-title\">Usercentrics Website Marketing</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-6pwgls0Tb0A7Dp-item-subtitle\">Marketing</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-6pwgls0Tb0A7Dp-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"6pwgls0Tb0A7Dp\" aria-labelledby=\"uc-service-6pwgls0Tb0A7Dp-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-6pwgls0Tb0A7Dp-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand Usercentrics Website Marketing\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetails6pwgls0Tb0A7Dp\" role=\"region\" aria-labelledby=\"uc-service-6pwgls0Tb0A7Dp-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div role=\"listitem\" class=\"uc-expandable-card list-item expandable has-toggles shares-data-inside-eu\" id=\"uc-service-BJz7qNsdj-7\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#uc-service-BJz7qNsdj-7\" data-load-action=\"serviceDetails\" data-load-target=\"#serviceDetailsBJz7qNsdj-7\" data-load-id=\"BJz7qNsdj-7\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"uc-service-BJz7qNsdj-7-item-title\">YouTube Video</div> <div class=\"uc-card-description list-item-header-subtitle\" id=\"uc-service-BJz7qNsdj-7-item-subtitle\">Marketing • 1 Subservice</div> </div> <div class=\"list-item-header-actions \"> <div class=\"uc-toggle-container \"> <button type=\"button\" role=\"switch\" aria-checked=\"false\" aria-read id=\"uc-service-BJz7qNsdj-7-toggle\" class=\"uc-switch \" data-action=\"toggle\" data-action-type=\"serviceConsent\" value=\"BJz7qNsdj-7\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\"> <span class=\"icon close \" tabindex=\"-1\"></span> <span class=\"icon check \" tabindex=\"-1\"></span> </button> </div> </div> <div role=\"button\" class=\"list-item-header-expander\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\" aria-expanded=\"false\" aria-c tabindex=\"0\" aria-label=\"Expand YouTube Video\"></div> </div> <div class=\"list-item-body\" id=\"serviceDetailsBJz7qNsdj-7\" role=\"region\" aria-labelledby=\"uc-service-BJz7qNsdj-7-item-title\"> <div class=\"spinner-container\" tabindex=\"-1\"> <div class=\"spinner\" tabindex=\"-1\"></div> </div> </div> </div> <div class=\"uc-expandable-card list-item controller-id expandable\" role=\"listitem\" id=\"controller-id-item\"> <div class=\"list-item-header\" data-action=\"expand\" data-target=\"#controller-id-item\" tabindex=\"-1\"> <div class=\"list-item-header-content\" tabindex=\"-1\"> <div class=\"uc-card-title list-item-header-title\" id=\"controller-id-title\">ID to request consent data</div> </div> <div role=\"button\" class=\"list-item-header-expander\" tabindex=\"0\" aria-labelledby=\"controller-id-title\" aria-expanded=\"false\" aria-c aria-label=\"Expand ID to request consent data\"></div> </div> <div class=\"list-item-body\" id=\"list-item-body-controller-id\" role=\"region\" aria-labelledby=\"controller-id-title\"> <div class=\"controller-id-item-container\"> <div class=\"controller-id-item-text\">6e4a34ba51f429879162d4ce6e700a439aeb90c85271e893735c6fc9fc766d78</div> <button class=\"controller-id-item-button\" title=\"copy\"> <div class=\"copy-icon initial active\"></div> <div class=\"copy-icon success icon-container\"> <span class=\"success-text\">copied</span> <div class=\"success-icon\"></div> </div> </button> </div> </div> </div> </div> </div> </div> </div> </div> <footer id=\"uc-cmp-footer\" class=\"center\" data-testid=\"uc-footer\" tabindex=\"-1\"> <div class=\"buttons\"> <div class=\"buttons-row\"> <button data-action=\"consent\" data-action-type=\"save\" class=\"save uc-save-button\" id=\"save\" aria-label=\"Save\" tabindex=\"0\"> Save </button> <button data-action=\"consent\" data-action-type=\"deny\" class=\"deny uc-deny-button\" id=\"deny\" aria-label=\"Deny\" tabindex=\"0\"> Deny </button> <button data-action=\"consent\" data-action-type=\"accept\" class=\"accept uc-accept-button\" id=\"accept\" aria-label=\"Accept and close\" tabindex=\"0\"> Accept and close </button> </div> </div> <span class=\"poweredBy\"> <a href=\"https://usercentrics.com/consent-management-platform-powered-by-usercentrics/?utm_source=banner_uc&amp;utm_medium=referral&amp;utm_content=v3\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"> Powered by Usercentrics Consent Management</a> </span> </footer> </div> </div> </div> </aside>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 55171,
+        "cmpType": "Usercentrics",
+        "isIframe": false
+      }
+    }
+  ]
+}

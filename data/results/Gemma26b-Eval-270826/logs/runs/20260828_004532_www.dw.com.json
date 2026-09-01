@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-08-28T00:45:32.235575",
+  "url": "https://www.dw.com",
+  "structured_dom_chars": 290873,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 12,
+  "human_review_count": 0,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"dw\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cmpwrapper\"}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#cmpwrapper\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"a\", \"textFilter\": \"Settings\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label='External content & special features']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='External content & special features']\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label='Measurement & development']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Measurement & development']\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label='Ad & content personalization']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Ad & content personalization']\"}}}, {\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label='Store and/or access information on a device']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Store and/or access information on a device']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \"a\", \"textFilter\": \"Save selection\"}}]}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmplinksettings | Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtmsave",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: .cmplinksettings | Selector Failed: ACTION_TARGET_NOT_FOUND: .cmpboxbtysave",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 1800.09,
+  "extraction_duration_seconds": 15.46,
+  "extraction_share_percent": 0.86,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

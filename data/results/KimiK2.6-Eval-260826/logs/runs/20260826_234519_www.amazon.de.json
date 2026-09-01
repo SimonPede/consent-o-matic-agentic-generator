@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-08-26T23:45:19.846548",
+  "url": "https://www.amazon.de",
+  "structured_dom_chars": 157345,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Unidentified CMP",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\n  \"Amazon\": {\n    \"detectors\": [\n      {\n        \"presentMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"[id*='cos-banner']\"\n            }\n          }\n        ],\n        \"showingMatcher\": [\n          {\n            \"type\": \"css\",\n            \"target\": {\n              \"selector\": \"[id*='cos-banner']\",\n              \"displayFilter\": true\n            }\n          }\n        ]\n      }\n    ],\n    \"methods\": [\n      {\n        \"name\": \"HIDE_CMP\",\n        \"action\": {\n          \"type\": \"hide\",\n          \"target\": {\n            \"selector\": \"[id*='cos-banner']\"\n          }\n        }\n      },\n      {\n        \"name\": \"OPEN_OPTIONS\",\n        \"action\": {\n          \"type\": \"click\",\n          \"target\": {\n            \"selector\": \"#sp-cc-customize\"\n          }\n        }\n      },\n      {\n        \"name\": \"DO_CONSENT\",\n        \"action\": {\n          \"type\": \"list\",\n          \"actions\": [\n            {\n              \"type\": \"waitcss\",\n              \"target\": {\n                \"selector\": \"#saveSelectedPrefs\"\n              },\n              \"retries\": 10,\n              \"waitTime\": 500\n            },\n            {\n              \"type\": \"consent\",\n              \"consents\": [\n                {\n                  \"type\": \"F\",\n                  \"trueAction\": {\n                    \"type\": \"list\",\n                    \"actions\": [\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_STORES_ADS_COOKIE_1P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='on']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_STORES_ADS_COOKIE_3P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='on']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_EU_ADS_DMA_1P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='on']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_EU_ADS_DMA_3P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='on']\"\n                        }\n                      }\n                    ]\n                  },\n                  \"falseAction\": {\n                    \"type\": \"list\",\n                    \"actions\": [\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_STORES_ADS_COOKIE_1P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='off']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_STORES_ADS_COOKIE_3P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='off']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_EU_ADS_DMA_1P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='off']\"\n                        }\n                      },\n                      {\n                        \"type\": \"click\",\n                        \"parent\": {\n                          \"selector\": \".customize-container\",\n                          \"childFilter\": {\n                            \"target\": {\n                              \"selector\": \"input[data-persistence-model='APC_EU_ADS_DMA_3P']\"\n                            }\n                          }\n                        },\n                        \"target\": {\n                          \"selector\": \".a-column.a-span6 button[value='off']\"\n                        }\n                      }\n                    ]\n                  }\n                }\n              ]\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"SAVE_CONSENT\",\n        \"action\": {\n          \"type\": \"click\",\n          \"target\": {\n            \"selector\": \"#saveSelectedPrefs\"\n          }\n        }\n      }\n    ]\n  }\n}",
+  "last_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation."
+  ],
+  "duration_seconds": 519.95,
+  "extraction_duration_seconds": 191.88,
+  "extraction_share_percent": 36.9,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": {
+    "Amazon": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cos-banner']"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "[id*='cos-banner']",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*='cos-banner']"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#sp-cc-accept"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#sp-cc-rejectall-link"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

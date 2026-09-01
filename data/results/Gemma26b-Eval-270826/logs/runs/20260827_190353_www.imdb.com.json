@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-08-27T19:03:53.179326",
+  "url": "https://www.imdb.com",
+  "structured_dom_chars": 31648,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "no_final_rule",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "Anthropic_Custom",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 6,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"IMDb_Custom\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='consent-banner']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[data-testid='consent-banner']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[data-testid='consent-banner']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[data-testid='details']\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ADVERTISING-on-announce\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ADVERTISING-off-announce\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#data-ads-imdb-on-announce\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#data-ads-imdb-off-announce\"}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#data-ads-3p-on-announce\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#data-ads-3p-off-announce\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"input[name='rejectOrSave']\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Selector Failed: ACTION_TARGET_NOT_FOUND: #ADVERTISING-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-imdb-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-3p-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: input[name='rejectOrSave']",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: #ADVERTISING-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-imdb-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-3p-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: input[name='rejectOrSave']",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: #ADVERTISING-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-imdb-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: #data-ads-3p-off-announce | Selector Failed: ACTION_TARGET_NOT_FOUND: input[name='rejectOrSave']"
+  ],
+  "duration_seconds": 1800.11,
+  "extraction_duration_seconds": 25.14,
+  "extraction_share_percent": 1.4,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": null
+}

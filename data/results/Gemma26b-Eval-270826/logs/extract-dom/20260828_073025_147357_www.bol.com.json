@@ -1,0 +1,157 @@
+{
+  "timestamp": "2026-08-28T07:30:25.147401",
+  "url": "https://www.bol.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.bol.com"
+  ],
+  "duration_seconds": 82.98,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "Timeout: CMP UI was not fully rendered in time!",
+      "I found 1 frames.",
+      "a frame was picked by score: https://www.bol.com/ with Score: 4",
+      "Regex failed in frame https://www.bol.com/, trying LLM fallback...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.bol.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: null,",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: false,",
+      "      cmpType: null,",
+      "      cmpSelector: null,",
+      "      url: 'https://www.bol.com/',",
+      "      filteredHtml: `<body> <div class=\"topbar\"><div class=\"logo-box\"></div></div> <div class=\"main\"><div class=\"info-box\"> <br> <div class=\"unicorn\"> </div> <br> <div id=\"message\"> <h1 class=\"bol_header\">IP address is blocked</h1> <p> Your access to bol has been temporarily blocked due to possible abuse from this IP address.<br> </p><div class=\"list-box\"> This may be caused by several factors, including: <ul> <li><b>Use of a VPN:</b> Please turn off your VPN and try accessing the site again.</li> <li><b>Outdated browser or browser extensions:</b> Make sure you're using the latest version of a browser such as Safari, Chrome, Firefox, or Microsoft Edge. Also, disable any unnecessary plugins.</li> <li><b>Automated scripts:</b> If you're using a script that collects data automatically from bol.com, please refer to our Developer Guide for more information.</li> </ul></div><br> Additionally, the block may be caused by malicious software on your device.<br> We recommend installing up-to-date antivirus or anti-spyware software and running a full scan of your device.<br><br> For more information, you can contact our customer service by email at: <a href=\"mailto:customerservice@bol.com\">customerservice@bol.com</a><br> Please always mention your <a target=\"_blank\" href=\"https://whatismyip.akamai.com\">IP address</a> so we can assist you more effectively.<br><p></p> </div> <br> <hr> If you're a developer and are interested in interfacing with bol, check out our developer guides on <a target=\"_oai\" href=\"https://developers.bol.com/\">developers.bol.com</a> for information about our Open API program. <br><br> </div></div> </body>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 1621",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.bol.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  No known CMP – generic extraction",
+      "  Buttons found (3):",
+      "      [A] \"customerservice@bol.com\" --> selector: a",
+      "      [A] \"IP address\" --> selector: a",
+      "      [A] \"developers.bol.com\" --> selector: a",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.bol.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": null,
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "customerservice@bol.com",
+            "tag": "A",
+            "attributes": {
+              "href": "mailto:customerservice@bol.com"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "message",
+              "className": null,
+              "selector": "#message",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "info-box",
+                "selector": ".info-box"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "IP address",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://whatismyip.akamai.com"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "message",
+              "className": null,
+              "selector": "#message",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "info-box",
+                "selector": ".info-box"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "developers.bol.com",
+            "tag": "A",
+            "attributes": {
+              "target": "_oai",
+              "href": "https://developers.bol.com/"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "info-box",
+              "selector": ".info-box",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "main",
+                "selector": ".main"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": false,
+        "cmpType": null,
+        "cmpSelector": null,
+        "url": "https://www.bol.com/",
+        "filteredHtml": "<body> <div class=\"topbar\"><div class=\"logo-box\"></div></div> <div class=\"main\"><div class=\"info-box\"> <br> <div class=\"unicorn\"> </div> <br> <div id=\"message\"> <h1 class=\"bol_header\">IP address is blocked</h1> <p> Your access to bol has been temporarily blocked due to possible abuse from this IP address.<br> </p><div class=\"list-box\"> This may be caused by several factors, including: <ul> <li><b>Use of a VPN:</b> Please turn off your VPN and try accessing the site again.</li> <li><b>Outdated browser or browser extensions:</b> Make sure you're using the latest version of a browser such as Safari, Chrome, Firefox, or Microsoft Edge. Also, disable any unnecessary plugins.</li> <li><b>Automated scripts:</b> If you're using a script that collects data automatically from bol.com, please refer to our Developer Guide for more information.</li> </ul></div><br> Additionally, the block may be caused by malicious software on your device.<br> We recommend installing up-to-date antivirus or anti-spyware software and running a full scan of your device.<br><br> For more information, you can contact our customer service by email at: <a href=\"mailto:customerservice@bol.com\">customerservice@bol.com</a><br> Please always mention your <a target=\"_blank\" href=\"https://whatismyip.akamai.com\">IP address</a> so we can assist you more effectively.<br><p></p> </div> <br> <hr> If you're a developer and are interested in interfacing with bol, check out our developer guides on <a target=\"_oai\" href=\"https://developers.bol.com/\">developers.bol.com</a> for information about our Open API program. <br><br> </div></div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 1621
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,1054 @@
+{
+  "timestamp": "2026-08-28T06:42:17.560401",
+  "url": "https://www.vg.no",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.vg.no"
+  ],
+  "duration_seconds": 7.29,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 4 frames.",
+      "a frame was picked by score: https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no with Score: 29",
+      "Settings match: \"Tilpass cookies\" --> lowered: \"tilpass cookies\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Tilpass cookies\"], textMatch: Tilpass cookies",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://cmp.vg.no/privacy-manager/index.html?message_id=1465887&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.vg.no%2Fmms%2Fv2&site_id=8876&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=no",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 29 for URL: https://cmp.vg.no/privacy-manager/index.html?message_id=1465887&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.vg.no%2Fmms%2Fv2&site_id=8876&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=no",
+      "Best new frame selected for settings extraction: https://cmp.vg.no/privacy-manager/index.html?message_id=1465887&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.vg.no%2Fmms%2Fv2&site_id=8876&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=no",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no',",
+      "      filteredHtml: '<div class=\"message-container end-jc $$endJC$$ level1\"><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row container\"><div class=\"message-component message-row top-bar\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children header-text first-focusable-el\">Cookieinnstillinger</h1><div class=\"message-component message-column logo-container\"></div></div><div class=\"message-component message-column brand-level-consent $$ios_message$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Our partners are restricted from linking the data collected on this app with data collected from other companies’s apps and websites.</p></div><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Ved å godta cookies bidrar du til at vi kan tilby relevante tjenester og styrke annonseinntektene som er med på å finansiere vår uavhengige journalistikk.</strong>&nbsp;</p><p></p><p>Hvis du godtar, vil&nbsp;Schibsted Media AS og våre&nbsp;<a data-choice=\"1702982639303\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2 focusable\" aria-label=\"34 partnere\" tabindex=\"0\">34 partnere</a> lagre og/eller få tilgang til data på enheten din (f. eks. enhetsidentifikatorer) og behandle personopplysninger om deg (f. eks. hvilke sider du har besøkt) fra&nbsp;VG for formålene nedenfor.&nbsp;</p><p><br></p><p><strong>Du kan avvise personlig tilpassede annonser for 49 kr/md på annonsefinansierte Schibsted-tjenester. Du vil fortsatt se annonser, men de vil ikke være basert på aktiviteten din på våre nettsteder.&nbsp;</strong>Hvis du abonnerer på utvalgte betalte redaksjonelle tjenester fra Schibsted, kan du betale for å avvise personlig tilpassede annonser til en redusert pris på 39 kr/md.</p><p></p><div class=\"message-component message-column omni-info $$showOmni$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children omni-msg\">Du som har en annonsfri prenumeration ser förstås inga annonser på VG, oavsett vilket val du gör här.</p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Formål</strong></p><p></p><p>Vi og våre annonsepartnere ber om ditt samtykke til å behandle data for formålene i listen under.</p><p></p></div><div class=\"message-component message-stacks no-children\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Lagre og/eller få tilgang til informasjon på en enhet\">Lagre og/eller få tilgang til informasjon på en enhet<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Informasjonskapsler, enhetsidentifikatorer eller lignende nettidentifikatorer (f.eks. påloggingsbaserte identifikatorer, tilfeldig tildelte identifikatorer, nettverksbaserte identifikatorer) sammen med annen informasjon (f.eks. nettlesertype og informasjon, språk, skjermstørrelse, støttede teknologier osv.), kan lagres eller leses på enheten din for å gjenkjenne den hver gang den kobles til en app eller til et nettsted, for ett eller flere av formålene som presenteres her.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\">Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Annonser kan personlig tilpasses basert på profilen din. Aktiviteten din på denne tjenesten kan brukes til å bygge eller forbedre en profil om deg for personlig tilpasset annonsering. Annonseytelse kan måles. Rapporter kan genereres basert på din og andres aktivitet. Aktiviteten din på denne tjenesten kan bidra til å utvikle og forbedre produkter og tjenester.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Annonsering utført av Schibsted Media AS\">Annonsering utført av Schibsted Media AS<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Schibsted bruker cookies til egen annonseaktivitet, inkludert målgruppemålretting og segmentering. Hvis du er innlogget, vil vi kombinere opplysningene med din brukerkontoinformasjon for de samme formålene.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\">Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Hvis du samtykker, vil vi samle inn og bruke opplysninger om din aktivitet på denne tjenesten for forbedring av våre produkter og tjenester, tilpasning og personalisering av innhold og markedsføring av våre produkter og tjenester. Hvis du er innlogget, vil vi kombinere opplysningene med din brukerkontoinformasjon for de samme formålene.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div></div></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Det koster ingenting å avvise cookies for de andre formålene enn personlig tilpasning av annonser. Du kan håndtere “Cookieinnstillinger” eller trekke tilbake samtykket ditt, og i stedet velge å avvise personlig tilpasset reklame når som helst via lenken «Cookieinnstillinger» som du finner på nettsidene våre. Du kan også tilpasse innstillingene for din Schibsted-konto via personverninnstillingene.</p><p></p><p><br></p><p>Les mer i vår <a target=\"_blank\" href=\"https://schibsted.com/schibsteds-personvern-og-cookieerklaering/\" class=\"text-link-0-0-6-0 focusable\" aria-label=\"personvernerklæring\" tabindex=\"0\">personvernerklæring</a>.</p><p>Har du et abonnement? Du kan administrere det på <a target=\"_blank\" href=\"https://www.vg.no/minside/\" class=\"text-link-0-0-6-0 focusable\" aria-label=\"Min side\" tabindex=\"0\">Min side</a>.</p><p></p></div></div><div class=\"message-component message-row footer\"><div class=\"message-component message-row btns-container\"><button title=\"Tilpass cookies\" aria-label=\"Tilpass cookies\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_12\">Tilpass cookies</button><button title=\"Avvis personlig tilpassede annonser \" aria-label=\"Avvis personlig tilpassede annonser \" class=\"message-component message-button no-children focusable reject-ads-btn sp_choice_type_9\">Avvis personlig tilpassede annonser </button><button title=\"Godta alle\" aria-label=\"Godta alle\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_11\">Godta alle</button></div><div class=\"message-component message-row login-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Har du Schibsted annonsevalg?</strong> <a data-choice=\"1780491261792\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-1-0 focusable\" aria-label=\"Logg inn\" tabindex=\"0\">Logg inn</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children contact-support\"><strong>Har du spørsmål? </strong><a target=\"_blank\" href=\"https://annonsevalg.schibsted.no/faq\" class=\"text-link-0-1-1-1 focusable last-focusable-el\" aria-label=\"Les mer her\" tabindex=\"0\">Les mer her</a></p></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 7763,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cmp.vg.no/privacy-manager/index.html?message_id=1465887&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.vg.no%2Fmms%2Fv2&site_id=8876&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=no',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container end-jc true tcf-f-version-stacks\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row container\"><div class=\"message-component message-row top-bar\"><button title=\" \" aria-label=\" \" class=\"message-component message-button no-children focusable back-button sp_choice_type_CANCEL first-focusable-el\"> </button><div class=\"message-component message-column header-text\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children\">Cookieinnstillinger</h1></div><div class=\"message-component message-column logo-container\"></div></div><div class=\"message-component message-row main-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Schibsted Media AS trenger ditt samtykke for å kunne bruke cookies og lignende teknologi på nettstedene våre. Ved å klikke “Godta alle” samtykker du til at vi og våre partnere kan behandle personopplysninger for formålene listet under.</p><p></p><p><br></p><p>Du kan tilpasse valgene dine nedenfor, inkludert hvordan spesifikke annonsepartnere behandler personopplysninger under “Alle tredjepartsleverandører”, og hvilke personopplysninger som behandles basert på samtykke, som du finner under \"Formål\".&nbsp;Visse personopplysninger kommer til å bli behandlet for tvingende berettigede interesser, som du finner under “Spesielle formål”.</p><p></p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Les mer i vår <a target=\"_blank\" href=\"https://schibsted.com/schibsteds-personvern-og-cookieerklaering/\" class=\"text-link-0-0-1-1 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;personvernerklæring&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">personvernerklæring</span></a>.</p><div class=\"message-component message-column info-reject-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children info-reject-header\">Du må betale for å avvise personlig tilpasset annonsering.</p><p tabindex=\"0\" class=\"focusable message-component text no-children info-reject-text\">Hvis du ikke vil at vi skal bruke opplysninger om deg og enheten din til å vise deg personlig tilpassede annonser, kan du velge å betale for Schibsted annonsevalg <a data-choice=\"1778156032265\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-1-2-1 focusable\" aria-label=\"her\" tabindex=\"0\">her</a>. Du kan når som helst avslutte tjenesten på <a target=\"_blank\" href=\"http://schibsted.no/minside\" class=\"text-link-0-0-1-2-1 focusable\" aria-label=\"Schibsted Min side\" tabindex=\"0\">Schibsted Min side</a> og fortsette å bruke våre nettsteder med personlig tilpassede annonser.</p></div><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Formål</strong></p><p></p><p>Vi og våre annonsepartnere ber om ditt samtykke til å behandle data for formålene i listen under.</p><p></p></div><div class=\"message-component message-row brand-level-consent $$ios_message$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Våra partners är förhindrade från att koppla ihop data som samlats in på denna app med data som samlats in från andra företags appar och webbplatser.</p></div></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span><span>Lagre og/eller få tilgang til informasjon på en enhet<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d55efa12506fb786684\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></h3></div></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"69fc7808912073606b1d8f2e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span><span>Annonsering utført av Schibsted Media AS<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">Gjelder Schibsted Media AS</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d55efa12506fb786672\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS</h3></div></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d56efa12506fb786aa4\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span>Spesielle formål</span></h2></div><div id=\"Spesielle formål\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span>Egenskaper</span></h2></div><div id=\"Egenskaper\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Alle tredjeparts-leverandører</div><div tabindex=\"0\" class=\"page-action\">Se alle leverandører</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">Gjelder Schibsted Media AS</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span><h2 class=\"custom-header\">Required For Consent</h2></div></div></div><div class=\"message-component message-row footer\"><div class=\"message-component message-row buttons-row\"><div class=\"message-component message-column footer-button-container\"><button title=\"Avvis personlig tilpassede annonser \" aria-label=\"Avvis personlig tilpassede annonser \" class=\"message-component message-button no-children focusable reject-ads-btn sp_choice_type_[object Object]\">Avvis personlig tilpassede annonser </button><button title=\"Godta alle\" aria-label=\"Godta alle\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_ACCEPT_ALL\">Godta alle</button><button title=\"Lagre valg\" aria-label=\"Lagre valg\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Lagre valg</button></div></div><div class=\"message-component message-column login-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Har du Schibsted annonsevalg?</strong> <a data-choice=\"1780491309280\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-1-0 focusable\" aria-label=\"Logg inn\" tabindex=\"0\">Logg inn</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children contact-support\"><strong>Har du spørsmål? </strong><a target=\"_blank\" href=\"https://annonsevalg.schibsted.no/faq\" class=\"text-link-0-2-1-1 focusable last-focusable-el\" aria-label=\"Les mer her\" tabindex=\"0\">Les mer her</a></p></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 8742,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (12):",
+      "      [A] \"34 partnere\" --> selector: [aria-label=\"34 partnere\"]",
+      "      [BUTTON] \"Lagre og/eller få tilgang til informasjon på en enhet\" --> selector: [aria-label=\"Lagre og/eller få tilgang til informasjon på en enhet\"]",
+      "      [BUTTON] \"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\" --> selector: [aria-label=\"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\"]",
+      "      [BUTTON] \"Annonsering utført av Schibsted Media AS\" --> selector: [aria-label=\"Annonsering utført av Schibsted Media AS\"]",
+      "      [BUTTON] \"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\" --> selector: [aria-label=\"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\"]",
+      "      [A] \"personvernerklæring\" --> selector: [aria-label=\"personvernerklæring\"]",
+      "      [A] \"Min side\" --> selector: [aria-label=\"Min side\"]",
+      "      [BUTTON] \"Tilpass cookies\" --> selector: [aria-label=\"Tilpass cookies\"]",
+      "      [BUTTON] \"Avvis personlig tilpassede annonser\" --> selector: [aria-label=\"Avvis personlig tilpassede annonser \"]",
+      "      [BUTTON] \"Godta alle\" --> selector: [aria-label=\"Godta alle\"]",
+      "      [A] \"Logg inn\" --> selector: [aria-label=\"Logg inn\"]",
+      "      [A] \"Les mer her\" --> selector: [aria-label=\"Les mer her\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (20):",
+      "      [BUTTON] \"\" --> selector: [aria-label=\" \"]",
+      "      [A] \"personvernerklæring\" --> selector: [aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">personvernerklæring</span>\"]",
+      "      [A] \"her\" --> selector: [aria-label=\"her\"]",
+      "      [A] \"Schibsted Min side\" --> selector: [aria-label=\"Schibsted Min side\"]",
+      "      [H2] \"Lagre og/eller få tilgang til informasjon på en enhet",
+      "Du må betale for å avvise personlig tilpasset annonsering\" --> selector: h2",
+      "      [BUTTON] \"Godta\" --> selector: button",
+      "      [H2] \"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling",
+      "Du må betale for å avvise personlig tilpasset annonsering\" --> selector: h2",
+      "      [BUTTON] \"Godta\" --> selector: button",
+      "      [H2] \"Annonsering utført av Schibsted Media AS",
+      "Gjelder Schibsted Media AS",
+      "Du må betale for å avvise personlig tilpasset annonsering\" --> selector: h2",
+      "      [BUTTON] \"Godta\" --> selector: button",
+      "      [H2] \"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\" --> selector: h2",
+      "      [BUTTON] \"Godta\" --> selector: button",
+      "      [BUTTON] \"Avvis\" --> selector: button",
+      "      [H2] \"Spesielle formål\" --> selector: h2",
+      "      [H2] \"Egenskaper\" --> selector: h2",
+      "      [BUTTON] \"Avvis personlig tilpassede annonser\" --> selector: [aria-label=\"Avvis personlig tilpassede annonser \"]",
+      "      [BUTTON] \"Godta alle\" --> selector: [aria-label=\"Godta alle\"]",
+      "      [BUTTON] \"Lagre valg\" --> selector: [aria-label=\"Lagre valg\"]",
+      "      [A] \"Logg inn\" --> selector: [aria-label=\"Logg inn\"]",
+      "      [A] \"Les mer her\" --> selector: [aria-label=\"Les mer her\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "34 partnere",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1702982639303",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#000000;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-2 focusable",
+              "aria-label": "34 partnere",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"34 partnere\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Lagre og/eller få tilgang til informasjon på en enhet",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Lagre og/eller få tilgang til informasjon på en enhet",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(2, 11, 35); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Lagre og/eller få tilgang til informasjon på en enhet\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(2, 11, 35); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Annonsering utført av Schibsted Media AS",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Annonsering utført av Schibsted Media AS",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(2, 11, 35); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Annonsering utført av Schibsted Media AS\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(2, 11, 35); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "personvernerklæring",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://schibsted.com/schibsteds-personvern-og-cookieerklaering/",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-0 focusable",
+              "aria-label": "personvernerklæring",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"personvernerklæring\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Min side",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.vg.no/minside/",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-6-0 focusable",
+              "aria-label": "Min side",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Min side\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Tilpass cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Tilpass cookies",
+              "aria-label": "Tilpass cookies",
+              "class": "message-component message-button no-children focusable primary-btn sp_choice_type_12",
+              "style": "opacity: 1; padding: 10px 15px; margin: 0px; border-width: 2px; border-color: rgb(6, 26, 87); border-radius: 5px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(6, 26, 87); font-family: arial, helvetica, sans-serif; background: rgb(255, 255, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row btns-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Tilpass cookies\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Avvis personlig tilpassede annonser",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Avvis personlig tilpassede annonser ",
+              "aria-label": "Avvis personlig tilpassede annonser ",
+              "class": "message-component message-button no-children focusable reject-ads-btn sp_choice_type_9",
+              "style": "opacity: 1; padding: 10px 15px; margin: 0px; border-width: 2px; border-color: rgb(6, 26, 87); border-radius: 5px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(6, 26, 87); font-family: arial, helvetica, sans-serif; background: white; width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row btns-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Avvis personlig tilpassede annonser \"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Godta alle",
+              "aria-label": "Godta alle",
+              "class": "message-component message-button no-children focusable primary-btn sp_choice_type_11",
+              "style": "opacity: 1; padding: 10px 15px; margin: 0px; border-width: 2px; border-color: rgb(6, 26, 87); border-radius: 5px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(6, 26, 87); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row btns-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row footer",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Godta alle\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Logg inn",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1780491261792",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-1-1-0 focusable",
+              "aria-label": "Logg inn",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row login-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Logg inn\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Les mer her",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://annonsevalg.schibsted.no/faq",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-1-1-1 focusable last-focusable-el",
+              "aria-label": "Les mer her",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children contact-support",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row login-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Les mer her\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp.vg.no/index.html?hasCsp=true&message_id=1489180&consentUUID=null&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&preload_message=true&version=v1&consentLanguage=no",
+        "filteredHtml": "<div class=\"message-container end-jc $$endJC$$ level1\"><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row container\"><div class=\"message-component message-row top-bar\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children header-text first-focusable-el\">Cookieinnstillinger</h1><div class=\"message-component message-column logo-container\"></div></div><div class=\"message-component message-column brand-level-consent $$ios_message$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Our partners are restricted from linking the data collected on this app with data collected from other companies’s apps and websites.</p></div><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Ved å godta cookies bidrar du til at vi kan tilby relevante tjenester og styrke annonseinntektene som er med på å finansiere vår uavhengige journalistikk.</strong>&nbsp;</p><p></p><p>Hvis du godtar, vil&nbsp;Schibsted Media AS og våre&nbsp;<a data-choice=\"1702982639303\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-2 focusable\" aria-label=\"34 partnere\" tabindex=\"0\">34 partnere</a> lagre og/eller få tilgang til data på enheten din (f. eks. enhetsidentifikatorer) og behandle personopplysninger om deg (f. eks. hvilke sider du har besøkt) fra&nbsp;VG for formålene nedenfor.&nbsp;</p><p><br></p><p><strong>Du kan avvise personlig tilpassede annonser for 49 kr/md på annonsefinansierte Schibsted-tjenester. Du vil fortsatt se annonser, men de vil ikke være basert på aktiviteten din på våre nettsteder.&nbsp;</strong>Hvis du abonnerer på utvalgte betalte redaksjonelle tjenester fra Schibsted, kan du betale for å avvise personlig tilpassede annonser til en redusert pris på 39 kr/md.</p><p></p><div class=\"message-component message-column omni-info $$showOmni$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children omni-msg\">Du som har en annonsfri prenumeration ser förstås inga annonser på VG, oavsett vilket val du gör här.</p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Formål</strong></p><p></p><p>Vi og våre annonsepartnere ber om ditt samtykke til å behandle data for formålene i listen under.</p><p></p></div><div class=\"message-component message-stacks no-children\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Lagre og/eller få tilgang til informasjon på en enhet\">Lagre og/eller få tilgang til informasjon på en enhet<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Informasjonskapsler, enhetsidentifikatorer eller lignende nettidentifikatorer (f.eks. påloggingsbaserte identifikatorer, tilfeldig tildelte identifikatorer, nettverksbaserte identifikatorer) sammen med annen informasjon (f.eks. nettlesertype og informasjon, språk, skjermstørrelse, støttede teknologier osv.), kan lagres eller leses på enheten din for å gjenkjenne den hver gang den kobles til en app eller til et nettsted, for ett eller flere av formålene som presenteres her.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\">Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Annonser kan personlig tilpasses basert på profilen din. Aktiviteten din på denne tjenesten kan brukes til å bygge eller forbedre en profil om deg for personlig tilpasset annonsering. Annonseytelse kan måles. Rapporter kan genereres basert på din og andres aktivitet. Aktiviteten din på denne tjenesten kan bidra til å utvikle og forbedre produkter og tjenester.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Annonsering utført av Schibsted Media AS\">Annonsering utført av Schibsted Media AS<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><p>Schibsted bruker cookies til egen annonseaktivitet, inkludert målgruppemålretting og segmentering. Hvis du er innlogget, vil vi kombinere opplysningene med din brukerkontoinformasjon for de samme formålene.</p><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS\">Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Hvis du samtykker, vil vi samle inn og bruke opplysninger om din aktivitet på denne tjenesten for forbedring av våre produkter og tjenester, tilpasning og personalisering av innhold og markedsføring av våre produkter og tjenester. Hvis du er innlogget, vil vi kombinere opplysningene med din brukerkontoinformasjon for de samme formålene.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div></div></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Det koster ingenting å avvise cookies for de andre formålene enn personlig tilpasning av annonser. Du kan håndtere “Cookieinnstillinger” eller trekke tilbake samtykket ditt, og i stedet velge å avvise personlig tilpasset reklame når som helst via lenken «Cookieinnstillinger» som du finner på nettsidene våre. Du kan også tilpasse innstillingene for din Schibsted-konto via personverninnstillingene.</p><p></p><p><br></p><p>Les mer i vår <a target=\"_blank\" href=\"https://schibsted.com/schibsteds-personvern-og-cookieerklaering/\" class=\"text-link-0-0-6-0 focusable\" aria-label=\"personvernerklæring\" tabindex=\"0\">personvernerklæring</a>.</p><p>Har du et abonnement? Du kan administrere det på <a target=\"_blank\" href=\"https://www.vg.no/minside/\" class=\"text-link-0-0-6-0 focusable\" aria-label=\"Min side\" tabindex=\"0\">Min side</a>.</p><p></p></div></div><div class=\"message-component message-row footer\"><div class=\"message-component message-row btns-container\"><button title=\"Tilpass cookies\" aria-label=\"Tilpass cookies\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_12\">Tilpass cookies</button><button title=\"Avvis personlig tilpassede annonser \" aria-label=\"Avvis personlig tilpassede annonser \" class=\"message-component message-button no-children focusable reject-ads-btn sp_choice_type_9\">Avvis personlig tilpassede annonser </button><button title=\"Godta alle\" aria-label=\"Godta alle\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_11\">Godta alle</button></div><div class=\"message-component message-row login-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Har du Schibsted annonsevalg?</strong> <a data-choice=\"1780491261792\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-1-0 focusable\" aria-label=\"Logg inn\" tabindex=\"0\">Logg inn</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children contact-support\"><strong>Har du spørsmål? </strong><a target=\"_blank\" href=\"https://annonsevalg.schibsted.no/faq\" class=\"text-link-0-1-1-1 focusable last-focusable-el\" aria-label=\"Les mer her\" tabindex=\"0\">Les mer her</a></p></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 7763,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": " ",
+              "aria-label": " ",
+              "class": "message-component message-button no-children focusable back-button sp_choice_type_CANCEL first-focusable-el",
+              "style": "opacity: 1; padding: 10px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row top-bar",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\" \"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "personvernerklæring",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://schibsted.com/schibsteds-personvern-og-cookieerklaering/",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-0-1-1 focusable",
+              "aria-label": "<span class=\"ql-underline\" style=\"text-decoration: underline;\">personvernerklæring</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row main-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">personvernerklæring</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "her",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1778156032265",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#6C4522;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-1-2-1 focusable",
+              "aria-label": "her",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children info-reject-text",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column info-reject-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"her\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Schibsted Min side",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "http://schibsted.no/minside",
+              "style": "color:#6C4522;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-0-1-2-1 focusable",
+              "aria-label": "Schibsted Min side",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children info-reject-text",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column info-reject-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Schibsted Min side\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Lagre og/eller få tilgang til informasjon på en enhet\nDu må betale for å avvise personlig tilpasset annonsering",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "65250d55efa12506fb786684",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(255, 255, 255); color: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling\nDu må betale for å avvise personlig tilpasset annonsering",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "69fc7808912073606b1d8f2e",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(255, 255, 255); color: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Annonsering utført av Schibsted Media AS\nGjelder Schibsted Media AS\nDu må betale for å avvise personlig tilpasset annonsering",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "65250d55efa12506fb786672",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(255, 255, 255); color: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "65250d56efa12506fb786aa4",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(255, 255, 255); color: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Avvis",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: rgb(255, 255, 255); color: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Spesielle formål",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Spesielle formål",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Egenskaper",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Egenskaper",
+              "class": "accordion",
+              "lang": "NO",
+              "style": "padding: 16px 0px; font-size: 16px; font-weight: 700; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Avvis personlig tilpassede annonser",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Avvis personlig tilpassede annonser ",
+              "aria-label": "Avvis personlig tilpassede annonser ",
+              "class": "message-component message-button no-children focusable reject-ads-btn sp_choice_type_[object Object]",
+              "style": "opacity: 1; padding: 10px 16px; margin: 0px; border-width: 2px; border-color: rgb(0, 0, 0); border-radius: 20px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column footer-button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row buttons-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Avvis personlig tilpassede annonser \"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Godta alle",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Godta alle",
+              "aria-label": "Godta alle",
+              "class": "message-component message-button no-children focusable primary-btn sp_choice_type_ACCEPT_ALL",
+              "style": "opacity: 1; padding: 10px 16px; margin: 0px; border-width: 2px; border-color: rgb(21, 20, 26); border-radius: 20px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(6, 26, 87);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column footer-button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row buttons-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Godta alle\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Lagre valg",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Lagre valg",
+              "aria-label": "Lagre valg",
+              "class": "message-component message-button no-children focusable primary-btn sp_choice_type_SAVE_AND_EXIT",
+              "aria-disabled": "true",
+              "disabled": "",
+              "style": "opacity: 1; padding: 10px 16px; margin: 0px; border-width: 2px; border-color: rgb(6, 26, 87); border-radius: 20px; border-style: solid; font-size: 16px; font-weight: 700; color: rgb(181, 181, 178); font-family: arial, helvetica, sans-serif; width: auto; background: rgba(48, 49, 48, 0.07);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column footer-button-container",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row buttons-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Lagre valg\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Logg inn",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1780491309280",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-2-1-0 focusable",
+              "aria-label": "Logg inn",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column login-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Logg inn\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Les mer her",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://annonsevalg.schibsted.no/faq",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-2-1-1 focusable last-focusable-el",
+              "aria-label": "Les mer her",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children contact-support",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column login-container",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Les mer her\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cmp.vg.no/privacy-manager/index.html?message_id=1465887&hasCsp=true&mms_origin=https%3A%2F%2Fcmp.vg.no%2Fmms%2Fv2&site_id=8876&consent_origin=https%3A%2F%2Fcmp.vg.no%2Fconsent%2Ftcfv2&includeCustomVendorsRes=1&consentLanguage=no",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container end-jc true tcf-f-version-stacks\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row container\"><div class=\"message-component message-row top-bar\"><button title=\" \" aria-label=\" \" class=\"message-component message-button no-children focusable back-button sp_choice_type_CANCEL first-focusable-el\"> </button><div class=\"message-component message-column header-text\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children\">Cookieinnstillinger</h1></div><div class=\"message-component message-column logo-container\"></div></div><div class=\"message-component message-row main-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Schibsted Media AS trenger ditt samtykke for å kunne bruke cookies og lignende teknologi på nettstedene våre. Ved å klikke “Godta alle” samtykker du til at vi og våre partnere kan behandle personopplysninger for formålene listet under.</p><p></p><p><br></p><p>Du kan tilpasse valgene dine nedenfor, inkludert hvordan spesifikke annonsepartnere behandler personopplysninger under “Alle tredjepartsleverandører”, og hvilke personopplysninger som behandles basert på samtykke, som du finner under \"Formål\".&nbsp;Visse personopplysninger kommer til å bli behandlet for tvingende berettigede interesser, som du finner under “Spesielle formål”.</p><p></p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Les mer i vår <a target=\"_blank\" href=\"https://schibsted.com/schibsteds-personvern-og-cookieerklaering/\" class=\"text-link-0-0-1-1 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;personvernerklæring&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">personvernerklæring</span></a>.</p><div class=\"message-component message-column info-reject-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children info-reject-header\">Du må betale for å avvise personlig tilpasset annonsering.</p><p tabindex=\"0\" class=\"focusable message-component text no-children info-reject-text\">Hvis du ikke vil at vi skal bruke opplysninger om deg og enheten din til å vise deg personlig tilpassede annonser, kan du velge å betale for Schibsted annonsevalg <a data-choice=\"1778156032265\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-1-2-1 focusable\" aria-label=\"her\" tabindex=\"0\">her</a>. Du kan når som helst avslutte tjenesten på <a target=\"_blank\" href=\"http://schibsted.no/minside\" class=\"text-link-0-0-1-2-1 focusable\" aria-label=\"Schibsted Min side\" tabindex=\"0\">Schibsted Min side</a> og fortsette å bruke våre nettsteder med personlig tilpassede annonser.</p></div><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Formål</strong></p><p></p><p>Vi og våre annonsepartnere ber om ditt samtykke til å behandle data for formålene i listen under.</p><p></p></div><div class=\"message-component message-row brand-level-consent $$ios_message$$\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Våra partners är förhindrade från att koppla ihop data som samlats in på denna app med data som samlats in från andra företags appar och webbplatser.</p></div></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span><span>Lagre og/eller få tilgang til informasjon på en enhet<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d55efa12506fb786684\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling<span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></h3></div></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"69fc7808912073606b1d8f2e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span><span>Annonsering utført av Schibsted Media AS<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">Gjelder Schibsted Media AS</span><span tabindex=\"0\" class=\"legend-key inline required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d55efa12506fb786672\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Produktutvikling, personlig tilpasning og markedsføring utført av Schibsted Media AS</h3></div></h2><div class=\"pur-buttons-container\"><button>Godta</button><button>Avvis</button></div></div><div id=\"65250d56efa12506fb786aa4\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span>Spesielle formål</span></h2></div><div id=\"Spesielle formål\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"NO\"><span class=\"chevron down\"></span><span>Egenskaper</span></h2></div><div id=\"Egenskaper\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Alle tredjeparts-leverandører</div><div tabindex=\"0\" class=\"page-action\">Se alle leverandører</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">Gjelder Schibsted Media AS</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Required For Consent\">Du må betale for å avvise personlig tilpasset annonsering</span><h2 class=\"custom-header\">Required For Consent</h2></div></div></div><div class=\"message-component message-row footer\"><div class=\"message-component message-row buttons-row\"><div class=\"message-component message-column footer-button-container\"><button title=\"Avvis personlig tilpassede annonser \" aria-label=\"Avvis personlig tilpassede annonser \" class=\"message-component message-button no-children focusable reject-ads-btn sp_choice_type_[object Object]\">Avvis personlig tilpassede annonser </button><button title=\"Godta alle\" aria-label=\"Godta alle\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_ACCEPT_ALL\">Godta alle</button><button title=\"Lagre valg\" aria-label=\"Lagre valg\" class=\"message-component message-button no-children focusable primary-btn sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Lagre valg</button></div></div><div class=\"message-component message-column login-container\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Har du Schibsted annonsevalg?</strong> <a data-choice=\"1780491309280\" target=\"_blank\" href=\"#\" class=\"text-link-0-2-1-0 focusable\" aria-label=\"Logg inn\" tabindex=\"0\">Logg inn</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children contact-support\"><strong>Har du spørsmål? </strong><a target=\"_blank\" href=\"https://annonsevalg.schibsted.no/faq\" class=\"text-link-0-2-1-1 focusable last-focusable-el\" aria-label=\"Les mer her\" tabindex=\"0\">Les mer her</a></p></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 8742,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

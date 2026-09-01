@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-08-27T19:40:23.096593",
+  "url": "https://www.kleinanzeigen.de",
+  "structured_dom_chars": 266784,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 9,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"kleinanzeigen\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#gdpr-banner-accept\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#gdpr-banner-accept\", \"displayFilter\": true}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#gdpr-banner-accept\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#gdpr-banner-cmp-button\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#toggle-purpose-1[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#toggle-purpose-1\"}}}, {\"type\": \"D\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-2[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#leg-int-toggle-purpose-2\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label='Speichern - Datenschutzbestimmungen und Einstellungen speichern']\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation.",
+  "error_history": [
+    "Puppeteer Error in test_rule: Execution context was destroyed, most likely because of a navigation."
+  ],
+  "duration_seconds": 1800.12,
+  "extraction_duration_seconds": 16.26,
+  "extraction_share_percent": 0.9,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-08-28T11:29:06.472915",
+  "url": "https://www.onetrust.com/",
+  "structured_dom_chars": 187360,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "OneTrust",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 7,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"OneTrust\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*=\\\"onetrust\\\"]\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[id*=\\\"onetrust\\\"]\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#onetrust-pc-btn-handler\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-3\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-3\"}}, \"type\": \"A\"}, {\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-2\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-2\"}}, \"type\": \"B\"}, {\"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#ot-group-id-4\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#ot-group-id-4\"}}, \"type\": \"F\"}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".save-preference-btn-handler\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[id*=\\\"onetrust\\\"]\"}}}]}}",
+  "last_error": "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 905 (char 904)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 903 (char 902)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 901 (char 900)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 905 (char 904)",
+    "Ruleset structure invalid: 1 validation error for CoMRule\nOneTrust.detectors.0.showingMatcher\n  Field required [type=missing, input_value={'presentMatcher': {'type...': {'selector': 'div'}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 905 (char 904)",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 905 (char 904)"
+  ],
+  "duration_seconds": 111.85,
+  "extraction_duration_seconds": 7.86,
+  "extraction_share_percent": 7.03,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "OneTrust": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*=\"onetrust\"]"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[id*=\"onetrust\"]",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#onetrust-pc-btn-handler"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-3"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-3"
+                  }
+                },
+                "type": "A"
+              },
+              {
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-2"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-2"
+                  }
+                },
+                "type": "B"
+              },
+              {
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-4"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-4"
+                  }
+                },
+                "type": "F"
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".save-preference-for-handler"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[id*=\"onetrust\"]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

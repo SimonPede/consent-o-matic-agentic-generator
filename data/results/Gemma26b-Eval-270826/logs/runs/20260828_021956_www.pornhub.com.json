@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-08-28T02:19:56.392260",
+  "url": "https://www.pornhub.com",
+  "structured_dom_chars": 361097,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 8,
+  "human_review_count": 0,
+  "test_rule_count": 3,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"pornhub\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cookieBanner\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"#cookieBanner\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"ifcss\", \"target\": {\"selector\": \".gtm-event-age-verification\"}, \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \".gtm-event-age-verification\", \"textFilter\": \"I am 18 or older\"}}, \"falseAction\": {\"type\": \"wait\", \"waitTime\": 100}}, {\"type\": \"hide\", \"target\": {\"selector\": \"#cookieBanner\"}}]}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".cbThirdCTA\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#functionalCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#functionalCookies\"}}}, {\"type\": \"B\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#analyticsCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#analyticsCookies\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"checkbox\", \"target\": {\"selector\": \"#advertisingCookies\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"#advertisingCookies\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \".saveChangesBtn\"}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "model_aborted": false,
+  "final_test_error": "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.",
+  "error_history": [
+    "Ruleset structure invalid: 1 validation error for CoMRule\npornhub.methods.0.name\n  Value error, Invalid method name: CLEAR_GATE. Must be one of {'SAVE_CONSENT', 'DO_CONSENT', 'OPEN_OPTIONS', 'HIDE_CMP'} [type=value_error, input_value='CLEAR_GATE', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error",
+    "Puppeteer Error in test_rule: Protocol error (Runtime.callFunctionOn): Execution context was destroyed."
+  ],
+  "duration_seconds": 1800.1,
+  "extraction_duration_seconds": 17.18,
+  "extraction_share_percent": 0.95,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

@@ -1,0 +1,226 @@
+{
+  "timestamp": "2026-08-27T00:19:08.822618",
+  "url": "https://www.idealo.de",
+  "structured_dom_chars": 88766,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "Usercentrics",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"Usercentrics\": {\"detectors\": [{\"presentMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}], \"showingMatcher\": [{\"type\": \"css\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}]}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"#usercentrics-cmp-ui\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-more-link\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"B\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle\"}}}, {\"type\": \"E\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle\"}}}, {\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle[aria-checked='true']\"}}, \"toggleAction\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"parent\": {\"selector\": \"#usercentrics-cmp-ui\"}, \"target\": {\"selector\": \"#save\"}}}]}}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 159.69,
+  "extraction_duration_seconds": 8.07,
+  "extraction_share_percent": 5.05,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": null
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": null
+    }
+  },
+  "final_rule": {
+    "Usercentrics": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#usercentrics-cmp-ui"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#usercentrics-cmp-ui"
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#usercentrics-cmp-ui"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#uc-more-link"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-c0d6ea17-df08-41fe-8370-44ce3b0fe101-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-1713bd49-84f2-42f0-99db-2279104991ec-toggle"
+                  }
+                }
+              },
+              {
+                "type": "E",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-27a5550c-cf6c-4019-ad48-5f43d25cad0b-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-91d03ebd-6163-4689-9409-8cd1de03e230-toggle"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle[aria-checked='true']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "#usercentrics-cmp-ui"
+                  },
+                  "target": {
+                    "selector": "#uc-category-customcategory-ebe94f90-3457-4443-a462-6939cc24e3a4-toggle"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "#usercentrics-cmp-ui"
+            },
+            "target": {
+              "selector": "#save"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

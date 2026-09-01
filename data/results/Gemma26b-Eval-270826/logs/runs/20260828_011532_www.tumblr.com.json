@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-08-28T01:15:32.997774",
+  "url": "https://www.tumblr.com",
+  "structured_dom_chars": 0,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "overall_timeout"
+  ],
+  "aborted_max_resumes": null,
+  "overall_timeout_seconds": 1800,
+  "strategy_type": "UNKNOWN",
+  "verified": null,
+  "cmp_type": "UNDETECTED",
+  "settings_extracted": false,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 14,
+  "human_review_count": 0,
+  "test_rule_count": 11,
+  "analyze_screenshot_count": 1,
+  "current_rule_draft": "{\"Tumblr\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"I Agree!\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"I Agree!\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"Learn More\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"I Agree!\"}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"Decline Non-Essential Cookies\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button, a\", \"textFilter\": \"Decline Non-Essential Cookies\"}}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"div\", \"childFilter\": {\"target\": {\"selector\": \"button, a\", \"textFilter\": \"I Agree!\"}}}}}]}}",
+  "last_error": "ABORTED: overall timeout reached (1800s)",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "Likely repeated matcher failure without progress (banner stayed visible while matchers kept failing).",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 588 (char 587)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: a, button | Selector Failed: ACTION_TARGET_NOT_FOUND: a, button | Selector Failed: ACTION_TARGET_NOT_FOUND: a, button",
+    "Invalid JSON: Expecting ':' delimiter: line 1 column 975 (char 974)",
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 1800.07,
+  "extraction_duration_seconds": 450.09,
+  "extraction_share_percent": 25.0,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": null
+}

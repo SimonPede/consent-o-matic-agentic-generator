@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T04:54:18.633723",
+  "url": "https://www.stern.de",
+  "structured_dom_chars": 39955,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint interface only provides an \"Accept and continue\" (Zustimmen und weiter) and a \"Subscription\" (Zum PUR-Abo) option, without a visible \"Reject\" or \"Decline\" button to implement the required fallback strategy.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint interface only provides an \"Accept and continue\" (Zustimmen und weiter) and a \"Subscription\" (Zum PUR-Abo) option, without a visible \"Reject\" or \"Decline\" button to implement the required fallback strategy.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The first layer of the Sourcepoint interface only provides an \"Accept and continue\" (Zustimmen und weiter) and a \"Subscription\" (Zum PUR-Abo) option, without a visible \"Reject\" or \"Decline\" button to implement the required fallback strategy.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The first layer of the Sourcepoint interface only provides an \"Accept and continue\" (Zustimmen und weiter) and a \"Subscription\" (Zum PUR-Abo) option, without a visible \"Reject\" or \"Decline\" button to implement the required fallback strategy."
+  ],
+  "duration_seconds": 67.86,
+  "extraction_duration_seconds": 7.67,
+  "extraction_share_percent": 11.3,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

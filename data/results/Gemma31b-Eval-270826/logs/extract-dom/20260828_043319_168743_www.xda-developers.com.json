@@ -1,0 +1,622 @@
+{
+  "timestamp": "2026-08-28T04:33:19.168835",
+  "url": "https://www.xda-developers.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator-a/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.xda-developers.com"
+  ],
+  "duration_seconds": 8.48,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 13 frames.",
+      "a frame was picked by score: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1 with Score: 64",
+      "Settings match: \"More Options\" --> lowered: \"more options\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"More Options\"], textMatch: More Options",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1333974&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=39770&concatenatedUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5&includeCustomVendorsRes=1",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 45 for URL: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1333974&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=39770&concatenatedUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5&includeCustomVendorsRes=1",
+      "Best new frame selected for settings extraction: https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1333974&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=39770&concatenatedUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5&includeCustomVendorsRes=1",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "      filteredHtml: '<div class=\"message-container global-font\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">We value your privacy</p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Valnet and our 345 technology partners ask you to consent to the use of cookies to store/access and process personal data on your device. This can include the use of unique identifiers and information about your browsing patterns to create the best possible user experience on this website. The following description outlines how your data may be used by us, or by our partners.</p><div class=\"message-component message-stacks no-children\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Store and/or access information on a device\">Store and/or access information on a device<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\">Personalised advertising and content, advertising and content measurement, audience research and services development<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Advertising and content can be personalised based on your profile. Your activity on this service can be used to build or improve a profile about you for personalised advertising and content. Advertising and content performance can be measured. Reports can be generated based on your activity and those of others. Your activity on this service can help develop and improve products and services.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children global-font\">Some of our <a target=\"_blank\" href=\"http://$$$$:1591232922916\" class=\"text-link-0-0-0-3 sp_choice_type_12 focusable\" aria-label=\"partners\" tabindex=\"0\">partners</a> process personal data on the basis of legitimate interest. You can object to such processing at any time. Please click “Options” below to view our list of partners and the purposes for which consent is required.</p><p></p><p>&nbsp;</p><p>You don’t have to consent in order to view the information on this site, but if you don’t consent, some personalization of content and advertising won’t be available. Your choices on this site will be applied only to this site. You can withdraw your consent at any time by using the Manage Options link at the bottom of the page.</p><p></p></div></div><div class=\"message-component message-row unstack\"><button title=\"Accept All\" aria-label=\"Accept All\" class=\"message-component message-button no-children focusable sp_choice_type_11\">Accept All</button><button title=\"More Options\" aria-label=\"More Options\" class=\"message-component message-button no-children focusable sp_choice_type_12 last-focusable-el\">More Options</button></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 3861,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1333974&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=39770&concatenatedUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5&includeCustomVendorsRes=1',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">Your Privacy Choices</p></div><div class=\"message-component message-row content-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">We use this information to help give you the best experience possible. This includes improved search results, more relevant content and promotions, better communication and improved site performance. Below you can adjust your cookie preferences by choosing to consent or not to certain cookies. You can also find the list of the cookies that are strictly necessary for operating the site and this ‘Manage Cookies’ center, as well as the list of vendors that place cookies on our behalf. You can find out more in our <a target=\"_blank\" href=\"https://www.valnetinc.com/en/privacy-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Privacy Policy\" tabindex=\"0\">Privacy Policy</a></p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span><span>Store and/or access information on a device</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Store and/or access information on a device\"><span class=\"slider round\"></span></button></div><div id=\"686c1b5956eb46b3bee7f757\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalised advertising and content, advertising and content measurement, audience research and services development</h3><button class=\"pm-nswitch rejected pm-switch\"><span tabindex=\"0\" role=\"switch\" aria-checked=\"false\" class=\"slider round\" aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"></span></button></div></h2></div><div id=\"686c1b5956eb46b3bee7f86e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"\"></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span>Special Purposes</span></h2></div><div id=\"Special Purposes\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span>Features</span></h2></div><div id=\"Features\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">We also work with some partners on the basis of legitimate interest and other legal bases without consent.</div><div tabindex=\"0\" class=\"page-action\">Manage Settings</div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">You can find a list of all third-party providers.</div><div tabindex=\"0\" class=\"page-action\">View All Providers</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2></div></div></div><div class=\"message-component message-row bottom-row\"><button title=\"Save &amp; Exit\" aria-label=\"Save &amp; Exit\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\">Save &amp; Exit</button><button title=\"Reject All\" aria-label=\"Reject All\" class=\"message-component message-button no-children focusable sp_choice_type_REJECT_ALL\">Reject All</button><button title=\"Accept All\" aria-label=\"Accept All\" class=\"message-component message-button no-children focusable sp_choice_type_ACCEPT_ALL last-focusable-el\">Accept All</button></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 4402,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (5):",
+      "      [BUTTON] \"Store and/or access information on a device\" --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      [BUTTON] \"Personalised advertising and content, advertising and content measurement, audience research and services development\" --> selector: [aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"]",
+      "      [A] \"partners\" --> selector: [aria-label=\"partners\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "      [BUTTON] \"More Options\" --> selector: [aria-label=\"More Options\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (10):",
+      "      [A] \"Privacy Policy\" --> selector: [aria-label=\"Privacy Policy\"]",
+      "      [H2] \"Store and/or access information on a device\" --> selector: .accordion",
+      "      [BUTTON] \"Store and/or access information on a device\" --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      [H2] \"Personalised advertising and content, advertising and content measurement, audience research and services development\" --> selector: .accordion",
+      "      [BUTTON] \"\" --> selector: .pm-nswitch",
+      "      [H2] \"Special Purposes\" --> selector: .accordion",
+      "      [H2] \"Features\" --> selector: .accordion",
+      "      [BUTTON] \"Save & Exit\" --> selector: [aria-label=\"Save & Exit\"]",
+      "      [BUTTON] \"Reject All\" --> selector: [aria-label=\"Reject All\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (2):",
+      "      \"Store and/or access information on a device\" | aria-checked: false --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      \"Personalised advertising and content, advertising and content measurement, audience research and services development\" | aria-checked: false --> selector: [aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Store and/or access information on a device",
+              "style": "padding: 5px 32px 5px 5px; font-size: 12px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalised advertising and content, advertising and content measurement, audience research and services development",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-label": "Personalised advertising and content, advertising and content measurement, audience research and services development",
+              "style": "padding: 5px 32px 5px 5px; font-size: 12px; font-weight: 600; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack",
+              "selector": ".stack",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-container",
+                "selector": ".stack-container"
+              }
+            },
+            "selector": "[aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "http://$$$$:1591232922916",
+              "style": "color:#002d57;text-decoration:none;font-weight: 700;",
+              "class": "text-link-0-0-0-3 sp_choice_type_12 focusable",
+              "aria-label": "partners",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children global-font",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Accept All",
+              "aria-label": "Accept All",
+              "class": "message-component message-button no-children focusable sp_choice_type_11",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(0, 45, 87); width: 307px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row unstack",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "notice",
+                "className": "message type-modal",
+                "selector": "#notice"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "More Options",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "More Options",
+              "aria-label": "More Options",
+              "class": "message-component message-button no-children focusable sp_choice_type_12 last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 1px; border-color: rgb(0, 45, 87); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(0, 45, 87); font-family: arial, helvetica, sans-serif; background: rgb(255, 255, 255); width: 307px;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row unstack",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "notice",
+                "className": "message type-modal",
+                "selector": "#notice"
+              }
+            },
+            "selector": "[aria-label=\"More Options\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1416164&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+        "filteredHtml": "<div class=\"message-container global-font\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">We value your privacy</p><p tabindex=\"0\" class=\"focusable message-component text no-children\">Valnet and our 345 technology partners ask you to consent to the use of cookies to store/access and process personal data on your device. This can include the use of unique identifiers and information about your browsing patterns to create the best possible user experience on this website. The following description outlines how your data may be used by us, or by our partners.</p><div class=\"message-component message-stacks no-children\"><div class=\"stack-container\"><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Store and/or access information on a device\">Store and/or access information on a device<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div><div class=\"stack\"><button tabindex=\"0\" class=\"accordion focusable\" aria-expanded=\"false\" aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\">Personalised advertising and content, advertising and content measurement, audience research and services development<span class=\"chevron down\"></span></button><div tabindex=\"0\" class=\"panel\" aria-hidden=\"true\"><p></p><div><div>Advertising and content can be personalised based on your profile. Your activity on this service can be used to build or improve a profile about you for personalised advertising and content. Advertising and content performance can be measured. Reports can be generated based on your activity and those of others. Your activity on this service can help develop and improve products and services.</div></div><ul class=\"description-bullet\"></ul><p></p></div></div></div></div><p tabindex=\"0\" class=\"focusable message-component text no-children global-font\">Some of our <a target=\"_blank\" href=\"http://$$$$:1591232922916\" class=\"text-link-0-0-0-3 sp_choice_type_12 focusable\" aria-label=\"partners\" tabindex=\"0\">partners</a> process personal data on the basis of legitimate interest. You can object to such processing at any time. Please click “Options” below to view our list of partners and the purposes for which consent is required.</p><p></p><p>&nbsp;</p><p>You don’t have to consent in order to view the information on this site, but if you don’t consent, some personalization of content and advertising won’t be available. Your choices on this site will be applied only to this site. You can withdraw your consent at any time by using the Manage Options link at the bottom of the page.</p><p></p></div></div><div class=\"message-component message-row unstack\"><button title=\"Accept All\" aria-label=\"Accept All\" class=\"message-component message-button no-children focusable sp_choice_type_11\">Accept All</button><button title=\"More Options\" aria-label=\"More Options\" class=\"message-component message-button no-children focusable sp_choice_type_12 last-focusable-el\">More Options</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 3861,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.valnetinc.com/en/privacy-policy",
+              "style": "color:#0000ff;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Privacy Policy",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row content-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Privacy Policy\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "686c1b5956eb46b3bee7f757",
+              "class": "accordion",
+              "lang": "EN",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "class": "pm-switch",
+              "aria-label": "Store and/or access information on a device",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalised advertising and content, advertising and content measurement, audience research and services development",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "686c1b5956eb46b3bee7f86e",
+              "class": "accordion",
+              "lang": "EN",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "pm-nswitch rejected pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-title",
+              "selector": ".stack-title",
+              "grandparent": {
+                "tag": "H2",
+                "id": null,
+                "className": "accordion",
+                "selector": ".accordion"
+              }
+            },
+            "selector": ".pm-nswitch",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Special Purposes",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Special Purposes",
+              "class": "accordion",
+              "lang": "EN",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Features",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Features",
+              "class": "accordion",
+              "lang": "EN",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": ".accordion",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save & Exit",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Save & Exit",
+              "aria-label": "Save & Exit",
+              "class": "message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 2px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% - 50px); background: rgb(0, 0, 0);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row bottom-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Save & Exit\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject All",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Reject All",
+              "aria-label": "Reject All",
+              "class": "message-component message-button no-children focusable sp_choice_type_REJECT_ALL",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 2px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% - 50px); background: rgb(0, 0, 0);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row bottom-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Reject All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Accept All",
+              "aria-label": "Accept All",
+              "class": "message-component message-button no-children focusable sp_choice_type_ACCEPT_ALL last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 2px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% - 50px); background: rgb(0, 0, 0);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row bottom-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "class": "pm-switch",
+              "aria-label": "Store and/or access information on a device",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Personalised advertising and content, advertising and content measurement, audience research and services development",
+            "tag": "SPAN",
+            "attributes": {
+              "tabindex": "0",
+              "role": "switch",
+              "aria-checked": "false",
+              "class": "slider round",
+              "aria-label": "Personalised advertising and content, advertising and content measurement, audience research and services development",
+              "style": "background-color: rgb(204, 204, 204);"
+            },
+            "parentInfo": {
+              "tag": "BUTTON",
+              "id": "",
+              "className": "pm-nswitch rejected pm-switch",
+              "selector": ".pm-nswitch",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-title",
+                "selector": ".stack-title"
+              }
+            },
+            "selector": "[aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://cdn.privacy-mgmt.com/privacy-manager/index.html?message_id=1333974&hasCsp=true&mms_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fmms%2Fv2&site_id=39770&concatenatedUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5~~~&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&consentUUID=9ce806b2-6fb1-4e37-b5d1-1144e1cd21d5&includeCustomVendorsRes=1",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children first-focusable-el\">Your Privacy Choices</p></div><div class=\"message-component message-row content-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">We use this information to help give you the best experience possible. This includes improved search results, more relevant content and promotions, better communication and improved site performance. Below you can adjust your cookie preferences by choosing to consent or not to certain cookies. You can also find the list of the cookies that are strictly necessary for operating the site and this ‘Manage Cookies’ center, as well as the list of vendors that place cookies on our behalf. You can find out more in our <a target=\"_blank\" href=\"https://www.valnetinc.com/en/privacy-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Privacy Policy\" tabindex=\"0\">Privacy Policy</a></p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span><span>Store and/or access information on a device</span></span></h2><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" class=\"pm-switch\" aria-label=\"Store and/or access information on a device\"><span class=\"slider round\"></span></button></div><div id=\"686c1b5956eb46b3bee7f757\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalised advertising and content, advertising and content measurement, audience research and services development</h3><button class=\"pm-nswitch rejected pm-switch\"><span tabindex=\"0\" role=\"switch\" aria-checked=\"false\" class=\"slider round\" aria-label=\"Personalised advertising and content, advertising and content measurement, audience research and services development\"></span></button></div></h2></div><div id=\"686c1b5956eb46b3bee7f86e\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"\"></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span>Special Purposes</span></h2></div><div id=\"Special Purposes\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"EN\"><span class=\"chevron down\"></span><span>Features</span></h2></div><div id=\"Features\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">We also work with some partners on the basis of legitimate interest and other legal bases without consent.</div><div tabindex=\"0\" class=\"page-action\">Manage Settings</div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">You can find a list of all third-party providers.</div><div tabindex=\"0\" class=\"page-action\">View All Providers</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2></div></div></div><div class=\"message-component message-row bottom-row\"><button title=\"Save &amp; Exit\" aria-label=\"Save &amp; Exit\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\">Save &amp; Exit</button><button title=\"Reject All\" aria-label=\"Reject All\" class=\"message-component message-button no-children focusable sp_choice_type_REJECT_ALL\">Reject All</button><button title=\"Accept All\" aria-label=\"Accept All\" class=\"message-component message-button no-children focusable sp_choice_type_ACCEPT_ALL last-focusable-el\">Accept All</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 4402,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

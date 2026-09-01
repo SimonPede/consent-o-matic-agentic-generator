@@ -1,0 +1,1036 @@
+{
+  "timestamp": "2026-08-27T07:36:27.750467",
+  "url": "https://cookie-script.com/",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://cookie-script.com/"
+  ],
+  "duration_seconds": 27.65,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[id^=\"cookiescript_\"]\" (Cookie-Script) in frame: https://cookie-script.com/",
+      "waitForCmpUi detected CMP Type: Cookie-Script",
+      "I found 5 frames.",
+      "a frame was picked by score: https://cookie-script.com/ with Score: 89",
+      "Regex failed in frame https://cookie-script.com/, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"#cookiescript_manage_wrap\", text: \"Show details\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #cookiescript_manage_wrap, textMatch: Show details",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 771759 chars.",
+      "DOM diff: 0 chars added, 0 inputs added.",
+      "Old state: 77 buttons, 6 inputs.",
+      "New state: 77 buttons, 6 inputs.",
+      "Settings click seems to have had no effect",
+      "[",
+      "  {",
+      "    frameUrl: 'https://cookie-script.com/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Cookie-Script',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [Array],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id^=\"cookiescript_\"]',",
+      "      url: 'https://cookie-script.com/',",
+      "      filteredHtml: '',",
+      "      filteredHtmlOmitted: true,",
+      "      filteredHtmlOriginalChars: 100475,",
+      "      cmpType: 'Cookie-Script'",
+      "    },",
+      "    settings: null",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://cookie-script.com/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Cookie-Script via selector \"[id^=\"cookiescript_\"]\"",
+      "  Buttons found (28):",
+      "      [DIV] \"×\" --> selector: #cookiescript_close",
+      "      [A] \"Privacy policy\" --> selector: #cookiescript_readmore",
+      "      [DIV] \"ACCEPT ALL\" --> selector: #cookiescript_accept",
+      "      [DIV] \"DECLINE ALL\" --> selector: #cookiescript_reject",
+      "      [DIV] \"SHOW DETAILS\" --> selector: #cookiescript_manage_wrap",
+      "      [DIV] \"Strictly Necessary\" --> selector: .cookiescript_category_strict",
+      "      [DIV] \"Performance\" --> selector: .cookiescript_category_performance",
+      "      [DIV] \"Targeting\" --> selector: .cookiescript_category_targeting",
+      "      [DIV] \"Functionality\" --> selector: .cookiescript_category_functionality",
+      "      [DIV] \"Unclassified\" --> selector: .cookiescript_category_unclassified",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Stripe Inc.\" --> selector: a",
+      "      [A] \"Stripe Inc.\" --> selector: a",
+      "      [A] \"Customerly\" --> selector: a",
+      "      [A] \"Amazon.com Inc.\" --> selector: a",
+      "      [A] \"CookieScript\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Meta Platform Inc.\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Google LLC\" --> selector: a",
+      "      [A] \"Stripe\" --> selector: a",
+      "      [A] \"Google\" --> selector: a",
+      "      [A] \"Google Privacy Policy\" --> selector: a",
+      "      [A] \"report\" --> selector: #cookiescript_reportlink",
+      "      [A] \"CookieScript\" --> selector: #cookiescript_cookiescriptlink",
+      "   Checkboxes found (5):",
+      "      \"STRICTLY NECESSARY\" | checked: true | disabled: true --> selector: #cookiescript_category_strict",
+      "      \"PERFORMANCE\" | checked: false | disabled: false --> selector: #cookiescript_category_performance",
+      "      \"TARGETING\" | checked: false | disabled: false --> selector: #cookiescript_category_targeting",
+      "      \"FUNCTIONALITY\" | checked: false | disabled: false --> selector: #cookiescript_category_functionality",
+      "      \"UNCLASSIFIED\" | checked: false | disabled: false --> selector: #cookiescript_category_unclassified",
+      "  Toggles found (0):",
+      "   No settings page found",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://cookie-script.com/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Cookie-Script",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "×",
+            "tag": "DIV",
+            "attributes": {
+              "id": "cookiescript_close",
+              "tabindex": "0",
+              "role": "button",
+              "aria-label": "Close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_header_actions",
+              "selector": ".cookiescript_header_actions",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_pre_header",
+                "selector": ".cookiescript_pre_header"
+              }
+            },
+            "selector": "#cookiescript_close",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy policy",
+            "tag": "A",
+            "attributes": {
+              "id": "cookiescript_readmore",
+              "data-cs-i18n-text": "{\"en\":\"Privacy policy\",\"de\":\"Weitere Informationen\",\"fr\":\"En savoir plus\",\"it\":\"Leggi di pi\\u00f9\",\"es\":\"M\\u00e1s informaci\\u00f3n\",\"nl\":\"\",\"pt\":\"\"}",
+              "data-cs-i18n-url": "{\"en\":\"\\/privacy-policy.html\",\"de\":\"\\/de\\/legal\\/privacy-policy\",\"fr\":\"\\/fr\\/legal\\/privacy-policy\",\"it\":\"\\/it\\/legal\\/privacy-policy\",\"es\":\"\\/es\\/legal\\/privacy-policy\",\"nl\":\"\",\"pt\":\"\"}",
+              "target": "_blank",
+              "aria-label": "Privacy policy, opens a new window",
+              "href": "/privacy-policy.html"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_description",
+              "className": null,
+              "selector": "#cookiescript_description",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_injected",
+                "className": null,
+                "selector": "#cookiescript_injected"
+              }
+            },
+            "selector": "#cookiescript_readmore",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "ACCEPT ALL",
+            "tag": "DIV",
+            "attributes": {
+              "id": "cookiescript_accept",
+              "tabindex": "0",
+              "role": "button",
+              "data-cs-i18n-text": "{\"de\":\"Alle akzeptieren\",\"fr\":\"Accepter tout\",\"it\":\"Accetta tutto\",\"es\":\"Aceptar todo\",\"nl\":\"Alles accepteren\",\"pt\":\"Aceitar todos\",\"en\":\"Accept all\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_buttons",
+              "className": null,
+              "selector": "#cookiescript_buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_injected",
+                "className": null,
+                "selector": "#cookiescript_injected"
+              }
+            },
+            "selector": "#cookiescript_accept",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "DECLINE ALL",
+            "tag": "DIV",
+            "attributes": {
+              "id": "cookiescript_reject",
+              "tabindex": "0",
+              "role": "button",
+              "data-cs-i18n-text": "{\"de\":\"Alle ablehnen\",\"fr\":\"Refuser tout\",\"it\":\"Rifiuta tutto\",\"es\":\"Rechazar todo\",\"nl\":\"Alles afwijzen\",\"pt\":\"Recusar todos\",\"en\":\"Decline all\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_buttons",
+              "className": null,
+              "selector": "#cookiescript_buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_injected",
+                "className": null,
+                "selector": "#cookiescript_injected"
+              }
+            },
+            "selector": "#cookiescript_reject",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "SHOW DETAILS",
+            "tag": "DIV",
+            "attributes": {
+              "id": "cookiescript_manage_wrap",
+              "tabindex": "0",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_injected",
+              "className": null,
+              "selector": "#cookiescript_injected",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_injected_wrapper",
+                "className": null,
+                "selector": "#cookiescript_injected_wrapper"
+              }
+            },
+            "selector": "#cookiescript_manage_wrap",
+            "selectorConfidence": "very high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Strictly Necessary",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "class": "cookiescript_category_strict cookiescript_active",
+              "data-cs-tab": "strict",
+              "data-cs-i18n-text": "{\"de\":\"Unbedingt erforderlich\",\"fr\":\"Strictement n\\u00e9cessaires\",\"it\":\"Strettamente necessari\",\"es\":\"Cookies estrictamente necesarias\",\"nl\":\"Strikt noodzakelijk\",\"pt\":\"Estritamente necess\\u00e1rios\",\"en\":\"Strictly Necessary\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_categories",
+              "className": null,
+              "selector": "#cookiescript_categories",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_declarationwrap",
+                "className": null,
+                "selector": "#cookiescript_declarationwrap"
+              }
+            },
+            "selector": ".cookiescript_category_strict",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Performance",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "class": "cookiescript_category_performance",
+              "data-cs-tab": "performance",
+              "data-cs-i18n-text": "{\"de\":\"Performance\",\"fr\":\"Performance\",\"it\":\"Performance\",\"es\":\"Cookies de rendimiento\",\"nl\":\"Prestatie\",\"pt\":\"Desempenho\",\"en\":\"Performance\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_categories",
+              "className": null,
+              "selector": "#cookiescript_categories",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_declarationwrap",
+                "className": null,
+                "selector": "#cookiescript_declarationwrap"
+              }
+            },
+            "selector": ".cookiescript_category_performance",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Targeting",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "class": "cookiescript_category_targeting",
+              "data-cs-tab": "targeting",
+              "data-cs-i18n-text": "{\"de\":\"Targeting\",\"fr\":\"Ciblage\",\"it\":\"Targeting\",\"es\":\"Cookies de preferencias\",\"nl\":\"Targeting\",\"pt\":\"Direcionamento\",\"en\":\"Targeting\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_categories",
+              "className": null,
+              "selector": "#cookiescript_categories",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_declarationwrap",
+                "className": null,
+                "selector": "#cookiescript_declarationwrap"
+              }
+            },
+            "selector": ".cookiescript_category_targeting",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Functionality",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "class": "cookiescript_category_functionality",
+              "data-cs-tab": "functionality",
+              "data-cs-i18n-text": "{\"de\":\"Funktionalit\\u00e4t\",\"fr\":\"Fonctionnalit\\u00e9\",\"it\":\"Funzionalit\\u00e0\",\"es\":\"Cookies de funcionalidad\",\"nl\":\"Functioneel\",\"pt\":\"Funcionalidade\",\"en\":\"Functionality\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_categories",
+              "className": null,
+              "selector": "#cookiescript_categories",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_declarationwrap",
+                "className": null,
+                "selector": "#cookiescript_declarationwrap"
+              }
+            },
+            "selector": ".cookiescript_category_functionality",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Unclassified",
+            "tag": "DIV",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "class": "cookiescript_category_unclassified",
+              "data-cs-tab": "unclassified",
+              "data-cs-i18n-text": "{\"de\":\"Unklassifizierte\",\"fr\":\"Non classifi\\u00e9s\",\"it\":\"Non classificati\",\"es\":\"Cookies no clasificadas\",\"nl\":\"Niet-geclassificeerd\",\"pt\":\"N\\u00e3o classificados\",\"en\":\"Unclassified\"}"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_categories",
+              "className": null,
+              "selector": "#cookiescript_categories",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_declarationwrap",
+                "className": null,
+                "selector": "#cookiescript_declarationwrap"
+              }
+            },
+            "selector": ".cookiescript_category_unclassified",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Stripe Inc.",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://stripe.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Stripe Inc.",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://stripe.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Customerly",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://www.customerly.io/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Amazon.com Inc.",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://advertising.amazon.com/legal/privacy-notice"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CookieScript",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "0",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://cookie-script.com/privacy-policy.html"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Meta Platform Inc.",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://www.facebook.com/policy.php"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google LLC",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Stripe",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://stripe.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google",
+            "tag": "A",
+            "attributes": {
+              "tabindex": "-1",
+              "target": "_blank",
+              "rel": "nofollow",
+              "href": "https://policies.google.com/privacy"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cookiescript_vendor_name",
+              "selector": ".cookiescript_vendor_name",
+              "grandparent": {
+                "tag": "TD",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Google Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://business.safety.google/privacy/",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "report",
+            "tag": "A",
+            "attributes": {
+              "id": "cookiescript_reportlink",
+              "href": "https://cookie-script.com/cookie-report?identifier=823a2498c6d8f8bc9cc63c1a509111d2",
+              "target": "_blank",
+              "aria-label": "report, opens a new window"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_reportdate",
+              "className": null,
+              "selector": "#cookiescript_reportdate",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_cookietablewrap",
+                "className": "cookiescript_hidden",
+                "selector": "#cookiescript_cookietablewrap"
+              }
+            },
+            "selector": "#cookiescript_reportlink",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "CookieScript",
+            "tag": "A",
+            "attributes": {
+              "href": "https://cookie-script.com",
+              "id": "cookiescript_cookiescriptlink",
+              "title": "CookieScript Consent Management Platform",
+              "target": "_blank",
+              "aria-label": "CookieScript Consent Management Platform, opens a new window"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "cookiescript_reportdate",
+              "className": null,
+              "selector": "#cookiescript_reportdate",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "cookiescript_cookietablewrap",
+                "className": "cookiescript_hidden",
+                "selector": "#cookiescript_cookietablewrap"
+              }
+            },
+            "selector": "#cookiescript_cookiescriptlink",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [
+          {
+            "type": "checkbox",
+            "labelText": "STRICTLY NECESSARY",
+            "tag": "INPUT",
+            "attributes": {
+              "tabindex": "0",
+              "id": "cookiescript_category_strict",
+              "data-cookiescript": "checkbox-input",
+              "type": "checkbox",
+              "class": "mdc-checkbox__native-control cookiescript_checkbox_input",
+              "value": "strict",
+              "disabled": "",
+              "checked": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mdc-checkbox",
+              "selector": ".mdc-checkbox",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_checkbox",
+                "selector": ".cookiescript_checkbox"
+              }
+            },
+            "selector": "#cookiescript_category_strict",
+            "selectorConfidence": "very high",
+            "isChecked": true,
+            "isDisabled": true
+          },
+          {
+            "type": "checkbox",
+            "labelText": "PERFORMANCE",
+            "tag": "INPUT",
+            "attributes": {
+              "tabindex": "0",
+              "id": "cookiescript_category_performance",
+              "data-cookiescript": "checkbox-input",
+              "type": "checkbox",
+              "class": "mdc-checkbox__native-control cookiescript_checkbox_input",
+              "value": "performance"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mdc-checkbox",
+              "selector": ".mdc-checkbox",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_checkbox",
+                "selector": ".cookiescript_checkbox"
+              }
+            },
+            "selector": "#cookiescript_category_performance",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "TARGETING",
+            "tag": "INPUT",
+            "attributes": {
+              "tabindex": "0",
+              "id": "cookiescript_category_targeting",
+              "data-cookiescript": "checkbox-input",
+              "type": "checkbox",
+              "class": "mdc-checkbox__native-control cookiescript_checkbox_input",
+              "value": "targeting"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mdc-checkbox",
+              "selector": ".mdc-checkbox",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_checkbox",
+                "selector": ".cookiescript_checkbox"
+              }
+            },
+            "selector": "#cookiescript_category_targeting",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "FUNCTIONALITY",
+            "tag": "INPUT",
+            "attributes": {
+              "tabindex": "0",
+              "id": "cookiescript_category_functionality",
+              "data-cookiescript": "checkbox-input",
+              "type": "checkbox",
+              "class": "mdc-checkbox__native-control cookiescript_checkbox_input",
+              "value": "functionality"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mdc-checkbox",
+              "selector": ".mdc-checkbox",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_checkbox",
+                "selector": ".cookiescript_checkbox"
+              }
+            },
+            "selector": "#cookiescript_category_functionality",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          },
+          {
+            "type": "checkbox",
+            "labelText": "UNCLASSIFIED",
+            "tag": "INPUT",
+            "attributes": {
+              "tabindex": "0",
+              "id": "cookiescript_category_unclassified",
+              "data-cookiescript": "checkbox-input",
+              "type": "checkbox",
+              "class": "mdc-checkbox__native-control cookiescript_checkbox_input",
+              "value": "unclassified"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "mdc-checkbox",
+              "selector": ".mdc-checkbox",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "cookiescript_checkbox",
+                "selector": ".cookiescript_checkbox"
+              }
+            },
+            "selector": "#cookiescript_category_unclassified",
+            "selectorConfidence": "very high",
+            "isChecked": false,
+            "isDisabled": false
+          }
+        ],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id^=\"cookiescript_\"]",
+        "url": "https://cookie-script.com/",
+        "filteredHtml": "",
+        "filteredHtmlOmitted": true,
+        "filteredHtmlOriginalChars": 100475,
+        "cmpType": "Cookie-Script"
+      },
+      "settings": null
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-27T04:05:39.206565",
+  "url": "https://www.stern.de",
+  "structured_dom_chars": 40061,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "Sourcepoint",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on stern.de only offers \"Zustimmen und weiter\" (Accept All) and \"Zum PUR-Abo\" (Paid subscription), with no \"Reject All\" or \"Decline\" button. While a granular settings link exists, Sourcepoint's nested iframe architecture prevents navigation to the inner preference center where category-level rejections or a global save might reside.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on stern.de only offers \"Zustimmen und weiter\" (Accept All) and \"Zum PUR-Abo\" (Paid subscription), with no \"Reject All\" or \"Decline\" button. While a granular settings link exists, Sourcepoint's nested iframe architecture prevents navigation to the inner preference center where category-level rejections or a global save might reside.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The Sourcepoint first-layer banner on stern.de only offers \"Zustimmen und weiter\" (Accept All) and \"Zum PUR-Abo\" (Paid subscription), with no \"Reject All\" or \"Decline\" button. While a granular settings link exists, Sourcepoint's nested iframe architecture prevents navigation to the inner preference center where category-level rejections or a global save might reside.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The Sourcepoint first-layer banner on stern.de only offers \"Zustimmen und weiter\" (Accept All) and \"Zum PUR-Abo\" (Paid subscription), with no \"Reject All\" or \"Decline\" button. While a granular settings link exists, Sourcepoint's nested iframe architecture prevents navigation to the inner preference center where category-level rejections or a global save might reside."
+  ],
+  "duration_seconds": 23.96,
+  "extraction_duration_seconds": 7.68,
+  "extraction_share_percent": 32.05,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

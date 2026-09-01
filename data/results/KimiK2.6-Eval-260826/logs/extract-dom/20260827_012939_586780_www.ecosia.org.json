@@ -1,0 +1,1971 @@
+{
+  "timestamp": "2026-08-27T01:29:39.586869",
+  "url": "https://www.ecosia.org",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.ecosia.org"
+  ],
+  "duration_seconds": 6.63,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"didomi\"]\" (Didomi) in frame: https://www.ecosia.org/",
+      "waitForCmpUi detected CMP Type: Didomi",
+      "I found 3 frames.",
+      "a frame was picked by score: https://www.ecosia.org/ with Score: 48",
+      "Settings match: \"Manage cookies\" --> lowered: \"manage cookies\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: #didomi-notice-learn-more-button, textMatch: Manage cookies",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 0",
+      "No qualifying new frame selected. Falling back to same-frame DOM diff analysis...",
+      "DOM diff shortcut used because combined snapshot size was 402601 chars.",
+      "DOM diff: 38119 chars added, 0 inputs added.",
+      "Old state: 37 buttons, 4 inputs.",
+      "New state: 60 buttons, 4 inputs.",
+      "Settings detected: 38119 chars, 0 inputs, 23 buttons added.",
+      "Awaiting same-frame DOM stability before extraction...",
+      "Same-frame DOM stability wait finished. Extracting settings...",
+      "Settings UI seems to be there! 0 functional elements got found.",
+      "[",
+      "  {",
+      "    frameUrl: 'https://www.ecosia.org/',",
+      "    isMainFrame: true,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Didomi',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[id*=\"didomi\"]',",
+      "      url: 'https://www.ecosia.org/',",
+      "      filteredHtml: `<div id=\"didomi-host\" class=\"didomi-host\" data-nosnippet=\"true\" lang=\"en\" data-lang-dir=\"ltr\"><div class=\"notranslate didomi-screen-small didomi-mobile didomi-consent-popup__44c99d3a-c3b4-496d-a3a1-9153b3ce5b9d\"><div><div id=\"didomi-notice\" data-testid=\"notice\" class=\"didomi-regular-notice didomi-banner-notice-optin-type didomi-notice-banner shape-banner bottom didomi-regular-notice-with-data-processing\"><div class=\"didomi-notice__interior-border didomi-border\"><div id=\"text\" class=\"push-right didomi-notice-text\"><p>With your agreement, we and <a role=\"button\" href=\"javascript:Didomi.preferences.show('vendors')\" class=\"didomi-notice-view-partners-link-in-text\">our 5 partners</a> use cookies or similar technologies to store, access, and process personal data like your visit on this website, IP addresses and cookie identifiers. Some partners do not ask for your consent to process your data and rely on their legitimate business interest. You can withdraw your consent or object to data processing based on legitimate interest at any time by clicking on “Manage cookies” or in our Privacy Policy on this website.</p><div class=\"didomi-notice-data-processing-container\"><p><span class=\"didomi-notice-data-processing-title\" role=\"heading\" aria-level=\"2\">We and our partners process data for the following purposes:</span><span class=\"didomi-notice-data-processing-list\"><span>Analytics</span><span>, Essential</span><span>, Google</span><span>, Marketing</span><span>, Personalised advertising and content, advertising and content measurement, audience research and services development</span><span>, Personalization</span></span></p></div></div><div id=\"buttons\" class=\"multiple didomi-buttons\"><button id=\"didomi-notice-learn-more-button\" class=\"didomi-components-button didomi-button didomi-learn-more-button didomi-button-standard standard-button\" aria-label=\"Manage cookies\"><span>Manage cookies</span></button><button id=\"didomi-notice-disagree-button\" class=\"didomi-components-button didomi-button didomi-disagree-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Reject non-essential\"><span>Reject non-essential</span></button><button id=\"didomi-notice-agree-button\" class=\"didomi-components-button didomi-button didomi-dismiss-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Accept all\"><span>Accept all</span></button></div></div></div></div></div></div>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 2460,",
+      "      cmpType: 'Didomi'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"didomi\"]',",
+      "      url: 'https://www.ecosia.org/',",
+      "      filteredHtml: '<body class=\"didomi-popup-open\"><div id=\"didomi-host\" class=\"didomi-host\" data-nosnippet=\"true\" lang=\"en\" data-lang-dir=\"ltr\"><div class=\"notranslate didomi-screen-small didomi-mobile didomi-consent-popup__44c99d3a-c3b4-496d-a3a1-9153b3ce5b9d\"><div id=\"didomi-consent-popup\" class=\"didomi-popup-backdrop didomi-consent-popup__backdrop\"><div class=\"didomi-exterior-border didomi-consent-popup__exterior-border\"><div class=\"didomi-popup-container didomi-consent-popup__dialog\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Welcome to Ecosia Consent Management\"><div class=\"didomi-consent-popup-preferences\"><div class=\"didomi-popup-view didomi-consent-popup-preferences-purposes\" tabindex=\"-1\" role=\"document\" data-testid=\"dialog-purposes\"><div></div><div class=\"didomi-consent-popup-header didomi-popup-header\"><div class=\"didomi-consent-popup-title didomi-popup-title\" role=\"heading\" aria-level=\"1\" id=\"didomi-popup-preferences-title\" aria-label=\"Preferences\"><span>Preferences</span></div><a aria-label=\"close and return to the consent management view\" role=\"button\" tabindex=\"0\" class=\"didomi-popup-close didomi-no-link-style didomi-consent-popup-header-close\">×</a></div><div class=\"didomi-consent-popup-body didomi-popup-body\"><p class=\"didomi-consent-popup-body__explanation\"><span>We and our partners place cookies, access and use non-sensitive information from your device to improve our products and personalize ads and other contents throughout this website. You may accept all or part of these operations. To learn more about cookies, partners, and how we use your data, to review your options or these operations for each partner, visit our <a href=\"https://www.ecosia.org/privacy\" target=\"_blank\">privacy policy</a></span></p><div class=\"didomi-consent-popup-body__section didomi-popup-body-section\"><div class=\"didomi-consent-popup-purpose didomi-consent-popup-container-click-all\"><span class=\"didomi-consent-popup-body__title\" role=\"heading\" aria-level=\"2\" id=\"didomi-popup-purposes-all\"><span>You allow</span></span><div class=\"didomi-consent-popup-purpose__buttons\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-popup-purposes-all\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-popup-purposes-all\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div><div class=\"didomi-consent-popup-categories didomi-consent-popup-categories-nested\"><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-essential\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-essential\"><span>Essential</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies ensure Ecosia functions correctly, and therefore can’t be rejected. For example, these cookies help us block spam and introduce new features safely.</span></p></div></div><p class=\"didomi-consent-popup-data-processing__essential_purpose_explanation didomi-content \">This purpose is required by our website to operate normally and cannot be disabled.</p></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__essential_purpose\">Required</div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-analytics\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-analytics\"><span>Analytics</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies help us better understand how you use Ecosia, which features are most helpful for you and what we can improve. If you create an account, we will use a cookie that connects this information with your account. Analytics cookies also enable Microsoft Clarity, which captures how you interact with our website through behavioral metrics in individual search sessions. The information is used for site and advertising optimization, as well as fraud protection.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-analytics\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-analytics\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-marketing\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-marketing\"><span>Marketing</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies allow you to give feedback about Ecosia and our features. They also let us show you occasional notifications or content relevant to your experience. These cookies also allow our partner Braze to deliver targeted and personalized messages about your impact and other Ecosia offerings.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-marketing\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-marketing\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-personalization\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-personalization\"><span>Personalization</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies allow us to show you better, more personalized search results to make your search experience smoother.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-personalization\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-personalization\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div class=\"didomi-consent-popup-category\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\"><div class=\"label-click \" tabindex=\"0\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-xmckPPjd\"><span class=\"didomi-consent-popup-category__name\" role=\"heading\" aria-level=\"3\"><span>Google</span></span></span></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div><div class=\" didomi-content \"><div class=\"didomi-consent-popup-category__children\"><div class=\"didomi-consent-popup-category__description\"><span>These cookies allow us to show you results and ads from Google. Cookies set by Google are used for ad reporting and optimization, and maintaining the security of their systems.</span></div><div class=\"didomi-consent-popup-categories\"><div><d'... 57307 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 67307,",
+      "      cmpType: 'Didomi',",
+      "      isIframe: false",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://www.ecosia.org/",
+      "   isMainFrame: true | isCookieFrame: true",
+      "  Known CMP detected: Didomi via selector \"[id*=\"didomi\"]\"",
+      "  Buttons found (4):",
+      "      [A] \"our 5 partners\" --> selector: .didomi-notice-view-partners-link-in-text",
+      "      [BUTTON] \"Manage cookies\" --> selector: #didomi-notice-learn-more-button",
+      "      [BUTTON] \"Reject non-essential\" --> selector: #didomi-notice-disagree-button",
+      "      [BUTTON] \"Accept all\" --> selector: #didomi-notice-agree-button",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: false):",
+      "  Buttons found (59):",
+      "      [A] \"×\" --> selector: [aria-label=\"close and return to the consent management view\"]",
+      "      [A] \"privacy policy\" --> selector: a",
+      "      [BUTTON] \"Disagree\" --> selector: button",
+      "      [BUTTON] \"Agree\" --> selector: button",
+      "      [DIV] \"+Essential\" --> selector: div",
+      "      [DIV] \"+Analytics\" --> selector: div",
+      "      [BUTTON] \"Disagree\" --> selector: button",
+      "      [BUTTON] \"Agree\" --> selector: button",
+      "      [DIV] \"+Marketing\" --> selector: div",
+      "      [BUTTON] \"Disagree\" --> selector: button",
+      "      [BUTTON] \"Agree\" --> selector: button",
+      "      [DIV] \"+Personalization\" --> selector: div",
+      "      [BUTTON] \"Disagree\" --> selector: button",
+      "      [BUTTON] \"Agree\" --> selector: button",
+      "      [DIV] \"+Google\" --> selector: div",
+      "      [BUTTON] \"Disagree\" --> selector: button",
+      "      [BUTTON] \"Agree\" --> selector: button",
+      "      [DIV] \"+About the storage of your choices\" --> selector: div",
+      "      [BUTTON] \"View our partners\" --> selector: [aria-label=\"View our partners\"]",
+      "      [BUTTON] \"Disagree to all\" --> selector: #btn-toggle-disagree",
+      "      [BUTTON] \"Agree to all\" --> selector: #btn-toggle-agree",
+      "      [BUTTON] \"Save\" --> selector: #btn-toggle-save",
+      "      [A] \"our 5 partners\" --> selector: .didomi-notice-view-partners-link-in-text",
+      "      [BUTTON] \"Manage cookies\" --> selector: #didomi-notice-learn-more-button",
+      "      [BUTTON] \"Reject non-essential\" --> selector: #didomi-notice-disagree-button",
+      "      [BUTTON] \"Accept all\" --> selector: #didomi-notice-agree-button",
+      "      [BUTTON] \"AI tools\" --> selector: [aria-label=\"AI tools\"]",
+      "      [A] \"Download Ecosia Browser\" --> selector: a",
+      "      [A] \"255,138,364",
+      "trees planted by Ecosia\" --> selector: .global-counter__item",
+      "      [A] \"€103,498,884",
+      "dedicated to climate action\" --> selector: .global-counter__item",
+      "      [BUTTON] \"scroll down\" --> selector: [aria-label=\"scroll down\"]",
+      "      [A] \"See our reports\" --> selector: a",
+      "      [A] \"Discover all projects\" --> selector: a",
+      "      [A] \"B-Corporation Certificate\" --> selector: .footer-bcorp__logo",
+      "      [A] \"Certification Notice\" --> selector: .footer-bcorp__certification",
+      "      [A] \"Ecosia Browser\" --> selector: a",
+      "      [A] \"Ecosia Search\" --> selector: a",
+      "      [A] \"Financial reports\" --> selector: a",
+      "      [A] \"Help and Legal\" --> selector: a",
+      "      [A] \"Careers\" --> selector: a",
+      "      [A] \"Press\" --> selector: a",
+      "      [A] \"Blog\" --> selector: a",
+      "      [A] \"Privacy policy\" --> selector: a",
+      "      [A] \"Terms of service\" --> selector: a",
+      "      [A] \"Imprint\" --> selector: a",
+      "      [A] \"Transparency information (MStV)\" --> selector: a",
+      "      [BUTTON] \"Cookie preferences\" --> selector: [aria-label=\"Cookie preferences\"]",
+      "      [A] \"Play store download\" --> selector: a",
+      "      [A] \"App store download\" --> selector: a",
+      "      [A] \"Instagram\" --> selector: a",
+      "      [A] \"YouTube\" --> selector: a",
+      "      [A] \"TikTok\" --> selector: a",
+      "      [A] \"Facebook\" --> selector: a",
+      "      [A] \"LinkedIn\" --> selector: a",
+      "      [A] \"Mastodon\" --> selector: a",
+      "      [A] \"Ecosia Blog\" --> selector: a",
+      "      [A] \"privacy policy\" --> selector: a",
+      "      [A] \"terms of service\" --> selector: a",
+      "      [BUTTON] \"Start recording\" --> selector: audio-recorder >>> #micBtn",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://www.ecosia.org/",
+      "isMainFrame": true,
+      "isCookieBannerFrame": true,
+      "cmpType": "Didomi",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "our 5 partners",
+            "tag": "A",
+            "attributes": {
+              "role": "button",
+              "href": "javascript:Didomi.preferences.show('vendors')",
+              "class": "didomi-notice-view-partners-link-in-text"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "text",
+                "className": "push-right didomi-notice-text",
+                "selector": "#text"
+              }
+            },
+            "selector": ".didomi-notice-view-partners-link-in-text",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-learn-more-button",
+              "class": "didomi-components-button didomi-button didomi-learn-more-button didomi-button-standard standard-button",
+              "aria-label": "Manage cookies",
+              "style": "color: rgb(68, 68, 68); background-color: rgb(238, 238, 238); border-radius: 0px; border-color: rgba(34, 34, 34, 0.2); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-learn-more-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject non-essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-disagree-button",
+              "class": "didomi-components-button didomi-button didomi-disagree-button didomi-components-button--color didomi-button-highlight highlight-button",
+              "aria-label": "Reject non-essential",
+              "style": "color: rgb(255, 255, 255); background-color: rgb(0, 128, 9); border-radius: 0px; border-color: rgba(0, 128, 9, 0.3); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-disagree-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-agree-button",
+              "class": "didomi-components-button didomi-button didomi-dismiss-button didomi-components-button--color didomi-button-highlight highlight-button",
+              "aria-label": "Accept all",
+              "style": "color: rgb(255, 255, 255); background-color: rgb(0, 128, 9); border-radius: 0px; border-color: rgba(0, 128, 9, 0.3); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-agree-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[id*=\"didomi\"]",
+        "url": "https://www.ecosia.org/",
+        "filteredHtml": "<div id=\"didomi-host\" class=\"didomi-host\" data-nosnippet=\"true\" lang=\"en\" data-lang-dir=\"ltr\"><div class=\"notranslate didomi-screen-small didomi-mobile didomi-consent-popup__44c99d3a-c3b4-496d-a3a1-9153b3ce5b9d\"><div><div id=\"didomi-notice\" data-testid=\"notice\" class=\"didomi-regular-notice didomi-banner-notice-optin-type didomi-notice-banner shape-banner bottom didomi-regular-notice-with-data-processing\"><div class=\"didomi-notice__interior-border didomi-border\"><div id=\"text\" class=\"push-right didomi-notice-text\"><p>With your agreement, we and <a role=\"button\" href=\"javascript:Didomi.preferences.show('vendors')\" class=\"didomi-notice-view-partners-link-in-text\">our 5 partners</a> use cookies or similar technologies to store, access, and process personal data like your visit on this website, IP addresses and cookie identifiers. Some partners do not ask for your consent to process your data and rely on their legitimate business interest. You can withdraw your consent or object to data processing based on legitimate interest at any time by clicking on “Manage cookies” or in our Privacy Policy on this website.</p><div class=\"didomi-notice-data-processing-container\"><p><span class=\"didomi-notice-data-processing-title\" role=\"heading\" aria-level=\"2\">We and our partners process data for the following purposes:</span><span class=\"didomi-notice-data-processing-list\"><span>Analytics</span><span>, Essential</span><span>, Google</span><span>, Marketing</span><span>, Personalised advertising and content, advertising and content measurement, audience research and services development</span><span>, Personalization</span></span></p></div></div><div id=\"buttons\" class=\"multiple didomi-buttons\"><button id=\"didomi-notice-learn-more-button\" class=\"didomi-components-button didomi-button didomi-learn-more-button didomi-button-standard standard-button\" aria-label=\"Manage cookies\"><span>Manage cookies</span></button><button id=\"didomi-notice-disagree-button\" class=\"didomi-components-button didomi-button didomi-disagree-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Reject non-essential\"><span>Reject non-essential</span></button><button id=\"didomi-notice-agree-button\" class=\"didomi-components-button didomi-button didomi-dismiss-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Accept all\"><span>Accept all</span></button></div></div></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 2460,
+        "cmpType": "Didomi"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "×",
+            "tag": "A",
+            "attributes": {
+              "aria-label": "close and return to the consent management view",
+              "role": "button",
+              "tabindex": "0",
+              "class": "didomi-popup-close didomi-no-link-style didomi-consent-popup-header-close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-consent-popup-header didomi-popup-header",
+              "selector": ".didomi-consent-popup-header",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-popup-view didomi-consent-popup-preferences-purposes",
+                "selector": ".didomi-popup-view"
+              }
+            },
+            "selector": "[aria-label=\"close and return to the consent management view\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ecosia.org/privacy",
+              "target": "_blank"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "didomi-consent-popup-body__explanation",
+                "selector": ".didomi-consent-popup-body__explanation"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-popup-purposes-all",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-purpose__buttons",
+                "selector": ".didomi-consent-popup-purpose__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-popup-purposes-all",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-purpose__buttons",
+                "selector": ".didomi-consent-popup-purpose__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+Essential",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click didomi-consent-popup-data-processing__purpose",
+              "tabindex": "0",
+              "aria-describedby": "didomi-purpose-essential",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+Analytics",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click didomi-consent-popup-data-processing__purpose",
+              "tabindex": "0",
+              "aria-describedby": "didomi-purpose-analytics",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-analytics",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-analytics",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+Marketing",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click didomi-consent-popup-data-processing__purpose",
+              "tabindex": "0",
+              "aria-describedby": "didomi-purpose-marketing",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-marketing",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-marketing",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+Personalization",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click didomi-consent-popup-data-processing__purpose",
+              "tabindex": "0",
+              "aria-describedby": "didomi-purpose-personalization",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-personalization",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-personalization",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+Google",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click",
+              "tabindex": "0",
+              "aria-describedby": "didomi-purpose-xmckPPjd",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-xmckPPjd",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-components-radio__option didomi-components-radio__option--unselected",
+              "aria-describedby": "didomi-purpose-xmckPPjd",
+              "aria-checked": "false",
+              "role": "radio",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-radio",
+              "selector": ".didomi-components-radio",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-data-processing__buttons",
+                "selector": ".didomi-consent-popup-data-processing__buttons"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": "radio",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "+About the storage of your choices",
+            "tag": "DIV",
+            "attributes": {
+              "class": "label-click",
+              "tabindex": "0",
+              "aria-expanded": "false",
+              "role": "button"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-components-accordion-label-container",
+              "selector": ".didomi-components-accordion-label-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-components-accordion",
+                "selector": ".didomi-components-accordion"
+              }
+            },
+            "selector": "div",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "View our partners",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "didomi-consent-popup-view-vendors-list-link",
+              "aria-label": "View our partners"
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "didomi-consent-popup-view-vendors-list",
+              "selector": ".didomi-consent-popup-view-vendors-list",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-consent-popup-body didomi-popup-body",
+                "selector": ".didomi-consent-popup-body"
+              }
+            },
+            "selector": "[aria-label=\"View our partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Disagree to all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "btn-toggle-disagree",
+              "class": "didomi-components-button didomi-button didomi-button-standard standard-button",
+              "aria-label": "Disagree to all: Disagree to our data processing and close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-buttons-all-container",
+              "selector": ".didomi-buttons-all-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-popup-actions-container",
+                "selector": ".didomi-popup-actions-container"
+              }
+            },
+            "selector": "#btn-toggle-disagree",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Agree to all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "btn-toggle-agree",
+              "class": "didomi-components-button didomi-button didomi-button-standard standard-button",
+              "aria-label": "Agree to all: Agree to our data processing and close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-buttons-all-container",
+              "selector": ".didomi-buttons-all-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-popup-actions-container",
+                "selector": ".didomi-popup-actions-container"
+              }
+            },
+            "selector": "#btn-toggle-agree",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "btn-toggle-save",
+              "disabled": "",
+              "class": "didomi-components-button didomi-button didomi-button-standard standard-button",
+              "aria-describedby": "didomi-consent-popup-information-save",
+              "aria-label": "Save: Save your choices and close"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "didomi-buttons-all-container",
+              "selector": ".didomi-buttons-all-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-popup-actions-container",
+                "selector": ".didomi-popup-actions-container"
+              }
+            },
+            "selector": "#btn-toggle-save",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "our 5 partners",
+            "tag": "A",
+            "attributes": {
+              "role": "button",
+              "href": "javascript:Didomi.preferences.show('vendors')",
+              "class": "didomi-notice-view-partners-link-in-text"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "DIV",
+                "id": "text",
+                "className": "push-right didomi-notice-text",
+                "selector": "#text"
+              }
+            },
+            "selector": ".didomi-notice-view-partners-link-in-text",
+            "selectorConfidence": "medium",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Manage cookies",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-learn-more-button",
+              "class": "didomi-components-button didomi-button didomi-learn-more-button didomi-button-standard standard-button",
+              "aria-label": "Manage cookies",
+              "style": "color: rgb(68, 68, 68); background-color: rgb(238, 238, 238); border-radius: 0px; border-color: rgba(34, 34, 34, 0.2); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-learn-more-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Reject non-essential",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-disagree-button",
+              "class": "didomi-components-button didomi-button didomi-disagree-button didomi-components-button--color didomi-button-highlight highlight-button",
+              "aria-label": "Reject non-essential",
+              "style": "color: rgb(255, 255, 255); background-color: rgb(0, 128, 9); border-radius: 0px; border-color: rgba(0, 128, 9, 0.3); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-disagree-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept all",
+            "tag": "BUTTON",
+            "attributes": {
+              "id": "didomi-notice-agree-button",
+              "class": "didomi-components-button didomi-button didomi-dismiss-button didomi-components-button--color didomi-button-highlight highlight-button",
+              "aria-label": "Accept all",
+              "style": "color: rgb(255, 255, 255); background-color: rgb(0, 128, 9); border-radius: 0px; border-color: rgba(0, 128, 9, 0.3); border-width: 1px; display: block !important;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "buttons",
+              "className": "multiple didomi-buttons",
+              "selector": "#buttons",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "didomi-notice__interior-border didomi-border",
+                "selector": ".didomi-notice__interior-border"
+              }
+            },
+            "selector": "#didomi-notice-agree-button",
+            "selectorConfidence": "very high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "AI tools",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "aria-label": "AI tools",
+              "aria-expanded": "false",
+              "aria-haspopup": "true",
+              "data-test-id": "omnibox-ai-tools-toggle",
+              "variant": "bare",
+              "class": "button omnibox-ai-tools__toggle button base-button base-button--variant-bare base-button--size-m base-button--elevation-0",
+              "data-v-752dcc4e": "",
+              "data-v-88b63743": "",
+              "data-v-98feb95c": ""
+            },
+            "parentInfo": {
+              "tag": "SPAN",
+              "id": "",
+              "className": "omnibox-ai-tools__toggle-wrapper",
+              "selector": ".omnibox-ai-tools__toggle-wrapper",
+              "grandparent": {
+                "tag": "SPAN",
+                "id": null,
+                "className": "tooltip__toggle",
+                "selector": ".tooltip__toggle"
+              }
+            },
+            "selector": "[aria-label=\"AI tools\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Download Ecosia Browser",
+            "tag": "A",
+            "attributes": {
+              "data-v-752dcc4e": "",
+              "data-v-6affa264": "",
+              "data-test-id": "cta-button",
+              "href": "https://www.ecosia.org/browser/confirmation",
+              "rel": "noopener",
+              "target": "_self",
+              "class": "button cta__button button base-button base-button--variant-solid-grellow base-button--size-l base-button--elevation-0",
+              "variant": "solid-grellow",
+              "as": "a"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "cta",
+              "selector": ".cta",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "above-fold-section__cta",
+                "selector": ".above-fold-section__cta"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "255,138,364\ntrees planted by Ecosia",
+            "tag": "A",
+            "attributes": {
+              "href": "https://blog.ecosia.org/tag/where-does-ecosia-plant-trees",
+              "data-test-id": "tree-counter-wrapper",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "global-counter__item global-counter__item--clickable",
+              "data-v-8dfec848": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "global-counter-wrapper__item global-counter-wrapper__item global-counter global-counter--glass global-counter--with-transition global-counter--with-border",
+              "selector": ".global-counter-wrapper__item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "global-counter-wrapper__slot",
+                "selector": ".global-counter-wrapper__slot"
+              }
+            },
+            "selector": ".global-counter__item",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "€103,498,884\ndedicated to climate action",
+            "tag": "A",
+            "attributes": {
+              "href": "https://ecosia.co/finreportsen",
+              "data-test-id": "investments-counter-wrapper",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "class": "global-counter__item global-counter__item--clickable",
+              "data-v-8dfec848": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "global-counter-wrapper__item global-counter-wrapper__item global-counter global-counter--glass global-counter--with-transition global-counter--with-border",
+              "selector": ".global-counter-wrapper__item",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "global-counter-wrapper__slot",
+                "selector": ".global-counter-wrapper__slot"
+              }
+            },
+            "selector": ".global-counter__item",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "scroll down",
+            "tag": "BUTTON",
+            "attributes": {
+              "type": "button",
+              "data-test-id": "above-fold-section__button",
+              "aria-label": "scroll down",
+              "as": "button",
+              "variant": "outline",
+              "class": "button above-fold-section__button button base-button base-button--variant-outline base-button--size-l base-button--elevation-0",
+              "data-v-752dcc4e": "",
+              "data-v-fde91d41": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "above-fold-section__button-wrapper",
+              "selector": ".above-fold-section__button-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "above-fold-section",
+                "selector": ".above-fold-section"
+              }
+            },
+            "selector": "[aria-label=\"scroll down\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "See our reports",
+            "tag": "A",
+            "attributes": {
+              "href": "https://ecosia.co/finreportsen",
+              "target": "_self",
+              "rel": "noopener",
+              "data-test-id": "financial-report-section-link",
+              "as": "a",
+              "variant": "outline",
+              "class": "button financial-report-section__link button base-button base-button--variant-outline base-button--size-m base-button--elevation-0",
+              "data-v-752dcc4e": "",
+              "data-v-038e92b7": "",
+              "data-v-46a149b9": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "financial-report-section__slot",
+              "selector": ".financial-report-section__slot",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "section-wrapper__content financial-report-section section-wrapper section-wrapper--variant-primary section-wrapper--compact",
+                "selector": ".section-wrapper__content"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Discover all projects",
+            "tag": "A",
+            "attributes": {
+              "href": "https://blog.ecosia.org/tag/where-does-ecosia-plant-trees",
+              "target": "_self",
+              "rel": "noopener",
+              "data-test-id": "map-section-projects-link",
+              "as": "a",
+              "variant": "outline",
+              "class": "button map-section__link button base-button base-button--variant-outline base-button--size-l base-button--elevation-0",
+              "data-v-752dcc4e": "",
+              "data-v-4e464d2e": "",
+              "data-v-46a149b9": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "map-section__statistics-wrapper",
+              "selector": ".map-section__statistics-wrapper",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "map-section__background",
+                "selector": ".map-section__background"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "B-Corporation Certificate",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.bcorporation.net/find-a-b-corp/company/ecosia-gmbh/",
+              "target": "_blank",
+              "rel": "noopener",
+              "data-test-id": "footer-bcorp-logo",
+              "class": "footer-bcorp__logo"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "footer-bcorp",
+              "selector": ".footer-bcorp",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "full-footer__content",
+                "selector": ".full-footer__content"
+              }
+            },
+            "selector": ".footer-bcorp__logo",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Certification Notice",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.bcorporation.net/en-us/certification-notice/",
+              "target": "_blank",
+              "rel": "noopener",
+              "data-test-id": "footer-bcorp-certification",
+              "class": "footer-bcorp__certification footer-bcorp__certification link link--as-a link--color-bare link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "footer-bcorp",
+              "selector": ".footer-bcorp",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "full-footer__content",
+                "selector": ".full-footer__content"
+              }
+            },
+            "selector": ".footer-bcorp__certification",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ecosia Browser",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "whattitle",
+              "href": "https://www.ecosia.org/browser",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ecosia Search",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "whattitle",
+              "href": "https://www.ecosia.org/",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Financial reports",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "whattitle",
+              "href": "https://ecosia.co/finreportsen",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Help and Legal",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "abouttitle",
+              "href": "https://support.ecosia.org/",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Careers",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "abouttitle",
+              "href": "https://www.ecosia.org/about/careers",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Press",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "abouttitle",
+              "href": "https://www.ecosia.org/imprint#press",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Blog",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "abouttitle",
+              "href": "https://blog.ecosia.org",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy policy",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "legaltitle",
+              "href": "https://www.ecosia.org/privacy",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of service",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "legaltitle",
+              "href": "https://www.ecosia.org/terms-of-service",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Imprint",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "legaltitle",
+              "href": "https://www.ecosia.org/imprint",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Transparency information (MStV)",
+            "tag": "A",
+            "attributes": {
+              "data-test-id": "legaltitle",
+              "href": "https://support.ecosia.org/article/579-search-results-providers#How-are-search-results-ranked-by-our-partners-Bing-Google-EUSP-FqOW9",
+              "rel": "noopener",
+              "class": "link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie preferences",
+            "tag": "BUTTON",
+            "attributes": {
+              "role": "button",
+              "aria-label": "Cookie preferences",
+              "title": "Cookie preferences",
+              "data-test-id": "full-footer-cookies",
+              "class": "link link--as-button link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": "",
+              "data-v-19776b62": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-menu__link",
+              "selector": ".footer-menu__link",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"Cookie preferences\"]",
+            "selectorConfidence": "high",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Play store download",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener",
+              "href": "https://play.google.com/store/apps/details?id=com.ecosia.android&hl=en",
+              "data-test-id": "mobile-badge",
+              "class": "link link--as-a link--color-null link--variant-primary",
+              "data-v-6ef1cd5f": "",
+              "data-v-19776b62": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "full-footer__mobile-badge",
+              "selector": ".full-footer__mobile-badge",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "App store download",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "rel": "noopener",
+              "href": "https://ecosia.co/mobile_ft_ios",
+              "data-test-id": "mobile-badge",
+              "class": "link link--as-a link--color-null link--variant-primary",
+              "data-v-6ef1cd5f": "",
+              "data-v-19776b62": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "full-footer__mobile-badge",
+              "selector": ".full-footer__mobile-badge",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Instagram",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.instagram.com/ecosia",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "Instagram",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "YouTube",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.youtube.com/user/EcosiaORG",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "YouTube",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "TikTok",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.tiktok.com/@ecosia",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "TikTok",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Facebook",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.facebook.com/ecosia",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "Facebook",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "LinkedIn",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.linkedin.com/company/ecosia",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "LinkedIn",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Mastodon",
+            "tag": "A",
+            "attributes": {
+              "href": "https://mastodon.social/@ecosia",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "Mastodon",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ecosia Blog",
+            "tag": "A",
+            "attributes": {
+              "href": "https://blog.ecosia.org",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "data-test-id": "footer-social__link",
+              "title": "Ecosia Blog",
+              "class": "footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary",
+              "data-v-6ef1cd5f": ""
+            },
+            "parentInfo": {
+              "tag": "LI",
+              "id": "",
+              "className": "footer-social__item",
+              "selector": ".footer-social__item",
+              "grandparent": {
+                "tag": "UL",
+                "id": null,
+                "className": "footer-social__list",
+                "selector": ".footer-social__list"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "privacy policy",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ecosia.org/privacy",
+              "target": "_blank",
+              "rel": "noopener"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "footer-social__legal",
+              "selector": ".footer-social__legal",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer-social full-footer__social",
+                "selector": ".footer-social"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "terms of service",
+            "tag": "A",
+            "attributes": {
+              "href": "https://www.ecosia.org/terms-of-service",
+              "target": "_blank",
+              "rel": "noopener"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "footer-social__legal",
+              "selector": ".footer-social__legal",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "footer-social full-footer__social",
+                "selector": ".footer-social"
+              }
+            },
+            "selector": "a",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Start recording",
+            "tag": "BUTTON",
+            "attributes": {
+              "aria-label": "Start recording",
+              "id": "micBtn",
+              "class": "icon-btn mic-btn",
+              "data-test-id": "button-micBtn"
+            },
+            "parentInfo": {
+              "tag": "RECORDER-TOOLTIP",
+              "id": "tooltip-micBtn",
+              "className": null,
+              "selector": "#tooltip-micBtn",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "recorder default",
+                "selector": ".recorder"
+              }
+            },
+            "selector": "audio-recorder >>> #micBtn",
+            "selectorConfidence": "medium",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"didomi\"]",
+        "url": "https://www.ecosia.org/",
+        "filteredHtml": "<body class=\"didomi-popup-open\"><div id=\"didomi-host\" class=\"didomi-host\" data-nosnippet=\"true\" lang=\"en\" data-lang-dir=\"ltr\"><div class=\"notranslate didomi-screen-small didomi-mobile didomi-consent-popup__44c99d3a-c3b4-496d-a3a1-9153b3ce5b9d\"><div id=\"didomi-consent-popup\" class=\"didomi-popup-backdrop didomi-consent-popup__backdrop\"><div class=\"didomi-exterior-border didomi-consent-popup__exterior-border\"><div class=\"didomi-popup-container didomi-consent-popup__dialog\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Welcome to Ecosia Consent Management\"><div class=\"didomi-consent-popup-preferences\"><div class=\"didomi-popup-view didomi-consent-popup-preferences-purposes\" tabindex=\"-1\" role=\"document\" data-testid=\"dialog-purposes\"><div></div><div class=\"didomi-consent-popup-header didomi-popup-header\"><div class=\"didomi-consent-popup-title didomi-popup-title\" role=\"heading\" aria-level=\"1\" id=\"didomi-popup-preferences-title\" aria-label=\"Preferences\"><span>Preferences</span></div><a aria-label=\"close and return to the consent management view\" role=\"button\" tabindex=\"0\" class=\"didomi-popup-close didomi-no-link-style didomi-consent-popup-header-close\">×</a></div><div class=\"didomi-consent-popup-body didomi-popup-body\"><p class=\"didomi-consent-popup-body__explanation\"><span>We and our partners place cookies, access and use non-sensitive information from your device to improve our products and personalize ads and other contents throughout this website. You may accept all or part of these operations. To learn more about cookies, partners, and how we use your data, to review your options or these operations for each partner, visit our <a href=\"https://www.ecosia.org/privacy\" target=\"_blank\">privacy policy</a></span></p><div class=\"didomi-consent-popup-body__section didomi-popup-body-section\"><div class=\"didomi-consent-popup-purpose didomi-consent-popup-container-click-all\"><span class=\"didomi-consent-popup-body__title\" role=\"heading\" aria-level=\"2\" id=\"didomi-popup-purposes-all\"><span>You allow</span></span><div class=\"didomi-consent-popup-purpose__buttons\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-popup-purposes-all\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-popup-purposes-all\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div><div class=\"didomi-consent-popup-categories didomi-consent-popup-categories-nested\"><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-essential\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-essential\"><span>Essential</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies ensure Ecosia functions correctly, and therefore can’t be rejected. For example, these cookies help us block spam and introduce new features safely.</span></p></div></div><p class=\"didomi-consent-popup-data-processing__essential_purpose_explanation didomi-content \">This purpose is required by our website to operate normally and cannot be disabled.</p></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__essential_purpose\">Required</div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-analytics\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-analytics\"><span>Analytics</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies help us better understand how you use Ecosia, which features are most helpful for you and what we can improve. If you create an account, we will use a cookie that connects this information with your account. Analytics cookies also enable Microsoft Clarity, which captures how you interact with our website through behavioral metrics in individual search sessions. The information is used for site and advertising optimization, as well as fraud protection.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-analytics\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-analytics\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-marketing\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-marketing\"><span>Marketing</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies allow you to give feedback about Ecosia and our features. They also let us show you occasional notifications or content relevant to your experience. These cookies also allow our partner Braze to deliver targeted and personalized messages about your impact and other Ecosia offerings.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-marketing\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-marketing\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-personalization\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-personalization\"><span>Personalization</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>These cookies allow us to show you better, more personalized search results to make your search experience smoother.</span></p></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-personalization\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-personalization\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div class=\"didomi-consent-popup-category\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\"><div class=\"label-click \" tabindex=\"0\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-xmckPPjd\"><span class=\"didomi-consent-popup-category__name\" role=\"heading\" aria-level=\"3\"><span>Google</span></span></span></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-xmckPPjd\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div><div class=\" didomi-content \"><div class=\"didomi-consent-popup-category__children\"><div class=\"didomi-consent-popup-category__description\"><span>These cookies allow us to show you results and ads from Google. Cookies set by Google are used for ad reporting and optimization, and maintaining the security of their systems.</span></div><div class=\"didomi-consent-popup-categories\"><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-cookies\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-cookies\"><span>Store and/or access information on a device</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each time).</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-cookies\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-cookies\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-select_basic_ads\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-select_basic_ads\"><span>Use limited data to select advertising</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you).</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone.</span><span class=\"didomi-consent-popup-data-processing-illustration\">A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too often.</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-select_basic_ads\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-select_basic_ads\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-measure_ad_performance\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-measure_ad_performance\"><span>Measure advertising performance</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very helpful to understand the relevance of advertising campaigns.</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">You have clicked on an advertisement about a “black Friday” discount by an online shop on the website of a publisher and purchased a product. Your click will be linked to this purchase. Your interaction and that of other users will be measured to know how many clicks on the ad led to a purchase.</span><span class=\"didomi-consent-popup-data-processing-illustration\">You are one of very few to have clicked on an advertisement about an “international appreciation day” discount by an online gift shop within the app of a publisher. The publisher wants to have reports to understand how often a specific ad placement within the app, and notably the “international appreciation day” ad, has been viewed or clicked by you and other users, in order to help the publisher and its partners (such as agencies) optimise ad placements.</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-measure_ad_performance\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-measure_ad_performance\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-measure_content_performance\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-measure_content_performance\"><span>Measure content performance</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you.</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">You have read a blog post about hiking on a mobile app of a publisher and followed a link to a recommended and related post. Your interactions will be recorded as showing that the initial hiking post was useful to you and that it was successful in interesting you in the related post. This will be measured to know whether to produce more posts on hiking in the future and where to place them on the home screen of the mobile app.</span><span class=\"didomi-consent-popup-data-processing-illustration\">You were presented a video on fashion trends, but you and several other users stopped watching after 30 seconds. This information is then used to evaluate the right length of future videos on fashion trends.</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-measure_content_performance\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-measure_content_performance\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-market_research\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-market_research\"><span>Understand audiences through statistics or combinations of data from different sources</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents).</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">The owner of an online bookstore wants commercial reporting showing the proportion of visitors who consulted and left its site without buying, or consulted and bought the last celebrity autobiography of the month, as well as the average age and the male/female distribution of each category. Data relating to your navigation on its site and to your personal characteristics is then used and combined with other such data to produce these statistics.</span><span class=\"didomi-consent-popup-data-processing-illustration\">An advertiser wants to better understand the type of audience interacting with its adverts. It calls upon a research institute to compare the characteristics of users who interacted with the ad with typical attributes of users of similar platforms, across different devices. This comparison reveals to the advertiser that its ad audience is mainly accessing the adverts through mobile devices and is likely in the 45-60 age range.</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-market_research\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-market_research\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div><div><div class=\"didomi-consent-popup-data-processing\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click didomi-consent-popup-data-processing__purpose\" tabindex=\"0\" aria-describedby=\"didomi-purpose-improve_products\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span id=\"didomi-purpose-improve_products\"><span>Develop and improve services</span></span></div></div><div class=\"didomi-consent-popup-data-processing__description didomi-consent-popup-data-processing__description_tcf_v2 didomi-content \"><div><p><span>Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers.</span></p><div class=\"didomi-consent-popup-data-processing-illustrations\"><b role=\"heading\" aria-level=\"4\"><span>Examples illustrating how our partners process data based on this purpose:</span></b><span class=\"didomi-consent-popup-data-processing-illustration\">A technology platform working with a social media provider notices a growth in mobile app users, and sees based on their profiles that many of them are connecting through mobile connections. It uses a new technology to deliver ads that are formatted for mobile devices and that are low-bandwidth, to improve their performance.</span><span class=\"didomi-consent-popup-data-processing-illustration\">An advertiser is looking for a way to display ads on a new type of consumer device. It collects information regarding the way users interact with this new kind of device to determine whether it can build a new mechanism for displaying advertising on this type of device.</span></div></div></div></div><div class=\"label-button-section\"><div class=\"didomi-consent-popup-data-processing__buttons didomi-consent-popup-data-processing__buttons_tcf_v2\"><div class=\"didomi-components-radio\"><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-improve_products\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Disagree</span></button><button class=\"didomi-components-radio__option didomi-components-radio__option--unselected\" aria-describedby=\"didomi-purpose-improve_products\" aria-checked=\"false\" role=\"radio\" tabindex=\"0\"><span>Agree</span></button></div></div></div></div></div></div><div class=\"didomi-consent-popup-body__section didomi-popup-body-section\"><div class=\"didomi-consent-popup-preferences-purposes-features\"><p><span>By giving consent to the purposes above, you also allow this website and its partners to operate the following data processing:</span>&nbsp;<span class=\"parent-feature-and-special-purpose\"><span class=\"feature-and-special-purpose\"><span datatooltip=\"Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. Clicking on a link in an article might normally send you to another page or part of the article. To achieve this, 1°) your browser sends a request to a server linked to the website, 2°) the server answers back (“here is the article you asked for”), using technical information automatically included in the request sent by your device, to properly display the information / images that are part of the article you asked for. Technically, such exchange of information is necessary to deliver the content that appears on your screen.\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-0\">Deliver and present advertising and content</span></span></span></p><div id=\"tooltip-desc-0\" role=\"tooltip\">Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device. Clicking on a link in an article might normally send you to another page or part of the article. To achieve this, 1°) your browser sends a request to a server linked to the website, 2°) the server answers back (“here is the article you asked for”), using technical information automatically included in the request sent by your device, to properly display the information / images that are part of the article you asked for. Technically, such exchange of information is necessary to deliver the content that appears on your screen.</div><span class=\"feature-and-special-purpose\">, <span datatooltip=\"Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. An advertising intermediary delivers ads from various advertisers to its network of partnering websites. It notices a large increase in clicks on ads relating to one advertiser, and uses data regarding the source of the clicks to determine that 80% of the clicks come from bots rather than humans.\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-1\">Ensure security, prevent and detect fraud, and fix errors</span></span><div id=\"tooltip-desc-1\" role=\"tooltip\">Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them. An advertising intermediary delivers ads from various advertisers to its network of partnering websites. It notices a large increase in clicks on ads relating to one advertiser, and uses data regarding the source of the clicks to determine that 80% of the clicks come from bots rather than humans.</div><span class=\"feature-and-special-purpose\">, <span datatooltip=\"Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice.\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-2\">Identify devices based on information transmitted automatically</span></span><div id=\"tooltip-desc-2\" role=\"tooltip\">Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice.</div><span class=\"feature-and-special-purpose\">, <span datatooltip=\"In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices).\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-3\">Link different devices</span></span><div id=\"tooltip-desc-3\" role=\"tooltip\">In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices).</div><span class=\"feature-and-special-purpose\">, <span datatooltip=\"Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-4\">Match and combine data from other data sources</span></span><div id=\"tooltip-desc-4\" role=\"tooltip\">Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.</div><span class=\"feature-and-special-purpose\">, and <span datatooltip=\"The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. When you visit a website and are offered a choice between consenting to the use of profiles for personalised advertising or not consenting, the choice you make is saved and made available to advertising providers, so that advertising presented to you respects that choice.\" tabindex=\"0\" role=\"button\" aria-describedby=\"tooltip-desc-5\">Save and communicate privacy choices</span></span><div id=\"tooltip-desc-5\" role=\"tooltip\">The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices. When you visit a website and are offered a choice between consenting to the use of profiles for personalised advertising or not consenting, the choice you make is saved and made available to advertising providers, so that advertising presented to you respects that choice.</div><p></p></div></div></div></div></div></div></div></div><div class=\"didomi-storage-info\"><div class=\"didomi-components-accordion\"><div class=\"didomi-components-accordion-label-container\" role=\"heading\" aria-level=\"3\"><div class=\"label-click \" tabindex=\"0\" aria-expanded=\"false\" role=\"button\"><span class=\"trigger-icon\" aria-hidden=\"true\">+</span><span>About the storage of your choices</span></div></div><div class=\"didomi-storage-info__description didomi-content \">The choices you make regarding the purposes and entities listed in this notice are saved in these cookies:<ul><li>didomi_token<div class=\"didomi-storage-info__time-label\"><span>Maximum duration </span><span>1 year and 1 day</span></div></li><li>euconsent-v2<div class=\"didomi-storage-info__time-label\"><span>Maximum duration </span><span>1 year and 1 day</span></div></li></ul></div></div></div><span class=\"didomi-consent-popup-view-vendors-list\"><span class=\"didomi-consent-popup-body__title\"></span><button class=\"didomi-consent-popup-view-vendors-list-link\" aria-label=\"View our partners\"><span>View our partners</span></button></span></div><div class=\"didomi-consent-popup-footer didomi-popup-footer\"><a href=\"https://www.didomi.io/\" target=\"_blank\"></a><div class=\"didomi-consent-popup-actions didomi-popup-actions didomi-buttons didomi-buttons-all\"><div class=\"didomi-popup-actions-container\"><div class=\"didomi-buttons-all-container\"><button id=\"btn-toggle-disagree\" class=\"didomi-components-button didomi-button didomi-button-standard standard-button\" aria-label=\"Disagree to all: Disagree to our data processing and close\"><span>Disagree to all</span></button><button id=\"btn-toggle-agree\" class=\"didomi-components-button didomi-button didomi-button-standard standard-button\" aria-label=\"Agree to all: Agree to our data processing and close\"><span>Agree to all</span></button><button id=\"btn-toggle-save\" disabled=\"\" class=\"didomi-components-button didomi-button didomi-button-standard standard-button\" aria-describedby=\"didomi-consent-popup-information-save\" aria-label=\"Save: Save your choices and close\"><span>Save</span></button></div><span class=\"didomi-consent-popup-information-save\" id=\"didomi-consent-popup-information-save\">Set all your preferences to save and continue</span></div></div></div><div></div></div></div></div></div></div><div><div id=\"didomi-notice\" data-testid=\"notice\" class=\"didomi-regular-notice didomi-banner-notice-optin-type didomi-notice-banner shape-banner bottom didomi-regular-notice-with-data-processing\"><div class=\"didomi-notice__interior-border didomi-border\"><div id=\"text\" class=\"push-right didomi-notice-text\"><p>With your agreement, we and <a role=\"button\" href=\"javascript:Didomi.preferences.show('vendors')\" class=\"didomi-notice-view-partners-link-in-text\">our 5 partners</a> use cookies or similar technologies to store, access, and process personal data like your visit on this website, IP addresses and cookie identifiers. Some partners do not ask for your consent to process your data and rely on their legitimate business interest. You can withdraw your consent or object to data processing based on legitimate interest at any time by clicking on “Manage cookies” or in our Privacy Policy on this website.</p><div class=\"didomi-notice-data-processing-container\"><p><span class=\"didomi-notice-data-processing-title\" role=\"heading\" aria-level=\"2\">We and our partners process data for the following purposes:</span><span class=\"didomi-notice-data-processing-list\"><span>Analytics</span><span>, Essential</span><span>, Google</span><span>, Marketing</span><span>, Personalised advertising and content, advertising and content measurement, audience research and services development</span><span>, Personalization</span></span></p></div></div><div id=\"buttons\" class=\"multiple didomi-buttons\"><button id=\"didomi-notice-learn-more-button\" class=\"didomi-components-button didomi-button didomi-learn-more-button didomi-button-standard standard-button\" aria-label=\"Manage cookies\"><span>Manage cookies</span></button><button id=\"didomi-notice-disagree-button\" class=\"didomi-components-button didomi-button didomi-disagree-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Reject non-essential\"><span>Reject non-essential</span></button><button id=\"didomi-notice-agree-button\" class=\"didomi-components-button didomi-button didomi-dismiss-button didomi-components-button--color didomi-button-highlight highlight-button\" aria-label=\"Accept all\"><span>Accept all</span></button></div></div></div></div></div></div><iframe name=\"__tcfapiLocator\" title=\"__tcfapiLocator\"></iframe> <div id=\"app\"><div class=\"layout\" data-v-02bddb44=\"\"><div data-test-id=\"index-header\" class=\"index-header index-header main-header main-header--is-at-top main-header--is-sticky main-header--rounded main-header--rounded-notifications\" data-v-a5022165=\"\" data-v-29ee20e6=\"\" data-v-02bddb44=\"\"><header aria-label=\"Main header\" data-test-id=\"main-header-content\" class=\"main-header__content\" data-v-a5022165=\"\"><div class=\"main-header__navigation\" data-v-a5022165=\"\"><div class=\"main-header__logo-wrapper\" data-v-a5022165=\"\"><div class=\"main-header__logo\" data-v-a5022165=\"\"></div></div><div class=\"main-header__space\" data-v-a5022165=\"\"></div><div data-test-id=\"main-header-sign-in-button-placeholder\" class=\"main-header__sign-in-button-placeholder\" data-v-a5022165=\"\"></div></div></header></div><div class=\"layout__content\" data-v-02bddb44=\"\"><div data-test-id=\"above-fold-section-background\" class=\"above-fold-section\" data-v-fde91d41=\"\" data-v-02bddb44=\"\"><picture data-v-fde91d41=\"\"><source media=\"(max-width: 768px)\" srcset=\"/static/indexpage/assets/static/green.CpTbvDKL.avif 1x, /static/indexpage/assets/static/green-2x.pBNQh2G3.avif 2x\" type=\"image/avif\" data-v-fde91d41=\"\"><source media=\"(min-width: 769px)\" srcset=\"/static/indexpage/assets/static/green-2x.pBNQh2G3.avif 1x, /static/indexpage/assets/static/green-3x.BnW5mmm8.avif 2x\" type=\"image/avif\" data-v-fde91d41=\"\"></picture><div class=\"above-fold-section__content above-fold-section__content--omnibox\" data-v-fde91d41=\"\"><div class=\"above-fold-section__doodle-group above-fold-section__doodle-group--omnibox\" data-v-fde91d41=\"\"><h1 data-test-id=\"rotating-title\" class=\"rotating-title above-fold-section__rotating-title\" data-v-4472b5c7=\"\" data-v-fde91d41=\"\"> Driven by purpose, not profit </h1><div data-test-id=\"above-fold-search-form\" class=\"above-fold-section__search-bar above-fold-section__search-bar--omnibox\" data-v-7819fc54=\"\" data-v-fde91d41=\"\"><form action=\"/search\" method=\"GET\" role=\"search\" autocomplete=\"off\" data-test-id=\"omnibox-search-form\" class=\"omnibox omnibox--variant-medium\" data-v-25172cd1=\"\" data-v-7819fc54=\"\"><div class=\"search-form__mobile-wrapper\" data-v-25172cd1=\"\"><input type=\"hidden\" name=\"method\" data-test-id=\"omnibox-search-form-param-method\" value=\"index\" data-v-25172cd1=\"\"><div class=\"omnibox-search-form__wrapper\" data-v-25172cd1=\"\"><div data-test-id=\"omnibox-search-form-search-field\" class=\"omnibox-search-form__search-field\" data-v-25172cd1=\"\"><div class=\"omnibox-search-form__input-row\" data-v-25172cd1=\"\"><div class=\"omnibox-search-form__input-wrapper\" data-v-25172cd1=\"\"><textarea rows=\"1\" name=\"q\" maxlength=\"6000\" data-test-id=\"omnibox-search-form-input\" placeholder=\"Ask, search, browse...\" aria-label=\"Search the web...\" aria-autocomplete=\"both\" aria-c type=\"search\" autocomplete=\"off\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" required=\"required\" class=\"omnibox-search-form__textarea\" data-v-7dddc723=\"\" data-v-25172cd1=\"\"></textarea></div><button type=\"reset\" icon-class=\"omnibox-search-form__reset-icon\" aria-label=\"Clear\" data-test-id=\"omnibox-search-form-reset\" variant=\"bare\" class=\"button omnibox-search-form__reset button base-button base-button--variant-bare base-button--size-m base-button--elevation-0 base-button--text-size-m omnibox-search-form__reset button button--icon-position-start button-icon\" data-v-752dcc4e=\"\" data-v-25172cd1=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"></span></span></button></div><div class=\"omnibox-search-form__controls-row\" data-v-25172cd1=\"\"><div class=\"omnibox-ai-tools omnibox-search-form__file-upload\" data-v-88b63743=\"\" data-v-25172cd1=\"\"><div data-test-id=\"omnibox-ai-tools-tooltip\" class=\"omnibox-ai-tools__tooltip omnibox-ai-tools__tooltip tooltip tooltip--side-center-bottom tooltip--size-s tooltip--color-variant-default tooltip--padding\" data-v-98feb95c=\"\" data-v-88b63743=\"\"><span tabindex=\"-1\" data-test-id=\"tooltip-toggle\" class=\"tooltip__toggle\" data-v-98feb95c=\"\"><span class=\"omnibox-ai-tools__toggle-wrapper\" data-v-98feb95c=\"\" data-v-88b63743=\"\"><button type=\"button\" aria-label=\"AI tools\" aria-expanded=\"false\" aria-haspopup=\"true\" data-test-id=\"omnibox-ai-tools-toggle\" variant=\"bare\" class=\"button omnibox-ai-tools__toggle button base-button base-button--variant-bare base-button--size-m base-button--elevation-0 base-button--text-size-m omnibox-ai-tools__toggle button button--icon-position-start button-icon\" data-v-752dcc4e=\"\" data-v-88b63743=\"\" data-v-98feb95c=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"></span></span></button></span><span aria-hidden=\"true\" class=\"tooltip__arrow\" data-v-98feb95c=\"\"></span></span><div id=\"uid-24-tooltip-content\" role=\"dialog\" data-test-id=\"tooltip-content\" class=\"tooltip__content\" data-v-98feb95c=\"\"><span class=\"omnibox-ai-tools__tooltip-text\" data-v-88b63743=\"\"> Upload files or choose an AI mode </span></div></div><div class=\"omnibox-file-picker omnibox-ai-tools__hidden-picker\" data-v-0f594487=\"\" data-v-88b63743=\"\"><button type=\"button\" aria-label=\"Sign in to upload files\" data-test-id=\"omnibox-file-picker-button\" variant=\"bare\" class=\"button omnibox-file-picker__button button base-button base-button--variant-bare base-button--size-m base-button--elevation-0 base-button--text-size-m omnibox-file-picker__button button button--icon-position-start button-icon\" data-v-752dcc4e=\"\" data-v-0f594487=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"></span></span></button><input type=\"file\" multiple=\"multiple\" accept=\"application/pdf,text/plain,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,image/jpeg,image/png,text/csv\" aria-label=\"Sign in to upload files\" data-test-id=\"omnibox-file-input\" class=\"omnibox-file-picker__file-input\" data-v-0f594487=\"\"></div></div><div class=\"omnibox-search-form__action-controls\" data-v-25172cd1=\"\"><audio-recorder locale=\"en\" api-url=\"https://api.ecosia.org/v2/transcribe\" refresh-token-url=\"https://www.ecosia.org/ai-chat/refresh\" data-test-id=\"omnibox-search-form-audio-recorder\" data-v-25172cd1=\"\" theme=\"light\"><div class=\"recorder default\"><div class=\"spacer\"></div><recorder-tooltip id=\"tooltip-micBtn\" c theme=\"light\"><div class=\"tooltip\"> <span class=\"tooltip__toggle\" aria-describedby=\"tooltip-content\"> <slot></slot> <span class=\"tooltip__content\" id=\"tooltip-content\" role=\"tooltip\" aria-hidden=\"true\"> Start recording <span class=\"tooltip__arrow\"></span> </span> </span> </div></recorder-tooltip></div></audio-recorder></div></div><div aria-hidden=\"true\" class=\"omnibox-clipboard\" data-v-a75ca0e8=\"\" data-v-25172cd1=\"\"></div><div data-test-id=\"omnibox-dropzone-overlay\" class=\"omnibox-dropzone omnibox-search-form__dropzone\" data-v-10a803a5=\"\" data-v-25172cd1=\"\"> Drop files here to attach </div></div><div class=\"omnibox-search-form__suggestions\" data-v-25172cd1=\"\"><ul id=\"search-form-suggestion-list\" role=\"listbox\" data-test-id=\"omnibox-search-form-suggestions\" class=\"omnibox-search-form__suggestions-list omnibox-search-form__suggestions-list suggestion-list suggestion-list--variant-medium suggestion-list--full-width suggestion-list--is-omnibox\" data-v-3db3a430=\"\" data-v-25172cd1=\"\"></ul></div></div></div></form></div></div><div data-v-fde91d41=\"\" class=\"above-fold-section__cta\"><div data-v-6affa264=\"\" class=\"cta\" data-test-id=\"above-fold-section-cta\" data-v-fde91d41=\"\"><a data-v-752dcc4e=\"\" data-v-6affa264=\"\" data-test-id=\"cta-button\" href=\"https://www.ecosia.org/browser/confirmation\" rel=\"noopener\" target=\"_self\" class=\"button cta__button button base-button base-button--variant-solid-grellow base-button--size-l base-button--elevation-0 base-button--text-size-l cta__button button button--icon-position-start\" variant=\"solid-grellow\" as=\"a\"><span data-v-e0426e9a=\"\" class=\"button__content\" data-v-752dcc4e=\"\"><span data-v-e0426e9a=\"\" data-test-id=\"button-text\" class=\"button__text\"><span data-v-bcfcd89b=\"\" data-v-6affa264=\"\" data-test-id=\"cta-button-icon\" class=\"cta__icon cta__icon--windows cta__icon--m\"></span> Download Ecosia Browser </span></span></a></div></div></div><div data-test-id=\"homepage-card-container\" class=\"global-counter-wrapper above-fold-section__counter above-fold-section__counter--detached\" data-v-c258f371=\"\" data-v-fde91d41=\"\"><div class=\"global-counter-wrapper__slot\" data-v-c258f371=\"\"><div data-test-id=\"global-counter\" class=\"global-counter-wrapper__item global-counter-wrapper__item global-counter global-counter--glass global-counter--with-transition global-counter--with-border\" data-v-8dfec848=\"\" data-v-c258f371=\"\"><a href=\"https://blog.ecosia.org/tag/where-does-ecosia-plant-trees\" data-test-id=\"tree-counter-wrapper\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"global-counter__item global-counter__item--clickable\" data-v-8dfec848=\"\"><div data-test-id=\"tree-counter\" class=\"counter counter--with-transition\" data-v-910456a6=\"\" data-v-8dfec848=\"\"><div aria-hidden=\"true\" class=\"counter-image counter__image counter__image counter-image counter-image--image-tree counter-image--size-s\" data-v-e7a8c1bd=\"\" data-v-910456a6=\"\"></div><div data-test-id=\"counter-count\" class=\"counter__count\" data-v-910456a6=\"\"> 255,138,364 </div><div data-test-id=\"counter-description\" class=\"counter__description\" data-v-910456a6=\"\"> trees planted by Ecosia </div></div></a><div aria-hidden=\"true\" class=\"global-counter__divider\" data-v-8dfec848=\"\"></div><a href=\"https://ecosia.co/finreportsen\" data-test-id=\"investments-counter-wrapper\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"global-counter__item global-counter__item--clickable\" data-v-8dfec848=\"\"><div data-test-id=\"investments-counter\" class=\"counter counter--with-transition\" data-v-910456a6=\"\" data-v-8dfec848=\"\"><div aria-hidden=\"true\" class=\"counter-image counter__image counter__image counter-image counter-image--image-money counter-image--size-s\" data-v-e7a8c1bd=\"\" data-v-910456a6=\"\"></div><div data-test-id=\"counter-count\" class=\"counter__count\" data-v-910456a6=\"\"> €103,498,884 </div><div data-test-id=\"counter-description\" class=\"counter__description\" data-v-910456a6=\"\"> dedicated to climate action </div></div></a></div></div></div><div class=\"above-fold-section__button-wrapper\" data-v-fde91d41=\"\"><button type=\"button\" data-test-id=\"above-fold-section__button\" aria-label=\"scroll down\" as=\"button\" variant=\"outline\" class=\"button above-fold-section__button button base-button base-button--variant-outline base-button--size-l base-button--elevation-0 base-button--text-size-l above-fold-section__button button button--icon-position-start button-icon\" data-v-752dcc4e=\"\" data-v-fde91d41=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"></span></span></button></div></div><div class=\"claims-section\" data-v-1cfa146f=\"\" data-v-02bddb44=\"\"><section data-test-id=\"claims-section\" class=\"section-wrapper claims-section claims-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\" data-v-1cfa146f=\"\"><div class=\"section-wrapper__content claims-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\"><div class=\"section-header claims-section__header section-header--center\" data-v-549dcfa5=\"\" data-v-bbb6781d=\"\" data-v-46a149b9=\"\"><h2 class=\"section-header__title\" data-v-549dcfa5=\"\"> Why choose Ecosia? </h2><h3 class=\"section-header__subtitle section-header__subtitle--large\" data-v-549dcfa5=\"\"> What we stand for </h3></div><ol class=\"claims-section__claims\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><li data-test-id=\"claims-section-item\" class=\"claims-section__claim\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><div class=\"claims-section__claim-content\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><h4 class=\"claims-section__claim-title\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> 100% of profits for the planet </h4><p class=\"claims-section__claim-description\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> We use all our profits for climate action, with the majority going into tree-planting projects around the world. </p></div></li><li data-test-id=\"claims-section-item\" class=\"claims-section__claim\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><div class=\"claims-section__claim-content\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><h4 class=\"claims-section__claim-title\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> Secure and private </h4><p class=\"claims-section__claim-description\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> We respect your privacy like we respect the planet. We only collect data necessary to deliver a great product, and not a byte more. </p></div></li><li data-test-id=\"claims-section-item\" class=\"claims-section__claim\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><div class=\"claims-section__claim-content\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><h4 class=\"claims-section__claim-title\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> AI that answers to the planet </h4><p class=\"claims-section__claim-description\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> We use smaller, faster AI models that deliver accurate answers from reliable sources, while using less energy. </p></div></li><li data-test-id=\"claims-section-item\" class=\"claims-section__claim\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><div class=\"claims-section__claim-content\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"><h4 class=\"claims-section__claim-title\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> Beyond neutral </h4><p class=\"claims-section__claim-description\" data-v-46a149b9=\"\" data-v-bbb6781d=\"\"> We produce more clean energy than it takes to power all searches and AI queries on Ecosia, leading to more renewable energy in the grid. </p></div></li></ol></div></section></div><section class=\"section-wrapper financial-report-section financial-report-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\" data-v-038e92b7=\"\" data-v-02bddb44=\"\"><div class=\"section-wrapper__content financial-report-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\"><div class=\"financial-report-section__slot\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"><div class=\"financial-report-section__report\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"><div class=\"financial-report-section__box financial-report-section__box box box--padding-m\" data-v-e431f30b=\"\" data-v-038e92b7=\"\" data-v-46a149b9=\"\"></div><div class=\"financial-report-section__total-wrapper\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"><div class=\"financial-report-section__total\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"><div class=\"financial-report-section__total-amount\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"> €3,547,204 </div><p class=\"financial-report-section__total-hint\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"> total income this month </p></div></div></div><div class=\"financial-report-section__content\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"><div data-test-id=\"financial-report-section-header\" class=\"section-header financial-report-section__header\" data-v-549dcfa5=\"\" data-v-038e92b7=\"\" data-v-46a149b9=\"\"><h2 class=\"section-header__title\" data-v-549dcfa5=\"\"> Monthly financial report </h2><h3 class=\"section-header__subtitle\" data-v-549dcfa5=\"\"> We're fully transparent </h3></div><div class=\"financial-report-section__text\" data-v-46a149b9=\"\" data-v-038e92b7=\"\"> We publish financial reports every month so you can see exactly how much we made and how we spent it. Total transparency, every month. </div></div><a href=\"https://ecosia.co/finreportsen\" target=\"_self\" rel=\"noopener\" data-test-id=\"financial-report-section-link\" as=\"a\" variant=\"outline\" class=\"button financial-report-section__link button base-button base-button--variant-outline base-button--size-m base-button--elevation-0 base-button--text-size-m financial-report-section__link button button--icon-position-start\" data-v-752dcc4e=\"\" data-v-038e92b7=\"\" data-v-46a149b9=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"> See our reports </span></span></a></div></div></section><section class=\"section-wrapper before-after-section before-after-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\" data-v-1bfe7537=\"\" data-v-02bddb44=\"\"><div class=\"section-wrapper__content before-after-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\"><div class=\"before-after-section__content\" data-v-46a149b9=\"\" data-v-1bfe7537=\"\"><div class=\"before-after-section__content-text\" data-v-46a149b9=\"\" data-v-1bfe7537=\"\"><div class=\"section-header before-after-section__header\" data-v-549dcfa5=\"\" data-v-1bfe7537=\"\" data-v-46a149b9=\"\"><h2 class=\"section-header__title\" data-v-549dcfa5=\"\"> Our tree planting approach </h2><h3 class=\"section-header__subtitle\" data-v-549dcfa5=\"\"> We restore and protect biodiversity hotspots </h3></div><div class=\"before-after-section__text\" data-v-46a149b9=\"\" data-v-1bfe7537=\"\"> Instead of monocultures, we grow over 900 different native species where they are needed most. Always shoulder-to-shoulder with local communities. </div></div><div data-test-id=\"before-after-section-picture\" class=\"before-after-section__content-picture\" data-v-46a149b9=\"\" data-v-1bfe7537=\"\"></div></div></div></section><section class=\"section-wrapper map-section map-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\" data-v-4e464d2e=\"\" data-v-02bddb44=\"\"><div class=\"section-wrapper__content map-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\"><div data-test-id=\"map-section-background\" class=\"map-section__background\" data-v-46a149b9=\"\" data-v-4e464d2e=\"\"><div class=\"map-section__statistics-wrapper\" data-v-46a149b9=\"\" data-v-4e464d2e=\"\"><div data-test-id=\"map-section-counter\" class=\"map-section__counter map-section__counter counter counter--with-transition\" data-v-910456a6=\"\" data-v-4e464d2e=\"\" data-v-46a149b9=\"\"><div data-test-id=\"counter-count\" class=\"counter__count\" data-v-910456a6=\"\"> 255,138,364 </div><div data-test-id=\"counter-description\" class=\"counter__description\" data-v-910456a6=\"\"> Trees planted by the Ecosia community </div></div><ul class=\"statistics map-section__statistics\" data-v-1886c469=\"\" data-v-4e464d2e=\"\" data-v-46a149b9=\"\"><li class=\"statistics__item\" data-v-1886c469=\"\"><p class=\"statistics__title\" data-v-1886c469=\"\"> 20 million </p><p class=\"statistics__description\" data-v-1886c469=\"\"> people using Ecosia </p></li><li class=\"statistics__item\" data-v-1886c469=\"\"><p class=\"statistics__title\" data-v-1886c469=\"\"> 900+ </p><p class=\"statistics__description\" data-v-1886c469=\"\"> native species </p></li><li class=\"statistics__item\" data-v-1886c469=\"\"><p class=\"statistics__title\" data-v-1886c469=\"\"> 35+ </p><p class=\"statistics__description\" data-v-1886c469=\"\"> countries involved </p></li><li class=\"statistics__item\" data-v-1886c469=\"\"><p class=\"statistics__title\" data-v-1886c469=\"\"> 70+ </p><p class=\"statistics__description\" data-v-1886c469=\"\"> active projects </p></li></ul><a href=\"https://blog.ecosia.org/tag/where-does-ecosia-plant-trees\" target=\"_self\" rel=\"noopener\" data-test-id=\"map-section-projects-link\" as=\"a\" variant=\"outline\" class=\"button map-section__link button base-button base-button--variant-outline base-button--size-l base-button--elevation-0 base-button--text-size-l map-section__link button button--icon-position-start\" data-v-752dcc4e=\"\" data-v-4e464d2e=\"\" data-v-46a149b9=\"\"><span class=\"button__content\" data-v-e0426e9a=\"\" data-v-752dcc4e=\"\"><span data-test-id=\"button-text\" class=\"button__text\" data-v-e0426e9a=\"\"> Discover all projects </span></span></a></div><div class=\"map-section__map\" data-v-46a149b9=\"\" data-v-4e464d2e=\"\"></div></div></div></section><section data-test-id=\"join-section\" class=\"section-wrapper join-section join-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\" data-v-bbea126b=\"\" data-v-02bddb44=\"\"><div class=\"section-wrapper__content join-section section-wrapper section-wrapper--variant-primary section-wrapper--compact\" data-v-46a149b9=\"\"><div data-test-id=\"join-section-content\" class=\"join-section__content\" data-v-46a149b9=\"\" data-v-bbea126b=\"\"><h2 data-test-id=\"join-section-heading\" class=\"join-section__heading\" data-v-46a149b9=\"\" data-v-bbea126b=\"\"> Join 20 million people making a difference every day. </h2></div></div></section><footer class=\"full-footer\" data-v-19776b62=\"\" data-v-02bddb44=\"\"><div class=\"full-footer__content\" data-v-19776b62=\"\"><div data-test-id=\"full-footer-bcorp\" class=\"footer-bcorp\" data-v-19776b62=\"\"><a href=\"https://www.bcorporation.net/find-a-b-corp/company/ecosia-gmbh/\" target=\"_blank\" rel=\"noopener\" data-test-id=\"footer-bcorp-logo\" class=\"footer-bcorp__logo\"><span class=\"sr-only\"> B-Corporation Certificate </span></a><a href=\"https://www.bcorporation.net/en-us/certification-notice/\" target=\"_blank\" rel=\"noopener\" data-test-id=\"footer-bcorp-certification\" class=\"footer-bcorp__certification footer-bcorp__certification link link--as-a link--color-bare link--variant-primary\" data-v-6ef1cd5f=\"\"> Certification Notice </a></div><div class=\"footer-menu\" data-v-19776b62=\"\"><h2 class=\"footer-menu__title\"> What we do </h2><ul><li class=\"footer-menu__link\"><a data-test-id=\"whattitle\" href=\"https://www.ecosia.org/browser\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Ecosia Browser </a></li><li class=\"footer-menu__link\"><a data-test-id=\"whattitle\" href=\"https://www.ecosia.org/\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Ecosia Search </a></li><li class=\"footer-menu__link\"><a data-test-id=\"whattitle\" href=\"https://ecosia.co/finreportsen\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Financial reports </a></li></ul></div><div class=\"footer-menu\" data-v-19776b62=\"\"><h2 class=\"footer-menu__title\"> About </h2><ul><li class=\"footer-menu__link\"><a data-test-id=\"abouttitle\" href=\"https://support.ecosia.org/\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Help and Legal </a></li><li class=\"footer-menu__link\"><a data-test-id=\"abouttitle\" href=\"https://www.ecosia.org/about/careers\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Careers </a></li><li class=\"footer-menu__link\"><a data-test-id=\"abouttitle\" href=\"https://www.ecosia.org/imprint#press\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Press </a></li><li class=\"footer-menu__link\"><a data-test-id=\"abouttitle\" href=\"https://blog.ecosia.org\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Blog </a></li></ul></div><div class=\"footer-menu\" data-v-19776b62=\"\"><h2 class=\"footer-menu__title\"> Legal </h2><ul><li class=\"footer-menu__link\"><a data-test-id=\"legaltitle\" href=\"https://www.ecosia.org/privacy\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Privacy policy </a></li><li class=\"footer-menu__link\"><a data-test-id=\"legaltitle\" href=\"https://www.ecosia.org/terms-of-service\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Terms of service </a></li><li class=\"footer-menu__link\"><a data-test-id=\"legaltitle\" href=\"https://www.ecosia.org/imprint\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Imprint </a></li><li class=\"footer-menu__link\"><a data-test-id=\"legaltitle\" href=\"https://support.ecosia.org/article/579-search-results-providers#How-are-search-results-ranked-by-our-partners-Bing-Google-EUSP-FqOW9\" rel=\"noopener\" class=\"link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"> Transparency information (MStV) </a></li><li class=\"footer-menu__link\"><button role=\"button\" aria-label=\"Cookie preferences\" title=\"Cookie preferences\" data-test-id=\"full-footer-cookies\" class=\"link link--as-button link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\" data-v-19776b62=\"\"> Cookie preferences </button></li></ul></div><div class=\"footer-menu\" data-v-19776b62=\"\"><h2 class=\"footer-menu__title\"> Apps </h2><ul data-v-19776b62=\"\"><li class=\"full-footer__mobile-badge\" data-v-19776b62=\"\"><a target=\"_blank\" rel=\"noopener\" href=\"https://play.google.com/store/apps/details?id=com.ecosia.android&amp;hl=en\" data-test-id=\"mobile-badge\" class=\"link link--as-a link--color-null link--variant-primary\" data-v-6ef1cd5f=\"\" data-v-19776b62=\"\"><span id=\"uid-98-mobile-badge\" class=\"sr-only\" data-v-6ef1cd5f=\"\"> Play store download </span></a></li><li class=\"full-footer__mobile-badge\" data-v-19776b62=\"\"><a target=\"_blank\" rel=\"noopener\" href=\"https://ecosia.co/mobile_ft_ios\" data-test-id=\"mobile-badge\" class=\"link link--as-a link--color-null link--variant-primary\" data-v-6ef1cd5f=\"\" data-v-19776b62=\"\"><span id=\"uid-100-mobile-badge\" class=\"sr-only\" data-v-6ef1cd5f=\"\"> App store download </span></a></li></ul></div></div><div class=\"footer-social full-footer__social\" data-v-19776b62=\"\"><ul class=\"footer-social__list\"><li class=\"footer-social__item\"><a href=\"https://www.instagram.com/ecosia\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"Instagram\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> Instagram </span></a></li><li class=\"footer-social__item\"><a href=\"https://www.youtube.com/user/EcosiaORG\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"YouTube\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> YouTube </span></a></li><li class=\"footer-social__item\"><a href=\"https://www.tiktok.com/@ecosia\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"TikTok\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> TikTok </span></a></li><li class=\"footer-social__item\"><a href=\"https://www.facebook.com/ecosia\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"Facebook\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> Facebook </span></a></li><li class=\"footer-social__item\"><a href=\"https://www.linkedin.com/company/ecosia\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"LinkedIn\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> LinkedIn </span></a></li><li class=\"footer-social__item\"><a href=\"https://mastodon.social/@ecosia\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"Mastodon\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> Mastodon </span></a></li><li class=\"footer-social__item\"><a href=\"https://blog.ecosia.org\" target=\"_blank\" rel=\"noopener noreferrer\" data-test-id=\"footer-social__link\" title=\"Ecosia Blog\" class=\"footer-social__link footer-social__link link link--as-a link--color-secondary link--variant-primary\" data-v-6ef1cd5f=\"\"><span class=\"sr-only\" data-v-6ef1cd5f=\"\"> Ecosia Blog </span></a></li></ul><p class=\"footer-social__legal\">Ecosia GmbH does not assume responsibility for the content of sites to which it links and the way in which search results are displayed. To learn more please read our <a href=\"https://www.ecosia.org/privacy\" target=\"_blank\" rel=\"noopener\">privacy policy</a> and our <a href=\"https://www.ecosia.org/terms-of-service\" target=\"_blank\" rel=\"noopener\">terms of service</a>.</p></div></footer></div></div></div> </body>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 67307,
+        "cmpType": "Didomi",
+        "isIframe": false
+      }
+    }
+  ]
+}

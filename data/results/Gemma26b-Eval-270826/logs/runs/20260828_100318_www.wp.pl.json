@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-08-28T10:03:18.326598",
+  "url": "https://www.wp.pl",
+  "structured_dom_chars": 604565,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": false,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 26,
+  "human_review_count": 2,
+  "test_rule_count": 8,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"wp.pl\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[role='dialog']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[role='dialog']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[role='dialog']\"}}}, {\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Odrzucam i chc\\u0119 dowiedzie\\u0119 si\\u0119 wi\\u0199cej\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"F\", \"matcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[aria-label*='reklam']\"}}, \"toggleAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label*='reklam']\"}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"button\", \"textFilter\": \"Zapisuj\\u0119\"}}}]}}",
+  "last_error": "No rule found in agent message",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+  "error_history": [
+    "Banner not found or matchers failed.",
+    "Banner not found or matchers failed.",
+    "Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 703 (char 702)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 474 (char 473)",
+    "Invalid JSON: Expecting ',' delimiter: line 1 column 474 (char 473)",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: button | Selector Failed: ACTION_TARGET_NOT_FOUND: button"
+  ],
+  "duration_seconds": 863.76,
+  "extraction_duration_seconds": 34.99,
+  "extraction_share_percent": 4.05,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": true,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    }
+  },
+  "final_rule": {
+    "wp.pl": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[role='dialog']"
+            }
+          },
+          "showingMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[role='dialog']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[role='dialog']"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Odrzucam"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label*='reklam']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label*='reklam']"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "css",
+                  "target": {
+                    "selector": "[aria-label*='pomiar']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "[aria-label*='pomiar']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button",
+              "textFilter": "Zapis"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

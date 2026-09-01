@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-08-28T11:21:32.410165",
+  "url": "https://connect.garmin.com",
+  "structured_dom_chars": 17511,
+  "model_used": "gemma4:26b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "final_test_error_present",
+    "banner_not_dismissed"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "TrustArc",
+  "settings_extracted": true,
+  "handled": false,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": true,
+  "llm_calls": 21,
+  "human_review_count": 1,
+  "test_rule_count": 5,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\"TrustArc\": {\"detectors\": [{\"presentMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class^='truste']\"}}, \"showingMatcher\": {\"type\": \"css\", \"target\": {\"selector\": \"[class^='truste']\", \"displayFilter\": true}}}], \"methods\": [{\"name\": \"OPEN_OPTIONS\", \"action\": {\"type\": \"click\", \"target\": {\"selector\": \"#truste-show-consent\"}}}, {\"name\": \"DO_CONSENT\", \"action\": {\"type\": \"consent\", \"consents\": [{\"type\": \"A\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Accept Functional Cookies\\\"]\", \"iframeFilter\": true}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Refuse Functional Cookies\\\"]\", \"iframeFilter\": true}}}, {\"type\": \"F\", \"trueAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Accept Advertising Cookies\\\"]\", \"iframeFilter\": true}}, \"falseAction\": {\"type\": \"click\", \"target\": {\"selector\": \"[aria-label=\\\"Refuse Advertising Cookies\\\"]\", \"iframeFilter\": true}}}]}}, {\"name\": \"SAVE_CONSENT\", \"action\": {\"type\": \"list\", \"actions\": [{\"type\": \"wait\", \"waitTime\": 500}, {\"type\": \"click\", \"target\": {\"selector\": \".submit\", \"iframeFilter\": true}}]}}, {\"name\": \"HIDE_CMP\", \"action\": {\"type\": \"hide\", \"target\": {\"selector\": \"[class^='truste']\"}}}]}}",
+  "last_error": "Banner not found or matchers failed.",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "Banner not found or matchers failed.",
+  "error_history": [
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse Functional Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse Advertising Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse Functional Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label=\"Refuse Advertising Cookies\"] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Functional Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: [aria-label='Refuse Advertising Cookies'] | Selector Failed: ACTION_TARGET_NOT_FOUND: .submit",
+    "Selector Failed: ACTION_TARGET_NOT_FOUND: span | Selector Failed: ACTION_TARGET_NOT_FOUND: span | Selector Failed: ACTION_TARGET_NOT_FOUND: a",
+    "Banner not found or matchers failed."
+  ],
+  "duration_seconds": 558.28,
+  "extraction_duration_seconds": 6.69,
+  "extraction_share_percent": 1.2,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    },
+    "audit": {
+      "hasTcfApi": false,
+      "tcfVisible": null,
+      "tcfHidden": null,
+      "scrollLocked": false,
+      "heuristicBannerFound": false,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "TrustArc": {
+      "detectors": [
+        {
+          "presentMatcher": {
+            "type": "css",
+            "target": {
+              "selector": "[class^='truste']"
+            }
+          },
+          "showingMatcher": {
+            "selector": "[class^='truste']",
+            "type": "css",
+            "target": {
+              "selector": "[class^='truste']",
+              "displayFilter": true
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#truste-show-consent"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "iframe[name*='trustarc']",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Functional Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "iframe[name*='trustarc']",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Functional Cookies']"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "iframe[name*='trustarc']",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Accept Advertising Cookies']"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": "iframe[name*='trustarc']",
+                    "iframeFilter": true
+                  },
+                  "target": {
+                    "selector": "[aria-label='Refuse Advertising Cookies']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "parent": {
+              "selector": "iframe[name*='trustarc']",
+              "iframeFilter": true
+            },
+            "target": {
+              "selector": ".submit"
+            }
+          }
+        },
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "[class^='truste']"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

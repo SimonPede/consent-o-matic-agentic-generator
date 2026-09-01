@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-28T08:23:06.349458",
+  "url": "https://www.faz.net",
+  "structured_dom_chars": 54382,
+  "model_used": "gemma4:31b",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": false,
+  "auto_success_with_vision": false,
+  "auto_success_failure_reasons": [
+    "engine_not_handled",
+    "no_final_rule",
+    "banner_not_dismissed",
+    "model_aborted"
+  ],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "MODEL_ABORTED",
+  "verified": null,
+  "cmp_type": "",
+  "settings_extracted": true,
+  "handled": null,
+  "banner_dismissed": false,
+  "vision_banner_dismissed": null,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 1,
+  "human_review_count": 0,
+  "test_rule_count": 0,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "",
+  "last_error": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The CMP is identified as Sourcepoint (via sp_choice_type classes). The first layer only offers \"Einverstanden\" (Accept All) or a subscription (\"Kostenfrei testen\"), with no \"Reject All\" or \"Decline\" button present; a reject option may exist behind the inaccessible nested settings.",
+  "abort_reason": "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The CMP is identified as Sourcepoint (via sp_choice_type classes). The first layer only offers \"Einverstanden\" (Accept All) or a subscription (\"Kostenfrei testen\"), with no \"Reject All\" or \"Decline\" button present; a reject option may exist behind the inaccessible nested settings.",
+  "abort_code": "SOURCEPOINT_FIRST_LAYER_NO_REJECT",
+  "abort_explanation": "The CMP is identified as Sourcepoint (via sp_choice_type classes). The first layer only offers \"Einverstanden\" (Accept All) or a subscription (\"Kostenfrei testen\"), with no \"Reject All\" or \"Decline\" button present; a reject option may exist behind the inaccessible nested settings.",
+  "suspected_stuck_reason": "",
+  "model_aborted": true,
+  "final_test_error": "",
+  "error_history": [
+    "SOURCEPOINT_FIRST_LAYER_NO_REJECT: The CMP is identified as Sourcepoint (via sp_choice_type classes). The first layer only offers \"Einverstanden\" (Accept All) or a subscription (\"Kostenfrei testen\"), with no \"Reject All\" or \"Decline\" button present; a reject option may exist behind the inaccessible nested settings."
+  ],
+  "duration_seconds": 347.29,
+  "extraction_duration_seconds": 247.26,
+  "extraction_share_percent": 71.2,
+  "banner_status": {
+    "baseline": {},
+    "audit": {}
+  },
+  "final_rule": null
+}

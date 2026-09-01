@@ -1,0 +1,1024 @@
+{
+  "timestamp": "2026-08-26T23:56:39.799185",
+  "url": "https://www.zeit.de",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.zeit.de"
+  ],
+  "duration_seconds": 7.7,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 3 frames.",
+      "a frame was picked by score: https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2 with Score: 75",
+      "Settings match: \"Settings\" --> lowered: \"settings\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: [aria-label=\"Settings\"], textMatch: Settings",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://consent-cdn.zeit.de/privacy-manager/index.html?message_id=1334899&site_id=3800&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=0.05&sendPVData=false&includeCustomVendorsRes=1&consentUUID=undefined&secure=undefined&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 59 for URL: https://consent-cdn.zeit.de/privacy-manager/index.html?message_id=1334899&site_id=3800&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=0.05&sendPVData=false&includeCustomVendorsRes=1&consentUUID=undefined&secure=undefined&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "Best new frame selected for settings extraction: https://consent-cdn.zeit.de/privacy-manager/index.html?message_id=1334899&site_id=3800&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=0.05&sendPVData=false&includeCustomVendorsRes=1&consentUUID=undefined&secure=undefined&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2',",
+      "      filteredHtml: '<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><p tabindex=\"0\" class=\"focusable message-component text no-children headline first-focusable-el\">Welcome to zeit.de</p><div class=\"message-component message-row separator\"></div><p tabindex=\"0\" class=\"focusable message-component text no-children maintext\">We and our up to 172 partners collect and process personal data to improve and finance our services. For this purpose, we store cookies on end devices, use personal identification features such as device identifiers or IP addresses and record individual usage behaviour.</p><p></p><p><br></p><p>The processing purposes for this data are: Store and/or access information on a device, Personalised advertising and content, advertising and content measurement, audience research and services development, displaying external content, technically necessary cookies (security, login, comment area), push notifications/communication, optimisation of the offer (market research, A/B testing, content recommendations).</p><p></p><div class=\"message-component message-row separator\"></div><div class=\"message-component message-row advisoryrow\"><div class=\"message-component message-column advisorycolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children advisorycolumntext\"><strong>Read with advertising</strong></p><p></p><p><br></p><p>By clicking the \"Agree and continue\" button, you consent to the processing of data stored on your device or terminal equipment, such as personal identifiers or IP addresses, for these processing purposes pursuant to Section 25 (1) TDDDG and Art. 6 (1) lit. a DSGVO.</p><p></p><button title=\"Agree and continue\" aria-label=\"Agree and continue\" class=\"message-component message-button no-children focusable btn-advisorycolumn green desktop sp_choice_type_11\">Agree and continue</button></div><div class=\"message-component message-column advisorycolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children advisorycolumntext\"><strong>Ad-free subscription</strong></p><p></p><p><br></p><p>Or use zeit.de without ad-tracking and almost without advertising by subscribing to zeit.de ad-free or logging in with your <a target=\"_blank\" href=\"https://meine.zeit.de/anmelden?url=https%3A%2F%2Fwww.zeit.de%2Findex&amp;entry_service=pur\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"existing zeit.de ad-free subscription\" tabindex=\"0\">existing zeit.de ad-free subscription</a>. Information on data processing in the ad-free subscription can be found in our <a target=\"_blank\" href=\"https://datenschutz.zeit.de/zon\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"data protection\" tabindex=\"0\">data protection</a> statement and in the <a target=\"_blank\" href=\"https://premium.zeit.de/faq/pur\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p><p></p><button title=\"Subscribe to zeit.de ad-free\" aria-label=\"Subscribe to zeit.de ad-free\" class=\"message-component message-button no-children focusable btn-advisorycolumn black desktop sp_choice_type_9\">Subscribe to zeit.de ad-free</button></div></div><div class=\"message-component message-row separator\"></div><p tabindex=\"0\" class=\"focusable message-component text no-children detailtext\">Details on tracking can be found in the Privacy Policy and in the Privacy Center. You can consent to individual purposes of data processing via the \"Settings\" button or the Cookies &amp; Tracking menu item at the bottom of each page or reject them in part. You can withdraw your consent altogether at any time via the Privacy Settings link at the bottom of each page.</p><button title=\"Settings\" aria-label=\"Settings\" class=\"message-component message-button no-children focusable btn-settings desktop sp_choice_type_12\">Settings</button><div class=\"message-component message-row separator\"></div><div class=\"message-component message-row footer\"><div class=\"message-component message-column footer-buttons mobile\"><button title=\"Agree and continue\" aria-label=\"Agree and continue\" class=\"message-component message-button no-children focusable btn-advisorycolumn green mobile sp_choice_type_11\">Agree and continue</button><button title=\"Subscribe to zeit.de Pur\" aria-label=\"Subscribe to zeit.de Pur\" class=\"message-component message-button no-children focusable btn-advisorycolumn black mobile sp_choice_type_9\">Subscribe to zeit.de Pur</button><button title=\"Settings\" aria-label=\"Settings\" class=\"message-component message-button no-children focusable btn-settings mobile sp_choice_type_12\">Settings</button></div><div class=\"message-component message-column footercolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link footer-pur-login\"><a data-choice=\"1703079196740\" target=\"_blank\" href=\"#\" class=\"text-link-0-9-1-0 focusable\" aria-label=\"Login zeit.de ad-free\" tabindex=\"0\">Login zeit.de ad-free </a></p></div><div class=\"message-component message-column footercolumn footer-navi mobile-height\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://premium.zeit.de/faq/pur\" class=\"text-link-0-9-2-0 focusable\" aria-label=\"zeit.de ad-free FAQ\" tabindex=\"0\">zeit.de ad-free FAQ</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://www.zeit.de/impressum/index\" class=\"text-link-0-9-2-1 focusable\" aria-label=\"Imprint\" tabindex=\"0\">Imprint</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://www.zeit.de/administratives/agb-kommentare-artikel\" class=\"text-link-0-9-2-2 focusable\" aria-label=\"T&amp;C\" tabindex=\"0\">T&amp;C</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://datenschutz.zeit.de/zon\" class=\"text-link-0-9-2-3 focusable last-focusable-el\" aria-label=\"Data protection\" tabindex=\"0\">Data protection</a></p></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 6124,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent-cdn.zeit.de/privacy-manager/index.html?message_id=1334899&site_id=3800&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=0.05&sendPVData=false&includeCustomVendorsRes=1&consentUUID=undefined&secure=undefined&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container zpm-privacy-manager\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row zpm-row zpm-row-1\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children zpm-title first-focusable-el\">Ihre persönlichen Daten</h1></div><div class=\"message-component message-row zpm-row zpm-row-2\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-paragraph\">Wenn Sie zeit.de ohne werbefrei-Abo nutzen, speichern und verarbeiten wir und unsere Partner mit Ihrer Zustimmung Cookies und andere Technologien auf Ihrem Gerät. Wir verwenden diese, um unsere Webseiten für Sie optimal zu gestalten und fortlaufend zu verbessern, sowie zur Ausspielung von personalisierter Werbung mit Profilbildung und redaktionellen Inhalten.</p></div><div class=\"message-component message-row zpm-row zpm-row-3\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-paragraph\">Indem Sie den Button „Ausgewähltem zustimmen“ klicken, stimmen Sie der Verarbeitung der auf Ihrem Gerät bzw. Ihrer Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TDDDG sowie Art. 6 Abs. 1 lit. a DSGVO zu. Weitere Informationen finden Sie <a target=\"_blank\" href=\"https://www.zeit.de/hilfe/datenschutz\" class=\"text-link-0-2-0 focusable\" aria-label=\"in unserer Datenschutzerklärung\" tabindex=\"0\">in unserer Datenschutzerklärung</a>.</p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Sie können diese Einstellungen jederzeit am Ende jeder Seite über den Link Cookies &amp; Tracking anpassen.</p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-entry\">Sie haben die Möglichkeit, einigen Zwecken der Datenverarbeitung zuzustimmen bzw. die Verarbeitung abzulehnen. Bitte treffen Sie hier Ihre Auswahl:</p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children zpm-tcfv2-inline\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650059afdbb0cd04b459edf7\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung mit seitenübergreifender Profilbildung</h3></div></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc4477d\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene personalisierte Verlagsangebote<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43872\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Produkt- und Vertriebsentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43877\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Drittanbieter-Inhalte aus sozialen Netzwerken in redaktionellen Inhalten<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc4387c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Web-Push-Nachrichten / Kommunikation<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43887\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene personalisierte redaktionelle Inhaltsempfehlungen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"6527ef14a1d4e604f2ce1d44\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung mit Targeting<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"695e543303328d04567a2638\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen eine Zusammenarbeit möglich ist.</div><div tabindex=\"0\" class=\"page-action\">Alle Technologieanbieter</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Zustimmung erforderlich\"></span><h2 class=\"custom-header\">Zustimmung erforderlich</h2></div></div></div><div class=\"message-component message-row row-sticky\"><div class=\"message-component message-column columnbtn\"><button title=\"Allen zustimmen\" aria-label=\"Allen zustimmen\" class=\"message-component message-button no-children focusable buttonfirst sp_choice_type_ACCEPT_ALL\">Allen zustimmen</button></div><div class=\"message-component message-column columnbtn\"><button title=\"Ausgewählten zustimmen\" aria-label=\"Ausgewählten zustimmen\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Ausgewählten zustimmen</button></div><div class=\"message-component message-column footer-actions\"><button title=\"Zurück\" aria-label=\"Zurück\" class=\"message-component message-button no-children focusable footer-actions__button--back sp_choice_type_CANCEL\">Zurück</button><button title=\"Zustimmung widerrufen\" aria-label=\"Zustimmung widerrufen\" class=\"message-component message-button no-children focusable footer-actions__button--revoke sp_choice_type_REJECT_ALL last-focusable-el\">Zustimmung widerrufen</button></div></div></div></div>',",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 8868,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (7):",
+      "      [BUTTON] \"Agree and continue\" --> selector: [aria-label=\"Agree and continue\"]",
+      "      [A] \"existing zeit.de ad-free subscription\" --> selector: [aria-label=\"existing zeit.de ad-free subscription\"]",
+      "      [A] \"data protection\" --> selector: [aria-label=\"data protection\"]",
+      "      [A] \"FAQ\" --> selector: [aria-label=\"FAQ\"]",
+      "      [BUTTON] \"Subscribe to zeit.de ad-free\" --> selector: [aria-label=\"Subscribe to zeit.de ad-free\"]",
+      "      [BUTTON] \"Settings\" --> selector: [aria-label=\"Settings\"]",
+      "      [A] \"Login zeit.de ad-free\" --> selector: [aria-label=\"Login zeit.de ad-free\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (25):",
+      "      [A] \"in unserer Datenschutzerklärung\" --> selector: [aria-label=\"in unserer Datenschutzerklärung\"]",
+      "      [H2] \"Personalisierte Werbung mit seitenübergreifender Profilbildung\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [H2] \"Eigene personalisierte Verlagsangebote\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [H2] \"Eigene Produkt- und Vertriebsentwicklung\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [H2] \"Drittanbieter-Inhalte aus sozialen Netzwerken in redaktionellen Inhalten\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Eigene Web-Push-Nachrichten / Kommunikation\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Eigene personalisierte redaktionelle Inhaltsempfehlungen\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Politische Werbung mit Targeting\" --> selector: h2",
+      "      [BUTTON] \"Zustimmen\" --> selector: button",
+      "      [BUTTON] \"Ablehnen\" --> selector: button",
+      "      [H2] \"Funktionale Verwendungszwecke\" --> selector: h2",
+      "      [H2] \"Zusatzfunktionen\" --> selector: h2",
+      "      [BUTTON] \"Allen zustimmen\" --> selector: [aria-label=\"Allen zustimmen\"]",
+      "      [BUTTON] \"Ausgewählten zustimmen\" --> selector: [aria-label=\"Ausgewählten zustimmen\"]",
+      "      [BUTTON] \"Zurück\" --> selector: [aria-label=\"Zurück\"]",
+      "      [BUTTON] \"Zustimmung widerrufen\" --> selector: [aria-label=\"Zustimmung widerrufen\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "Agree and continue",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Agree and continue",
+              "aria-label": "Agree and continue",
+              "class": "message-component message-button no-children focusable btn-advisorycolumn green desktop",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column advisorycolumn",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row advisoryrow",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Agree and continue\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "existing zeit.de ad-free subscription",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://meine.zeit.de/anmelden?url=https%3A%2F%2Fwww.zeit.de%2Findex&entry_service=pur",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-4-1-0 focusable",
+              "aria-label": "existing zeit.de ad-free subscription",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children advisorycolumntext",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"existing zeit.de ad-free subscription\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "data protection",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://datenschutz.zeit.de/zon",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-4-1-0 focusable",
+              "aria-label": "data protection",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children advisorycolumntext",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"data protection\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "FAQ",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://premium.zeit.de/faq/pur",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-4-1-0 focusable",
+              "aria-label": "FAQ",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children advisorycolumntext",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"FAQ\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Subscribe to zeit.de ad-free",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Subscribe to zeit.de ad-free",
+              "aria-label": "Subscribe to zeit.de ad-free",
+              "class": "message-component message-button no-children focusable btn-advisorycolumn black desktop",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column advisorycolumn",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row advisoryrow",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Subscribe to zeit.de ad-free\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Settings",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Settings",
+              "aria-label": "Settings",
+              "class": "message-component message-button no-children focusable btn-settings desktop sp_choice_type_12",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; background: rgb(24, 144, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "notice",
+              "className": "message type-modal",
+              "selector": "#notice",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-container",
+                "selector": ".message-container"
+              }
+            },
+            "selector": "[aria-label=\"Settings\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Login zeit.de ad-free",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1703079196740",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0000ff;text-decoration:none;font-weight: 400;",
+              "class": "text-link-0-9-1-0 focusable",
+              "aria-label": "Login zeit.de ad-free",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children footer-link footer-pur-login",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column footercolumn",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Login zeit.de ad-free\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent-cdn.zeit.de/index.html?message_id=1476394&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+        "filteredHtml": "<div class=\"message-container\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><p tabindex=\"0\" class=\"focusable message-component text no-children headline first-focusable-el\">Welcome to zeit.de</p><div class=\"message-component message-row separator\"></div><p tabindex=\"0\" class=\"focusable message-component text no-children maintext\">We and our up to 172 partners collect and process personal data to improve and finance our services. For this purpose, we store cookies on end devices, use personal identification features such as device identifiers or IP addresses and record individual usage behaviour.</p><p></p><p><br></p><p>The processing purposes for this data are: Store and/or access information on a device, Personalised advertising and content, advertising and content measurement, audience research and services development, displaying external content, technically necessary cookies (security, login, comment area), push notifications/communication, optimisation of the offer (market research, A/B testing, content recommendations).</p><p></p><div class=\"message-component message-row separator\"></div><div class=\"message-component message-row advisoryrow\"><div class=\"message-component message-column advisorycolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children advisorycolumntext\"><strong>Read with advertising</strong></p><p></p><p><br></p><p>By clicking the \"Agree and continue\" button, you consent to the processing of data stored on your device or terminal equipment, such as personal identifiers or IP addresses, for these processing purposes pursuant to Section 25 (1) TDDDG and Art. 6 (1) lit. a DSGVO.</p><p></p><button title=\"Agree and continue\" aria-label=\"Agree and continue\" class=\"message-component message-button no-children focusable btn-advisorycolumn green desktop sp_choice_type_11\">Agree and continue</button></div><div class=\"message-component message-column advisorycolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children advisorycolumntext\"><strong>Ad-free subscription</strong></p><p></p><p><br></p><p>Or use zeit.de without ad-tracking and almost without advertising by subscribing to zeit.de ad-free or logging in with your <a target=\"_blank\" href=\"https://meine.zeit.de/anmelden?url=https%3A%2F%2Fwww.zeit.de%2Findex&amp;entry_service=pur\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"existing zeit.de ad-free subscription\" tabindex=\"0\">existing zeit.de ad-free subscription</a>. Information on data processing in the ad-free subscription can be found in our <a target=\"_blank\" href=\"https://datenschutz.zeit.de/zon\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"data protection\" tabindex=\"0\">data protection</a> statement and in the <a target=\"_blank\" href=\"https://premium.zeit.de/faq/pur\" class=\"text-link-0-4-1-0 focusable\" aria-label=\"FAQ\" tabindex=\"0\">FAQ</a>.</p><p></p><button title=\"Subscribe to zeit.de ad-free\" aria-label=\"Subscribe to zeit.de ad-free\" class=\"message-component message-button no-children focusable btn-advisorycolumn black desktop sp_choice_type_9\">Subscribe to zeit.de ad-free</button></div></div><div class=\"message-component message-row separator\"></div><p tabindex=\"0\" class=\"focusable message-component text no-children detailtext\">Details on tracking can be found in the Privacy Policy and in the Privacy Center. You can consent to individual purposes of data processing via the \"Settings\" button or the Cookies &amp; Tracking menu item at the bottom of each page or reject them in part. You can withdraw your consent altogether at any time via the Privacy Settings link at the bottom of each page.</p><button title=\"Settings\" aria-label=\"Settings\" class=\"message-component message-button no-children focusable btn-settings desktop sp_choice_type_12\">Settings</button><div class=\"message-component message-row separator\"></div><div class=\"message-component message-row footer\"><div class=\"message-component message-column footer-buttons mobile\"><button title=\"Agree and continue\" aria-label=\"Agree and continue\" class=\"message-component message-button no-children focusable btn-advisorycolumn green mobile sp_choice_type_11\">Agree and continue</button><button title=\"Subscribe to zeit.de Pur\" aria-label=\"Subscribe to zeit.de Pur\" class=\"message-component message-button no-children focusable btn-advisorycolumn black mobile sp_choice_type_9\">Subscribe to zeit.de Pur</button><button title=\"Settings\" aria-label=\"Settings\" class=\"message-component message-button no-children focusable btn-settings mobile sp_choice_type_12\">Settings</button></div><div class=\"message-component message-column footercolumn\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link footer-pur-login\"><a data-choice=\"1703079196740\" target=\"_blank\" href=\"#\" class=\"text-link-0-9-1-0 focusable\" aria-label=\"Login zeit.de ad-free\" tabindex=\"0\">Login zeit.de ad-free </a></p></div><div class=\"message-component message-column footercolumn footer-navi mobile-height\"><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://premium.zeit.de/faq/pur\" class=\"text-link-0-9-2-0 focusable\" aria-label=\"zeit.de ad-free FAQ\" tabindex=\"0\">zeit.de ad-free FAQ</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://www.zeit.de/impressum/index\" class=\"text-link-0-9-2-1 focusable\" aria-label=\"Imprint\" tabindex=\"0\">Imprint</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" href=\"https://www.zeit.de/administratives/agb-kommentare-artikel\" class=\"text-link-0-9-2-2 focusable\" aria-label=\"T&amp;C\" tabindex=\"0\">T&amp;C</a></p><p tabindex=\"0\" class=\"focusable message-component text no-children footer-link\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://datenschutz.zeit.de/zon\" class=\"text-link-0-9-2-3 focusable last-focusable-el\" aria-label=\"Data protection\" tabindex=\"0\">Data protection</a></p></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 6124,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "in unserer Datenschutzerklärung",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.zeit.de/hilfe/datenschutz",
+              "style": "color:#252525;text-decoration:underline;font-weight: 400;",
+              "class": "text-link-0-2-0 focusable",
+              "aria-label": "in unserer Datenschutzerklärung",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children zpm-paragraph",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row zpm-row zpm-row-3",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"in unserer Datenschutzerklärung\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalisierte Werbung mit seitenübergreifender Profilbildung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "650061cbc47a59059cc4477d",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene personalisierte Verlagsangebote",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "650061cbc47a59059cc43872",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene Produkt- und Vertriebsentwicklung",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "650061cbc47a59059cc43877",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Drittanbieter-Inhalte aus sozialen Netzwerken in redaktionellen Inhalten",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "650061cbc47a59059cc4387c",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene Web-Push-Nachrichten / Kommunikation",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "650061cbc47a59059cc43887",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Eigene personalisierte redaktionelle Inhaltsempfehlungen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "6527ef14a1d4e604f2ce1d44",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Politische Werbung mit Targeting",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "695e543303328d04567a2638",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ablehnen",
+            "tag": "BUTTON",
+            "attributes": {
+              "style": "background: gray; color: white;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "pur-buttons-container",
+              "selector": ".pur-buttons-container",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "stack-row",
+                "selector": ".stack-row"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "very low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Funktionale Verwendungszwecke",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Funktionale Verwendungszwecke",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zusatzfunktionen",
+            "tag": "H2",
+            "attributes": {
+              "tabindex": "0",
+              "role": "button",
+              "aria-expanded": "false",
+              "aria-controls": "Zusatzfunktionen",
+              "class": "accordion",
+              "lang": "DE",
+              "style": "padding: 16px 40px 16px 20px; font-size: 13px; font-weight: 500; color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack focusable",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "h2",
+            "selectorConfidence": "low",
+            "role": "button",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Allen zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Allen zustimmen",
+              "aria-label": "Allen zustimmen",
+              "class": "message-component message-button no-children focusable buttonfirst sp_choice_type_ACCEPT_ALL",
+              "style": "opacity: 1; padding: 10px 0px 10px 17px; margin: 10px 10px 10px 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 12px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% - 27px); background: rgb(37, 37, 37);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column columnbtn",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-sticky",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Allen zustimmen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Ausgewählten zustimmen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Ausgewählten zustimmen",
+              "aria-label": "Ausgewählten zustimmen",
+              "class": "message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT",
+              "aria-disabled": "true",
+              "disabled": "",
+              "style": "opacity: 0.5; padding: 10px 0px; margin: 10px 0px 10px 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 12px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: calc(100% - 10px); background: rgb(7, 136, 77);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column columnbtn",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-sticky",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Ausgewählten zustimmen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": true
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zurück",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zurück",
+              "aria-label": "Zurück",
+              "class": "message-component message-button no-children focusable footer-actions__button--back sp_choice_type_CANCEL",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column footer-actions",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-sticky",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zurück\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Zustimmung widerrufen",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Zustimmung widerrufen",
+              "aria-label": "Zustimmung widerrufen",
+              "class": "message-component message-button no-children focusable footer-actions__button--revoke sp_choice_type_REJECT_ALL last-focusable-el",
+              "style": "opacity: 1; padding: 10px 15px; margin: 10px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: auto; background: rgb(24, 144, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column footer-actions",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row row-sticky",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Zustimmung widerrufen\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent-cdn.zeit.de/privacy-manager/index.html?message_id=1334899&site_id=3800&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&hasCsp=true&sampleRate=0.05&sendPVData=false&includeCustomVendorsRes=1&consentUUID=undefined&secure=undefined&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container zpm-privacy-manager\"><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row zpm-row zpm-row-1\"><h1 tabindex=\"0\" class=\"focusable message-component text no-children zpm-title first-focusable-el\">Ihre persönlichen Daten</h1></div><div class=\"message-component message-row zpm-row zpm-row-2\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-paragraph\">Wenn Sie zeit.de ohne werbefrei-Abo nutzen, speichern und verarbeiten wir und unsere Partner mit Ihrer Zustimmung Cookies und andere Technologien auf Ihrem Gerät. Wir verwenden diese, um unsere Webseiten für Sie optimal zu gestalten und fortlaufend zu verbessern, sowie zur Ausspielung von personalisierter Werbung mit Profilbildung und redaktionellen Inhalten.</p></div><div class=\"message-component message-row zpm-row zpm-row-3\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-paragraph\">Indem Sie den Button „Ausgewähltem zustimmen“ klicken, stimmen Sie der Verarbeitung der auf Ihrem Gerät bzw. Ihrer Endeinrichtung gespeicherten Daten wie z.B. persönlichen Identifikatoren oder IP-Adressen für diese Verarbeitungszwecke gem. § 25 Abs. 1 TDDDG sowie Art. 6 Abs. 1 lit. a DSGVO zu. Weitere Informationen finden Sie <a target=\"_blank\" href=\"https://www.zeit.de/hilfe/datenschutz\" class=\"text-link-0-2-0 focusable\" aria-label=\"in unserer Datenschutzerklärung\" tabindex=\"0\">in unserer Datenschutzerklärung</a>.</p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">Sie können diese Einstellungen jederzeit am Ende jeder Seite über den Link Cookies &amp; Tracking anpassen.</p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children zpm-entry\">Sie haben die Möglichkeit, einigen Zwecken der Datenverarbeitung zuzustimmen bzw. die Verarbeitung abzulehnen. Bitte treffen Sie hier Ihre Auswahl:</p></div><div class=\"message-component message-stacks pm-tcfv2-inline no-children zpm-tcfv2-inline\"><div class=\"pm-section pm-main\"><div class=\"pm-main\"><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Speichern von oder Zugriff auf Informationen auf einem Endgerät</span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650059afdbb0cd04b459edf7\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span></span><div class=\"stack-title\"><h3>Personalisierte Werbung mit seitenübergreifender Profilbildung</h3></div></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc4477d\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene personalisierte Verlagsangebote<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43872\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Produkt- und Vertriebsentwicklung<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43877\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Drittanbieter-Inhalte aus sozialen Netzwerken in redaktionellen Inhalten<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc4387c\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene Web-Push-Nachrichten / Kommunikation<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"650061cbc47a59059cc43887\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Eigene personalisierte redaktionelle Inhaltsempfehlungen<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"6527ef14a1d4e604f2ce1d44\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span><span>Politische Werbung mit Targeting<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Custom Purposes\">C</span></span></span><span></span></h2><div class=\"pur-buttons-container\"><button>Zustimmen</button><button>Ablehnen</button></div></div><div id=\"695e543303328d04567a2638\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Funktionale Verwendungszwecke</span></h2></div><div id=\"Funktionale Verwendungszwecke\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div><div class=\"type-box\"><div class=\"tcfv2-stack focusable\"><div class=\"stack-row\"><h2 tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-c class=\"accordion \" lang=\"DE\"><span class=\"chevron down\"></span><span>Zusatzfunktionen</span></h2></div><div id=\"Zusatzfunktionen\" tabindex=\"-1\" class=\"panel \" aria-hidden=\"true\"></div></div></div></div><div class=\"page-link bottom\"><div tabindex=\"0\" class=\"page-desc\">Hier finden Sie eine Übersicht aller Technologieanbieter, mit denen eine Zusammenarbeit möglich ist.</div><div tabindex=\"0\" class=\"page-action\">Alle Technologieanbieter</div></div><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Custom Purposes\">C</span><h2 class=\"custom-header\">Custom Purposes</h2><span tabindex=\"0\" class=\"legend-key required-consent\" aria-label=\"Zustimmung erforderlich\"></span><h2 class=\"custom-header\">Zustimmung erforderlich</h2></div></div></div><div class=\"message-component message-row row-sticky\"><div class=\"message-component message-column columnbtn\"><button title=\"Allen zustimmen\" aria-label=\"Allen zustimmen\" class=\"message-component message-button no-children focusable buttonfirst sp_choice_type_ACCEPT_ALL\">Allen zustimmen</button></div><div class=\"message-component message-column columnbtn\"><button title=\"Ausgewählten zustimmen\" aria-label=\"Ausgewählten zustimmen\" class=\"message-component message-button no-children focusable sp_choice_type_SAVE_AND_EXIT\" aria-disabled=\"true\" disabled=\"\">Ausgewählten zustimmen</button></div><div class=\"message-component message-column footer-actions\"><button title=\"Zurück\" aria-label=\"Zurück\" class=\"message-component message-button no-children focusable footer-actions__button--back sp_choice_type_CANCEL\">Zurück</button><button title=\"Zustimmung widerrufen\" aria-label=\"Zustimmung widerrufen\" class=\"message-component message-button no-children focusable footer-actions__button--revoke sp_choice_type_REJECT_ALL last-focusable-el\">Zustimmung widerrufen</button></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 8868,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

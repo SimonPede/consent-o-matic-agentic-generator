@@ -1,0 +1,1914 @@
+{
+  "timestamp": "2026-08-28T09:15:47.490709",
+  "url": "https://www.dailymotion.com",
+  "command": [
+    "node",
+    "/mnt/lossy/downloads/consent-o-matic-agentic-generator/src/agent/../tools/extract-dom/main.js",
+    "https://www.dailymotion.com"
+  ],
+  "duration_seconds": 17.03,
+  "returncode": 0,
+  "stderr": {
+    "lines": [
+      "puppeteer-browser is getting started...",
+      "Navigating to the page...",
+      "page is loaded!",
+      "waitForCmpUi started...",
+      "CMP UI seems to be rendered via: \"[class*=\"message-container\"]\" (Sourcepoint) in frame: https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "waitForCmpUi detected CMP Type: Sourcepoint",
+      "I found 11 frames.",
+      "a frame was picked by score: https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1 with Score: 63",
+      "Regex failed in frame https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1, trying LLM fallback...",
+      "LLM suggested settings button - selector: \"button[aria-label='Personalise']\", text: \"Personalise\"",
+      "State snapshot scope selector: <document.body>",
+      "settings click target - selector: button[aria-label='Personalise'], textMatch: Personalise",
+      "settings click target result - clickSuccess: true",
+      "Waiting 3000ms after settings click before frame/diff inspection...",
+      "Post-click wait finished. Collecting new frames...",
+      "New frame candidates detected: 1",
+      "Scheduling DOM stability wait for frame: https://consent.dailymotion.com/privacy-manager/index.html?message_id=1182653&hasCsp=true&mms_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fmms%2Fv2&site_id=34227&concatenatedUUID=671cdf83-a422-486b-8b32-6e558a9b9627~~~&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&consentUUID=671cdf83-a422-486b-8b32-6e558a9b9627&includeCustomVendorsRes=1",
+      "1 new frames after the click. Starting scoring...",
+      "Frame Score: 64 for URL: https://consent.dailymotion.com/privacy-manager/index.html?message_id=1182653&hasCsp=true&mms_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fmms%2Fv2&site_id=34227&concatenatedUUID=671cdf83-a422-486b-8b32-6e558a9b9627~~~&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&consentUUID=671cdf83-a422-486b-8b32-6e558a9b9627&includeCustomVendorsRes=1",
+      "Best new frame selected for settings extraction: https://consent.dailymotion.com/privacy-manager/index.html?message_id=1182653&hasCsp=true&mms_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fmms%2Fv2&site_id=34227&concatenatedUUID=671cdf83-a422-486b-8b32-6e558a9b9627~~~&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&consentUUID=671cdf83-a422-486b-8b32-6e558a9b9627&includeCustomVendorsRes=1",
+      "Awaiting DOM stability for best new frame...",
+      "DOM stability wait for best new frame finished. Extracting settings...",
+      "[",
+      "  {",
+      "    frameUrl: 'https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "    isMainFrame: false,",
+      "    isCookieBannerFrame: true,",
+      "    cmpType: 'Sourcepoint',",
+      "    data: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1',",
+      "      filteredHtml: `<div class=\"message-container main\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children title first-focusable-el\"><strong>Data privacy at Dailymotion</strong></p></div><div class=\"message-component message-row brow\"><p tabindex=\"0\" class=\"focusable message-component text no-children content\">To deliver our Service and give you a personal experience, we and our Partners may use trackers to:</p><p></p><ul><li>store and/or access information on your device</li><li>process personal data like your IP address, location, or device info.</li></ul><p>Our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/non-iab-partners\" class=\"text-link-0-1-0 focusable\" aria-label=\"non-IAB Partners\" tabindex=\"0\">non-IAB Partners</a> and&nbsp;<strong>562 <a data-choice=\"1749567921084\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0 focusable\" aria-label=\"IAB Partners\" tabindex=\"0\">IAB Partners</a></strong> may use trackers and your personal data for reasons like:</p><ul><li>personalised advertising and content</li><li>advertising and content measurement</li><li>audience research</li><li>service development.</li></ul><p>They may use data collected by us or collect their own data separately. Some of them may also use special features like precise geolocation data and identification through device scanning.</p><p><br></p><p>Processing this data relies either on your consent or on legitimate interest. You can say no to processing that relies on legitimate interest <a data-choice=\"1717774649505\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0 focusable\" aria-label=\"here\" tabindex=\"0\">here</a>.</p><p><br></p><p><strong>Essential trackers</strong></p><p>We use essential trackers to deliver our Service features according to our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/terms-of-use/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Terms of Use\" tabindex=\"0\">Terms of Use</a>. We don't need your consent to use this kind of tracker.</p><p><br></p><p><strong>Processing your personal data</strong></p><p>We rely on compelling legitimate interest or on legal obligation to process your personal data to ensure our Service's security.</p><p><br></p><p>We rely on legitimate interest to use your personal data to:</p><ul><li>select basic ads</li><li>understand our audience and improve our service</li><li>measure content and ad performance (for your own content, we rely on the contract with you).</li></ul><p>We rely on the contract to deliver our Service, including to:</p><ul><li>create content profiles and recommend content</li><li>technically deliver content and ads</li><li>share content on social media.</li></ul><p>We need your consent to process your personal data for any other reason, and to use non-essential trackers.</p><p><br></p><p>We may combine tracker data with other data we might have about you for any of our processing purposes. We may share this info, including your browsing data or email address, with our \"<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-share-selected-commercial-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Selected Commercial Partners\" tabindex=\"0\">Selected Commercial Partners</a>\" &amp; \"<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Data Partners\" tabindex=\"0\">Data Partners</a>\".</p><p><br></p><p><strong>How to manage your privacy choices</strong></p><p>Your choices apply anywhere you see this banner. You can change your choices or withdraw your consent at any time by clicking or tapping <strong>Manage Cookies</strong>. If you don’t consent, we still process your personal data for purposes that don’t rely on it, like letting you use our Service, showing you non-targeted ads, and recommending content.</p><p><br></p><p>Click or tap <strong>Accept</strong> to agree to this collection, sharing, and use of your personal data. To use Dailymotion without agreeing, click or tap <strong>Continue without accepting</strong>. If you want to fine-tune your privacy choices, click or tap <strong>Personalise</strong>.</p><p><br></p><p>Learn more about how we handle your data in our <a target=\"_blank\" href=\"https://www.dailymotion.com/legal/privacy?localization=en\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Privacy&lt;/strong&gt;\" tabindex=\"0\"><strong>Privacy</strong></a> and <a target=\"_blank\" href=\"https://www.dailymotion.com/legal/cookiemanagement?localization=en\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Cookie&lt;/strong&gt;\" tabindex=\"0\"><strong>Cookie</strong></a> Policies.</p><p></p></div><div class=\"message-component message-row button-row\"><button title=\"Accept\" aria-label=\"Accept\" class=\"message-component message-button no-children focusable button-primary sp_choice_type_11\">Accept</button></div><div class=\"message-component message-row button-row\"><button title=\"Personalise\" aria-label=\"Personalise\" class=\"message-component message-button no-children focusable button-secondary sp_choice_type_12\">Personalise</button></div><div class=\"message-component message-row button-row\"><button title=\"Continue without accepting\" aria-label=\"Continue without accepting\" class=\"message-component message-button no-children focusable cwa sp_choice_type_SE last-focusable-el\">Continue without accepting</button></div></div></div>`,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 5553,",
+      "      cmpType: 'Sourcepoint'",
+      "    },",
+      "    settings: {",
+      "      buttons: [Array],",
+      "      checkboxes: [],",
+      "      toggles: [Array],",
+      "      cmpFound: true,",
+      "      cmpSelector: '[class*=\"message-container\"]',",
+      "      url: 'https://consent.dailymotion.com/privacy-manager/index.html?message_id=1182653&hasCsp=true&mms_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fmms%2Fv2&site_id=34227&concatenatedUUID=671cdf83-a422-486b-8b32-6e558a9b9627~~~&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&consentUUID=671cdf83-a422-486b-8b32-6e558a9b9627&includeCustomVendorsRes=1',",
+      "      filteredHtml: '<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container modal-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row header-row\"><div class=\"message-component message-column back\"><p tabindex=\"0\" class=\"focusable message-component text no-children back-icon first-focusable-el\"><a data-choice=\"1718023024973\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-0 focusable\" aria-label=\"←\" tabindex=\"0\">←</a></p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children title\">Your Privacy Preferences</p></div></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">USEFUL INFORMATION ABOUT DAILYMOTION’S AND OUR <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#1-partners\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;PARTNERS’&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">PARTNERS’</span></a> DATA PROCESSING ACTIVITIES FOR SETTING YOUR PRIVACY PREFERENCES</p><p></p><p><br></p><p><strong>Over time, any of our Partners, i.e. “SITE VENDORS”, listed below, may use trackers or process your personal data, but only some Partners do so AT THE SAME TIME.&nbsp;When you are shown an ad, only Partners participating in the delivery of that ad do so. </strong></p><p><br></p><p>Except for the <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;essential trackers&lt;/span&gt;&lt;/strong&gt;\" tabindex=\"0\"><strong><span class=\"ql-underline\">essential trackers</span></strong></a> which are exempted from consent, trackers may only be dropped upon your approval. Your personal data (collected by trackers, provided by you, communicated to or received from our Partners or 3rd parties) is used by us and our Partners for the Purposes listed below.</p><p><br></p><p>Dailymotion’s processing of your personal data depends on whether you access our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#3-dailymotion-service\" class=\"text-link-0-1-0 focusable\" aria-label=\"Service\" tabindex=\"0\">Service</a> on the <strong>Dailymotion website and app</strong> or through our <strong>Video Player embedded on 3rd party website or apps</strong>.&nbsp;As an operator of the Dailymotion Service, we may use <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;essential trackers&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">essential trackers</span></a> and, when you are on the Dailymotion website or app, we rely on different legal basis and process your data for additional purposes not used by our Partners. These Dailymotion-specific purposes are identified below by <strong>“D”</strong>.</p><p><br></p><p>Subject to your consent, or if such processing is otherwise authorized by applicable laws, we may share your personal data with our “<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-share-selected-commercial-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Selected Commercial Partners&lt;/strong&gt;\" tabindex=\"0\"><strong>Selected Commercial Partners</strong></a><strong>”</strong> &amp;<strong> “</strong><a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Data Partners&lt;/strong&gt;\" tabindex=\"0\"><strong>Data Partners</strong></a><strong>” </strong>who may use it if you gave them your consent or if they rely on an alternative legal basis.</p><p>In the absence of your consent, your personal data may still be processed when such processing relies on a different legal basis. When it relies on legitimate interest, you may oppose to it using \"Opt Out\" option available in the <strong>Legitimate Interest section of the “Purposes”</strong> tab.</p><p>&nbsp;</p><p>Your choices apply to the browser and device you are currently using. To change your settings, use the \"Manage Cookies\" section in the footer of our website or in our app’s settings.</p><p>&nbsp;</p><p>Dailymotion participates in the <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#4-iab-tcf\" class=\"text-link-0-1-0 focusable\" aria-label=\"Interactive Advertising Bureau’s Transparency and Consent Framework\" tabindex=\"0\">Interactive Advertising Bureau’s Transparency and Consent Framework </a>(the \"<strong>TCF</strong>\"). We rely on the TCF to communicate your current privacy choices to other TCF participants and to receive them when you access our Service through our Video Player embedded on 3rd party websites or apps.</p><p>&nbsp;</p><p>Not consenting, withdrawing your consent or opposing to processing will not stop or decrease the number of ads you are shown or block processing that does not rely on consent or legitimate interest.</p><p><br></p><p>Learn more about Dailymotion use of trackers and data processing operation in our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/cookie-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Cookie Policy\" tabindex=\"0\">Cookie Policy</a> and <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/privacy-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Privacy Policy\" tabindex=\"0\">Privacy Policy</a>.</p><p></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Privacy Settings Choices</strong></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">To consent or refuse, click on \"<strong>Decline All</strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">\" or \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Accept All</span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">\" buttons. To express your choices on a purpose-by-purpose and then adjust them for any Vendor, use available toggles and click on \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Save Changes\"</span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">. If you click on \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Save Changes\" </span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">without expressing your choices, your consent will not be collected. </span></p></div><div class=\"message-component message-stacks privacy-manager-tcfv2 no-children\"><div class=\"pm-tabs\" role=\"tablist\"><div role=\"tab\" tabindex=\"0\" class=\"pm-tab active focusable\" aria-selected=\"true\" title=\"Purposes\">Purposes</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Features\">Features</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Site Vendors\">Site Vendors</div></div><div class=\"pm-section\"><div class=\"pm-purposes\"><div class=\"pm-type-toggle\"><div id=\"purposes-focus\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" class=\"focusable\" title=\"User Consent Purposes\">User Consent Purposes</div><div role=\"tab\" tabindex=\"0\" title=\"Legitimate Interest, Special and Dailymotion Purposes\">Legitimate Interest, Special and Dailymotion Purposes</div><span class=\"selected consent\"></span></div><h2 tabindex=\"0\" class=\"info-title\">Purposes</h2><p tabindex=\"0\" class=\"pm-sub-p\">You give an affirmative action to indicate that we can use your data. When the button is green you consent to the use of your personal data for the following purposes:</p><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Dailymotion Purposes\">D</span><h2 class=\"custom-header\">Dailymotion Purposes</h2></div><div class=\"tcfv2-stack\" title=\"Store and/or access information on a device\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Store and/or access information on a device</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Store and/or access information on a device\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"70233\" class=\"panel\"><p>kies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. For Example: * Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each ti</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select advertising</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Use limited data to s'... 23289 more characters,",
+      "      filteredHtmlOmitted: false,",
+      "      filteredHtmlOriginalChars: 33289,",
+      "      cmpType: 'Sourcepoint',",
+      "      isIframe: true",
+      "    }",
+      "  }",
+      "]",
+      "========== EXTRACTION RESULTS ==========",
+      "Frame: https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "   isMainFrame: false | isCookieFrame: true",
+      "  Known CMP detected: Sourcepoint via selector \"[class*=\"message-container\"]\"",
+      "  Buttons found (11):",
+      "      [A] \"non-IAB Partners\" --> selector: [aria-label=\"non-IAB Partners\"]",
+      "      [A] \"IAB Partners\" --> selector: [aria-label=\"IAB Partners\"]",
+      "      [A] \"here\" --> selector: [aria-label=\"here\"]",
+      "      [A] \"Terms of Use\" --> selector: [aria-label=\"Terms of Use\"]",
+      "      [A] \"Selected Commercial Partners\" --> selector: [aria-label=\"Selected Commercial Partners\"]",
+      "      [A] \"Data Partners\" --> selector: [aria-label=\"Data Partners\"]",
+      "      [A] \"Privacy\" --> selector: [aria-label=\"<strong>Privacy</strong>\"]",
+      "      [A] \"Cookie\" --> selector: [aria-label=\"<strong>Cookie</strong>\"]",
+      "      [BUTTON] \"Accept\" --> selector: [aria-label=\"Accept\"]",
+      "      [BUTTON] \"Personalise\" --> selector: [aria-label=\"Personalise\"]",
+      "      [BUTTON] \"Continue without accepting\" --> selector: [aria-label=\"Continue without accepting\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (0):",
+      "   Settings page extracted (isIframe: true):",
+      "  Buttons found (37):",
+      "      [A] \"←\" --> selector: [aria-label=\"←\"]",
+      "      [A] \"PARTNERS’\" --> selector: [aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">PARTNERS’</span>\"]",
+      "      [A] \"essential trackers\" --> selector: [aria-label=\"<strong><span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span></strong>\"]",
+      "      [A] \"Service\" --> selector: [aria-label=\"Service\"]",
+      "      [A] \"essential trackers\" --> selector: [aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span>\"]",
+      "      [A] \"Selected Commercial Partners\" --> selector: [aria-label=\"<strong>Selected Commercial Partners</strong>\"]",
+      "      [A] \"Data Partners\" --> selector: [aria-label=\"<strong>Data Partners</strong>\"]",
+      "      [A] \"Interactive Advertising Bureau’s Transparency and Consent Framework\" --> selector: [aria-label=\"Interactive Advertising Bureau’s Transparency and Consent Framework\"]",
+      "      [A] \"Cookie Policy\" --> selector: [aria-label=\"Cookie Policy\"]",
+      "      [A] \"Privacy Policy\" --> selector: [aria-label=\"Privacy Policy\"]",
+      "      [BUTTON] \"Store and/or access information on a device\" --> selector: button",
+      "      [BUTTON] \"Store and/or access information on a device\" --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      [BUTTON] \"Use limited data to select advertising\" --> selector: button",
+      "      [BUTTON] \"Use limited data to select advertising\" --> selector: [aria-label=\"Use limited data to select advertising\"]",
+      "      [BUTTON] \"Create profiles for personalised advertising\" --> selector: button",
+      "      [BUTTON] \"Create profiles for personalised advertising\" --> selector: [aria-label=\"Create profiles for personalised advertising\"]",
+      "      [BUTTON] \"Use profiles to select personalised advertising\" --> selector: button",
+      "      [BUTTON] \"Use profiles to select personalised advertising\" --> selector: [aria-label=\"Use profiles to select personalised advertising\"]",
+      "      [BUTTON] \"Create profiles to personalise content\" --> selector: button",
+      "      [BUTTON] \"Create profiles to personalise content\" --> selector: [aria-label=\"Create profiles to personalise content\"]",
+      "      [BUTTON] \"Use profiles to select personalised content\" --> selector: button",
+      "      [BUTTON] \"Use profiles to select personalised content\" --> selector: [aria-label=\"Use profiles to select personalised content\"]",
+      "      [BUTTON] \"Measure advertising performance\" --> selector: button",
+      "      [BUTTON] \"Measure advertising performance\" --> selector: [aria-label=\"Measure advertising performance\"]",
+      "      [BUTTON] \"Measure content performance\" --> selector: button",
+      "      [BUTTON] \"Measure content performance\" --> selector: [aria-label=\"Measure content performance\"]",
+      "      [BUTTON] \"Understand audiences through statistics or combinations of data from different sources\" --> selector: button",
+      "      [BUTTON] \"Understand audiences through statistics or combinations of data from different sources\" --> selector: [aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+      "      [BUTTON] \"Develop and improve services\" --> selector: button",
+      "      [BUTTON] \"Develop and improve services\" --> selector: [aria-label=\"Develop and improve services\"]",
+      "      [BUTTON] \"Use limited data to select content\" --> selector: button",
+      "      [BUTTON] \"Use limited data to select content\" --> selector: [aria-label=\"Use limited data to select content\"]",
+      "      [BUTTON] \"Share of Personal Data with Vivendi group companiesD\" --> selector: button",
+      "      [BUTTON] \"Share of Personal Data with Vivendi group companies\" --> selector: [aria-label=\"Share of Personal Data with Vivendi group companies\"]",
+      "      [BUTTON] \"Save Changes\" --> selector: [aria-label=\"Save Changes\"]",
+      "      [BUTTON] \"Decline All\" --> selector: [aria-label=\"Decline All\"]",
+      "      [BUTTON] \"Accept All\" --> selector: [aria-label=\"Accept All\"]",
+      "   Checkboxes found (0):",
+      "  Toggles found (12):",
+      "      \"Store and/or access information on a device\" | aria-checked: false --> selector: [aria-label=\"Store and/or access information on a device\"]",
+      "      \"Use limited data to select advertising\" | aria-checked: false --> selector: [aria-label=\"Use limited data to select advertising\"]",
+      "      \"Create profiles for personalised advertising\" | aria-checked: false --> selector: [aria-label=\"Create profiles for personalised advertising\"]",
+      "      \"Use profiles to select personalised advertising\" | aria-checked: false --> selector: [aria-label=\"Use profiles to select personalised advertising\"]",
+      "      \"Create profiles to personalise content\" | aria-checked: false --> selector: [aria-label=\"Create profiles to personalise content\"]",
+      "      \"Use profiles to select personalised content\" | aria-checked: false --> selector: [aria-label=\"Use profiles to select personalised content\"]",
+      "      \"Measure advertising performance\" | aria-checked: false --> selector: [aria-label=\"Measure advertising performance\"]",
+      "      \"Measure content performance\" | aria-checked: false --> selector: [aria-label=\"Measure content performance\"]",
+      "      \"Understand audiences through statistics or combinations of data from different sources\" | aria-checked: false --> selector: [aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+      "      \"Develop and improve services\" | aria-checked: false --> selector: [aria-label=\"Develop and improve services\"]",
+      "      \"Use limited data to select content\" | aria-checked: false --> selector: [aria-label=\"Use limited data to select content\"]",
+      "      \"Share of Personal Data with Vivendi group companies\" | aria-checked: false --> selector: [aria-label=\"Share of Personal Data with Vivendi group companies\"]",
+      "========================================",
+      "Output was stored in extraction_debug.json.",
+      "browser closed!",
+      "extractStructuredDom finished",
+      "foundData was filled with a value"
+    ]
+  },
+  "stdout_json_parse_error": null,
+  "stdout_json": [
+    {
+      "frameUrl": "https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+      "isMainFrame": false,
+      "isCookieBannerFrame": true,
+      "cmpType": "Sourcepoint",
+      "data": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "non-IAB Partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/non-iab-partners",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "non-IAB Partners",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"non-IAB Partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "IAB Partners",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1749567921084",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "IAB Partners",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "STRONG",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": null,
+                "selector": null
+              }
+            },
+            "selector": "[aria-label=\"IAB Partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "here",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1717774649505",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "here",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"here\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Terms of Use",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/terms-of-use/",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Terms of Use",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Terms of Use\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Selected Commercial Partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/data-share-selected-commercial-partners/",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Selected Commercial Partners",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Selected Commercial Partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Data Partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/data-partners/",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Data Partners",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Data Partners\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.dailymotion.com/legal/privacy?localization=en",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<strong>Privacy</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Privacy</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://www.dailymotion.com/legal/cookiemanagement?localization=en",
+              "style": "color:#0d0d0d;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<strong>Cookie</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children content",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Cookie</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Accept",
+              "aria-label": "Accept",
+              "class": "message-component message-button no-children focusable button-primary sp_choice_type_11",
+              "style": "opacity: 1; padding: 12px 0px; margin: 8px 24px 4px; border-width: 0px; border-color: rgb(13, 13, 13); border-radius: 6px; border-style: solid; font-size: 14px; font-weight: 600; color: rgb(255, 255, 255); font-family: \"trebuchet ms\", helvetica, sans-serif; background: rgb(13, 13, 13); width: calc(100% - 48px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row button-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "notice",
+                "className": "message type-modal",
+                "selector": "#notice"
+              }
+            },
+            "selector": "[aria-label=\"Accept\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Personalise",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Personalise",
+              "aria-label": "Personalise",
+              "class": "message-component message-button no-children focusable button-secondary sp_choice_type_12",
+              "style": "opacity: 1; padding: 11px 0px; margin: 4px 24px; border-width: 1px; border-color: rgb(13, 13, 13); border-radius: 6px; border-style: solid; font-size: 14px; font-weight: 700; color: rgb(13, 13, 13); font-family: \"trebuchet ms\", helvetica, sans-serif; background: rgb(255, 255, 255); width: calc(100% - 48px);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row button-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "notice",
+                "className": "message type-modal",
+                "selector": "#notice"
+              }
+            },
+            "selector": "[aria-label=\"Personalise\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Continue without accepting",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Continue without accepting",
+              "aria-label": "Continue without accepting",
+              "class": "message-component message-button no-children focusable cwa sp_choice_type_SE last-focusable-el",
+              "style": "opacity: 1; padding: 0px; margin: 4px 0px 32px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 5px; border-style: solid; font-size: 14px; font-weight: 800; color: rgb(13, 13, 13); font-family: \"trebuchet ms\", helvetica, sans-serif; background: rgb(255, 255, 255); width: auto;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row button-row",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": "notice",
+                "className": "message type-modal",
+                "selector": "#notice"
+              }
+            },
+            "selector": "[aria-label=\"Continue without accepting\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent.dailymotion.com/index.html?hasCsp=true&message_id=1486670&consentUUID=null&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1",
+        "filteredHtml": "<div class=\"message-container main\"><div class=\"message-overlay\"></div><div id=\"notice\" class=\"message type-modal\"><div><button tabindex=\"1\" class=\"message-stacksclose\">X</button></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children title first-focusable-el\"><strong>Data privacy at Dailymotion</strong></p></div><div class=\"message-component message-row brow\"><p tabindex=\"0\" class=\"focusable message-component text no-children content\">To deliver our Service and give you a personal experience, we and our Partners may use trackers to:</p><p></p><ul><li>store and/or access information on your device</li><li>process personal data like your IP address, location, or device info.</li></ul><p>Our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/non-iab-partners\" class=\"text-link-0-1-0 focusable\" aria-label=\"non-IAB Partners\" tabindex=\"0\">non-IAB Partners</a> and&nbsp;<strong>562 <a data-choice=\"1749567921084\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0 focusable\" aria-label=\"IAB Partners\" tabindex=\"0\">IAB Partners</a></strong> may use trackers and your personal data for reasons like:</p><ul><li>personalised advertising and content</li><li>advertising and content measurement</li><li>audience research</li><li>service development.</li></ul><p>They may use data collected by us or collect their own data separately. Some of them may also use special features like precise geolocation data and identification through device scanning.</p><p><br></p><p>Processing this data relies either on your consent or on legitimate interest. You can say no to processing that relies on legitimate interest <a data-choice=\"1717774649505\" target=\"_blank\" href=\"#\" class=\"text-link-0-1-0 focusable\" aria-label=\"here\" tabindex=\"0\">here</a>.</p><p><br></p><p><strong>Essential trackers</strong></p><p>We use essential trackers to deliver our Service features according to our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/terms-of-use/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Terms of Use\" tabindex=\"0\">Terms of Use</a>. We don't need your consent to use this kind of tracker.</p><p><br></p><p><strong>Processing your personal data</strong></p><p>We rely on compelling legitimate interest or on legal obligation to process your personal data to ensure our Service's security.</p><p><br></p><p>We rely on legitimate interest to use your personal data to:</p><ul><li>select basic ads</li><li>understand our audience and improve our service</li><li>measure content and ad performance (for your own content, we rely on the contract with you).</li></ul><p>We rely on the contract to deliver our Service, including to:</p><ul><li>create content profiles and recommend content</li><li>technically deliver content and ads</li><li>share content on social media.</li></ul><p>We need your consent to process your personal data for any other reason, and to use non-essential trackers.</p><p><br></p><p>We may combine tracker data with other data we might have about you for any of our processing purposes. We may share this info, including your browsing data or email address, with our \"<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-share-selected-commercial-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Selected Commercial Partners\" tabindex=\"0\">Selected Commercial Partners</a>\" &amp; \"<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"Data Partners\" tabindex=\"0\">Data Partners</a>\".</p><p><br></p><p><strong>How to manage your privacy choices</strong></p><p>Your choices apply anywhere you see this banner. You can change your choices or withdraw your consent at any time by clicking or tapping <strong>Manage Cookies</strong>. If you don’t consent, we still process your personal data for purposes that don’t rely on it, like letting you use our Service, showing you non-targeted ads, and recommending content.</p><p><br></p><p>Click or tap <strong>Accept</strong> to agree to this collection, sharing, and use of your personal data. To use Dailymotion without agreeing, click or tap <strong>Continue without accepting</strong>. If you want to fine-tune your privacy choices, click or tap <strong>Personalise</strong>.</p><p><br></p><p>Learn more about how we handle your data in our <a target=\"_blank\" href=\"https://www.dailymotion.com/legal/privacy?localization=en\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Privacy&lt;/strong&gt;\" tabindex=\"0\"><strong>Privacy</strong></a> and <a target=\"_blank\" href=\"https://www.dailymotion.com/legal/cookiemanagement?localization=en\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Cookie&lt;/strong&gt;\" tabindex=\"0\"><strong>Cookie</strong></a> Policies.</p><p></p></div><div class=\"message-component message-row button-row\"><button title=\"Accept\" aria-label=\"Accept\" class=\"message-component message-button no-children focusable button-primary sp_choice_type_11\">Accept</button></div><div class=\"message-component message-row button-row\"><button title=\"Personalise\" aria-label=\"Personalise\" class=\"message-component message-button no-children focusable button-secondary sp_choice_type_12\">Personalise</button></div><div class=\"message-component message-row button-row\"><button title=\"Continue without accepting\" aria-label=\"Continue without accepting\" class=\"message-component message-button no-children focusable cwa sp_choice_type_SE last-focusable-el\">Continue without accepting</button></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 5553,
+        "cmpType": "Sourcepoint"
+      },
+      "settings": {
+        "buttons": [
+          {
+            "type": "button or anchor",
+            "text": "←",
+            "tag": "A",
+            "attributes": {
+              "data-choice": "1718023024973",
+              "target": "_blank",
+              "href": "#",
+              "style": "color:#000000;text-decoration:none;font-weight: 700;",
+              "class": "text-link-0-0-0-0 focusable",
+              "aria-label": "←",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children back-icon first-focusable-el",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-column back",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"←\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "PARTNERS’",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#1-partners",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<span class=\"ql-underline\" style=\"text-decoration: underline;\">PARTNERS’</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": "focusable message-component text no-children",
+              "selector": ".focusable",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">PARTNERS’</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "essential trackers",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<strong><span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span></strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong><span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span></strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Service",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#3-dailymotion-service",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Service",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Service\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "essential trackers",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<span class=\"ql-underline\" style=\"text-decoration: underline;\">essential trackers</span>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Selected Commercial Partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/data-share-selected-commercial-partners/",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<strong>Selected Commercial Partners</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Selected Commercial Partners</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Data Partners",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/data-partners/",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "<strong>Data Partners</strong>",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"<strong>Data Partners</strong>\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Interactive Advertising Bureau’s Transparency and Consent Framework",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#4-iab-tcf",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Interactive Advertising Bureau’s Transparency and Consent Framework",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Interactive Advertising Bureau’s Transparency and Consent Framework\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Cookie Policy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/cookie-policy",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Cookie Policy",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Cookie Policy\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Privacy Policy",
+            "tag": "A",
+            "attributes": {
+              "target": "_blank",
+              "href": "https://legal.dailymotion.com/en/privacy-policy",
+              "style": "color:#0D0D0D;text-decoration:underline;font-weight: 700;",
+              "class": "text-link-0-1-0 focusable",
+              "aria-label": "Privacy Policy",
+              "tabindex": "0"
+            },
+            "parentInfo": {
+              "tag": "P",
+              "id": "",
+              "className": null,
+              "selector": null,
+              "grandparent": {
+                "tag": "P",
+                "id": null,
+                "className": "focusable message-component text no-children",
+                "selector": ".focusable"
+              }
+            },
+            "selector": "[aria-label=\"Privacy Policy\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "70233",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Store and/or access information on a device",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "26693",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use limited data to select advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles for personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "61375",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles for personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Create profiles for personalised advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles for personalised advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "36379",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use profiles to select personalised advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised advertising\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles to personalise content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "4270",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Create profiles to personalise content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Create profiles to personalise content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles to personalise content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "60666",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use profiles to select personalised content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use profiles to select personalised content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure advertising performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "92372",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure advertising performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Measure advertising performance",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure advertising performance\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure content performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "90492",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Measure content performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Measure content performance",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure content performance\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Understand audiences through statistics or combinations of data from different sources",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "77487",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Understand audiences through statistics or combinations of data from different sources",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Understand audiences through statistics or combinations of data from different sources",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Develop and improve services",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "4891",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Develop and improve services",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Develop and improve services",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Develop and improve services\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select content",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "74480",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Use limited data to select content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use limited data to select content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select content\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Share of Personal Data with Vivendi group companiesD",
+            "tag": "BUTTON",
+            "attributes": {
+              "class": "accordion focusable",
+              "aria-expanded": "false",
+              "aria-controls": "56493",
+              "style": "padding: 16px; font-size: 14px; font-weight: 600; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "button",
+            "selectorConfidence": "low",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Share of Personal Data with Vivendi group companies",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Share of Personal Data with Vivendi group companies",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Share of Personal Data with Vivendi group companies\"]",
+            "selectorConfidence": "high",
+            "role": "switch",
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Save Changes",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Save Changes",
+              "aria-label": "Save Changes",
+              "class": "message-component message-button no-children focusable button-secondary sp_choice_type_SAVE_AND_EXIT",
+              "style": "opacity: 1; padding: 12px 16px; margin: 0px 8px 0px 0px; border-width: 1px; border-color: rgb(13, 13, 13); border-radius: 6px; border-style: solid; font-size: 14px; font-weight: 500; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif; width: 125px; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-row cta-actions",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message type-modal",
+                "selector": ".message"
+              }
+            },
+            "selector": "[aria-label=\"Save Changes\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Decline All",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Decline All",
+              "aria-label": "Decline All",
+              "class": "message-component message-button no-children focusable button-secondary sp_choice_type_ACCEPT_LI_ONLY",
+              "style": "opacity: 1; padding: 12px 16px; margin: 0px 8px; border-width: 1px; border-color: rgb(13, 13, 13); border-radius: 6px; border-style: solid; font-size: 14px; font-weight: 500; color: rgb(13, 13, 13); font-family: arial, helvetica, sans-serif; width: 125px; background: rgb(255, 255, 255);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column accept-decline_actions",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row cta-actions",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Decline All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          },
+          {
+            "type": "button or anchor",
+            "text": "Accept All",
+            "tag": "BUTTON",
+            "attributes": {
+              "title": "Accept All",
+              "aria-label": "Accept All",
+              "class": "message-component message-button no-children focusable button-secondary sp_choice_type_ACCEPT_ALL last-focusable-el",
+              "style": "opacity: 1; padding: 12px 16px; margin: 0px 0px 0px 8px; border-width: 1px; border-color: rgb(13, 13, 13); border-radius: 6px; border-style: solid; font-size: 14px; font-weight: 500; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: 125px; background: rgb(13, 13, 13);"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "message-component message-column accept-decline_actions",
+              "selector": ".message-component",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "message-component message-row cta-actions",
+                "selector": ".message-component"
+              }
+            },
+            "selector": "[aria-label=\"Accept All\"]",
+            "selectorConfidence": "high",
+            "role": null,
+            "isDisabled": false
+          }
+        ],
+        "checkboxes": [],
+        "toggles": [
+          {
+            "type": "toggle",
+            "text": "Store and/or access information on a device",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Store and/or access information on a device",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Store and/or access information on a device\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Use limited data to select advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use limited data to select advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Create profiles for personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Create profiles for personalised advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles for personalised advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Use profiles to select personalised advertising",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use profiles to select personalised advertising",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised advertising\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Create profiles to personalise content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Create profiles to personalise content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Create profiles to personalise content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Use profiles to select personalised content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use profiles to select personalised content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use profiles to select personalised content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Measure advertising performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Measure advertising performance",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure advertising performance\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Measure content performance",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Measure content performance",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Measure content performance\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Understand audiences through statistics or combinations of data from different sources",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Understand audiences through statistics or combinations of data from different sources",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Understand audiences through statistics or combinations of data from different sources\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Develop and improve services",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Develop and improve services",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Develop and improve services\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Use limited data to select content",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Use limited data to select content",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Use limited data to select content\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          },
+          {
+            "type": "toggle",
+            "text": "Share of Personal Data with Vivendi group companies",
+            "tag": "BUTTON",
+            "attributes": {
+              "tabindex": "0",
+              "type": "button",
+              "role": "switch",
+              "aria-checked": "false",
+              "aria-label": "Share of Personal Data with Vivendi group companies",
+              "class": "pm-switch",
+              "style": "display: inline-flex;"
+            },
+            "parentInfo": {
+              "tag": "DIV",
+              "id": "",
+              "className": "stack-row",
+              "selector": ".stack-row",
+              "grandparent": {
+                "tag": "DIV",
+                "id": null,
+                "className": "tcfv2-stack",
+                "selector": ".tcfv2-stack"
+              }
+            },
+            "selector": "[aria-label=\"Share of Personal Data with Vivendi group companies\"]",
+            "selectorConfidence": "high",
+            "ariaChecked": "false",
+            "isDisabled": false
+          }
+        ],
+        "cmpFound": true,
+        "cmpSelector": "[class*=\"message-container\"]",
+        "url": "https://consent.dailymotion.com/privacy-manager/index.html?message_id=1182653&hasCsp=true&mms_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fmms%2Fv2&site_id=34227&concatenatedUUID=671cdf83-a422-486b-8b32-6e558a9b9627~~~&consent_origin=https%3A%2F%2Fconsent.dailymotion.com%2Fconsent%2Ftcfv2&consentUUID=671cdf83-a422-486b-8b32-6e558a9b9627&includeCustomVendorsRes=1",
+        "filteredHtml": "<div role=\"dialog\" aria-label=\"privacy manager\" class=\"message-container modal-container\"><div class=\"message-overlay\"></div><div class=\"message type-modal\"><div class=\"message-stacksclose\">X</div><div class=\"message-component message-row header-row\"><div class=\"message-component message-column back\"><p tabindex=\"0\" class=\"focusable message-component text no-children back-icon first-focusable-el\"><a data-choice=\"1718023024973\" target=\"_blank\" href=\"#\" class=\"text-link-0-0-0-0 focusable\" aria-label=\"←\" tabindex=\"0\">←</a></p></div><div class=\"message-component message-column\"><p tabindex=\"0\" class=\"focusable message-component text no-children title\">Your Privacy Preferences</p></div></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">USEFUL INFORMATION ABOUT DAILYMOTION’S AND OUR <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#1-partners\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;PARTNERS’&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">PARTNERS’</span></a> DATA PROCESSING ACTIVITIES FOR SETTING YOUR PRIVACY PREFERENCES</p><p></p><p><br></p><p><strong>Over time, any of our Partners, i.e. “SITE VENDORS”, listed below, may use trackers or process your personal data, but only some Partners do so AT THE SAME TIME.&nbsp;When you are shown an ad, only Partners participating in the delivery of that ad do so. </strong></p><p><br></p><p>Except for the <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;essential trackers&lt;/span&gt;&lt;/strong&gt;\" tabindex=\"0\"><strong><span class=\"ql-underline\">essential trackers</span></strong></a> which are exempted from consent, trackers may only be dropped upon your approval. Your personal data (collected by trackers, provided by you, communicated to or received from our Partners or 3rd parties) is used by us and our Partners for the Purposes listed below.</p><p><br></p><p>Dailymotion’s processing of your personal data depends on whether you access our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#3-dailymotion-service\" class=\"text-link-0-1-0 focusable\" aria-label=\"Service\" tabindex=\"0\">Service</a> on the <strong>Dailymotion website and app</strong> or through our <strong>Video Player embedded on 3rd party website or apps</strong>.&nbsp;As an operator of the Dailymotion Service, we may use <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#2-trackers\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;span class=&quot;ql-underline&quot; style=&quot;text-decoration: underline;&quot;&gt;essential trackers&lt;/span&gt;\" tabindex=\"0\"><span class=\"ql-underline\">essential trackers</span></a> and, when you are on the Dailymotion website or app, we rely on different legal basis and process your data for additional purposes not used by our Partners. These Dailymotion-specific purposes are identified below by <strong>“D”</strong>.</p><p><br></p><p>Subject to your consent, or if such processing is otherwise authorized by applicable laws, we may share your personal data with our “<a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-share-selected-commercial-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Selected Commercial Partners&lt;/strong&gt;\" tabindex=\"0\"><strong>Selected Commercial Partners</strong></a><strong>”</strong> &amp;<strong> “</strong><a target=\"_blank\" href=\"https://legal.dailymotion.com/en/data-partners/\" class=\"text-link-0-1-0 focusable\" aria-label=\"&lt;strong&gt;Data Partners&lt;/strong&gt;\" tabindex=\"0\"><strong>Data Partners</strong></a><strong>” </strong>who may use it if you gave them your consent or if they rely on an alternative legal basis.</p><p>In the absence of your consent, your personal data may still be processed when such processing relies on a different legal basis. When it relies on legitimate interest, you may oppose to it using \"Opt Out\" option available in the <strong>Legitimate Interest section of the “Purposes”</strong> tab.</p><p>&nbsp;</p><p>Your choices apply to the browser and device you are currently using. To change your settings, use the \"Manage Cookies\" section in the footer of our website or in our app’s settings.</p><p>&nbsp;</p><p>Dailymotion participates in the <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/additional-information-for-setting-privacy-preferences/#4-iab-tcf\" class=\"text-link-0-1-0 focusable\" aria-label=\"Interactive Advertising Bureau’s Transparency and Consent Framework\" tabindex=\"0\">Interactive Advertising Bureau’s Transparency and Consent Framework </a>(the \"<strong>TCF</strong>\"). We rely on the TCF to communicate your current privacy choices to other TCF participants and to receive them when you access our Service through our Video Player embedded on 3rd party websites or apps.</p><p>&nbsp;</p><p>Not consenting, withdrawing your consent or opposing to processing will not stop or decrease the number of ads you are shown or block processing that does not rely on consent or legitimate interest.</p><p><br></p><p>Learn more about Dailymotion use of trackers and data processing operation in our <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/cookie-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Cookie Policy\" tabindex=\"0\">Cookie Policy</a> and <a target=\"_blank\" href=\"https://legal.dailymotion.com/en/privacy-policy\" class=\"text-link-0-1-0 focusable\" aria-label=\"Privacy Policy\" tabindex=\"0\">Privacy Policy</a>.</p><p></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\"><strong>Privacy Settings Choices</strong></p></div><div class=\"message-component message-row\"><p tabindex=\"0\" class=\"focusable message-component text no-children\">To consent or refuse, click on \"<strong>Decline All</strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">\" or \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Accept All</span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">\" buttons. To express your choices on a purpose-by-purpose and then adjust them for any Vendor, use available toggles and click on \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Save Changes\"</span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">. If you click on \"</span><strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">Save Changes\" </span></strong><span aria-label=\"message-link\" target=\"_blank\" href=\"true\">without expressing your choices, your consent will not be collected. </span></p></div><div class=\"message-component message-stacks privacy-manager-tcfv2 no-children\"><div class=\"pm-tabs\" role=\"tablist\"><div role=\"tab\" tabindex=\"0\" class=\"pm-tab active focusable\" aria-selected=\"true\" title=\"Purposes\">Purposes</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Features\">Features</div><div role=\"tab\" tabindex=\"0\" class=\"pm-tab focusable\" aria-selected=\"false\" title=\"Site Vendors\">Site Vendors</div></div><div class=\"pm-section\"><div class=\"pm-purposes\"><div class=\"pm-type-toggle\"><div id=\"purposes-focus\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" class=\"focusable\" title=\"User Consent Purposes\">User Consent Purposes</div><div role=\"tab\" tabindex=\"0\" title=\"Legitimate Interest, Special and Dailymotion Purposes\">Legitimate Interest, Special and Dailymotion Purposes</div><span class=\"selected consent\"></span></div><h2 tabindex=\"0\" class=\"info-title\">Purposes</h2><p tabindex=\"0\" class=\"pm-sub-p\">You give an affirmative action to indicate that we can use your data. When the button is green you consent to the use of your personal data for the following purposes:</p><div class=\"legend\"><span tabindex=\"0\" class=\"legend-key\" aria-label=\"Dailymotion Purposes\">D</span><h2 class=\"custom-header\">Dailymotion Purposes</h2></div><div class=\"tcfv2-stack\" title=\"Store and/or access information on a device\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Store and/or access information on a device</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Store and/or access information on a device\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"70233\" class=\"panel\"><p>kies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here. For Example: * Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each ti</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select advertising</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Use limited data to select advertising\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"26693\" class=\"panel\"><p>ertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you). For Example: * A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone. * A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too of</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles for personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles for personalised advertising</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Create profiles for personalised advertising\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"61375\" class=\"panel\"><p>ormation about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities. For Example: * If you read several articles about the best bike accessories to buy, this information could be used to create a profile about your interest in bike accessories. Such a profile may be used or improved later on, on the same or a different website or app to present you with advertising for a particular bike accessory brand. If you also look at a configurator for a vehicle on a luxury car manufacturer website, this information could be combined with your interest in bikes to refine your profile and make an assumption that you are interested in luxury cycling gear. * An apparel company wishes to promote its new line of high-end baby clothes. It gets in touch with an agency that has a network of clients with high income customers (such as high-end supermarkets) and asks the agency to create profiles of young parents or couples who can be assumed to be wealthy and to have a new child, so that these can later be used to present advertising within partner apps based on those profi</p></div></div><div class=\"tcfv2-stack\" title=\"Use profiles to select personalised advertising\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use profiles to select personalised advertising</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Use profiles to select personalised advertising\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"36379\" class=\"panel\"><p>ertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects. For Example: * An online retailer wants to advertise a limited sale on running shoes. It wants to target advertising to users who previously looked at running shoes on its mobile app. Tracking technologies might be used to recognise that you have previously used the mobile app to consult running shoes, in order to present you with the corresponding advertisement on the app. * A profile created for personalised advertising in relation to a person having searched for bike accessories on a website can be used to present the relevant advertisement for bike accessories on a mobile app of another organisat</p></div></div><div class=\"tcfv2-stack\" title=\"Create profiles to personalise content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profiles to personalise content</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Create profiles to personalise content\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"4270\" class=\"panel\"><p>ormation about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests. For Example: * You read several articles on how to build a treehouse on a social media platform. This information might be added to a profile to mark your interest in content related to outdoors as well as do-it-yourself guides (with the objective of allowing the personalisation of content, so that for example you are presented with more blog posts and articles on treehouses and wood cabins in the future). * You have viewed three videos on space exploration across different TV apps. An unrelated news platform with which you have had no contact builds a profile based on that viewing behaviour, marking space exploration as a topic of possible interest for other vid</p></div></div><div class=\"tcfv2-stack\" title=\"Use profiles to select personalised content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use profiles to select personalised content</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Use profiles to select personalised content\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"60666\" class=\"panel\"><p>tent presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects, such as by adapting the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. For Example: * You read articles on vegetarian food on a social media platform and then use the cooking app of an unrelated company. The profile built about you on the social media platform will be used to present you vegetarian recipes on the welcome screen of the cooking app. * You have viewed three videos about rowing across different websites. An unrelated video sharing platform will recommend five other videos on rowing that may be of interest to you when you use your TV app, based on a profile built about you when you visited those different websites to watch online vid</p></div></div><div class=\"tcfv2-stack\" title=\"Measure advertising performance\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Measure advertising performance</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Measure advertising performance\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"92372\" class=\"panel\"><p>ormation regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very helpful to understand the relevance of advertising campaigns. For Example: * You have clicked on an advertisement about a “black Friday” discount by an online shop on the website of a publisher and purchased a product. Your click will be linked to this purchase. Your interaction and that of other users will be measured to know how many clicks on the ad led to a purchase. * You are one of very few to have clicked on an advertisement about an “international appreciation day” discount by an online gift shop within the app of a publisher. The publisher wants to have reports to understand how often a specific ad placement within the app, and notably the “international appreciation day” ad, has been viewed or clicked by you and other users, in order to help the publisher and its partners (such as agencies) optimise ad placeme</p></div></div><div class=\"tcfv2-stack\" title=\"Measure content performance\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Measure content performance</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Measure content performance\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"90492\" class=\"panel\"><p>ormation regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. For Example: * You have read a blog post about hiking on a mobile app of a publisher and followed a link to a recommended and related post. Your interactions will be recorded as showing that the initial hiking post was useful to you and that it was successful in interesting you in the related post. This will be measured to know whether to produce more posts on hiking in the future and where to place them on the home screen of the mobile app. * You were presented a video on fashion trends, but you and several other users stopped watching after 30 seconds. This information is then used to evaluate the right length of future videos on fashion tre</p></div></div><div class=\"tcfv2-stack\" title=\"Understand audiences through statistics or combinations of data from different sources\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Understand audiences through statistics or combinations of data from different sources</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Understand audiences through statistics or combinations of data from different sources\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"77487\" class=\"panel\"><p>orts can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents). For Example: * The owner of an online bookstore wants commercial reporting showing the proportion of visitors who consulted and left its site without buying, or consulted and bought the last celebrity autobiography of the month, as well as the average age and the male/female distribution of each category. Data relating to your navigation on its site and to your personal characteristics is then used and combined with other such data to produce these statistics. * An advertiser wants to better understand the type of audience interacting with its adverts. It calls upon a research institute to compare the characteristics of users who interacted with the ad with typical attributes of users of similar platforms, across different devices. This comparison reveals to the advertiser that its ad audience is mainly accessing the adverts through mobile devices and is likely in the 45-60 age ra</p></div></div><div class=\"tcfv2-stack\" title=\"Develop and improve services\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Develop and improve services</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Develop and improve services\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"4891\" class=\"panel\"><p>ormation about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers. For Example: * A technology platform working with a social media provider notices a growth in mobile app users, and sees based on their profiles that many of them are connecting through mobile connections. It uses a new technology to deliver ads that are formatted for mobile devices and that are low-bandwidth, to improve their performance. * An advertiser is looking for a way to display ads on a new type of consumer device. It collects information regarding the way users interact with this new kind of device to determine whether it can build a new mechanism for displaying advertising on this type of dev</p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select content</span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Use limited data to select content\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"74480\" class=\"panel\"><p>tent presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you). For Example: * A travel magazine has published an article on its website about the new online courses proposed by a language school, to improve travelling experiences abroad. The school’s blog posts are inserted directly at the bottom of the page, and selected on the basis of your non-precise location (for instance, blog posts explaining the course curriculum for different languages than the language of the country you are situated in). * A sports news mobile app has started a new section of articles covering the most recent football games. Each article includes videos hosted by a separate streaming platform showcasing the highlights of each match. If you fast-forward a video, this information may be used to select a shorter video to play n</p></div></div><div class=\"tcfv2-stack\" title=\"Share of Personal Data with Vivendi group companies\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Share of Personal Data with Vivendi group companies<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Dailymotion Purposes\">D</span></span></button><button tabindex=\"0\" type=\"button\" role=\"switch\" aria-checked=\"false\" aria-label=\"Share of Personal Data with Vivendi group companies\" class=\"pm-switch\"><span class=\"slider round\"></span></button></div><div id=\"56493\" class=\"panel\"><p>lymotion may share your browsing data and other information we may have about you, e.g. your email address, with Vivendi group companies. Vivendi Group entities may place cookies or other trackers on your devices when you visit their sites or services or view content or ads they deliver. They may process and share the data collected via these trackers or otherwise obtained from or about you with Dailymotion and other Vivendi group entities. Dailymotion may process that personal data for any of the purposes listed above. Each Vivendi group company may process that personal data for purposes listed in its respective privacy policy. You can access the privacy and cookie policies of each of the Vivendi entities by clicking on the links available here. Dailymotion requires your cons</p></div></div><div class=\"tcfv2-stack\" title=\"Allow you to share content on social media\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Allow you to share content on social media<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Dailymotion Purposes\">D</span></span></button></div><div id=\"88426\" class=\"panel\"><p>n you decide to share a video content available on the Dailymotion Service via your social media accounts (e.g. Facebook, Twitter), your personal data such as your social media digital ID is used to enable you to share the chosen content on your social media account. Share of content on social media takes place only if you decide to use that feature. Dailymotion processing of your personal data is necessary to deliver the Dailymotion Service requested by you. It is based on contract and does not require your cons</p></div></div><div class=\"tcfv2-stack\" title=\"Create profile to personalize content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Create profile to personalize content<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Dailymotion Purposes\">D</span></span></button></div><div id=\"36886\" class=\"panel\"><p>Information about your activity on the Dailymotion Service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests.</p><p></p><p>Content presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you).</p><p><br></p><p>Your watching habits on the Dailymotion Service allow us to guess your centers of interest; e.g. if you watch overtime multiple videos about gardening you will be categorized as interested in gardening.</p><p><br></p><p>Dailymotion processing is necessary to deliver the Dailymotion Service and is based on contract that does not require your consent.</p><p></p></div></div><div class=\"tcfv2-stack\" title=\"Use Profile to select personalized content\"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use Profile to select personalized content<span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Dailymotion Purposes\">D</span></span></button></div><div id=\"21487\" class=\"panel\"><p>Content presented to you on the Dailymotion Service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests. </p><p></p><p><br></p><p>If you are believed to belong to a category of persons interested in gardening, you will be shown content about gardening and about other topics our systems believe to be interesting to someone fond of gardening. </p><p><br></p><p>Dailymotion processing is necessary to deliver the Dailymotion Service and is based on contract that does not require your consent.</p><p></p></div></div><div class=\"tcfv2-stack\" title=\"Use limited data to select contents \"><div class=\"stack-row\"><button class=\"accordion focusable\" aria-expanded=\"false\" aria-c><span class=\"chevron down\"></span><span>Use limited data to select contents <span tabindex=\"0\" class=\"legend-key inline\" aria-label=\"Dailymotion Purposes\">D</span></span></button></div><div id=\"3805\" class=\"panel\"><p>Content presented to you on the Dailymotion Service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you). </p><p></p><p><br></p><p>When you watch a video through the Dailymotion Player, the information about that video may be used to propose you a next video that is believed to be of interest to you. In other words, information on what you currently watch is used by our algorithms to recommend a video to watch next. </p><p><br></p><p>Dailymotion processing is necessary to deliver the Dailymotion Service and is based on contract that does not require your consent.</p><p></p></div></div></div></div></div><div class=\"message-component message-row cta-actions \"><button title=\"Save Changes\" aria-label=\"Save Changes\" class=\"message-component message-button no-children focusable button-secondary sp_choice_type_SAVE_AND_EXIT\">Save Changes</button><div class=\"message-component message-column accept-decline_actions\"><button title=\"Decline All\" aria-label=\"Decline All\" class=\"message-component message-button no-children focusable button-secondary sp_choice_type_ACCEPT_LI_ONLY\">Decline All</button><button title=\"Accept All\" aria-label=\"Accept All\" class=\"message-component message-button no-children focusable button-secondary sp_choice_type_ACCEPT_ALL last-focusable-el\">Accept All</button></div></div></div></div>",
+        "filteredHtmlOmitted": false,
+        "filteredHtmlOriginalChars": 33289,
+        "cmpType": "Sourcepoint",
+        "isIframe": true
+      }
+    }
+  ]
+}

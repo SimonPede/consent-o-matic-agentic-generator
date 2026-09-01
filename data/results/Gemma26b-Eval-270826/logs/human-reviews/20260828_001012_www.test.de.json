@@ -1,0 +1,8 @@
+{
+  "question": "The Agent seems to be stuck, this call was not chosen by the LLM. Please give Feedback:",
+  "url": "https://www.test.de",
+  "llm_calls": 20,
+  "last_ai_message": "",
+  "last_error": "Invalid JSON: Expecting ':' delimiter: line 1 column 523 (char 522)",
+  "rule_draft": "Invalid or unparseable JSON draft."
+}

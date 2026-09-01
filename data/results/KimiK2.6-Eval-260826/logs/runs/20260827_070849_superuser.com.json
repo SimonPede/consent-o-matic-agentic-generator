@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-08-27T07:08:49.970312",
+  "url": "https://superuser.com",
+  "structured_dom_chars": 63988,
+  "model_used": "openai/natai/kimi-k2.5",
+  "few_shot_config": "cookiebot+swedbank+mock (filteredHtml: False/False/True)",
+  "auto_success": true,
+  "auto_success_with_vision": true,
+  "auto_success_failure_reasons": [],
+  "aborted_max_resumes": false,
+  "overall_timeout_seconds": null,
+  "strategy_type": "GRANULAR_CONSENT",
+  "verified": null,
+  "cmp_type": "OneTrust",
+  "settings_extracted": true,
+  "handled": true,
+  "banner_dismissed": true,
+  "vision_banner_dismissed": true,
+  "heuristic_vision_mismatch": false,
+  "llm_calls": 2,
+  "human_review_count": 0,
+  "test_rule_count": 1,
+  "analyze_screenshot_count": 0,
+  "current_rule_draft": "{\n    \"OneTrust\": {\n        \"detectors\": [\n            {\n                \"presentMatcher\": [\n                    {\n                        \"type\": \"css\",\n                        \"target\": {\n                            \"selector\": \"#onetrust-consent-sdk\"\n                        }\n                    }\n                ],\n                \"showingMatcher\": [\n                    {\n                        \"type\": \"css\",\n                        \"target\": {\n                            \"selector\": \"#onetrust-banner-sdk\",\n                            \"displayFilter\": true\n                        }\n                    }\n                ]\n            }\n        ],\n        \"methods\": [\n            {\n                \"name\": \"HIDE_CMP\",\n                \"action\": {\n                    \"type\": \"hide\",\n                    \"target\": {\n                        \"selector\": \"#onetrust-consent-sdk\"\n                    }\n                }\n            },\n            {\n                \"name\": \"OPEN_OPTIONS\",\n                \"action\": {\n                    \"type\": \"click\",\n                    \"target\": {\n                        \"selector\": \"#onetrust-pc-btn-handler\"\n                    }\n                }\n            },\n            {\n                \"name\": \"DO_CONSENT\",\n                \"action\": {\n                    \"type\": \"consent\",\n                    \"consents\": [\n                        {\n                            \"type\": \"A\",\n                            \"matcher\": {\n                                \"type\": \"checkbox\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0003\"\n                                }\n                            },\n                            \"toggleAction\": {\n                                \"type\": \"click\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0003\"\n                                }\n                            }\n                        },\n                        {\n                            \"type\": \"B\",\n                            \"matcher\": {\n                                \"type\": \"checkbox\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0002\"\n                                }\n                            },\n                            \"toggleAction\": {\n                                \"type\": \"click\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0002\"\n                                }\n                            }\n                        },\n                        {\n                            \"type\": \"F\",\n                            \"matcher\": {\n                                \"type\": \"checkbox\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0004\"\n                                }\n                            },\n                            \"toggleAction\": {\n                                \"type\": \"click\",\n                                \"target\": {\n                                    \"selector\": \"#ot-group-id-C0004\"\n                                }\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"name\": \"SAVE_CONSENT\",\n                \"action\": {\n                    \"type\": \"click\",\n                    \"target\": {\n                        \"selector\": \".save-preference-btn-handler\"\n                    }\n                }\n            }\n        ]\n    }\n}",
+  "last_error": "",
+  "abort_reason": "",
+  "abort_code": "",
+  "abort_explanation": "",
+  "suspected_stuck_reason": "",
+  "model_aborted": false,
+  "final_test_error": "",
+  "error_history": [],
+  "duration_seconds": 78.84,
+  "extraction_duration_seconds": 7.6,
+  "extraction_share_percent": 9.64,
+  "banner_status": {
+    "baseline": {
+      "hasTcfApi": true,
+      "tcfVisible": true,
+      "tcfHidden": false,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": true
+    },
+    "audit": {
+      "hasTcfApi": true,
+      "tcfVisible": false,
+      "tcfHidden": true,
+      "scrollLocked": false,
+      "heuristicBannerFound": true,
+      "showingMatcherFound": false
+    }
+  },
+  "final_rule": {
+    "OneTrust": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#onetrust-consent-sdk"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#onetrust-banner-sdk",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#onetrust-consent-sdk"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#onetrust-pc-btn-handler"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "A",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-C0003"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-C0003"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-C0002"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-C0002"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "target": {
+                    "selector": "#ot-group-id-C0004"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "#ot-group-id-C0004"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".save-preference-btn-handler"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
