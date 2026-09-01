@@ -1,0 +1,150 @@
+{
+    "$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+    "Samsung": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#truste-consent-track"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": "#truste-consent-track",
+                            "displayFilter": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "action": {
+                    "type": "hide",
+                    "target": {
+                        "selector": "#truste-consent-track"
+                    }
+                },
+                "name": "HIDE_CMP"
+            },
+            {
+                "action": {
+                    "type": "click",
+                    "target": {
+                        "selector": "#truste-show-consent"
+                    }
+                },
+                "name": "OPEN_OPTIONS"
+            },
+            {
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "wait",
+                            "waitTime": 500
+                        },
+                        {
+                            "type": "consent",
+                            "consents": [
+                                {
+                                    "trueAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Accept Analytiske / performance cookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "falseAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Refuse Analytiske / performance cookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "type": "B"
+                                },
+                                {
+                                    "trueAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Accept Funktionalitets- og profilcookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "falseAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Refuse Funktionalitets- og profilcookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "type": "A"
+                                },
+                                {
+                                    "trueAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Accept Reklame- og Targetingcookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "falseAction": {
+                                        "type": "click",
+                                        "target": {
+                                            "selector": "[aria-label=\"Refuse Reklame- og Targetingcookies\"]"
+                                        },
+                                        "parent": {
+                                            "selector": "[name=\"trustarc_cm\"]"
+                                        }
+                                    },
+                                    "type": "F"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "DO_CONSENT"
+            },
+            {
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "wait",
+                            "waitTime": 300
+                        },
+                        {
+                            "type": "click",
+                            "target": {
+                                "selector": ".submit"
+                            },
+                            "parent": {
+                                "selector": "[name=\"trustarc_cm\"]"
+                            }
+                        }
+                    ]
+                },
+                "name": "SAVE_CONSENT"
+            },
+            {
+                "name": "UTILITY"
+            }
+        ]
+    }
+}

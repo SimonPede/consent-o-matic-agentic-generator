@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+  "InMobi": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".accept-cookie"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": ".accept-cookie",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "hide",
+                "target": {
+                  "selector": ".accept-cookie"
+                }
+              },
+              {
+                "type": "hide",
+                "target": {
+                  "selector": "#hs-eu-cookie-confirmation"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".button-continer .buttonGradient",
+              "textFilter": "CUSTOMIZE"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "F",
+                "matcher": {
+                  "type": "checkbox",
+                  "parent": {
+                    "selector": ".customize-cookie-popup"
+                  },
+                  "target": {
+                    "selector": "input[type='checkbox'][value='adv']"
+                  }
+                },
+                "toggleAction": {
+                  "type": "click",
+                  "parent": {
+                    "selector": ".customize-cookie-popup"
+                  },
+                  "target": {
+                    "selector": "input[type='checkbox'][value='adv']"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": ".customize-cookie-popup .buttonGradient",
+              "textFilter": "CONFIRM"
+            }
+          }
+        }
+      ]
+    }
+}

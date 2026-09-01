@@ -1,0 +1,160 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+  "TermsFeed": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#termsfeed_privacy_consent_banner_button_accept_all"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#termsfeed_privacy_consent_banner_button_accept_all",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#termsfeed-pc1-notice-banner"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#termsfeed_privacy_consent_notice_banner_open_privacy_preferences"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "waitcss",
+                "target": {
+                  "selector": "#termsfeed-pc1-preferences-center"
+                },
+                "retries": 10,
+                "waitTime": 250
+              },
+              {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "A",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#functionality"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#functionality"
+                      }
+                    }
+                  },
+                  {
+                    "type": "B",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#analytics"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#analytics"
+                      }
+                    }
+                  },
+                  {
+                    "type": "F",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#advertising"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#advertising"
+                      }
+                    }
+                  },
+                  {
+                    "type": "E",
+                    "matcher": {
+                      "type": "checkbox",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#marketing"
+                      }
+                    },
+                    "toggleAction": {
+                      "type": "click",
+                      "parent": {
+                        "selector": "#termsfeed-pc1-preferences-center"
+                      },
+                      "target": {
+                        "selector": "input#marketing"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#termsfeed-pc1-preferences-center-save-selection-button"
+            }
+          }
+        }
+      ]
+    }
+}

@@ -1,0 +1,191 @@
+{
+	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
+	"Didomi": {
+      "detectors": [
+        {
+          "presentMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#didomi-popup, #didomi-consent-popup"
+              }
+            }
+          ],
+          "showingMatcher": [
+            {
+              "type": "css",
+              "target": {
+                "selector": "#didomi-popup, #didomi-consent-popup",
+                "displayFilter": true
+              }
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "HIDE_CMP",
+          "action": {
+            "type": "hide",
+            "target": {
+              "selector": "#didomi-host"
+            }
+          }
+        },
+        {
+          "name": "OPEN_OPTIONS",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "#didomi-notice-learn-more-button"
+            }
+          }
+        },
+        {
+          "name": "DO_CONSENT",
+          "action": {
+            "type": "consent",
+            "consents": [
+              {
+                "type": "D",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-k8Kmth\"]:nth-of-type(2)"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-k8Kmth\"]:nth-of-type(1)"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-jJAmNW\"]:nth-of-type(2)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-marketing\"]:nth-of-type(2)"
+                      }
+                    }
+                  ]
+                },
+                "falseAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-jJAmNW\"]:nth-of-type(1)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-marketing\"]:nth-of-type(1)"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "E",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-ndPRXN\"]:nth-of-type(2)"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-ndPRXN\"]:nth-of-type(1)"
+                  }
+                }
+              },
+              {
+                "type": "B",
+                "trueAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-analytics\"]:nth-of-type(2)"
+                  }
+                },
+                "falseAction": {
+                  "type": "click",
+                  "target": {
+                    "selector": "button[aria-describedby=\"didomi-purpose-analytics\"]:nth-of-type(1)"
+                  }
+                }
+              },
+              {
+                "type": "F",
+                "trueAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-device_characteristics\"]:nth-of-type(2)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-geo_ads\"]:nth-of-type(2)"
+                      }
+                    }
+                  ]
+                },
+                "falseAction": {
+                  "type": "list",
+                  "actions": [
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-device_characteristics\"]:nth-of-type(1)"
+                      }
+                    },
+                    {
+                      "type": "click",
+                      "target": {
+                        "selector": "button[aria-describedby=\"didomi-purpose-geo_ads\"]:nth-of-type(1)"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "SAVE_CONSENT",
+          "action": {
+            "type": "list",
+            "actions": [
+              {
+                "type": "wait",
+                "waitTime": 750
+              },
+              {
+                "type": "click",
+                "target": {
+                  "selector": "#btn-toggle-save"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+}

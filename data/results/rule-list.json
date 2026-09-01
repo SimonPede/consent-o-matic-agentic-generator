@@ -1,14 +1,14 @@
 {
 	"references": [
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/usercentrics.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/termsfeed.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/osano.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/onetrust.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/moove.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/inmobi.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/didomi.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/cookieyes.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/cookieinformation.json",
-		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/generated-rules/cookie-script.json"
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/synology.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/termsfeed.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/osano.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/onetrust.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/inmobi.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/didomi.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/cookieyes.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/cookieinformation.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/cookie-script.json",
+		"https://raw.githubusercontent.com/SimonPede/consent-o-matic-agentic-generator/main/data/results/verified-rules/samsung.json",
 	]
 }
