@@ -429,7 +429,6 @@ def rule_output_node(state: AgentState) -> dict:
         }
 
     rule_match = re.search(r"<rule>(.*?)</rule>", content, re.DOTALL)
-    
     if rule_match:
         try:
             #`match.group(1)` returns the first capture group (content inside tags).

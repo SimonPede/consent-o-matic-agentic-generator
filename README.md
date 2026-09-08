@@ -24,7 +24,7 @@ The system follows a **ReAct (Reasoning and Acting)** paradigm, orchestrated via
 - **Language:** Python 3.11.9 and JavaScript
 - **Orchestration:** LangGraph/LangChain
 - **Browser Automation:** Node.js & Puppeteer
-- **LLM:** Gemma 4 31B via Ollama (SNET server) or Kimi K2.5 via LiteLLM (Aarhus University)
+- **LLM:** Gemma 4 31B via Ollama (SNET server) or Kimi K2.6 via LiteLLM (Aarhus University)
 - **Validation:** Pydantic (type-safe tool calling)
 - **Tracing & Observability:** LangSmith
 - **Evaluation & Visualization**: Pandas, Matplotlib and Seaborn

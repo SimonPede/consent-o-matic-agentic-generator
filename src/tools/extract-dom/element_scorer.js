@@ -69,9 +69,11 @@ async function frameWordCounter(frames) {
  * 
  * Scoring factors (see paper Appendix A.1 for original weights):
  * 
+ * All weights are listed with their corresponding source in the thesis this system was developed for in the Appendix
+ * 
  * Positive:
  *   +50 Match with a few known CMP domain URLs
- *   +20 Match with CMP-related frame URLs and names (custom addition using CMP_FRAME_REGEX)
+ *   +20 Match with CMP-related frame URLs and names (CMP_FRAME_REGEX)
  *   +5  General CSS selector match (GENERAL_SELECTORS)
  *   +10 CMP-specific selector match (CMP_SELECTORS_MAP: Nouwens et al., 2025 + Kirkman et al., 2023)
  *   +n  N-gram match (weight = n-gram length: unigram +1, bigram +2, ..., 5-gram +5)
@@ -81,7 +83,7 @@ async function frameWordCounter(frames) {
  *        Direct adaptation of Nouwens et al. (2025) Section 3.3 to frame-internal elements.
  *   +10 iframe element itself has position:fixed + z-index > 10 (passed as iframeBonus)
  *        Adaptation of same principle to the iframe element in the parent page context.
- *   +5  element within frame is not obscured by another overlapping element
+ *   +5  at least one element within frame is not obscured by another overlapping element
  *        Direct adaption of Klein and Musch et al., 2022, p.914
  *        applied only to fixed/high-z elements to avoid false positives from header/nav elements
  * 

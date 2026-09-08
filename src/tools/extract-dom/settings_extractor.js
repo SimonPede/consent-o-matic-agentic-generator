@@ -329,6 +329,7 @@ async function clickAndExtractSettings(frame, settingsButton, page, cmpType) {
         stablePromises.set(f, waitForDOMStable(f, 800, 6000));
     }
 
+    //only for debugging
     try {
         await page.screenshot({ path: "after_click.png" });
     } catch (err) {

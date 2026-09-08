@@ -386,11 +386,10 @@ function printExtractionSummary(results) {
     }
 })();
 
-//script is confirmed to work on:
+//Some URLs for testing:
 //https://usercentrics.com
 //https://zalando.de
 //https://heise.de --> do not use heise.com! Valid website, but without Cookie-Banner :)
-//https://spiegel.de
 //https://www.flightaware.com/
 //https://www.affinity.com/
 //https://cookieinformation.com
@@ -399,10 +398,6 @@ function printExtractionSummary(results) {
 //https://www.transavia.com/
 //https://www.svt.se
 //https://claude.ai
-
 //Problems with:
 //https://ameliconnect.ameli.fr/ --> weird strcuture, where my script fails to extract the settings page
 //https://www.skyscanner.de --> detects puppeteer and blocks it
-
-//URLs i want to test:
-//https://teamworksplus.de
