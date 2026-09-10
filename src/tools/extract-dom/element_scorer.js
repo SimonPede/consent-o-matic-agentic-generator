@@ -108,7 +108,8 @@ async function frameWordCounter(frames) {
  *   - No screenshot-based visibility check
  *     --> replaced with CSS computed style + bounding box check
  *   - No sub-string/duplicate candidate comparison (out of scope for this prototype)
- *   - This Code is shadow DOM aware
+ *   - This code is shadow DOM aware
+ *   - added scoring values need to be evaluated and fine-tuned
  *   - N-grams extended with some european languages; full multilingual support is a TODO
  *   - Not complying to the quote: "iframes were also
         assessed to be less important as there is typically a wide
@@ -137,11 +138,11 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
         let frameScoreBonus = 0;
 
         if (CMP_DOMAINS.some(domain => url.includes(domain))) {
-            frameScoreBonus += 50; //TODO: evaluate!
+            frameScoreBonus += 50;
         }
 
         if (CMP_FRAME_REGEX.test(url) || CMP_FRAME_REGEX.test(name)) {
-            frameScoreBonus += 20; //TODO: evaluate!
+            frameScoreBonus += 20;
         }
 
 		const triggerWordsPattern = TRIGGER_WORDS_REGEX.source;
@@ -324,10 +325,10 @@ async function calculateFrameScore(frame, avgWordCount, selectorMap, iframeBonus
             }
 
             if (hasFixedHighZ) {
-                localScore += 15; //TODO: evaluate bonus!
+                localScore += 15;
             }
             if (topLevelCount) {
-                localScore += 5; //TODO: evaluate bonus!
+                localScore += 5;
             }
 
             return localScore;

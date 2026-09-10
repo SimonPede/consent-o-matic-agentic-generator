@@ -176,11 +176,11 @@ async function extractStructuredDom(url) {
             for (const frame of page.frames()) {
                 console.error("Heuristic scoring failed to find a banner frame. Falling back to all-frame scan.");
                 if (!frame.url() || frame.url() === "about:blank") {
-					continue; //TODO: also implement visbilty check?
+					continue;
 				}
 
                 const data = await extractFromFrame(frame, CMP_SELECTORS, CMP_SELECTORS_MAP, cmpType);
-                const looksLikeBanner = data.cmpFound //TODO: consider also using other factors like buttons. But likely not reliable and already done before in the code
+                const looksLikeBanner = data.cmpFound
 
                 results.push({
                     frame,

@@ -1,10 +1,9 @@
 /**
- * Known CMP CDN domains for deterministic frame detection.
- * Based on DarkDialogs paper, Appendix B.
+ * Known CMP domains for deterministic frame detection.
+ * Based on "DarkDialogs: Automated detection of 10 dark patterns on cookie dialogs" paper, Appendix B.
  * 
  * Utilized in `calculateFrameScore()` to provide absolute, deterministic identification 
  * of a CMP iframe when its source URL matches any of these infrastructure domains (+ 50).
- * * TODO: Systematically expand with additional high-frequency CMP domains during evaluation.
  */
 const CMP_DOMAINS = [
 	"quantcast.mgr.consensu.org", //Quantcast

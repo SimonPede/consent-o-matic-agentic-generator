@@ -1,8 +1,8 @@
-// These trigger phrases are heavily inspired by two academic papers:
+//These trigger phrases are heavily inspired by two academic papers:
 //1. "A Cross-Country Analysis of GDPR Cookie Banners and Flexible Methods For Scraping Them" (Nouwens et al., 2025), Appendix B
-//2. "When the Abyss Looks Back: Unveiling Evolving Dark Patterns in Cookie Consent Banners" (Singh et al., 2026), Appendix Table 7, p. 15
+//2. "When the Abyss Looks Back: Unveiling Evolving Dark Patterns in Cookie Consent Banners" (Singh et al., 2026), Table 7
 //		(Only a subset was adopted, as the full lexicon targets Dark Pattern detection, not banner frame identification)
-//NOTE: Settings terms from the former "settingsButtons_term.js" have been merged into this list.
+//uilized for calculateFrameScore() in element_scorer.js
 
 const triggerWordsList = [
     //English/International

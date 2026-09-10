@@ -61,7 +61,6 @@ async function findCorrectFrame(page, selectorMap) {
         console.error(`a frame was picked by score: ${bestFrame.url()} with Score: ${maxScore}`);
         return bestFrame;
     }
-    //TODO: maybe return a list of frames with at least score > -50 as fallback instead of nothing?
 
     return null;
 }

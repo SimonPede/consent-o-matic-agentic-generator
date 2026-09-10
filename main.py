@@ -59,7 +59,6 @@ def main() -> None:
 
     config = {"configurable": {"thread_id": thread_id}}
     
-    #Context Manager guarantees seamless SQLite connection handling
     with SqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
 
         agent = workflow.compile(checkpointer=checkpointer)
