@@ -18,7 +18,7 @@ MODEL_CONFIGS = [
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
-CSV_PATH = ROOT_DIR / "data" / "logs" / "evaluation_summary.csv"
+CSV_PATH = ROOT_DIR / "data" / "results" / "evaluation_summary.csv"
 CSV_PATH_KIMI = ROOT_DIR / "data" / "results" / "KimiK2.6-Eval-260826" / "logs" / "KimiK2.6-Eval-260826.csv"
 CSV_PATH_GEMMA31B = ROOT_DIR / "data" / "results" / "Gemma31b-Eval-270826" / "logs" / "Gemma31b-Eval-270826.csv"
 CSV_PATH_GEMMA26B = ROOT_DIR / "data" / "results" / "Gemma26b-Eval-270826" / "logs" / "Gemma26b-Eval-270826.csv"
